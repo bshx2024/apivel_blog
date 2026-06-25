@@ -24,9 +24,14 @@ export default {
       
       const newUrl = new URL(request.url);
       newUrl.hostname = BLOG_HOST;
-      
-      // Preserve protocol (typically https)
       newUrl.protocol = "https:";
+      
+      // 去除 /blog 前缀以匹配 Pages 部署在根目录的文件结构
+      if (newUrl.pathname === "/blog") {
+        newUrl.pathname = "/";
+      } else if (newUrl.pathname.startsWith("/blog/")) {
+        newUrl.pathname = newUrl.pathname.substring(5); // 去除 "/blog"
+      }
       
       // Create a modified request forwarding headers, method, and body
       const modifiedRequest = new Request(newUrl.toString(), {
