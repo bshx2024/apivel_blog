@@ -1,0 +1,330 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+	const posts = await getCollection('blog');
+	return posts.map((post) => ({
+		params: { slug: post.id },
+		props: { post },
+	}));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+function formatDate(date: Date) {
+	return date.toLocaleDateString('en-US', {
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric',
+	});
+}
+---
+
+<Layout 
+	title={post.data.title} 
+	description={post.data.description}
+	image={post.data.image}
+>
+	<article class="blog-post">
+		<!-- Back to blog -->
+		<div class="back-nav">
+			<a href="/blog/" class="back-link">← Back to Blog</a>
+		</div>
+
+		<!-- Post Header -->
+		<header class="post-header">
+			<div class="post-tags">
+				{post.data.tags.map((tag) => (
+					<span class="tag-badge">{tag}</span>
+				))}
+			</div>
+			<h1 class="post-title">{post.data.title}</h1>
+			
+			<div class="post-author-bar">
+				<div class="author-avatar">
+					{post.data.author.split(' ').map(n => n[0]).join('')}
+				</div>
+				<div class="author-meta-info">
+					<span class="author-name">{post.data.author}</span>
+					<span class="author-title">{post.data.authorTitle}</span>
+				</div>
+				<div class="divider"></div>
+				<div class="post-date">
+					<time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+				</div>
+			</div>
+		</header>
+
+		<!-- Post Content -->
+		<div class="post-body">
+			<Content />
+		</div>
+
+		<!-- Post Footer Author Box -->
+		<footer class="post-footer">
+			<div class="author-box">
+				<div class="author-box-avatar">
+					{post.data.author.split(' ').map(n => n[0]).join('')}
+				</div>
+				<div class="author-box-content">
+					<h4>About {post.data.author}</h4>
+					<p>{post.data.authorBio || `${post.data.author} is a technical contributor at APIVALE.`}</p>
+				</div>
+			</div>
+		</footer>
+	</article>
+</Layout>
+
+<style is:global>
+	/* Blog Post Layout */
+	.blog-post {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 1rem 0 4rem;
+	}
+
+	.back-nav {
+		margin-bottom: 2rem;
+	}
+
+	.back-link {
+		color: var(--text-secondary);
+		text-decoration: none;
+		font-size: 0.9rem;
+		font-weight: 500;
+		transition: color 0.2s;
+	}
+
+	.back-link:hover {
+		color: var(--primary-color);
+	}
+
+	.post-header {
+		margin-bottom: 3rem;
+		border-bottom: 1px solid var(--surface-border);
+		padding-bottom: 2.5rem;
+	}
+
+	.post-tags {
+		display: flex;
+		gap: 0.5rem;
+		margin-bottom: 1.25rem;
+		flex-wrap: wrap;
+	}
+
+	.post-title {
+		font-family: var(--font-display);
+		font-weight: 700;
+		font-size: 2.5rem;
+		line-height: 1.25;
+		color: var(--text-primary);
+		margin-bottom: 1.75rem;
+		letter-spacing: -0.015em;
+	}
+
+	.post-author-bar {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.author-meta-info {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.author-meta-info .author-name {
+		color: var(--text-primary);
+		font-weight: 600;
+		font-size: 0.9rem;
+	}
+
+	.author-meta-info .author-title {
+		color: var(--text-muted);
+		font-size: 0.75rem;
+	}
+
+	.post-author-bar .divider {
+		width: 1px;
+		height: 24px;
+		background-color: var(--surface-border);
+	}
+
+	.post-date {
+		font-size: 0.85rem;
+		color: var(--text-secondary);
+	}
+
+	/* Rendered Markdown Body Styling */
+	.post-body {
+		color: #d1d5db; /* Light grayish text for easy reading on dark backgrounds */
+		font-size: 1.05rem;
+		line-height: 1.75;
+	}
+
+	.post-body h2 {
+		font-family: var(--font-display);
+		color: var(--text-primary);
+		font-size: 1.75rem;
+		font-weight: 700;
+		margin: 3rem 0 1.25rem;
+		letter-spacing: -0.01em;
+	}
+
+	.post-body h3 {
+		font-family: var(--font-display);
+		color: var(--text-primary);
+		font-size: 1.35rem;
+		font-weight: 600;
+		margin: 2.25rem 0 1rem;
+	}
+
+	.post-body p {
+		margin-bottom: 1.5rem;
+	}
+
+	.post-body code {
+		font-family: var(--font-mono);
+		font-size: 0.85em;
+		background-color: rgba(255, 255, 255, 0.06);
+		padding: 0.2rem 0.4rem;
+		border-radius: 4px;
+		color: #e879f9;
+	}
+
+	.post-body pre {
+		background-color: #0d1117 !important; /* Shiki theme fallback or override */
+		border: 1px solid var(--surface-border);
+		border-radius: 8px;
+		padding: 1.25rem;
+		margin: 1.5rem 0 2rem;
+		overflow-x: auto;
+	}
+
+	.post-body pre code {
+		background-color: transparent;
+		padding: 0;
+		border-radius: 0;
+		color: inherit;
+		font-size: 0.9em;
+	}
+
+	.post-body blockquote {
+		border-left: 4px solid var(--primary-color);
+		background-color: rgba(99, 102, 241, 0.04);
+		padding: 1.25rem 1.5rem;
+		margin: 2rem 0;
+		border-radius: 0 8px 8px 0;
+	}
+
+	.post-body blockquote p {
+		margin: 0;
+		font-style: italic;
+		color: #e5e7eb;
+	}
+
+	/* Expert quote citation style */
+	.post-body blockquote + p {
+		margin-top: -1.5rem;
+		margin-bottom: 2rem;
+		font-size: 0.85rem;
+		color: var(--text-muted);
+		text-align: right;
+		font-style: normal;
+	}
+
+	.post-body ul, .post-body ol {
+		margin: 0 0 1.5rem 1.5rem;
+	}
+
+	.post-body li {
+		margin-bottom: 0.5rem;
+	}
+
+	.post-body table {
+		width: 100%;
+		border-collapse: collapse;
+		margin: 2rem 0;
+		font-size: 0.95rem;
+	}
+
+	.post-body th, .post-body td {
+		border: 1px solid var(--surface-border);
+		padding: 0.75rem 1rem;
+		text-align: left;
+	}
+
+	.post-body th {
+		background-color: rgba(255, 255, 255, 0.02);
+		color: var(--text-primary);
+		font-weight: 600;
+	}
+
+	.post-body tr:nth-child(even) {
+		background-color: rgba(255, 255, 255, 0.01);
+	}
+
+	.post-body hr {
+		border: 0;
+		border-top: 1px solid var(--surface-border);
+		margin: 3rem 0;
+	}
+
+	/* Footer Author Box */
+	.post-footer {
+		margin-top: 4rem;
+		padding-top: 3rem;
+		border-top: 1px solid var(--surface-border);
+	}
+
+	.author-box {
+		background-color: var(--surface-color);
+		border: 1px solid var(--surface-border);
+		border-radius: 8px;
+		padding: 2rem;
+		display: flex;
+		gap: 1.5rem;
+		align-items: center;
+	}
+
+	.author-box-avatar {
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+		color: var(--text-primary);
+		font-weight: 700;
+		font-size: 1.25rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+	}
+
+	.author-box-content h4 {
+		font-family: var(--font-display);
+		color: var(--text-primary);
+		font-size: 1.1rem;
+		font-weight: 600;
+		margin-bottom: 0.5rem;
+	}
+
+	.author-box-content p {
+		font-size: 0.95rem;
+		color: var(--text-secondary);
+		line-height: 1.5;
+	}
+
+	@media (max-width: 640px) {
+		.post-title {
+			font-size: 2rem;
+		}
+		.author-box {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 1rem;
+		}
+	}
+</style>

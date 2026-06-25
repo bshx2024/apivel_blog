@@ -1,0 +1,361 @@
+---
+interface Props {
+	title: string;
+	description?: string;
+	image?: string;
+	canonicalUrl?: string;
+}
+
+const { 
+	title, 
+	description = "APIVALE - High-performance unified API routing gateway for developers. Low-latency, zero-friction access to DeepSeek, GLM, and multimodal models.",
+	image = "/blog/og-cover.png",
+	canonicalUrl
+} = Astro.props;
+
+const siteTitle = `${title} | APIVALE Blog`;
+const resolvedCanonical = canonicalUrl || Astro.url.href;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- SEO Meta Tags -->
+		<title>{siteTitle}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={resolvedCanonical} />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={resolvedCanonical} />
+		<meta property="og:title" content={siteTitle} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={image} />
+		
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={resolvedCanonical} />
+		<meta property="twitter:title" content={siteTitle} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={image} />
+
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<!-- Header -->
+		<header class="site-header">
+			<div class="nav-container">
+				<a href="/blog/" class="logo-link">
+					<span class="logo-icon">✦</span>
+					<span class="logo-text">APIVALE</span>
+					<span class="logo-badge">BLOG</span>
+				</a>
+				
+				<nav class="main-nav">
+					<a href="/" class="nav-link">Home</a>
+					<a href="/pricing" class="nav-link">Pricing</a>
+					<a href="/about" class="nav-link">About</a>
+				</nav>
+				
+				<div class="nav-actions">
+					<a href="/login" class="btn btn-secondary">Sign In</a>
+					<a href="/register" class="btn btn-primary">Get API Key →</a>
+				</div>
+			</div>
+		</header>
+
+		<!-- Main Container -->
+		<main class="main-content">
+			<slot />
+		</main>
+
+		<!-- Footer -->
+		<footer class="site-footer">
+			<div class="footer-container">
+				<div class="footer-brand">
+					<a href="/blog/" class="logo-link">
+						<span class="logo-icon">✦</span>
+						<span class="logo-text">APIVALE</span>
+					</a>
+					<p class="brand-desc">High-performance API routing gateway for next-gen AI builders.</p>
+				</div>
+				<div class="footer-links-group">
+					<div class="footer-column">
+						<h4>Platform</h4>
+						<a href="/">Gateway</a>
+						<a href="/pricing">Pricing</a>
+						<a href="/docs">Docs</a>
+					</div>
+					<div class="footer-column">
+						<h4>Company</h4>
+						<a href="/about">About Us</a>
+						<a href="/contact">Contact</a>
+						<a href="/blog/">Blog</a>
+					</div>
+					<div class="footer-column">
+						<h4>Legal</h4>
+						<a href="/terms">Terms of Service</a>
+						<a href="/privacy">Privacy Policy</a>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<p>&copy; {new Date().getFullYear()} APIVALE. All rights reserved.</p>
+			</div>
+		</footer>
+	</body>
+</html>
+
+<style is:global>
+	/* CSS CSS Custom Properties for Theme */
+	:root {
+		--bg-color: #030712;
+		--surface-color: rgba(17, 24, 39, 0.6);
+		--surface-border: rgba(255, 255, 255, 0.08);
+		
+		--text-primary: #ffffff;
+		--text-secondary: #9ca3af;
+		--text-muted: #6b7280;
+		
+		--primary-color: #6366f1;
+		--primary-hover: #4f46e5;
+		--primary-glow: rgba(99, 102, 241, 0.15);
+		
+		--accent-color: #a855f7;
+		--accent-hover: #9333ea;
+		
+		--font-sans: 'Inter', system-ui, sans-serif;
+		--font-display: 'Outfit', system-ui, sans-serif;
+		--font-mono: 'Fira Code', monospace;
+		
+		--max-width: 1200px;
+	}
+
+	/* Reset */
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
+	html, body {
+		background-color: var(--bg-color);
+		color: var(--text-secondary);
+		font-family: var(--font-sans);
+		line-height: 1.6;
+		-webkit-font-smoothing: antialiased;
+		overflow-x: hidden;
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}
+
+	/* Layout & Header */
+	.site-header {
+		position: sticky;
+		top: 0;
+		z-index: 100;
+		background-color: rgba(3, 7, 18, 0.8);
+		backdrop-filter: blur(12px);
+		-webkit-backdrop-filter: blur(12px);
+		border-bottom: 1px solid var(--surface-border);
+	}
+
+	.nav-container {
+		max-width: var(--max-width);
+		margin: 0 auto;
+		padding: 0 1.5rem;
+		height: 72px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.logo-link {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		text-decoration: none;
+		font-family: var(--font-display);
+		font-weight: 700;
+		font-size: 1.25rem;
+		color: var(--text-primary);
+	}
+
+	.logo-icon {
+		color: var(--primary-color);
+		font-size: 1.4rem;
+	}
+
+	.logo-badge {
+		font-size: 0.7rem;
+		font-weight: 600;
+		background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+		color: var(--text-primary);
+		padding: 0.15rem 0.4rem;
+		border-radius: 4px;
+		letter-spacing: 0.05em;
+	}
+
+	.main-nav {
+		display: flex;
+		gap: 2rem;
+	}
+
+	.nav-link {
+		color: var(--text-secondary);
+		text-decoration: none;
+		font-size: 0.95rem;
+		font-weight: 500;
+		transition: color 0.2s;
+	}
+
+	.nav-link:hover {
+		color: var(--text-primary);
+	}
+
+	.nav-actions {
+		display: flex;
+		gap: 1rem;
+		align-items: center;
+	}
+
+	/* Buttons */
+	.btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.5rem 1.25rem;
+		border-radius: 6px;
+		font-size: 0.9rem;
+		font-weight: 600;
+		text-decoration: none;
+		transition: all 0.2s;
+		cursor: pointer;
+	}
+
+	.btn-primary {
+		background-color: var(--primary-color);
+		color: var(--text-primary);
+		border: 1px solid var(--primary-color);
+	}
+
+	.btn-primary:hover {
+		background-color: var(--primary-hover);
+		border-color: var(--primary-hover);
+		box-shadow: 0 0 15px var(--primary-glow);
+	}
+
+	.btn-secondary {
+		background-color: transparent;
+		color: var(--text-primary);
+		border: 1px solid var(--surface-border);
+	}
+
+	.btn-secondary:hover {
+		background-color: rgba(255, 255, 255, 0.05);
+		border-color: var(--text-secondary);
+	}
+
+	/* Main Content Container */
+	.main-content {
+		flex: 1 0 auto;
+		width: 100%;
+		max-width: var(--max-width);
+		margin: 0 auto;
+		padding: 3rem 1.5rem;
+	}
+
+	/* Footer */
+	.site-footer {
+		background-color: #02040a;
+		border-top: 1px solid var(--surface-border);
+		padding: 4rem 1.5rem 2rem;
+		width: 100%;
+	}
+
+	.footer-container {
+		max-width: var(--max-width);
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+		gap: 3rem;
+		flex-wrap: wrap;
+	}
+
+	.footer-brand {
+		max-width: 320px;
+	}
+
+	.brand-desc {
+		margin-top: 1rem;
+		font-size: 0.9rem;
+		color: var(--text-muted);
+	}
+
+	.footer-links-group {
+		display: flex;
+		gap: 4rem;
+		flex-wrap: wrap;
+	}
+
+	.footer-column {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.footer-column h4 {
+		color: var(--text-primary);
+		font-family: var(--font-display);
+		font-size: 0.95rem;
+		font-weight: 600;
+		margin-bottom: 0.5rem;
+	}
+
+	.footer-column a {
+		color: var(--text-secondary);
+		text-decoration: none;
+		font-size: 0.9rem;
+		transition: color 0.2s;
+	}
+
+	.footer-column a:hover {
+		color: var(--text-primary);
+	}
+
+	.footer-bottom {
+		max-width: var(--max-width);
+		margin: 3rem auto 0;
+		padding-top: 1.5rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.04);
+		text-align: center;
+		font-size: 0.85rem;
+		color: var(--text-muted);
+	}
+
+	/* Responsive design rules */
+	@media (max-width: 768px) {
+		.main-nav {
+			display: none;
+		}
+		.footer-container {
+			flex-direction: column;
+			gap: 2rem;
+		}
+		.footer-links-group {
+			gap: 2rem;
+			justify-content: space-between;
+			width: 100%;
+		}
+	}
+</style>
