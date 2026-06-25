@@ -17,7 +17,7 @@ export default {
     // CONFIGURATION: Replace with your hosted blog domain
     // (e.g., apivale-blog.vercel.app or apivale-blog.pages.dev)
     // ==========================================
-    const BLOG_HOST = "apivale-blog.vercel.app"; 
+    const BLOG_HOST = "apivale-blog.pages.dev"; 
 
     // Route /blog and /blog/* to the Astro blog host
     if (url.pathname === "/blog" || url.pathname.startsWith("/blog/")) {
