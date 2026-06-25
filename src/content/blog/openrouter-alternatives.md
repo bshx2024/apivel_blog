@@ -144,7 +144,7 @@ runAI();
 
 📋 **APIVALE Routing SDK & Pricing Guide**
 Download our unified SDK integration checklists and get a full breakdown of pricing comparison metrics across 40+ models.
-[**Download Free Integration Checklist →**](https://apivale.com/docs) | [**Create Free Account →**](https://apivale.com/register)
+[**Download Free Integration Checklist →**](https://apivale.com/docs) | [**Create Free Account →**](https://apivale.com/sign-up)
 
 ---
 

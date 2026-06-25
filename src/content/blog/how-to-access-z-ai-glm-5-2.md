@@ -133,7 +133,7 @@ translateText();
 
 📋 **APIVALE GLM-5.2 Integration Cheat Sheet**
 Get our free guide containing model parameters, temperature settings, and comparative benchmarking tests for GLM-5.2.
-[**Download Integration Cheat Sheet →**](https://apivale.com/docs) | [**Get Free API Key →**](https://apivale.com/register)
+[**Download Integration Cheat Sheet →**](https://apivale.com/docs) | [**Get Free API Key →**](https://apivale.com/sign-up)
 
 ---
 
