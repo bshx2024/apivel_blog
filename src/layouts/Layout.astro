@@ -26,6 +26,14 @@ const resolvedCanonical = canonicalUrl || Astro.url.href;
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		
+		<!-- Google Analytics (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-81SGEC4JS4" is:inline></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-81SGEC4JS4');
+		</script>
 		<!-- SEO Meta Tags -->
 		<title>{siteTitle}</title>
 		<meta name="description" content={description} />
