@@ -14,7 +14,8 @@ const {
 } = Astro.props;
 
 const siteTitle = `${title} | APIVALE Blog`;
-const resolvedCanonical = canonicalUrl || Astro.url.href;
+// Strip search parameters and hash to prevent duplicate content indexing
+const resolvedCanonical = canonicalUrl || new URL(Astro.url.pathname, Astro.site || Astro.url.origin).href;
 ---
 
 <!doctype html>
