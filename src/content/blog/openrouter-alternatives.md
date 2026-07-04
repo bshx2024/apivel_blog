@@ -35,7 +35,7 @@ Here is a look at how the top API routers stack up in terms of latency, pricing,
 
 | Provider | TTFT Latency (Avg) | Rate Limits (RPM) | Payment Options | Key Advantage |
 | :--- | :--- | :--- | :--- | :--- |
-| **APIVALE** | **~120ms** | **Unlimited / Custom** | Stripe, Cards, Crypto | China-native models + Global CDN |
+| **APIVALE** | **~120ms** | **Unlimited / Custom** | Stripe, Cards, Crypto | China-native models (LongCat-2.0/GLM) + Context Cache Free |
 | **OpenRouter** | ~350ms | 100 - 500 (Tiered) | Stripe Only | Large directory of legacy models |
 | **Portkey** | ~220ms | Provider Dependent | Enterprise Invoicing | Advanced LLM observability |
 | **LiteLLM (Self-hosted)** | Varies (Local) | Self-managed | N/A | Full hosting control |
@@ -68,9 +68,14 @@ Models like DeepSeek-R1/V4 and Zhipu GLM-5.2 are leading in price-performance ra
 
 ## 1. APIVALE: Best for Lower Latency and Chinese Models
 
-APIVALE is built specifically for developers who require high concurrency and low-latency routing to global models (like GPT-4o, Claude 3.5 Sonnet) as well as top Chinese models (like DeepSeek V4, Zhipu GLM-5.2, and Kling 3.0 video generation).
+APIVALE is built specifically for developers who require high concurrency and low-latency routing to global models (like GPT-4o, Claude 3.5 Sonnet) as well as top Chinese models (like DeepSeek V4, Zhipu GLM-5.2, Meituan LongCat-2.0, and Kling 3.0 video generation).
 
-*(Note: For developers specifically looking to integrate Chinese models like Zhipu's latest GLM, check out our dedicated guide on [how to get Zhipu AI GLM-5.2 API keys internationally](/blog/how-to-access-z-ai-glm-5-2/).)*
+*(Note: For developers specifically looking to integrate Chinese models like Zhipu's latest GLM, check out our dedicated guide on [how to get Zhipu AI GLM-5.2 API keys internationally](/blog/how-to-access-z-ai-glm-5-2/). For those migrating from OpenRouter's retired Owl Alpha to the official Meituan model, see [How to Migrate from OpenRouter Owl Alpha to LongCat-2.0 API with No Downtime](/blog/how-to-migrate-owl-alpha-to-longcat-2-0/).)*
+
+### Context Caching & LongCat-2.0 Support
+APIVALE provides native support for Meituan's newly released 1.6T MoE agentic coding model **LongCat-2.0** (formerly known as **Owl Alpha** on OpenRouter). With APIVALE, developers can:
+- **Bypass Regional Quota Limits**: Access LongCat-2.0 without a Chinese phone number (+86) or domestic billing verification.
+- **Save with Context Caching**: APIVALE fully honors the LongCat-2.0 context caching policy, rendering cache hits **completely free of charge**, making it the most cost-effective solution for autonomous codebase migrations and tools like Claude Code.
 
 ### Latency Optimization & Failovers
 While OpenRouter routes all traffic through centralized nodes that get congested during peak US hours, APIVALE utilizes a distributed edge routing architecture. By caching model statuses and routing through the closest global CDN nodes, APIVALE reduces average Time-To-First-Token (TTFT) by up to 55%.
