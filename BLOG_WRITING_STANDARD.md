@@ -86,7 +86,31 @@
 
 ---
 
-## 5. 写作禁忌与防呆红线 (Prohibited)
+## 5. 富媒体与动图规范 (Rich Media & WebP Animations)
+
+为了将抽象的终端配置可视化，博文必须在核心实操模块引入**高清截图**或 **WebP 录屏动画**，以建立视觉实证并极大提升停留时间（Dwell Time）和转化率（CRO）。
+
+### A. 配图获取优先级与插入位置
+*   **第一优先级：真实界面截图/录屏**：对于具体的代码配置、插件填写、终端执行指令等，必须优先使用真实的界面截图或录屏动图（可通过 CodexLink 截屏工具自动截取），向开发者展示 100% 真实的配置过程。
+*   **第二优先级（兜底）：AI 生成的插图/概念动画**：对于一些偏抽象的逻辑（如“智能网关路由原理”、“全球延迟对比”等无直观配置界面的模块），在实在找不到合适真实配图时，允许使用 AI 生成的高画质概念插图、架构渲染图或示意动画作为视觉兜底，以维护页面的美观度和信息丰满度。
+*   **最低配置要求**：每篇实操博文至少包含 **1 张高清晰度配置截图**，以及 **1 个核心操作的 WebP 动图录屏**。
+*   **插入时机**：通常放置在 H2 下方的快速入门或 Technical Modules 模块中，贴近代码块，作为代码运行结果的视觉佐证。
+
+### B. 动图与图片性能标准
+*   **格式要求**：禁止使用老旧的 `.gif` 格式。所有的动图必须压缩并转换为高画质的 **`.webp`** 格式；静态图优先使用 **`.webp`** 格式，矢量原理图使用 **`.svg`** 格式。
+*   **文件大小**：单张 WebP 动图的大小**严禁超过 1.5MB**（静态图严禁超过 200KB），以防止拖慢页面首次内容渲染时间（FCP/LCP）。
+*   **排版自适应**：在 Astro 博文模板中，对所有图片一律加入 `loading="lazy"` 以进行懒加载优化。
+
+### C. 图像 SEO 与 Alt 标签规则
+*   **文件命名**：文件名称必须采用小写字母、中划线命名法，且必须包含文章的核心 SEO 关键词。
+    *   *反例*：`screen1.png`, `mcp-recording.webp`
+    *   *正例*：`how-to-configure-cline-with-apivale-longcat.webp`
+*   **Alt 属性强制性**：图片和动图必须包含详细叙述内容的 `alt` 标签。这不仅有利于无障碍阅读，还是 GEO 抓取和 Google Image 搜索的关键。
+    *   *Alt 示例*：`![Animated WebP showing a developer configuring the Cline extension inside VS Code with the APIVALE custom endpoint and executing code edits using LongCat-2.0](/images/blog/how-to-configure-cline-with-apivale-longcat.webp)`
+
+---
+
+## 6. 写作禁忌与防呆红线 (Prohibited)
 
 *   **禁止编造/使用过时 API 字段**：所有的 API 路径（如 `/v1/chat/completions`）、Header 头部以及 Payload 参数必须与 `apivale.com` 实际提供的一致，杜绝 AI 幻觉产生的虚假代码。
 *   **禁止空洞的营销词汇**：避免使用 "the best", "revolutionary", "groundbreaking" 等虚词。改用数据支撑，如 "averages 120ms TTFT", "reduces proxy latency by 35%"。

@@ -72,6 +72,9 @@ Cline (formerly Prevail) is a powerful VS Code extension for autonomous engineer
    - **Model ID**: `longcat-2.0`
 4. Set the context window to `1,000,000` tokens to leverage LongCat's native long-context support.
 
+![APIVALE Cline Integration for LongCat-2.0](/blog/cline-apivale-longcat-setup.png)
+*Figure 1: Configure the Cline extension in VS Code using the APIVALE custom endpoint and LongCat-2.0 Model ID.*
+
 ### Resilient Python SDK Integration Example
 
 Copy and run this script to test your integration:

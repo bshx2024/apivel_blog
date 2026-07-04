@@ -60,6 +60,9 @@ The official LongCat API platform is geared strictly towards mainland China. Onl
 ### 2. Lack of Context Caching on Generic Routers
 Generic routers do not support native cache-hits for MoE architectures. Because agentic tasks (like scanning a 500k-token repository) make repeated queries to unchanged context, not using context caching translates to paying full price for every single token on every turn, which inflates operating expenses by over 80%.
 
+![APIVALE Smart Caching Gateway Flow](/blog/apivale-caching-gateway.png)
+*Figure 1: APIVALE implements a pass-through caching protocol that forwards prefix cache hits directly to the Meituan LongCat-2.0 API, lowering agent execution costs.*
+
 ---
 
 ## Step-by-Step Integration with Developer Tools
