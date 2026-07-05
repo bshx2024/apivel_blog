@@ -127,13 +127,14 @@ if __name__ == "__main__":
     query_custom_model()
 ```
 
----
-
-📋 **APIVALE IDE Integration Resource**
-Access our latest documentation for model mappings, rate limits, and configuration guides for popular IDEs like Cursor and VS Code Extensions.
-[**View APIVALE Docs →**](https://apivale.com/docs) | [**Get Your Free API Key →**](https://apivale.com/sign-up)
-
----
+<div class="cta-card">
+  <h4 class="cta-card-title">💻 Integrate Z.ai GLM-5.2 in Cursor Instantly</h4>
+  <p class="cta-card-text">Connect Zhipu models to Cursor or VS Code in seconds without custom JWT SDK auth wrappers. Access GPT-5.5, Claude 4 Sonnet, DeepSeek V4, and GLM-5.2 through APIVALE's standard OpenAI-compatible base URL. Sign up today and get $0.20 free starting credits.</p>
+  <div class="cta-card-actions">
+    <a href="https://apivale.com/sign-up" class="cta-primary-btn">Get Free API Key ($0.20 Credit)</a>
+    <a href="https://apivale.com/docs" class="cta-secondary-btn">Integration Docs</a>
+  </div>
+</div>
 
 ## Developer FAQ
 

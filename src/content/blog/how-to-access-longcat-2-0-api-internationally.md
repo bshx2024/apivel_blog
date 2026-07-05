@@ -16,6 +16,8 @@ However, global developers face a frustrating obstacle: Meituan's developer port
 
 In this guide, we show you how to register and access a **fully operational LongCat-2.0 API key internationally** in under two minutes, bypass KYC limitations, and configure global Stripe billing using APIVALE.
 
+> **💡 Try it Live**: You can chat with the live Meituan model directly in your browser using the [APIVALE Model Playground](https://apivale.com/playground) (select **Longcat/LongCat-2.0** from the model selection dropdown to begin testing).
+
 ### Quick Start: Call LongCat-2.0 via APIVALE
 APIVALE acts as a secure, high-speed bridge to Meituan's infrastructure. You can call the model instantly without any regional restrictions:
 
@@ -107,13 +109,14 @@ def analyze_codebase():
 analyze_codebase()
 ```
 
----
-
-📋 **APIVALE Custom Caching & Model Routing Checklists**
-Download our unified SDK integration checklists and get a full breakdown of caching efficiency metrics across LongCat-2.0 and GLM-5.2.
-[**Download Free Integration Checklist →**](https://apivale.com/docs) | [**Create Free Account →**](https://apivale.com/sign-up)
-
----
+<div class="cta-card">
+  <h4 class="cta-card-title">🚀 Access Meituan LongCat-2.0 API Instantly</h4>
+  <p class="cta-card-text">Bypass mainland corporate KYC and +86 phone restrictions. Deploy GPT-5.5, Claude 4 Sonnet, DeepSeek V4, GLM-5.2, and LongCat-2.0 into your coding agents (such as Cline, Cursor, or Claude Code) in minutes using APIVALE. Context caching is fully supported (hits are free!).</p>
+  <div class="cta-card-actions">
+    <a href="https://apivale.com/sign-up" class="cta-primary-btn">Start Free Trial ($0.20 Credit)</a>
+    <a href="https://apivale.com/playground" class="cta-secondary-btn">Try LongCat-2.0 in Playground</a>
+  </div>
+</div>
 
 ## Developer FAQ
 

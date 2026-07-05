@@ -129,13 +129,14 @@ async function main() {
 main();
 ```
 
----
-
-📋 **APIVALE KYC Bypass Cheat Sheet**
-Review our security guidelines, network routing architecture, and data privacy policies regarding global proxied LLM traffic.
-[**Download KYC Bypass Document →**](https://apivale.com/docs) | [**Generate API Key →**](https://apivale.com/sign-up)
-
----
+<div class="cta-card">
+  <h4 class="cta-card-title">🛡️ Call Zhipu GLM Models without KYC Limits</h4>
+  <p class="cta-card-text">Ditch +86 phone verifications and Chinese ID cards. Connect GPT-5.5, Claude 4 Sonnet, DeepSeek V4, and GLM-5.2 to Cursor, Cline, or your backend app using APIVALE. Pay globally with Stripe or cryptocurrency. Sign up now and get $0.20 free starting credits.</p>
+  <div class="cta-card-actions">
+    <a href="https://apivale.com/sign-up" class="cta-primary-btn">Bypass KYC & Get Free Key</a>
+    <a href="https://apivale.com/docs" class="cta-secondary-btn">Integration Docs</a>
+  </div>
+</div>
 
 ## Developer FAQ
 

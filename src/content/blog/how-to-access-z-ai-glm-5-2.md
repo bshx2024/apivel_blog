@@ -142,13 +142,14 @@ async function translateText() {
 translateText();
 ```
 
----
-
-📋 **APIVALE GLM-5.2 Integration Cheat Sheet**
-Get our free guide containing model parameters, temperature settings, and comparative benchmarking tests for GLM-5.2.
-[**Download Integration Cheat Sheet →**](https://apivale.com/docs) | [**Get Free API Key →**](https://apivale.com/sign-up)
-
----
+<div class="cta-card">
+  <h4 class="cta-card-title">⚡ Call Z.ai GLM-5.2 API Globally</h4>
+  <p class="cta-card-text">No +86 phone number or Chinese ID required. Access GPT-5.5, Claude 4 Sonnet, DeepSeek V4, and GLM-5.2 via APIVALE. Stripe and cryptocurrency billing fully integrated with low-latency edge routing. Sign up now and get $0.20 starting credits.</p>
+  <div class="cta-card-actions">
+    <a href="https://apivale.com/sign-up" class="cta-primary-btn">Get Free API Key ($0.20 Credit)</a>
+    <a href="https://apivale.com/docs" class="cta-secondary-btn">Integration Sheet</a>
+  </div>
+</div>
 
 ## Developer FAQ
 
