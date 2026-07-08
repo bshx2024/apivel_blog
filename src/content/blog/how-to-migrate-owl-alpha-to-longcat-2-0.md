@@ -10,19 +10,26 @@ image: "/blog/longcat-migration-cover.png"
 lang: "en"
 ---
 
-With the official release of Meituan's **LongCat-2.0**, the secret is finally out: the anonymous **Owl Alpha** model that dominated the global developer charts on OpenRouter for the past two months was actually Meituan's 1.6-trillion-parameter MoE model. Now that the stealth testing phase has ended, OpenRouter's Owl Alpha is slated for retirement. 
+With the official release of Meituan's **LongCat-2.0**, the secret is finally out: the anonymous **Owl Alpha** model that dominated the global developer charts on OpenRouter is slated for retirement. 
 
-Developers who integrated Owl Alpha into their autonomous coding agents (like Claude Code, Hermes, or OpenClaw) must migrate to the official LongCat-2.0 API. However, accessing the official platform directly presents major hurdles: it requires a Chinese phone number (+86) for registration, mainland entity verification, and local invoicing.
+Accessing the official Meituan API platform directly requires a Chinese phone number (+86) and domestic tax verification. In this guide, we show you how to seamlessly migrate your workflows to LongCat-2.0 with **zero downtime** and **80% lower cost** using APIVALE.
 
-In this guide, we show you how to seamlessly migrate your workflows to LongCat-2.0 with **zero downtime**, bypass regional payment blocks, and leverage free context caching using APIVALE.
+<div class="my-6 border-l-4 border-indigo-500 bg-gray-900 rounded-r-lg p-5">
+  <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">⚡ Migration Key Takeaways</span>
+  <ul class="mt-2 space-y-1 text-sm text-gray-300 list-disc pl-5">
+    <li><strong>No +86 phone / KYC required</strong>: Connect via global GitHub/Google OAuth on APIVALE.</li>
+    <li><strong>80% cheaper inference</strong>: Full pass-through support for prefix context cache hits.</li>
+    <li><strong>Drop-in replacement</strong>: Switch base URL to <code>apivale.com</code> using standard OpenAI SDKs.</li>
+  </ul>
+</div>
 
-> **💡 Try it Live**: You can chat with the live Meituan model directly in your browser using the [APIVALE Model Playground](https://apivale.com/playground) (select **Longcat/LongCat-2.0** from the model selection dropdown to begin testing).
+> **💡 Try it Live**: Chat with Meituan LongCat-2.0 directly in your browser using the [APIVALE Model Playground](https://apivale.com/playground) (select **Longcat/LongCat-2.0** from the dropdown).
 
 ### Quick Start: Call LongCat-2.0 via APIVALE in 3 Lines
 You do not need a Chinese phone number or specialized payment setups. Replace your OpenRouter configuration with the APIVALE unified endpoint:
 
 ```bash
-curl https://api.apivale.com/v1/chat/completions \
+curl https://apivale.com/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_APIVALE_KEY" \
   -d '{"model": "longcat-2.0", "messages": [{"role": "user", "content": "Write a fast python quicksort."}]}'
@@ -76,7 +83,7 @@ Claude Code is a command-line agent tool that benefits immensely from LongCat-2.
 
 ```bash
 # Export the custom endpoint and your APIVALE key
-export CLAUDE_BASE_URL="https://api.apivale.com/v1"
+export CLAUDE_BASE_URL="https://apivale.com/v1"
 export CLAUDE_API_KEY="your_apivale_api_key_here"
 
 # Start the agent using the LongCat-2.0 model
@@ -94,7 +101,7 @@ from openai import OpenAIError
 
 # Initialize client pointing to APIVALE gateway
 client = openai.OpenAI(
-    base_url="https://api.apivale.com/v1",
+    base_url="https://apivale.com/v1",
     api_key=os.getenv("APIVALE_API_KEY")
 )
 
