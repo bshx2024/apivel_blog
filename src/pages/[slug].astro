@@ -68,6 +68,20 @@ function formatDate(date: Date) {
 			<Content />
 		</div>
 
+		<!-- Dynamic Inline CTA Banner -->
+		<div class="dynamic-inline-banner" id="dynamicInlineBanner" style="display: none;">
+			<div class="banner-content">
+				<div class="inline-badge" id="inlineBadgeText">💡 Trial Access</div>
+				<h3 class="inline-title" id="inlineTitle">Test APIs Without KYC</h3>
+				<p class="inline-desc" id="inlineDesc">Sign up via GitHub for instant $0.20 free credit. Access DeepSeek, GLM, and Claude in our playground instantly.</p>
+			</div>
+			<div class="banner-action">
+				<a href="https://apivale.com/sign-in?redirect=%2Fplayground&utm_source=blog&utm_medium=inline_banner" class="inline-action-btn" id="inlineActionBtn">
+					Test Playground
+				</a>
+			</div>
+		</div>
+
 		<!-- Post Footer Author Box -->
 		<footer class="post-footer">
 			<div class="author-box">
@@ -82,12 +96,173 @@ function formatDate(date: Date) {
 		</footer>
 	</article>
 
-	<!-- Floating CTA Capsule -->
-	<a href="https://apivale.com/sign-up" class="floating-cta">
-		<span class="gift-icon">🎁</span>
-		<span class="cta-text">Get Free API Key ($0.20 Credit)</span>
-		<span class="arrow-icon">→</span>
-	</a>
+	<!-- Dynamic Floating CTA Card -->
+	<div class="dynamic-floating-cta" id="dynamicFloatingCta" style="display: none;">
+		<button class="close-cta-btn" id="closeCtaBtn" aria-label="Close promotion">✕</button>
+		<div class="cta-badge">
+			<span class="pulse-dot"></span>
+			<span id="ctaBadgeText">🎁 Trial Credit</span>
+		</div>
+		<h4 class="cta-title" id="ctaTitle">Get Free API Key</h4>
+		<p class="cta-desc" id="ctaDesc">Sign up via GitHub for instant $0.20 credit. No KYC required.</p>
+		<a href="https://apivale.com/sign-in?redirect=%2Fplayground&utm_source=blog&utm_medium=floating_card" class="cta-action-btn" id="ctaActionBtn">
+			Try Playground Instantly
+		</a>
+	</div>
+
+	<!-- Client-Side Script for dynamic localized copy and content-aware target targeting -->
+	<script is:inline>
+		document.addEventListener('DOMContentLoaded', () => {
+			// Floating Card
+			const ctaContainer = document.getElementById('dynamicFloatingCta');
+			const closeBtn = document.getElementById('closeCtaBtn');
+			
+			const isClosed = localStorage.getItem('apivale_blog_cta_closed') === 'true';
+
+			// Banner Elements
+			const inlineBanner = document.getElementById('dynamicInlineBanner');
+			
+			// Detect Content Keywords
+			const docText = document.body.innerText || '';
+			const isZhipu = /zhipu|glm|智谱/i.test(docText);
+			const isDeepSeek = /deepseek|hunyuan|混元/i.test(docText);
+			const isCursor = /cursor|composer|cline|api key/i.test(docText);
+
+			// Detect Browser Language
+			const userLang = navigator.language || navigator.userLanguage || 'en';
+			const isZh = userLang.toLowerCase().startsWith('zh');
+
+			// --- 1. Populate Floating CTA ---
+			if (ctaContainer && !isClosed) {
+				const badgeText = document.getElementById('ctaBadgeText');
+				const titleEl = document.getElementById('ctaTitle');
+				const descEl = document.getElementById('ctaDesc');
+				const actionBtn = document.getElementById('ctaActionBtn');
+
+				let badge = '🎁 Trial Credit';
+				let title = 'Get Free API Key';
+				let desc = 'Sign up via GitHub for instant $0.20 credit. No KYC required.';
+				let btnText = 'Try Playground Instantly';
+				let utmCampaign = 'general';
+
+				if (isZh) {
+					badge = '🔥 限时体验';
+					btnText = '一键免登录体验 Playground →';
+					if (isZhipu) {
+						title = '免实名测试 Zhipu AI';
+						desc = '跳过国内手机号与身份证实名墙。直接调用 GLM-4/5.2 等模型，使用 GitHub 一键登录即刻体验。';
+						utmCampaign = 'zhipu_bypass';
+					} else if (isDeepSeek) {
+						title = '免实名测试 Hunyuan & DeepSeek';
+						desc = '免去 +86 手机注册与身份审核。直连 Hunyuan Hy3 / DeepSeek-V4，极速响应免备案。';
+						utmCampaign = 'deepseek_bypass';
+					} else if (isCursor) {
+						title = 'Cursor 专属免实名 API Key';
+						desc = '打破 Cursor 订阅次数瓶颈。按 Token 付费使用 DeepSeek / Claude，GitHub 绑定即送 $0.20。';
+						utmCampaign = 'cursor_optimization';
+					} else {
+						title = '免实名一键体验主流 AI';
+						desc = '整合 DeepSeek, Claude, GLM 等多款大模型。支持 Stripe / 加密货币充值，新用户即送 $0.20。';
+						utmCampaign = 'default';
+					}
+				} else {
+					if (isZhipu) {
+						title = 'Bypass Zhipu KYC Limits';
+						desc = 'Ditch +86 phone and ID requirements. Call GLM-4/5.2 globally. Sign up with GitHub for $0.20 free credit.';
+						utmCampaign = 'zhipu_bypass';
+					} else if (isDeepSeek) {
+						title = 'Bypass DeepSeek & Hunyuan Blocks';
+						desc = 'Get direct REST API endpoints without mainland Chinese verifications. High concurrency and instant trial.';
+						utmCampaign = 'deepseek_bypass';
+					} else if (isCursor) {
+						title = 'Save on Cursor Composer Loops';
+						desc = 'Use your own API keys via APIVALE. Prevent throttling, pay-as-you-go, and get $0.20 free signup bonus.';
+						utmCampaign = 'cursor_optimization';
+					}
+				}
+
+				if (badgeText) badgeText.innerText = badge;
+				if (titleEl) titleEl.innerText = title;
+				if (descEl) descEl.innerText = desc;
+				if (actionBtn) {
+					actionBtn.innerText = btnText;
+					actionBtn.href = `https://apivale.com/sign-in?redirect=%2Fplayground&utm_source=blog&utm_medium=floating_card&utm_campaign=${utmCampaign}`;
+				}
+
+				setTimeout(() => {
+					ctaContainer.style.display = 'block';
+				}, 1500);
+			}
+
+			if (closeBtn && ctaContainer) {
+				closeBtn.addEventListener('click', (e) => {
+					e.preventDefault();
+					ctaContainer.style.display = 'none';
+					localStorage.setItem('apivale_blog_cta_closed', 'true');
+				});
+			}
+
+			// --- 2. Populate Inline Banner ---
+			if (inlineBanner) {
+				const badgeText = document.getElementById('inlineBadgeText');
+				const titleEl = document.getElementById('inlineTitle');
+				const descEl = document.getElementById('inlineDesc');
+				const actionBtn = document.getElementById('inlineActionBtn');
+
+				let badge = '💡 Trial Access';
+				let title = 'Test APIs Without KYC';
+				let desc = 'Sign up via GitHub for instant $0.20 free credit. Access DeepSeek, GLM, and Claude in our playground instantly.';
+				let btnText = 'Test Playground';
+				let utmCampaign = 'general';
+
+				if (isZh) {
+					badge = '💡 免实名通道';
+					btnText = '立即免登录体验 Playground →';
+					if (isZhipu) {
+						title = '想免实名测试 Zhipu AI / GLM 模型？';
+						desc = '通过 APIVALE 绕过复杂的实名墙与 +86 手机绑定。绑定 GitHub 即可获得 $0.20 免费额度，支持在浏览器中即开即用进行测试，无需实名！';
+						utmCampaign = 'zhipu_bypass';
+					} else if (isDeepSeek) {
+						title = '想免实名测试 Hunyuan 或 DeepSeek 接口？';
+						desc = '免去官方实名认证阻碍。通过 APIVALE 一键登录即可获得 $0.20 体验金，直接在控制台 Playground 进行模型调试与接口调用。';
+						utmCampaign = 'deepseek_bypass';
+					} else if (isCursor) {
+						title = '在 Cursor 中配置你自己的 API Key';
+						desc = '拒绝高额订阅，拒绝限流。使用 APIVALE 代理，支持 Stripe 和加密货币全球充值，绑定 GitHub 免费体验 $0.20 起步额度。';
+						utmCampaign = 'cursor_optimization';
+					} else {
+						title = '免实名一键测试国内主流大模型';
+						desc = '聚合 DeepSeek、Hunyuan、Zhipu GLM 以及 Claude 3.5 Sonnet。新用户授权登录送 $0.20 起步额度，免去各项限制。';
+						utmCampaign = 'default';
+					}
+				} else {
+					if (isZhipu) {
+						title = 'Bypass Zhipu AI KYC Today';
+						desc = 'Get $0.20 starting bonus upon GitHub registration. Test GLM-4 and GLM-5.2 in our online playground without any Chinese phone verification.';
+						utmCampaign = 'zhipu_bypass';
+					} else if (isDeepSeek) {
+						title = 'Call DeepSeek & Hunyuan Globally';
+						desc = 'No mainland KYC or identity blocks. Get instant credit on registration and start playing with frontier Chinese LLMs immediately.';
+						utmCampaign = 'deepseek_bypass';
+					} else if (isCursor) {
+						title = 'Reduce Cursor API Costs by 95%';
+						desc = 'Switch Cursor base URL to APIVALE and use pay-as-you-go keys. Zero monthly fixed subscription, high concurrency, and free trial credit.';
+						utmCampaign = 'cursor_optimization';
+					}
+				}
+
+				if (badgeText) badgeText.innerText = badge;
+				if (titleEl) titleEl.innerText = title;
+				if (descEl) descEl.innerText = desc;
+				if (actionBtn) {
+					actionBtn.innerText = btnText;
+					actionBtn.href = `https://apivale.com/sign-in?redirect=%2Fplayground&utm_source=blog&utm_medium=inline_banner&utm_campaign=${utmCampaign}`;
+				}
+
+				inlineBanner.style.display = 'block';
+			}
+		});
+	</script>
 </Layout>
 
 <style is:global>
@@ -454,49 +629,184 @@ function formatDate(date: Date) {
 		border-color: rgba(255, 255, 255, 0.2);
 	}
 
-	/* Floating CTA Capsule */
-	.floating-cta {
+	/* Dynamic Inline CTA Banner */
+	.dynamic-inline-banner {
+		background: linear-gradient(135deg, rgba(99, 102, 241, 0.04) 0%, rgba(236, 72, 153, 0.04) 100%);
+		border: 1px solid rgba(255, 255, 255, 0.06);
+		border-left: 4px solid var(--primary-color);
+		border-radius: 8px;
+		padding: 2rem;
+		margin: 3rem 0;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	.banner-content {
+		flex: 1;
+	}
+
+	.inline-badge {
+		display: inline-block;
+		background: rgba(99, 102, 241, 0.12);
+		border: 1px solid rgba(99, 102, 241, 0.25);
+		border-radius: 4px;
+		padding: 0.2rem 0.5rem;
+		font-size: 0.75rem;
+		font-weight: 600;
+		color: #a5b4fc;
+		margin-bottom: 0.75rem;
+	}
+
+	.inline-title {
+		font-family: var(--font-display);
+		color: #ffffff !important;
+		font-size: 1.3rem !important;
+		font-weight: 700 !important;
+		margin: 0 0 0.5rem 0 !important;
+		line-height: 1.3;
+	}
+
+	.inline-desc {
+		color: var(--text-secondary);
+		font-size: 0.9rem;
+		line-height: 1.6;
+		margin: 0 !important;
+	}
+
+	.banner-action {
+		flex-shrink: 0;
+	}
+
+	.inline-action-btn {
+		display: inline-block;
+		background: linear-gradient(90deg, #6366f1, #ec4899);
+		color: #ffffff !important;
+		font-weight: 600;
+		font-size: 0.95rem;
+		padding: 0.75rem 1.5rem;
+		border-radius: 6px;
+		text-decoration: none !important;
+		transition: transform 0.2s, box-shadow 0.2s;
+		box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+		white-space: nowrap;
+	}
+
+	.inline-action-btn:hover {
+		transform: translateY(-1px);
+		box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+	}
+
+	/* Dynamic Floating CTA Card */
+	.dynamic-floating-cta {
 		position: fixed;
 		bottom: 2rem;
 		right: 2rem;
-		display: flex;
+		width: 320px;
+		background: rgba(15, 23, 42, 0.85);
+		backdrop-filter: blur(16px);
+		-webkit-backdrop-filter: blur(16px);
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		border-radius: 12px;
+		padding: 1.5rem;
+		z-index: 1000;
+		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(255, 255, 255, 0.1) inset;
+		animation: float-in-card 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+	}
+
+	.dynamic-floating-cta::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 3px;
+		background: linear-gradient(90deg, #6366f1, #ec4899);
+		border-radius: 12px 12px 0 0;
+	}
+
+	.close-cta-btn {
+		position: absolute;
+		top: 0.75rem;
+		right: 0.75rem;
+		background: none;
+		border: none;
+		color: var(--text-muted);
+		cursor: pointer;
+		font-size: 1rem;
+		padding: 4px;
+		line-height: 1;
+		transition: color 0.2s;
+	}
+
+	.close-cta-btn:hover {
+		color: #ffffff;
+	}
+
+	.cta-badge {
+		display: inline-flex;
 		align-items: center;
-		gap: 0.75rem;
-		background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
-		border: 1px solid rgba(255, 255, 255, 0.15);
+		gap: 0.5rem;
+		background: rgba(99, 102, 241, 0.15);
+		border: 1px solid rgba(99, 102, 241, 0.3);
 		border-radius: 9999px;
-		padding: 0.75rem 1.5rem;
+		padding: 0.25rem 0.75rem;
+		font-size: 0.75rem;
+		font-weight: 600;
+		color: #a5b4fc;
+		margin-bottom: 0.75rem;
+	}
+
+	.pulse-dot {
+		width: 6px;
+		height: 6px;
+		background-color: #6366f1;
+		border-radius: 50%;
+		box-shadow: 0 0 8px #6366f1;
+		animation: pulse-dot-anim 1.5s infinite;
+	}
+
+	.cta-title {
+		font-family: var(--font-display);
+		font-size: 1.15rem;
+		font-weight: 700;
+		color: #ffffff;
+		margin-bottom: 0.5rem;
+		line-height: 1.3;
+	}
+
+	.cta-desc {
+		font-size: 0.85rem;
+		color: var(--text-secondary);
+		line-height: 1.5;
+		margin-bottom: 1.25rem;
+	}
+
+	.cta-action-btn {
+		display: block;
+		text-align: center;
+		background: linear-gradient(90deg, #6366f1, #ec4899);
 		color: #ffffff !important;
 		font-weight: 600;
-		font-size: 0.9rem;
+		font-size: 0.85rem;
+		padding: 0.75rem 1rem;
+		border-radius: 6px;
 		text-decoration: none !important;
-		box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.5), 0 8px 10px -6px rgba(236, 72, 153, 0.5);
-		z-index: 99;
-		transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s;
-		animation: float-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+		transition: transform 0.2s, box-shadow 0.2s;
+		box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 	}
 
-	.floating-cta:hover {
-		transform: translateY(-2px) scale(1.02);
-		box-shadow: 0 12px 30px -5px rgba(99, 102, 241, 0.6), 0 10px 12px -6px rgba(236, 72, 153, 0.6);
+	.cta-action-btn:hover {
+		transform: translateY(-1px);
+		box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
 	}
 
-	.floating-cta .gift-icon {
-		font-size: 1.1rem;
-	}
-
-	.floating-cta .arrow-icon {
-		transition: transform 0.2s;
-	}
-
-	.floating-cta:hover .arrow-icon {
-		transform: translateX(3px);
-	}
-
-	@keyframes float-in {
+	@keyframes float-in-card {
 		from {
 			opacity: 0;
-			transform: translateY(20px);
+			transform: translateY(30px);
 		}
 		to {
 			opacity: 1;
@@ -504,12 +814,39 @@ function formatDate(date: Date) {
 		}
 	}
 
-	@media (max-width: 640px) {
-		.floating-cta {
-			bottom: 1.5rem;
-			right: 1.5rem;
-			left: 1.5rem;
-			justify-content: center;
+	@keyframes pulse-dot-anim {
+		0% {
+			transform: scale(0.95);
+			box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7);
+		}
+		70% {
+			transform: scale(1);
+			box-shadow: 0 0 0 6px rgba(99, 102, 241, 0);
+		}
+		100% {
+			transform: scale(0.95);
+			box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
+		}
+	}
+
+	@media (max-width: 768px) {
+		.dynamic-inline-banner {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 1.5rem;
+			padding: 1.5rem;
+		}
+		
+		.inline-action-btn {
+			width: 100%;
+			text-align: center;
+		}
+
+		.dynamic-floating-cta {
+			bottom: 1rem;
+			right: 1rem;
+			left: 1rem;
+			width: auto;
 		}
 	}
 </style>
