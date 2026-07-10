@@ -44,13 +44,12 @@ Here is how the direct official registration compares to using APIVALE's gateway
 ---
 
 ## Zhipu GLM-5.2 API Pricing Overview
-Pricing is a major factor when scaling AI agent workflows. APIVALE passes through Zhipu's highly competitive official pricing directly to global developers with no hidden markups:
+Pricing is a major factor when scaling AI agent workflows. APIVALE leverages enterprise-pooled volumes to offer GLM-5.2 at rates significantly below the official Zhipu developer console pricing:
 
-| Model | Input Price (per 1M tokens) | Output Price (per 1M tokens) | Context Window | Key Highlight |
+| Model / Access Route | Input Price (per 1M tokens) | Output Price (per 1M tokens) | Savings | KYC / Payment Friction |
 | :--- | :--- | :--- | :--- | :--- |
-| **GLM-5.2** (Flagship) | $1.00 | $1.00 | 128K | Advanced reasoning & Coding |
-| **GLM-4-Plus** | $0.70 | $0.70 | 128K | Balanced speed and performance |
-| **GLM-4-Flash** | Free / $0.01 | Free / $0.01 | 128K | Ultra-low latency & cost-efficient |
+| **Official Zhipu / Z.ai** | $1.40 | $4.40 | Baseline | Mainland Chinese Phone (+86) + ID card |
+| **APIVALE Gateway** | **$0.50** | **$2.50** | **43% - 64% Off** | **None (Global Email & Stripe/Card)** |
 
 *(Looking for more multi-LLM routing options? Read our comprehensive comparison of the [Top 5 OpenRouter Alternatives for Cheaper Multi-LLM API Routing](/blog/openrouter-alternatives/).)*
 
@@ -144,7 +143,7 @@ translateText();
 
 <div class="cta-card">
   <h4 class="cta-card-title">⚡ Call Z.ai GLM-5.2 API Globally</h4>
-  <p class="cta-card-text">No +86 phone number or Chinese ID required. Access GPT-5.5, Claude 4 Sonnet, DeepSeek V4, and GLM-5.2 via APIVALE. Stripe and cryptocurrency billing fully integrated with low-latency edge routing. Sign up now and get $0.20 starting credits.</p>
+  <p class="cta-card-text">No +86 phone number or Chinese ID required. Access GLM-5.2 at a massive discount (just $0.50/1M input and $2.50/1M output—saving up to 64% over official rates), GPT-5.5, Claude 4 Sonnet, and DeepSeek V4 via APIVALE. Stripe and cryptocurrency billing fully integrated with low-latency edge routing. Sign up now and get $0.20 starting credits.</p>
   <div class="cta-card-actions">
     <a href="https://apivale.com/sign-up" class="cta-primary-btn">Get Free API Key ($0.20 Credit)</a>
     <a href="https://apivale.com/docs" class="cta-secondary-btn">Integration Sheet</a>

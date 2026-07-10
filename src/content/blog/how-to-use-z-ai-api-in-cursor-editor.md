@@ -145,7 +145,7 @@ if __name__ == "__main__":
 **A:** The standard format is `https://apivale.com/v1`. Do not add a trailing slash `/` or append `/chat/completions` as Cursor appends that automatically.
 
 **Q: Do I get billed extra for using custom models in Cursor via APIVALE?**
-**A:** No. APIVALE charges the exact same wholesale token rate as Zhipu's official API pricing, and you only pay for what you consume with no markup fees.
+**A:** No. APIVALE actually offers GLM-5.2 at rates significantly below the official console pricing ($0.50/1M input and $2.50/1M output, compared to Zhipu's official $1.40/$4.40), saving you up to 64% on token usage.
 
 <script type="application/ld+json">
 {
@@ -173,7 +173,7 @@ if __name__ == "__main__":
       "name": "Do I get billed extra for using custom models in Cursor via APIVALE?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. APIVALE charges the exact same wholesale token rate as Zhipu's official API pricing, and you only pay for what you consume with no markup fees."
+        "text": "No. APIVALE actually offers GLM-5.2 at rates significantly below the official console pricing ($0.50/1M input and $2.50/1M output, compared to Zhipu's official $1.40/$4.40), saving you up to 64% on token usage."
       }
     }
   ]

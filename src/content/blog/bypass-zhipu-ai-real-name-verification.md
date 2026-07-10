@@ -31,10 +31,11 @@ curl https://apivale.com/v1/chat/completions \
 
 The differences in onboarding complexity and payment methods between the direct Zhipu console and APIVALE API are detailed below:
 
-| Requirement | Direct Zhipu Console (`open.bigmodel.cn`) | APIVALE Gateway Proxy (`apivale.com`) |
+| Requirement / Feature | Direct Zhipu Console (`open.bigmodel.cn`) | APIVALE Gateway Proxy (`apivale.com`) |
 | :--- | :--- | :--- |
 | **Phone Number** | Mainland Chinese (+86) only | Global email (Google, GitHub, standard mail) |
 | **Identity Verification** | Chinese National ID or Business License | None required (No KYC) |
+| **GLM-5.2 Pricing (1M)** | $1.40 Input / $4.40 Output | **$0.50 Input / $2.50 Output (Save up to 64%)** |
 | **API Format** | Custom SDK or dynamic JWT credentials | OpenAI-compatible Bearer API Key |
 | **Payment & Top-Ups** | Alipay / WeChat Pay / Corporate bank transfer | Stripe, Visa, MasterCard, Crypto |
 | **Global Access Speed** | Highly latent outside China | Edge CDN routed (low latency) |
@@ -131,7 +132,7 @@ main();
 
 <div class="cta-card">
   <h4 class="cta-card-title">🛡️ Call Zhipu GLM Models without KYC Limits</h4>
-  <p class="cta-card-text">Ditch +86 phone verifications and Chinese ID cards. Connect GPT-5.5, Claude 4 Sonnet, DeepSeek V4, and GLM-5.2 to Cursor, Cline, or your backend app using APIVALE. Pay globally with Stripe or cryptocurrency. Sign up now and get $0.20 free starting credits.</p>
+  <p class="cta-card-text">Ditch +86 phone verifications and Chinese ID cards. Connect GLM-5.2 (at just $0.50/1M input and $2.50/1M output—saving up to 64% over official rates), GPT-5.5, Claude 4 Sonnet, and DeepSeek V4 to Cursor, Cline, or your backend app using APIVALE. Pay globally with Stripe or cryptocurrency. Sign up now and get $0.20 free starting credits.</p>
   <div class="cta-card-actions">
     <a href="https://apivale.com/sign-up" class="cta-primary-btn">Bypass KYC & Get Free Key</a>
     <a href="https://apivale.com/docs" class="cta-secondary-btn">Integration Docs</a>
