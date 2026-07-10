@@ -44,6 +44,7 @@ Here is how the main access routes compare for calling LongCat-2.0 in production
 | Feature / Metric | Meituan Official Platform | OpenRouter (Retired soon) | APIVALE (Recommended) |
 | :--- | :--- | :--- | :--- |
 | **Registration Req.** | Chinese Mobile (+86) Only | Global Email / OAuth | Global Email / OAuth |
+| **Pricing (per 1M tokens)** | $0.75 (Input) / $2.95 (Output) | ~$1.50 (Combined Average) | **Flat $0.20 / Million Tokens** |
 | **Context Caching** | Free Cache Hits | Unsupported (Full Price) | **Free Cache Hits (Pass-through)** |
 | **Payment Options** | UnionPay / WeChat Pay Only | Stripe (Strict Fraud Filter) | **Stripe, Cards, Crypto** |
 | **Average Latency** | ~110ms (Within China) | ~350ms+ (Centralized hops) | **~150ms (Global CDN routing)** |
@@ -143,6 +144,9 @@ print(code_feedback)
 **Q: How does APIVALE support LongCat-2.0 Context Caching?**
 **A:** APIVALE implements a pass-through caching protocol that detects identical prefix tokens (such as codebase headers or systemic prompts). When Meituan's backend flags a cache hit, APIVALE passes the $0 cost directly to your account, resulting in free context reads.
 
+**Q: Why is APIVALE's pricing for LongCat-2.0 so much lower than other providers?**
+**A:** APIVALE secures bulk volume discounts directly from upstream suppliers. By routing massive token volumes, we negotiate wholesale prices and pass these savings directly to our developers, enabling us to offer a flat $0.20 per million tokens.
+
 **Q: Can I register on APIVALE without a Chinese mobile number?**
 **A:** Yes. APIVALE supports global email sign-up and passwordless OAuth login (via GitHub and Google), completely removing the requirement for a +86 phone number.
 
@@ -165,6 +169,14 @@ print(code_feedback)
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "APIVALE implements a pass-through caching protocol that detects identical prefix tokens. When Meituan's backend flags a cache hit, APIVALE passes the $0 cost directly to your account, resulting in free context reads."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is APIVALE's pricing for LongCat-2.0 so much lower than other providers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "APIVALE secures bulk volume discounts directly from upstream suppliers. By routing massive token volumes, we negotiate wholesale prices and pass these savings directly to our developers, enabling us to offer a flat $0.20 per million tokens."
       }
     },
     {

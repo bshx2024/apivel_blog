@@ -37,8 +37,17 @@ curl https://api.apivale.com/v1/chat/completions \
 | **Phone Verification** | Mainland China (+86) Required | **None (Email / GitHub / Google OAuth)** |
 | **Identity Verification** | Corporate Real-Name / KYC Required | **None (Instant Play)** |
 | **Billing Options** | WeChat Pay, UnionPay (Local Cards only) | **Stripe (Global Cards, Apple Pay, Crypto)** |
+| **Pricing (per 1M tokens)** | $0.75 (Input) / $2.95 (Output) | **Flat $0.20 / Million Tokens** |
 | **Context Caching** | Free Caching Hits | **Free Caching Hits (Fully Supported)** |
 | **API Endpoints** | Standard OpenAI Compatible | **Standard OpenAI Compatible** |
+
+---
+
+## Unbeatable Pricing: LongCat-2.0 on APIVALE
+
+While Meituan's standard pricing is $0.75 per 1M input tokens and $2.95 per 1M output tokens (averaging ~$1.50/M tokens), **APIVALE offers a flat rate of just $0.20 per 1 million tokens for LongCat-2.0**. 
+
+By leveraging bulk volume discount contracts directly with upstream suppliers, APIVALE passes those savings directly to developers. This allows you to deploy production-grade LongCat-2.0 at up to **85% off official retail prices**.
 
 ---
 
@@ -126,8 +135,8 @@ analyze_codebase()
 **Q: How can I fund my API usage?**
 **A:** Unlike the official platform which requires local bank transfers, APIVALE supports global credit/debit cards, Apple Pay, Google Pay via Stripe, and major stablecoins (USDT/USDC).
 
-**Q: Are there any hidden fees or markups?**
-**A:** None. APIVALE matches standard pricing models and passes context caching savings directly to your billing dashboard, allowing you to pay only for the exact computing tokens you consume.
+**Q: How is the pricing so low? Are there hidden fees?**
+**A:** No hidden fees. APIVALE leverages bulk volume pricing and passes the savings directly to you. LongCat-2.0 is priced at a flat rate of just $0.20 per million tokens, which is significantly cheaper than the official retail rates.
 
 <script type="application/ld+json">
 {
@@ -152,10 +161,10 @@ analyze_codebase()
     },
     {
       "@type": "Question",
-      "name": "Are there any hidden fees or markups?",
+      "name": "How is the pricing so low? Are there hidden fees?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "None. APIVALE matches standard pricing models and passes context caching savings directly to your billing dashboard, allowing you to pay only for the exact computing tokens you consume."
+        "text": "No hidden fees. APIVALE leverages bulk volume pricing and passes the savings directly to you. LongCat-2.0 is priced at a flat rate of just $0.20 per million tokens, which is significantly cheaper than the official retail rates."
       }
     }
   ]
