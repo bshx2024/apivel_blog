@@ -31,7 +31,7 @@ Here is the real API rate card per 1 Million Tokens:
 *   **GPT-5.6 Terra (Balanced)**: $2.50 Input / $15.00 Output
 *   **GPT-5.6 Luna (Fastest)**: $1.00 Input / $6.00 Output
 
-The flagship *Sol* tier matches the exact price of the outgoing GPT-5.5. The "67% savings" claim doesn't come from a generational price cut on the flagship model; it comes from routing workloads to the cheaper *Luna* tier and leveraging new caching mechanisms.
+The flagship *Sol* tier matches the exact price of the outgoing GPT-5.5. The "67% savings" claim doesn't come from a generational price cut on the flagship model; it comes from routing workloads to the cheaper *Luna* tier and leveraging new caching mechanisms. For developers using multi-model setups, switching to [cheaper OpenRouter alternatives](/blog/openrouter-alternatives/) that support automated failover and dynamic tier-routing is the easiest way to orchestrate this.
 
 ---
 
@@ -67,7 +67,7 @@ If the flagship model is expensive, how are developers slashing their bills? The
 GPT-5.6 introduces highly predictable prompt caching with a 30-minute minimum cache life. Cache reads get a massive **90% discount** (bringing cached input on Sol down to roughly $0.50/1M). If your autonomous agents share a large, stable system prompt or a fixed codebase context, caching is the single biggest lever on your bill.
 
 ### Trick 2: Tier Routing (Sol to Luna)
-The real magic is dynamic routing. By using an API gateway like APIVALE, you can route complex, deep-reasoning instructions to **GPT-5.6 Sol**, while sending simple text formatting, summarization, or status checks to **GPT-5.6 Luna**. Luna is 5x cheaper than Sol. This dynamic routing is exactly how the 67% blended cost savings are actually achieved in enterprise environments.
+The real magic is dynamic routing. By using an API gateway like APIVALE, you can route complex, deep-reasoning instructions to **GPT-5.6 Sol**, while sending simple text formatting, summarization, or status checks to **GPT-5.6 Luna**. Luna is 5x cheaper than Sol. This dynamic routing is exactly how the 67% blended cost savings are actually achieved in enterprise environments. If you are developing locally inside an IDE, check out our [Cursor Pro vs. Custom API Key guide](/blog/cursor-pro-vs-own-api-key/) to see how custom routing stacks up against flat subscriptions.
 
 ---
 

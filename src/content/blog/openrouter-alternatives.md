@@ -70,7 +70,7 @@ For developers located outside the United States, keeping a balance funded on Op
 OpenRouter routes all traffic through centralized nodes that face massive congestion during peak US business hours. For global developers, this results in an increased **Time-To-First-Token (TTFT)** of up to 400ms+, even when calling fast models like Claude 3.5 Haiku or DeepSeek.
 
 ### 3. Obstacles Accessing Top-tier Chinese Models
-Models like DeepSeek-R1/V4 and Zhipu GLM-5.2 are leading in price-performance ratio. However, Western-centric routers like OpenRouter struggle with packet loss and high latency when routing queries through the Chinese internet gateway. Furthermore, they lack support for multi-modal Chinese APIs (like Kling 3.0 or Seedance for video/image generation).
+Models like DeepSeek-R1/V4 and Zhipu GLM-5.2 are leading in price-performance ratio. Similarly, the recently announced [GPT-5.6 Sol, Terra, and Luna tiers](/blog/does-gpt-5-6-really-save-67-on-api-costs/) offer highly competitive pricing when routed dynamically. However, Western-centric routers like OpenRouter struggle with packet loss and high latency when routing queries through the Chinese internet gateway. Furthermore, they lack support for multi-modal Chinese APIs (like Kling 3.0 or Seedance for video/image generation).
 
 ---
 
@@ -106,7 +106,7 @@ APIVALE offers multi-region Stripe integration, localized card payments, and cry
 
 ## 2. Portkey: Best for Enterprise Observability
 
-If your team needs deep tracing, logging, and performance analytics for enterprise compliance, Portkey is a strong alternative.
+If your team needs deep tracing, logging, and performance analytics for enterprise compliance, Portkey is a strong alternative. But if you are a developer looking to integrate custom models in local IDEs to bypass subscription caps, you might want to look at our [Cursor Pro vs. Custom Keys comparison](/blog/cursor-pro-vs-own-api-key/) first.
 
 *   **Observability**: It automatically tracks tokens used, cost per request, and latency distributions.
 *   **Enterprise Features**: Offers fine-grained access control, security auditing, and vault key management.

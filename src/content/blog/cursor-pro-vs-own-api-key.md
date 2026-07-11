@@ -10,25 +10,46 @@ image: "/blog/cursor-pro-vs-own-api-cover.png"
 lang: "en"
 ---
 
-Cursor has taken the development world by storm, with its Composer mode allowing developers to write and edit code across multiple files simultaneously. However, as developers push the boundaries of \"vibe coding,\" many find themselves hitting Cursor's monthly included credit limit within the first week. Once your included credits are exhausted, you are forced to pay on-demand overage charges or switch to a slower queue. This has led to a major debate: Should you stick with the $20/month Cursor Pro subscription (which acts as a $20 pre-paid credit pool), or are you better off using your own custom API keys via a pay-as-you-go gateway?
+Cursor has taken the development world by storm, with its Composer mode allowing developers to write and edit code across multiple files simultaneously. However, as developers push the boundaries of "vibe coding," many find themselves hitting Cursor's monthly included credit limit within the first week. Once your included credits are exhausted, you are forced to pay on-demand overage charges or switch to a slower queue. This has led to a major debate: Should you stick with the $20/month Cursor Pro subscription (which acts as a $20 pre-paid credit pool), or are you better off using your own custom API keys via a pay-as-you-go gateway like [OpenRouter alternatives](/blog/openrouter-alternatives/)? 
 
-To help you decide, we have broken down the exact token math, compared the hidden costs of autonomous agent loops, and provided a guide on how to configure your own keys to maximize speed while slashing your bills.
+In this guide, we break down the exact token math, compare the hidden costs of autonomous agent loops (including how the new [GPT-5.6 Sol, Terra, and Luna tiers](/blog/does-gpt-5-6-really-save-67-on-api-costs/) affect IDE pricing), and provide a guide on how to configure your own keys to maximize speed while slashing your bills.
 
-### Quick Start: Test Custom API Key Connectivity
+### Quick Start: Cursor Configuration Card
 
-You can immediately test custom endpoint compatibility by running this simple cURL request pointing to the APIVALE proxy. Replace `YOUR_APIVALE_KEY` with your actual token:
+<div class="cursor-config-card" style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 1.75rem; margin: 2rem 0; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); position: relative; overflow: hidden; text-align: left;">
+  <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #6366f1, #3b82f6);"></div>
+  <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+    <span style="background: rgba(99, 102, 241, 0.15); color: #a5b4fc; border: 1px solid rgba(99, 102, 241, 0.25); border-radius: 4px; padding: 0.2rem 0.5rem; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Cursor Quick Config</span>
+    <h4 style="margin: 0; font-size: 1.15rem; font-weight: 700; color: #ffffff;">Configure APIVALE in 3 Steps</h4>
+  </div>
+  
+  <ol style="margin: 0 0 1.25rem 1.25rem; padding: 0; color: #d1d5db; font-size: 0.9rem; line-height: 1.6;">
+    <li style="margin-bottom: 0.5rem;">Get a free API Key with <strong>$0.20 starting credit</strong> (no KYC) by signing up via GitHub.</li>
+    <li style="margin-bottom: 0.5rem;">Open Cursor, go to <strong>Settings -> Models -> OpenAI</strong>, and toggle <strong>"Override Base URL"</strong>.</li>
+    <li style="margin-bottom: 0.5rem;">Enter the Base URL and your APIVALE key:</li>
+  </ol>
 
-```bash
-curl https://apivale.com/v1/chat/completions \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer YOUR_APIVALE_KEY" \
-  -d '{
-    "model": "claude-3-5-sonnet",
-    "messages": [
-      {"role": "user", "content": "Briefly explain the pricing of Claude 3.5 Sonnet."}
-    ]
-  }'
-```
+  <!-- Input Field Boxes for Easy Copying -->
+  <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+    <div>
+      <div style="font-size: 0.7rem; color: #9ca3af; font-family: monospace; margin-bottom: 0.25rem; font-weight: 600;">OVERRIDE BASE URL</div>
+      <div style="display: flex; align-items: center; background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; padding: 0.5rem 0.75rem;">
+        <code style="font-family: monospace; font-size: 0.85rem; color: #38bdf8; flex-grow: 1; border: none; background: transparent; padding: 0; border-radius: 0;">https://apivale.com/v1</code>
+      </div>
+    </div>
+    <div>
+      <div style="font-size: 0.7rem; color: #9ca3af; font-family: monospace; margin-bottom: 0.25rem; font-weight: 600;">API KEY</div>
+      <div style="display: flex; align-items: center; background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; padding: 0.5rem 0.75rem;">
+        <code style="font-family: monospace; font-size: 0.85rem; color: #ec4899; flex-grow: 1; border: none; background: transparent; padding: 0; border-radius: 0;">sk-apivale-xxxxxxxxxxxx</code>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+    <a href="https://apivale.com/sign-in?redirect=%2Fplayground&utm_source=blog&utm_medium=cursor_quick_config" style="background: linear-gradient(90deg, #6366f1, #3b82f6); color: #ffffff !important; font-weight: 600; font-size: 0.85rem; padding: 0.6rem 1.25rem; border-radius: 6px; text-decoration: none !important; transition: transform 0.2s; display: inline-block; box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);">Get API Key & Free Credit</a>
+    <a href="https://apivale.com/playground" style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); color: #e5e7eb !important; font-weight: 600; font-size: 0.85rem; padding: 0.6rem 1.25rem; border-radius: 6px; text-decoration: none !important; display: inline-block;">Try Online Playground</a>
+  </div>
+</div>
 
 ---
 
