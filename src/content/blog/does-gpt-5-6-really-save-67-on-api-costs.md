@@ -6,7 +6,7 @@ author: "Kenji Tanaka"
 authorTitle: "AI Developer Relations Engineer, APIVALE"
 authorBio: "Kenji Tanaka is an AI developer advocate focused on multi-model integrations and making Chinese LLMs accessible globally."
 tags: ["GPT-5.6", "API Costs", "Prompt Caching", "LLM Benchmarks", "Claude Opus"]
-image: "/blog/gpt-5-6-api-cost-verification-cover.png"
+image: "/blog/gpt-5-6-cost-benchmark-cover.png"
 lang: "en"
 ---
 
