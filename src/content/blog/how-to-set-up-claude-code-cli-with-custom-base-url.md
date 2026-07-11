@@ -1,5 +1,5 @@
 ---
-title: "Claude Code CLI Custom Endpoint: How to Set Up Custom Base URL (anthropic_base_url Guide)"
+title: "Claude Code Router Setup: Configure Custom Base URL (anthropic_base_url Guide)"
 description: "Anthropic's Claude Code CLI is a game changer, but it consumes tokens rapidly. Learn how to configure anthropic_base_url and anthropic_auth_token to bypass rate limits and route traffic to a cost-effective APIVALE proxy."
 date: "2026-07-11"
 author: "Alex Rivera"
