@@ -166,7 +166,7 @@ checkAccountHealth();
   <h4 class="cta-card-title">🚀 Scale Your Agent Fleet and Slash Costs</h4>
   <p class="cta-card-text">Stop wasting money on redundant tokens. Connect your coding agents and workflows to APIVALE to enjoy wholesale pay-as-you-go pricing, free context caching, and high-concurrency global routes. Create your free account and claim $0.20 starting credits.</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=article&utm_campaign=llm-cost-optimization-guide" class="cta-primary-btn">Sign Up Free</a>
+    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=llm-cost-optimization-guide" class="cta-primary-btn">Sign Up Free</a>
     <a href="/blog/openrouter-alternatives" class="cta-secondary-btn">Compare Providers</a>
   </div>
 </div>

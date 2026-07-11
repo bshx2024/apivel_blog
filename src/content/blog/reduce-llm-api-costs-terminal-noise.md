@@ -175,8 +175,8 @@ exec('git status --porcelain', (error, stdout, stderr) => {
   <h4 class="cta-card-title">⚡ Route Clean Logs Through APIVALE Gateway</h4>
   <p class="cta-card-text">Stop paying for terminal warnings and ANSI color tokens. Combine CLI filtering tools with APIVALE's edge-routed DeepSeek V4 and Claude 3.5 Sonnet endpoints. Save up to 90% on agent loop operations. Get $0.20 free signup credits.</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=article&utm_campaign=reduce-terminal-noise" class="cta-primary-btn">Create Free Account</a>
-    <a href="https://apivale.com/docs" class="cta-secondary-btn">Integration Docs</a>
+    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=reduce-llm-api-costs-terminal-noise" class="cta-primary-btn">Create Free Account</a>
+    <a href="https://apivale.com/docs?utm_source=apivale_blog&utm_medium=blog&utm_campaign=reduce-llm-api-costs-terminal-noise" class="cta-secondary-btn">Integration Docs</a>
   </div>
 </div>
 

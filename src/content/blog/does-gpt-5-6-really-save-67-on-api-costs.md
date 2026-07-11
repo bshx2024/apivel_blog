@@ -37,7 +37,7 @@ The flagship *Sol* tier matches the exact price of the outgoing GPT-5.5. The "67
 
 ## 2. APIVALE Dashboard Benchmarks: GPT-5.6 vs Claude Opus
 
-To understand how this pricing impacts real-world applications, we compared **GPT-5.6-sol** against its primary competitor, **Claude Opus**, using live telemetry from the [APIVALE Unified API Hub](https://apivale.com/api/). 
+To understand how this pricing impacts real-world applications, we compared **GPT-5.6-sol** against its primary competitor, **Claude Opus**, using live telemetry from the [APIVALE Unified API Hub](https://apivale.com/api/?utm_source=apivale_blog&utm_medium=blog&utm_campaign=does-gpt-5-6-really-save-67-on-api-costs). 
 
 *(Note: Pricing is normalized per 1 Million Input Tokens / 1 Million Output Tokens in USD. PING Latency is the node round-trip measured from APIVALE's live channel monitor in July 2026; End-to-End Latency is measured from our API call script. Claude Opus 4.8 pricing is an independent estimate cross-referenced from public sources).*
 
@@ -75,8 +75,8 @@ The real magic is dynamic routing. By using an API gateway like APIVALE, you can
   <h4 class="cta-card-title">⚡ Route Smarter, Spend Less</h4>
   <p class="cta-card-text">Stop overpaying for GPT-5.6 Sol on every request. APIVALE's unified API gateway lets you route workloads across GPT-5.6 Sol, Terra, and Luna — plus Claude Opus, DeepSeek, and 10+ other models — through a single API key with real-time cost tracking per request. Get $0.20 free credits on sign-up.</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=article&utm_campaign=gpt56-cost-verification" class="cta-primary-btn">Create Free Account</a>
-    <a href="https://apivale.com/api/" class="cta-secondary-btn">View Supported Models</a>
+    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=does-gpt-5-6-really-save-67-on-api-costs" class="cta-primary-btn">Create Free Account</a>
+    <a href="https://apivale.com/api/?utm_source=apivale_blog&utm_medium=blog&utm_campaign=does-gpt-5-6-really-save-67-on-api-costs" class="cta-secondary-btn">View Supported Models</a>
   </div>
 </div>
 

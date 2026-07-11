@@ -47,7 +47,7 @@ Here is a look at how the top API routers stack up in terms of latency, pricing,
   <h4 class="cta-card-title">⚡ Switch to APIVALE in 30 Seconds</h4>
   <p class="cta-card-text">Facing high latencies or credit card declines on OpenRouter? APIVALE offers low-latency globally distributed nodes, multiple payment options (Stripe, global credit cards, crypto), and free context caching. Get $0.20 free starting credit.</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up" class="cta-primary-btn">Get Free API Key ($0.20 Credit)</a>
+    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=openrouter-alternatives" class="cta-primary-btn">Get Free API Key ($0.20 Credit)</a>
   </div>
 </div>
 
@@ -81,7 +81,7 @@ APIVALE is built specifically for developers who require high concurrency and lo
 *(Note: For developers specifically looking to integrate Chinese models like Zhipu's latest GLM, check out our dedicated guide on [how to get Zhipu AI GLM-5.2 API keys internationally](/blog/how-to-access-z-ai-glm-5-2/). For those migrating from OpenRouter's retired Owl Alpha to the official Meituan model, see [How to Migrate from OpenRouter Owl Alpha to LongCat-2.0 API with No Downtime](/blog/how-to-migrate-owl-alpha-to-longcat-2-0/).)*
 
 ### Context Caching & LongCat-2.0 Support
-APIVALE provides native support for Meituan's newly released 1.6T MoE agentic coding model **LongCat-2.0** (formerly known as **Owl Alpha** on OpenRouter, which you can [test live in our playground](https://apivale.com/playground)). With APIVALE, developers can:
+APIVALE provides native support for Meituan's newly released 1.6T MoE agentic coding model **LongCat-2.0** (formerly known as **Owl Alpha** on OpenRouter, which you can [test live in our playground](https://apivale.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=openrouter-alternatives)). With APIVALE, developers can:
 - **Bypass Regional Quota Limits**: Access LongCat-2.0 without a Chinese phone number (+86) or domestic billing verification.
 - **Save with Context Caching**: APIVALE fully honors the LongCat-2.0 context caching policy, rendering cache hits **completely free of charge**, making it the most cost-effective solution for autonomous codebase migrations and tools like Claude Code.
 
@@ -184,8 +184,8 @@ runAI();
   <h4 class="cta-card-title">🎁 Try APIVALE for Free Today</h4>
   <p class="cta-card-text">Stop dealing with strict rate limits and false Stripe card declines. Get instant, high-concurrency access to GPT-5.5, Claude 4 Sonnet, DeepSeek V4, GLM-5.2, and Kling 3.0 via a single OpenAI-compatible API key. Plus, get $0.20 free credits upon registration!</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up" class="cta-primary-btn">Create Free Account</a>
-    <a href="https://apivale.com/docs" class="cta-secondary-btn">Read Integration Docs</a>
+    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=openrouter-alternatives" class="cta-primary-btn">Create Free Account</a>
+    <a href="https://apivale.com/docs?utm_source=apivale_blog&utm_medium=blog&utm_campaign=openrouter-alternatives" class="cta-secondary-btn">Read Integration Docs</a>
   </div>
 </div>
 

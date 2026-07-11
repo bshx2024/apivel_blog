@@ -148,7 +148,7 @@ queryModel();
   <h4 class="cta-card-title">⚡ Start Calling Hy3 & DeepSeek V4 Instantly</h4>
   <p class="cta-card-text">Ditch the hassle of buying virtual Chinese phone numbers or managing Alipay accounts. Register on APIVALE today, secure your API key via Stripe or Crypto, and enjoy high-concurrency access to Tencent Hunyuan, DeepSeek, Zhipu, and Kling APIs. Get $0.20 free credits on sign-up.</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up" class="cta-primary-btn">Create Free Account</a>
+    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-access-hy3-deepseek-without-86-phone" class="cta-primary-btn">Create Free Account</a>
     <a href="/blog/openrouter-alternatives" class="cta-secondary-btn">Compare Routing Providers</a>
   </div>
 </div>

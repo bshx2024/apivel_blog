@@ -23,7 +23,7 @@ Accessing the official Meituan API platform directly requires a Chinese phone nu
   </ul>
 </div>
 
-> **💡 Try it Live**: Chat with Meituan LongCat-2.0 directly in your browser using the [APIVALE Model Playground](https://apivale.com/playground) (select **Longcat/LongCat-2.0** from the dropdown).
+> **💡 Try it Live**: Chat with Meituan LongCat-2.0 directly in your browser using the [APIVALE Model Playground](https://apivale.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-migrate-owl-alpha-to-longcat-2-0) (select **Longcat/LongCat-2.0** from the dropdown).
 
 ### Quick Start: Call LongCat-2.0 via APIVALE in 3 Lines
 You do not need a Chinese phone number or specialized payment setups. Replace your OpenRouter configuration with the APIVALE unified endpoint:
@@ -131,8 +131,8 @@ print(code_feedback)
   <h4 class="cta-card-title">🔄 Migrate Owl Alpha to LongCat-2.0 Today</h4>
   <p class="cta-card-text">Keep your agentic coding workflows running smoothly without interruptions. Migrate from OpenRouter's soon-to-be-retired Owl Alpha to the official LongCat-2.0 via APIVALE. Access GPT-5.5, Claude 4 Sonnet, DeepSeek V4, and GLM-5.2 with 100% free context caching hits. Try now with $0.20 free credits.</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up" class="cta-primary-btn">Migrate Now & Get $0.20 Credit</a>
-    <a href="https://apivale.com/playground" class="cta-secondary-btn">Try LongCat-2.0 in Playground</a>
+    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-migrate-owl-alpha-to-longcat-2-0" class="cta-primary-btn">Migrate Now & Get $0.20 Credit</a>
+    <a href="https://apivale.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-migrate-owl-alpha-to-longcat-2-0" class="cta-secondary-btn">Try LongCat-2.0 in Playground</a>
   </div>
 </div>
 

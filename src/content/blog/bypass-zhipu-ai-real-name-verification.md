@@ -134,8 +134,8 @@ main();
   <h4 class="cta-card-title">🛡️ Call Zhipu GLM Models without KYC Limits</h4>
   <p class="cta-card-text">Ditch +86 phone verifications and Chinese ID cards. Connect GLM-5.2 (at just $0.50/1M input and $2.50/1M output—saving up to 64% over official rates), GPT-5.5, Claude 4 Sonnet, and DeepSeek V4 to Cursor, Cline, or your backend app using APIVALE. Pay globally with Stripe or cryptocurrency. Sign up now and get $0.20 free starting credits.</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up" class="cta-primary-btn">Bypass KYC & Get Free Key</a>
-    <a href="https://apivale.com/docs" class="cta-secondary-btn">Integration Docs</a>
+    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=bypass-zhipu-ai-real-name-verification" class="cta-primary-btn">Bypass KYC & Get Free Key</a>
+    <a href="https://apivale.com/docs?utm_source=apivale_blog&utm_medium=blog&utm_campaign=bypass-zhipu-ai-real-name-verification" class="cta-secondary-btn">Integration Docs</a>
   </div>
 </div>
 

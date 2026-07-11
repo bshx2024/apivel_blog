@@ -46,8 +46,8 @@ In this guide, we break down the exact token math, compare the hidden costs of a
   </div>
 
   <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-    <a href="https://apivale.com/sign-in?redirect=%2Fplayground&utm_source=blog&utm_medium=cursor_quick_config" style="background: linear-gradient(90deg, #6366f1, #3b82f6); color: #ffffff !important; font-weight: 600; font-size: 0.85rem; padding: 0.6rem 1.25rem; border-radius: 6px; text-decoration: none !important; transition: transform 0.2s; display: inline-block; box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);">Get API Key & Free Credit</a>
-    <a href="https://apivale.com/playground" style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); color: #e5e7eb !important; font-weight: 600; font-size: 0.85rem; padding: 0.6rem 1.25rem; border-radius: 6px; text-decoration: none !important; display: inline-block;">Try Online Playground</a>
+    <a href="https://apivale.com/sign-in?redirect=%2Fplayground&utm_source=apivale_blog&utm_medium=blog&utm_campaign=cursor-pro-vs-own-api-key" style="background: linear-gradient(90deg, #6366f1, #3b82f6); color: #ffffff !important; font-weight: 600; font-size: 0.85rem; padding: 0.6rem 1.25rem; border-radius: 6px; text-decoration: none !important; transition: transform 0.2s; display: inline-block; box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);">Get API Key & Free Credit</a>
+    <a href="https://apivale.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=cursor-pro-vs-own-api-key" style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); color: #e5e7eb !important; font-weight: 600; font-size: 0.85rem; padding: 0.6rem 1.25rem; border-radius: 6px; text-decoration: none !important; display: inline-block;">Try Online Playground</a>
   </div>
 </div>
 
@@ -198,8 +198,8 @@ getUsage();
   <h4 class="cta-card-title">💻 Switch to APIVALE for Cursor and Cut Costs</h4>
   <p class="cta-card-text">Stop getting throttled by subscription limits. Connect Claude 3.5 Sonnet, DeepSeek V4, and GPT-4o to Cursor using your own API keys via APIVALE. Enjoy wholesale token pricing, zero rate-limiting, and standard international payment methods like Stripe. Sign up today and get $0.20 free starting credits.</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up" class="cta-primary-btn">Get Free API Key ($0.20 Credit)</a>
-    <a href="https://apivale.com/docs" class="cta-secondary-btn">Integration Docs</a>
+    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=cursor-pro-vs-own-api-key" class="cta-primary-btn">Get Free API Key ($0.20 Credit)</a>
+    <a href="https://apivale.com/docs?utm_source=apivale_blog&utm_medium=blog&utm_campaign=cursor-pro-vs-own-api-key" class="cta-secondary-btn">Integration Docs</a>
   </div>
 </div>
 
