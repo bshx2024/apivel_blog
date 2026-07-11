@@ -127,6 +127,7 @@ function formatDate(date: Date) {
 			const isZhipu = /zhipu|glm|智谱/i.test(docText);
 			const isDeepSeek = /deepseek|hunyuan|混元/i.test(docText);
 			const isCursor = /cursor|composer|cline|api key/i.test(docText);
+			const isGptCost = /gpt-5\.6|token cost|api cost|tier routing|prompt caching|luna|terra|sol/i.test(docText);
 
 			// Detect Browser Language
 			const userLang = navigator.language || navigator.userLanguage || 'en';
@@ -166,7 +167,11 @@ function formatDate(date: Date) {
 						utmCampaign = 'default';
 					}
 				} else {
-					if (isZhipu) {
+					if (isGptCost) {
+						title = 'Route GPT-5.6 Smarter, Pay Less';
+						desc = 'Stop routing everything to Sol. Use APIVALE to dynamically switch between Luna, Terra, and Sol — plus Claude and DeepSeek — from a single API key.';
+						utmCampaign = 'gpt56_cost';
+					} else if (isZhipu) {
 						title = 'Bypass Zhipu KYC Limits';
 						desc = 'Ditch +86 phone and ID requirements. Call GLM-4/5.2 globally. Sign up with GitHub for $0.20 free credit.';
 						utmCampaign = 'zhipu_bypass';
@@ -236,7 +241,11 @@ function formatDate(date: Date) {
 						utmCampaign = 'default';
 					}
 				} else {
-					if (isZhipu) {
+					if (isGptCost) {
+						title = 'Cut Your GPT-5.6 Bill by 8x';
+						desc = 'Route simple tasks to Luna ($1/M), keep complex reasoning on Sol ($5/M). One APIVALE key, 10+ models, real-time cost tracking. Get $0.20 free to start.';
+						utmCampaign = 'gpt56_cost';
+					} else if (isZhipu) {
 						title = 'Bypass Zhipu AI KYC Today';
 						desc = 'Get $0.20 starting bonus upon GitHub registration. Test GLM-4 and GLM-5.2 in our online playground without any Chinese phone verification.';
 						utmCampaign = 'zhipu_bypass';
