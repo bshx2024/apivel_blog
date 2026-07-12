@@ -71,6 +71,12 @@ To access the production API limits (high RPM/TPM), you must upload corporate ve
 
 ---
 
+<div class="my-4 border-l-4 border-indigo-500 bg-indigo-950 p-4 rounded-r-md">
+  <p class="text-sm text-indigo-200">
+    <strong>Looking for more options?</strong> If you want a unified multi-LLM router that supports LongCat-2.0 alongside models like Claude 3.5 Sonnet and DeepSeek V4 with reliable global payments, check out our comparison of the best <a href="/blog/openrouter-alternatives/" class="underline font-semibold text-indigo-100">OpenRouter Alternatives</a>.
+  </p>
+</div>
+
 ## Integrating LongCat-2.0 into IDEs: Cline Configuration Guide
 
 Cline (formerly Prevail) is a powerful VS Code extension for autonomous engineering. You can configure it to use LongCat-2.0 via APIVALE in seconds:
