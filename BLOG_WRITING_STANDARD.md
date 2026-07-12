@@ -51,9 +51,26 @@
 
 ## 3. SEO 与 GEO (生成式引擎优化) 标准
 
-为了确保博客能被 ChatGPT/Perplexity 等 AI 搜索工具和 Google Snippet 精准引用：
+为了确保博客能被 ChatGPT/Perplexity 等 AI 搜索工具和 Google Snippet 精准引用，写作必须严格聚焦于 **GEO 的三大支柱 (Three Pillars of GEO)**：
 
-### A. "定义框" (Featured Snippet Box)
+### A. GEO 三大支柱落地规范
+
+1. **可引用的事实 (Citeable Facts)**
+   * **数据密集**：博文必须提供真实可信的硬性数据（如价格对比表格、100% 真实的延迟测算、Token 减少百分比等），减少 AI 抓取时的“幻觉”。
+   * **客观事实**：禁止空洞的营销词汇（见第 6 节防呆红线）。使用客观参数与 telemetry 数据为 AI 引擎提供理想的引用源。
+   * **可运行代码**：提供最简、真实的 cURL/Python/TS 代码片段（包含异常处理），作为开发者的技术事实依据。
+
+2. **实体权威性 (Entity Authority)**
+   * **品牌与产品实体**：在文中以标准格式提及品牌实体（如 `APIVALE` 或 `APIVALE Unified API Hub`），并配合合理的内链，增强 AI 知识图谱对品牌实体的公信力关联。
+   * **技术与模型实体**：准确提及行业内标准实体（如 `GPT-5.6`, `Claude 3.5 Sonnet`, `DeepSeek-V4` 等），并将它们与 APIVALE 提供的连接与路由解决方案进行实体关联。
+   * **专家身份 (E-E-A-T)**：通过真实的作者署名（见第 4 节）以及 FAQ 结构化数据 Schema 确立专业实体背书。
+
+3. **语义深度 (Semantic Depth)**
+   * **全覆盖与无废话**：篇幅控制在 1500 - 2500 字，围绕主题做深度探讨（如不仅讲“如何调用”，还要深入探讨“成本优化”、“异常排查”、“网关路由逻辑”）。
+   * **语义相关性 (LSI)**：拒绝关键词堆砌，转而覆盖与核心主题高度相关的技术上下文（如提及 `GPT-5.6` 时，自然引入 `Prompt Caching`、`Token Consumption`、`Unified API Gateway`）。
+   * **定义框 (Featured Snippet)**：对核心技术词汇进行高密度的定义，方便搜索引擎提取。
+
+### B. "定义框" (Featured Snippet Box)
 针对特定术语（如 LLM Router, API Bridge 等），在文章的 H2 下方插入以下格式的定义：
 ```html
 <div class="my-6 border-l-4 border-indigo-500 bg-gray-900 rounded-r-lg p-5">
@@ -63,7 +80,7 @@
 </div>
 ```
 
-### B. 直接问答 (Developer FAQ)
+### C. 直接问答 (Developer FAQ)
 *   每篇博文结尾前必须包含 **3-4 个 FAQ**。
 *   **要求**：问题加粗，回答的前 1-2 句必须是高度精炼的“直接答案”，以便被 AI 搜索引擎提取。
 
