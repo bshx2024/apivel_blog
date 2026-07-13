@@ -110,7 +110,6 @@ When evaluating the best OpenRouter alternatives, comparing cost per million tok
 </div>
 </div>
 </div>
-
 <style>
 .cost-calculator-widget {
 background: rgba(15, 23, 42, 0.85);
@@ -339,7 +338,6 @@ transform: translateY(-1px);
 box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
 }
 </style>
-
 <script is:inline>
 (function() {
   const rates = {
@@ -360,47 +358,35 @@ box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
       apivaleInput: 0.14, apivaleOutput: 0.55
     }
   };
-
   const modelSelect = document.getElementById('calc-model');
   const inputSlider = document.getElementById('input-tokens-slider');
   const outputSlider = document.getElementById('output-tokens-slider');
-
   const inputValDisp = document.getElementById('input-tokens-val');
   const outputValDisp = document.getElementById('output-tokens-val');
-
   const orCostDisp = document.getElementById('or-cost-val');
   const apivaleCostDisp = document.getElementById('apivale-cost-val');
   const savingsPctDisp = document.getElementById('savings-pct-val');
   const savingsAmtDisp = document.getElementById('savings-amt-val');
-
   if (!modelSelect || !inputSlider || !outputSlider) return;
-
   function calculate() {
     const model = modelSelect.value;
     const inputTokens = parseFloat(inputSlider.value);
     const outputTokens = parseFloat(outputSlider.value);
-    
     inputValDisp.textContent = inputSlider.value;
     outputValDisp.textContent = outputSlider.value;
-    
     const rate = rates[model];
     const orCost = (inputTokens * rate.orInput) + (outputTokens * rate.orOutput);
     const apivaleCost = (inputTokens * rate.apivaleInput) + (outputTokens * rate.apivaleOutput);
-    
     const savings = orCost - apivaleCost;
     const savingsPct = orCost > 0 ? (savings / orCost) * 100 : 0;
-    
     orCostDisp.textContent = '$' + orCost.toFixed(2);
     apivaleCostDisp.textContent = '$' + apivaleCost.toFixed(2);
     savingsPctDisp.textContent = savingsPct.toFixed(1) + '%';
     savingsAmtDisp.textContent = '$' + savings.toFixed(2) + ' / mo';
   }
-
   modelSelect.addEventListener('change', calculate);
   inputSlider.addEventListener('input', calculate);
   outputSlider.addEventListener('input', calculate);
-
-  // Initial calculation
   calculate();
 })();
 </script>
