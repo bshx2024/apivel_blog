@@ -48,11 +48,11 @@ const resolvedCanonical = canonicalUrl || new URL(Astro.url.pathname, Astro.site
 		<meta property="og:image" content={image} />
 		
 		<!-- Twitter -->
-		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:url" content={resolvedCanonical} />
-		<meta property="twitter:title" content={siteTitle} />
-		<meta property="twitter:description" content={description} />
-		<meta property="twitter:image" content={image} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={resolvedCanonical} />
+		<meta name="twitter:title" content={siteTitle} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={image} />
 
 		<!-- Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
