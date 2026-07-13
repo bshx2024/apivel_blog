@@ -56,6 +56,7 @@ When evaluating the best OpenRouter alternatives, comparing cost per million tok
 | **Meituan LongCat-2.0** | N/A (Retired) | **$0.14 / $0.55** | **Free Context Cache Hits** |
 
 <div class="cost-calculator-widget">
+<form id="savings-calculator-form" onsubmit="return false;">
 <div class="widget-header">
 <span class="widget-badge">Interactive Savings Estimate</span>
 <h3 class="widget-title">Calculate Your Monthly API Savings</h3>
@@ -77,14 +78,20 @@ When evaluating the best OpenRouter alternatives, comparing cost per million tok
 <div class="calc-input-group">
 <div class="slider-label-row">
 <label for="input-tokens-slider">Monthly Input Tokens</label>
-<span class="value-display"><span id="input-tokens-val">15</span>M tokens</span>
+<div class="input-with-unit">
+<input type="number" id="input-tokens-num" min="1" max="100" value="15" class="custom-number-input" />
+<span class="unit-text">M tokens</span>
+</div>
 </div>
 <input type="range" id="input-tokens-slider" min="1" max="100" value="15" class="custom-slider" />
 </div>
 <div class="calc-input-group">
 <div class="slider-label-row">
 <label for="output-tokens-slider">Monthly Output Tokens</label>
-<span class="value-display"><span id="output-tokens-val">5</span>M tokens</span>
+<div class="input-with-unit">
+<input type="number" id="output-tokens-num" min="1" max="100" value="5" class="custom-number-input" />
+<span class="unit-text">M tokens</span>
+</div>
 </div>
 <input type="range" id="output-tokens-slider" min="1" max="100" value="5" class="custom-slider" />
 </div>
@@ -109,6 +116,7 @@ When evaluating the best OpenRouter alternatives, comparing cost per million tok
 </div>
 </div>
 </div>
+</form>
 </div>
 <style>
 .cost-calculator-widget {
@@ -212,13 +220,39 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 }
-.value-display {
+.input-with-unit {
+display: flex;
+align-items: center;
+background: #1e293b;
+border: 1px solid rgba(255, 255, 255, 0.15);
+border-radius: 6px;
+padding: 2px 8px;
+}
+.custom-number-input {
+background: transparent;
+border: none;
+color: #6366f1;
+font-family: inherit;
 font-size: 0.85rem;
 font-weight: 700;
+width: 32px;
+text-align: right;
+outline: none;
+margin-right: 4px;
+padding: 0;
+}
+.custom-number-input::-webkit-outer-spin-button,
+.custom-number-input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+.custom-number-input {
+-moz-appearance: textfield;
+}
+.unit-text {
+font-size: 0.85rem;
 color: #6366f1;
-background: rgba(99, 102, 241, 0.12);
-padding: 2px 8px;
-border-radius: 6px;
+font-weight: 700;
 }
 .custom-slider {
 -webkit-appearance: none;
@@ -361,19 +395,17 @@ box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
   const modelSelect = document.getElementById('calc-model');
   const inputSlider = document.getElementById('input-tokens-slider');
   const outputSlider = document.getElementById('output-tokens-slider');
-  const inputValDisp = document.getElementById('input-tokens-val');
-  const outputValDisp = document.getElementById('output-tokens-val');
+  const inputNum = document.getElementById('input-tokens-num');
+  const outputNum = document.getElementById('output-tokens-num');
   const orCostDisp = document.getElementById('or-cost-val');
   const apivaleCostDisp = document.getElementById('apivale-cost-val');
   const savingsPctDisp = document.getElementById('savings-pct-val');
   const savingsAmtDisp = document.getElementById('savings-amt-val');
-  if (!modelSelect || !inputSlider || !outputSlider) return;
+  if (!modelSelect || !inputSlider || !outputSlider || !inputNum || !outputNum) return;
   function calculate() {
     const model = modelSelect.value;
     const inputTokens = parseFloat(inputSlider.value);
     const outputTokens = parseFloat(outputSlider.value);
-    inputValDisp.textContent = inputSlider.value;
-    outputValDisp.textContent = outputSlider.value;
     const rate = rates[model];
     const orCost = (inputTokens * rate.orInput) + (outputTokens * rate.orOutput);
     const apivaleCost = (inputTokens * rate.apivaleInput) + (outputTokens * rate.apivaleOutput);
@@ -384,9 +416,29 @@ box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
     savingsPctDisp.textContent = savingsPct.toFixed(1) + '%';
     savingsAmtDisp.textContent = '$' + savings.toFixed(2) + ' / mo';
   }
+  inputSlider.addEventListener('input', function() {
+    inputNum.value = inputSlider.value;
+    calculate();
+  });
+  inputNum.addEventListener('input', function() {
+    let val = parseInt(inputNum.value) || 1;
+    if (val < 1) val = 1;
+    if (val > 100) val = 100;
+    inputSlider.value = val;
+    calculate();
+  });
+  outputSlider.addEventListener('input', function() {
+    outputNum.value = outputSlider.value;
+    calculate();
+  });
+  outputNum.addEventListener('input', function() {
+    let val = parseInt(outputNum.value) || 1;
+    if (val < 1) val = 1;
+    if (val > 100) val = 100;
+    outputSlider.value = val;
+    calculate();
+  });
   modelSelect.addEventListener('change', calculate);
-  inputSlider.addEventListener('input', calculate);
-  outputSlider.addEventListener('input', calculate);
   calculate();
 })();
 </script>
