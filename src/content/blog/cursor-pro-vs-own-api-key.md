@@ -24,7 +24,7 @@ In this guide, we break down the exact token math, compare the hidden costs of a
   </div>
   
   <ol style="margin: 0 0 1.25rem 1.25rem; padding: 0; color: #d1d5db; font-size: 0.9rem; line-height: 1.6;">
-    <li style="margin-bottom: 0.5rem;">Get a free API Key with <strong>$0.20 starting credit</strong> (no KYC) by signing up via GitHub.</li>
+    <li style="margin-bottom: 0.5rem;">Get a free API Key with <strong>$1.00 starting credit</strong> (no KYC) by signing up via GitHub.</li>
     <li style="margin-bottom: 0.5rem;">Open Cursor, go to <strong>Settings -> Models -> OpenAI</strong>, and toggle <strong>"Override Base URL"</strong>.</li>
     <li style="margin-bottom: 0.5rem;">Enter the Base URL and your APIVALE key:</li>
   </ol>
@@ -196,9 +196,9 @@ getUsage();
 
 <div class="cta-card">
   <h4 class="cta-card-title">💻 Switch to APIVALE for Cursor and Cut Costs</h4>
-  <p class="cta-card-text">Stop getting throttled by subscription limits. Connect Claude 3.5 Sonnet, DeepSeek V4, and GPT-4o to Cursor using your own API keys via APIVALE. Enjoy wholesale token pricing, zero rate-limiting, and standard international payment methods like Stripe. Sign up today and get $0.20 free starting credits.</p>
+  <p class="cta-card-text">Stop getting throttled by subscription limits. Connect Claude 3.5 Sonnet, DeepSeek V4, and GPT-4o to Cursor using your own API keys via APIVALE. Enjoy wholesale token pricing, zero rate-limiting, and standard international payment methods like Stripe. Sign up today and get $1.00 free starting credits.</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=cursor-pro-vs-own-api-key" class="cta-primary-btn">Get Free API Key ($0.20 Credit)</a>
+    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=cursor-pro-vs-own-api-key" class="cta-primary-btn">Get Free API Key ($1.00 Credit)</a>
     <a href="https://apivale.com/docs?utm_source=apivale_blog&utm_medium=blog&utm_campaign=cursor-pro-vs-own-api-key" class="cta-secondary-btn">Integration Docs</a>
   </div>
 </div>

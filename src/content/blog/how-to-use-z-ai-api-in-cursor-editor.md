@@ -129,9 +129,9 @@ if __name__ == "__main__":
 
 <div class="cta-card">
   <h4 class="cta-card-title">💻 Integrate Z.ai GLM-5.2 in Cursor Instantly</h4>
-  <p class="cta-card-text">Connect Zhipu models to Cursor or VS Code in seconds without custom JWT SDK auth wrappers. Access GPT-5.5, Claude 4 Sonnet, DeepSeek V4, and GLM-5.2 through APIVALE's standard OpenAI-compatible base URL. Sign up today and get $0.20 free starting credits.</p>
+  <p class="cta-card-text">Connect Zhipu models to Cursor or VS Code in seconds without custom JWT SDK auth wrappers. Access GPT-5.5, Claude 4 Sonnet, DeepSeek V4, and GLM-5.2 through APIVALE's standard OpenAI-compatible base URL. Sign up today and get $1.00 free starting credits.</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-use-z-ai-api-in-cursor-editor" class="cta-primary-btn">Get Free API Key ($0.20 Credit)</a>
+    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-use-z-ai-api-in-cursor-editor" class="cta-primary-btn">Get Free API Key ($1.00 Credit)</a>
     <a href="https://apivale.com/docs?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-use-z-ai-api-in-cursor-editor" class="cta-secondary-btn">Integration Docs</a>
   </div>
 </div>

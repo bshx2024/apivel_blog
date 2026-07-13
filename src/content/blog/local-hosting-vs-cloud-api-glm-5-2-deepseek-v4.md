@@ -237,7 +237,7 @@ runInference();
 
 Avoid hardware depreciation and complex setup loops. Get instant access to **GLM-5.2**, **DeepSeek V4 Pro**, and **DeepSeek V4 Flash** via APIVALE.
 
-*   **Free Credits**: Get $0.20 free credit instantly upon registration (no credit card required).
+*   **Free Credits**: Get $1.00 free credit instantly upon registration (no credit card required).
 *   **PayPal Integrated**: Top up instantly and buy on-demand as needed using PayPal.
 *   **Zero KYC**: Start building immediately without phone number or identity verifications.
 

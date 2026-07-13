@@ -216,7 +216,7 @@ npx @anthropic-ai/claude-code
 
 <div class="cta-card">
   <h4 class="cta-card-title">⚡ Power Up Claude Code on APIVALE</h4>
-  <p class="cta-card-text">Ditch regional billing limits and low-concurrency API tiers. Use APIVALE to route your Claude Code terminal agents, Cursor editor configurations, or backend services through our high-performance global network. Optimize your spending with 90% prompt caching discounts and built-in Stripe payment support. Create an account today and get $0.20 free start credits.</p>
+  <p class="cta-card-text">Ditch regional billing limits and low-concurrency API tiers. Use APIVALE to route your Claude Code terminal agents, Cursor editor configurations, or backend services through our high-performance global network. Optimize your spending with 90% prompt caching discounts and built-in Stripe payment support. Create an account today and get $1.00 free start credits.</p>
   <div class="cta-card-actions">
     <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-set-up-claude-code-cli-with-custom-base-url" class="cta-primary-btn">Get Free API Key Now</a>
     <a href="https://apivale.com/api/?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-set-up-claude-code-cli-with-custom-base-url" class="cta-secondary-btn">Check Pricing Plans</a>
