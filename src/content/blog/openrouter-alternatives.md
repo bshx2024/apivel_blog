@@ -55,7 +55,361 @@ When evaluating the best OpenRouter alternatives, comparing cost per million tok
 | **Zhipu GLM-5.2** | Connection Unstable | **$0.50 / $2.50** | **100% stable routing** |
 | **Meituan LongCat-2.0** | N/A (Retired) | **$0.14 / $0.55** | **Free Context Cache Hits** |
 
----
+<div class="cost-calculator-widget">
+  <div class="widget-header">
+    <span class="widget-badge">Interactive Savings Estimate</span>
+    <h3 class="widget-title">Calculate Your Monthly API Savings</h3>
+    <p class="widget-subtitle">Select your model and monthly volume to estimate savings by switching from OpenRouter to APIVALE</p>
+  </div>
+  
+  <div class="widget-grid">
+    <div class="calculator-inputs">
+      <div class="calc-input-group">
+        <label for="calc-model">Model Tier</label>
+        <div class="select-wrapper">
+          <select id="calc-model">
+            <option value="deepseek" selected>DeepSeek-R1 (High Volume / Low Cost)</option>
+            <option value="claude">Claude 3.5 Sonnet</option>
+            <option value="glm">Zhipu GLM-5.2</option>
+            <option value="longcat">Meituan LongCat-2.0</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="calc-input-group">
+        <div class="slider-label-row">
+          <label for="input-tokens-slider">Monthly Input Tokens</label>
+          <span class="value-display"><span id="input-tokens-val">15</span>M tokens</span>
+        </div>
+        <input type="range" id="input-tokens-slider" min="1" max="100" value="15" class="custom-slider" />
+      </div>
+      
+      <div class="calc-input-group">
+        <div class="slider-label-row">
+          <label for="output-tokens-slider">Monthly Output Tokens</label>
+          <span class="value-display"><span id="output-tokens-val">5</span>M tokens</span>
+        </div>
+        <input type="range" id="output-tokens-slider" min="1" max="100" value="5" class="custom-slider" />
+      </div>
+    </div>
+    
+    <div class="calculator-results">
+      <div class="cost-row">
+        <div class="cost-label">OpenRouter Cost (Baseline)</div>
+        <div class="cost-value or-cost" id="or-cost-val">$19.20</div>
+      </div>
+      
+      <div class="cost-row">
+        <div class="cost-label">APIVALE Cost</div>
+        <div class="cost-value apivale-cost" id="apivale-cost-val">$4.85</div>
+      </div>
+      
+      <div class="savings-card">
+        <div class="savings-percentage-row">
+          <span class="savings-badge">Total Savings</span>
+          <span class="savings-percentage" id="savings-pct-val">74.7%</span>
+        </div>
+        <div class="savings-amount" id="savings-amt-val">$14.35 / mo</div>
+        <p class="savings-note">⚡ Fully compatible with OpenRouter SDKs! PayPal & credit card payment supported.</p>
+        <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=openrouter-alternatives-calc" class="calc-cta-btn">Claim Free $1.00 Credit</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.cost-calculator-widget {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 24px;
+  margin: 32px 0;
+  color: #f1f5f9;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+.widget-header {
+  margin-bottom: 24px;
+}
+.widget-badge {
+  background: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%);
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+.widget-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+.widget-subtitle {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin: 0;
+  line-height: 1.4;
+}
+.widget-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 28px;
+}
+@media (max-width: 768px) {
+  .widget-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+.calculator-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+}
+.calc-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.calc-input-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  margin: 0;
+}
+.select-wrapper {
+  position: relative;
+  width: 100%;
+}
+.select-wrapper select {
+  width: 100%;
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 10px 32px 10px 16px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.select-wrapper select:focus {
+  border-color: #6366f1;
+}
+.select-wrapper::after {
+  content: '▼';
+  font-size: 0.65rem;
+  color: #94a3b8;
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.slider-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.value-display {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #6366f1;
+  background: rgba(99, 102, 241, 0.12);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+.custom-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: #1e293b;
+  outline: none;
+  margin: 8px 0;
+}
+.custom-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #6366f1;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.4);
+  transition: transform 0.1s, background-color 0.2s;
+}
+.custom-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.25);
+  background: #4f46e5;
+}
+.calculator-results {
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.cost-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+  padding-bottom: 10px;
+}
+.cost-label {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+.cost-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.or-cost {
+  color: #f43f5e;
+}
+.apivale-cost {
+  color: #f1f5f9;
+  font-weight: 700;
+}
+.savings-card {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.05) 100%);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.05);
+}
+.savings-percentage-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.savings-badge {
+  background: #10b981;
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.savings-percentage {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #10b981;
+}
+.savings-amount {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+.savings-note {
+  font-size: 0.72rem;
+  color: #a7f3d0;
+  margin: 0 0 14px 0;
+  line-height: 1.4;
+}
+.calc-cta-btn {
+  display: block;
+  background: #10b981;
+  color: #ffffff !important;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none !important;
+  padding: 10px 16px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  transition: all 0.2s;
+}
+.calc-cta-btn:hover {
+  background: #059669;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+}
+</style>
+
+<script is:inline>
+(function() {
+  const rates = {
+    deepseek: {
+      orInput: 0.55, orOutput: 2.19,
+      apivaleInput: 0.14, apivaleOutput: 0.55
+    },
+    claude: {
+      orInput: 3.00, orOutput: 15.00,
+      apivaleInput: 2.80, apivaleOutput: 14.00
+    },
+    glm: {
+      orInput: 1.00, orOutput: 3.00,
+      apivaleInput: 0.50, apivaleOutput: 2.50
+    },
+    longcat: {
+      orInput: 0.55, orOutput: 2.19,
+      apivaleInput: 0.14, apivaleOutput: 0.55
+    }
+  };
+
+  const modelSelect = document.getElementById('calc-model');
+  const inputSlider = document.getElementById('input-tokens-slider');
+  const outputSlider = document.getElementById('output-tokens-slider');
+
+  const inputValDisp = document.getElementById('input-tokens-val');
+  const outputValDisp = document.getElementById('output-tokens-val');
+
+  const orCostDisp = document.getElementById('or-cost-val');
+  const apivaleCostDisp = document.getElementById('apivale-cost-val');
+  const savingsPctDisp = document.getElementById('savings-pct-val');
+  const savingsAmtDisp = document.getElementById('savings-amt-val');
+
+  if (!modelSelect || !inputSlider || !outputSlider) return;
+
+  function calculate() {
+    const model = modelSelect.value;
+    const inputTokens = parseFloat(inputSlider.value);
+    const outputTokens = parseFloat(outputSlider.value);
+    
+    inputValDisp.textContent = inputSlider.value;
+    outputValDisp.textContent = outputSlider.value;
+    
+    const rate = rates[model];
+    const orCost = (inputTokens * rate.orInput) + (outputTokens * rate.orOutput);
+    const apivaleCost = (inputTokens * rate.apivaleInput) + (outputTokens * rate.apivaleOutput);
+    
+    const savings = orCost - apivaleCost;
+    const savingsPct = orCost > 0 ? (savings / orCost) * 100 : 0;
+    
+    orCostDisp.textContent = '$' + orCost.toFixed(2);
+    apivaleCostDisp.textContent = '$' + apivaleCost.toFixed(2);
+    savingsPctDisp.textContent = savingsPct.toFixed(1) + '%';
+    savingsAmtDisp.textContent = '$' + savings.toFixed(2) + ' / mo';
+  }
+
+  modelSelect.addEventListener('change', calculate);
+  inputSlider.addEventListener('input', calculate);
+  outputSlider.addEventListener('input', calculate);
+
+  // Initial calculation
+  calculate();
+})();
+</script>
 
 <div class="cta-card">
   <h4 class="cta-card-title">⚡ Switch to APIVALE in 30 Seconds</h4>
