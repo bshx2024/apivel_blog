@@ -16,12 +16,12 @@ At the same time, lightweight models like [MiniCPM5-1B](https://github.com/OpenB
 
 The solution is establishing a resilient **infrastructure for hybrid LLM agent deployments**: routing low-complexity pre-processing, text cleaning, and routing tasks to a local MiniCPM5-1B instance (at $0 cost), while falling back to premium reasoning models via **APIVALE** only when complex decisions are required.
 
-![Hybrid LLM Agent Architecture routing from local edge MiniCPM5-1B to APIVALE cloud fallback models](/blog/minicpm-hybrid-agent.png)
+<img src="/blog/minicpm-hybrid-agent.png" alt="Hybrid LLM Agent Architecture routing from local edge MiniCPM5-1B to APIVALE cloud fallback models" width="800" height="420" loading="lazy" style="display: block; margin: 2.5rem auto 0.75rem; border-radius: 8px; border: 1px solid var(--surface-border); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);" />
 *Architecture flow of the local edge pre-processing layer routing to APIVALE cloud fallback models.*
 
 ---
 
-### Quick Start: Routing to Local and APIVALE Endpoints
+## Quick Start: Routing to Local and APIVALE Endpoints
 
 Because APIVALE uses a standardized OpenAI-compatible format, switching between your local edge model and APIVALE’s cloud gateway requires nothing more than changing your `baseURL` and model string in your SDK:
 
@@ -59,6 +59,397 @@ To understand the benefits of a hybrid approach, let’s compare the three main 
   <h4 class="mt-1 text-md font-semibold text-white">Hybrid Agent Architecture</h4>
   <p class="mt-2 text-sm text-gray-300">Hybrid Agent Architecture is an LLM orchestration pattern that routes low-tier tasks (such as token filtering, keyword classification, and initial formatting) to local edge models, and escalates high-complexity prompts to cloud-hosted reasoning models via a low-latency gateway.</p>
 </div>
+
+---
+
+## Interactive Cost Savings Calculator
+
+Evaluate the economic feasibility of establishing a hybrid agent infrastructure. Adjust the sliders below to estimate the monthly savings by routing simple agent queries to local models while keeping APIVALE for cloud fallback:
+
+<div class="cost-calculator-widget">
+<form id="savings-calculator-form" onsubmit="return false;">
+<div class="widget-header">
+<span class="widget-badge">Hybrid ROI Calculator</span>
+<h3 class="widget-title">Calculate Your Monthly Agentic Savings</h3>
+<p class="widget-subtitle">Specify your agent usage parameters below to compare Pure Cloud vs. Hybrid (Local + APIVALE) deployments</p>
+</div>
+<div class="widget-grid">
+<div class="calculator-inputs">
+<div class="calc-input-group">
+<label for="calc-model">Cloud Fallback Model</label>
+<div class="select-wrapper">
+<select id="calc-model">
+<option value="claude" selected>Claude 3.5 Sonnet ($6.00/M blended)</option>
+<option value="gpt4o">GPT-4o ($4.00/M blended)</option>
+<option value="deepseek">DeepSeek V4 ($0.168/M blended)</option>
+</select>
+</div>
+</div>
+<div class="calc-input-group">
+<div class="slider-label-row">
+<label for="queries-slider">Daily Agent Queries</label>
+<div class="input-with-unit">
+<input type="number" id="queries-num" min="10" max="2000" value="200" class="custom-number-input" />
+<span class="unit-text">runs/day</span>
+</div>
+</div>
+<input type="range" id="queries-slider" min="10" max="2000" value="200" class="custom-slider" />
+</div>
+<div class="calc-input-group">
+<div class="slider-label-row">
+<label for="tokens-slider">Avg. Tokens per Query</label>
+<div class="input-with-unit">
+<input type="number" id="tokens-num" min="1000" max="100000" value="10000" step="500" class="custom-number-input" />
+<span class="unit-text">tokens</span>
+</div>
+</div>
+<input type="range" id="tokens-slider" min="1000" max="100000" value="10000" step="500" class="custom-slider" />
+</div>
+<div class="calc-input-group">
+<div class="slider-label-row">
+<label for="ratio-slider">Local Routing Ratio (MiniCPM)</label>
+<div class="input-with-unit">
+<input type="number" id="ratio-num" min="10" max="95" value="80" class="custom-number-input" />
+<span class="unit-text">% local</span>
+</div>
+</div>
+<input type="range" id="ratio-slider" min="10" max="95" value="80" class="custom-slider" />
+</div>
+</div>
+<div class="calculator-results">
+<div class="cost-row">
+<div class="cost-label">Pure Cloud Cost (Baseline)</div>
+<div class="cost-value or-cost" id="baseline-cost-val">$360.00</div>
+</div>
+<div class="cost-row">
+<div class="cost-label">Hybrid Cost (Local + APIVALE)</div>
+<div class="cost-value apivale-cost" id="hybrid-cost-val">$72.00</div>
+</div>
+<div class="savings-card">
+<div class="savings-percentage-row">
+<span class="savings-badge">Total Cost Reduced</span>
+<span class="savings-percentage" id="savings-pct-val">80.0%</span>
+</div>
+<div class="savings-amount" id="savings-amt-val">$288.00 / mo</div>
+<p class="savings-note">⚡ Fully compatible with Ollama/llama.cpp SDK configurations. PayPal & crypto billing supported.</p>
+<a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=hybrid-llm-calc" class="calc-cta-btn">Claim Free $1.00 Credit</a>
+</div>
+</div>
+</div>
+</form>
+</div>
+
+<style>
+.cost-calculator-widget {
+background: rgba(15, 23, 42, 0.85);
+backdrop-filter: blur(12px);
+border: 1px solid rgba(255, 255, 255, 0.1);
+border-radius: 16px;
+padding: 24px;
+margin: 32px 0;
+color: #f1f5f9;
+box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+.widget-header {
+margin-bottom: 24px;
+}
+.widget-badge {
+background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+color: #ffffff;
+font-size: 0.7rem;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: 0.05em;
+padding: 4px 10px;
+border-radius: 20px;
+display: inline-block;
+margin-bottom: 8px;
+}
+.widget-title {
+font-size: 1.35rem;
+font-weight: 700;
+margin: 0 0 6px 0;
+color: #ffffff;
+}
+.widget-subtitle {
+font-size: 0.85rem;
+color: #94a3b8;
+margin: 0;
+line-height: 1.4;
+}
+.widget-grid {
+display: grid;
+grid-template-columns: 1.2fr 1fr;
+gap: 32px;
+}
+.calculator-inputs {
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+.calc-input-group {
+display: flex;
+flex-direction: column;
+gap: 8px;
+}
+.calc-input-group label {
+font-size: 0.85rem;
+font-weight: 600;
+color: #e2e8f0;
+}
+.select-wrapper {
+position: relative;
+}
+.select-wrapper select {
+width: 100%;
+background: rgba(30, 41, 59, 0.8);
+border: 1px solid rgba(255, 255, 255, 0.15);
+border-radius: 8px;
+padding: 10px 14px;
+color: #f1f5f9;
+font-size: 0.9rem;
+cursor: pointer;
+appearance: none;
+-webkit-appearance: none;
+}
+.select-wrapper::after {
+content: '▾';
+position: absolute;
+right: 14px;
+top: 50%;
+transform: translateY(-50%);
+color: #94a3b8;
+pointer-events: none;
+}
+.slider-label-row {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.input-with-unit {
+display: flex;
+align-items: center;
+background: rgba(30, 41, 59, 0.8);
+border: 1px solid rgba(255, 255, 255, 0.1);
+border-radius: 6px;
+padding: 2px 8px;
+}
+.custom-number-input {
+width: 70px;
+background: transparent;
+border: none;
+color: #ffffff;
+font-family: inherit;
+font-size: 0.85rem;
+font-weight: 600;
+text-align: right;
+padding: 4px;
+}
+.custom-number-input:focus {
+outline: none;
+}
+.unit-text {
+font-size: 0.75rem;
+color: #64748b;
+margin-left: 4px;
+}
+.custom-slider {
+width: 100%;
+height: 6px;
+background: #334155;
+border-radius: 3px;
+outline: none;
+-webkit-appearance: none;
+}
+.custom-slider::-webkit-slider-thumb {
+-webkit-appearance: none;
+width: 16px;
+height: 16px;
+border-radius: 50%;
+background: #6366f1;
+cursor: pointer;
+transition: background 0.15s;
+}
+.custom-slider::-webkit-slider-thumb:hover {
+background: #818cf8;
+}
+.calculator-results {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+gap: 16px;
+}
+.cost-row {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px 0;
+border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.cost-label {
+font-size: 0.85rem;
+color: #94a3b8;
+}
+.cost-value {
+font-size: 1.1rem;
+font-weight: 600;
+}
+.or-cost {
+color: #f43f5e;
+}
+.apivale-cost {
+color: #f1f5f9;
+font-weight: 700;
+}
+.savings-card {
+background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.05) 100%);
+border: 1px solid rgba(16, 185, 129, 0.3);
+border-radius: 10px;
+padding: 16px;
+text-align: center;
+position: relative;
+overflow: hidden;
+box-shadow: 0 4px 20px rgba(16, 185, 129, 0.05);
+}
+.savings-percentage-row {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 8px;
+margin-bottom: 6px;
+}
+.savings-badge {
+background: #10b981;
+color: #ffffff;
+font-size: 0.65rem;
+font-weight: 800;
+text-transform: uppercase;
+padding: 2px 6px;
+border-radius: 4px;
+}
+.savings-percentage {
+font-size: 1.4rem;
+font-weight: 800;
+color: #10b981;
+}
+.savings-amount {
+font-size: 1.2rem;
+font-weight: 700;
+color: #ffffff;
+margin-bottom: 8px;
+}
+.savings-note {
+font-size: 0.72rem;
+color: #a7f3d0;
+margin: 0 0 14px 0;
+line-height: 1.4;
+}
+.calc-cta-btn {
+display: block;
+background: #10b981;
+color: #ffffff !important;
+font-size: 0.85rem;
+font-weight: 700;
+text-align: center;
+text-decoration: none !important;
+padding: 10px 16px;
+border-radius: 6px;
+box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+transition: all 0.2s;
+}
+.calc-cta-btn:hover {
+background: #059669;
+transform: translateY(-1px);
+box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+}
+@media (max-width: 640px) {
+.widget-grid {
+grid-template-columns: 1fr;
+gap: 20px;
+}
+}
+</style>
+
+<script is:inline>
+(function() {
+  const modelRates = {
+    claude: 6.00,
+    gpt4o: 4.00,
+    deepseek: 0.168
+  };
+  const modelSelect = document.getElementById('calc-model');
+  const queriesSlider = document.getElementById('queries-slider');
+  const tokensSlider = document.getElementById('tokens-slider');
+  const ratioSlider = document.getElementById('ratio-slider');
+  
+  const queriesNum = document.getElementById('queries-num');
+  const tokensNum = document.getElementById('tokens-num');
+  const ratioNum = document.getElementById('ratio-num');
+  
+  const baselineDisp = document.getElementById('baseline-cost-val');
+  const hybridDisp = document.getElementById('hybrid-cost-val');
+  const savingsPctDisp = document.getElementById('savings-pct-val');
+  const savingsAmtDisp = document.getElementById('savings-amt-val');
+  
+  if (!modelSelect || !queriesSlider || !tokensSlider || !ratioSlider) return;
+  
+  function calculate() {
+    const rate = modelRates[modelSelect.value];
+    const dailyQueries = parseFloat(queriesSlider.value);
+    const tokensPerQuery = parseFloat(tokensSlider.value);
+    const localRatio = parseFloat(ratioSlider.value) / 100;
+    
+    const monthlyTokens = dailyQueries * 30 * tokensPerQuery;
+    const baselineCost = (monthlyTokens / 1000000) * rate;
+    const hybridCost = (monthlyTokens / 1000000) * (1 - localRatio) * rate;
+    const savings = baselineCost - hybridCost;
+    
+    baselineDisp.textContent = '$' + baselineCost.toFixed(2);
+    hybridDisp.textContent = '$' + hybridCost.toFixed(2);
+    savingsPctDisp.textContent = (localRatio * 100).toFixed(0) + '%';
+    savingsAmtDisp.textContent = '$' + savings.toFixed(2) + ' / mo';
+  }
+  
+  queriesSlider.addEventListener('input', function() {
+    queriesNum.value = queriesSlider.value;
+    calculate();
+  });
+  queriesNum.addEventListener('input', function() {
+    let val = parseInt(queriesNum.value) || 10;
+    if (val < 10) val = 10;
+    if (val > 2000) val = 2000;
+    queriesSlider.value = val;
+    calculate();
+  });
+  
+  tokensSlider.addEventListener('input', function() {
+    tokensNum.value = tokensSlider.value;
+    calculate();
+  });
+  tokensNum.addEventListener('input', function() {
+    let val = parseInt(tokensNum.value) || 1000;
+    if (val < 1000) val = 1000;
+    if (val > 100000) val = 100000;
+    tokensSlider.value = val;
+    calculate();
+  });
+  
+  ratioSlider.addEventListener('input', function() {
+    ratioNum.value = ratioSlider.value;
+    calculate();
+  });
+  ratioNum.addEventListener('input', function() {
+    let val = parseInt(ratioNum.value) || 10;
+    if (val < 10) val = 10;
+    if (val > 95) val = 95;
+    ratioSlider.value = val;
+    calculate();
+  });
+  
+  modelSelect.addEventListener('change', calculate);
+  calculate();
+})();
+</script>
 
 ---
 
