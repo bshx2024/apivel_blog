@@ -571,14 +571,17 @@ APIVALE bypasses these barriers entirely:
   <h4 class="cta-card-title">🎁 Try APIVALE with $1.00 Free Credits</h4>
   <p class="cta-card-text">Set up your hybrid LLM agent workflows without billing or registration hurdles. Get instant access to GPT-5.5, Claude 4 Sonnet, DeepSeek V4, and GLM-5.2 via a single OpenAI-compatible API key. Register with your Google/GitHub account and claim your free $1.00 starting balance today.</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=minicpm-local-agent-workflow" class="cta-primary-btn">Create Free Account</a>
-    <a href="https://apivale.com/docs?utm_source=apivale_blog&utm_medium=blog&utm_campaign=minicpm-local-agent-workflow" class="cta-secondary-btn">Read Integration Docs</a>
+    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=infrastructure-for-hybrid-llm-agent-deployments" class="cta-primary-btn">Create Free Account</a>
+    <a href="https://apivale.com/docs?utm_source=apivale_blog&utm_medium=blog&utm_campaign=infrastructure-for-hybrid-llm-agent-deployments" class="cta-secondary-btn">Read Integration Docs</a>
   </div>
 </div>
 
 ---
 
 ## Developer FAQ
+
+**Q: What hardware is required to set up an infrastructure for hybrid LLM agent deployments?**  
+**A:** A hybrid LLM agent infrastructure runs efficiently on consumer-grade hardware. A standard developer laptop with 8GB of RAM is sufficient to host the local MiniCPM5-1B edge layer (via Ollama or llama.cpp) for preprocessing. The system then routes complex reasoning queries to APIVALE's cloud gateway over any standard internet connection.
 
 **Q: Can MiniCPM5-1B handle structured JSON outputs?**  
 **A:** Yes. When running MiniCPM5-1B via Ollama or llama.cpp, you can pass structured JSON grammar or system prompt rules to force the model to output valid JSON. This is ideal for extracting and formatting variables before sending data to the cloud.
@@ -594,6 +597,14 @@ APIVALE bypasses these barriers entirely:
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What hardware is required to set up an infrastructure for hybrid LLM agent deployments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A hybrid LLM agent infrastructure runs efficiently on consumer-grade hardware. A standard developer laptop with 8GB of RAM is sufficient to host the local MiniCPM5-1B edge layer (via Ollama or llama.cpp) for preprocessing. The system then routes complex reasoning queries to APIVALE's cloud gateway over any standard internet connection."
+      }
+    },
     {
       "@type": "Question",
       "name": "Can MiniCPM5-1B handle structured JSON outputs?",
@@ -621,3 +632,4 @@ APIVALE bypasses these barriers entirely:
   ]
 }
 </script>
+
