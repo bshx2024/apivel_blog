@@ -12,7 +12,7 @@ lang: "en"
 
 The rise of autonomous agent frameworks (like LangChain, LlamaIndex, and Cline) has introduced a major scaling bottleneck: **token cost inflation**. An agent executing a multi-step planning loop often generates thousands of trivial "thinking" and "data preprocessing" tokens. Running this entire loop on premium cloud models like Claude 3.5 Sonnet or GPT-4o quickly scales bills to hundreds of dollars for basic tasks.
 
-At the same time, lightweight models like **MiniCPM5-1B** have demonstrated that 1-billion parameter models can run at over 200 tokens/second on consumer-grade hardware, delivering high-speed execution for simple parsing and formatting tasks.
+At the same time, lightweight models like [MiniCPM5-1B](https://github.com/OpenBMB/MiniCPM) have demonstrated that 1-billion parameter models can run at over 200 tokens/second on consumer-grade hardware, delivering high-speed execution for simple parsing and formatting tasks.
 
 The solution is establishing a resilient **infrastructure for hybrid LLM agent deployments**: routing low-complexity pre-processing, text cleaning, and routing tasks to a local MiniCPM5-1B instance (at $0 cost), while falling back to premium reasoning models via **APIVALE** only when complex decisions are required.
 
@@ -64,9 +64,9 @@ To understand the benefits of a hybrid approach, let’s compare the three main 
 
 ## Step 1: Running MiniCPM5-1B Locally
 
-MiniCPM5-1B is optimized for running on CPU and low-end GPU environments. You can run it locally using standard tools like `llama.cpp` or `Ollama`.
+MiniCPM5-1B is optimized for running on CPU and low-end GPU environments. You can run it locally using standard tools like [llama.cpp](https://github.com/ggerganov/llama.cpp) or [Ollama](https://ollama.com/).
 
-### 1. Running with Ollama
+### 1. Running with [Ollama](https://ollama.com/)
 If you have Ollama installed, run:
 ```bash
 ollama run minicpm:1b
