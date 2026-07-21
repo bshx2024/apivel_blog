@@ -120,6 +120,7 @@ function formatDate(date: Date) {
 			
 			// Detect Content Keywords
 			const docText = document.body.innerText || '';
+			const isKimi = /kimi|moonshot|月之暗面/i.test(docText);
 			const isZhipu = /zhipu|glm|智谱/i.test(docText);
 			const isDeepSeek = /deepseek|hunyuan|混元/i.test(docText);
 			const isCursor = /cursor|composer|cline|api key/i.test(docText);
@@ -145,7 +146,11 @@ function formatDate(date: Date) {
 				if (isZh) {
 					badge = '🔥 限时体验';
 					btnText = '一键免登录体验 Playground →';
-					if (isZhipu) {
+					if (isKimi) {
+						title = '免实名测试 Kimi K3';
+						desc = '跳过国内手机号与支付卡校验。直接调用 Kimi K3 2.8T 大模型，使用 GitHub 一键登录即刻体验。';
+						utmCampaign = 'kimi_bypass';
+					} else if (isZhipu) {
 						title = '免实名测试 Zhipu AI';
 						desc = '跳过国内手机号与身份证实名墙。直接调用 GLM-4/5.2 等模型，使用 GitHub 一键登录即刻体验。';
 						utmCampaign = 'zhipu_bypass';
@@ -167,6 +172,10 @@ function formatDate(date: Date) {
 						title = 'Route GPT-5.6 Smarter, Pay Less';
 						desc = 'Stop routing everything to Sol. Use APIVALE to dynamically switch between Luna, Terra, and Sol — plus Claude and DeepSeek — from a single API key.';
 						utmCampaign = 'gpt56_cost';
+					} else if (isKimi) {
+						title = 'Bypass Kimi K3 Geoblocks';
+						desc = 'Ditch +86 phone and mainland payment constraints. Call Kimi K3 2.8T globally. Sign up with GitHub for $1.00 free credit.';
+						utmCampaign = 'kimi_bypass';
 					} else if (isZhipu) {
 						title = 'Bypass Zhipu KYC Limits';
 						desc = 'Ditch +86 phone and ID requirements. Call GLM-4/5.2 globally. Sign up with GitHub for $1.00 free credit.';
@@ -219,7 +228,11 @@ function formatDate(date: Date) {
 				if (isZh) {
 					badge = '💡 免实名通道';
 					btnText = '立即免登录体验 Playground →';
-					if (isZhipu) {
+					if (isKimi) {
+						title = '想免实名测试 Kimi K3 2.8T 接口？';
+						desc = '免去官方手机绑定与充值门槛限制。通过 APIVALE 绑定 GitHub 即可获得 $1.00 体验金，直接在网页端 Playground 进行调试。';
+						utmCampaign = 'kimi_bypass';
+					} else if (isZhipu) {
 						title = '想免实名测试 Zhipu AI / GLM 模型？';
 						desc = '通过 APIVALE 绕过复杂的实名墙与 +86 手机绑定。绑定 GitHub 即可获得 $1.00 免费额度，支持在浏览器中即开即用进行测试，无需实名！';
 						utmCampaign = 'zhipu_bypass';
@@ -241,6 +254,10 @@ function formatDate(date: Date) {
 						title = 'Cut Your GPT-5.6 Bill by 8x';
 						desc = 'Route simple tasks to Luna ($1/M), keep complex reasoning on Sol ($5/M). One APIVALE key, 10+ models, real-time cost tracking. Get $1.00 free to start.';
 						utmCampaign = 'gpt56_cost';
+					} else if (isKimi) {
+						title = 'Bypass Kimi K3 Verification';
+						desc = 'Test Moonshot Kimi K3 globally in our online playground. Direct REST API endpoints, GitHub sign-on, and $1.00 free test credits.';
+						utmCampaign = 'kimi_bypass';
 					} else if (isZhipu) {
 						title = 'Bypass Zhipu AI KYC Today';
 						desc = 'Get $1.00 starting bonus upon GitHub registration. Test GLM-4 and GLM-5.2 in our online playground without any Chinese phone verification.';
