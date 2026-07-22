@@ -1,18 +1,18 @@
 ---
-title: "Claude Code Router Setup: Configure Custom Base URL (anthropic_base_url Guide)"
-description: "Anthropic's Claude Code CLI is a game changer, but it consumes tokens rapidly. Learn how to configure anthropic_base_url and anthropic_auth_token to bypass rate limits and route traffic to a cost-effective APIVALE proxy."
+title: "How to Set Up Claude Code Custom Base URL (30-Sec Guide & PayPal API)"
+description: "Learn how to configure anthropic_base_url and anthropic_auth_token for Claude Code CLI. Bypass rate limits, route traffic to APIVALE, and pay via PayPal."
 date: "2026-07-11"
 author: "Alex Rivera"
 authorTitle: "Senior Cloud Architect & API Integrations, APIVALE"
 authorBio: "Alex Rivera is a cloud architect specializing in high-concurrency routing, API gateway latency optimization, and developer proxy tools."
-tags: ["Claude Code", "anthropic_base_url", "API Proxy", "Claude Code Router", "Cost Optimization"]
+tags: ["Claude Code", "anthropic_base_url", "API Proxy", "Claude Code Router", "Cost Optimization", "PayPal"]
 image: "/blog/how-to-set-up-claude-code-cli-with-custom-base-url.png"
 lang: "en"
 ---
 
-Anthropic's new **Claude Code CLI** brings a agentic coding assistant directly into your terminal. However, running Claude Code on large codebases triggers an enormous volume of input tokens because the CLI repeatedly scans your workspace. This developer workflow quickly runs into official API rate limits (TPM/RPM quotas) and can result in massive, unexpected monthly bills.
+Anthropic's new **Claude Code CLI** brings an agentic coding assistant directly into your terminal. However, running Claude Code on large codebases triggers an enormous volume of input tokens because the CLI repeatedly scans your workspace. This developer workflow quickly runs into official API rate limits (TPM/RPM quotas) and can result in massive, unexpected monthly bills.
 
-For developers outside official billing regions, or teams seeking to optimize costs and bypass rate-limiting bottlenecks, redirecting the CLI using a custom endpoint is the ultimate workaround. 
+For developers outside official billing regions, or teams seeking to optimize costs and bypass rate-limiting bottlenecks, redirecting the CLI using a custom endpoint is the ultimate workaround. You can also route terminal agents directly to frontier models like [Qwen 3.8-Max](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/) or [Qwen 3.7-Max](/blog/how-to-connect-qwen-3-7-to-claude-code-cli/).
 
 In this guide, we show you how to configure Claude Code to use a custom proxy gateway by setting the `anthropic_base_url` and `anthropic_auth_token` variables, and how to build a custom `claude-code-router` to dynamically balance and audit requests.
 
@@ -22,7 +22,7 @@ To bypass official billing barriers, set your terminal environment variables to 
 
 ```bash
 # Set your APIVALE credentials and launch the CLI
-export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
+export ANTHROPIC_BASE_URL="https://apivale.com/v1"
 export ANTHROPIC_AUTH_TOKEN="your_apivale_key_here"
 npx @anthropic-ai/claude-code
 ```
@@ -36,8 +36,8 @@ Before routing your terminal agent through a proxy, it is important to compare t
 | Parameter / Feature | Official Anthropic API | APIVALE Gateway Proxy |
 | :--- | :--- | :--- |
 | **Required Env Vars** | `ANTHROPIC_API_KEY` | `ANTHROPIC_BASE_URL` & `ANTHROPIC_AUTH_TOKEN` |
-| **Authentication** | Official Developer Console Account | APIVALE API Key (Email Registration) |
-| **Billing & KYC** | Biometric verification / Regional credit card | Stripe, PayPal, Visa, Mastercard, Crypto |
+| **Authentication** | Official Developer Console Account | APIVALE API Key (GitHub 1-Click Login) |
+| **Billing & KYC** | Biometric verification / Regional credit card | **PayPal Global Billing** / Credit Cards via PayPal |
 | **Claude 3.5 Sonnet Rate Limits** | Dynamic tiering (e.g., 40,000 TPM limit on Tier 1) | Shared high-concurrency pool (up to 500 RPM / 400k TPM) |
 | **Pricing (per 1M Tokens)** | $3.00 Input / $15.00 Output | $3.00 Input / $15.00 Output (No proxy markup) |
 | **Smart Caching** | Supported (30-min minimum) | Supported (90% discount on cache hits) |
