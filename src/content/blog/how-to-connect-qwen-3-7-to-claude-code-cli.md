@@ -26,7 +26,7 @@ You can instantly switch your Claude Code CLI backend to Qwen 3.7 without modify
 # Set environment variables to route Claude Code to Qwen 3.7 via APIVALE
 export ANTHROPIC_BASE_URL="https://apivale.com/v1"
 export ANTHROPIC_AUTH_TOKEN="your_apivale_api_key"
-export ANTHROPIC_MODEL="qwen-3.7-max"
+export ANTHROPIC_MODEL="infer/qwen3.7-max"
 
 # Launch Claude Code CLI
 npx @anthropic-ai/claude-code
@@ -82,7 +82,7 @@ nano ~/.zshrc
 # Add APIVALE Qwen 3.7 routing configuration
 export ANTHROPIC_BASE_URL="https://apivale.com/v1"
 export ANTHROPIC_AUTH_TOKEN="apivale-key-xxxxxxxxxxxxxxxx"
-export ANTHROPIC_MODEL="qwen-3.7-max"
+export ANTHROPIC_MODEL="infer/qwen3.7-max"
 
 # Save and reload
 source ~/.zshrc
@@ -99,7 +99,7 @@ For Windows developers using PowerShell:
 # Set environment variables for the current session
 $env:ANTHROPIC_BASE_URL="https://apivale.com/v1"
 $env:ANTHROPIC_AUTH_TOKEN="apivale-key-xxxxxxxxxxxxxxxx"
-$env:ANTHROPIC_MODEL="qwen-3.7-max"
+$env:ANTHROPIC_MODEL="infer/qwen3.7-max"
 
 # Execute Claude Code CLI
 npx @anthropic-ai/claude-code
@@ -131,7 +131,7 @@ app.post('/v1/messages', async (req: Request, res: Response): Promise<void> => {
   // Override model to Qwen 3.7-Max if requesting default Claude model
   const payload = {
     ...req.body,
-    model: req.body.model.includes('claude') ? 'qwen-3.7-max' : req.body.model
+    model: req.body.model.includes('claude') ? 'infer/qwen3.7-max' : req.body.model
   };
 
   console.log(`[Claude Code Router] Redirecting model '${req.body.model}' -> '${payload.model}'`);
@@ -187,7 +187,7 @@ npx @anthropic-ai/claude-code
 ## Developer FAQ
 
 **Q: Does Claude Code CLI natively accept Qwen 3.7 as a backend model?**  
-**A:** Yes. Because Qwen 3.7 supports the Anthropic API protocol and standard tool-calling schema, setting `ANTHROPIC_BASE_URL="https://apivale.com/v1"` and `ANTHROPIC_MODEL="qwen-3.7-max"` allows Claude Code CLI to communicate with Qwen 3.7 smoothly without code edits.
+**A:** Yes. Because Qwen 3.7 supports the Anthropic API protocol and standard tool-calling schema, setting `ANTHROPIC_BASE_URL="https://apivale.com/v1"` and `ANTHROPIC_MODEL="infer/qwen3.7-max"` allows Claude Code CLI to communicate with Qwen 3.7 smoothly without code edits.
 
 **Q: Do I need a Chinese phone number (+86) or identity verification to use Qwen 3.7 on APIVALE?**  
 **A:** No. APIVALE bypasses domestic phone binding and real-name verification walls. You can sign in using GitHub, credit cards, or PayPal, and start making API calls immediately.
