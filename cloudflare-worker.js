@@ -3,10 +3,9 @@
  * 
  * Target Route on Cloudflare: apivale.com/blog*
  * 
- * This worker intercepts all traffic to apivale.com.
- * If the path starts with /blog or /_astro, it proxies the request to the hosted Astro blog
- * (e.g., on Vercel or Cloudflare Pages).
- * Otherwise, it passes the traffic through to your VPS origin server.
+ * This worker intercepts all traffic to apivale.com/blog*.
+ * It proxies requests to the hosted Astro blog on Cloudflare Pages (dist/blog/*).
+ * Otherwise, it passes traffic through to your VPS origin server.
  */
 
 export default {
@@ -15,25 +14,23 @@ export default {
     
     // ==========================================
     // CONFIGURATION: Replace with your hosted blog domain
-    // (e.g., apivale-blog.vercel.app or apivale-blog.pages.dev)
+    // (e.g., apivale-blog.pages.dev)
     // ==========================================
     const BLOG_HOST = "apivale-blog.pages.dev"; 
 
-    // Route /blog, /blog/*, and /_astro/* to the Astro blog host
-    if (url.pathname === "/blog" || url.pathname.startsWith("/blog/") || url.pathname.startsWith("/_astro/")) {
+    // Route /blog and /blog/* to the Astro blog host
+    if (url.pathname === "/blog" || url.pathname.startsWith("/blog/")) {
       
       const newUrl = new URL(request.url);
       newUrl.hostname = BLOG_HOST;
       newUrl.protocol = "https:";
       
-      // 去除 /blog 前缀以匹配 Pages 部署在根目录的文件结构
+      // Ensure /blog has a trailing slash for index route matching
       if (newUrl.pathname === "/blog") {
-        newUrl.pathname = "/";
-      } else if (newUrl.pathname.startsWith("/blog/")) {
-        newUrl.pathname = newUrl.pathname.substring(5); // 去除 "/blog"
+        newUrl.pathname = "/blog/";
       }
       
-      // Create a modified request forwarding headers, method, and body
+      // Forward request preserving the /blog/ path structure in dist/blog/
       const modifiedRequest = new Request(newUrl.toString(), {
         method: request.method,
         headers: new Headers(request.headers),
@@ -41,13 +38,13 @@ export default {
         redirect: 'manual' // Do not auto-follow redirects, pass them back
       });
       
-      // Override Host header to prevent Vercel/Pages routing errors
+      // Override Host header to match Pages host
       modifiedRequest.headers.set("Host", BLOG_HOST);
 
       try {
         const response = await fetch(modifiedRequest);
 
-        // 重写 301/308 重定向中的 Location 响应头，确保自动补全 /blog 前缀，防止浏览器跳出博客子路径
+        // 重写 301/308 重定向中的 Location 响应头，确保保留 /blog 前缀
         if (response.status >= 300 && response.status < 400 && response.headers.has("Location")) {
           const originalLocation = response.headers.get("Location");
           let newLocation = originalLocation;
@@ -55,7 +52,10 @@ export default {
           if (newLocation.startsWith("/") && !newLocation.startsWith("/blog/")) {
             newLocation = "/blog" + newLocation;
           } else if (newLocation.startsWith(`https://${BLOG_HOST}`)) {
-            newLocation = newLocation.replace(`https://${BLOG_HOST}`, `https://${url.hostname}/blog`);
+            newLocation = newLocation.replace(`https://${BLOG_HOST}`, `https://${url.hostname}`);
+            if (!newLocation.includes("/blog/")) {
+              newLocation = newLocation.replace(url.hostname, `${url.hostname}/blog`);
+            }
           }
 
           const newHeaders = new Headers(response.headers);
