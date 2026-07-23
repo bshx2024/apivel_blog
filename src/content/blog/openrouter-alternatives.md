@@ -112,7 +112,7 @@ When evaluating the best OpenRouter alternatives, comparing cost per million tok
 </div>
 <div class="savings-amount" id="savings-amt-val">$14.35 / mo</div>
 <p class="savings-note">⚡ Fully compatible with OpenRouter SDKs! PayPal & credit card payment supported.</p>
-<a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=openrouter-alternatives-calc" class="calc-cta-btn">Claim Free $1.00 Credit</a>
+<a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=openrouter-alternatives-calc" class="calc-cta-btn">Claim Free $0.20 Credit (+ 50% Bonus)</a>
 </div>
 </div>
 </div>
@@ -445,9 +445,9 @@ box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
 
 <div class="cta-card">
   <h4 class="cta-card-title">⚡ Switch to APIVALE in 30 Seconds</h4>
-  <p class="cta-card-text">Facing high latencies or credit card declines on OpenRouter? APIVALE offers low-latency globally distributed nodes, hassle-free global PayPal & credit card billing, and free context caching. Get $1.00 free credit instantly to test (no credit card required).</p>
+  <p class="cta-card-text">Facing high latencies or credit card declines on OpenRouter? APIVALE offers low-latency globally distributed nodes, hassle-free global PayPal & credit card billing, and free context caching. Get $0.20 free credit (+ 50% bonus on 1st top-up) instantly to test (no credit card required).</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=openrouter-alternatives" class="cta-primary-btn">Get Free API Key ($1.00 Credit)</a>
+    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=openrouter-alternatives" class="cta-primary-btn">Get Free API Key ($0.20 Credit (+ 50% Bonus))</a>
   </div>
 </div>
 
@@ -609,7 +609,7 @@ If you use third-party developer platforms, switching from OpenRouter to APIVALE
 
 <div class="cta-card">
   <h4 class="cta-card-title">🎁 Try APIVALE for Free Today</h4>
-  <p class="cta-card-text">Stop dealing with strict rate limits and false Stripe card declines. Get instant, high-concurrency access to GPT-5.5, Claude 4 Sonnet, DeepSeek V4, GLM-5.2, and Kling 3.0 via a single OpenAI-compatible API key. Plus, get $1.00 free credits upon registration (no credit card required)!</p>
+  <p class="cta-card-text">Stop dealing with strict rate limits and false Stripe card declines. Get instant, high-concurrency access to GPT-5.5, Claude 4 Sonnet, DeepSeek V4, GLM-5.2, and Kling 3.0 via a single OpenAI-compatible API key. Plus, get $0.20 free credit (+ 50% bonus on 1st top-up)s upon registration (no credit card required)!</p>
   <div class="cta-card-actions">
     <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=openrouter-alternatives" class="cta-primary-btn">Create Free Account</a>
     <a href="https://apivale.com/docs?utm_source=apivale_blog&utm_medium=blog&utm_campaign=openrouter-alternatives" class="cta-secondary-btn">Read Integration Docs</a>

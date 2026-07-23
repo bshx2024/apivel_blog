@@ -45,7 +45,7 @@ Before choosing an API provider, it is vital to compare match accuracy, ambiguou
 | **Data Freshness** | Stale (Updated monthly/quarterly) | **Real-time live web extraction** |
 | **Output Data Format** | Simple Domain String | **Structured JSON (Domain, Tech Stack, Key Product Lines)** |
 | **Cost Per 10,000 Searches** | $150.00 – $300.00 ($0.015 - $0.03 / req) | **$1.40 – $5.40** (Using DeepSeek V4 / `infer/qwen3.7-max`) |
-| **Billing & KYC Requirements**| Mandatory Stripe recurring card / High monthly plans | **GitHub 1-Click Sign-in ($1.00 Credit) / PayPal Billing** |
+| **Billing & KYC Requirements**| Mandatory Stripe recurring card / High monthly plans | **GitHub 1-Click Sign-in ($0.20 Credit (+ 50% Bonus)) / PayPal Billing** |
 
 ---
 
@@ -150,9 +150,9 @@ Let's calculate the real-world cost of resolving **10,000 company homepages**:
 
 <div class="cta-card">
   <h4 class="cta-card-title">⚡ Build High-Accuracy Agent Pipelines with APIVALE</h4>
-  <p class="cta-card-text">Stop paying exorbitant rates for static company lookup databases. Route your web search agents, CRM enrichment scripts, and CLI tools to DeepSeek V4, Qwen 3.7-Max, and Claude Sonnet 5 via APIVALE's global edge network. Enjoy 95%+ cost savings, zero regional verification barriers, and seamless global PayPal billing. Sign up now and claim your free $1.00 credit!</p>
+  <p class="cta-card-text">Stop paying exorbitant rates for static company lookup databases. Route your web search agents, CRM enrichment scripts, and CLI tools to DeepSeek V4, Qwen 3.7-Max, and Claude Sonnet 5 via APIVALE's global edge network. Enjoy 95%+ cost savings, zero regional verification barriers, and seamless global PayPal billing. Sign up now and claim your free $0.20 Credit (+ 50% Bonus)!</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=best-api-search-company-homepage-guide" class="cta-primary-btn">Claim Free $1.00 Credit</a>
+    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=best-api-search-company-homepage-guide" class="cta-primary-btn">Claim Free $0.20 Credit (+ 50% Bonus)</a>
     <a href="https://apivale.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=best-api-search-company-homepage-guide" class="cta-secondary-btn">Test Playground Live</a>
   </div>
 </div>

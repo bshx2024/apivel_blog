@@ -48,9 +48,9 @@ Here is how the two flagship developer models stack up:
 
 <div class="cta-card">
   <h4 class="cta-card-title">⚡ Call Z.ai GLM-5.2 API Globally Today</h4>
-  <p class="cta-card-text">Want to test an Opus-class coding model without credit card blocks or Chinese phone numbers? Access GLM-5.2 on APIVALE for only $0.50 per 1M input tokens. Pay easily via global PayPal, and get $1.00 free credit instantly to start testing.</p>
+  <p class="cta-card-text">Want to test an Opus-class coding model without credit card blocks or Chinese phone numbers? Access GLM-5.2 on APIVALE for only $0.50 per 1M input tokens. Pay easily via global PayPal, and get $0.20 free credit (+ 50% bonus on 1st top-up) instantly to start testing.</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=grok-vs-glm" class="cta-primary-btn">Start Coding (Free $1.00 Credit)</a>
+    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=grok-vs-glm" class="cta-primary-btn">Start Coding (Free $0.20 Credit (+ 50% Bonus))</a>
   </div>
 </div>
 
@@ -90,7 +90,7 @@ Since APIVALE provides standard OpenAI-compatible routing, you can easily replac
 
 <div class="cta-card">
   <h4 class="cta-card-title">🎁 Ready to Build Resilient AI Agents?</h4>
-  <p class="cta-card-text">Access Z.ai GLM-5.2, DeepSeek V4, and GPT-5.6 via a single API key on APIVALE. Stop fighting Stripe card declines or domestic verification rules. Sign up today, pay via global PayPal, and get $1.00 free test credits instantly.</p>
+  <p class="cta-card-text">Access Z.ai GLM-5.2, DeepSeek V4, and GPT-5.6 via a single API key on APIVALE. Stop fighting Stripe card declines or domestic verification rules. Sign up today, pay via global PayPal, and get $0.20 free test credits (+ 50% bonus on 1st top-up) instantly.</p>
   <div class="cta-card-actions">
     <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=grok-vs-glm" class="cta-primary-btn">Create Free Account</a>
     <a href="https://apivale.com/docs?utm_source=apivale_blog&utm_medium=blog&utm_campaign=grok-vs-glm" class="cta-secondary-btn">Read Integration Docs</a>

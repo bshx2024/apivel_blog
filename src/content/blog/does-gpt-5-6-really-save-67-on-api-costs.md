@@ -73,7 +73,7 @@ The real magic is dynamic routing. By using an API gateway like APIVALE, you can
 
 <div class="cta-card">
   <h4 class="cta-card-title">⚡ Route Smarter, Spend Less</h4>
-  <p class="cta-card-text">Stop overpaying for GPT-5.6 Sol on every request. APIVALE's unified API gateway lets you route workloads across GPT-5.6 Sol, Terra, and Luna — plus Claude Opus, DeepSeek, and 10+ other models — through a single API key with real-time cost tracking per request. Get $1.00 free credits on sign-up.</p>
+  <p class="cta-card-text">Stop overpaying for GPT-5.6 Sol on every request. APIVALE's unified API gateway lets you route workloads across GPT-5.6 Sol, Terra, and Luna — plus Claude Opus, DeepSeek, and 10+ other models — through a single API key with real-time cost tracking per request. Get $0.20 free credit (+ 50% bonus on 1st top-up)s on sign-up.</p>
   <div class="cta-card-actions">
     <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=does-gpt-5-6-really-save-67-on-api-costs" class="cta-primary-btn">Create Free Account</a>
     <a href="https://apivale.com/api/?utm_source=apivale_blog&utm_medium=blog&utm_campaign=does-gpt-5-6-really-save-67-on-api-costs" class="cta-secondary-btn">View Supported Models</a>

@@ -45,7 +45,7 @@ Before routing your terminal agents, here is how Qwen 3.7-Max stacks up against 
 | **Thinking Mode Support** | Extended Thinking / Adaptive Reasoning | Multi-step Agentic Reasoning Mode |
 | **API Access Mode** | Subscription / Console Key | Pay-as-you-go / Global Gateway |
 | **Rate Limit Bottlenecks** | 5-Hour Rolling Limit / Strict TPM | Shared High-Concurrency Pool (500+ RPM) |
-| **Identity & KYC Barriers** | Strict Regional Credit Cards | GitHub 1-Click Sign-in ($1.00 Free Credit) |
+| **Identity & KYC Barriers** | Strict Regional Credit Cards | GitHub 1-Click Sign-in ($0.20 free credit (+ 50% bonus on 1st top-up)) |
 | **Input / Output Token Cost** | $3.00 / $15.00 per 1M tokens | $0.60 / $2.40 per 1M tokens (-80% Savings) |
 
 ---
@@ -175,9 +175,9 @@ npx @anthropic-ai/claude-code
 
 <div class="cta-card">
   <h4 class="cta-card-title">⚡ Unleash Qwen 3.7 on Claude Code via APIVALE</h4>
-  <p class="cta-card-text">Stop paying exorbitant rates for long-horizon agent tokens. Route your Claude Code CLI, Cursor, and terminal agents to Qwen 3.7-Max through APIVALE's global edge network. Enjoy 80% lower token costs compared to Claude Sonnet 5, zero regional billing barriers, and high-concurrency quotas. Sign up now and claim $1.00 free starter credit!</p>
+  <p class="cta-card-text">Stop paying exorbitant rates for long-horizon agent tokens. Route your Claude Code CLI, Cursor, and terminal agents to Qwen 3.7-Max through APIVALE's global edge network. Enjoy 80% lower token costs compared to Claude Sonnet 5, zero regional billing barriers, and high-concurrency quotas. Sign up now and claim $0.20 free starter credit (+ 50% bonus on 1st top-up)!</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=qwen-3-7-claude-code-cli-integration-guide" class="cta-primary-btn">Get Free API Key ($1.00 Credit)</a>
+    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=qwen-3-7-claude-code-cli-integration-guide" class="cta-primary-btn">Get Free API Key ($0.20 Credit (+ 50% Bonus))</a>
     <a href="https://apivale.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=qwen-3-7-claude-code-cli-integration-guide" class="cta-secondary-btn">Test in Playground</a>
   </div>
 </div>

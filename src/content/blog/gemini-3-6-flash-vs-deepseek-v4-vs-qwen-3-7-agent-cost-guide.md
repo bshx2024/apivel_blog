@@ -110,9 +110,9 @@ For developers outside supported Google or Anthropic billing regions, accessing 
 
 <div class="cta-card">
   <h4 class="cta-card-title">⚡ Cut Your Agent Token Bills by 90% with APIVALE</h4>
-  <p class="cta-card-text">Stop getting hit by steep monthly subscription caps and high per-token rates. Use APIVALE to route your Cursor, Claude Code CLI, and custom agent harnesses to DeepSeek V4, Qwen 3.7-Max, and Claude Sonnet 5. Enjoy seamless global PayPal billing, high concurrency, and $1.00 free starter credit upon GitHub registration!</p>
+  <p class="cta-card-text">Stop getting hit by steep monthly subscription caps and high per-token rates. Use APIVALE to route your Cursor, Claude Code CLI, and custom agent harnesses to DeepSeek V4, Qwen 3.7-Max, and Claude Sonnet 5. Enjoy seamless global PayPal billing, high concurrency, and $0.20 free starter credit (+ 50% bonus on 1st top-up) upon GitHub registration!</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=gemini-3-6-flash-vs-deepseek-v4-vs-qwen-3-7-agent-cost-guide" class="cta-primary-btn">Claim Free $1.00 Credit</a>
+    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=gemini-3-6-flash-vs-deepseek-v4-vs-qwen-3-7-agent-cost-guide" class="cta-primary-btn">Claim Free $0.20 Credit (+ 50% Bonus)</a>
     <a href="https://apivale.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=gemini-3-6-flash-vs-deepseek-v4-vs-qwen-3-7-agent-cost-guide" class="cta-secondary-btn">Test Playground Live</a>
   </div>
 </div>

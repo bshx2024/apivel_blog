@@ -143,9 +143,9 @@ translateText();
 
 <div class="cta-card">
   <h4 class="cta-card-title">⚡ Call Z.ai GLM-5.2 API Globally</h4>
-  <p class="cta-card-text">No +86 phone number or Chinese ID required. Access GLM-5.2 at a massive discount (just $0.50/1M input and $2.50/1M output—saving up to 64% over official rates), GPT-5.5, Claude 4 Sonnet, and DeepSeek V4 via APIVALE. Stripe and cryptocurrency billing fully integrated with low-latency edge routing. Sign up now and get $1.00 starting credits.</p>
+  <p class="cta-card-text">No +86 phone number or Chinese ID required. Access GLM-5.2 at a massive discount (just $0.50/1M input and $2.50/1M output—saving up to 64% over official rates), GPT-5.5, Claude 4 Sonnet, and DeepSeek V4 via APIVALE. Stripe and cryptocurrency billing fully integrated with low-latency edge routing. Sign up now and get $0.20 starting credits (+ 50% bonus on 1st top-up).</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-access-z-ai-glm-5-2" class="cta-primary-btn">Get Free API Key ($1.00 Credit)</a>
+    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-access-z-ai-glm-5-2" class="cta-primary-btn">Get Free API Key ($0.20 Credit (+ 50% Bonus))</a>
     <a href="https://apivale.com/docs?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-access-z-ai-glm-5-2" class="cta-secondary-btn">Integration Sheet</a>
   </div>
 </div>

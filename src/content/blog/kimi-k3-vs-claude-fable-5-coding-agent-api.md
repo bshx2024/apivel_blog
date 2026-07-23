@@ -49,9 +49,9 @@ Here is how Kimi K3 and Claude Fable 5 compare across key developer metrics:
 
 <div class="cta-card">
   <h4 class="cta-card-title">⚡ Call Kimi K3 and Claude Fable 5 via a Single Key</h4>
-  <p class="cta-card-text">Avoid Stripe card declines or Chinese phone number barriers. Get immediate API access to Kimi K3, Claude Fable 5, and GLM-5.2 on APIVALE. Pay easily with global credit cards or PayPal and receive a free $1.00 credit instantly.</p>
+  <p class="cta-card-text">Avoid Stripe card declines or Chinese phone number barriers. Get immediate API access to Kimi K3, Claude Fable 5, and GLM-5.2 on APIVALE. Pay easily with global credit cards or PayPal and receive a free $0.20 Credit (+ 50% Bonus) instantly.</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=kimi-vs-fable" class="cta-primary-btn">Start Coding (Free $1.00 Credit)</a>
+    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=kimi-vs-fable" class="cta-primary-btn">Start Coding (Free $0.20 Credit (+ 50% Bonus))</a>
   </div>
 </div>
 

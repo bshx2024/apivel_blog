@@ -195,7 +195,7 @@ callVisualPrompt();
 
 <div class="cta-card">
   <h4 class="cta-card-title">🎁 Cut Multi-Modal Integration Costs with APIVALE</h4>
-  <p class="cta-card-text">Bypass rigid token pricing limits. Route your visual prompts, high-density diagrams, and OCR payloads through APIVALE's edge-routing nodes. Enjoy stable Claude 3.5 Sonnet and GPT-4o vision pipelines, Stripe global billing, and $1.00 free starting credit.</p>
+  <p class="cta-card-text">Bypass rigid token pricing limits. Route your visual prompts, high-density diagrams, and OCR payloads through APIVALE's edge-routing nodes. Enjoy stable Claude 3.5 Sonnet and GPT-4o vision pipelines, Stripe global billing, and $0.20 free starting credit (+ 50% bonus on 1st top-up).</p>
   <div class="cta-card-actions">
     <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=visual-prompt-compression-pxpipe" class="cta-primary-btn">Create Free Account</a>
     <a href="/blog/openrouter-alternatives" class="cta-secondary-btn">Explore Alternatives</a>

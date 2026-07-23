@@ -174,9 +174,9 @@ app.listen(PORT, () => console.log(`Kimi K3 Anthropic Bridge running on http://l
 
 <div class="cta-card">
   <h4 class="cta-card-title">⚡ Connect Kimi K3 to Your CLI & IDE with APIVALE</h4>
-  <p class="cta-card-text">Supercharge your Claude Code CLI, Cursor, and Cline workflows with Moonshot AI's 2.8T Kimi K3 model. Enjoy 80% lower token spend compared to Claude Sonnet 5, zero rate limits, and seamless PayPal billing. Register now and claim $1.00 free starter credit!</p>
+  <p class="cta-card-text">Supercharge your Claude Code CLI, Cursor, and Cline workflows with Moonshot AI's 2.8T Kimi K3 model. Enjoy 80% lower token spend compared to Claude Sonnet 5, zero rate limits, and seamless PayPal billing. Register now and claim $0.20 free starter credit (+ 50% bonus on 1st top-up)!</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-connect-kimi-k3-to-claude-code-cli" class="cta-primary-btn">Get Free API Key ($1.00 Credit)</a>
+    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-connect-kimi-k3-to-claude-code-cli" class="cta-primary-btn">Get Free API Key ($0.20 Credit (+ 50% Bonus))</a>
     <a href="https://apivale.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-connect-kimi-k3-to-claude-code-cli" class="cta-secondary-btn">Test Kimi K3 Playground</a>
   </div>
 </div>

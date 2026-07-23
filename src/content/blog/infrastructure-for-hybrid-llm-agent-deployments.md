@@ -132,7 +132,7 @@ Evaluate the economic feasibility of establishing a hybrid agent infrastructure.
 </div>
 <div class="savings-amount" id="savings-amt-val">$288.00 / mo</div>
 <p class="savings-note">⚡ Fully compatible with Ollama/llama.cpp SDK configurations. PayPal & crypto billing supported.</p>
-<a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=hybrid-llm-calc" class="calc-cta-btn">Claim Free $1.00 Credit</a>
+<a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=hybrid-llm-calc" class="calc-cta-btn">Claim Free $0.20 Credit (+ 50% Bonus)</a>
 </div>
 </div>
 </div>
@@ -561,14 +561,14 @@ APIVALE bypasses these barriers entirely:
 1. **Unified Base URL**: The API format is 100% compatible with local Ollama/llama.cpp engines. You only swap your server URL to scale.
 2. **Stable PayPal Billing**: Fund your API account with standard global cards, PayPal, or Crypto (USDT/USDC) without the risk of false fraud suspensions.
 3. **No KYC Walls**: Get instant access to DeepSeek V4, Zhipu GLM-5.2, and Tencent Hunyuan without providing a mainland phone number or ID.
-4. **$1.00 Free Trial**: Register with any email and receive $1.00 in free trial credits immediately.
+4. **$0.20 Free Trial**: Register with any email and receive $1.00 in free trial credits immediately.
 
 *(For a deep dive into bypassing mainland registration limits, read our guide on [How to Access Tencent Hunyuan Hy3 and DeepSeek V4 API Outside China](/blog/how-to-access-hy3-deepseek-without-86-phone/). If you are evaluating alternative routing platforms, see our comparison of the [5 Best OpenRouter Alternatives](/blog/openrouter-alternatives/).)*
 
 ---
 
 <div class="cta-card">
-  <h4 class="cta-card-title">🎁 Try APIVALE with $1.00 Free Credits</h4>
+  <h4 class="cta-card-title">🎁 Try APIVALE with $0.20 free credit (+ 50% bonus on 1st top-up)s</h4>
   <p class="cta-card-text">Set up your hybrid LLM agent workflows without billing or registration hurdles. Get instant access to GPT-5.5, Claude 4 Sonnet, DeepSeek V4, and GLM-5.2 via a single OpenAI-compatible API key. Register with your Google/GitHub account and claim your free $1.00 starting balance today.</p>
   <div class="cta-card-actions">
     <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=infrastructure-for-hybrid-llm-agent-deployments" class="cta-primary-btn">Create Free Account</a>

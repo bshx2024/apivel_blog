@@ -128,7 +128,7 @@ analyze_codebase()
   <h4 class="cta-card-title">🚀 Access Meituan LongCat-2.0 API Instantly</h4>
   <p class="cta-card-text">Bypass mainland corporate KYC and +86 phone restrictions. Deploy GPT-5.5, Claude 4 Sonnet, DeepSeek V4, GLM-5.2, and LongCat-2.0 into your coding agents (such as Cline, Cursor, or Claude Code) in minutes using APIVALE. Context caching is fully supported (hits are free!).</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-access-longcat-2-0-api-internationally" class="cta-primary-btn">Start Free Trial ($1.00 Credit)</a>
+    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-access-longcat-2-0-api-internationally" class="cta-primary-btn">Start Free Trial ($0.20 Credit (+ 50% Bonus))</a>
     <a href="https://apivale.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-access-longcat-2-0-api-internationally" class="cta-secondary-btn">Try LongCat-2.0 in Playground</a>
   </div>
 </div>

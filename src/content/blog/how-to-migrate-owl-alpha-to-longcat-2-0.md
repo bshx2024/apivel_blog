@@ -129,9 +129,9 @@ print(code_feedback)
 
 <div class="cta-card">
   <h4 class="cta-card-title">🔄 Migrate Owl Alpha to LongCat-2.0 Today</h4>
-  <p class="cta-card-text">Keep your agentic coding workflows running smoothly without interruptions. Migrate from OpenRouter's soon-to-be-retired Owl Alpha to the official LongCat-2.0 via APIVALE. Access GPT-5.5, Claude 4 Sonnet, DeepSeek V4, and GLM-5.2 with 100% free context caching hits. Try now with $1.00 free credits.</p>
+  <p class="cta-card-text">Keep your agentic coding workflows running smoothly without interruptions. Migrate from OpenRouter's soon-to-be-retired Owl Alpha to the official LongCat-2.0 via APIVALE. Access GPT-5.5, Claude 4 Sonnet, DeepSeek V4, and GLM-5.2 with 100% free context caching hits. Try now with $0.20 free credit (+ 50% bonus on 1st top-up)s.</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-migrate-owl-alpha-to-longcat-2-0" class="cta-primary-btn">Migrate Now & Get $1.00 Credit</a>
+    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-migrate-owl-alpha-to-longcat-2-0" class="cta-primary-btn">Migrate Now & Get $0.20 Credit (+ 50% Bonus)</a>
     <a href="https://apivale.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-migrate-owl-alpha-to-longcat-2-0" class="cta-secondary-btn">Try LongCat-2.0 in Playground</a>
   </div>
 </div>

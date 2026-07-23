@@ -335,8 +335,8 @@ executeAgent("Write a 4-bit ALU in Verilog supporting ADD, SUB, AND, and OR oper
 
 <div class="cta-card">
   <h4 class="cta-card-title">⚡ Unleash Long-Horizon AI Agents on APIVALE</h4>
-  <p class="cta-card-text">Avoid mainland cell verification and payment restrictions. Get instant, high-concurrency access to Kimi K3, Claude Fable 5, and DeepSeek V4 via a single API key. Receive a free $1.00 credit on registration and pay easily using PayPal or standard credit cards.</p>
+  <p class="cta-card-text">Avoid mainland cell verification and payment restrictions. Get instant, high-concurrency access to Kimi K3, Claude Fable 5, and DeepSeek V4 via a single API key. Receive a free $0.20 Credit (+ 50% Bonus) on registration and pay easily using PayPal or standard credit cards.</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=kimi-chip-design" class="cta-primary-btn">Claim Free $1.00 Credit</a>
+    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=kimi-chip-design" class="cta-primary-btn">Claim Free $0.20 Credit (+ 50% Bonus)</a>
   </div>
 </div>
