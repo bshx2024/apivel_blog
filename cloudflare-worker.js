@@ -4,7 +4,7 @@
  * Target Route on Cloudflare: apivale.com/blog*
  * 
  * This worker intercepts all traffic to apivale.com.
- * If the path starts with /blog, it proxies the request to the hosted Astro blog
+ * If the path starts with /blog or /_astro, it proxies the request to the hosted Astro blog
  * (e.g., on Vercel or Cloudflare Pages).
  * Otherwise, it passes the traffic through to your VPS origin server.
  */
@@ -19,8 +19,8 @@ export default {
     // ==========================================
     const BLOG_HOST = "apivale-blog.pages.dev"; 
 
-    // Route /blog and /blog/* to the Astro blog host
-    if (url.pathname === "/blog" || url.pathname.startsWith("/blog/")) {
+    // Route /blog, /blog/*, and /_astro/* to the Astro blog host
+    if (url.pathname === "/blog" || url.pathname.startsWith("/blog/") || url.pathname.startsWith("/_astro/")) {
       
       const newUrl = new URL(request.url);
       newUrl.hostname = BLOG_HOST;
