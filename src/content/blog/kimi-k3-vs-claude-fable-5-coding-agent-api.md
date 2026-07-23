@@ -12,7 +12,7 @@ lang: "en"
 
 With Moonshot AI's official release of **Kimi K3** on July 16, 2026, the developer community is witnessing a major shift in the frontier coding model landscape. Boasting a massive **2.8 trillion (2.8T) parameter** size, Kimi K3 is China's largest AI model to date, designed from the ground up to challenge closed-weights giants like Anthropic's **Claude Fable 5** and OpenAI's **GPT-5.6 Sol** in software engineering and autonomous agentic workflows.
 
-For developers building autonomous coding agents or setting up custom endpoints in IDEs like Cursor and Claude Code, choosing between these two giants comes down to a balance of raw intelligence, tool-use reliability, API context efficiency, and billing accessibility.
+For developers building autonomous coding agents or setting up custom endpoints in IDEs like Cursor and Claude Code (see our step-by-step [Kimi K3 Claude Code & Cursor Setup Guide](/blog/how-to-connect-kimi-k3-to-claude-code-cli/)), choosing between these two giants comes down to a balance of raw intelligence, tool-use reliability, API context efficiency, and billing accessibility.
 
 This guide compares Kimi K3 and Claude Fable 5 head-to-head across benchmarks, agentic capabilities, pricing, and integration to help you select the best engine for your coding stack.
 

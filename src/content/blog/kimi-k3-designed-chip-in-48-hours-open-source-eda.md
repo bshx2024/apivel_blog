@@ -14,7 +14,7 @@ On Friday, July 17, 2026, shares of electronic design automation (EDA) giants Ca
 
 For hardware engineers and AI developers, this milestone demonstrates that trillion-parameter LLMs can orchestrate complex, multi-stage engineering loops. What used to take engineering teams weeks of manual schematic layout and verification was completed by Kimi K3 in under two days. 
 
-This guide dives into the architecture that enabled Kimi K3's chip design demo, how it coordinates open-source EDA toolchains, and how you can run your own autonomous development loops using Kimi K3's API via APIVALE without local registration barriers.
+This guide dives into the architecture that enabled Kimi K3's chip design demo, how it coordinates open-source EDA toolchains, and how you can run your own autonomous development loops (see our guide on [how to connect Kimi K3 to Claude Code CLI & Cursor](/blog/how-to-connect-kimi-k3-to-claude-code-cli/)) using Kimi K3's API via APIVALE without local registration barriers.
 
 ---
 
