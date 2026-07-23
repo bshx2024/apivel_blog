@@ -1,9 +1,13 @@
 ---
 title: "2026 Kimi K3 Model 深度评测与 API 落地指南：2.8万亿参数 MoE 架构、Cursor / CLI 接入与 Token 降本实战"
 description: "基于 Semrush 真实搜索数据与官方技术白皮书，深度拆解 Moonshot AI 最新旗舰 Kimi K3 模型的 2.8T MoE 架构、TerminalBench 跑分、与 Claude Sonnet 5 / Qwen 3.7 Max 的对比，并提供基于 APIVALE Gateway 的 Cursor / Claude Code CLI 一键接入与 PayPal 充值全指南。"
-pubDate: 2026-07-23
-heroImage: "/blog-placeholder-about.jpg"
+date: "2026-07-23"
+author: "Alex Rivera"
+authorTitle: "Senior Cloud Architect & API Integrations, APIVALE"
+authorBio: "Alex Rivera is a cloud architect specializing in high-concurrency routing, API gateway latency optimization, and developer proxy tools."
 tags: ["Kimi K3", "AI Agent", "LLM", "API Gateway", "Cursor", "Claude Code", "PayPal"]
+image: "/blog/og-cover.png"
+lang: "zh"
 ---
 
 # 2026 Kimi K3 Model 深度评测与 API 落地指南：2.8万亿参数 MoE 架构、Cursor / CLI 接入与 Token 降本实战
