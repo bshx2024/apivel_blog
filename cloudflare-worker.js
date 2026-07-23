@@ -46,6 +46,28 @@ export default {
 
       try {
         const response = await fetch(modifiedRequest);
+
+        // 重写 301/308 重定向中的 Location 响应头，确保自动补全 /blog 前缀，防止浏览器跳出博客子路径
+        if (response.status >= 300 && response.status < 400 && response.headers.has("Location")) {
+          const originalLocation = response.headers.get("Location");
+          let newLocation = originalLocation;
+
+          if (newLocation.startsWith("/") && !newLocation.startsWith("/blog/")) {
+            newLocation = "/blog" + newLocation;
+          } else if (newLocation.startsWith(`https://${BLOG_HOST}`)) {
+            newLocation = newLocation.replace(`https://${BLOG_HOST}`, `https://${url.hostname}/blog`);
+          }
+
+          const newHeaders = new Headers(response.headers);
+          newHeaders.set("Location", newLocation);
+
+          return new Response(response.body, {
+            status: response.status,
+            statusText: response.statusText,
+            headers: newHeaders
+          });
+        }
+
         return response;
       } catch (error) {
         return new Response("APIVALE Blog Gateway Timeout", { 
