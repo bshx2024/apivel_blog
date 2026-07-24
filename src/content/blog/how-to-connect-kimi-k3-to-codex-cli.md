@@ -84,6 +84,23 @@ If you are evaluating other frontier models for terminal coding agents, check ou
 
 ---
 
+## SERP & Integration Method Audit: APIVALE Gateway vs. Local Proxy Tools
+
+A SERP audit of developer discussions across GitHub and Reddit highlights three primary ways developers attempt to bridge Kimi K3 into terminal coding harnesses:
+
+| Integration Approach | Prerequisites & Setup | Upstream Reliability & Barriers | Billing & Payment |
+| :--- | :--- | :--- | :--- |
+| **Local Proxy Tools (`opencodex`)** | Requires installing third-party NPM packages (`@bitkyc08/opencodex`), binding local ports (`localhost:10100`), and keeping local proxy daemons alive. | Dependent on local daemon stability; potential port conflicts and security risks when handling local API keys. | Requires direct Moonshot account (+86 phone verification required). |
+| **Community Routing (`CC Switch`)** | Requires installing community CLI switches, editing complex JSON provider matrices. | Manual configuration updates needed when upstream API parameters change. | Requires local Chinese payment or direct provider registration. |
+| **Native Kimi Code CLI (`kimi`)** | Official CLI provided by Moonshot AI for terminal interaction. | Limited strictly to Moonshot's native interface; cannot leverage existing OpenAI Codex CLI custom workflows. | Mainland phone (+86) & local KYC verification barriers. |
+| **APIVALE Cloud Gateway (`apivale.com`)** | **Zero installation required.** Simply export `OPENAI_API_BASE="https://apivale.com/v1"`. | **Enterprise Dedicated Pools.** Automatic SSE stream buffering, high concurrency, zero port binding. | **PayPal Global Billing** / Credit Cards (Zero KYC / Phone barriers). |
+
+> [!TIP]
+> **Why Choose Direct Cloud Gateway over Local Proxy Daemons?**  
+> While tools like `opencodex` or `CC Switch` require running local proxy servers on your developer machine, APIVALE handles protocol translation, header sanitization, and high-concurrency connection pooling in the cloud via `https://apivale.com/v1`. You get instant compatibility with standard Codex CLI environment variables without running local daemon processes.
+
+---
+
 ## Step-by-Step Environment Setup
 
 ### 1. Connecting OpenAI Codex CLI (macOS & Linux)
