@@ -9,12 +9,10 @@ interface Props {
 const { 
 	title, 
 	description = "APIVALE - High-performance unified API routing gateway for developers. Low-latency, zero-friction access to DeepSeek, GLM, and multimodal models.",
-	image = "/blog/og-cover.png",
 	canonicalUrl
 } = Astro.props;
 
-const siteTitle = `${title} | APIVALE Blog`;
-// Strip search parameters and hash to prevent duplicate content indexing
+const siteTitle = title.includes('APIVALE') ? title : `${title} | APIVALE`;
 const resolvedCanonical = canonicalUrl || new URL(Astro.url.pathname, Astro.site || Astro.url.origin).href;
 ---
 
