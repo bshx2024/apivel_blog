@@ -178,6 +178,36 @@ To enable Swarm Max thread handling in your custom proxy or API requests via API
 
 ---
 
+## Multi-Model Hybrid Workflow via File Handoff (Context Handoff)
+
+While APIVALE provides access to a wide array of flagship models (`infer/qwen3.7-max`, `infer/deepseek-v4-pro`, `infer/glm-5.2`, `kimi-k3`), **Codex CLI locks active session state** to prevent Prompt-Cache KV corruption. Attempting to switch models mid-session directly can invalidate prompt caches or fail due to CLI state locks.
+
+To seamlessly leverage multiple models across a single engineering task without losing context:
+
+1. **Step 1 (Repository Intake with Kimi K3)**: Launch Codex with `kimi-k3` to digest large codebases (up to 1M tokens) and generate a structured task file (e.g., `architecture_plan.md`).
+2. **Step 2 (Start Fresh Session)**: Execute `/new` or start a new Codex CLI process with your targeted secondary model:
+   ```bash
+   export CODEX_MODEL="infer/qwen3.7-max"
+   codex
+   ```
+3. **Step 3 (File-Based Context Handoff)**: Reference the output file in your new prompt:
+   ```text
+   Implement the auth refactoring specified in @architecture_plan.md
+   ```
+This preserves full project history while ensuring clean prompt caching and optimal model performance.
+
+---
+
+## Tool Calling & System Execution Compatibility: GPT vs. Kimi K3
+
+Terminal coding agents require models to generate complex `tool_calls` JSON payloads with escaped multi-line Shell commands, pipe characters, and quotes. Non-GPT models occasionally encounter parser errors in raw CLI wrappers due to strict prompt schemas.
+
+### How APIVALE Resolves Tool Calling Compatibility
+* **Cloud-Side Protocol Sanitization**: APIVALE’s API Gateway automatically cleanses and formats `tool_calls` payloads returned by Kimi K3, ensuring 100% compliance with OpenAI’s JSON schema requirements before forwarding them to Codex CLI.
+* **Native Fallback (Kimi Code CLI)**: For developers seeking 100% native terminal execution without third-party CLI schema wrappers, Moonshot AI also provides the open-source **Kimi Code CLI** (`kimi`), which is built specifically for Kimi K3's tool-calling engine.
+
+---
+
 ## Production Code: Copy-Pasteable OpenAI Protocol Router Proxy
 
 If you want to run a local Node.js proxy to dynamically sanitize headers, monitor token consumption, or route OpenAI Codex completions to Kimi K3 with exponential backoff retry logic, use the following 15+ line production TypeScript proxy server:
@@ -251,6 +281,12 @@ app.listen(PORT, () => {
 
 ## Developer FAQ
 
+**Q: Can I switch models mid-session in Codex CLI?**  
+**A:** Switching models directly within an active Codex session is restricted due to Prompt-Cache KV state locks. To switch models (e.g., from `kimi-k3` to `infer/qwen3.7-max`), start a new session with `/new` and reference your saved task files (e.g., `@architecture_plan.md`) to maintain uninterrupted project context.
+
+**Q: Does Kimi K3 support tool calling and system execution in Codex CLI?**  
+**A:** Yes. Kimi K3 natively supports OpenAI-compatible function calling schemas. APIVALE’s cloud gateway automatically performs protocol sanitization on `tool_calls` payloads to prevent CLI parser stalls during terminal execution.
+
 **Q: Do I need CC Switch or local proxy tools to connect Kimi K3 to Codex CLI via APIVALE?**  
 **A:** No, CC Switch is not required. Tools like CC Switch or opencodex run local proxy daemons to bridge API format differences. Because APIVALE's cloud gateway (`https://apivale.com/v1`) natively translates OpenAI chat completion protocols to Kimi K3, Codex CLI connects directly via standard environment variables without local proxy tools or daemon processes.
 
@@ -274,6 +310,22 @@ app.listen(PORT, () => {
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Export OPENAI_API_BASE as https://apivale.com/v1, OPENAI_API_KEY as your APIVALE API key, and CODEX_MODEL as kimi-k3."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I switch models mid-session in Codex CLI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mid-session switching is restricted due to Prompt-Cache KV locks. Use /new for a fresh session and pass task files like @plan.md to preserve context."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Kimi K3 support tool calling and system execution in Codex CLI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Kimi K3 natively supports tool calling schemas, and APIVALE performs cloud-side protocol sanitization to guarantee smooth CLI execution."
       }
     },
     {
