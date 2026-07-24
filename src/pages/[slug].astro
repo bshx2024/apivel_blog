@@ -69,7 +69,7 @@ function formatDate(date: Date) {
 			<div class="banner-content">
 				<div class="inline-badge" id="inlineBadgeText">💡 Trial Access</div>
 				<h3 class="inline-title" id="inlineTitle">Test APIs Without KYC</h3>
-				<p class="inline-desc" id="inlineDesc">Sign up via GitHub for instant $1.00 free credit. Access DeepSeek, GLM, and Claude in our playground instantly.</p>
+				<p class="inline-desc" id="inlineDesc">Sign up via GitHub for instant $0.20 free credit (+ 50% 1st top-up bonus). Access DeepSeek, GLM, and Claude in our playground instantly.</p>
 			</div>
 			<div class="banner-action">
 				<a href="https://apivale.com/sign-in?redirect=%2Fplayground&utm_source=apivale_blog&utm_medium=blog_inline_banner" class="inline-action-btn" id="inlineActionBtn">
@@ -100,7 +100,7 @@ function formatDate(date: Date) {
 			<span id="ctaBadgeText">🎁 Trial Credit</span>
 		</div>
 		<h4 class="cta-title" id="ctaTitle">Get Free API Key</h4>
-		<p class="cta-desc" id="ctaDesc">Sign up via GitHub for instant $1.00 credit. No KYC required.</p>
+		<p class="cta-desc" id="ctaDesc">Sign up via GitHub for instant $0.20 credit (+ 50% bonus). No KYC required.</p>
 		<a href="https://apivale.com/sign-in?redirect=%2Fplayground&utm_source=apivale_blog&utm_medium=blog_floating_card" class="cta-action-btn" id="ctaActionBtn">
 			Try Playground Instantly
 		</a>
@@ -113,7 +113,7 @@ function formatDate(date: Date) {
 			const ctaContainer = document.getElementById('dynamicFloatingCta');
 			const closeBtn = document.getElementById('closeCtaBtn');
 			
-			const isClosed = localStorage.getItem('apivale_blog_cta_closed') === 'true';
+			const isClosed = sessionStorage.getItem('apivale_blog_cta_closed') === 'true';
 
 			// Banner Elements
 			const inlineBanner = document.getElementById('dynamicInlineBanner');
@@ -139,7 +139,7 @@ function formatDate(date: Date) {
 
 				let badge = '🎁 Trial Credit';
 				let title = 'Get Free API Key';
-				let desc = 'Sign up via GitHub for instant $1.00 credit. No KYC required.';
+				let desc = 'Sign up via GitHub for instant $0.20 credit (+ 50% bonus). No KYC required.';
 				let btnText = 'Try Playground Instantly';
 				let utmCampaign = 'general';
 
@@ -160,11 +160,11 @@ function formatDate(date: Date) {
 						utmCampaign = 'deepseek_bypass';
 					} else if (isCursor) {
 						title = 'Cursor 专属免实名 API Key';
-						desc = '打破 Cursor 订阅次数瓶颈。按 Token 付费使用 DeepSeek / Claude，GitHub 绑定即送 $1.00。';
+						desc = '打破 Cursor 订阅次数瓶颈。按 Token 付费使用 DeepSeek / Claude，GitHub 绑定即送 $0.20。';
 						utmCampaign = 'cursor_optimization';
 					} else {
 						title = '免实名一键体验主流 AI';
-						desc = '整合 DeepSeek, Claude, GLM 等多款大模型。支持 PayPal 充值，新用户即送 $1.00。';
+						desc = '整合 DeepSeek, Claude, GLM 等多款大模型。支持 PayPal 充值，新用户即送 $0.20。';
 						utmCampaign = 'default';
 					}
 				} else {
@@ -174,11 +174,11 @@ function formatDate(date: Date) {
 						utmCampaign = 'gpt56_cost';
 					} else if (isKimi) {
 						title = 'Bypass Kimi K3 Geoblocks';
-						desc = 'Ditch +86 phone and mainland payment constraints. Call Kimi K3 2.8T globally. Sign up with GitHub for $1.00 free credit.';
+						desc = 'Ditch +86 phone and mainland payment constraints. Call Kimi K3 2.8T globally. Sign up with GitHub for $0.20 free credit (+ 50% 1st top-up bonus).';
 						utmCampaign = 'kimi_bypass';
 					} else if (isZhipu) {
 						title = 'Bypass Zhipu KYC Limits';
-						desc = 'Ditch +86 phone and ID requirements. Call GLM-4/5.2 globally. Sign up with GitHub for $1.00 free credit.';
+						desc = 'Ditch +86 phone and ID requirements. Call GLM-4/5.2 globally. Sign up with GitHub for $0.20 free credit (+ 50% 1st top-up bonus).';
 						utmCampaign = 'zhipu_bypass';
 					} else if (isDeepSeek) {
 						title = 'Bypass DeepSeek & Hunyuan Blocks';
@@ -186,7 +186,7 @@ function formatDate(date: Date) {
 						utmCampaign = 'deepseek_bypass';
 					} else if (isCursor) {
 						title = 'Save on Cursor Composer Loops';
-						desc = 'Use your own API keys via APIVALE. Prevent throttling, pay-as-you-go, and get $1.00 free signup bonus.';
+						desc = 'Use your own API keys via APIVALE. Prevent throttling, pay-as-you-go, and get $0.20 free signup bonus.';
 						utmCampaign = 'cursor_optimization';
 					}
 				}
@@ -208,7 +208,7 @@ function formatDate(date: Date) {
 				closeBtn.addEventListener('click', (e) => {
 					e.preventDefault();
 					ctaContainer.style.display = 'none';
-					localStorage.setItem('apivale_blog_cta_closed', 'true');
+					sessionStorage.setItem('apivale_blog_cta_closed', 'true');
 				});
 			}
 
@@ -221,7 +221,7 @@ function formatDate(date: Date) {
 
 				let badge = '💡 Trial Access';
 				let title = 'Test APIs Without KYC';
-				let desc = 'Sign up via GitHub for instant $1.00 free credit. Access DeepSeek, GLM, and Claude in our playground instantly.';
+				let desc = 'Sign up via GitHub for instant $0.20 free credit (+ 50% 1st top-up bonus). Access DeepSeek, GLM, and Claude in our playground instantly.';
 				let btnText = 'Test Playground';
 				let utmCampaign = 'general';
 
@@ -230,37 +230,37 @@ function formatDate(date: Date) {
 					btnText = '立即免登录体验 Playground →';
 					if (isKimi) {
 						title = '想免实名测试 Kimi K3 2.8T 接口？';
-						desc = '免去官方手机绑定与充值门槛限制。通过 APIVALE 绑定 GitHub 即可获得 $1.00 体验金，直接在网页端 Playground 进行调试。';
+						desc = '免去官方手机绑定与充值门槛限制。通过 APIVALE 绑定 GitHub 即可获得 $0.20 体验金 (首充加赠 50%)，直接在网页端 Playground 进行调试。';
 						utmCampaign = 'kimi_bypass';
 					} else if (isZhipu) {
 						title = '想免实名测试 Zhipu AI / GLM 模型？';
-						desc = '通过 APIVALE 绕过复杂的实名墙与 +86 手机绑定。绑定 GitHub 即可获得 $1.00 免费额度，支持在浏览器中即开即用进行测试，无需实名！';
+						desc = '通过 APIVALE 绕过复杂的实名墙与 +86 手机绑定。绑定 GitHub 即可获得 $0.20 免费额度 (首充加赠 50%)，支持在浏览器中即开即用进行测试，无需实名！';
 						utmCampaign = 'zhipu_bypass';
 					} else if (isDeepSeek) {
 						title = '想免实名测试 Hunyuan 或 DeepSeek 接口？';
-						desc = '免去官方实名认证阻碍。通过 APIVALE 一键登录即可获得 $1.00 体验金，直接在控制台 Playground 进行模型调试与接口调用。';
+						desc = '免去官方实名认证阻碍。通过 APIVALE 一键登录即可获得 $0.20 体验金 (首充加赠 50%)，直接在控制台 Playground 进行模型调试与接口调用。';
 						utmCampaign = 'deepseek_bypass';
 					} else if (isCursor) {
 						title = '在 Cursor 中配置你自己的 API Key';
-						desc = '拒绝高额订阅，拒绝限流。使用 APIVALE 代理，支持 PayPal 全球充值，绑定 GitHub 免费体验 $1.00 起步额度。';
+						desc = '拒绝高额订阅，拒绝限流。使用 APIVALE 代理，支持 PayPal 全球充值，绑定 GitHub 免费体验 $0.20 起步额度。';
 						utmCampaign = 'cursor_optimization';
 					} else {
 						title = '免实名一键测试国内主流大模型';
-						desc = '聚合 DeepSeek、Hunyuan、Zhipu GLM 以及 Claude 3.5 Sonnet。新用户授权登录送 $1.00 起步额度，免去各项限制。';
+						desc = '聚合 DeepSeek、Hunyuan、Zhipu GLM 以及 Claude 3.5 Sonnet。新用户授权登录送 $0.20 起步额度，免去各项限制。';
 						utmCampaign = 'default';
 					}
 				} else {
 					if (isGptCost) {
 						title = 'Cut Your GPT-5.6 Bill by 8x';
-						desc = 'Route simple tasks to Luna ($1/M), keep complex reasoning on Sol ($5/M). One APIVALE key, 10+ models, real-time cost tracking. Get $1.00 free to start.';
+						desc = 'Route simple tasks to Luna ($1/M), keep complex reasoning on Sol ($5/M). One APIVALE key, 10+ models, real-time cost tracking. Get $0.20 free to start.';
 						utmCampaign = 'gpt56_cost';
 					} else if (isKimi) {
 						title = 'Bypass Kimi K3 Verification';
-						desc = 'Test Moonshot Kimi K3 globally in our online playground. Direct REST API endpoints, GitHub sign-on, and $1.00 free test credits.';
+						desc = 'Test Moonshot Kimi K3 globally in our online playground. Direct REST API endpoints, GitHub sign-on, and $0.20 free test credits (+ 50% 1st top-up bonus).';
 						utmCampaign = 'kimi_bypass';
 					} else if (isZhipu) {
 						title = 'Bypass Zhipu AI KYC Today';
-						desc = 'Get $1.00 starting bonus upon GitHub registration. Test GLM-4 and GLM-5.2 in our online playground without any Chinese phone verification.';
+						desc = 'Get $0.20 starting bonus upon GitHub registration. Test GLM-4 and GLM-5.2 in our online playground without any Chinese phone verification.';
 						utmCampaign = 'zhipu_bypass';
 					} else if (isDeepSeek) {
 						title = 'Call DeepSeek & Hunyuan Globally';
