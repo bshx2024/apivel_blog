@@ -124,7 +124,7 @@ function formatDate(date: Date) {
 			const isZhipu = /zhipu|glm|智谱/i.test(docText);
 			const isDeepSeek = /deepseek|hunyuan|混元/i.test(docText);
 			const isCursor = /cursor|composer|cline|api key/i.test(docText);
-			const isGptCost = /gpt-5\.6|token cost|api cost|tier routing|prompt caching|luna|terra|sol/i.test(docText);
+			const isGptCost = /gpt-5\.6|luna|terra|sol/i.test(docText);
 
 			// Detect Browser Language
 			const userLang = navigator.language || navigator.userLanguage || 'en';
@@ -168,11 +168,7 @@ function formatDate(date: Date) {
 						utmCampaign = 'default';
 					}
 				} else {
-					if (isGptCost) {
-						title = 'Route GPT-5.6 Smarter, Pay Less';
-						desc = 'Stop routing everything to Sol. Use APIVALE to dynamically switch between Luna, Terra, and Sol — plus Claude and DeepSeek — from a single API key.';
-						utmCampaign = 'gpt56_cost';
-					} else if (isKimi) {
+					if (isKimi) {
 						title = 'Bypass Kimi K3 Geoblocks';
 						desc = 'Ditch +86 phone and mainland payment constraints. Call Kimi K3 2.8T globally. Sign up with GitHub for $0.20 free credit (+ 50% 1st top-up bonus).';
 						utmCampaign = 'kimi_bypass';
@@ -188,6 +184,10 @@ function formatDate(date: Date) {
 						title = 'Save on Cursor Composer Loops';
 						desc = 'Use your own API keys via APIVALE. Prevent throttling, pay-as-you-go, and get $0.20 free signup bonus.';
 						utmCampaign = 'cursor_optimization';
+					} else if (isGptCost) {
+						title = 'Route GPT-5.6 Smarter, Pay Less';
+						desc = 'Stop routing everything to Sol. Use APIVALE to dynamically switch between Luna, Terra, and Sol — plus Claude and DeepSeek — from a single API key.';
+						utmCampaign = 'gpt56_cost';
 					}
 				}
 
@@ -250,11 +250,7 @@ function formatDate(date: Date) {
 						utmCampaign = 'default';
 					}
 				} else {
-					if (isGptCost) {
-						title = 'Cut Your GPT-5.6 Bill by 8x';
-						desc = 'Route simple tasks to Luna ($1/M), keep complex reasoning on Sol ($5/M). One APIVALE key, 10+ models, real-time cost tracking. Get $0.20 free to start.';
-						utmCampaign = 'gpt56_cost';
-					} else if (isKimi) {
+					if (isKimi) {
 						title = 'Bypass Kimi K3 Verification';
 						desc = 'Test Moonshot Kimi K3 globally in our online playground. Direct REST API endpoints, GitHub sign-on, and $0.20 free test credits (+ 50% 1st top-up bonus).';
 						utmCampaign = 'kimi_bypass';
@@ -270,6 +266,10 @@ function formatDate(date: Date) {
 						title = 'Reduce Cursor API Costs by 95%';
 						desc = 'Switch Cursor base URL to APIVALE and use pay-as-you-go keys. Zero monthly fixed subscription, high concurrency, and free trial credit.';
 						utmCampaign = 'cursor_optimization';
+					} else if (isGptCost) {
+						title = 'Cut Your GPT-5.6 Bill by 8x';
+						desc = 'Route simple tasks to Luna ($1/M), keep complex reasoning on Sol ($5/M). One APIVALE key, 10+ models, real-time cost tracking. Get $0.20 free to start.';
+						utmCampaign = 'gpt56_cost';
 					}
 				}
 
