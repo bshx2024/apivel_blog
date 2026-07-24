@@ -251,8 +251,8 @@ app.listen(PORT, () => {
 
 ## Developer FAQ
 
-**Q: How do I connect OpenAI Codex CLI to Kimi K3 without modifying CLI source code?**  
-**A:** Simply export `OPENAI_API_BASE="https://apivale.com/v1"`, `OPENAI_API_KEY="your_apivale_key"`, and `CODEX_MODEL="kimi-k3"`. Codex CLI will automatically direct all OpenAI chat completion calls to Kimi K3 via APIVALE.
+**Q: Do I need CC Switch or local proxy tools to connect Kimi K3 to Codex CLI via APIVALE?**  
+**A:** No, CC Switch is not required. Tools like CC Switch or opencodex run local proxy daemons to bridge API format differences. Because APIVALE's cloud gateway (`https://apivale.com/v1`) natively translates OpenAI chat completion protocols to Kimi K3, Codex CLI connects directly via standard environment variables without local proxy tools or daemon processes.
 
 **Q: Can I use PayPal to pay for Kimi K3 API tokens on APIVALE?**  
 **A:** Yes. APIVALE supports **PayPal (global PayPal billing / credit cards via PayPal)** as a primary payment method. You do not need a mainland (+86) phone number or identity verification to purchase API credits.
@@ -274,6 +274,14 @@ app.listen(PORT, () => {
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Export OPENAI_API_BASE as https://apivale.com/v1, OPENAI_API_KEY as your APIVALE API key, and CODEX_MODEL as kimi-k3."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need CC Switch or local proxy tools to connect Kimi K3 to Codex CLI via APIVALE?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. CC Switch is not required because APIVALE handles OpenAI protocol translation directly on the cloud gateway."
       }
     },
     {
