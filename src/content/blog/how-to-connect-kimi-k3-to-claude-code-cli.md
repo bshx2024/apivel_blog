@@ -1,5 +1,6 @@
 ---
-title: "How to Connect Kimi K3 to Claude Code CLI & Cursor (2026 Guide + PayPal Billing)"
+title: "How to Connect Kimi K3 to Claude Code CLI & Cursor IDE (2026 Guide + PayPal Billing)"
+metaTitle: "Connect Kimi K3 to Claude Code & Cursor (2026) | APIVALE"
 description: "Learn how to connect Moonshot AI's 2.8T Kimi K3 to Claude Code CLI and Cursor IDE. Bypass 1.4TB local hardware barriers, avoid 429 rate limit errors, and route Anthropic API requests via APIVALE with PayPal billing."
 date: "2026-07-23"
 author: "Alex Rivera"

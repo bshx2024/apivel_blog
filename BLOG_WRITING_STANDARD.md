@@ -1,153 +1,216 @@
-# APIVALE 技术博客写作与优化标准 (Developer Blog Writing & SEO/GEO Standard)
+# APIVALE 技术博客写作与 SEO/GEO 优化标准 (Master Blog Writing & SEO/GEO Standard)
 
-本文档基于 `EcoReheating` 博客标准，结合开发者受众（Developers, AI Engineers, CTOs）的实际需求进行定制，旨在规范 `apivale.com` 技术博客的内容深度、SEO/GEO（生成式引擎优化）表现以及代码集成标准。
+本文档是 `apivale.com` 技术博客规范的 **唯一事实来源 (Single Source of Truth, SSOT)**。无论是人类技术编辑、开发者，还是 AI 写作 Agent（如 Antigravity, Claude Code, Cursor），在撰写、审阅或更新任何 APIVALE 博客文章时，均**必须严格遵循**本文档的规范。
 
 ---
 
-## 1. 核心参考价值与定制策略
+## 1. 定位与受众策略 (Target Audience & Positioning)
 
-`EcoReheating` 的标准在 **内容深度（FAQ + 专家引语）**、**GEO 优化（直接答案 + Schema）** 以及 **结构化输出** 上有极高的参考价值。针对 `apivale.com` 的开发者受众，我们进行了如下定制调整：
+针对 APIVALE 的受众特点（Developers, AI Engineers, Technical Founders, CTOs），文章定位强调**干货密集、工程可落地、权威实测与高性价比 API 解决方案**。
 
-| 维度 | EcoReheating 工业节能标准 | APIVALE 开发者技术博客标准 (本项目) |
+| 维度 | 传统工业/商业博客 | APIVALE 开发者技术博客标准 (本项目) |
 | :--- | :--- | :--- |
-| **受众定位** | 传统钢厂、工业决策者（偏重商业 ROI 与政策） | 开发者、独立创作者、AI 工程师、CTO（偏重技术实现与成本） |
-| **文章字数** | 2500 - 3500 词 | **1500 - 2500 词**（由于包含大量代码和数学计算，行文需更高效直接） |
-| **核心卖点** | 零资本开支 (Zero CAPEX)、节能 7-15% | **免去 +86 手机号、免实名、100% 官方正版、低延迟路由、Stripe 快捷支付** |
-| **技术元素** | 燃烧炉原理、热量回收等工业概念 | **可直接运行的代码示例 (cURL/Python/TS)、延迟与成本计算公式** |
-| **GEO 重点** | 工业行业规范与背书 | **直击痛点（API 401/403/502 错误码）的直接排查方案** |
+| **受众定位** | 传统企业决策者（偏重商业 ROI 与政策） | 开发者、独立创作者、AI 工程师、CTO（偏重技术实现、成本与可靠性） |
+| **文章字数** | 2500 - 3500 词 | **1500 - 2500 词**（包含可运行代码与数学推算，行文高效直接、无废话） |
+| **核心卖点** | 概念灌输、宏观趋势 | **PayPal 全球快捷支付、免实名、免+86手机号、100% 官方代理路由、低延迟高并发** |
+| **技术元素** | 理论原理、趋势报告 | **可直接运行的代码 (cURL/Python/TS)、异常处理、延迟与 Token 成本计算公式** |
+| **GEO 重点** | 行业权威背书 | **直击痛点（API 401/403/429/502 错误码排查、代理 Header 冲突、流式缓冲丢包）** |
 
 ---
 
-## 2. 文章结构标准 (Article Structure)
+## 2. 4 步标准创作工作流 (Standard Operating Procedure - 4 Steps)
 
-每篇技术文章必须严格遵循以下结构，确保读者在前 20% 的内容内即可获取最关键的解决路径。
+撰写任何一篇 APIVALE 博客前，必须严格执行以下 4 步工作流：
 
 ```
-├── 1. Title & Meta (50-60字符, 关键词靠前)
-├── 2. Introduction (痛点陈述 + 核心解决方案 + 可运行的代码简短示例)
-├── 3. Comparison Table (第一幅图表后：价格、限频、支持模型的对比)
-├── 4. Technical Modules (2-3个核心技术板块，含详细调用代码)
-├── 5. Developer FAQ (针对 AI GEO 抓取的 3-4个技术问答)
-├── 6. Schema JSON-LD (FAQPage 结构化数据)
-└── 7. CTA (开发者导向：免费额度注册、集成指南下载)
+┌────────────────────────────────────────────────────────┐
+│ Step 1: Target Keyword & Parent Topic Audit            │
+│ 选取关键词 -> 校验父级主题 (Parent Topic) -> 提取 LSI    │
+└──────────────────────────┬─────────────────────────────┘
+                           │
+┌──────────────────────────▼─────────────────────────────┐
+│ Step 2: SERP Competitor 3C & Content Gap Audit (Top 5) │
+│ 3C 意图诊断 -> 提取共性 H2/H3 -> 识别技术缝隙 Content Gap│
+└──────────────────────────┬─────────────────────────────┘
+                           │
+┌──────────────────────────▼─────────────────────────────┐
+│ Step 3: Outranking Strategy & "4 Ones" Architecture    │
+│ 倒金字塔大纲 -> PAS 引言 -> 独特性 4 个 1 -> ABC Title  │
+└──────────────────────────┬─────────────────────────────┘
+                           │
+┌──────────────────────────▼─────────────────────────────┐
+│ Step 4: Drafting, AI Peer Review & Compliance Check    │
+│ Markdown 撰写 -> DevOps 逻辑自审 -> DevServer 验证提交   │
+└────────────────────────────────────────────────────────┘
 ```
 
-### A. 痛点引入与快速开始 (Quick Start)
-*   **要求**：前 150 字内必须讲透痛点（如“海外调用 Kling 3.0 API 遇到国外卡拒付”、“GLM 注册需要实名”），紧接着提供一个 **3 行以内的最简 cURL 代码示例**。
-*   **目的**：让开发者立即确认“这篇文章有干货，能解决我的代码问题”。
+### Step 1: 目标关键词选取与父级主题校验 (Parent Topic Audit)
+- 查阅 `KEYWORD_PLAN.md` 确定目标关键词。
+- **父级主题与辅助词校验 (Parent Topic & Secondary LSI Audit)**：
+  - 验证目标关键词是否挂载在搜索量最大的父级主题下（例如搜索 `qwen 3.7 max api` 时，确认父级主题是否为 `qwen 3.7 max claude code setup`）。以父级主题为 Primary Target 才能获得最大流量上限。
+  - 提取 1-2 个竞争对手共享的高频次要关键词（Secondary LSI），自然融入 Title Tag 和 H2/H3 小标题。
 
-### B. 核心参数/价格对比表格 (Comparison Table)
-*   **位置**：文章前 20% 处。
-*   **要求**：使用 Markdown 表格，对比以下指标（根据文章主题选择）：
-    *   API 资费 (每 1M Tokens 价格，或每张图片生成价格)
-    *   最大并发限制 (Rate Limit - RPM/TPM)
-    *   连接延迟 (Latency - TTFT)
-    *   支付门槛 (是否支持 Stripe/国际信用卡/Crypto)
+### Step 2: SERP 竞品检索与 3C 搜索意图诊断 (Top 5 Competitors Audit)
+- 对目标关键词进行搜索引擎检索，获取排名 Top 5 的竞品页面，并读取全文/HTML。
+- **搜索意图 3C 诊断 (Search Intent 3C Diagnosis)**：
+  - **Content Type (内容类型)**：确认主导类型（Blog post, Landing page, Technical Documentation）。
+  - **Content Format (内容格式)**：确认主导格式（How-To Tutorial, Listicle, Comparison Review, Deep-dive Guide）。文章**必须**与主流格式保持一致！
+  - **Content Angle (切入视角)**：分析竞品切入角度（如 *"2026 Latest"*, *"Zero Credit Card"*），定义 APIVALE 的胜出切角（如 *"PayPal Billing + Multi-Gateway Fallback"*）。
+- **共性小标题与内容缝隙提取 (Sub-heading & Content Gap)**：
+  - 提取 Top 5 竞品共享的 H2/H3 小标题，确保 100% 覆盖用户搜索意图。
+  - 找出竞品未触及的技术盲区或踩坑细节（Content Gap），作为 APIVALE 的独家小节。
 
-### C. 真实可运行的代码模块
-*   每篇文章必须包含至少两个主流语言的完整集成代码（推荐 **Python** 和 **TypeScript**），并带齐必要的依赖安装指令（如 `npm install` 或 `pip install`）。
+### Step 3: 超越策略与“独特性 4 个 1”架构设计 (Outranking Strategy)
+- 制定 3 层关键词架构（Tier 1 主词在 Title/H1/前100字；Tier 2 LSI 词在 H2/H3；Tier 3 品牌与竞品词在正文）。
+- 落地 **PAS 引言公式**（Problem 痛点 -> Agitate 放大痛苦 -> Solve 引入 APIVALE 方案）。
+- 落地 **E-E-A-T 权威锚点**（如 *"基于 APIVALE 生产网关 10,000+ 次 API Agent 调用的实测数据..."*）。
+- 落地 **独特性“4 个 1”规范**（详见第 4 节）。
+
+### Step 4: 撰写、AI 同行自审与合规验证 (Drafting & Review Loop)
+- 在 `src/content/blog/<article-slug>.md` 撰写 Markdown 文件。
+- **AI 同行自审机制 (AI Peer Review Loop)**：以高级 DevOps / 架构师视角自审代码可运行性、逻辑严密性与语言流畅度，杜绝机械化 AI 腔调。
+- 启动 dev server 验证渲染表现 (`http://localhost:4321/blog/...`)，确认无误后提交 git 仓库。
 
 ---
 
-## 3. SEO 与 GEO (生成式引擎优化) 标准
+## 3. 文章结构与 H 标签语义树标准 (Article Structure & AST Tree)
 
-为了确保博客能被 ChatGPT/Perplexity 等 AI 搜索工具和 Google Snippet 精准引用，写作必须严格聚焦于 **GEO 的三大支柱 (Three Pillars of GEO)**：
+每篇技术文章必须严格遵循倒金字塔大纲结构与树状 H 标签语法层级，确保读者与 LLM AST 语法分析器能够精准解析。
 
-### A. GEO 三大支柱落地规范
+```
+├── 1. Title Tag & H1 (双轨分工, ABC 标题公式, 50-60字符 cap)
+├── 2. Frontmatter Description (140-160字符, AI 引用第3权重摘要)
+├── 3. PAS Introduction (痛点陈述 + E-E-A-T 锚点 + 可运行的最简 cURL 代码示例)
+├── 4. Defined Snippet Box (定义框：捕捉 Position Zero 精选摘要)
+├── 5. Comparison Table (前 20% 处：价格、限频、支持模型的硬核对比)
+├── 6. Technical Modules (2-3个 H2/H3 核心板块，回答 AI Query Fan-Out 衍生子问题)
+├── 7. Developer FAQ (针对 AI GEO 抓取的 3-4 个精炼技术问答)
+├── 8. Schema JSON-LD (FAQPage 结构化数据)
+└── 9. CTA Module (开发者导向：PayPal 快捷充值、API Key 免费创建)
+```
 
-1. **可引用的事实 (Citeable Facts)**
-   * **数据密集**：博文必须提供真实可信的硬性数据（如价格对比表格、100% 真实的延迟测算、Token 减少百分比等），减少 AI 抓取时的“幻觉”。
-   * **客观事实**：禁止空洞的营销词汇（见第 6 节防呆红线）。使用客观参数与 telemetry 数据为 AI 引擎提供理想的引用源。
-   * **可运行代码**：提供最简、真实的 cURL/Python/TS 代码片段（包含异常处理），作为开发者的技术事实依据。
+### H 标签语义树排版红线 (Heading AST Hierarchy)
+*   **唯一 `<h1>`**：每篇文章只能有 **1 个 H1**（即 Frontmatter 中的 `title` 或 Markdown 顶部的 `# Title`）。
+*   **论点层级 (`<h2>`)**：`<h2>` 用于划分核心逻辑模块（如环境搭建、代码实现、踩坑解决、价格对比）。
+*   **支持层级 (`<h3>`)**：`<h3>` 用于放置支撑 H2 的具体步骤、语言分支（Python/TS）或示例。
+*   **禁止跨级跳跃**：**严禁直接从 H1 跳到 H3**，必须严格按照 H1 -> H2 -> H3 逐层递进，确保 LLM 爬虫快速构建文章层级图谱。
+*   **陈述句首写原则 (Declarative First Sentence)**：每个 H2/H3 小标题下方的**第一句话**必须使用直接、明确的陈述句概括核心结论，极大增加被 AI Overviews 和精选摘要直接采纳的几率。
 
+---
+
+## 4. 强制“独特性 4 个 1”规范 (Information Gain Standard)
+
+为遵循 Google **Link Information Gain Patent（信息增益专利）**，避免产生同质化山寨内容，每篇文章**必须**满足以下“4 个 1”独特性清单：
+
+1. **1 个独家提炼的方法论 / 命名公式 (1 Branded Methodology / Named Formula)**：
+   * 提炼一个具有 APIVALE 品牌属性的方法论或计算框架（如 *"The 3-Tier Token Thinning Matrix"*, *"The Multi-Gateway Fallback Triangle"*），方便他人引用。
+2. **1 组真实工程实测 / 成本推算数据 (1 Set of Real Benchmark / Calculated Data)**：
+   * 包含真实的 TTFT (首字延迟)、延迟分布或确定性 scenario 的数学成本推算表（数据可由 AI 运行测试脚本或确定性数学模型生成）。
+3. **1 个竞品未触及的高级踩坑解决方案 (1 Edge-Case & Hidden Trap Solution)**：
+   * 解决 Top 5 竞品忽略的技术盲区（如代理 Header 冲突、SSE 流式缓冲断连、Context 剪裁掉包、高并发 RPM 突破排查）。
+4. **1 个生产级工程代码 / 配置文件 (1 Production-Grade Code / Config Snippet)**：
+   * 提供 **15+ 行完整、可复制运行** 的代码或配置，带有健全的异常处理（`try-catch`）和指数退避重试（Exponential Backoff）逻辑。
+
+---
+
+## 5. SEO 与 SEO Title / H1 / Meta Description 优化规范
+
+### A. Title Tag vs. H1 Tag 双轨分工机制 (Title Tag vs. H1 Differentiation)
+*   **Frontmatter `metaTitle` (给爬虫和 SERP 看的 Title Tag)**：
+    *   专为 **SERP 搜索引擎与 AI 模型索引** 服务。
+    *   必须使用 **ABC 标题公式**：`[Adjective/Primary Keyword] + [Benefit / Secondary LSI] | [APIVALE Hook]`
+    *   例如：`metaTitle: "Connect Kimi K3 to Claude Code & Cursor (2026) | APIVALE"`
+    *   **像素与字符截断红线**：严格控制在 **50–60 字符 (Max 600px 宽度)** 以内，确保末尾 `| APIVALE` 品牌后缀不被 Google 截断。
+*   **Frontmatter `title` (给在读开发者看的 H1 标题)**：
+    *   专为 **在读开发者阅读体验** 服务（渲染为页面 `<h1 class="post-title">`）。
+    *   例如：`title: "How to Connect Kimi K3 to Claude Code CLI & Cursor IDE (2026 Guide + PayPal Billing)"`
+    *   侧重技术严谨度与完整主题描述，不受 60 字符或品牌后缀限制。
+
+### B. Frontmatter Meta Description 规范 (AI 选源第 3 权重)
+*   ChatGPT / LLM 检索时，Meta Description 的过滤权重仅次于 URL 和 Title！
+*   **字数限制**：严格控制在 **140–160 字符** 以内。
+*   **行文要求**：使用**主动语态**，包含 Tier 1 主关键词与核心卖点（如 *"Learn how to connect Qwen 3.7 Max to Claude Code CLI with zero credit card via APIVALE PayPal billing..."*）。
+
+### C. 常青简短 URL 命名策略 (Evergreen Short URL Slug Policy)
+*   URL Slugs 必须简短、直接包含主关键词，且**严禁包含年份、日期或易变动数字**（例如使用 `/blog/qwen-3-7-max-claude-code-setup`，而**绝不**使用 `/blog/2026-qwen-3-7-max-claude-code-setup`），以便长期更新而无需 301 重定向。
+
+### D. 发布后 VIP 优化与常青更新策略 (Evergreen Refresh & VIP Maintenance)
+*   **VIP 机会页面优化**：文章发布 1-3 个月后，通过 GSC 筛选排名在 **第 4–10 位** 的页面，微调 Title Tag 与 Meta Description 冲刺 Top 3。
+*   **常青内容定期刷新 (Evergreen Refresh)**：定期维护高流量旧文章（更新最新 LLM 模型 Recency 与 SDK 避坑指南），防止数据陈旧导致 AI 引用率下降。
+
+### E. 标题具体性、人性化口吻与反过度承诺规范 (Specificity, Humanized Tone & Overpromise Audit)
+*   **标题具体性法则 (Title Specificity Standard)**：标题中优先使用有形的工程数字、确切百分比、配置所需时间或具体错误码（如 `80% Token Savings`, `30-Sec Setup`, `Fix 429 Drops`），杜绝抽象模糊的广告词。
+*   **人性化社区口吻 (Humanized Community Tone)**：标题拒绝僵硬的机器公关腔调，使用开发者社区（Reddit / X / GitHub / V2EX）真实的同频交流口吻与专业术语（如 `Bypass KYC`, `Token Arbitrage`, `CLI Setup`）。
+*   **反过度承诺与真凭实据 (Overpromise & Clickbait Audit)**：标题与 H1 中许诺的任何 Hook（如 *TypeScript SSE Stream Fix* / *PayPal Billing*），正文中必须在 15+ 行代码或对比表格中给予 100% 的实据兑现，严禁夸大虚标。
+
+---
+
+## 6. GEO (生成式引擎优化) 与 AI Query Fan-Out 防护
+
+为了确保博客能被 ChatGPT, Perplexity, Gemini, Claude 等 AI 搜索引擎与 RAG 系统高频引用，写作必须聚焦于 **GEO 的三大支柱** 与 **AI Query Fan-Out 防护**：
+
+### A. GEO 三大支柱与 Query Fan-Out 应对
+
+1. **可引用的事实与 Query Fan-Out 全覆盖 (Citeable Facts & Fan-Out Coverage)**
+   * **AI 扇出衍生问题覆盖**：当用户向 AI 提问时，AI 会裂变出 5-6 个衍生子问题（如“如何处理超时？”、“有哪些错误码？”、“Python/TS 区别？”）。文章必须在 H2/H3 板块中主动覆盖这些子问题，大幅提升 AI 引用概率。
+   * **硬核数据与代码**：提供准确的对比表格与带异常处理的完整代码，作为 AI 提取技术答案的物理基石。
 2. **实体权威性 (Entity Authority)**
-   * **品牌与产品实体**：在文中以标准格式提及品牌实体（如 `APIVALE` 或 `APIVALE Unified API Hub`），并配合合理的内链，增强 AI 知识图谱对品牌实体的公信力关联。
-   * **技术与模型实体**：准确提及行业内标准实体（如 `GPT-5.6`, `Claude 3.5 Sonnet`, `DeepSeek-V4` 等），并将它们与 APIVALE 提供的连接与路由解决方案进行实体关联。
-   * **专家身份 (E-E-A-T)**：通过真实的作者署名（见第 4 节）以及 FAQ 结构化数据 Schema 确立专业实体背书。
+   * **品牌与产品实体**：显式包含 `| APIVALE` 品牌后缀与产品实体（`APIVALE Unified API Hub`）。
+   * **技术与模型实体**：准确提及最新 LLM 旗舰模型（如 `Claude Sonnet 5`, `Qwen 3.7 Max`, `DeepSeek V4`），建立实体图谱关联。
+3. **语义深度与定义框 (Semantic Depth & Featured Snippet)**：
+   * 在 H2 下方插入定义框，捕获 Google Position Zero 与 AI 总结。
 
-3. **语义深度 (Semantic Depth)**
-   * **全覆盖与无废话**：篇幅控制在 1500 - 2500 字，围绕主题做深度探讨（如不仅讲“如何调用”，还要深入探讨“成本优化”、“异常排查”、“网关路由逻辑”）。
-   * **语义相关性 (LSI)**：拒绝关键词堆砌，转而覆盖与核心主题高度相关的技术上下文（如提及 `GPT-5.6` 时，自然引入 `Prompt Caching`、`Token Consumption`、`Unified API Gateway`）。
-   * **定义框 (Featured Snippet)**：对核心技术词汇进行高密度的定义，方便搜索引擎提取。
-
-### B. "定义框" (Featured Snippet Box)
-针对特定术语（如 LLM Router, API Bridge 等），在文章的 H2 下方插入以下格式的定义：
+### B. "定义框" (Featured Snippet Box) 格式
+针对核心术语，在 H2 下方使用以下 HTML 结构：
 ```html
 <div class="my-6 border-l-4 border-indigo-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Definition</span>
-  <h4 class="mt-1 text-md font-semibold text-white">[概念名称，例如 Kling API Bridge]</h4>
-  <p class="mt-2 text-sm text-gray-300">[1-2句的高密度技术定义，例如：“Kling API Bridge is a routing layer that wraps the official Kling 3.0 endpoints, allowing global developers to bypass geographical and billing restrictions through a standardized OpenAI-compatible format.”]</p>
+  <h4 class="mt-1 text-md font-semibold text-white">[概念名称，例如 Qwen 3.7 Max API Router]</h4>
+  <p class="mt-2 text-sm text-gray-300">[1-2句高密度技术定义，例如：“Qwen 3.7 Max API Router is an enterprise-grade gateway on APIVALE that wraps Alibaba Cloud's flagship model endpoints into OpenAI-compatible format with zero-credit-card PayPal billing.”]</p>
 </div>
 ```
 
-### C. 直接问答 (Developer FAQ)
-*   每篇博文结尾前必须包含 **3-4 个 FAQ**。
-*   **要求**：问题加粗，回答的前 1-2 句必须是高度精炼的“直接答案”，以便被 AI 搜索引擎提取。
+### C. E-E-A-T 专家 Persona 轮换署名
+禁止使用 "Marketing Team" 署名，轮换使用以下工程师 Persona：
+1. **Alex Rivera** (Senior Cloud Architect & API Integrations) - 擅长高并发路由、延迟优化、多模型网关。
+2. **Kenji Tanaka** (AI Developer Relations Engineer) - 擅长多模态模型调用、前端 SDK 集成、Claude Code CLI 配置。
+3. **Sofia Costa** (FinTech Integration & API Security Expert) - 擅长 PayPal 全球支付、API 网关风控、Header 认证调试。
+
+### D. FAQPage 结构化数据 (JSON-LD)
+文章末尾必须注入 `FAQPage` Schema，问答需在 1-2 句内给出直接答案（Direct Answer）。
 
 ---
 
-## 4. E-E-A-T (专业度与可信度) 与作者署名
+## 7. 内外链建设规范 (Internal & External Link Standard)
 
-开发者只信任有实战经验的工程师所写的技术文章，禁止以 "Marketing Team" 署名。
-
-### A. 虚拟专家 Persona 列表 (轮换使用)
-1.  **Alex Rivera** (Senior Cloud Architect & API Integrations)
-    *   *擅长*：高并发路由、延迟优化、多模型网关架构。
-2.  **Kenji Tanaka** (AI Developer Relations Engineer)
-    *   *擅长*：多模态模型调用 (Kling/Sora)、前端 SDK 快速集成、Demo 制作。
-3.  **Sofia Costa** (FinTech Integration & API Security Expert)
-    *   *擅长*：跨境支付风控、多租户 API 安全设计、Stripe 接口调试。
-
-### B. 结构化数据 (Schema)
-文章末尾必须注入 `FAQPage` 结构化数据，确保 Question 字段与正文中的 FAQ 完全一致。
+*   **上下文内链 (Contextual Internal Links)**：每篇文章必须包含 **2-3 个上下文内链**，采用自然技术锚文本链接至已发布的 APIVALE 博文，传递页面权重并形成中心辐射（Center-Spoke）网络。
+*   **权威外链背书 (Authoritative External Links)**：正文必须包含 **1-2 个指向官方权威文档** 的外链（如 Anthropic Official Docs, OpenAI API Reference, GitHub Official Repository），为读者提供延伸查证依据，同时向 Google 传递 PageRank 信任信号。
 
 ---
 
-## 5. 富媒体与动图规范 (Rich Media & WebP Animations)
+## 8. 富媒体与动图规范 (Rich Media & WebP Standards)
 
-为了将抽象的终端配置可视化，博文必须在核心实操模块引入**高清截图**或 **WebP 录屏动画**，以建立视觉实证并极大提升停留时间（Dwell Time）和转化率（CRO）。
-
-### A. 配图获取优先级与插入位置
-*   **第一优先级：真实界面截图/录屏**：对于具体的代码配置、插件填写、终端执行指令等，必须优先使用真实的界面截图或录屏动图（可通过 CodexLink 截屏工具自动截取），向开发者展示 100% 真实的配置过程。
-*   **第二优先级（兜底）：AI 生成的插图/概念动画**：对于一些偏抽象的逻辑（如“智能网关路由原理”、“全球延迟对比”等无直观配置界面的模块），在实在找不到合适真实配图时，允许使用 AI 生成的高画质概念插图、架构渲染图或示意动画作为视觉兜底，以维护页面的美观度和信息丰满度。
-*   **最低配置要求**：每篇实操博文至少包含 **1 张高清晰度配置截图**，以及 **1 个核心操作的 WebP 动图录屏**。
-*   **插入时机**：通常放置在 H2 下方的快速入门或 Technical Modules 模块中，贴近代码块，作为代码运行结果的视觉佐证。
-
-### B. 动图与图片性能标准
-*   **格式要求**：禁止使用老旧的 `.gif` 格式。所有的动图必须压缩并转换为高画质的 **`.webp`** 格式；静态图优先使用 **`.webp`** 格式，矢量原理图使用 **`.svg`** 格式。
-*   **文件大小**：单张 WebP 动图的大小**严禁超过 1.5MB**（静态图严禁超过 200KB），以防止拖慢页面首次内容渲染时间（FCP/LCP）。
-*   **排版自适应与首屏优化**：位于首屏（Above-the-fold）的图片/动图严禁使用 `loading="lazy"`，而应配置 `fetchpriority="high"`，以保证最佳的移动端首次内容渲染时间（LCP）；非首屏图片使用 `loading="lazy"`。所有图片和动图必须明确指定 `width`/`height` 或 `aspect-ratio`，以防止发生页面布局偏移（CLS）。
-
-### C. 图像 SEO 与 Alt 标签规则
-*   **文件命名**：文件名称必须采用小写字母、中划线命名法，且必须包含文章的核心 SEO 关键词。
-    *   *反例*：`screen1.png`, `mcp-recording.webp`
-    *   *正例*：`how-to-configure-cline-with-apivale-longcat.webp`
-*   **Alt 属性强制性**：图片和动图必须包含详细叙述内容的 `alt` 标签。这不仅有利于无障碍阅读，还是 GEO 抓取和 Google Image 搜索的关键。
-    *   *Alt 示例*：`![Animated WebP showing a developer configuring the Cline extension inside VS Code with the APIVALE custom endpoint and executing code edits using LongCat-2.0](/images/blog/how-to-configure-cline-with-apivale-longcat.webp)`
+*   **配图优先级**：优先使用真实终端/配置界面截图或 WebP 录屏动画；抽象架构图可使用 AI 高画质概念插图兜底。
+*   **格式与大小**：静态图使用 `.webp`，动图强制使用压缩的 `.webp` 格式（**严禁使用老旧 `.gif`**）。单张动图 **≤ 1.5MB**，静态图 **≤ 200KB**。
+*   **LCP/CLS 优化**：首屏图片设置 `fetchpriority="high"`（禁止 lazy load）；非首屏图片使用 `loading="lazy"`。所有图片必须包含显式宽高或宽高比，防止页面抖动。
+*   **Alt 标签**：文件名采用中划线小写命名（如 `how-to-connect-qwen-3-7-max.webp`），`alt` 标签必须用详细英文阐述图片内容。
 
 ---
 
-## 6. 移动优先索引与响应式体验标准 (Mobile-First SEO & UX)
+## 9. 支付方式与模型Recency强制规范
 
-为应对谷歌的 100% 移动优先索引，必须确保博文在小屏设备上具备完美的呈现效果和完整的链接结构，严禁在移动端过滤或精简核心的爬网路径。
-
-### A. 多语言代码的移动端收纳 (Tabs / Accordion)
-*   **隐藏内容免除惩罚**：在移动优先索引下，谷歌不会扣除折叠内容（如 Tabs, Accordion, Collapsible）的权重。
-*   **实施规范**：在包含多语言代码调用（如 Python/TS/cURL）时，移动端模板必须采用 `Tabs` 或 `Accordion` 的折叠交互收纳多语言版本，避免单页面纵向高度过长影响用户体验，同时确保所有代码分支对爬虫可见。
-
-### B. 核心链接与导航等价性 (Parity)
-*   **禁止精简内链**：严禁在移动端视图中隐藏面包屑导航（Breadcrumbs）或移除正文中的上下文内链（Contextual Links）和 CTA。移动端与桌面端的 HTML 必须输出完全一致的 URL 节点。
-*   **Tap Targets 触控安全区**：移动端所有可点击元素（如复制按钮、Tab 切换标签、折叠面板头部）的有效点击区域必须达到至少 **48px × 48px**，相邻点击元素之间至少保持 **8px** 间距，以防误触。
-
-### C. 排版自适应与移动可用性 (Usability)
-*   **代码与表格防溢出**：所有的 Markdown 表格和长代码块在移动端必须支持横向滚动（容器应用 `overflow-x-auto` 且包含排版防折行），确保阅读时不会把整个页面视口（Viewport）撑大造成横向滚动条。
-*   **禁止侵入式插屏**：移动端严禁使用遮挡主视觉的营销弹窗或插屏（Intrusive Interstitials）。如需引导注册，需使用内嵌 CTA 模块或在底部放置非侵入式吸底条。
+*   **支付方式 (Payment Method)**：APIVALE 官方支持的支付方式为 **PayPal（PayPal Global Billing / 国际信用卡通过 PayPal）**。
+    *   **强制禁忌**：**严禁** 在文章、CTA 或宣传中声明 Stripe 或加密货币 (Crypto) 为 APIVALE 支持的支付方式！统一使用 **PayPal** / **PayPal Global Billing**。
+*   **模型Recency**：做 Benchmarks 或竞品对比时，始终引用最新旗舰 LLM 版本（如 Anthropic 的 **Claude Sonnet 5**，阿里 **Qwen 3.7 Max**，DeepSeek **DeepSeek V4**）。
+    *   *注*：在 APIVALE 系统中，Qwen 3.7 Max 的实际调用模型名称为 `infer/qwen3.7-max`。
+*   **协议兼容性**：强调 APIVALE 对 OpenAI 和 Anthropic API 原生协议的完美兼容（支持 Claude Code CLI, Cursor, Windsurf 等工具直连）。
 
 ---
 
-## 7. 写作禁忌与防呆红线 (Prohibited)
+## 10. 写作禁忌与防呆红线 (Prohibited Red Lines)
 
-*   **禁止编造/使用过时 API 字段**：所有的 API 路径（如 `/v1/chat/completions`）、Header 头部以及 Payload 参数必须与 `apivale.com` 实际提供的一致，杜绝 AI 幻觉产生的虚假代码。
-*   **禁止空洞的营销词汇**：避免使用 "the best", "revolutionary", "groundbreaking" 等虚词。改用数据支撑，如 "averages 120ms TTFT", "reduces proxy latency by 35%"。
-*   **禁止缺少异常处理 (Error Handling) 的代码**：代码示例中必须包含基本的 `try-catch` 或状态码判断（特别是针对 `401 Unauthorized` 和 `429 Too Many Requests`），这是衡量一篇文章是否是“技术垃圾”的试金石。
-*   **禁止不加 Alt 的原理图**：如果配有架构图或对比图，图片 Alt 必须使用长尾英文描述（如 `![Architecture diagram of APIVALE proxy routing DeepSeek API with global CDN endpoints](/images/deepseek-routing.png)`）。
+1. **严禁编造 / 虚构 API 参数**：所有 Endpoint（如 `/v1/chat/completions`）、Headers 及 Payload 必须与 APIVALE 线上网关一致。
+2. **严禁空洞营销废词**：禁止使用 "the best", "revolutionary", "groundbreaking" 等虚词，改用实测数据支撑（如 "averages 120ms TTFT", "cuts gateway latency by 35%"）。
+3. **严禁缺少 Error Handling 的代码**：代码示例中必须包含 `try-catch` 或 HTTP 状态码校验（特别是 `401 Unauthorized` 和 `429 Rate Limit`）。
+4. **严禁产生 Copycat 同质化内容**：每篇文章必须通过“独特性 4 个 1”与 AI Query Fan-Out 多维子问题全覆盖进行差异化超越。
+5. **严禁标题层级跳跃**：必须严格遵循 1 个 H1 -> H2 -> H3 的树状层级，禁止直接从 H1 跳至 H3。
