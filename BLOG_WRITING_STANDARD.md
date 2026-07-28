@@ -87,22 +87,23 @@
 ```
 ├── 1. Title Tag & H1 (双轨分工, ABC 标题公式, 50-60字符 cap)
 ├── 2. Frontmatter Description (140-160字符, AI 引用第3权重摘要)
-├── 3. PAS Introduction (痛点陈述 + E-E-A-T 锚点 + 可运行的最简 cURL 代码示例)
-├── 4. Defined Snippet Box (定义框：捕捉 Position Zero 精选摘要)
-├── 5. Comparison Table (前 20% 处：价格、限频、支持模型的硬核对比)
-├── 6. Technical Modules (2-3个 H2/H3 核心板块，回答 AI Query Fan-Out 衍生子问题)
-├── 7. Developer FAQ (针对 AI GEO 抓取的 3-4 个精炼技术问答)
-├── 8. Schema JSON-LD (FAQPage 结构化数据)
-└── 9. CTA Module (开发者导向：PayPal 快捷充值、API Key 免费创建)
+├── 3. Key Takeaways Module (核心要点速览框：包含 3 个高密度技术/实践结论)
+├── 4. PAS Introduction (痛点陈述 + E-E-A-T 锚点 + 可运行的最简 cURL 代码示例)
+├── 5. Defined Snippet Box (定义框：捕捉 Position Zero 精选摘要)
+├── 6. Comparison Table (前 20% 处：价格、限频、支持模型的硬核对比)
+├── 7. Technical Modules (2-3个 H2/H3 核心板块，回答 AI Query Fan-Out 衍生子问题)
+├── 8. Developer FAQ (针对 AI GEO 抓取的 3-4 个精炼技术问答)
+├── 9. Schema JSON-LD (FAQPage 结构化数据)
+└── 10. CTA Module (开发者导向：PayPal 快捷充值、API Key 免费创建)
 ```
 
 ### H 标签语义树排版红线 (Heading AST Hierarchy)
 *   **唯一 `<h1>`**：每篇文章只能有 **1 个 H1**（即 Frontmatter 中的 `title` 或 Markdown 顶部的 `# Title`）。
 *   **论点层级 (`<h2>`)**：`<h2>` 用于划分核心逻辑模块（如环境搭建、代码实现、踩坑解决、价格对比）。
 *   **支持层级 (`<h3>`)**：`<h3>` 用于放置支撑 H2 的具体步骤、语言分支（Python/TS）或示例。
+*   **对称化语义子节点原则 (Symmetric Sub-node Rule)**：**禁止单个 H2 下仅挂载 1 个 H3 标题**。如果使用了 H3，则在同一个 H2 下必须至少包含 2 个或以上平行维度的 H3 步骤、语言分支或子板块。这能保证 LLM/RAG 分块检索时，子版块结构完整，防止单个 H3 导致语义碎片化。
 *   **禁止跨级跳跃**：**严禁直接从 H1 跳到 H3**，必须严格按照 H1 -> H2 -> H3 逐层递进，确保 LLM 爬虫快速构建文章层级图谱。
 *   **陈述句首写与单语义消歧原则 (Declarative & Monosemanticity Rule)**：每个 H2/H3 小标题下方的**第一句话**必须使用直接、明确的陈述句概括核心结论，同时消除多义词歧义（Monosemanticity）。必须明确写出【动作 + 核心实体 + 具体技术上下文】（例如：“*Configure APIVALE's OpenAI-compatible proxy gateway to route Claude Code CLI requests with zero-credit-card PayPal billing.*”），极大增加被 AI Overviews 和 LLM 注意力机制直接采纳的几率。
-
 ---
 
 ## 4. 强制“独特性 4 个 1”规范 (Information Gain Standard)
@@ -189,6 +190,27 @@
 ### D. FAQPage 结构化数据 (JSON-LD)
 文章末尾必须注入 `FAQPage` Schema，问答需在 1-2 句内给出直接答案（Direct Answer）。
 
+### E. "核心要点速览框" (Key Takeaways Box) 格式
+针对核心要点总结，在 Frontmatter Description 下方（即 PAS Introduction 之前）使用以下 HTML 结构：
+```html
+<div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
+  <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
+  <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
+    <li>[核心结论 1：概括文章最重要的一点技术/业务结论]</li>
+    <li>[核心结论 2：指出工程实操或避坑关键点]</li>
+    <li>[核心结论 3：强调 APIVALE 解决方案的价值与优势]</li>
+  </ul>
+</div>
+```
+
+### F. 转化漏斗“软硬双轨”植入策略 (Soft & Hard Dual-Track CTA Strategy)
+*   **软性穿插（Contextual Soft CTA）**：禁止仅在文章末尾堆砌 CTA。在技术方案落地（如解决 SSE 流式缓冲丢包、重试配置等 H3 小标题）的末尾，应顺理成章地将 APIVALE 产品特性作为最佳实践的一部分进行植入（例如：“*By leveraging APIVALE's built-in failover gateway, you can bypass these routing drops automatically...*”）。
+*   **硬性收拢（Hard CTA Module）**：在 Conclusion 的最末尾，以清晰、行动导向的语言（如 “*Create a free API key on APIVALE or top up via PayPal...*”）指引用户注册或付费。
+
+### G. FAQ 直接提问与直接回答原则 (Direct Q&A Standard)
+*   **提问格式（Direct Question Format）**：FAQ 标题（H3）必须采用直接的问题句式（例如 `### How to resolve APIVALE proxy 429 rate limit errors?`，而不是抽象的 `### Proxy 429 Resolution`）。
+*   **回答格式（Direct Answer Format）**：FAQ 的回答中，第一句话（最多前两句）必须直接、明确地回答该问题（例如“You can resolve APIVALE proxy 429 errors by implementing exponential backoff retry logic with jitter.”），随后再展开技术解析或代码配置。这极大地方便了 Perplexity / AI Overviews 召回并提取直接答案。
+
 ---
 
 ## 7. 内外链建设规范 (Internal & External Link Standard)
@@ -225,3 +247,6 @@
 3. **严禁缺少 Error Handling 的代码**：代码示例中必须包含 `try-catch` 或 HTTP 状态码校验（特别是 `401 Unauthorized` 和 `429 Rate Limit`）。
 4. **严禁产生 Copycat 同质化内容**：每篇文章必须通过“独特性 4 个 1”与 AI Query Fan-Out 多维子问题全覆盖进行差异化超越。
 5. **严禁标题层级跳跃**：必须严格遵循 1 个 H1 -> H2 -> H3 的树状层级，禁止直接从 H1 跳至 H3。
+6. **严禁单个 H2 下仅挂载 1 个 H3 标题**（违反对称化语义子节点原则）。
+7. **严禁 FAQ 采用抽象名词标题**（必须采用直白疑问句，且首句直接回答）。
+8. **严禁仅在文章末尾硬性堆砌 CTA**（必须在技术板块中包含至少 1 处软性穿插）。
