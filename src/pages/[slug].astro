@@ -21,6 +21,13 @@ function formatDate(date: Date) {
 }
 
 const pageTitle = post.data.metaTitle || (post.data.title.includes('APIVALE') ? post.data.title : `${post.data.title} | APIVALE`);
+
+const authorAvatars: Record<string, string> = {
+	'Alex Rivera': '/blog/authors/alex-rivera.png',
+	'Kenji Tanaka': '/blog/authors/kenji-tanaka.png',
+	'Sofia Costa': '/blog/authors/sofia-costa.png',
+};
+const avatarUrl = authorAvatars[post.data.author];
 ---
 
 <Layout 
@@ -45,7 +52,11 @@ const pageTitle = post.data.metaTitle || (post.data.title.includes('APIVALE') ? 
 			
 			<div class="post-author-bar">
 				<div class="author-avatar">
-					{post.data.author.split(' ').map(n => n[0]).join('')}
+					{avatarUrl ? (
+						<img src={avatarUrl} alt={post.data.author} class="avatar-img" />
+					) : (
+						post.data.author.split(' ').map(n => n[0]).join('')
+					)}
 				</div>
 				<div class="author-meta-info">
 					<span class="author-name">{post.data.author}</span>
@@ -83,7 +94,11 @@ const pageTitle = post.data.metaTitle || (post.data.title.includes('APIVALE') ? 
 		<footer class="post-footer">
 			<div class="author-box">
 				<div class="author-box-avatar">
-					{post.data.author.split(' ').map(n => n[0]).join('')}
+					{avatarUrl ? (
+						<img src={avatarUrl} alt={post.data.author} class="avatar-img" />
+					) : (
+						post.data.author.split(' ').map(n => n[0]).join('')
+					)}
 				</div>
 				<div class="author-box-content">
 					<h4>About {post.data.author}</h4>
@@ -355,6 +370,28 @@ const pageTitle = post.data.metaTitle || (post.data.title.includes('APIVALE') ? 
 		gap: 1rem;
 	}
 
+	.author-avatar {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+		color: var(--text-primary);
+		font-weight: 700;
+		font-size: 0.9rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		overflow: hidden;
+	}
+
+	.avatar-img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 50%;
+	}
+
 	.author-meta-info {
 		display: flex;
 		flex-direction: column;
@@ -545,6 +582,7 @@ const pageTitle = post.data.metaTitle || (post.data.title.includes('APIVALE') ? 
 		align-items: center;
 		justify-content: center;
 		flex-shrink: 0;
+		overflow: hidden;
 	}
 
 	.author-box-content h4 {

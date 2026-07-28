@@ -13,6 +13,12 @@ function formatDate(date: Date) {
 		day: 'numeric',
 	});
 }
+
+const authorAvatars: Record<string, string> = {
+	'Alex Rivera': '/blog/authors/alex-rivera.png',
+	'Kenji Tanaka': '/blog/authors/kenji-tanaka.png',
+	'Sofia Costa': '/blog/authors/sofia-costa.png',
+};
 ---
 
 <Layout title="Insights & API Tutorials">
@@ -28,37 +34,44 @@ function formatDate(date: Date) {
 
 	<section class="posts-section">
 		<div class="posts-grid">
-			{sortedPosts.map((post) => (
-				<article class="post-card">
-					<div class="card-glow"></div>
-					<div class="card-content">
-						<div class="card-meta">
-							<div class="card-tags">
-								{post.data.tags.slice(0, 2).map((tag) => (
-									<span class="tag-badge">{tag}</span>
-								))}
+			{sortedPosts.map((post) => {
+				const avatarUrl = authorAvatars[post.data.author];
+				return (
+					<article class="post-card">
+						<div class="card-glow"></div>
+						<div class="card-content">
+							<div class="card-meta">
+								<div class="card-tags">
+									{post.data.tags.slice(0, 2).map((tag) => (
+										<span class="tag-badge">{tag}</span>
+									))}
+								</div>
+								<time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
 							</div>
-							<time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+							
+							<h3 class="card-title">
+								<a href={`/blog/${post.id}/`}>{post.data.title}</a>
+							</h3>
+							
+							<p class="card-description">{post.data.description}</p>
+							
+							<div class="card-author">
+								<div class="author-avatar">
+									{avatarUrl ? (
+										<img src={avatarUrl} alt={post.data.author} class="avatar-img" />
+									) : (
+										post.data.author.split(' ').map(n => n[0]).join('')
+									)}
+								</div>
+								<div class="author-info">
+									<span class="author-name">{post.data.author}</span>
+									<span class="author-title">{post.data.authorTitle}</span>
+								</div>
+							</div>
 						</div>
-						
-						<h3 class="card-title">
-							<a href={`/blog/${post.id}/`}>{post.data.title}</a>
-						</h3>
-						
-						<p class="card-description">{post.data.description}</p>
-						
-						<div class="card-author">
-							<div class="author-avatar">
-								{post.data.author.split(' ').map(n => n[0]).join('')}
-							</div>
-							<div class="author-info">
-								<span class="author-name">{post.data.author}</span>
-								<span class="author-title">{post.data.authorTitle}</span>
-							</div>
-						</div>
-					</div>
-				</article>
-			))}
+					</article>
+				);
+			})}
 		</div>
 	</section>
 </Layout>
@@ -261,6 +274,14 @@ function formatDate(date: Date) {
 		align-items: center;
 		justify-content: center;
 		letter-spacing: 0.05em;
+		overflow: hidden;
+	}
+
+	.avatar-img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 50%;
 	}
 
 	.author-info {
