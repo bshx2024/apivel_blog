@@ -110,6 +110,77 @@ Test your APIVALE endpoint and Qwen 3.8 model execution directly inside this art
 </div>
 
 <script is:inline>
+  document.addEventListener('DOMContentLoaded', async () => {
+    try {
+      // Fetch user self session
+      const selfRes = await fetch('/api/user/self', { credentials: 'include' }).then(r => r.json());
+      if (selfRes && selfRes.success && selfRes.data) {
+        const username = selfRes.data.username || selfRes.data.display_name || 'User';
+        
+        let userApiKey = '';
+        try {
+          // Fetch user API tokens
+          const tokenRes = await fetch('/api/token/?p=0', { credentials: 'include' }).then(r => r.json());
+          if (tokenRes && tokenRes.success && Array.isArray(tokenRes.data) && tokenRes.data.length > 0) {
+            userApiKey = 'sk-' + tokenRes.data[0].key;
+          } else {
+            const singleTokenRes = await fetch('/api/user/token', { credentials: 'include' }).then(r => r.json());
+            if (singleTokenRes && singleTokenRes.data) {
+              const k = singleTokenRes.data;
+              userApiKey = k.startsWith('sk-') ? k : 'sk-' + k;
+            }
+          }
+        } catch (e) {
+          console.warn('Could not fetch token list:', e);
+        }
+
+        if (!userApiKey) {
+          userApiKey = 'sk-apivale-user-active';
+        }
+
+        // Update DOM elements
+        const badge = document.getElementById('user-auth-status-badge');
+        const desc = document.getElementById('user-auth-status-desc');
+        const loginBtn = document.getElementById('cta-login-btn');
+        const copyBtn = document.getElementById('copy-script-btn');
+
+        if (badge) {
+          badge.className = 'text-xs text-emerald-400 bg-emerald-950/80 border border-emerald-700/60 px-3 py-1 rounded-full font-semibold';
+          badge.innerHTML = '✅ Logged in as ' + username + ' (API Key Auto-Filled)';
+        }
+
+        if (desc) {
+          desc.innerHTML = 'Welcome back, <strong>' + username + '</strong>! Your personal API key (<code>' + userApiKey.substring(0, 12) + '...</code>) has been automatically inserted into the setup commands below.';
+        }
+
+        if (loginBtn) {
+          loginBtn.className = 'inline-flex items-center text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md';
+          loginBtn.innerHTML = '✅ API Key Active (' + username + ')';
+          loginBtn.href = '/_authenticated/keys/';
+        }
+
+        // Replace dummy key in code blocks
+        const codeBlocks = document.querySelectorAll('pre code');
+        codeBlocks.forEach(code => {
+          if (code.innerText.includes('your_apivale_api_key')) {
+            code.innerHTML = code.innerHTML.replaceAll('your_apivale_api_key', userApiKey);
+          }
+        });
+
+        // Update copy button function
+        if (copyBtn) {
+          copyBtn.onclick = () => {
+            const scriptStr = `export ANTHROPIC_BASE_URL='https://api.apivale.com/v1'\nexport ANTHROPIC_AUTH_TOKEN='${userApiKey}'\nexport ANTHROPIC_MODEL='infer/qwen3.7-max'`;
+            navigator.clipboard.writeText(scriptStr);
+            alert('Copied setup script with your personal API key!');
+          };
+        }
+      }
+    } catch (err) {
+      console.log('User guest mode:', err);
+    }
+  });
+
   function runQwenTestInArticle() {
     const input = document.getElementById('qwen-prompt-input').value;
     const btn = document.getElementById('qwen-run-btn');
