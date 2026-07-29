@@ -149,8 +149,13 @@ Test your APIVALE endpoint and Qwen 3.8 model execution directly inside this art
           badge.innerHTML = '✅ Logged in as ' + username + ' (API Key Auto-Filled)';
         }
 
+        // Create masked key for screen display (e.g. sk-abc1...89xyz)
+        const maskedApiKey = userApiKey.length > 12 
+          ? userApiKey.substring(0, 8) + '...' + userApiKey.slice(-4)
+          : userApiKey;
+
         if (desc) {
-          desc.innerHTML = 'Welcome back, <strong>' + username + '</strong>! Your personal API key (<code>' + userApiKey.substring(0, 12) + '...</code>) has been automatically inserted into the setup commands below.';
+          desc.innerHTML = 'Welcome back, <strong>' + username + '</strong>! Your personal API key (<code>' + maskedApiKey + '</code>) has been automatically inserted into the setup commands below.';
         }
 
         if (loginBtn) {
@@ -159,15 +164,15 @@ Test your APIVALE endpoint and Qwen 3.8 model execution directly inside this art
           loginBtn.href = '/_authenticated/keys/';
         }
 
-        // Replace dummy key in code blocks
+        // Replace dummy key in displayed code blocks with masked key for visual privacy
         const codeBlocks = document.querySelectorAll('pre code');
         codeBlocks.forEach(code => {
           if (code.innerText.includes('your_apivale_api_key')) {
-            code.innerHTML = code.innerHTML.replaceAll('your_apivale_api_key', userApiKey);
+            code.innerHTML = code.innerHTML.replaceAll('your_apivale_api_key', maskedApiKey);
           }
         });
 
-        // Update copy button function
+        // Update copy button function to copy the FULL REAL API KEY into clipboard
         if (copyBtn) {
           copyBtn.onclick = () => {
             const scriptStr = `export ANTHROPIC_BASE_URL='https://api.apivale.com/v1'\nexport ANTHROPIC_AUTH_TOKEN='${userApiKey}'\nexport ANTHROPIC_MODEL='infer/qwen3.7-max'`;
