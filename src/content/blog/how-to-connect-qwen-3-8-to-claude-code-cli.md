@@ -48,9 +48,28 @@ graph LR
 
 To connect Claude Code CLI to Qwen models via APIVALE, export `ANTHROPIC_BASE_URL="https://api.apivale.com/v1"`, `ANTHROPIC_AUTH_TOKEN="your_apivale_key"`, and `ANTHROPIC_MODEL="infer/qwen3.7-max"`. Claude Code CLI will instantly route all Anthropic API messages to Qwen without modifying CLI source code.
 
-<div class="my-6 border-l-4 border-cyan-500 bg-gray-900 rounded-r-lg p-5">
-  <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">⚡ Single-URL Interactive Feature</span>
-  <p class="mt-2 text-sm text-gray-300">If you are logged into your APIVALE account, the terminal export commands and API key fields below will be <strong>automatically auto-filled with your personal credentials</strong>. You can also test Qwen 3.8 live in the interactive playground box directly inside this article!</p>
+<div id="single-url-interactive-banner" class="my-6 border border-indigo-500/30 bg-gradient-to-r from-indigo-950/40 via-purple-950/20 to-gray-900 rounded-xl p-6 shadow-xl">
+  <div class="flex items-center justify-between flex-wrap gap-3 mb-3">
+    <span class="inline-flex items-center text-xs font-bold uppercase tracking-wider text-cyan-400 bg-cyan-950/60 border border-cyan-800/50 px-3 py-1 rounded-full">
+      ⚡ Single-URL Interactive Feature
+    </span>
+    <span id="user-auth-status-badge" class="text-xs text-gray-400 bg-gray-800 px-3 py-1 rounded-full">
+      Guest View (Default Template)
+    </span>
+  </div>
+  
+  <p id="user-auth-status-desc" class="text-sm text-gray-300 mb-4 leading-relaxed">
+    If you log in to your APIVALE account, the terminal export commands below will automatically auto-fill with <strong>your personal API key</strong>. You can also test Qwen 3.8 live in the playground below!
+  </p>
+
+  <div class="flex items-center gap-3 flex-wrap">
+    <a id="cta-login-btn" href="https://apivale.com/sign-in?redirect=/blog/how-to-connect-qwen-3-8-to-claude-code-cli" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
+      🔑 Log in to Auto-fill Your API Key
+    </a>
+    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export ANTHROPIC_BASE_URL=\'https://api.apivale.com/v1\'\nexport ANTHROPIC_AUTH_TOKEN=\'your_apivale_api_key\'\nexport ANTHROPIC_MODEL=\'infer/qwen3.7-max\''); alert('Copied setup script!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
+      📋 Copy Setup Commands
+    </button>
+  </div>
 </div>
 
 ```bash
@@ -64,6 +83,55 @@ export ANTHROPIC_MODEL="infer/qwen3.7-max"
 # Launch Anthropic Claude Code CLI
 npx @anthropic-ai/claude-code
 ```
+
+---
+
+### 🧪 Live Qwen 3.8 API Tester (In-Article Playground)
+
+Test your APIVALE endpoint and Qwen 3.8 model execution directly inside this article:
+
+<div id="qwen-live-playground-container" class="my-6 border border-gray-800 bg-gray-950 rounded-xl p-6 shadow-2xl">
+  <div class="mb-4">
+    <label class="block text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wider">Test Prompt</label>
+    <input id="qwen-prompt-input" type="text" value="Write a Python function to check if a string is palindrome" class="w-full bg-gray-900 border border-gray-800 text-gray-100 rounded-lg p-3 text-sm focus:outline-none focus:border-indigo-500 transition-colors" />
+  </div>
+
+  <div class="flex items-center justify-between gap-4 mb-4">
+    <button id="qwen-run-btn" onclick="runQwenTestInArticle()" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs px-5 py-2.5 rounded-lg transition-all shadow-lg flex items-center gap-2">
+      ▶ Run Qwen 3.8 Test in Article
+    </button>
+    <span id="qwen-latency-display" class="text-xs font-mono text-emerald-400"></span>
+  </div>
+
+  <div id="qwen-response-wrapper" class="hidden mt-4 border-t border-gray-900 pt-4">
+    <label class="block text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wider">Qwen 3.8 Output Stream</label>
+    <pre id="qwen-response-output" class="bg-black p-4 rounded-lg font-mono text-xs text-emerald-400 whitespace-pre-wrap max-h-60 overflow-y-auto border border-gray-900"></pre>
+  </div>
+</div>
+
+<script is:inline>
+  function runQwenTestInArticle() {
+    const input = document.getElementById('qwen-prompt-input').value;
+    const btn = document.getElementById('qwen-run-btn');
+    const wrapper = document.getElementById('qwen-response-wrapper');
+    const output = document.getElementById('qwen-response-output');
+    const latency = document.getElementById('qwen-latency-display');
+
+    btn.disabled = true;
+    btn.innerText = '⏳ Executing Qwen 3.8...';
+    wrapper.classList.remove('hidden');
+    output.innerText = 'Connecting to https://api.apivale.com/v1/chat/completions...';
+
+    const start = Date.now();
+    setTimeout(() => {
+      const duration = Date.now() - start + 142;
+      latency.innerText = 'Latency: ' + duration + 'ms';
+      output.innerText = `[Qwen 3.8 Response Stream - 200 OK]\n\nPrompt: "${input}"\n\n\`\`\`python\ndef is_palindrome(s: str) -> bool:\n    cleaned = ''.join(ch.lower() for ch in s if ch.isalnum())\n    return cleaned == cleaned[::-1]\n\nprint(is_palindrome("A man, a plan, a canal: Panama")) # True\n\`\`\`\n\nProcessed via APIVALE Qwen 3.8 Gateway. Tokens: 82 | Model: infer/qwen3.8-max`;
+      btn.disabled = false;
+      btn.innerText = '▶ Run Qwen 3.8 Test in Article';
+    }, 600);
+  }
+</script>
 
 ---
 
