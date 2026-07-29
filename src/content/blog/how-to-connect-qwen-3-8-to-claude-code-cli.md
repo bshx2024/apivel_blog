@@ -46,9 +46,7 @@ graph LR
 
 ### Quick Start: Route Claude Code to Qwen 3.8 / Qwen 3.7 in 30 Seconds
 
-To connect Claude Code CLI to Qwen models via APIVALE, export `ANTHROPIC_BASE_URL="https://api.apivale.com/v1"`, `ANTHROPIC_AUTH_TOKEN="your_apivale_key"`, and `ANTHROPIC_MODEL="infer/qwen3.7-max"`. Claude Code CLI will instantly route all Anthropic API messages to Qwen without modifying CLI source code.
-
-<div id="single-url-interactive-banner" class="my-6 border border-indigo-500/30 bg-gradient-to-r from-indigo-950/40 via-purple-950/20 to-gray-900 rounded-xl p-6 shadow-xl">
+To connect Claude Code CLI to Qwen models via APIVALE, export `ANTHROPIC_BASE_URL="https://api.apivale.com/v1"`, `ANTHROPIC_AUTH_TOKEN="your_apivale_key"`, and `ANTHROPIC_MODEL="infer/qwen3.7-max"`. Claude Code CLI will instantly route all Anthropic API messages to Qwen without modifying CLI source code.<div id="single-url-interactive-banner" class="my-6 border border-indigo-500/30 bg-gradient-to-r from-indigo-950/40 via-purple-950/20 to-gray-900 rounded-xl p-6 shadow-xl">
   <div class="flex items-center justify-between flex-wrap gap-3 mb-3">
     <span class="inline-flex items-center text-xs font-bold uppercase tracking-wider text-cyan-400 bg-cyan-950/60 border border-cyan-800/50 px-3 py-1 rounded-full">
       ⚡ Single-URL Interactive Feature
@@ -57,14 +55,12 @@ To connect Claude Code CLI to Qwen models via APIVALE, export `ANTHROPIC_BASE_UR
       Guest View (Default Template)
     </span>
   </div>
-  
   <p id="user-auth-status-desc" class="text-sm text-gray-300 mb-4 leading-relaxed">
-    If you log in to your APIVALE account, the terminal export commands below will automatically auto-fill with <strong>your personal API key</strong>. You can also test Qwen 3.8 live in the playground below!
+    Sign up for a free APIVALE account (or log in) to claim <strong>$0.20 free starter credit</strong>. Your personal API key will be automatically generated and auto-filled into the terminal commands below!
   </p>
-
   <div class="flex items-center gap-3 flex-wrap">
-    <a id="cta-login-btn" href="https://apivale.com/sign-in?redirect=/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
-      🔑 Log in to Auto-fill Your API Key
+    <a id="cta-login-btn" href="https://apivale.com/sign-up?redirect=/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
+      ⚡ Sign Up / Log In to Auto-Fill Your API Key
     </a>
     <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export ANTHROPIC_BASE_URL=\'https://api.apivale.com/v1\'\nexport ANTHROPIC_AUTH_TOKEN=\'your_apivale_api_key\'\nexport ANTHROPIC_MODEL=\'infer/qwen3.7-max\''); alert('Copied setup script!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
       📋 Copy Setup Commands
@@ -124,14 +120,31 @@ Test your APIVALE endpoint and Qwen 3.8 model execution directly inside this art
           if (tokenRes && tokenRes.success && Array.isArray(tokenRes.data) && tokenRes.data.length > 0) {
             userApiKey = 'sk-' + tokenRes.data[0].key;
           } else {
-            const singleTokenRes = await fetch('/api/user/token', { credentials: 'include' }).then(r => r.json());
-            if (singleTokenRes && singleTokenRes.data) {
-              const k = singleTokenRes.data;
-              userApiKey = k.startsWith('sk-') ? k : 'sk-' + k;
+            // Auto-create a default API Key for newly registered user on the fly!
+            try {
+              const createRes = await fetch('/api/token/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                credentials: 'include',
+                body: JSON.stringify({
+                  name: 'Claude Code Key',
+                  remain_quota: 0,
+                  expired_time: -1,
+                  unlimited_quota: true
+                })
+              }).then(r => r.json());
+
+              if (createRes && createRes.success && createRes.data) {
+                const k = typeof createRes.data === 'string' ? createRes.data : (createRes.data.key || '');
+                if (k) userApiKey = k.startsWith('sk-') ? k : 'sk-' + k;
+              }
+            } catch (e) {
+              console.warn('Auto key creation error:', e);
             }
           }
         } catch (e) {
           console.warn('Could not fetch token list:', e);
+        }, e);
         }
 
         if (!userApiKey) {
