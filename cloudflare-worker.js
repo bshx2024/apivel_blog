@@ -25,9 +25,9 @@ export default {
       newUrl.hostname = BLOG_HOST;
       newUrl.protocol = "https:";
       
-      // Ensure /blog has a trailing slash for index route matching
-      if (newUrl.pathname === "/blog") {
-        newUrl.pathname = "/blog/";
+      // Ensure directory routes have a trailing slash for Astro index route matching
+      if (!newUrl.pathname.endsWith("/") && !/\.[a-zA-Z0-9]+$/.test(newUrl.pathname)) {
+        newUrl.pathname = newUrl.pathname + "/";
       }
       
       // Forward request preserving the /blog/ path structure in dist/blog/
@@ -44,22 +44,24 @@ export default {
       try {
         const response = await fetch(modifiedRequest);
 
-        // 重写 301/308 重定向中的 Location 响应头，确保保留 /blog 前缀
+        // Rewrite Location header in 301/308 redirects to always preserve /blog/ prefix
         if (response.status >= 300 && response.status < 400 && response.headers.has("Location")) {
-          const originalLocation = response.headers.get("Location");
-          let newLocation = originalLocation;
-
-          if (newLocation.startsWith("/") && !newLocation.startsWith("/blog/")) {
-            newLocation = "/blog" + newLocation;
-          } else if (newLocation.startsWith(`https://${BLOG_HOST}`)) {
-            newLocation = newLocation.replace(`https://${BLOG_HOST}`, `https://${url.hostname}`);
-            if (!newLocation.includes("/blog/")) {
-              newLocation = newLocation.replace(url.hostname, `${url.hostname}/blog`);
+          let location = response.headers.get("Location") || "";
+          
+          if (!location.startsWith("http://") && !location.startsWith("https://")) {
+            if (!location.startsWith("/")) location = "/" + location;
+            if (!location.startsWith("/blog/")) {
+              location = "/blog" + location;
+            }
+          } else {
+            location = location.replace(`https://${BLOG_HOST}`, `https://${url.hostname}`);
+            if (!location.includes("/blog/")) {
+              location = location.replace(`${url.hostname}/`, `${url.hostname}/blog/`);
             }
           }
 
           const newHeaders = new Headers(response.headers);
-          newHeaders.set("Location", newLocation);
+          newHeaders.set("Location", location);
 
           return new Response(response.body, {
             status: response.status,
