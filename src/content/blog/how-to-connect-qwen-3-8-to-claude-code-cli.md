@@ -48,7 +48,10 @@ graph LR
 
 To connect Claude Code CLI to Qwen models via APIVALE, export `ANTHROPIC_BASE_URL="https://api.apivale.com/v1"`, `ANTHROPIC_AUTH_TOKEN="your_apivale_key"`, and `ANTHROPIC_MODEL="infer/qwen3.7-max"`. Claude Code CLI will instantly route all Anthropic API messages to Qwen without modifying CLI source code.
 
-Run the following terminal commands to override Anthropic's default endpoint:
+<div class="my-6 border-l-4 border-cyan-500 bg-gray-900 rounded-r-lg p-5">
+  <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">⚡ Single-URL Interactive Feature</span>
+  <p class="mt-2 text-sm text-gray-300">If you are logged into your APIVALE account, the terminal export commands and API key fields below will be <strong>automatically auto-filled with your personal credentials</strong>. You can also test Qwen 3.8 live in the interactive playground box directly inside this article!</p>
+</div>
 
 ```bash
 # Point Claude Code CLI to APIVALE's Anthropic-compatible protocol bridge
