@@ -63,7 +63,7 @@ To connect Claude Code CLI to Qwen models via APIVALE, export `ANTHROPIC_BASE_UR
   </p>
 
   <div class="flex items-center gap-3 flex-wrap">
-    <a id="cta-login-btn" href="https://apivale.com/sign-in?redirect=/blog/how-to-connect-qwen-3-8-to-claude-code-cli" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
+    <a id="cta-login-btn" href="https://apivale.com/sign-in?redirect=/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       🔑 Log in to Auto-fill Your API Key
     </a>
     <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export ANTHROPIC_BASE_URL=\'https://api.apivale.com/v1\'\nexport ANTHROPIC_AUTH_TOKEN=\'your_apivale_api_key\'\nexport ANTHROPIC_MODEL=\'infer/qwen3.7-max\''); alert('Copied setup script!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
