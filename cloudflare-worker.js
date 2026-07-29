@@ -25,6 +25,9 @@ export default {
       newUrl.hostname = BLOG_HOST;
       newUrl.protocol = "https:";
       
+      // Strip /blog prefix for Pages target host (dist is deployed at root /)
+      newUrl.pathname = newUrl.pathname.replace(/^\/blog/, "") || "/";
+      
       // Ensure directory routes have a trailing slash for Astro index route matching
       if (!newUrl.pathname.endsWith("/") && !/\.[a-zA-Z0-9]+$/.test(newUrl.pathname)) {
         newUrl.pathname = newUrl.pathname + "/";
