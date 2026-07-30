@@ -96,7 +96,7 @@ To prevent OpenCode from burning tokens unnecessarily during complex multi-file 
 2. **Model Arbitrage (Tier 2)**: Match task complexity to model pricing. Use `deepseek-v4` ($0.27/1M input) for 80% of routine coding steps and switch to `infer/qwen3.7-max` when deep reasoning or 500k+ token context is required.
 3. **Gateway Abstraction (Tier 3)**: Use APIVALE’s high-concurrency connection pools to prevent 429 Too Many Requests errors and take advantage of zero-credit-card **PayPal global billing**.
 
-If you are also using other CLI coding tools or IDE extensions, read our guides on [How to Connect Qwen 3.8 to Claude Code CLI](/blog/how-to-connect-qwen-3-8-to-claude-code-cli) and [How to Connect Kimi K3 to Claude Code CLI](/blog/how-to-connect-kimi-k3-to-claude-code-cli).
+If you are also using other CLI coding tools or IDE extensions, read our guides on [How to Connect Claude Opus 5 to Claude Code CLI](/blog/how-to-connect-claude-opus-5-to-claude-code-cli), [How to Connect Qwen 3.8 to Claude Code CLI](/blog/how-to-connect-qwen-3-8-to-claude-code-cli), and [How to Connect Kimi K3 to Claude Code CLI](/blog/how-to-connect-kimi-k3-to-claude-code-cli).
 
 ---
 

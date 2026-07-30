@@ -12,7 +12,7 @@ lang: "en"
 
 Developers building production-grade AI agents quickly realize that relying on a single LLM provider is a recipe for downtime. That is why unified API routers like OpenRouter became popular. 
 
-However, as production scale increases, OpenRouter's limitations become obvious: high latencies during peak hours, strict rate limits on popular models, and rigid payment systems that frequently block international credit cards via Stripe. Furthermore, accessing flagship models like [Qwen 3.8-Max](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/) or [Cursor custom keys](/blog/cursor-pro-vs-own-api-key/) requires robust, high-concurrency protocol bridges.
+However, as production scale increases, OpenRouter's limitations become obvious: high latencies during peak hours, strict rate limits on popular models, and rigid payment systems that frequently block international credit cards via Stripe. Furthermore, accessing flagship models like [Claude Opus 5](/blog/how-to-connect-claude-opus-5-to-claude-code-cli/), [Qwen 3.8-Max](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/), or [Cursor custom keys](/blog/cursor-pro-vs-own-api-key/) requires robust, high-concurrency protocol bridges.
 
 If you are facing these bottlenecks, this guide compares the top 5 OpenRouter alternatives for developer-focused multi-model routing.
 
