@@ -106,8 +106,8 @@ npx @anthropic-ai/claude-code
 ```
 
 > [!TIP]
-> **Windows PowerShell Users**:  
-> Execute `$env:ANTHROPIC_BASE_URL="https://apivale.com/v1"`, `$env:ANTHROPIC_AUTH_TOKEN="apivale-key-xxxx"`, and `$env:ANTHROPIC_MODEL="infer/qwen3.7-max"` before running `npx @anthropic-ai/claude-code`.
+> **Windows PowerShell Users & Full Setup Guide**:  
+> Execute `$env:ANTHROPIC_BASE_URL="https://apivale.com/v1"`, `$env:ANTHROPIC_AUTH_TOKEN="apivale-key-xxxx"`, and `$env:ANTHROPIC_MODEL="infer/qwen3.7-max"` before running `npx @anthropic-ai/claude-code`. For complete step-by-step CLI instructions, read our full guide on [how to connect Qwen 3.8 to Claude Code CLI](/blog/how-to-connect-qwen-3-8-to-claude-code-cli).
 
 ---
 
