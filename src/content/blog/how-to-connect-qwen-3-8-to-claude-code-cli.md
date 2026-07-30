@@ -14,10 +14,32 @@ lang: "en"
 <div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
-    <li><strong>Significant Cost Savings:</strong> Routing your Claude Code CLI and Cursor requests to Qwen 3.7/3.8-Max via APIVALE cuts token consumption costs by up to 80% compared to official endpoints.</li>
+    <li><strong>Significant Cost Savings:</strong> Routing your Claude Code CLI and Cursor requests to Qwen 3.7/3.8-Max via <a href="https://apivale.com/sign-up?redirect=/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="text-emerald-400 hover:underline font-semibold">APIVALE (Claim $0.20 Free Credit)</a> cuts token consumption costs by up to 80% compared to official endpoints.</li>
     <li><strong>High Performance:</strong> APIVALE's optimized protocol gateway reduces Time-to-First-Token (TTFT) to ~420ms, which is 50% faster than standard baseline configurations.</li>
     <li><strong>Simplified Infrastructure:</strong> The APIVALE gateway translates Anthropic payload structures seamlessly, requiring zero local hardware configuration and supporting global PayPal billing.</li>
   </ul>
+</div>
+
+<div id="single-url-interactive-banner" class="my-6 border border-indigo-500/30 bg-gradient-to-r from-indigo-950/40 via-purple-950/20 to-gray-900 rounded-xl p-6 shadow-xl">
+  <div class="flex items-center justify-between flex-wrap gap-3 mb-3">
+    <span class="inline-flex items-center text-xs font-bold uppercase tracking-wider text-cyan-400 bg-cyan-950/60 border border-cyan-800/50 px-3 py-1 rounded-full">
+      ⚡ Single-URL Interactive Feature
+    </span>
+    <span id="user-auth-status-badge" class="text-xs text-gray-400 bg-gray-800 px-3 py-1 rounded-full">
+      Guest View (Default Template)
+    </span>
+  </div>
+  <p id="user-auth-status-desc" class="text-sm text-gray-300 mb-4 leading-relaxed">
+    Sign up for a free APIVALE account (or log in) to claim <strong>$0.20 free starter credit</strong>. Your personal API key will be automatically generated and auto-filled into the terminal commands below!
+  </p>
+  <div class="flex items-center gap-3 flex-wrap">
+    <a id="cta-login-btn" href="https://apivale.com/sign-up?redirect=/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
+      ⚡ Sign Up / Log In to Auto-Fill Your API Key
+    </a>
+    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export ANTHROPIC_BASE_URL=\'https://api.apivale.com/v1\'\nexport ANTHROPIC_AUTH_TOKEN=\'your_apivale_api_key\'\nexport ANTHROPIC_MODEL=\'infer/qwen3.7-max\''); alert('Copied setup script!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
+      📋 Copy Setup Commands
+    </button>
+  </div>
 </div>
 
 Running autonomous coding agents like **Claude Code CLI** and **Cursor Composer** in complex refactoring loops can burn through API credits at an alarming rate—often exceeding $40 per bug fix on official Claude Sonnet 5 endpoints. At the same time, attempting to run Alibaba's flagship 2.4-trillion parameter **Qwen 3.8-Max** locally requires an enterprise cluster of 18x NVIDIA H200 GPUs (over 2.4TB VRAM), while traditional cloud platforms lock developers out with rigid international credit card verification.
@@ -46,27 +68,7 @@ graph LR
 
 ### Quick Start: Route Claude Code to Qwen 3.8 / Qwen 3.7 in 30 Seconds
 
-To connect Claude Code CLI to Qwen models via APIVALE, export `ANTHROPIC_BASE_URL="https://api.apivale.com/v1"`, `ANTHROPIC_AUTH_TOKEN="your_apivale_key"`, and `ANTHROPIC_MODEL="infer/qwen3.7-max"`. Claude Code CLI will instantly route all Anthropic API messages to Qwen without modifying CLI source code.<div id="single-url-interactive-banner" class="my-6 border border-indigo-500/30 bg-gradient-to-r from-indigo-950/40 via-purple-950/20 to-gray-900 rounded-xl p-6 shadow-xl">
-  <div class="flex items-center justify-between flex-wrap gap-3 mb-3">
-    <span class="inline-flex items-center text-xs font-bold uppercase tracking-wider text-cyan-400 bg-cyan-950/60 border border-cyan-800/50 px-3 py-1 rounded-full">
-      ⚡ Single-URL Interactive Feature
-    </span>
-    <span id="user-auth-status-badge" class="text-xs text-gray-400 bg-gray-800 px-3 py-1 rounded-full">
-      Guest View (Default Template)
-    </span>
-  </div>
-  <p id="user-auth-status-desc" class="text-sm text-gray-300 mb-4 leading-relaxed">
-    Sign up for a free APIVALE account (or log in) to claim <strong>$0.20 free starter credit</strong>. Your personal API key will be automatically generated and auto-filled into the terminal commands below!
-  </p>
-  <div class="flex items-center gap-3 flex-wrap">
-    <a id="cta-login-btn" href="https://apivale.com/sign-up?redirect=/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
-      ⚡ Sign Up / Log In to Auto-Fill Your API Key
-    </a>
-    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export ANTHROPIC_BASE_URL=\'https://api.apivale.com/v1\'\nexport ANTHROPIC_AUTH_TOKEN=\'your_apivale_api_key\'\nexport ANTHROPIC_MODEL=\'infer/qwen3.7-max\''); alert('Copied setup script!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
-      📋 Copy Setup Commands
-    </button>
-  </div>
-</div>
+To connect Claude Code CLI to Qwen models via APIVALE, export `ANTHROPIC_BASE_URL="https://api.apivale.com/v1"`, `ANTHROPIC_AUTH_TOKEN="your_apivale_key"`, and `ANTHROPIC_MODEL="infer/qwen3.7-max"`. Claude Code CLI will instantly route all Anthropic API messages to Qwen without modifying CLI source code.
 
 ```bash
 # Point Claude Code CLI to APIVALE's Anthropic-compatible protocol bridge
