@@ -11,7 +11,7 @@ image: "/blog/og-cover.png"
 lang: "en"
 ---
 
-With the official release of **Qwen 3.7** (featuring flagship variants **Qwen 3.7-Max** and **Qwen 3.7-Plus**), Alibaba Cloud has ushered in what developers across Reddit, Hacker News, and X are calling the "Agent Era." Demonstrating SOTA performance on benchmarks like SWE-bench Pro and Terminal Bench 2.0, Qwen 3.7 excels at long-horizon autonomous coding—running multi-hour terminal loops, automated debugging, and multi-file project refactoring without human intervention.
+With the official release of **Qwen 3.7** and its flagship successor **Qwen 3.8** (see our guide on [how to connect Qwen 3.8 to Claude Code CLI](/blog/how-to-connect-qwen-3-8-to-claude-code-cli)), Alibaba Cloud has ushered in what developers across Reddit, Hacker News, and X are calling the "Agent Era." Demonstrating SOTA performance on benchmarks like SWE-bench Pro and Terminal Bench 2.0, Qwen 3.7 excels at long-horizon autonomous coding—running multi-hour terminal loops, automated debugging, and multi-file project refactoring without human intervention.
 
 While Anthropic's flagship **Claude Sonnet 5** remains the benchmark for interactive reasoning, Qwen 3.7 has captured global developer attention as a closed-source, API-only frontier model with **native Anthropic API protocol compatibility**.
 
