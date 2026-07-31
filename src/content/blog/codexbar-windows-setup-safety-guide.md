@@ -3,9 +3,9 @@ title: "CodexBar Guide: Windows/Linux Setup, Safety & Rate Limit Fix (PayPal API
 metaTitle: "CodexBar Guide: Windows Setup, Safety & Rate Limit Fix | APIVALE"
 description: "Learn how to setup CodexBar, evaluate Keychain safety, run CodexBar on Windows/Linux, and bypass Claude Code rate limits using APIVALE PayPal billing."
 date: "2026-08-01"
-author: "Alex Rivera"
-authorTitle: "Senior Cloud Architect & API Integrations, APIVALE"
-authorBio: "Alex Rivera is a cloud architect specializing in high-concurrency routing, API gateway latency optimization, and developer proxy tools."
+author: "Sofia Costa"
+authorTitle: "FinTech Integration & API Security Expert, APIVALE"
+authorBio: "Sofia Costa is a financial technology engineer specializing in API payment integration, consumption analytics, and LLM billing architectures."
 tags: ["CodexBar", "Claude Code", "Rate Limits", "Windows Setup", "API Gateway", "PayPal"]
 image: "/blog/codexbar-windows-setup-safety-guide.png"
 lang: "en"
