@@ -1,6 +1,7 @@
 ---
-title: "How to Set Up Claude Code Custom Base URL (30-Sec Guide & PayPal API)"
-description: "Learn how to configure anthropic_base_url and anthropic_auth_token for Claude Code CLI. Bypass rate limits, route traffic to APIVALE, and pay via PayPal."
+title: "How to Set Up Claude Code Custom Base URL (ANTHROPIC_BASE_URL Setup)"
+metaTitle: "Claude Code Custom Base URL: ANTHROPIC_BASE_URL Setup | APIVALE"
+description: "Learn how to configure ANTHROPIC_BASE_URL and ANTHROPIC_AUTH_TOKEN for Claude Code CLI. Fix 403 errors, bypass rate limits, and route to APIVALE with PayPal."
 date: "2026-07-11"
 author: "Alex Rivera"
 authorTitle: "Senior Cloud Architect & API Integrations, APIVALE"
@@ -58,7 +59,7 @@ When Claude Code operates in a codebase, it performs multi-step task planning. I
 
 This results in two major bottlenecks for active developers:
 1. **The Rate Limit Wall**: Under official Tier 1/2 developer accounts, running Claude Code on a mid-sized React or Python project can hit the Token Per Minute (TPM) limit in just 3 or 4 terminal prompts, causing the agent to crash with `429 Too Many Requests`.
-2. **Billing and Geographical Access**: Developers in non-supported regions are unable to pay for official API keys, forcing them to rely on third-party aggregators that accept global payment methods like Stripe or cryptocurrency.
+2. **Billing and Geographical Access**: Developers in non-supported regions are unable to pay for official API keys, forcing them to rely on third-party aggregators that accept global payment methods like PayPal.
 
 By redirecting the CLI requests using `export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"`, you connect to APIVALE's enterprise-grade endpoint pools, which bypass individual rate limits and route requests through high-bandwidth channels.
 
@@ -216,7 +217,7 @@ npx @anthropic-ai/claude-code
 
 <div class="cta-card">
   <h4 class="cta-card-title">⚡ Power Up Claude Code on APIVALE</h4>
-  <p class="cta-card-text">Ditch regional billing limits and low-concurrency API tiers. Use APIVALE to route your Claude Code terminal agents, Cursor editor configurations, or backend services through our high-performance global network. Optimize your spending with 90% prompt caching discounts and built-in Stripe payment support. Create an account today and get $1.00 free start credits.</p>
+  <p class="cta-card-text">Ditch regional billing limits and low-concurrency API tiers. Use APIVALE to route your Claude Code terminal agents, Cursor editor configurations, or backend services through our high-performance global network. Optimize your spending with 90% prompt caching discounts and built-in PayPal billing support. Create an account today and claim $0.20 free starter credit (+ 50% bonus on 1st top-up).</p>
   <div class="cta-card-actions">
     <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-set-up-claude-code-cli-with-custom-base-url" class="cta-primary-btn">Get Free API Key Now</a>
     <a href="https://apivale.com/api/?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-set-up-claude-code-cli-with-custom-base-url" class="cta-secondary-btn">Check Pricing Plans</a>
