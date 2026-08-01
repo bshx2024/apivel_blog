@@ -454,6 +454,8 @@ const avatarUrl = authorAvatars[post.data.author];
 		padding: 0.2rem 0.4rem;
 		border-radius: 4px;
 		color: #e879f9;
+		word-break: break-word;
+		overflow-wrap: anywhere;
 	}
 
 	.post-body pre {
@@ -463,6 +465,7 @@ const avatarUrl = authorAvatars[post.data.author];
 		padding: 1.25rem;
 		margin: 1.5rem 0 2rem;
 		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
 	}
 
 	.post-body pre code {
@@ -471,6 +474,8 @@ const avatarUrl = authorAvatars[post.data.author];
 		border-radius: 0;
 		color: inherit;
 		font-size: 0.9em;
+		word-break: normal;
+		overflow-wrap: normal;
 	}
 
 	.post-body blockquote {
@@ -510,6 +515,9 @@ const avatarUrl = authorAvatars[post.data.author];
 		border-collapse: collapse;
 		margin: 2rem 0;
 		font-size: 0.95rem;
+		display: block;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
 	}
 
 	.post-body th, .post-body td {
@@ -898,9 +906,27 @@ const avatarUrl = authorAvatars[post.data.author];
 			padding: 1.5rem;
 		}
 		
-		.inline-action-btn {
+		.inline-action-btn,
+		.cta-primary-btn,
+		.cta-secondary-btn,
+		.cta-action-btn {
 			width: 100%;
 			text-align: center;
+			min-height: 48px;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.close-cta-btn {
+			width: 44px;
+			height: 44px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			top: 0.5rem;
+			right: 0.5rem;
+			font-size: 1.2rem;
 		}
 
 		.dynamic-floating-cta {
