@@ -1,5 +1,6 @@
 ---
 title: "2026 Kimi K3 Model Deep Dive: 2.8T MoE Architecture, Cursor & CLI Integration & Token Cost Guide"
+metaTitle: "Kimi K3 Model Guide [Hardware & MoE Specs] | APIVALE"
 description: "A developer guide to Moonshot AI's 2.8T Kimi K3 model. Explore MoE architecture, TerminalBench benchmarks, Claude Sonnet 5 cost comparisons, and step-by-step Cursor and Claude Code CLI setup via APIVALE with PayPal billing."
 date: "2026-07-23"
 author: "Alex Rivera"

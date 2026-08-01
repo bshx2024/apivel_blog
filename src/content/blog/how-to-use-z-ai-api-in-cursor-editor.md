@@ -1,5 +1,6 @@
 ---
 title: "How to Use Z.ai (Zhipu) API in Cursor Editor: Setup Custom Endpoint"
+metaTitle: "Use Z.ai API in Cursor Editor [30-Sec Setup] | APIVALE"
 description: "Configure Cursor Editor with Z.ai (Zhipu AI) GLM-5.2 using a custom OpenAI base URL and API key. Bypass KYC hurdles with APIVALE's gateway."
 date: "2026-07-03"
 author: "Alex Rivera"
@@ -36,7 +37,7 @@ Attempting to connect Cursor directly to Zhipu's official endpoint vs. using API
 | **Cursor Base URL** | `https://open.bigmodel.cn/api/paas/v4/` (Incompatible format) | `https://apivale.com/v1` (100% OpenAI compatible) |
 | **Authentication Header** | Custom JWT Token (Requires SDK generation) | Standard `Bearer` API Key |
 | **Ideal Model For Cursor** | Manual JSON translation required | `glm-5.2`, `glm-4-plus` mapped automatically |
-| **Payment & Billing** | Chinese Bank Cards / Alipay only | Stripe, International Visa/Mastercard |
+| **Payment & Billing** | Chinese Bank Cards / Alipay only | **PayPal Global Billing** / Credit Cards via PayPal |
 | **Latency / Edge Routing** | Unoptimized routing from US/EU | Global CDN edge optimization (~150ms TTFT) |
 
 ---

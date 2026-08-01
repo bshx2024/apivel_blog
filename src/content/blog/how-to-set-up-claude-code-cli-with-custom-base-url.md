@@ -1,6 +1,6 @@
 ---
 title: "How to Set Up Claude Code Custom Base URL (ANTHROPIC_BASE_URL Setup)"
-metaTitle: "Claude Code Custom Base URL: ANTHROPIC_BASE_URL Setup | APIVALE"
+metaTitle: "Claude Code Base URL [Fix 403 Error Setup] | APIVALE"
 description: "Learn how to configure ANTHROPIC_BASE_URL and ANTHROPIC_AUTH_TOKEN for Claude Code CLI. Fix 403 errors, bypass rate limits, and route to APIVALE with PayPal."
 date: "2026-07-11"
 author: "Alex Rivera"
