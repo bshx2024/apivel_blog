@@ -14,7 +14,7 @@ The summer of 2026 will be remembered as the moment open-weights large language 
 
 Both models boast trillion-plus parameters, natively support **1-million-token context windows**, and are engineered specifically for autonomous software engineering and complex tool-use loops. 
 
-For developers building next-generation coding agents or seeking cost-effective, high-context LLMs (learn [how to connect Kimi K3 to Claude Code CLI & Cursor](/blog/how-to-connect-kimi-k3-to-claude-code-cli/)), how do these two heavyweight Chinese open models compare? This guide breaks down their architectures, benchmarks, real-world agentic performances, and API pricing to help you choose the best fit for your stack.
+For developers building next-generation coding agents or seeking cost-effective, high-context LLMs (learn [how to connect Kimi K3 to Claude Code CLI](/blog/how-to-connect-kimi-k3-to-claude-code-cli/), configure a [Claude Code Custom Base URL](/blog/how-to-set-up-claude-code-cli-with-custom-base-url/), or compare [Cursor Pro vs. Custom API Keys](/blog/cursor-pro-vs-own-api-key/)), how do these two heavyweight Chinese open models compare? This guide breaks down their architectures, benchmarks, real-world agentic performances, and API pricing to help you choose the best fit for your stack.
 
 ---
 
