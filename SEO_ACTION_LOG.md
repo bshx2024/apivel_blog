@@ -1,0 +1,81 @@
+# APIVALE SEO Optimization Action Log (SEO 优化动作日志)
+
+> **"SEO 反馈周期通常为 2–8 周。没有动作日志，上周流量暴涨或暴跌你永远在瞎猜；有了动作日志，你才能建立『什么动作 → 隔了多久 → 数据产生什么因果响应』的硬核经验。"**
+
+本文档记录 APIVALE 每日/每周的 SEO 优化动作（内容、技术、外链、推广、外部事件），配合 Google Search Console (GSC) 与 Cloudflare 网络层日志进行 2 周周期的因果复盘。
+
+---
+
+## 📌 动作日志规范与 16:59 每日总结习惯
+
+### 1. 日志记录“三要素”
+每条记录必须明确三列信息：
+* **日期 (Date)**：精确到天（`YYYY-MM-DD`）。
+* **动作类型 (Category)**：
+  * 📝 **[内容动作]** (上线新文、优化 Meta Title/Description、补充 FAQ Schema、内部链接网络重构等)
+  * 🔗 **[外链与推广]** (Reddit 发帖、社区讨论、外链换链、目录提交等)
+  * ⚙️ **[技术/UX 动作]** (robots.txt 修改、Worker 代理重定向、移动端 48px 触控/代码框溢出修复、页面加载速度优化、Playground JS 升级等)
+  * 📊 **[数据与监测]** (GSC 数据导出审计、CTR/展现量异常排查、关键词搜索意图复盘)
+  * 🌐 **[外部事件]** (谷歌算法更新、SEMrush Sensor 波动、竞品降价/封号、主流大模型发布如 Claude Sonnet 5 / DeepSeek V4)
+* **动作详情与目标 (Details & Target)**：记录做了什么、影响的页面 URL（或文章 Slug）、对应的目标关键词以及预期的因果假设。
+
+### 2. 16:59 每日打卡机制 (Daily 1-Minute Ritual)
+* **固定时间**：每天下班/结束工作前 1 分钟（如 16:59）打开本文档。
+* **极简原则**：无需长篇大论，用 1–2 句话补录当天完成的 SEO 动作。凭记忆与 Git 提交记录即可。
+
+### 3. 每 2 周“动作 vs GSC 趋势”叠加复盘法
+每隔 14 天，将 GSC 的曝光量 (Impressions) / 点击量 (Clicks) 趋势图与本日志进行对照：
+* 观察曝光上升曲线向前倒推 2–4 周，检查当时记录了什么动作（如：某篇长尾词文章上线、或删除了某批低 CTR Title 的冗余词）。
+* 验证成功的动作予以标准化（SOP）；无效或负面动作及时回滚。
+
+---
+
+## 📅 历史优化动作全景日志 (Historic Action Log)
+
+| 日期 (Date) | 动作类型 (Category) | 动作详情与影响对象 (Details & Target URLs / Keywords) |
+| :--- | :--- | :--- |
+| **2026-08-03** | 🔗 [外链与推广] | **Semrush 竞品 OpenRouter 全量反链库剥离与第一波 10 大博客自动评论冲锋**：<br/>1. 通过 ComLinkAI 网页自动化全量翻页抓取 Semrush 46 个页面，构建包含 **1,206 条 openrouter.ai 独立外部反链**的 APIVALE 拓客主数据库（[openrouter_semrush_all_4600_backlinks_20260803.csv](file:///f:/旅行携带资料/kaifa/APIVALE_blog/openrouter_semrush_all_4600_backlinks_20260803.csv)）；<br/>2. 完成全量大盘分类归因（70.6% 媒体 Portal, 18.3% 科技博客, 7.8% AI 导航对比站, 3.2% 开发者网关文档）；<br/>3. 经 HTTP 响应码与 DOM 表单结构自动校验，筛选出 15+ 个 100% 连通、带 `Website` 网址框且免登录的顶级技术博客；<br/>4. **完成第一波 10 大免登录独立博客的自动化控制与表单预填**（全量使用 `APIVALE`, `support@apivale.com`, `https://apivale.com/`），自动生成包含 Azure 节点差异、DeepSeek 双格式适配、`/v1` 后缀静默失败防范、Logit Bias 参数透传、Rate-limit 限流结构等硬核工程细节的高过审英文评论，全面提升官方外链权重与开发者引流。 |
+| **2026-08-03** | 🔗 [外链与推广] | 完成 10 条高质量免登录/允许 Guest 评论的技术博客反链发布与发布页核验，覆盖 9 个技术/AI 垂直域名（网页主题涉及 Gemini Flash 2.0 1M 上下文、GPT-OSS MoE 路由、Thinking Tokens 及 Claw Code 等）：<br/>1. `office365itpros.com` (`.../m365mutator-test-data/`)<br/>2-3. `software.amato.com.br` (`.../spamanvil-antispam-plugin-for-wordpress/` *2条*)<br/>4. `www.how2shout.com` (`.../openrouter-fusion-multi-model-ai-deep-research.html`)<br/>5. `mspoweruser.com` (`.../developers-are-loving-googles-new-gemini-flash-2-0-so-much/`)<br/>6. `www.salesforceben.com` (`.../i-tested-claude-fable-on-3-use-cases...`)<br/>7. `brimmatech.com` (`.../an-ai-llm-primer-why-you-might-care/`)<br/>8. `semaphore.io` (`.../blog/gpt-oss`)<br/>9. `firethering.com` (`.../trinity-large-thinking-open-source-agent-model/`)<br/>10. `computingforgeeks.com` (`.../claw-code-open-source-claude-code-alternative/`)<br/>*(注：另有 1 目标域名 `www.readtangle.com` 触发敏感词策略已被 ComLinkAI 自动拦截)* |
+| **2026-08-02** | 📝 [内容动作] | 基于 GSC 24 小时数据审计（曝光 31 次，点击率 0%，排名 9.8），重构 `/blog/minimax-h3-api-pricing-guide` 页面 Title Tag 与 Meta Description：控制字符数在 58 字符以内，植入硬核价格锚点（`$0.13/s`）与开发者痛点 hook（`PayPal`），刺激 SERP 点击率提升。 |
+| **2026-08-01** | 📝 [内容动作] | 上线新文章 `/blog/deepseek-v4-flash-api-guide`（主攻关键词：`deepseek v4 flash api`）；同步针对站内老文章完成双向内链注入，提升新文收录权重。 |
+| **2026-08-01** | ⚙️ [技术/UX 动作] | 优化全站移动端体验：修复代码块横向溢出问题、表格响应式适配，将所有按钮/链接触控区域提升至最少 48px，提升 Google Mobile-Friendly 与 Core Web Vitals 得分。 |
+| **2026-08-01** | 📝 [内容动作] | 基于 GSC 导出数据审计，重构低 CTR 页面 Title Tag：加入高意图 Developer Hooks（如 `PayPal Billing`, `Zero-KYC`），提升 SERP 点击率。 |
+| **2026-08-01** | 📝 [内容动作] | 实施内部链接权重转移矩阵（Internal Link Weight Transfer）：从高权重文章（Cash Cows，如 `/blog/openrouter-alternatives`）向潜在高价值长尾文章打入上下文锚文本链接。 |
+| **2026-08-01** | 📝 [内容动作] | 上线新文章 `/blog/qwen-3-8-max-benchmarks-preview-guide`（目标词：`qwen 3.8 max benchmarks`），补充基准测试对比与 API 成本计算公式。 |
+| **2026-08-01** | ⚙️ [技术/UX 动作] | 完善 E-E-A-T 作者人设轮换，在部分 API 深度测评文章中更新作者为 Sofia Costa，增加专业作者 Bio 与结构化 Schema。 |
+| **2026-08-01** | 📝 [内容动作] | 上线新文章 `/blog/codexbar-windows-setup-safety-guide`（主攻关键词：`codexbar for windows`, `is codexbar safe`），填补 Windows 平台用 CodexBar 监控 API 限流的搜索空白。 |
+| **2026-07-31** | 📝 [内容动作] | 上线新文章 `/blog/minimax-h3-api-pricing-guide`（主攻关键词：`minimax h3`, `hailuo h3 api pricing`），并轮换作者人设至 Kenji Tanaka。 |
+| **2026-07-31** | 📝 [内容动作] | 优化 `/blog/grok-4-5-vs-glm-5-2-coding-api-comparison` Title Tag 与 Breakout 关键词，补全 Markdown AST 标题层级。 |
+| **2026-07-31** | 📝 [内容动作] | 重构 `/blog/cursor-pro-vs-own-api-key`，100% 对齐 Master Blog Writing Standard，补充实时大模型版本（Claude Sonnet 5 / DeepSeek V4）。 |
+| **2026-07-31** | 📝 [内容动作] | 更新全站官方 Claude Opus 5 与 Fable 5 API 费率卡（Rate Cards）为最新实测价格，保持数据 Freshness。 |
+| **2026-07-31** | 📝 [内容动作] | 上线新文章 `/blog/kimi-k3-price-api-cost-guide`（主攻关键词：`kimi k3 price`, `kimi k3 api key paypal`）。 |
+| **2026-07-30** | 📝 [内容动作] | 针对 Qwen 3.8 教程建立全站双向内链网络（Bidirectional Internal Link Network），串联 Cursor、Claude Code CLI 与 OpenCode 教程。 |
+| **2026-07-30** | 📝 [内容动作] | 上线新文章 `/blog/how-to-connect-claude-opus-5-to-claude-code-cli`（主攻关键词：`how to connect claude opus 5 to claude code cli`），并建立站内交叉链接。 |
+| **2026-07-30** | 📝 [内容动作] | 执行 Qwen 3.8 页面 GSC 专项优化：补充 Qwen Code CLI 变体拓展、添加 FAQ Structured Data Schema，更新文章 Freshness 时间戳。 |
+| **2026-07-30** | ⚙️ [技术/UX 动作] | 优化文章首屏体验：将交互式 Playground Banner 移至首屏 (Above the fold)，在导言区增加 Key Takeaways 跳转 CTA。 |
+| **2026-07-30** | ⚙️ [技术/UX 动作] | 修复 Cloudflare Worker 路由 bug：在 Pages 资产代理过程中自动剥离 `/blog` 前缀，解决部分静态资源 404 问题。 |
+| **2026-07-29** | ⚙️ [技术/UX 动作] | 升级文章嵌入式 Playground 交互体验：增加模型下拉选择器（支持 Qwen 3.7 Max, Kimi K3, DeepSeek V4）、预设 Prompt 模版与 150-token 成本防护墙。 |
+| **2026-07-29** | ⚙️ [技术/UX 动作] | 优化注册转化链路：将 Playground CTA 按钮直连 Sign-up 页面，用户注册返回后自动在代码框中填入实效 API Key。 |
+| **2026-07-29** | ⚙️ [技术/UX 动作] | 增强 API Key 安全显示逻辑：屏幕端显示掩码遮罩（`sk-apivale-****`），一键复制时复制完整明文 Key。 |
+| **2026-07-29** | ⚙️ [技术/UX 动作] | 修复 SPA 路由 308 重定向 404 隐患：增加登录跳转 URL 尾部斜杠 (`/`) 标准化处理。 |
+| **2026-07-28** | 📝 [内容动作] | 基于 Google Trends 搜索趋势分析，优化 Grok 4.5 相关文章的词组组合；上线文章 `/blog/grok-4-5-vs-claude-fable-5-coding-agent-api`。 |
+
+---
+
+## 📝 每日更新日志模板 (Daily Log Entry Template)
+
+*复制下方模板，添加到表格顶部：*
+
+```markdown
+| YYYY-MM-DD | 📝/🔗/⚙️/📊/🌐 [类别] | [详细动作说明]，影响页面：`/blog/slug`，目标关键词：`keyword` |
+```
+
+---
+
+## 🔬 因果复盘与归因看板 (2-Week Retrospective Board)
+
+| 周期 (Cohort Window) | 观测到的 GSC/流量变化 | 2–4 周前的关键优化动作 | 归因结论与下一步策略 (Actionable Insight) |
+| :--- | :--- | :--- | :--- |
+| **2026-07-15 ~ 2026-07-31** | `/blog/openrouter-alternatives` 展现量增长 140%，获多笔埃及/欧洲开发者注册。 | 2026-07-03 在文章中突出 `PayPal Billing` + `OpenAI Base URL Swap` 解决方案，并在头部放显眼 CTA。 | **结论确认**：开发者因 Stripe 拒付/风控极度青睐 PayPal 支付。下一步：在所有对比类文章中均加强 PayPal 差异化高亮。 |
+| **2026-08-01 ~ 2026-08-15** | *(待 2 周后结合 GSC 导出数据填入)* | 2026-08-01 发生的 Title CTR 优化、移动端 48px 触控修复与内链权重转移。 | *(待复盘评估因果效应)* |
+
