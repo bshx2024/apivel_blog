@@ -1,7 +1,7 @@
----
+﻿---
 title: "How to Use Z.ai (Zhipu) API in Cursor Editor: Setup Custom Endpoint"
 metaTitle: "Use Z.ai API in Cursor Editor [30-Sec Setup] | APIVALE"
-description: "Configure Cursor Editor with Z.ai (Zhipu AI) GLM-5.2 using a custom OpenAI base URL and API key. Bypass KYC hurdles with APIVALE's gateway."
+description: "Configure Cursor Editor with Z.ai (Zhipu AI) GLM-5.2 using custom OpenAI base URL. Bypass real-name KYC hurdles with APIVALE PayPal gateway."
 date: "2026-07-03"
 author: "Alex Rivera"
 authorTitle: "Senior Cloud Architect & API Integrations, APIVALE"

@@ -1,0 +1,374 @@
+---
+// CliConfigGenerator.astro - Zero-Login Quick CLI & IDE Config Generator Widget
+interface Props {
+  defaultClient?: string;
+  defaultModel?: string;
+}
+
+const { defaultClient = 'claude-code', defaultModel = 'qwen-37' } = Astro.props;
+---
+
+<div class="cli-config-card" id="cliConfigGeneratorWidget">
+  <div class="card-header">
+    <div class="card-badge">
+      <span class="pulse-dot"></span>
+      <span>⚡ Quick Setup Generator</span>
+    </div>
+    <h3 class="card-title">CLI & IDE One-Click Configurator</h3>
+    <p class="card-subtitle">Select your coding tool and target model to generate instant, zero-login proxy configuration commands.</p>
+  </div>
+
+  <div class="card-body">
+    <!-- Client Selection Tabs -->
+    <div class="client-tabs" role="tablist">
+      <button type="button" class="tab-btn active" data-client="claude-code">Claude Code CLI</button>
+      <button type="button" class="tab-btn" data-client="cursor">Cursor IDE</button>
+      <button type="button" class="tab-btn" data-client="windsurf">Windsurf</button>
+      <button type="button" class="tab-btn" data-client="opencode">OpenCode CLI</button>
+    </div>
+
+    <!-- Target Model Selector -->
+    <div class="config-field">
+      <label class="field-label" for="cliModelSelect">Target AI Model:</label>
+      <select id="cliModelSelect" class="config-select">
+        <option value="infer/qwen3.7-max" selected={defaultModel === 'qwen-37'}>Alibaba Qwen 3.7 Max (infer/qwen3.7-max)</option>
+        <option value="kimi-k3" selected={defaultModel === 'kimi-k3'}>Moonshot Kimi K3 2.8T MoE (kimi-k3)</option>
+        <option value="deepseek-v4-flash" selected={defaultModel === 'deepseek-v4'}>DeepSeek V4 Flash (deepseek-v4-flash)</option>
+        <option value="claude-sonnet-5" selected={defaultModel === 'claude-sonnet-5'}>Claude Sonnet 5 (claude-3-5-sonnet-20241022)</option>
+      </select>
+    </div>
+
+    <!-- Code Block Snippet Display -->
+    <div class="code-snippet-box">
+      <div class="snippet-header">
+        <span class="snippet-lang" id="snippetLangDisplay">BASH</span>
+        <button type="button" class="copy-snippet-btn" id="copyConfigBtn">
+          📋 Copy Config
+        </button>
+      </div>
+      <pre class="snippet-pre"><code id="configCodeDisplay"># Export APIVALE proxy base URL and API key
+export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
+export ANTHROPIC_API_KEY="sk-apivale-your-api-key"
+
+# Launch Claude Code CLI with target model
+claude --model infer/qwen3.7-max</code></pre>
+    </div>
+
+    <!-- Footer Note & CTA -->
+    <div class="card-footer">
+      <div class="footer-note">
+        <span>🔒 Native OpenAI & Anthropic Protocol Compatible • Global PayPal Billing</span>
+      </div>
+      <a 
+        href="https://apivale.com/sign-in?redirect=%2Fplayground&utm_source=apivale_blog&utm_medium=config_generator" 
+        class="footer-action-btn"
+        target="_blank"
+        rel="noopener"
+      >
+        Get Free Test Key ($0.20 Credit) →
+      </a>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('#cliConfigGeneratorWidget .tab-btn');
+    const modelSelect = document.getElementById('cliModelSelect');
+    const codeDisplay = document.getElementById('configCodeDisplay');
+    const langDisplay = document.getElementById('snippetLangDisplay');
+    const copyBtn = document.getElementById('copyConfigBtn');
+
+    if (!codeDisplay || !modelSelect) return;
+
+    let activeClient = 'claude-code';
+
+    const templates = {
+      'claude-code': (model) => `# Export APIVALE OpenAI & Anthropic compatible proxy endpoint
+export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
+export ANTHROPIC_API_KEY="sk-apivale-your-api-key"
+
+# Launch Claude Code CLI with target model
+claude --model ${model}`,
+
+      'cursor': (model) => `// Open Cursor Settings -> Models -> OpenAI API Key
+// Set Base URL and custom API key:
+
+Base URL: https://api.apivale.com/v1
+API Key:  sk-apivale-your-api-key
+Model:    ${model}`,
+
+      'windsurf': (model) => `// Configure Windsurf settings.json:
+{
+  "openai.baseUrl": "https://api.apivale.com/v1",
+  "openai.apiKey": "sk-apivale-your-api-key",
+  "windsurf.model": "${model}"
+}`,
+
+      'opencode': (model) => `# OpenCode CLI configuration export:
+export OPENAI_BASE_URL="https://api.apivale.com/v1"
+export OPENAI_API_KEY="sk-apivale-your-api-key"
+
+opencode --model ${model}`
+    };
+
+    function updateSnippet() {
+      const selectedModel = modelSelect.value;
+      const tplFunc = templates[activeClient] || templates['claude-code'];
+      codeDisplay.innerText = tplFunc(selectedModel);
+
+      if (langDisplay) {
+        langDisplay.innerText = activeClient === 'cursor' || activeClient === 'windsurf' ? 'JSON / CONFIG' : 'BASH';
+      }
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        activeClient = tab.getAttribute('data-client') || 'claude-code';
+        updateSnippet();
+      });
+    });
+
+    modelSelect.addEventListener('change', updateSnippet);
+    updateSnippet();
+
+    if (copyBtn) {
+      copyBtn.addEventListener('click', () => {
+        const textToCopy = codeDisplay.innerText;
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          const orig = copyBtn.innerText;
+          copyBtn.innerText = '✅ Copied!';
+          setTimeout(() => {
+            copyBtn.innerText = orig;
+          }, 2000);
+        });
+      });
+    }
+  });
+</script>
+
+<style>
+  .cli-config-card {
+    background: #0d1117;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cli-config-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #6366f1, #3b82f6, #10b981);
+  }
+
+  .card-header {
+    margin-bottom: 1.25rem;
+  }
+
+  .card-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(59, 130, 246, 0.12);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    color: #93c5fd;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    border-radius: 20px;
+    margin-bottom: 0.6rem;
+  }
+
+  .pulse-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #3b82f6;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #3b82f6;
+  }
+
+  .card-title {
+    color: #ffffff;
+    font-family: var(--font-display, inherit);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0 0 0.4rem 0;
+  }
+
+  .card-subtitle {
+    color: #9ca3af;
+    font-size: 0.88rem;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .client-tabs {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #21262d;
+    padding-bottom: 0.75rem;
+  }
+
+  .tab-btn {
+    background: #161b22;
+    border: 1px solid #30363d;
+    color: #8b949e;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.45rem 0.85rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .tab-btn:hover {
+    color: #f0f6fc;
+    border-color: #8b949e;
+  }
+
+  .tab-btn.active {
+    background: rgba(99, 102, 241, 0.15);
+    border-color: #6366f1;
+    color: #a5b4fc;
+  }
+
+  .config-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .field-label {
+    color: #e5e7eb;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .config-select {
+    width: 100%;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    color: #f0f6fc;
+    padding: 0.65rem 1rem;
+    font-size: 0.9rem;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .config-select:focus {
+    border-color: #6366f1;
+  }
+
+  .code-snippet-box {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .snippet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0d1117;
+    padding: 0.4rem 0.8rem;
+    border-bottom: 1px solid #21262d;
+  }
+
+  .snippet-lang {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #8b949e;
+    letter-spacing: 0.05em;
+  }
+
+  .copy-snippet-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #30363d;
+    color: #c9d1d9;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .copy-snippet-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+  }
+
+  .snippet-pre {
+    margin: 0;
+    padding: 1rem;
+    background: transparent;
+    overflow-x: auto;
+  }
+
+  .snippet-pre code {
+    font-family: var(--font-mono, monospace);
+    font-size: 0.85rem;
+    color: #a5b4fc;
+    line-height: 1.5;
+    white-space: pre;
+  }
+
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  .footer-note {
+    font-size: 0.78rem;
+    color: #8b949e;
+  }
+
+  .footer-action-btn {
+    background: linear-gradient(90deg, #3b82f6, #6366f1);
+    color: #ffffff !important;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.45rem 0.9rem;
+    border-radius: 6px;
+    text-decoration: none !important;
+    transition: transform 0.2s;
+  }
+
+  .footer-action-btn:hover {
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 640px) {
+    .card-footer {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .footer-action-btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>

@@ -1,0 +1,435 @@
+---
+// ApiPriceCalculator.astro - Zero-Login Interactive Token & API Cost Calculator Widget
+interface Props {
+  initialModel?: string;
+}
+
+const { initialModel = 'kimi-k3' } = Astro.props;
+---
+
+<div class="api-calc-card" id="apiPriceCalculatorWidget">
+  <div class="calc-header">
+    <div class="calc-badge">
+      <span class="pulse-dot"></span>
+      <span>🛠️ Interactive Tool</span>
+    </div>
+    <h3 class="calc-title">API Token & Cost Estimator</h3>
+    <p class="calc-subtitle">Estimate monthly agent token spend, compare official rates vs APIVALE proxy pricing, and view instant savings.</p>
+  </div>
+
+  <div class="calc-body">
+    <!-- Model Selection Grid -->
+    <div class="calc-field-group">
+      <label class="calc-label" for="calcModelSelect">Select LLM Model:</label>
+      <div class="calc-select-wrapper">
+        <select id="calcModelSelect" class="calc-select">
+          <option value="kimi-k3" selected={initialModel === 'kimi-k3'}>Moonshot Kimi K3 2.8T ($3.00/1M input)</option>
+          <option value="qwen-37" selected={initialModel === 'qwen-37'}>Alibaba Qwen 3.7 Max ($1.20/1M input)</option>
+          <option value="deepseek-v4" selected={initialModel === 'deepseek-v4'}>DeepSeek V4 Flash ($0.27/1M input)</option>
+          <option value="claude-sonnet-5" selected={initialModel === 'claude-sonnet-5'}>Claude Sonnet 5 ($3.00/1M input)</option>
+          <option value="claude-opus-5" selected={initialModel === 'claude-opus-5'}>Claude Opus 5 ($15.00/1M input)</option>
+          <option value="minimax-h3" selected={initialModel === 'minimax-h3'}>MiniMax H3 ($0.13/sec 2K Video)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Monthly Token Volume Slider -->
+    <div class="calc-field-group">
+      <div class="slider-header">
+        <label class="calc-label" for="calcTokenSlider">Monthly Input Token Volume:</label>
+        <span class="slider-value-display" id="calcTokenValueDisplay">10M Tokens</span>
+      </div>
+      <input 
+        type="range" 
+        id="calcTokenSlider" 
+        class="calc-slider" 
+        min="1" 
+        max="100" 
+        step="1" 
+        value="10" 
+      />
+      <div class="slider-ticks">
+        <span>1M</span>
+        <span>25M</span>
+        <span>50M</span>
+        <span>75M</span>
+        <span>100M</span>
+      </div>
+    </div>
+
+    <!-- Live Calculation Results Grid -->
+    <div class="calc-results-grid">
+      <div class="result-box official-box">
+        <span class="box-label">Official / Direct Rate</span>
+        <div class="box-price" id="officialPriceDisplay">$30.00 <span class="per-mo">/ mo</span></div>
+        <span class="box-note" id="officialNoteText">Direct API Card Rate</span>
+      </div>
+
+      <div class="result-box apivale-box">
+        <span class="box-label">APIVALE Proxy Rate</span>
+        <div class="box-price highlight-price" id="apivalePriceDisplay">$12.00 <span class="per-mo">/ mo</span></div>
+        <span class="box-note green-note" id="savingsBadge">⚡ Save 60% with PayPal</span>
+      </div>
+    </div>
+
+    <!-- Quick CTA & Zero-Login Options -->
+    <div class="calc-footer">
+      <div class="footer-info">
+        <span class="info-icon">💳</span>
+        <span>Supports PayPal Global Billing, Zero KYC & Instant API Key Setup</span>
+      </div>
+      <div class="footer-actions">
+        <button type="button" class="calc-copy-btn" id="calcCopyCurlBtn">
+          📋 Copy cURL Demo
+        </button>
+        <a 
+          href="https://apivale.com/sign-in?redirect=%2Fplayground&utm_source=apivale_blog&utm_medium=calculator_widget" 
+          class="calc-action-btn" 
+          target="_blank" 
+          rel="noopener"
+        >
+          Test Key in Playground →
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const modelSelect = document.getElementById('calcModelSelect');
+    const tokenSlider = document.getElementById('calcTokenSlider');
+    const tokenValueDisplay = document.getElementById('calcTokenValueDisplay');
+    const officialPriceDisplay = document.getElementById('officialPriceDisplay');
+    const apivalePriceDisplay = document.getElementById('apivalePriceDisplay');
+    const savingsBadge = document.getElementById('savingsBadge');
+    const copyCurlBtn = document.getElementById('calcCopyCurlBtn');
+
+    if (!modelSelect || !tokenSlider) return;
+
+    // Pricing per 1M tokens (Official vs APIVALE)
+    const modelRates = {
+      'kimi-k3': { official: 3.00, apivale: 1.20, name: 'Kimi K3 2.8T' },
+      'qwen-37': { official: 1.20, apivale: 0.48, name: 'Qwen 3.7 Max' },
+      'deepseek-v4': { official: 0.27, apivale: 0.14, name: 'DeepSeek V4 Flash' },
+      'claude-sonnet-5': { official: 3.00, apivale: 1.50, name: 'Claude Sonnet 5' },
+      'claude-opus-5': { official: 15.00, apivale: 6.90, name: 'Claude Opus 5' },
+      'minimax-h3': { official: 0.13, apivale: 0.06, isVideo: true, name: 'MiniMax H3 Video' }
+    };
+
+    function updateCalculation() {
+      const selectedKey = modelSelect.value;
+      const millions = parseFloat(tokenSlider.value) || 10;
+      const rateInfo = modelRates[selectedKey] || modelRates['kimi-k3'];
+
+      if (tokenValueDisplay) {
+        tokenValueDisplay.innerText = rateInfo.isVideo ? `${millions * 100} Secs 2K Video` : `${millions}M Tokens`;
+      }
+
+      const officialCost = (millions * rateInfo.official).toFixed(2);
+      const apivaleCost = (millions * rateInfo.apivale).toFixed(2);
+      const savingsPct = Math.round(((rateInfo.official - rateInfo.apivale) / rateInfo.official) * 100);
+
+      if (officialPriceDisplay) {
+        officialPriceDisplay.innerHTML = `$${officialCost} <span class="per-mo">/ mo</span>`;
+      }
+      if (apivalePriceDisplay) {
+        apivalePriceDisplay.innerHTML = `$${apivaleCost} <span class="per-mo">/ mo</span>`;
+      }
+      if (savingsBadge) {
+        savingsBadge.innerText = `⚡ Save ${savingsPct}% via PayPal`;
+      }
+    }
+
+    modelSelect.addEventListener('change', updateCalculation);
+    tokenSlider.addEventListener('input', updateCalculation);
+    updateCalculation();
+
+    // Copy cURL demo logic
+    if (copyCurlBtn) {
+      copyCurlBtn.addEventListener('click', () => {
+        const selectedKey = modelSelect.value;
+        const rateInfo = modelRates[selectedKey] || modelRates['kimi-k3'];
+        const curlSnippet = `curl https://api.apivale.com/v1/chat/completions \\
+  -H "Authorization: Bearer sk-apivale-demo-key" \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "model": "${selectedKey}",
+    "messages": [{"role": "user", "content": "Hello world from ${rateInfo.name}!"}]
+  }'`;
+
+        navigator.clipboard.writeText(curlSnippet).then(() => {
+          const origText = copyCurlBtn.innerText;
+          copyCurlBtn.innerText = '✅ cURL Copied!';
+          setTimeout(() => {
+            copyCurlBtn.innerText = origText;
+          }, 2000);
+        });
+      });
+    }
+  });
+</script>
+
+<style>
+  .api-calc-card {
+    background: #0d1117;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .api-calc-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #6366f1, #10b981, #ec4899);
+  }
+
+  .calc-header {
+    margin-bottom: 1.25rem;
+  }
+
+  .calc-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(99, 102, 241, 0.12);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    color: #a5b4fc;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    border-radius: 20px;
+    margin-bottom: 0.6rem;
+  }
+
+  .pulse-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #10b981;
+  }
+
+  .calc-title {
+    color: #ffffff;
+    font-family: var(--font-display, inherit);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0 0 0.4rem 0;
+  }
+
+  .calc-subtitle {
+    color: #9ca3af;
+    font-size: 0.88rem;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .calc-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .calc-field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .calc-label {
+    color: #e5e7eb;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .calc-select-wrapper {
+    position: relative;
+  }
+
+  .calc-select {
+    width: 100%;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    color: #f0f6fc;
+    padding: 0.65rem 1rem;
+    font-size: 0.9rem;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s;
+  }
+
+  .calc-select:focus {
+    border-color: #6366f1;
+  }
+
+  .slider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .slider-value-display {
+    color: #a5b4fc;
+    font-weight: 700;
+    font-size: 0.9rem;
+    background: rgba(99, 102, 241, 0.15);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+  }
+
+  .calc-slider {
+    width: 100%;
+    accent-color: #6366f1;
+    cursor: pointer;
+    height: 6px;
+    background: #30363d;
+    border-radius: 4px;
+  }
+
+  .slider-ticks {
+    display: flex;
+    justify-content: space-between;
+    color: #6e7681;
+    font-size: 0.75rem;
+    padding: 0 0.1rem;
+  }
+
+  .calc-results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 0.25rem;
+  }
+
+  .result-box {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .apivale-box {
+    border-color: rgba(16, 185, 129, 0.4);
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.06) 0%, rgba(13, 17, 23, 0.9) 100%);
+  }
+
+  .box-label {
+    color: #8b949e;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .box-price {
+    color: #e6edf3;
+    font-size: 1.35rem;
+    font-weight: 700;
+  }
+
+  .highlight-price {
+    color: #34d399;
+  }
+
+  .per-mo {
+    font-size: 0.8rem;
+    color: #8b949e;
+    font-weight: 400;
+  }
+
+  .box-note {
+    font-size: 0.78rem;
+    color: #8b949e;
+  }
+
+  .green-note {
+    color: #34d399;
+    font-weight: 600;
+  }
+
+  .calc-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.75rem;
+    border-top: 1px solid #21262d;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-info {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #8b949e;
+    font-size: 0.8rem;
+  }
+
+  .footer-actions {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .calc-copy-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #30363d;
+    color: #c9d1d9;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.5rem 0.9rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .calc-copy-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+  }
+
+  .calc-action-btn {
+    background: linear-gradient(90deg, #6366f1, #10b981);
+    color: #ffffff !important;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none !important;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+  }
+
+  .calc-action-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+  }
+
+  @media (max-width: 640px) {
+    .calc-results-grid {
+      grid-template-columns: 1fr;
+    }
+    .calc-footer {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .footer-actions {
+      width: 100%;
+    }
+    .calc-copy-btn, .calc-action-btn {
+      flex: 1;
+      text-align: center;
+    }
+  }
+</style>

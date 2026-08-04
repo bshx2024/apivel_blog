@@ -1,6 +1,7 @@
----
+﻿---
 title: "Beyond LLMLingua: Shrinking Claude 3.5 Sonnet Context by 90% via Visual Prompt Compression"
-description: "Compare text prompt compression tools like LLMLingua against visual prompt compression (pxpipe). Learn how to render 48K characters into a 1.6K token visual prompt."
+metaTitle: "Visual Prompt Compression vs LLMLingua Guide | APIVALE"
+description: "Compare text prompt compression tools like LLMLingua against visual prompt compression (pxpipe). Render 48K chars into 1.6K tokens on APIVALE."
 date: "2026-07-08"
 author: "Alex Rivera"
 authorTitle: "Senior Cloud Architect, APIVALE"

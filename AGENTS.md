@@ -16,7 +16,7 @@ Before writing or editing any blog post for APIVALE, you **MUST** consult and ad
 Follow this 4-step execution workflow:
 
 ### Step 1: Target Keyword Selection & Plan Lookup
-- Consult [KEYWORD_PLAN.md](file:///f:/旅行携带资料/kaifa/APIVALE_blog/KEYWORD_PLAN.md) to pick the next approved article topic.
+- Consult [KEYWORD_PLAN.md](file:///f:/旅行携带资料/kaifa/APIVALE_blog/KEYWORD_PLAN.md) and [SEO_KEYWORD_MATRIX.md](file:///f:/旅行携带资料/kaifa/APIVALE_blog/SEO_KEYWORD_MATRIX.md) to pick the next approved article topic.
 - Perform Parent Topic & Secondary LSI Audit as defined in [BLOG_WRITING_STANDARD.md](file:///f:/旅行携带资料/kaifa/APIVALE_blog/BLOG_WRITING_STANDARD.md).
 
 ### Step 2: SERP Competitor Retrieval & Audit (Top 5 Pages)
@@ -30,10 +30,11 @@ Follow this 4-step execution workflow:
 - Ensure strict compliance with the **Mandatory "4 Ones" Information Gain Checklist** (Branded Methodology, Real Benchmark/Math Data, Edge-Case Solution, 15+ line Production Code/Config).
 - Formulate Title Tag using **ABC Title Formula** (`[Adjective/Primary Keyword] + [Benefit / Secondary LSI] | [APIVALE Hook]`) within **50–60 characters (max 600px)** and append `| APIVALE`.
 
-### Step 4: Drafting & Compliance Verification
+### Step 4: Drafting, Compliance & Action Logging
 - Write article in `src/content/blog/<article-slug>.md`.
 - Run **AI Peer Review Loop** as a senior DevOps reviewer to check code validity, logic, and phrasing.
 - Verify full compliance with [BLOG_WRITING_STANDARD.md](file:///f:/旅行携带资料/kaifa/APIVALE_blog/BLOG_WRITING_STANDARD.md).
+- Log the optimization entry in [SEO_ACTION_LOG.md](file:///f:/旅行携带资料/kaifa/APIVALE_blog/SEO_ACTION_LOG.md) (16:59 Daily Ritual).
 - Compile and test on dev server (`http://localhost:4321/blog/...`), then commit and push.
 
 ---

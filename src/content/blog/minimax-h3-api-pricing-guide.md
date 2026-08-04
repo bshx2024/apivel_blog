@@ -1,7 +1,7 @@
----
+﻿---
 title: "MiniMax H3 (Hailuo 3.0) API Guide: Pricing, Open Weights & Integration"
-metaTitle: "MiniMax H3 (Hailuo 3.0): API Pricing & Open Weights | APIVALE"
-description: "Learn how to call MiniMax H3 (Hailuo 3.0) API for native 2K video and audio generation. Compare API pricing, open weights on Hugging Face, and pay via PayPal."
+metaTitle: "MiniMax H3 API Pricing: $0.13/s 2K Video (PayPal) | APIVALE"
+description: "Access MiniMax H3 (Hailuo 3.0) API for 2K video at .13/sec—3x cheaper than Sora. Download open weights and bypass card blocks on APIVALE. Learn more."
 date: "2026-07-31"
 author: "Kenji Tanaka"
 authorTitle: "AI Developer Relations Engineer & Multimodal API Integrations, APIVALE"

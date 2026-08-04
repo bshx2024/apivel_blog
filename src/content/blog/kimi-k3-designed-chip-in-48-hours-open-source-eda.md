@@ -1,6 +1,7 @@
----
+﻿---
 title: "How Kimi K3 Designed a Chip in 48h: Open EDA & Free API Setup Guide"
-description: "An in-depth look at Moonshot AI's 2.8T Kimi K3 autonomous chip design demo. Step-by-step guide to open-source EDA toolchains with free Kimi K3 API key access via APIVALE."
+metaTitle: "How Kimi K3 Designed a Chip in 48h (EDA Guide) | APIVALE"
+description: "Explore Moonshot Kimi K3 2.8T autonomous chip design demo. Step-by-step guide to open-source EDA toolchains with free Kimi K3 API via APIVALE."
 date: "2026-07-21"
 author: "Sofia Costa"
 authorTitle: "FinTech Integration & API Security Expert, APIVALE"

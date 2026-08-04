@@ -1,7 +1,7 @@
----
+﻿---
 title: "CodexBar Guide: Windows/Linux Setup, Safety & Rate Limit Fix (PayPal API Gateway)"
-metaTitle: "CodexBar Guide: Windows Setup, Safety & Rate Limit Fix | APIVALE"
-description: "Learn how to setup CodexBar, evaluate Keychain safety, run CodexBar on Windows/Linux, and bypass Claude Code rate limits using APIVALE PayPal billing."
+metaTitle: "CodexBar Windows Setup: Track API Token Spend | APIVALE"
+description: "Step-by-step setup guide for CodexBar on Windows. Monitor token usage, cost spikes, and API balance safely with custom endpoints on APIVALE."
 date: "2026-08-01"
 author: "Sofia Costa"
 authorTitle: "FinTech Integration & API Security Expert, APIVALE"

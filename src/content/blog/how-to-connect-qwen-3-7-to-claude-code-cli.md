@@ -1,7 +1,7 @@
----
+﻿---
 title: "How to Connect Qwen 3.7 to Claude Code CLI & Cursor (Anthropic Protocol Setup Guide)"
 metaTitle: "Connect Qwen 3.7 to Claude Code & Cursor (2026) | APIVALE"
-description: "Alibaba's Qwen 3.7 introduces top-tier autonomous coding and native Anthropic API compatibility. Learn how to route Claude Code CLI and terminal agents from Claude Sonnet 5 to Qwen 3.7 Max via APIVALE to bypass rate limits and cut agent token costs."
+description: "Connect Qwen 3.7 Max to Claude Code CLI and Cursor IDE. Bypass Anthropic rate limits and route terminal agent requests via APIVALE PayPal. Learn more."
 date: "2026-07-22"
 author: "Alex Rivera"
 authorTitle: "Senior Cloud Architect & API Integrations, APIVALE"

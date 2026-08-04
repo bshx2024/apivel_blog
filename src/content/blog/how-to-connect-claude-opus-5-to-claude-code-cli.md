@@ -1,7 +1,7 @@
----
+﻿---
 title: "How to Connect Claude Opus 5 to Claude Code CLI & Cursor"
-metaTitle: "Connect Claude Opus 5 to Claude Code & Cursor (2026) | APIVALE"
-description: "Learn how to connect Anthropic Claude Opus 5 to Claude Code CLI and Cursor. Route API requests via APIVALE with global PayPal billing and 70% cost savings."
+metaTitle: "Connect Claude Opus 5 to Claude Code CLI Guide | APIVALE"
+description: "Learn how to connect Anthropic Claude Opus 5 to Claude Code CLI. Bypass rate limits, prevent token drops, and route via APIVALE with PayPal."
 date: "2026-07-30"
 author: "Alex Rivera"
 authorTitle: "Senior Cloud Architect & API Integrations, APIVALE"

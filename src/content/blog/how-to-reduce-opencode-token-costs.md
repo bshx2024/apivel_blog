@@ -1,7 +1,7 @@
----
+﻿---
 title: "How to Slash OpenCode & OpenCodeX Token Costs by 85% with Custom API Gateways (2026 Guide + PayPal Billing)"
 metaTitle: "Slash OpenCode Token Costs by 85% via APIVALE | APIVALE"
-description: "Learn how to slash OpenCode and OpenCodeX CLI token spending by 85%. Route Anthropic and OpenAI API agent requests via APIVALE using DeepSeek V4 & Qwen 3.7 Max with PayPal billing."
+description: "Slash OpenCode CLI token costs by 85%. Route Anthropic and OpenAI agent requests via APIVALE using DeepSeek V4 & Qwen 3.7 Max with PayPal. Learn more."
 date: "2026-07-26"
 author: "Kenji Tanaka"
 authorTitle: "AI Developer Relations Engineer, APIVALE"

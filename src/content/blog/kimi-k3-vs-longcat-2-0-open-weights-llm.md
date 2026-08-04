@@ -1,6 +1,7 @@
----
+﻿---
 title: "Kimi K3 vs. LongCat-2.0: Battle of China's Largest Open-Weight LLMs"
-description: "Compare Moonshot's 2.8T Kimi K3 and Meituan's 1.6T LongCat-2.0 (Owl Alpha). An in-depth coding agent, architecture, and pricing comparison of China's top open-weights models."
+metaTitle: "Kimi K3 vs LongCat-2.0: Open-Weight LLM Bench | APIVALE"
+description: "Compare Moonshot Kimi K3 2.8T vs Meituan LongCat-2.0 1.6T. Detailed coding agent benchmarks, MoE architecture, and API cost guide via APIVALE."
 date: "2026-07-17"
 author: "Alex Rivera"
 authorTitle: "Senior Cloud Architect, APIVALE"

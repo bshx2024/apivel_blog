@@ -1,6 +1,7 @@
----
+﻿---
 title: "Claude MCP PostgreSQL Setup: Fix Common Errors & Save Costs"
-description: "Configure Claude Desktop and Claude Code with the PostgreSQL MCP server safely. Learn to resolve NVM path issues, SSL connection errors, and reduce token usage by 90%."
+metaTitle: "Connect Claude to PostgreSQL via MCP Protocol | APIVALE"
+description: "Learn how to connect Claude Code CLI to PostgreSQL via Model Context Protocol (MCP). Step-by-step setup guide with PayPal billing on APIVALE."
 date: "2026-07-13"
 author: "Alex Rivera"
 authorTitle: "Senior Cloud Architect & API Integrations, APIVALE"

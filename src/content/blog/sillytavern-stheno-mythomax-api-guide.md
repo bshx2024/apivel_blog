@@ -1,6 +1,7 @@
----
+﻿---
 title: "SillyTavern Setup: Access Stheno v3.2 & MythoMax APIs via APIVALE"
-description: "A developer guide to configuring SillyTavern for immersive, low-latency character roleplay using Stheno v3.2 and MythoMax APIs with APIVALE's global proxy gateway."
+metaTitle: "SillyTavern Setup: Access Stheno & MythoMax API | APIVALE"
+description: "Configure SillyTavern for low-latency character roleplay using Stheno v3.2 and MythoMax APIs. Route requests with APIVALE global proxy gateway."
 date: "2026-07-12"
 author: "Kenji Tanaka"
 authorTitle: "AI Developer Relations Engineer, APIVALE"

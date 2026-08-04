@@ -1,5 +1,6 @@
----
+﻿---
 title: "Intercepting Terminal Noise: How to Reduce LLM API Costs for Autonomous Agents"
+metaTitle: "Reduce Autonomous Agent API Costs: Cut Noise | APIVALE"
 description: "Learn how to use high-performance CLI proxies like RTK to filter terminal output noise, reducing autonomous coding agent API costs by up to 90%."
 date: "2026-07-08"
 author: "Kenji Tanaka"

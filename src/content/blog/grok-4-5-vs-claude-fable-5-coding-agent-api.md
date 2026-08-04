@@ -1,7 +1,7 @@
----
+﻿---
 title: "Grok 4.5 vs Claude Fable 5 API Comparison: Coding Agent Cost Guide"
-metaTitle: "Grok 4.5 vs Claude Fable 5: Coding Agent Cost Guide | APIVALE"
-description: "Compare Grok 4.5 and Claude Fable 5 for autonomous coding agents. Benchmark speed, cost optimization, and route via APIVALE with PayPal billing."
+metaTitle: "Grok 4.5 vs Claude Fable 5: Coding Agent Guide | APIVALE"
+description: "Benchmark Grok 4.5 vs Claude Fable 5 for autonomous coding agents. Compare SWE-bench benchmarks, token costs, and PayPal billing via APIVALE."
 date: "2026-07-28"
 author: "Kenji Tanaka"
 authorTitle: "AI Developer Relations Engineer & Integrations, APIVALE"

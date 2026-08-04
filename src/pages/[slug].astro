@@ -1,6 +1,8 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
+import ApiPriceCalculator from '../components/ApiPriceCalculator.astro';
+import CliConfigGenerator from '../components/CliConfigGenerator.astro';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
@@ -28,6 +30,25 @@ const authorAvatars: Record<string, string> = {
 	'Sofia Costa': '/blog/authors/sofia-costa.png',
 };
 const avatarUrl = authorAvatars[post.data.author];
+
+// Topic detection for automatic tool widget selection
+const slugLower = post.id.toLowerCase();
+const titleLower = post.data.title.toLowerCase();
+
+const isPriceOrBenchmark = /price|cost|saving|benchmark|comparison|versus|vs|deepseek|minimax|rate/i.test(slugLower + ' ' + titleLower);
+const isCliOrSetup = /cli|cursor|windsurf|opencode|connect|setup|config|mcp|guide|access|bypass/i.test(slugLower + ' ' + titleLower);
+
+let initialModel = 'kimi-k3';
+if (slugLower.includes('qwen')) initialModel = 'qwen-37';
+else if (slugLower.includes('deepseek')) initialModel = 'deepseek-v4';
+else if (slugLower.includes('opus')) initialModel = 'claude-opus-5';
+else if (slugLower.includes('minimax')) initialModel = 'minimax-h3';
+else if (slugLower.includes('sonnet')) initialModel = 'claude-sonnet-5';
+
+let defaultClient = 'claude-code';
+if (slugLower.includes('cursor')) defaultClient = 'cursor';
+else if (slugLower.includes('windsurf')) defaultClient = 'windsurf';
+else if (slugLower.includes('opencode')) defaultClient = 'opencode';
 ---
 
 <Layout 
@@ -69,7 +90,19 @@ const avatarUrl = authorAvatars[post.data.author];
 			</div>
 		</header>
 
+		<!-- Zero-Login Interactive Tool Widgets (Above the Fold) -->
+		{isPriceOrBenchmark && (
+			<ApiPriceCalculator initialModel={initialModel} />
+		)}
 
+		{isCliOrSetup && (
+			<CliConfigGenerator defaultClient={defaultClient} defaultModel={initialModel} />
+		)}
+
+		<!-- Fallback for general articles if neither matched -->
+		{!isPriceOrBenchmark && !isCliOrSetup && (
+			<ApiPriceCalculator initialModel={initialModel} />
+		)}
 
 		<!-- Post Content -->
 		<div class="post-body">
