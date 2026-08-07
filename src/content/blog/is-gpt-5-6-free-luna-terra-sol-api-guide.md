@@ -85,7 +85,7 @@ The table below outlines official GPT-5.6 pricing, context limits, and benchmark
 | **GPT-5.6 Sol** | $5.00 | $30.00 | 1,050,000 | 128,000 | Deep Reasoning & Complex Coding | PayPal / Pay-as-you-go |
 | **GPT-5.6 Terra** | $2.00 | $12.00 | 1,050,000 | 128,000 | Balanced Enterprise Workflows | PayPal / Pay-as-you-go |
 | **GPT-5.6 Luna** | $0.20 | $1.20 | 1,050,000 | 128,000 | High-Speed & Low-Cost Summarization | PayPal / Pay-as-you-go |
-| **Claude Fable 5** | $3.00 | $15.00 | 1,000,000 | 128,000 | Agentic Logic & Refactoring | PayPal / Pay-as-you-go |
+| **Claude Fable 5** | $10.00 | $50.00 | 1,000,000 | 128,000 | Agentic Logic & Refactoring | PayPal / Pay-as-you-go |
 | **Qwen 3.7 Max** | $0.40 | $1.60 | 1,000,000 | 64,000 | Multilingual Coding & SWE-Bench | PayPal / Pay-as-you-go |
 | **DeepSeek V4** | $0.27 | $1.10 | 1,000,000 | 64,000 | High-Concurrency Logic | PayPal / Pay-as-you-go |
 
@@ -229,7 +229,7 @@ No, OpenAI does not offer a universal GPT-5.6 free trial or free API key for dev
 While search results on GitHub and Reddit often list free web wrapper scripts, these tools break quickly due to Cloudflare bot mitigation, missing JSON response formats, and HTTP 401/403 errors. For production stability, developers should use official API endpoints or APIVALE's proxy gateway.
 
 ### How does GPT-5.6 compare to Claude Fable 5 in coding benchmarks?
-In SWE-Bench and multi-file coding benchmarks, GPT-5.6 Sol matches Claude Fable 5 in raw reasoning depth. However, GPT-5.6 Sol offers a larger 1.05M context window, while Claude Fable 5 provides a competitive pricing structure at $3.00/1M input tokens.
+In SWE-Bench and multi-file coding benchmarks, GPT-5.6 Sol matches Claude Fable 5 in raw reasoning depth. However, GPT-5.6 Sol offers a larger 1.05M context window and lower input pricing ($5.00/1M vs Fable 5's $10.00/1M input), while Fable 5 excels in structured multi-language refactoring.
 
 ### How can I access GPT-5.6 API via PayPal without credit card locks?
 You can access GPT-5.6 API models through APIVALE using PayPal Global Billing. APIVALE provides an OpenAI-compatible API hub that accepts international credit cards and PayPal payments without local billing restrictions or KYC verification.
