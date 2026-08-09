@@ -74,7 +74,7 @@ else if (slugLower.includes('opencode')) defaultClient = 'opencode';
 			<div class="post-author-bar">
 				<div class="author-avatar">
 					{avatarUrl ? (
-						<img src={avatarUrl} alt={post.data.author} class="avatar-img" />
+						<img src={avatarUrl} alt={post.data.author} class="avatar-img" width="48" height="48" />
 					) : (
 						post.data.author.split(' ').map(n => n[0]).join('')
 					)}
