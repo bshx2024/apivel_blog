@@ -128,13 +128,13 @@ else if (slugLower.includes('opencode')) defaultClient = 'opencode';
 			<div class="author-box">
 				<div class="author-box-avatar">
 					{avatarUrl ? (
-						<img src={avatarUrl} alt={post.data.author} class="avatar-img" />
+						<img src={avatarUrl} alt={post.data.author} class="avatar-img" width="60" height="60" />
 					) : (
 						post.data.author.split(' ').map(n => n[0]).join('')
 					)}
 				</div>
 				<div class="author-box-content">
-					<h4>About {post.data.author}</h4>
+					<div class="author-box-title">About {post.data.author}</div>
 					<p>{post.data.authorBio || `${post.data.author} is a technical contributor at APIVALE.`}</p>
 				</div>
 			</div>
@@ -626,7 +626,7 @@ else if (slugLower.includes('opencode')) defaultClient = 'opencode';
 		overflow: hidden;
 	}
 
-	.author-box-content h4 {
+	.author-box-content .author-box-title {
 		font-family: var(--font-display);
 		color: var(--text-primary);
 		font-size: 1.1rem;

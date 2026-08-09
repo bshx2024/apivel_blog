@@ -98,20 +98,20 @@ const resolvedCanonical = canonicalUrl || new URL(Astro.url.pathname, Astro.site
 				</div>
 				<div class="footer-links-group">
 					<div class="footer-column">
-						<h4>Platform</h4>
+						<div class="footer-col-title">Platform</div>
 						<a href="/">Gateway</a>
 						<a href="/pricing">Pricing</a>
 						<a href="/docs">Docs</a>
 						<a href="/status">Status</a>
 					</div>
 					<div class="footer-column">
-						<h4>Company</h4>
+						<div class="footer-col-title">Company</div>
 						<a href="/about">About Us</a>
 						<a href="/contact">Contact</a>
 						<a href="/blog/">Blog</a>
 					</div>
 					<div class="footer-column">
-						<h4>Legal</h4>
+						<div class="footer-col-title">Legal</div>
 						<a href="/terms">Terms of Service</a>
 						<a href="/privacy">Privacy Policy</a>
 					</div>
@@ -323,7 +323,7 @@ const resolvedCanonical = canonicalUrl || new URL(Astro.url.pathname, Astro.site
 		gap: 0.75rem;
 	}
 
-	.footer-column h4 {
+	.footer-column .footer-col-title {
 		color: var(--text-primary);
 		font-family: var(--font-display);
 		font-size: 0.95rem;
