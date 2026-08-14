@@ -53,7 +53,7 @@ graph LR
 <div class="my-6 border-l-4 border-indigo-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Definition</span>
   <div class="mt-1 text-md font-semibold text-white">GLM-5.3 API Gateway</div>
-  <p class="mt-2 text-sm text-gray-300">GLM-5.3 API Gateway is a developer proxy on APIVALE that translates Zhipu AI's 700B model into standard OpenAI and Anthropic formats, enabling developers to connect GLM-5.3 to Claude Code CLI and Cursor with zero-KYC PayPal billing.</p>
+  <p class="mt-2 text-sm text-gray-300">GLM-5.3 API Gateway is a developer proxy on APIVALE that translates Zhipu AI's 700B model into standard OpenAI and Anthropic formats, enabling developers to integrate GLM-5.3 into Claude Code CLI and Cursor with zero-KYC PayPal billing.</p>
 </div>
 
 ---
@@ -190,7 +190,7 @@ Zhipu AI's flagship model represents an architectural jump in open-weights codin
 
 ### Official Benchmarks: GLM-5.3 vs. Claude Opus 4.8 & Fable 5
 
-When software engineers connect GLM-5.3 to Claude Code CLI, official benchmarks demonstrate strong engineering performance:
+When software engineers benchmark GLM-5.3 for Claude Code CLI, official metrics demonstrate strong engineering performance:
 
 * **Zhipu Code Bench**: GLM-5.3 achieved **34.5% completion** (75k tokens), surpassing **Claude Opus 4.8 (29.5%, 120k tokens)** while approaching **Claude Fable 5 (39.5%)**.
 * **Terminal-Bench 3.0**: Score jumped to **28.3**, demonstrating a 6x improvement in terminal execution for agents.
@@ -199,7 +199,7 @@ When software engineers connect GLM-5.3 to Claude Code CLI, official benchmarks 
 
 ### Reddit & Developer Community Feedback
 
-Developer discussions on Reddit (`r/LocalLLaMA`) highlight two key factors when engineers connect GLM-5.3 to Claude Code CLI:
+Developer discussions on Reddit (`r/LocalLLaMA`) highlight two key factors when evaluating GLM-5.3 for CLI agents:
 1. **Unmatched Token Efficiency**: Higher task completion while consuming fewer output tokens than Claude Opus 4.8, lowering latency.
 2. **Cybersecurity Emergence**: Researchers highlighted emergent exploit planning, allowing security agents to trace multi-step attack vectors.
 
