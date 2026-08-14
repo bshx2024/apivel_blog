@@ -1,7 +1,7 @@
-﻿---
-title: "CodexBar Guide: Windows/Linux Setup, Safety & Rate Limit Fix (PayPal API Gateway)"
-metaTitle: "CodexBar Windows Setup: Track API Token Spend | APIVALE"
-description: "Step-by-step setup guide for CodexBar on Windows. Monitor token usage, cost spikes, and API balance safely with custom endpoints on APIVALE."
+---
+title: "How to Install & Run CodexBar on Windows (10/11 & WSL2 Guide)"
+metaTitle: "How to Install & Run CodexBar on Windows (10/11 & WSL2) | APIVALE"
+description: "Step-by-step guide to install and run CodexBar on Windows 10/11 via WSL2 & PowerShell. Monitor AI quotas safely and bypass rate limits with APIVALE."
 date: "2026-08-01"
 author: "Sofia Costa"
 authorTitle: "FinTech Integration & API Security Expert, APIVALE"
@@ -26,6 +26,16 @@ In this comprehensive guide, we analyze CodexBar's architecture, audit its secur
     <li>Evaluating "Is CodexBar safe" reveals that reading local Keychain credentials and browser cookies poses potential exposure risks; isolating production API keys via APIVALE custom gateways eliminates raw credential exposure.</li>
     <li>Bypass official session caps and 5-hour rate limit walls for flagship models like <strong>Claude Sonnet 5</strong>, <strong>Qwen 3.7 Max</strong> (<code>infer/qwen3.7-max</code>), and <strong>DeepSeek V4</strong> by combining CodexBar monitoring with APIVALE's PayPal global billing endpoints.</li>
   </ul>
+</div>
+
+<div class="my-6 border border-indigo-500/40 bg-indigo-950/20 rounded-xl p-5 shadow-lg">
+  <h3 class="text-base font-bold text-indigo-400 mb-1">💻 How to Run CodexBar on Windows (WSL2 Quick Setup)</h3>
+  <ol class="text-sm text-gray-200 leading-relaxed list-decimal list-inside space-y-1 mt-2">
+    <li>Open <strong>PowerShell</strong> or <strong>WSL2 Terminal</strong> on Windows 10/11.</li>
+    <li>Clone the repository: <code>git clone https://github.com/steipete/CodexBar.git</code></li>
+    <li>Build the headless CLI binary: <code>cd CodexBar && swift build -c release</code></li>
+    <li>Execute status check or connect to <strong>APIVALE Gateway</strong> for cross-platform web telemetry.</li>
+  </ol>
 </div>
 
 ---

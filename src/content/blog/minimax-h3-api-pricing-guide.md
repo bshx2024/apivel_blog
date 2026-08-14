@@ -1,7 +1,7 @@
-﻿---
-title: "MiniMax H3 (Hailuo 3.0) API Guide: Pricing, Open Weights & Integration"
-metaTitle: "MiniMax H3 API Pricing: $0.13/s 2K Video (PayPal) | APIVALE"
-description: "Access MiniMax H3 (Hailuo 3.0) API for 2K video at .13/sec—3x cheaper than Sora. Download open weights and bypass card blocks on APIVALE. Learn more."
+---
+title: "MiniMax H3 (Hailuo 3.0) API Pricing Guide & Integration"
+metaTitle: "MiniMax H3 API Pricing: $0.13/s Video & Token Costs | APIVALE"
+description: "MiniMax H3 API costs $0.13/sec for 2K video and $0.15/1M tokens. Compare with DeepSeek V4 & Qwen 3.8. Pay via PayPal with no KYC required on APIVALE."
 date: "2026-07-31"
 author: "Kenji Tanaka"
 authorTitle: "AI Developer Relations Engineer & Multimodal API Integrations, APIVALE"

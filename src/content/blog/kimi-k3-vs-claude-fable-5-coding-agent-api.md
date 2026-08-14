@@ -1,7 +1,7 @@
 ---
-title: "Kimi K3 vs. Claude Fable 5: Ultimate API Comparison for Coding Agents"
-metaTitle: "Kimi K3 vs Claude Fable 5 API Integration Guide | APIVALE"
-description: "Compare Moonshot AI's Kimi K3 vs Claude Fable 5 for agentic coding. Explore Fireworks benchmarks, Terminal-Bench 2.1, and cost routing via APIVALE."
+title: "Kimi K3 vs Claude Fable 5: Coding Agent API Benchmark Comparison"
+metaTitle: "Kimi K3 vs Claude Fable 5: Coding Agent API Benchmark Comparison | APIVALE"
+description: "Detailed coding agent API benchmark: Kimi K3 vs Claude Fable 5. Compare token pricing, context limits, tool call latency, and benchmark scores."
 date: "2026-07-28"
 author: "Alex Rivera"
 authorTitle: "Senior Cloud Architect, APIVALE"
