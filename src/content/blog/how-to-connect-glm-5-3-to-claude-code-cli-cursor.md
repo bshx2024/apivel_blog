@@ -34,9 +34,9 @@ lang: "en"
   </div>
 </div>
 
-Running autonomous agents inside **Claude Code CLI** and **Cursor Composer** burns API credits rapidly. Overseas developers looking to connect GLM-5.3 to Claude Code CLI also face +86 Chinese phone KYC verification and payment blocks on z.ai portals.
+Running autonomous agents inside **Claude Code CLI** and **Cursor Composer** burns API credits rapidly. Overseas developers looking to setup Zhipu's flagship model in agentic CLI tools also face +86 Chinese phone KYC verification and payment blocks on z.ai portals.
 
-Using APIVALE's unified protocol proxy gateway, you can connect GLM-5.3 to Claude Code CLI and Cursor, bypass geographical access barriers, and cut token spend by **75%**.
+Using APIVALE's unified protocol proxy gateway, you can route Zhipu's 700B model to Claude Code and Cursor, bypass geographical access barriers, and cut token spend by **75%**.
 
 ```mermaid
 graph LR
