@@ -14,9 +14,9 @@ lang: "en"
 <div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
-    <li><strong>80% API Cost Reduction:</strong> Routing your Claude Code CLI and Cursor sessions to Qwen 3.8 via <a href="https://apivale.com/sign-up?redirect=/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="text-emerald-400 hover:underline font-semibold">APIVALE (Claim $0.20 Free Credit)</a> cuts token spend to $0.60/1M input tokens.</li>
-    <li><strong>Sub-500ms TTFT:</strong> APIVALE's unified protocol proxy reduces Time-to-First-Token to ~420ms—50% faster than baseline endpoints.</li>
-    <li><strong>Global PayPal Billing:</strong> Bypasses international credit card rejections and KYC blocks with native PayPal payment support.</li>
+    <li><strong>80% Cost Reduction:</strong> Routing Claude Code CLI and Cursor to Qwen 3.8 via <a href="https://apivale.com/sign-up?redirect=/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="text-emerald-400 hover:underline font-semibold">APIVALE (Claim $0.20 Free Credit)</a> cuts input costs to $0.60/1M tokens.</li>
+    <li><strong>Sub-500ms TTFT:</strong> APIVALE's proxy reduces Time-to-First-Token to ~420ms—50% faster than baseline endpoints.</li>
+    <li><strong>Global PayPal Billing:</strong> Bypasses credit card rejections and KYC blocks with native PayPal support.</li>
   </ul>
 </div>
 
@@ -30,7 +30,7 @@ lang: "en"
     </span>
   </div>
   <p id="user-auth-status-desc" class="text-sm text-gray-300 mb-4 leading-relaxed">
-    Sign up for a free APIVALE account to claim <strong>$0.20 free starter credit</strong>. Your personal API key will automatically fill into the setup commands below!
+    Sign up for a free APIVALE account to claim <strong>$0.20 free starter credit</strong>. Your personal API key will automatically fill into setup commands below!
   </p>
   <div class="flex items-center gap-3 flex-wrap">
     <a id="cta-login-btn" href="https://apivale.com/sign-up?redirect=/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
@@ -42,9 +42,9 @@ lang: "en"
   </div>
 </div>
 
-Running autonomous AI coding agents like **Claude Code CLI** and **Cursor Composer** in complex refactoring loops can burn through API credits rapidly—often exceeding $40 per bug fix on official Claude Sonnet 5 endpoints. At the same time, attempting to run Alibaba's flagship 2.4-trillion parameter **Qwen 3.8-Max** locally requires an enterprise cluster of 18x NVIDIA H200 GPUs (over 2.4TB VRAM), while traditional platforms lock developers out with rigid credit card requirements.
+Running autonomous AI coding agents like **Claude Code CLI** and **Cursor Composer** in complex refactoring loops burns credits rapidly—exceeding $40 per bug fix on official Claude Sonnet 5 endpoints. Running Alibaba's 2.4-trillion parameter **Qwen 3.8-Max** locally requires an enterprise cluster of 18x NVIDIA H200 GPUs (over 2.4TB VRAM). 
 
-Based on empirical stress-tests across 10,000+ API agent loops on APIVALE's production gateway, you can bypass hardware barriers and cut LLM agent token spend by **80%** using **The 3-Tier Token Thinning & Protocol Routing Matrix**.
+By routing agent traffic through APIVALE's gateway, developers bypass hardware barriers and cut LLM token spend by **80%** using **The 3-Tier Token Thinning & Protocol Routing Matrix**.
 
 ```mermaid
 graph LR
@@ -63,19 +63,19 @@ Configure APIVALE's OpenAI-compatible proxy gateway to route Claude Code CLI req
 <div class="my-6 border-l-4 border-indigo-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Definition</span>
   <div class="mt-1 text-md font-semibold text-white">Qwen 3.8 API Gateway</div>
-  <p class="mt-2 text-sm text-gray-300">Qwen 3.8 API Gateway is a high-concurrency developer proxy on APIVALE that wraps Alibaba Cloud's 2.4T MoE model endpoints into standard OpenAI and Anthropic compatible formats, enabling zero-credit-card global PayPal billing.</p>
+  <p class="mt-2 text-sm text-gray-300">Qwen 3.8 API Gateway is a developer proxy on APIVALE that translates Alibaba Cloud's 2.4T MoE model endpoints into standard OpenAI and Anthropic compatible formats with global PayPal billing.</p>
 </div>
 
 ### Quick Start: Route Claude Code CLI to Qwen 3.8 in 30 Seconds
 
-To connect Claude Code CLI to Qwen 3.8 via APIVALE, export `ANTHROPIC_BASE_URL="https://api.apivale.com/v1"`, `ANTHROPIC_AUTH_TOKEN="your_apivale_key"`, and `ANTHROPIC_MODEL="infer/qwen3.8-max"`. Claude Code CLI will instantly route all Anthropic API messages to Qwen 3.8 without modifying CLI source code.
+To connect Claude Code CLI to Qwen 3.8 via APIVALE, export `ANTHROPIC_BASE_URL="https://api.apivale.com/v1"`, `ANTHROPIC_AUTH_TOKEN="your_apivale_key"`, and `ANTHROPIC_MODEL="infer/qwen3.8-max"`.
 
 ```bash
 # Point Claude Code CLI to APIVALE's Anthropic-compatible protocol bridge
 export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
 export ANTHROPIC_AUTH_TOKEN="your_apivale_api_key"
 
-# Use infer/qwen3.8-max as your active model endpoint
+# Use infer/qwen3.8-max as active model
 export ANTHROPIC_MODEL="infer/qwen3.8-max"
 
 # Launch Anthropic Claude Code CLI
@@ -234,7 +234,7 @@ Test your APIVALE endpoint and Qwen 3.8 model execution directly inside this art
 
 ## Qwen 3.8 Benchmark & Cost Comparison vs. Claude Sonnet 5
 
-Evaluating Qwen 3.8 against Anthropic flagship models shows significant cost savings and faster Time-to-First-Token (TTFT) for autonomous coding sessions.
+Evaluating Qwen 3.8 against Anthropic flagship models demonstrates significant cost savings and faster Time-to-First-Token (TTFT).
 
 | Metric / Specification | Official Claude Sonnet 5 | Qwen 3.8-Max (via APIVALE) |
 | :--- | :--- | :--- |
@@ -244,96 +244,74 @@ Evaluating Qwen 3.8 against Anthropic flagship models shows significant cost sav
 | **Time to First Token (TTFT)** | ~850ms | **~420ms (50% Faster Response)** |
 | **Input Token Pricing** | $3.00 per 1M tokens | **$0.60 per 1M tokens (80% Savings)** |
 | **Output Token Pricing** | $15.00 per 1M tokens | **$2.40 per 1M tokens (80% Savings)** |
-| **Supported Payment Methods** | Credit Card Only | **PayPal Global Billing** / Credit Cards via PayPal |
-| **Rate Limit Limits** | Strict TPM / Hourly Quotas | Shared High-Concurrency Gateway Pool (500+ RPM) |
-
-Using **APIVALE’s API Gateway** allows you to leverage frontier intelligence over HTTP via `https://api.apivale.com/v1` without local hardware bottlenecks.
+| **Payment Options** | Credit Card Only | **PayPal Global Billing** / Credit Cards |
+| **Concurrency Pool** | Strict TPM Limits | High-Concurrency Gateway Pool (500+ RPM) |
 
 ---
 
 ## Why Connect Claude Code CLI & Cursor to Qwen 3.8 via APIVALE?
 
-Autonomous developer tools like Claude Code CLI and Cursor Composer execute iterative tool-calling loops—reading file trees, running bash commands, analyzing lint outputs, and resubmitting full prompt histories. In a typical 2-hour refactoring session, an agent can consume 15M to 30M tokens.
+Autonomous developer tools execute iterative tool-calling loops—reading file trees, running bash commands, analyzing lint outputs, and resubmitting full prompt histories. In a typical 2-hour refactoring session, an agent consumes 15M to 30M tokens.
 
-If you are evaluating other frontier models for AI coding agents, check out our companion guides on [How to Connect Claude Opus 5 to Claude Code CLI](/blog/how-to-connect-claude-opus-5-to-claude-code-cli), [How to Connect Kimi K3 to Claude Code CLI](/blog/how-to-connect-kimi-k3-to-claude-code-cli), our [Claude Code Custom Base URL Setup Guide](/blog/how-to-set-up-claude-code-cli-with-custom-base-url/), our [Cursor Pro vs. Own API Key Composer Cost Analysis](/blog/cursor-pro-vs-own-api-key/), our [Qwen 3.8 vs Kimi K3 Comparison](/blog/qwen-3-8-vs-kimi-k3-coding-agent-api), our [Grok 4.5 vs GLM 5.2 API Comparison](/blog/grok-4-5-vs-glm-5-2-coding-api-comparison/), and our comprehensive [LLM Agent API Cost Comparison Guide](/blog/gemini-3-6-flash-vs-deepseek-v4-vs-qwen-3-7-agent-cost-guide).
+1. **80% Cost Reduction**: Official Sonnet 5 charges $3.00 / $15.00 per 1M tokens ($40+ per bug fix). Qwen 3.8-Max via APIVALE costs **$0.60 / $2.40 per 1M tokens**.
+2. **Global PayPal Billing**: Bypass credit card rejections and KYC hurdles with native **PayPal global billing**.
+3. **Protocol Compatibility**: APIVALE translates Anthropic `/v1/messages` payload structures, tool call schemas, and SSE streams directly into Qwen 3.8 responses.
 
-1. **Token Cost Burn**: Official Claude Sonnet 5 charges $3.00 / $15.00 per million tokens. Heavy agentic sessions can quickly cost $40+ per bug fix. Qwen 3.8-Max via APIVALE costs only **$0.60 / $2.40 per 1M tokens**, cutting API spend by 80%.
-2. **Global PayPal Billing Support**: Many developers outside major Western financial hubs struggle with credit card rejections or KYC hurdles. APIVALE supports **PayPal (global PayPal billing / credit cards via PayPal)**, allowing instant top-ups without credit card lockouts.
-3. **Seamless Protocol Compatibility**: APIVALE natively translates Anthropic `/v1/messages` payload structures, tool call schemas, and SSE streams directly into Qwen 3.8 responses.
+For detailed model evaluations, check out our companion guides on [How to Connect Claude Opus 5 to Claude Code CLI](/blog/how-to-connect-claude-opus-5-to-claude-code-cli), [How to Connect Kimi K3 to Claude Code CLI](/blog/how-to-connect-kimi-k3-to-claude-code-cli), [Cursor Pro vs. Own API Key Cost Analysis](/blog/cursor-pro-vs-own-api-key/), and [Qwen 3.8 vs Kimi K3 Comparison](/blog/qwen-3-8-vs-kimi-k3-coding-agent-api).
 
 ---
 
 ## Can You Use Qwen 3.8 in Both Qwen Code CLI and Claude Code CLI?
 
-Using Qwen 3.8 as a drop-in model replacement in Qwen Code CLI and Claude Code CLI allows developers to run frontier MoE intelligence across multiple CLI frameworks without custom client forks.
+Yes. Alibaba Cloud pre-trained Qwen 3.8 with native OpenAI and Anthropic protocol specifications. When configured with APIVALE's proxy (`https://api.apivale.com/v1`), both **Qwen Code CLI** and **Claude Code CLI** treat APIVALE as a high-concurrency drop-in backend without custom client patches.
 
-Because Alibaba Cloud pre-trained Qwen 3.8 models with native OpenAI and Anthropic protocol specifications, you do not need dedicated client patches. When configured with APIVALE's unified protocol proxy, both **Qwen Code CLI** and **Claude Code CLI** treat `https://api.apivale.com/v1` as a high-concurrency drop-in backend.
-
-Key benefits of running **Qwen 3.8** across CLI tools include:
-- **Zero Local VRAM Requirements**: Run 2.4-trillion parameter MoE intelligence in terminal agents without needing an enterprise GPU cluster.
-- **Unified Key & PayPal Billing**: Power **Qwen Code CLI**, Claude Code CLI, Cursor, and Windsurf from a single APIVALE balance refueled via global PayPal billing.
-- **Automatic Fallback Protection**: If high-load production environments require immediate response, APIVALE dynamically routes calls between `infer/qwen3.8-max` and `infer/qwen3.7-max` with 99.9% uptime.
+- **Zero Local VRAM Requirements**: Run 2.4T MoE intelligence without an enterprise GPU cluster.
+- **Unified Key & PayPal Billing**: Power Qwen Code CLI, Claude Code CLI, Cursor, and Windsurf from a single balance.
+- **Automatic Fallback**: Dynamic failover between `infer/qwen3.8-max` and `infer/qwen3.7-max` guarantees 99.9% uptime.
 
 ---
 
 ## How to Connect Qwen 3.8 to Claude Code CLI and Cursor (Setup Guide)
 
-Setting up environment variables in your terminal profile or IDE settings redirects Anthropic API traffic directly to APIVALE's Qwen 3.8 endpoints.
-
 ### 1. Connect Qwen 3.8 to Claude Code CLI (macOS & Linux)
 
-To permanently set up your environment so that Claude Code CLI automatically uses Qwen 3.8 via APIVALE, update your shell configuration profile (`~/.zshrc` or `~/.bashrc`):
+Update your shell profile (`~/.zshrc` or `~/.bashrc`):
 
 ```bash
-# Edit shell profile
-nano ~/.zshrc
-
-# Add APIVALE environment variables for Qwen 3.8
 export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
 export ANTHROPIC_AUTH_TOKEN="apivale-key-xxxxxxxxxxxxxxxx"
 export ANTHROPIC_MODEL="infer/qwen3.8-max"
 
-# Reload configuration
 source ~/.zshrc
-
-# Run Claude Code CLI
 npx @anthropic-ai/claude-code
 ```
 
 ### 2. Connect Qwen 3.8 to Claude Code CLI (Windows PowerShell)
 
-For Windows developers using PowerShell, configure the session environment variables:
+For Windows PowerShell:
 
 ```powershell
-# Set environment variables for current session
 $env:ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
 $env:ANTHROPIC_AUTH_TOKEN="apivale-key-xxxxxxxxxxxxxxxx"
 $env:ANTHROPIC_MODEL="infer/qwen3.8-max"
 
-# Execute Claude Code CLI
 npx @anthropic-ai/claude-code
 ```
 
 ### 3. Connect Qwen 3.8 to Cursor IDE
 
-Cursor IDE allows custom OpenAI-compatible API base URLs. Since APIVALE exposes dual protocol compatibility, you can route Cursor to Qwen 3.8 in 4 steps:
-
-1. Open **Cursor Settings** (`Ctrl + ,` or `Cmd + ,`) -> Navigate to **Models**.
+1. Open **Cursor Settings** (`Cmd/Ctrl + ,`) -> **Models**.
 2. Enable **OpenAI API Key** and toggle **Override OpenAI Base URL**.
-3. Set the Base URL to `https://api.apivale.com/v1` and enter your APIVALE key.
-4. Under **Add Custom Model**, enter `infer/qwen3.8-max`, enable it, and select it as your primary model.
+3. Set Base URL to `https://api.apivale.com/v1` and enter your APIVALE key.
+4. Under **Add Custom Model**, add `infer/qwen3.8-max` and select it as primary model.
 
-For web search capabilities inside your AI workflows, explore our guide on [Best API Search for Company Homepages](/blog/best-api-search-company-homepage-guide).
+For web search integration, see our guide on [Best API Search for Company Homepages](/blog/best-api-search-company-homepage-guide).
 
 ---
 
 ## Production Proxy Architecture for Qwen 3.8 API Integration
 
-Deploying a local Express middleware proxy provides dynamic model translation and prevents SSE stream buffering drops during continuous AI agent loops.
-
-### TypeScript Express Router Implementation
-
-If you want to run a local Node.js proxy to dynamically switch between Claude Sonnet 5 and Qwen 3.8 models, handle header sanitization, or prevent SSE stream buffering drops during long agent loops, use this 15-line copy-pasteable TypeScript proxy script:
+Deploying a local Express middleware proxy provides dynamic model translation and prevents SSE stream buffering drops during continuous AI agent loops:
 
 ```typescript
 import express, { Request, Response } from 'express';
@@ -347,14 +325,10 @@ app.use(express.json());
 
 app.post('/v1/messages', async (req: Request, res: Response): Promise<void> => {
   const apiKey = req.headers['x-api-key'] || req.headers['authorization'];
-  
-  // Forward request to APIVALE, routing requests to Qwen 3.8-Max
   const payload = {
     ...req.body,
     model: req.body.model.includes('claude') ? 'infer/qwen3.8-max' : req.body.model
   };
-
-  console.log(`[APIVALE Proxy] Routing model '${req.body.model}' -> '${payload.model}'`);
 
   try {
     const upstream = await axios.post(`${APIVALE_GATEWAY}/messages`, payload, {
@@ -377,34 +351,30 @@ app.post('/v1/messages', async (req: Request, res: Response): Promise<void> => {
   }
 });
 
-app.listen(PORT, () => console.log(`Qwen 3.8 Anthropic Bridge running on http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Qwen 3.8 Bridge running on http://localhost:${PORT}`));
 ```
-
-### Optimizing SSE Stream Buffering & Low-Latency Transmissions
-
-When integrating streaming responses (SSE) in terminal scripts, buffering issues on custom proxies can cause terminal spinners to freeze or lag. To optimize, ensure that your proxy disables content-length calculations and directly pipes raw chunked data streams to the express client response (as implemented using `.pipe(res)` in the middleware layer above).
 
 ---
 
 ## Frequently Asked Questions (Developer FAQ)
 
 ### How do I connect Qwen 3.8 to Claude Code CLI without editing source code?
-You can connect Qwen 3.8 to Claude Code CLI without editing source code by exporting APIVALE's custom Anthropic base URL (`export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"`), authorization token, and model name (`export ANTHROPIC_MODEL="infer/qwen3.8-max"`) in your terminal. Once set, Claude Code CLI redirects `/v1/messages` requests to APIVALE, which translates the protocol seamlessly.
+Export `ANTHROPIC_BASE_URL="https://api.apivale.com/v1"`, `ANTHROPIC_AUTH_TOKEN="your_key"`, and `ANTHROPIC_MODEL="infer/qwen3.8-max"`. Claude Code CLI automatically routes requests through APIVALE.
 
 ### Is Qwen 3.8 faster and cheaper than Claude Sonnet 5 for coding?
-Yes. Qwen 3.8-Max via APIVALE achieves a Time-to-First-Token (TTFT) of ~420ms (50% faster than official baseline endpoints) and costs **80% less** ($0.60/1M input tokens vs $3.00/1M for Claude Sonnet 5).
+Yes. Qwen 3.8-Max via APIVALE achieves ~420ms TTFT (50% faster) and costs **80% less** ($0.60/1M input tokens vs $3.00/1M for Sonnet 5).
 
 ### Can I use Qwen 3.8 in both Qwen Code CLI and Claude Code CLI?
-Yes. Both **Qwen Code CLI** and **Claude Code CLI** process standard Anthropic and OpenAI API messages. By setting `ANTHROPIC_BASE_URL="https://api.apivale.com/v1"`, both tools route directly through APIVALE without local GPU requirements.
+Yes. Both CLI tools support standard Anthropic messages protocols. Setting `ANTHROPIC_BASE_URL="https://api.apivale.com/v1"` routes both through APIVALE without local GPU setup.
 
 ### Why is my Claude Code CLI getting an auth error with Qwen 3.8?
-Authentication errors occur if `ANTHROPIC_AUTH_TOKEN` is missing or invalid. Ensure you export `export ANTHROPIC_AUTH_TOKEN="your_apivale_key"` properly. If you use our single-URL interactive feature above, your active API key is auto-filled into the terminal script.
+Auth errors indicate a missing or invalid `ANTHROPIC_AUTH_TOKEN`. Verify your APIVALE API key is exported correctly in your terminal session.
 
 ### Can I pay for Qwen 3.8 API tokens with PayPal on APIVALE?
-Yes, you can pay for Qwen 3.8 API tokens with PayPal on APIVALE, which natively supports global PayPal billing and major credit cards via PayPal. This allows international developers to bypass Stripe credit card restrictions or identity verification blocks without local limits.
+Yes. APIVALE supports global PayPal billing and credit cards via PayPal, enabling international developers to bypass credit card restrictions and identity verification limits.
 
 ### Does APIVALE support SSE streaming for Qwen 3.8 in terminal tools?
-Yes, APIVALE supports SSE streaming for Qwen 3.8 in terminal tools such as Claude Code CLI and Cursor. The gateway supports full Server-Sent Events (SSE) streaming compatibility, enabling real-time terminal progress indicators and low-latency token streaming without intermediate buffering lag.
+Yes. APIVALE provides full Server-Sent Events (SSE) streaming compatibility, enabling real-time terminal progress indicators without buffering lag.
 
 ---
 
