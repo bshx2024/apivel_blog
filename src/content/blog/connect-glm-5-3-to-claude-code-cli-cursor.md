@@ -1,7 +1,7 @@
 ---
-title: "How to Connect GLM-5.3 to Claude Code CLI & Cursor"
-metaTitle: "Connect GLM-5.3 to Claude Code CLI & Cursor | APIVALE"
-description: "Discover GLM-5.3 API price, benchmarks, and step-by-step guide to connect GLM-5.3 to Claude Code CLI and Cursor with zero-KYC global PayPal billing on APIVALE."
+title: "How to Connect GLM-5.3 to Claude Code CLI & Cursor (Save 75% + No +86 KYC)"
+metaTitle: "Connect GLM-5.3 to Claude Code & Cursor (Save 75%) | APIVALE"
+description: "Learn how to connect GLM-5.3 to Claude Code CLI & Cursor in 30s. Cut API costs by 75% ($0.75/1M) with zero +86 KYC via APIVALE PayPal billing. Free $0.20 credit!"
 date: "2026-08-14"
 author: "Kenji Tanaka"
 authorTitle: "AI Developer Relations Engineer, APIVALE"
