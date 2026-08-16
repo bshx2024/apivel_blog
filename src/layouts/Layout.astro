@@ -60,6 +60,15 @@ const resolvedCanonical = canonicalUrl || new URL(Astro.url.pathname, Astro.site
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 	</head>
 	<body>
+		<!-- Top Global Announcement Banner -->
+		<div class="top-announcement-bar">
+			<div class="top-announcement-content">
+				<span class="banner-badge">🎁 FREE TRIAL</span>
+				<span class="banner-text">Claim <strong>$0.20 Free Quota</strong> (100,000 Tokens) for DeepSeek V4 & Qwen 3.7 — No Credit Card Needed</span>
+				<a href="/sign-up?redirect=/pricing" class="banner-btn">Get API Key →</a>
+			</div>
+		</div>
+
 		<!-- Header -->
 		<header class="site-header">
 			<div class="nav-container">
@@ -371,5 +380,51 @@ const resolvedCanonical = canonicalUrl || new URL(Astro.url.pathname, Astro.site
 			justify-content: space-between;
 			width: 100%;
 		}
+		.top-announcement-content {
+			flex-wrap: wrap;
+			gap: 0.4rem;
+			font-size: 0.75rem;
+		}
+	}
+
+	/* Top Global Announcement Bar */
+	.top-announcement-bar {
+		background: linear-gradient(90deg, #1e1b4b 0%, #311b92 50%, #4c1d95 100%);
+		border-bottom: 1px solid rgba(99, 102, 241, 0.3);
+		color: #ffffff;
+		padding: 0.4rem 1rem;
+		font-size: 0.82rem;
+		text-align: center;
+	}
+	.top-announcement-content {
+		max-width: var(--max-width);
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.75rem;
+	}
+	.banner-badge {
+		background: rgba(255, 255, 255, 0.15);
+		border: 1px solid rgba(255, 255, 255, 0.25);
+		color: #fde047;
+		padding: 0.1rem 0.5rem;
+		border-radius: 9999px;
+		font-size: 0.7rem;
+		font-weight: 700;
+		letter-spacing: 0.05em;
+	}
+	.banner-btn {
+		background: #6366f1;
+		color: #ffffff;
+		padding: 0.15rem 0.6rem;
+		border-radius: 6px;
+		font-weight: 600;
+		font-size: 0.75rem;
+		text-decoration: none;
+		transition: background 0.2s;
+	}
+	.banner-btn:hover {
+		background: #4f46e5;
 	}
 </style>

@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import ApiPriceCalculator from '../components/ApiPriceCalculator.astro';
 import CliConfigGenerator from '../components/CliConfigGenerator.astro';
+import BlogCtaCard from '../components/BlogCtaCard.astro';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
@@ -122,6 +123,9 @@ else if (slugLower.includes('opencode')) defaultClient = 'opencode';
 				</a>
 			</div>
 		</div>
+
+		<!-- Reusable Technical Developer CTA Card -->
+		<BlogCtaCard />
 
 		<!-- Post Footer Author Box -->
 		<footer class="post-footer">
