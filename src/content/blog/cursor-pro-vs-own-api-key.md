@@ -6,7 +6,7 @@ date: "2026-07-07"
 author: "Sofia Costa"
 authorTitle: "FinTech Integration & API Security Expert, APIVALE"
 authorBio: "Sofia Costa is a financial technology engineer specializing in API payment integration, consumption analytics, and LLM billing architectures."
-tags: ["Cursor Editor", "API Pricing", "LLM Costs", "Developer Tools", "Optimization", "PayPal"]
+tags: ["Cursor Editor", "API Pricing", "LLM Costs", "Developer Tools", "Optimization", "PayPal", "Claude Pro", "Codex"]
 image: "/blog/cursor-pro-vs-own-api-cover.png"
 lang: "en"
 ---
@@ -31,7 +31,7 @@ Cursor has taken the development world by storm, with its Composer mode allowing
 
 Based on APIVALE production gateway telemetry tracking over 15,000 Cursor Composer agent loops, a flat subscription can be a fast way to waste money for active developers. Should you stick with the $20/month <a href="https://www.cursor.com/pricing" target="_blank" rel="noopener">Cursor Pro Pricing</a> subscription, or use your own custom API keys via a pay-as-you-go gateway like [APIVALE Gateway](/blog/openrouter-alternatives/) or connecting frontier models like [Qwen 3.7 Max](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/) and [Kimi K3](/blog/how-to-connect-kimi-k3-to-claude-code-cli/)?
 
-In this guide, we break down the exact token math, compare the hidden costs of autonomous agent loops (including how the new [GPT-5.6 Sol, Terra, and Luna tiers](/blog/does-gpt-5-6-really-save-67-on-api-costs/) affect IDE pricing), and provide a guide on how to configure your own keys to maximize speed while slashing your bills.
+In this guide, we break down the exact token math, compare the hidden costs of autonomous agent loops (including how the new [GPT-5.6 Sol, Terra, and Luna tiers](/blog/does-gpt-5-6-really-save-67-on-api-costs/) affect IDE pricing), evaluate **Cursor Free vs Pro vs Claude Pro**, and provide a guide on how to configure your own keys to maximize speed while slashing your bills.
 
 ---
 
@@ -75,18 +75,28 @@ Configure APIVALE's OpenAI-compatible proxy gateway to route Cursor Composer req
 
 ---
 
-## Cursor Pro vs Own API Key Savings: Complete Price & Speed Breakdown
+## Cursor Free vs Pro vs Own API Key: Complete Price & Speed Breakdown
 
 Evaluating Cursor Pro pricing requires comparing fixed subscription credit pools against pay-as-you-go token metering via APIVALE.
 
-| Metric | Cursor Pro Pricing ($20/mo) | Custom API Key via APIVALE | Savings / Difference |
+| Metric / Plan | Cursor Free Tier | Cursor Pro Pricing ($20/mo) | Custom API Key via APIVALE |
 | :--- | :--- | :--- | :--- |
-| **Monthly Cost** | **$20.00 / mo** (Flat prepaid pool) | **$0.68 - $6.60 / mo** (Pay-as-you-go) | **60% - 96.6% Cost Savings** |
-| **Speed & Throttling** | Throttled after 500 fast requests | **100% Unthrottled Speed** & Max Concurrency | **No Queue Bottlenecks** |
-| **Agent / Composer Costs** | Drains the $20 credit pool rapidly | Charged per token (**DeepSeek V4: $0.14/1M in**) | **Massive Token Arbitrage** |
-| **Model Selection** | Pre-approved list (Claude Sonnet 5, GPT-5.6) | Unlimited models (DeepSeek V4, Qwen 3.7 Max, GLM-5.2) | **Full Multi-Model Access** |
-| **Payment Options** | Credit Card via Stripe (Recurring only) | **PayPal Global Billing** / Credit Cards | **Zero Credit Card Lock** |
-| **Team Shareability** | Account tied to a single user | Share a single API key across team members | **Pooled Team Credits** |
+| **Monthly Cost** | $0.00 / month | **$20.00 / mo** (Flat prepaid pool) | **$0.68 - $6.60 / mo** (Pay-as-you-go) |
+| **Request Allocation** | 50 fast requests | 500 fast requests | **Unlimited Unthrottled Requests** |
+| **Speed & Throttling** | Slow queue fallback | Throttled after 500 fast requests | **100% Max Concurrency Speed** |
+| **Composer Agent Loops** | Drains in ~2 sessions | Drains in ~19 heavy sessions | **Pay per exact token ($0.14/1M in)** |
+| **Model Selection** | Limited Basic Models | Claude Sonnet 5, GPT-5.6 | **DeepSeek V4, Qwen 3.7 Max, GLM-5.3** |
+| **Payment Options** | Free (No card) | Credit Card via Stripe (Recurring) | **PayPal Global Billing** / Credit Cards |
+
+---
+
+## Cursor Pro vs Claude Pro vs Claude Code: Ecosystem Comparison
+
+Software engineers evaluating Cursor Pro pricing often compare it against **Claude Pro** and **Claude Code CLI**:
+
+* **Cursor Pro ($20/mo)**: Provides IDE-integrated editing with a 500 fast request credit pool. Once exhausted, requests drop to a slower queue.
+* **Claude Pro ($20/mo)**: Grants web UI access to Anthropic's chat interface, subject to strict hourly message limits and zero IDE integration.
+* **Claude Code CLI & Cursor via APIVALE**: Combines terminal agent capabilities and IDE editing with unthrottled pay-as-you-go pricing, enabling **DeepSeek V4** and **Qwen 3.7 Max** routing at 96% lower costs.
 
 ---
 
@@ -239,17 +249,20 @@ if __name__ == "__main__":
 ### Is Cursor Pro pricing fixed at $20/month, or can I use pay-as-you-go API keys?
 Cursor Pro pricing is set at a fixed $20/month subscription for 500 fast requests. However, developers can bypass fixed subscriptions by toggling "Override Base URL" in Cursor settings and connecting custom pay-as-you-go API keys via APIVALE, reducing costs down to $0.68/month for equivalent workloads on models like DeepSeek V4.
 
+### What is the difference between Cursor Free, Cursor Pro, and using custom API keys?
+Cursor Free includes 50 fast requests and slow queue fallbacks. Cursor Pro ($20/mo) includes 500 fast requests. Using custom API keys via APIVALE provides unthrottled requests with pay-as-you-go billing, reducing monthly costs by up to 96.6%.
+
+### How does Cursor Pro compare to Claude Pro and Claude Code CLI?
+Cursor Pro ($20/mo) offers IDE-integrated completions. Claude Pro ($20/mo) offers web-only chat. Connecting your own API key to Cursor or Claude Code CLI via APIVALE combines full IDE and terminal agent integration with zero monthly subscription locks and PayPal billing.
+
+### What happens when you run out of fast requests in Cursor Pro?
+When fast requests exhaust in Cursor Pro, requests drop to a throttled slow queue. Connecting custom API keys via APIVALE bypasses credit pool limits entirely, granting 100% unthrottled concurrency.
+
 ### Can you use your own API key with Cursor to bypass Pro limits?
 Yes. When you configure Cursor to use custom API keys via APIVALE, all requests bypass Cursor's credit pool entirely. You pay only for exact tokens consumed during coding sessions, allowing you to bypass monthly fast request limits and avoid artificial throttling.
 
 ### Can I use DeepSeek V4 and Qwen 3.7 Max in Cursor to save money?
 Yes. DeepSeek V4 and Qwen 3.7 Max (`infer/qwen3.7-max`) offer frontier coding performance close to Claude Sonnet 5 at up to 96% lower token costs. By setting APIVALE's custom base URL (`https://apivale.com/v1`) and adding `deepseek-chat` or `infer/qwen3.7-max` to your model list in Cursor, you can code for weeks for under a dollar.
-
-### How do I enter my APIVALE custom base URL and key in Cursor?
-Open Cursor Settings -> Models -> OpenAI. Toggle the "Override Base URL" option, enter `https://apivale.com/v1`, paste your APIVALE key (`sk-apivale-...`), and click "Save". Then, enable models like `claude-sonnet-5` or `deepseek-chat` in your models checklist.
-
-### Why do Cursor Composer loops consume more tokens than standard chat?
-Cursor Composer runs multi-step autonomous agent loops that scan workspace directory structures, read related files, and execute terminal commands. On every loop iteration, the entire expanded context is resent to the LLM, causing token consumption to accumulate exponentially compared to simple single-file chat.
 
 <script type="application/ld+json">
 {
@@ -266,6 +279,30 @@ Cursor Composer runs multi-step autonomous agent loops that scan workspace direc
     },
     {
       "@type": "Question",
+      "name": "What is the difference between Cursor Free, Cursor Pro, and using custom API keys?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cursor Free includes 50 fast requests. Cursor Pro ($20/mo) includes 500 fast requests. Using custom API keys via APIVALE provides unthrottled requests with pay-as-you-go billing, reducing monthly costs by up to 96.6%."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Cursor Pro compare to Claude Pro and Claude Code CLI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cursor Pro ($20/mo) offers IDE completions. Claude Pro ($20/mo) offers web-only chat. Connecting your own API key to Cursor or Claude Code CLI via APIVALE combines full IDE integration with zero monthly subscription locks and PayPal billing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens when you run out of fast requests in Cursor Pro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When fast requests exhaust in Cursor Pro, requests drop to a throttled slow queue. Connecting custom API keys via APIVALE bypasses credit pool limits entirely, granting 100% unthrottled concurrency."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Can you use your own API key with Cursor to bypass Pro limits?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -278,22 +315,6 @@ Cursor Composer runs multi-step autonomous agent loops that scan workspace direc
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Yes. DeepSeek V4 and Qwen 3.7 Max (infer/qwen3.7-max) offer frontier coding performance close to Claude Sonnet 5 at up to 96% lower token costs. By setting APIVALE's custom base URL (https://apivale.com/v1) and adding deepseek-chat or infer/qwen3.7-max to your model list in Cursor, you can code for weeks for under a dollar."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I enter my APIVALE custom base URL and key in Cursor?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Open Cursor Settings -> Models -> OpenAI. Toggle the 'Override Base URL' option, enter https://apivale.com/v1, paste your APIVALE key (sk-apivale-...), and click 'Save'. Then, enable models like claude-sonnet-5 or deepseek-chat in your models checklist."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why do Cursor Composer loops consume more tokens than standard chat?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Cursor Composer runs multi-step autonomous agent loops that scan workspace directory structures, read related files, and execute terminal commands. On every loop iteration, the entire expanded context is resent to the LLM, causing token consumption to accumulate exponentially compared to simple single-file chat."
       }
     }
   ]
