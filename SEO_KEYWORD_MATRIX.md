@@ -43,6 +43,9 @@ graph TD
 | :--- | :--- | :--- | :--- | :--- | :---: | :---: | :--- |
 | `how to connect qwen 3.8 to claude code` | High Intent / Commercial | Tier 1 | Qwen 3.8 / Claude Code CLI | `/blog/how-to-connect-qwen-3-8-to-claude-code-cli` | ✅ 已上线 | P0 | Zero-KYC + PayPal + OpenAI Base URL |
 | `qwen 3.8 cursor setup` | High Intent / Commercial | Tier 1 | Qwen 3.8 / Cursor | `/blog/how-to-connect-qwen-3-8-to-claude-code-cli` | ✅ 已上线 | P0 | 1 分钟一键填入 API Key 教程 |
+| `qwen 3.8 27b ollama` | Technical / Commercial | Tier 1 | Qwen 3.8 27B / Ollama | `/blog/how-to-connect-qwen-3-8-to-claude-code-cli` | ✅ 已优化 | P0 | 本地 Ollama 部署与 APIVALE 云端托管对比 |
+| `qwen 3.8 27b benchmarks` | Commercial / Benchmark | Tier 2 | Qwen 3.8 27B / Max | `/blog/qwen-3-8-max-benchmarks-preview-guide` | ✅ 已优化 | P0 | 覆盖 27B 模型 SWE-bench 跑分与对比 |
+| `is qwen 3.8 free` | Informational / PAA | Tier 3 | Qwen 3.8 FAQ | `/blog/qwen-3-8-max-benchmarks-preview-guide` | ✅ 已优化 | P1 | PAA 拦截与免费试用赠金引导 |
 | `kimi k3 api key paypal` | Transactional | Tier 1 | Kimi K3 | `/blog/how-to-connect-kimi-k3-to-claude-code-cli` | ✅ 已上线 | P0 | 独家支持 PayPal 购买 Kimi K3 |
 | `how to connect kimi k3 to codex cli` | High Intent / Commercial | Tier 1 | Kimi K3 / OpenAI Codex CLI | `/blog/how-to-connect-kimi-k3-to-codex-cli` | ✅ 已上线 | P0 | 填补 Codex CLI 接入国产模型空白 |
 | `openrouter alternatives with paypal` | Transactional | Tier 1 | OpenRouter Alternative | `/blog/openrouter-alternatives` | ✅ 已上线 | P0 | 解决了 OpenRouter 无法使用 PayPal 的痛点 |
