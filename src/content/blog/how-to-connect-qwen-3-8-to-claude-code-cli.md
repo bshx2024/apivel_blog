@@ -1,5 +1,5 @@
 ---
-title: "How to Connect Qwen 3.8 to Claude Code CLI & Cursor"
+title: "How to Connect Qwen 3.8 to Claude Code CLI & Cursor (Save 80% Token Spend)"
 metaTitle: "Connect Qwen 3.8 to Claude Code & Cursor (80% Off) | APIVALE"
 description: "Learn how to connect Qwen 3.8 to Claude Code CLI & Cursor. Cut API token costs by 80% ($0.60/1M) via APIVALE PayPal billing. Claim $0.20 free credit!"
 date: "2026-07-30"
