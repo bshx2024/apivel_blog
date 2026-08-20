@@ -198,7 +198,7 @@ Validate your endpoint connectivity and inspect Qwen 3.8 code generation latency
 
 ---
 
-## Cursor Pro vs. APIVALE Qwen 3.8-Max: Cost & Performance Benchmark
+## Cursor Pro vs. APIVALE Qwen 3.8-Max Custom API Key: Cost Benchmark
 
 Evaluating Qwen 3.8 against Cursor Pro extra fast requests and official Claude Sonnet 5 endpoints reveals substantial token arbitrage opportunities and lower latency overhead.
 
@@ -236,7 +236,7 @@ APIVALE maintains dedicated NVMe-accelerated KV cache clusters and regional edge
 
 ---
 
-## How to Connect Qwen 3.8 to Cursor IDE (Step-by-Step Guide)
+## How to Connect Qwen 3.8 Custom API Key to Cursor IDE (Step-by-Step Guide)
 
 Integrating APIVALE's Qwen 3.8 into Cursor IDE requires modifying three specific settings in the Cursor configuration interface.
 
@@ -347,7 +347,7 @@ You are powered by Alibaba Cloud's Qwen 3.8-Max (2.4T MoE) via APIVALE Gateway.
 
 ---
 
-## Common Cursor BYOK Traps and How to Fix Them
+## Common Cursor BYOK & Custom API Key Traps and How to Fix Them
 
 Developers switching to custom API keys in Cursor occasionally encounter local network routing errors and rate limit drops.
 
