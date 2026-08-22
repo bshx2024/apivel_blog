@@ -21,9 +21,9 @@ lang: "en"
 </div>
 
 <div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
-  <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Looking for Cursor IDE Integration?</span>
+  <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Related Model & IDE Guides</span>
   <p class="mt-1 text-sm text-gray-300">
-    If you want to configure GLM-5.3 inside Cursor IDE with custom <code>.cursorrules</code>, OpenAI Base URL overrides, and Composer workflows, read our dedicated <a href="/blog/connect-glm-5-3-to-claude-code-cli-cursor" class="text-cyan-400 hover:underline font-semibold">How to Connect GLM-5.3 to Cursor IDE Guide</a>.
+    Looking to test the stealth 1M-context model <strong>Ox Alpha (0xAlpha)</strong>? Read our <a href="/blog/ox-alpha-claude-code-cursor-setup" class="text-emerald-400 hover:underline font-semibold">Ox Alpha Claude Code & Cursor Setup Guide</a>. For Cursor IDE configuration with GLM-5.3, check our <a href="/blog/connect-glm-5-3-to-claude-code-cli-cursor" class="text-cyan-400 hover:underline font-semibold">How to Connect GLM-5.3 to Cursor IDE Guide</a>.
   </p>
 </div>
 

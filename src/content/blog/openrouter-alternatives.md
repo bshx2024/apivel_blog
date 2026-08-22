@@ -478,7 +478,7 @@ High-concurrency AI applications quickly hit OpenRouter rate limits (RPM caps). 
 
 APIVALE is the premier **openrouter alternative** built specifically for developers requiring low-latency routing, unlimited RPM rate limits, and global PayPal payments.
 
-*(Note: For developers setting up agentic coding workflows, see our guides on [how to set up Qwen 3.7 with Claude Code CLI](/blog/how-to-connect-qwen-3-7-to-claude-code-cli/) and [how to connect Kimi K3 to Claude Code CLI](/blog/how-to-connect-kimi-k3-to-claude-code-cli/).)*
+*(Note: For developers setting up agentic coding workflows, see our guides on [how to connect Ox Alpha (0xAlpha) to Claude Code CLI & Cursor](/blog/ox-alpha-claude-code-cursor-setup/), [how to set up Qwen 3.7 with Claude Code CLI](/blog/how-to-connect-qwen-3-7-to-claude-code-cli/), and [how to connect Kimi K3 to Claude Code CLI](/blog/how-to-connect-kimi-k3-to-claude-code-cli/).)*
 
 ### Context Caching & Free Cache Hits
 APIVALE provides native support for Kimi K3 and DeepSeek V4 context caching. As a leading **openrouter alternative**, APIVALE renders cache hits **completely free of charge**, cutting token costs for autonomous codebase migrations.
