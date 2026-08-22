@@ -1,5 +1,5 @@
 ---
-title: "How to Connect Ox Alpha (0xAlpha) to Claude Code CLI & Cursor (2026 Guide)"
+title: "Ox Alpha Claude Code Setup: How to Connect 0xAlpha to CLI & Cursor (2026)"
 metaTitle: "Ox Alpha Claude Code Setup: Native API Guide | APIVALE"
 description: "Step-by-step guide to configure Ox Alpha (0xAlpha) in Claude Code CLI & Cursor. Bypass rate limits with native Anthropic protocol proxy via APIVALE."
 date: "2026-08-23"
@@ -46,6 +46,104 @@ graph LR
     B -->|Frontier Standard| E["Claude Sonnet 5"]
     B -->|Global Checkout| F["PayPal Global Billing"]
 ```
+
+---
+
+## Interactive Ox Alpha Setup & Cost Arbitrage Generator
+
+Configure your client environment and calculate monthly token savings directly on this page:
+
+<div id="ox-alpha-interactive-tool" class="my-8 border border-indigo-500/30 bg-gray-950/90 rounded-2xl p-6 shadow-2xl backdrop-blur-md">
+  <div class="flex items-center justify-between flex-wrap gap-3 mb-5 border-b border-gray-800 pb-4">
+    <div class="flex items-center gap-2">
+      <span class="text-xs font-bold text-indigo-400 uppercase tracking-widest bg-indigo-950/80 border border-indigo-800/60 px-3 py-1 rounded-full">⚡ Live In-Article Generator</span>
+      <span class="text-xs text-emerald-400 bg-emerald-950/60 border border-emerald-800/40 px-2.5 py-1 rounded-full font-mono">1M Context Ready</span>
+    </div>
+    <div class="flex items-center gap-2">
+      <label class="text-xs font-medium text-gray-400">Target Client:</label>
+      <select id="client-select" onchange="updateOxAlphaConfig()" class="bg-gray-900 text-cyan-300 text-xs font-mono border border-indigo-500/40 rounded-lg px-3 py-1.5 focus:outline-none">
+        <option value="claude-bash" selected>Claude Code CLI (Bash/Zsh)</option>
+        <option value="claude-ps">Claude Code CLI (PowerShell)</option>
+        <option value="cursor">Cursor IDE (.cursorrules)</option>
+        <option value="windsurf">Windsurf IDE</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+    <div class="bg-gray-900/80 p-4 rounded-xl border border-gray-800">
+      <label class="block text-xs font-semibold text-gray-300 uppercase mb-2">Monthly Token Volume (Input + Output)</label>
+      <div class="flex items-center justify-between gap-4 mb-2">
+        <input id="token-slider" type="range" min="1" max="50" value="10" step="1" oninput="updateOxAlphaConfig()" class="w-full accent-indigo-500" />
+        <span id="token-volume-val" class="text-sm font-mono font-bold text-indigo-300 whitespace-nowrap">10M tokens</span>
+      </div>
+      <p class="text-xs text-gray-400">Calculated based on a 75/25 input-to-output agentic prompt distribution.</p>
+    </div>
+
+    <div class="bg-gradient-to-br from-emerald-950/40 to-gray-900 p-4 rounded-xl border border-emerald-500/30 flex flex-col justify-center">
+      <div class="text-xs font-bold text-emerald-400 uppercase tracking-wide mb-1">Estimated Monthly Cost Savings</div>
+      <div class="flex items-baseline gap-2">
+        <span id="cost-savings-val" class="text-2xl font-bold text-emerald-300">$52.12</span>
+        <span class="text-xs text-emerald-400/80 font-semibold">(85% Cheaper than Sonnet 5)</span>
+      </div>
+      <div class="text-xs text-gray-400 mt-1">APIVALE: <span id="apivale-cost-val" class="text-white font-mono">$7.88</span> vs Frontier: <span id="sonnet-cost-val" class="text-gray-400 line-through font-mono">$60.00</span></div>
+    </div>
+  </div>
+
+  <div class="mb-2">
+    <div class="flex items-center justify-between mb-2">
+      <label class="block text-xs font-semibold text-gray-300 uppercase">Generated Production Configuration</label>
+      <button type="button" onclick="copyGeneratedConfig()" class="text-xs text-cyan-400 hover:text-cyan-300 flex items-center gap-1 font-mono">
+        📋 Copy Configuration
+      </button>
+    </div>
+    <pre id="generated-config-box" class="bg-black/90 p-4 rounded-xl font-mono text-xs text-emerald-400 whitespace-pre-wrap overflow-x-auto border border-gray-800 max-h-48"></pre>
+  </div>
+</div>
+
+<script is:inline>
+  function updateOxAlphaConfig() {
+    const client = document.getElementById('client-select').value;
+    const tokens = parseInt(document.getElementById('token-slider').value);
+    
+    document.getElementById('token-volume-val').innerText = tokens + 'M tokens';
+
+    // Pricing calculation (75% input, 25% output)
+    // Sonnet 5: $3.00/M in, $15.00/M out => avg $6.00/M
+    // Ox Alpha: $0.45/M in, $1.80/M out => avg $0.7875/M
+    const sonnetCost = (tokens * 0.75 * 3.0) + (tokens * 0.25 * 15.0);
+    const apivaleCost = (tokens * 0.75 * 0.45) + (tokens * 0.25 * 1.80);
+    const savings = sonnetCost - apivaleCost;
+
+    document.getElementById('cost-savings-val').innerText = '$' + savings.toFixed(2);
+    document.getElementById('apivale-cost-val').innerText = '$' + apivaleCost.toFixed(2);
+    document.getElementById('sonnet-cost-val').innerText = '$' + sonnetCost.toFixed(2);
+
+    let configText = '';
+    if (client === 'claude-bash') {
+      configText = `# Ox Alpha Claude Code Setup (Linux / macOS Bash)\nexport ANTHROPIC_BASE_URL="https://api.apivale.com/v1"\nexport ANTHROPIC_AUTH_TOKEN="sk-apivale-your_api_key_here"\nexport ANTHROPIC_MODEL="stealth/ox-alpha"\n\n# Run Claude Code CLI\nclaude`;
+    } else if (client === 'claude-ps') {
+      configText = `# Ox Alpha Claude Code Setup (Windows PowerShell)\n$env:ANTHROPIC_BASE_URL="https://api.apivale.com/v1"\n$env:ANTHROPIC_AUTH_TOKEN="sk-apivale-your_api_key_here"\n$env:ANTHROPIC_MODEL="stealth/ox-alpha"\n\n# Run Claude Code CLI\nclaude`;
+    } else if (client === 'cursor') {
+      configText = `// 0xAlpha Cursor API Integration\n// Settings -> Models -> Override OpenAI Base URL: https://api.apivale.com/v1\n// Custom Model Name: stealth/ox-alpha\n\n# .cursorrules (Root of Workspace)\n- Model: stealth/ox-alpha on APIVALE High-Speed Gateway\n- Context: Leverage 1,048,576 token window for full-repo refactoring\n- Protocol: OpenAI-compatible /v1/chat/completions endpoint`;
+    } else if (client === 'windsurf') {
+      configText = `// 0xAlpha Windsurf Configuration\n{\n  "openai.baseUrl": "https://api.apivale.com/v1",\n  "openai.apiKey": "sk-apivale-your_api_key_here",\n  "model": "stealth/ox-alpha"\n}`;
+    }
+
+    document.getElementById('generated-config-box').innerText = configText;
+  }
+
+  function copyGeneratedConfig() {
+    const text = document.getElementById('generated-config-box').innerText;
+    navigator.clipboard.writeText(text);
+    alert('Copied configuration to clipboard!');
+  }
+
+  // Initial call on render
+  if (typeof document !== 'undefined') {
+    setTimeout(updateOxAlphaConfig, 100);
+  }
+</script>
 
 ---
 
@@ -224,7 +322,6 @@ The Anthropic SDK enforces strict SSE chunk delimiters (`event: content_block_de
 ```typescript
 // proxy-server.ts - Production-Ready APIVALE Dual-Protocol Gateway
 import express, { Request, Response } from 'express';
-import axios, { AxiosError } from 'express';
 import axiosInstance from 'axios';
 
 const app = express();
@@ -266,7 +363,6 @@ async function executeWithFailover(payload: ChatPayload, attempt: number = 1): P
 app.post('/v1/chat/completions', async (req: Request, res: Response) => {
   const payload: ChatPayload = req.body;
   
-  // Default to Ox Alpha if not explicitly specified
   if (!payload.model) {
     payload.model = 'stealth/ox-alpha';
   }
@@ -315,7 +411,7 @@ When OpenRouter's free preview window concludes, developers face two major obsta
 The model identifier on APIVALE is `stealth/ox-alpha`, and developers can also invoke its direct upstream equivalent `glm-5.3` or `infer/qwen3.7-max` using the same unified API key.
 
 ### How do I fix 429 Too Many Requests errors when using Ox Alpha?
-You can resolve 429 rate limit errors by setting the **stealth ox-alpha Anthropic base url** to `https://api.apivale.com/v1`, which routes requests through high-concurrency enterprise enterprise pools with automatic failover fallback.
+You can resolve 429 rate limit errors by setting the **stealth ox-alpha Anthropic base url** to `https://api.apivale.com/v1`, which routes requests through high-concurrency enterprise pools with automatic failover fallback.
 
 ### Can I use Ox Alpha in Claude Code CLI without an Anthropic subscription?
 Yes. By setting `ANTHROPIC_BASE_URL="https://api.apivale.com/v1"` and completing your **Ox Alpha Claude Code setup** with your APIVALE authentication token, you can run Claude Code CLI with Ox Alpha without requiring an Anthropic Pro or Team account.
@@ -384,6 +480,5 @@ Yes. APIVALE exclusively supports PayPal and international credit cards via PayP
   <p class="cta-card-text">Supercharge your coding agent with Ox Alpha's 1-million-token context window. Enjoy 85% token savings compared to Sonnet 5, zero KYC friction, dedicated high-concurrency bandwidth, and instant PayPal billing. Sign up now to claim your $0.20 free credit (+ 50% bonus on your first recharge)!</p>
   <div class="cta-card-actions">
     <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=ox-alpha-claude-code-cursor-setup" class="cta-primary-btn">Claim Free API Key ($0.20 Starter Credit)</a>
-    <a href="https://apivale.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=ox-alpha-claude-code-cursor-setup" class="cta-secondary-btn">Test Ox Alpha in Playground</a>
   </div>
 </div>
