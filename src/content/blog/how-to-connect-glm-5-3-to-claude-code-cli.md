@@ -21,9 +21,9 @@ lang: "en"
 </div>
 
 <div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
-  <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Looking for Other CLI & IDE Integrations?</span>
+  <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Looking for Cursor IDE Integration?</span>
   <p class="mt-1 text-sm text-gray-300">
-    If you want to configure alternative open-weights models, check our guides on <a href="/blog/how-to-connect-qwen-3-8-to-claude-code-cli" class="text-cyan-400 hover:underline font-semibold">Connecting Qwen 3.8 to Claude Code CLI</a> and <a href="/blog/qwen-3-8-cursor-setup" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Cursor IDE Setup</a>.
+    If you want to configure GLM-5.3 inside Cursor IDE with custom <code>.cursorrules</code>, OpenAI Base URL overrides, and Composer workflows, read our dedicated <a href="/blog/connect-glm-5-3-to-claude-code-cli-cursor" class="text-cyan-400 hover:underline font-semibold">How to Connect GLM-5.3 to Cursor IDE Guide</a>.
   </p>
 </div>
 
