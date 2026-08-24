@@ -105,7 +105,7 @@ $$\text{DeepSeek Cost per Request} = \left(\frac{6,000 \times \$0.14}{1,000,000}
 
 $$\text{Total Cost for 606 Requests} = 606 \times \$0.00112 = \$0.68$$
 
-Switching heavy Composer tasks to DeepSeek V4 processes the same workload for **$0.68** instead of $20.00—saving **96.6%**. See [Grok 4.5 vs Claude Fable 5 API Comparison](/blog/grok-4-5-vs-claude-fable-5-coding-agent-api/).
+Switching heavy Composer tasks to DeepSeek V4 processes the same workload for **$0.68** instead of $20.00—saving **96.6%**. See [Grok 4.5 vs Claude Fable 5 API Comparison](/blog/grok-4-5-vs-claude-fable-5-coding-agent-api/) or our [Grok Bot API Setup & Troubleshooting Guide](/blog/grok-bot-api-setup-pricing-troubleshooting/).
 
 ---
 
