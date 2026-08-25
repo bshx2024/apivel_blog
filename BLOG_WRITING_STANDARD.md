@@ -106,21 +106,22 @@
 *   **陈述句首写与单语义消歧原则 (Declarative & Monosemanticity Rule)**：每个 H2/H3 小标题下方的**第一句话**必须使用直接、明确的陈述句概括核心结论，同时消除多义词歧义（Monosemanticity）。必须明确写出【动作 + 核心实体 + 具体技术上下文】（例如：“*Configure APIVALE's OpenAI-compatible proxy gateway to route Claude Code CLI requests with zero-credit-card PayPal billing.*”），极大增加被 AI Overviews 和 LLM 注意力机制直接采纳的几率。
 ---
 
-## 4. 强制“独特性 4 个 1”规范 (Information Gain Standard)
+## 4. 强制“真实工程信息增益”规范 (Verifiable Information Gain Standard)
 
-为遵循 Google **Link Information Gain Patent（信息增益专利）**，避免产生同质化山寨内容，每篇文章**必须**满足以下“4 个 1”独特性清单：
+为严格遵循 Google **Link Information Gain Patent（信息增益专利）** 与 **SpamBrain（反大规模内容滥用 / Scaled Content Abuse）** 规范，彻底杜绝同质化与机械化 AI 生成特征，每篇文章**必须**满足以下“4 项真实工程增益”清单：
 
-1. **1 个独家提炼的方法论 / 命名公式 (1 Branded Methodology / Named Formula)**：
-   * 提炼一个具有 APIVALE 品牌属性的方法论或计算框架（如 *"The 3-Tier Token Thinning Matrix"*, *"The Multi-Gateway Fallback Triangle"*），方便他人引用。
-2. **1 组真实工程实测 / 成本推算数据 (1 Set of Real Benchmark / Calculated Data)**：
-   * 包含真实的 TTFT (首字延迟)、延迟分布或确定性 scenario 的数学成本推算表（数据可由 AI 运行测试脚本或确定性数学模型生成）。
-3. **1 个竞品未触及的高级踩坑解决方案 (1 Edge-Case & Hidden Trap Solution)**：
-   * 解决 Top 5 竞品忽略的技术盲区（如代理 Header 冲突、SSE 流式缓冲断连、Context 剪裁掉包、高并发 RPM 突破排查）。
+1. **1 个真实工程/协议架构实现 (1 Verifiable Architecture / Protocol Translation Proof)**：
+   * 严禁凭空发明虚假的英文方法论（如自造 *"The 3-Tier Matrix / Triangle"* 等脱离现实的空洞词汇）。
+   * 必须基于真实的工程实现（如：“*基于 OpenAI 与 Anthropic `/v1/messages` 协议差异的 Request Header 透传与 Thinking 标签转译架构*”、“*针对 SSE 长连接超时与 MoE 激活延迟的代理层 Keep-Alive 机制*”）。
+2. **1 组真实工程实测 / 确定性成本推算数据 (1 Set of Real Benchmark / Calculated Token Economics)**：
+   * 包含真实的 TTFT (首字延迟)、延迟分布测算或确定性场景的数学成本推算表（注明测试基准条件，如 100 次并发采样或固定 100k context 测试）。
+3. **1 个可复现的高级避坑排错方案 (1 Edge-Case & Trap Troubleshooting Solution)**：
+   * 解决竞品未触及的技术盲区，必须给出具体的报错日志/HTTP 状态码及修复前后代码（如 `400 invalid_request_error: unrecognized field 'thinking'`、SSE 流式缓冲丢包、Context 剪裁掉包、高并发 RPM 突破排查）。
 4. **1 个生产级工程代码 / 配置文件 (1 Production-Grade Code / Config Snippet)**：
    * 提供 **15+ 行完整、可复制运行** 的代码或配置，带有健全的异常处理（`try-catch`）和指数退避重试（Exponential Backoff）逻辑。
 
 > [!TIP]
-> **RAG 向量召回率优化 (Vector Distance & RAG Optimization)**：硬核工程数据与带错误排查（401/429）的代码片段在 RAG 系统的向量空间（Embedding Vector Space）中，与真实开发者的具体搜索 Query 距离最近（高余弦相似度 Cosine Similarity），是确保文章被 ChatGPT/Perplexity 召回为参考源的物理基石。
+> **RAG 向量召回与反 Spam 统一 (Vector Distance & Anti-Spam Alignment)**：硬核工程数据与带真实错误排查（401/429）的代码片段在 RAG 系统的向量空间（Embedding Vector Space）中，与真实开发者的具体搜索 Query 距离最近（高余弦相似度 Cosine Similarity），同时也是 Google SpamBrain 区分“真实开发者技术文档”与“批量 AI 垃圾站”的根本物理分水岭。
 
 ---
 
@@ -191,7 +192,7 @@
 文章末尾必须注入 `FAQPage` Schema，问答需在 1-2 句内给出直接答案（Direct Answer）。
 
 ### E. "核心要点速览框" (Key Takeaways Box) 格式
-针对核心要点总结，在 Frontmatter Description 下方（即 PAS Introduction 之前）使用以下 HTML 结构：
+针对核心要点总结，在 Frontmatter Description 下方（即引言之前）使用以下 HTML 结构：
 ```html
 <div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
@@ -242,11 +243,25 @@
 
 ## 10. 写作禁忌与防呆红线 (Prohibited Red Lines)
 
-1. **严禁编造 / 虚构 API 参数**：所有 Endpoint（如 `/v1/chat/completions`）、Headers 及 Payload 必须与 APIVALE 线上网关一致。
-2. **严禁空洞营销废词**：禁止使用 "the best", "revolutionary", "groundbreaking" 等虚词，改用实测数据支撑（如 "averages 120ms TTFT", "cuts gateway latency by 35%"）。
-3. **严禁缺少 Error Handling 的代码**：代码示例中必须包含 `try-catch` 或 HTTP 状态码校验（特别是 `401 Unauthorized` 和 `429 Rate Limit`）。
-4. **严禁产生 Copycat 同质化内容**：每篇文章必须通过“独特性 4 个 1”与 AI Query Fan-Out 多维子问题全覆盖进行差异化超越。
-5. **严禁标题层级跳跃**：必须严格遵循 1 个 H1 -> H2 -> H3 的树状层级，禁止直接从 H1 跳至 H3。
-6. **严禁单个 H2 下仅挂载 1 个 H3 标题**（违反对称化语义子节点原则）。
-7. **严禁 FAQ 采用抽象名词标题**（必须采用直白疑问句，且首句直接回答）。
-8. **严禁仅在文章末尾硬性堆砌 CTA**（必须在技术板块中包含至少 1 处软性穿插）。
+1. **严禁编造 / 虚构 API 参数与方法论**：所有 Endpoint、Headers、Payload 必须与真实网关一致；严禁自造虚假的英文 Matrix / Triangle 伪概念。
+2. **严禁机械化同质引言 (Anti-Boilerplate Intros)**：每篇文章必须根据特定的模型架构、协议差异或具体报错切入，禁止使用通用的套话模板。
+3. **严禁空洞营销废词**：禁止使用 "the best", "revolutionary", "groundbreaking" 等虚词，改用实测数据支撑（如 "averages 120ms TTFT", "cuts gateway latency by 35%"）。
+4. **严禁缺少 Error Handling 的代码**：代码示例中必须包含 `try-catch` 或 HTTP 状态码校验（特别是 `401 Unauthorized` 和 `429 Rate Limit`）。
+5. **严禁产生 Copycat 同质化内容**：每篇文章必须通过“4 项真实工程增益”与 AI Query Fan-Out 多维子问题全覆盖进行差异化超越。
+6. **严禁标题层级跳跃**：必须严格遵循 1 个 H1 -> H2 -> H3 的树状层级，禁止直接从 H1 跳至 H3。
+7. **严禁单个 H2 下仅挂载 1 个 H3 标题**（违反对称化语义子节点原则）。
+8. **严禁 FAQ 采用抽象名词标题**（必须采用直白疑问句，且首句直接回答）。
+9. **严禁仅在文章末尾硬性堆砌 CTA**（必须在技术板块中包含至少 1 处软性穿插）。
+
+---
+
+## 11. Google SpamBrain / 规模化内容滥用防范自检清单 (Anti-Spam Pre-Publish Checklist)
+
+在撰写和发布任何博文前，必须自检以下 4 项以确保完全免疫 Google Spam 算法：
+
+| 检查维度 | 合规标准 (Pass) | 违规红线 (Fail) |
+| :--- | :--- | :--- |
+| **1. 选题拓扑 (Topology)** | 属于综合性 Pillar 指南或独立技术深度评测 | 针对同一模型按不同 IDE 拆分的碎片化 Doorway 矩阵页面 |
+| **2. 首段指纹 (Intro Shingles)** | 从该技术特有的架构瓶颈、协议映射或特定报错切入，全网及站内唯一 | 出现 `Running autonomous AI coding agents like... burns $40` 等套话 |
+| **3. 概念真实性 (Verifiable Entity)** | 所有协议、参数、架构名词均来自官方 RFC、官方文档或真实工程实现 | 出现 AI 虚构的 `[Brand] Matrix / Triangle` 伪方法论 |
+| **4. 文本独立度 (Uniqueness)** | 站内多文章间正文相似度（Jaccard Index）低于 30% | 仅替换变量名（如只将 Qwen 替换为 Kimi）的模板化批量生成 |

@@ -81,21 +81,21 @@ graph TD
 * 筛选展现量大于 100 但点击量少于 5 次的长尾疑问句（如 `can i pay openrouter with paypal`）。
 * 将该疑问句补充到对应文章的 FAQ 结构化数据 (FAQ Schema) 或专门新增 H3 小节进行精准拦截。
 
-### 3. Developer Tool Integration Footprints (开发者工具组合词)
-针对新的 CLI 工具或 IDE 插件，按以下公式组合长尾词：
-* `[Model Name] + [IDE/CLI Tool] + [setup / integration guide]`
-* *例子*：`deepseek v4 + windsurf setup`, `kimi k3 + opencode config`
+### 3. Developer Tool Integration Pillars (开发者工具综合集成支柱)
+针对新的模型，将所有主流 IDE 与 CLI 工具（Claude Code, Cursor, Windsurf, OpenCode）聚合为单一权威旗舰指南（Pillar Guide），在 H2/H3 中分别覆盖，严禁按 IDE 拆分成单薄的碎片化页面：
+* `[Model Name] Complete Integration Guide (Claude Code, Cursor & Windsurf)`
+* *例子*：`deepseek v4 complete ide setup`, `kimi k3 developer integration guide`
 
 ### 4. Zero-KYC / Alternative Payment Long-Tails (风控避险长尾词)
 针对全球限制或支付痛点组合词：
 * `how to buy [Model Name] api key without credit card`
-* `[Model Name] api paypal billing 2026`
+* `[Model Name] api paypal billing`
 * `[Chinese Model Name] api key without Chinese phone number`
 
 ---
 
 ## 🔗 相关文档与 SOP 索引
 
-* 👉 **[SEO 优化动作日志](file:///f:/旅行携带资料/kaifa/APIVALE_blog/SEO_ACTION_LOG.md)** — 记录每日优化动作并建立因果模型。
-* 👉 **[Master SEO/GEO Writing Standard](file:///f:/旅行携带资料/kaifa/APIVALE_blog/BLOG_WRITING_STANDARD.md)** — APIVALE 博客撰写规范与 "4 Ones" 质量要求。
+* 👉 **[SEO 优化动作日志](file:///e:/kaifa/APIVALE_blog/SEO_ACTION_LOG.md)** — 记录每日优化动作并建立因果模型。
+* 👉 **[Master SEO/GEO Writing Standard](file:///e:/kaifa/APIVALE_blog/BLOG_WRITING_STANDARD.md)** — APIVALE 博客撰写规范与真实工程信息增益要求。
 * 👉 **[Keyword Editorial Plan](file:///f:/旅行携带资料/kaifa/APIVALE_blog/KEYWORD_PLAN.md)** — 选题追踪与文章发布状态。

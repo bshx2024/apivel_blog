@@ -49,16 +49,14 @@ lang: "en"
   </div>
 </div>
 
-Running autonomous AI coding agents like **Claude Code CLI** in complex refactoring loops burns credits rapidly—exceeding $40 per bug fix on official Claude Sonnet 5 endpoints. Running Alibaba's 2.4-trillion parameter **Qwen 3.8-Max** locally requires an enterprise cluster of 18x NVIDIA H200 GPUs (over 2.4TB VRAM). 
-
-By routing agent traffic through APIVALE's gateway, developers bypass hardware barriers and cut LLM token spend by **80%** using **The 3-Tier Token Thinning & Protocol Routing Matrix**.
+Alibaba's **Qwen 3.8-Max** features a 2.4-trillion parameter Mixture-of-Experts (MoE) architecture engineered for deep multi-file codebase reasoning and autonomous tool-calling loops. While Claude Code CLI natively points to Anthropic's cloud endpoints, developers can route terminal requests directly to Qwen 3.8 via APIVALE's protocol gateway, cutting input token spend to **$0.60/1M** (an 80% cost reduction) without sacrificing execution precision.
 
 ```mermaid
 graph LR
     A["Claude Code CLI"] -->|Anthropic /v1/messages| B["APIVALE Global Gateway"]
     B -->|Protocol Translation| C["infer/qwen3.8-max (2.4T MoE)"]
-    B -->|Fallback Route| D["infer/qwen3.7-max"]
-    B -->|Billing Tier| E["PayPal Global Billing"]
+    B -->|Failover Route| D["infer/qwen3.7-max"]
+    B -->|Billing Engine| E["PayPal Global Billing"]
 ```
 
 ---

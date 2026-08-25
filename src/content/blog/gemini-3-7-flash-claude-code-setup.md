@@ -36,7 +36,7 @@ lang: "en"
 
 Developers building with **Claude Code CLI**, **Cursor Composer**, and **Windsurf** face steep token costs and strict rate limits when executing continuous multi-turn agent loops. When Google AI released **Gemini 3.7 Flash**, interest exploded across developer communities seeking high-speed reasoning and sub-second code generation. However, overseas developers and international teams often struggle with regional Google AI Studio access blocks and rigid credit card requirements.
 
-Based on benchmark verification across **10,000+ API Agent requests** on APIVALE's production gateway, developers can route Gemini 3.7 Flash through OpenAI and Anthropic compatible proxy endpoints, cutting API expenses while ensuring zero-downtime failover.
+By routing requests through APIVALE's unified protocol proxy, developers can invoke Gemini 3.7 Flash using native Anthropic `/v1/messages` and OpenAI `/v1/chat/completions` formats, pairing sub-second latency with global PayPal billing.
 
 ```mermaid
 graph LR

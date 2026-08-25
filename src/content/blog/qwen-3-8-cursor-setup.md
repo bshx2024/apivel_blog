@@ -46,7 +46,7 @@ For software engineers utilizing **Cursor IDE** and **Cursor Composer** for full
 
 Deploying Alibaba Cloud's flagship 2.4-trillion parameter **Qwen 3.8-Max** locally requires an enterprise cluster of 18x NVIDIA H200 GPUs (over 2.4TB VRAM). Attempting to bridge local Ollama instances into Cursor fails due to Cursor's cloud routing architecture (`api2.cursor.sh`), which cannot resolve `localhost:11434` without complex tunnel daemons.
 
-Based on over 12,000 autonomous agent and Composer turns monitored across APIVALE's production gateway, developers can resolve this bottleneck by configuring Cursor's native OpenAI Base URL override to point directly to APIVALE (`https://api.apivale.com/v1`). This delivers high-throughput Qwen 3.8-Max inference with zero hardware overhead, 80% cost reduction, and seamless **PayPal global billing**.
+By configuring Cursor's native OpenAI Base URL override to point to APIVALE (`https://api.apivale.com/v1`), developers unlock unthrottled Qwen 3.8-Max inference with zero hardware overhead, 80% token cost reduction, and seamless **PayPal global billing**.
 
 ```mermaid
 graph LR

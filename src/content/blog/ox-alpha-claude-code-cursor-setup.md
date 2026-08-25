@@ -36,7 +36,7 @@ lang: "en"
 
 Developers running autonomous coding loops in **Claude Code CLI**, **Cursor Composer**, and **Windsurf** frequently hit context caps when refactoring large codebases. On August 20, 2026, the mysterious stealth AI coding model **Ox Alpha** (identified across developer communities as `0xAlpha` or `stealth/ox-alpha`) debuted on OpenRouter with a **1,048,576-token (1M) context window** and 88.2% SWE-bench accuracy. However, setting up Ox Alpha in production CLI tools triggers major friction: OpenRouter's free preview suffers from **429 Too Many Requests** throttling, 504 gateway timeouts (leading developers to search for [high-speed OpenRouter alternatives](/blog/openrouter-alternatives/)), and strict Anthropic protocol header mismatches.
 
-Based on verification across **12,500+ developer agentic executions** on APIVALE's production gateway, developers can route Ox Alpha and its sister models seamlessly through OpenAI and Anthropic compatible proxy endpoints with automated failover and PayPal global billing.
+By routing terminal requests through APIVALE's unified protocol proxy, developers access Ox Alpha (`stealth/ox-alpha`) with guaranteed throughput pools, automatic header translation, and multi-model failover via PayPal global billing.
 
 ```mermaid
 graph LR

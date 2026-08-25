@@ -11,11 +11,9 @@ image: "/blog/og-cover.png"
 lang: "en"
 ---
 
-Running autonomous developer agents like **OpenAI Codex CLI**, **Cursor Composer**, and **Cline** in multi-file refactoring loops can burn through API budgets at an alarming pace—frequently exceeding $40 per bug fix on standard frontier endpoints. At the same time, attempting to self-host Moonshot AI's 2.8-trillion parameter **Kimi K3** locally requires over **1.4TB of VRAM** (costing over $100,000 in enterprise GPU infrastructure), while accessing Moonshot directly often blocks international developers with strict mainland (+86) phone verifications or frequent `429 Rate Limit Exceeded` drops on generic resellers.
+OpenAI's **Codex CLI** and VS Code coding assistants rely on OpenAI-compatible `/v1/chat/completions` schema to parse multi-turn codebase edits. By connecting Moonshot AI's **Kimi K3** (2.8T MoE) through APIVALE's gateway, developers gain access to 1M-token context retention and parallel subagent execution while eliminating domestic SMS verification blocks and credit card payment failures via native PayPal billing.
 
-Based on empirical stress-tests across 10,000+ API agent loops on APIVALE's production gateway, you can bypass hardware barriers and cut LLM agent token spend by up to **80%** using **The 3-Tier OpenAI Protocol Arbitrage & Swarm Execution Matrix**.
-
-In this step-by-step guide, you will learn how to connect Kimi K3 to OpenAI Codex CLI and VS Code in under 30 seconds via APIVALE with global **PayPal billing**. (Plus, jump to Section 5 for a copy-pasteable TypeScript proxy script that automatically handles SSE stream buffering drops during long multi-turn sessions!)
+In this guide, you will configure OpenAI Codex CLI and VS Code to communicate with Kimi K3, examine real latency and cost trade-offs, and deploy a production-grade TypeScript proxy to handle streaming socket recovery.
 
 > [!NOTE]
 > **Kimi K3 OpenAI Protocol Bridge Notice**  

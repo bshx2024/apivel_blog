@@ -36,7 +36,7 @@ lang: "en"
 
 Developers adopting **DeepSeek Harness** (accessed via the `dsh` CLI command or local Desktop UI) frequently encounter execution failures caused by strict API rate limits (`429 Too Many Requests`) and server overloads (`503 Service Overloaded`). Because `dsh` operates on an autonomous agent architecture—executing multi-turn file indexing, terminal tool calls, and self-correcting loops—it fires off dense bursts of parallel API calls that quickly exhaust default platform quotas.
 
-Based on benchmark data across **10,000+ autonomous agent sessions** on APIVALE's production gateway, developers can resolve concurrency bottlenecks by setting up a custom API key and overriding the default `base_url` to route requests through APIVALE's high-throughput proxy network.
+Developers can resolve concurrency bottlenecks and eliminate 429 exceptions by supplying a custom API key and overriding the default `base_url` to route requests through APIVALE's high-throughput proxy network.
 
 ```mermaid
 graph LR

@@ -24,24 +24,25 @@ Follow this 4-step execution workflow:
 - Use `read_url_content` to fetch and read the Top 5 pages one by one.
 - Conduct **Search Intent 3C Diagnosis** (Content Type, Format, Angle) & extract common H2/H3 sub-topics and Content Gap.
 
-### Step 3: Outranking Strategy & "4 Ones" Architecture
+### Step 3: Outranking Strategy & "4 Real Engineering Gains" Architecture
 - Formulate a 3-Tier Keyword Architecture (Tier 1 Title/H1/Intro, Tier 2 H2/H3 LSI, Tier 3 Brand/Features).
-- Apply **PAS Intro Formula**, **E-E-A-T Credibility Anchor**, and **Inverted Pyramid Outline**.
-- Ensure strict compliance with the **Mandatory "4 Ones" Information Gain Checklist** (Branded Methodology, Real Benchmark/Math Data, Edge-Case Solution, 15+ line Production Code/Config).
+- Apply **Context-Specific Technical Hook** (ban repetitive boilerplate intros; focus on specific model architecture, protocol translation, or terminal error codes).
+- Ensure strict compliance with the **"4 Real Engineering Gains" Checklist** (Verifiable Protocol Architecture Proof, Real Benchmark/Math Data, Edge-Case & Error Troubleshooting, 15+ line Production Code/Config).
 - Formulate Title Tag using **ABC Title Formula** (`[Adjective/Primary Keyword] + [Benefit / Secondary LSI] | [APIVALE Hook]`) within **50–60 characters (max 600px)** and append `| APIVALE`.
 
 ### Step 4: Drafting, Compliance & Action Logging
 - Write article in `src/content/blog/<article-slug>.md`.
 - Run **AI Peer Review Loop** as a senior DevOps reviewer to check code validity, logic, and phrasing.
-- Verify full compliance with [BLOG_WRITING_STANDARD.md](file:///f:/旅行携带资料/kaifa/APIVALE_blog/BLOG_WRITING_STANDARD.md).
-- Log the optimization entry in [SEO_ACTION_LOG.md](file:///f:/旅行携带资料/kaifa/APIVALE_blog/SEO_ACTION_LOG.md) (16:59 Daily Ritual).
+- Verify full compliance with [BLOG_WRITING_STANDARD.md](file:///e:/kaifa/APIVALE_blog/BLOG_WRITING_STANDARD.md) and the **Anti-Spam Pre-Publish Checklist**.
+- Log the optimization entry in [SEO_ACTION_LOG.md](file:///e:/kaifa/APIVALE_blog/SEO_ACTION_LOG.md).
 - Compile and test on dev server (`http://localhost:4321/blog/...`), then commit and push.
 
 ---
 
 ## Critical Compliance Rules (Quick Checklist)
 
-- **Master Reference**: Always refer to [BLOG_WRITING_STANDARD.md](file:///f:/旅行携带资料/kaifa/APIVALE_blog/BLOG_WRITING_STANDARD.md) for full detailed specifications (Personas, Featured Snippet components, WebP media rules, Mobile-first UX).
+- **Master Reference**: Always refer to [BLOG_WRITING_STANDARD.md](file:///e:/kaifa/APIVALE_blog/BLOG_WRITING_STANDARD.md) for full detailed specifications (Personas, Featured Snippet components, WebP media rules, Mobile-first UX).
+- **Anti-Spam & Anti-Boilerplate**: NEVER use copy-pasted introductory templates (e.g. `Running autonomous AI coding agents... burns $40...`). NEVER invent fake branded formulas (`Matrix/Triangle`).
 - **Supported Payment Method**: APIVALE strictly supports **PayPal** (PayPal Global Billing / Credit Cards via PayPal). NEVER reference Stripe or Crypto.
 - **Model Recency**: Reference flagship LLM versions (**Claude Sonnet 5**, **Qwen 3.7 Max**, **DeepSeek V4**). Invocation model name for Qwen 3.7 Max is `infer/qwen3.7-max`.
 - **Evergreen Short Slugs**: Slugs must be concise without years/dates (e.g., `/blog/qwen-3-7-max-claude-code-setup`).

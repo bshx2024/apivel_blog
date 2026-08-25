@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Gemini 3.6 Flash vs. DeepSeek V4 vs. Qwen 3.7: Who is the King of Agent Cost Control?"
 metaTitle: "Gemini 3.6 Flash vs DeepSeek V4: Agent Cost Guide | APIVALE"
 description: "Compare Gemini 3.6 Flash vs DeepSeek V4 and Qwen 3.7 Max for coding agents. Benchmark token costs, latency, and PayPal billing on APIVALE. Learn more."
@@ -62,7 +62,7 @@ To evaluate true cost-efficiency, we must examine both raw token pricing per mil
 
 Let’s simulate a standard active developer workload running an autonomous coding agent for 20 working days. 
 
-假设一位开发者每月运行 **50M Input Tokens**（解析项目文件树、Context 载入）与 **10M Output Tokens**（代码修改、Bash 执行输出）：
+Assume an active software engineer consumes **50M Input Tokens** (repository file trees, AST context loading) and **10M Output Tokens** (code edits, bash execution traces) per month:
 
 ### 1. Claude Sonnet 5 (Baseline)
 * **Input Cost**: 50M × $3.00 = $150.00

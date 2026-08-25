@@ -56,11 +56,9 @@ lang: "en"
   </div>
 </div>
 
-Executing autonomous software engineering agents like **Claude Code CLI**, **Cursor Composer**, or **OpenCode** across large multi-file repositories places an immense burden on API budgets. Iterative tool-calling loops—where agents continuously inspect directory trees, analyze linting traces, execute unit tests, and rewrite complex modules—generate tens of millions of context tokens per day. When routed through standard proprietary endpoints charging $3.00 / $15.00 per million tokens, monthly developer API spend routinely exceeds $3,000 per engineering seat.
+Alibaba's **Qwen 3.8-Max** establishes a new benchmark for open-weights-derived Mixture-of-Experts (MoE) architectures, delivering 88.4% on SWE-bench Verified and rivaling proprietary frontier models across multi-turn reasoning and agentic tool invocation. While enterprise self-hosting of its 2.4-trillion parameters requires multi-node H200 GPU infrastructure, cloud developers frequently encounter rate limitations or regional payment frictions.
 
-At the same time, self-hosting Alibaba Cloud's flagship 2.4-trillion-parameter Mixture-of-Experts (MoE) model—**Qwen 3.8 Max**—requires an enterprise infrastructure footprint of 18x NVIDIA H200 GPUs with over 2.4TB of VRAM. Furthermore, official cloud access often restricts international engineering teams with rigid credit card verification requirements and regional identity barriers.
-
-Based on empirical stress-testing across 10,000+ agent steps on APIVALE's production gateway, developers can access **Qwen 3.8 Max preview capacity** and slash API token costs by **80%** using **The MoE Performance-to-Cost Arbitrage Framework**.
+Through APIVALE's unified routing gateway, developers can immediately access **Qwen 3.8-Max preview capacity** (`infer/qwen3.8-max`), achieving an 80% cost reduction ($0.60/1M input tokens) with standard OpenAI and Anthropic endpoint interfaces and global PayPal billing.
 
 <div class="my-6 border-l-4 border-indigo-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Definition</span>

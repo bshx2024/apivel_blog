@@ -95,9 +95,9 @@ $$\text{Cost}_{\text{Luna}} = (1,000,000 \text{ In} \times \$0.20) + (1,000,000 
 
 Routing low-complexity operations to Luna yields a **96% cost reduction** compared to sending all traffic to Sol.
 
-### The 3-Tier Model Allocation Protocol
+### Dynamic Model Routing by Task Complexity (Luna vs. Terra vs. Sol)
 
-To maximize budget efficiency, APIVALE recommends implementing **The 3-Tier Model Allocation Protocol** in your application gateway:
+To maximize budget efficiency, implement a complexity-aware routing policy in your application gateway:
 
 ```
                           ┌───────────────────────────┐
