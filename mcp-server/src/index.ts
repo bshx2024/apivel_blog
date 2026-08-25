@@ -19,6 +19,8 @@ import {
   handleExtractCommunityPainpoints
 } from "./tools/trend-radar";
 
+import { handleFetchLast30DaysIntelligence } from "./tools/last-30-days";
+
 import {
   handleDraftForReview,
   handleApproveAndPublish,
@@ -356,6 +358,20 @@ server.tool(
   },
   async ({ slug }) => {
     const result = await handleCheckPagePerformance(slug);
+    return {
+      content: [{ type: "text", text: JSON.stringify(result, null, 2) }]
+    };
+  }
+);
+
+server.tool(
+  "fetch_last_30_days_intelligence",
+  "Scans Reddit, X/tech blogs, and Hacker News over the past 30 days for viral topics, complaints, and high-converting angles",
+  {
+    topic: z.string().describe("Topic or keyword to investigate across the past 30 days (e.g. 'Grok', 'Claude Code', 'Cursor')")
+  },
+  async ({ topic }) => {
+    const result = await handleFetchLast30DaysIntelligence(topic);
     return {
       content: [{ type: "text", text: JSON.stringify(result, null, 2) }]
     };
