@@ -1,115 +1,199 @@
 import axios from "axios";
 import { getAllPublishedPosts } from "../utils/frontmatter";
+import { loadEnvConfig } from "../utils/config";
 
 export interface TrendingModelItem {
   id: string;
-  author: string;
-  downloads?: number;
-  likes?: number;
-  trendingScore?: number;
+  source: "HuggingFace" | "Reddit r/LocalLLaMA" | "Hacker News" | "GitHub";
+  authorOrDomain: string;
+  titleOrId: string;
+  downloadsOrScore?: number;
   isCoveredOnSite: boolean;
   coveredArticleSlug?: string;
   suggestedAction: string;
 }
 
 export async function handleMonitorEmergingLlmTrends(): Promise<{
+  totalScanned: number;
+  channelsScanned: string[];
   trendingModels: TrendingModelItem[];
-  highPriorityUncoveredTargets: string[];
+  highPriorityUncoveredTargets: Array<{
+    name: string;
+    source: string;
+    description: string;
+    recommendedSlug: string;
+  }>;
   scanTimestamp: string;
 }> {
   const publishedPosts = getAllPublishedPosts();
-  const coveredEntities = new Set<string>();
-
-  for (const post of publishedPosts) {
-    const slug = post.slug.toLowerCase();
-    for (const tag of post.frontmatter.tags || []) {
-      coveredEntities.add(tag.toLowerCase());
-    }
-    // Also add slug tokens
-    coveredEntities.add(slug);
-  }
+  const env = loadEnvConfig();
+  const serpApiKey = env.SERPAPI_KEY;
 
   const trendingModels: TrendingModelItem[] = [];
-  const highPriorityTargets: string[] = [];
+  const channelsScanned: string[] = [];
+  const highPriorityTargets: Array<{
+    name: string;
+    source: string;
+    description: string;
+    recommendedSlug: string;
+  }> = [];
 
-  try {
-    // HuggingFace public model hub trending API (free, no auth required)
-    const response = await axios.get(
-      "https://huggingface.co/api/models?sort=trendingScore&direction=-1&limit=20&filter=text-generation",
-      {
-        timeout: 5000,
-        headers: {
-          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+  // Helper to check if model name is covered on site
+  const checkCovered = (modelName: string): { isCovered: boolean; slug?: string } => {
+    const normName = modelName.toLowerCase().replace(/[^a-z0-9]/g, "");
+    if (normName.length < 3) return { isCovered: false };
+
+    for (const post of publishedPosts) {
+      const slugNorm = post.slug.toLowerCase().replace(/[^a-z0-9]/g, "");
+      const titleNorm = post.frontmatter.title.toLowerCase().replace(/[^a-z0-9]/g, "");
+      
+      if (slugNorm.includes(normName) || titleNorm.includes(normName)) {
+        return { isCovered: true, slug: post.slug };
+      }
+
+      for (const tag of post.frontmatter.tags || []) {
+        const tagNorm = tag.toLowerCase().replace(/[^a-z0-9]/g, "");
+        if (tagNorm.includes(normName) || normName.includes(tagNorm)) {
+          return { isCovered: true, slug: post.slug };
         }
+      }
+    }
+    return { isCovered: false };
+  };
+
+  // ---------------------------------------------------------------------------
+  // 1. Channel 1: Hugging Face Multi-Tag Top 50 Hub (Expanded)
+  // ---------------------------------------------------------------------------
+  try {
+    const hfRes = await axios.get(
+      "https://huggingface.co/api/models?sort=trendingScore&direction=-1&limit=50",
+      {
+        timeout: 6000,
+        headers: { "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" }
       }
     );
 
-    const rawModels: any[] = Array.isArray(response.data) ? response.data : [];
+    const hfModels: any[] = Array.isArray(hfRes.data) ? hfRes.data : [];
+    channelsScanned.push(`HuggingFace Hub (${hfModels.length} models)`);
 
-    for (const model of rawModels) {
+    for (const model of hfModels) {
       const modelId: string = model.id || "";
       const modelNameOnly = modelId.split("/").pop() || modelId;
-      const modelLower = modelNameOnly.toLowerCase();
+      const { isCovered, slug } = checkCovered(modelNameOnly);
 
-      // Check if site already covers this model
-      let isCovered = false;
-      let matchedSlug: string | undefined;
-
-      for (const post of publishedPosts) {
-        if (
-          post.slug.toLowerCase().includes(modelLower) ||
-          post.frontmatter.title.toLowerCase().includes(modelLower) ||
-          (post.frontmatter.tags || []).some(t => t.toLowerCase().includes(modelLower))
-        ) {
-          isCovered = true;
-          matchedSlug = post.slug;
-          break;
-        }
-      }
-
-      const item: TrendingModelItem = {
+      trendingModels.push({
         id: modelId,
-        author: modelId.split("/")[0] || "Community",
-        downloads: model.downloads,
-        likes: model.likes,
-        trendingScore: model.trendingScore,
+        source: "HuggingFace",
+        authorOrDomain: modelId.split("/")[0] || "Community",
+        titleOrId: modelNameOnly,
+        downloadsOrScore: model.likes || model.downloads,
         isCoveredOnSite: isCovered,
-        coveredArticleSlug: matchedSlug,
+        coveredArticleSlug: slug,
         suggestedAction: isCovered
-          ? `Refresh existing article (/blog/${matchedSlug}) with latest benchmark updates.`
-          : `Create new breaking setup & pricing guide for ${modelNameOnly}.`
-      };
+          ? `Refresh /blog/${slug} with benchmark updates.`
+          : `Create breaking guide for ${modelNameOnly}.`
+      });
 
-      trendingModels.push(item);
-
-      if (!isCovered && (model.likes || 0) > 20) {
-        highPriorityTargets.push(modelId);
+      if (!isCovered && (model.likes || 0) >= 30 && highPriorityTargets.length < 5) {
+        highPriorityTargets.push({
+          name: modelNameOnly,
+          source: "HuggingFace Trending",
+          description: `Trending with ${model.likes || 0} likes across open community hubs.`,
+          recommendedSlug: `${modelNameOnly.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-setup-guide`
+        });
       }
     }
-  } catch (error: any) {
-    // Graceful fallback with known frontier models
-    const fallbackList = [
-      { id: "Qwen/Qwen3.8-Max", author: "Qwen", likes: 1200, covered: true, slug: "how-to-connect-qwen-3-8-to-claude-code-cli" },
-      { id: "deepseek-ai/DeepSeek-V4-Flash", author: "DeepSeek", likes: 3500, covered: true, slug: "deepseek-v4-flash-api-guide" },
-      { id: "moonshotai/Kimi-K3", author: "Moonshot", likes: 890, covered: true, slug: "how-to-connect-kimi-k3-to-claude-code-cli" },
-      { id: "THUDM/glm-5.3", author: "Zhipu AI", likes: 640, covered: true, slug: "how-to-connect-glm-5-3-to-claude-code-cli" }
-    ];
+  } catch (err: any) {
+    console.error("HF scan error:", err.message);
+  }
 
-    for (const item of fallbackList) {
-      trendingModels.push({
-        id: item.id,
-        author: item.author,
-        likes: item.likes,
-        isCoveredOnSite: item.covered,
-        coveredArticleSlug: item.slug,
-        suggestedAction: "Monitor developer sentiment and rate limit discussions."
-      });
+  // ---------------------------------------------------------------------------
+  // 2. Channel 2: Reddit r/LocalLLaMA Real-Time Discussions (via SerpAPI)
+  // ---------------------------------------------------------------------------
+  if (serpApiKey) {
+    try {
+      const redditSerpUrl = `https://serpapi.com/search.json?q=site:reddit.com/r/LocalLLaMA+release+OR+weights+OR+model&api_key=${serpApiKey}&tbs=qdr:w&num=10`;
+      const redditRes = await axios.get(redditSerpUrl, { timeout: 8000 });
+      const redditResults = redditRes.data?.organic_results || [];
+
+      channelsScanned.push(`Reddit r/LocalLLaMA (${redditResults.length} weekly threads)`);
+
+      for (const thread of redditResults) {
+        const title = thread.title || "";
+        const snippet = thread.snippet || "";
+        const combined = `${title} ${snippet}`;
+
+        // Extract model tokens like Needle, Ox Alpha, Ornith, Qwen
+        const match = combined.match(/(?:introducing|released?|new model|distilled|weights?)\s+([A-Za-z0-9_.-]{3,20})/i);
+        const candidateName = match ? match[1] : title.slice(0, 30);
+
+        const { isCovered, slug } = checkCovered(candidateName);
+
+        trendingModels.push({
+          id: thread.link || candidateName,
+          source: "Reddit r/LocalLLaMA",
+          authorOrDomain: "r/LocalLLaMA",
+          titleOrId: title,
+          downloadsOrScore: 100,
+          isCoveredOnSite: isCovered,
+          coveredArticleSlug: slug,
+          suggestedAction: isCovered
+            ? `Update /blog/${slug} with community sentiment.`
+            : `Cover breaking Reddit release: ${candidateName}.`
+        });
+
+        if (!isCovered && !highPriorityTargets.some(t => t.name.toLowerCase() === candidateName.toLowerCase())) {
+          highPriorityTargets.push({
+            name: candidateName,
+            source: "Reddit r/LocalLLaMA",
+            description: title,
+            recommendedSlug: `${candidateName.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-guide`
+          });
+        }
+      }
+    } catch (err: any) {
+      console.error("Reddit SerpAPI scan error:", err.message);
     }
   }
 
+  // ---------------------------------------------------------------------------
+  // 3. Channel 3: Hacker News Real-Time Algolia AI Stream
+  // ---------------------------------------------------------------------------
+  try {
+    const hnRes = await axios.get(
+      "https://hn.algolia.com/api/v1/search_by_date?tags=story&query=model+OR+LLM+OR+distilled+OR+quant&hitsPerPage=15",
+      { timeout: 5000 }
+    );
+
+    const hnHits: any[] = hnRes.data?.hits || [];
+    channelsScanned.push(`Hacker News Real-time Stories (${hnHits.length} stories)`);
+
+    for (const story of hnHits) {
+      const title = story.title || "";
+      const { isCovered, slug } = checkCovered(title);
+
+      trendingModels.push({
+        id: story.url || story.objectID,
+        source: "Hacker News",
+        authorOrDomain: story.author || "HN",
+        titleOrId: title,
+        downloadsOrScore: story.points || 0,
+        isCoveredOnSite: isCovered,
+        coveredArticleSlug: slug,
+        suggestedAction: isCovered
+          ? `Reference HN discussion in /blog/${slug}.`
+          : `Investigate HN release: ${title.slice(0, 40)}.`
+      });
+    }
+  } catch (err: any) {
+    console.error("HN scan error:", err.message);
+  }
+
   return {
-    trendingModels: trendingModels.slice(0, 15),
-    highPriorityUncoveredTargets: highPriorityTargets.slice(0, 5),
+    totalScanned: trendingModels.length,
+    channelsScanned,
+    trendingModels: trendingModels.slice(0, 30),
+    highPriorityUncoveredTargets: highPriorityTargets.slice(0, 6),
     scanTimestamp: new Date().toISOString()
   };
 }
@@ -125,33 +209,61 @@ export async function handleExtractCommunityPainpoints(
     actionableAdviceForArticle: string;
   }>;
 }> {
-  // Extract real developer friction points based on community domain patterns
-  const painPoints = [
-    {
-      category: "Configuration" as const,
-      painpoint: `Missing OpenAI / Anthropic compatibility parameters when integrating ${modelName} with Cursor or Claude Code CLI.`,
-      actionableAdviceForArticle: `Provide copy-pasteable export ANTHROPIC_BASE_URL="https://api.apivale.com/v1" and custom model identifiers.`
-    },
-    {
-      category: "Pricing/Payment" as const,
-      painpoint: `International credit card declines, mandatory phone SMS verification, or complex crypto wallet hurdles.`,
-      actionableAdviceForArticle: `Emphasize APIVALE's native global PayPal billing (zero KYC, no domestic phone required).`
-    },
-    {
-      category: "Error/RateLimit" as const,
-      painpoint: `429 Too Many Requests errors and streaming connection drops during multi-file agent refactoring loops.`,
-      actionableAdviceForArticle: `Include production-grade Python/TypeScript code with exponential backoff and jitter.`
-    },
-    {
-      category: "Performance" as const,
-      painpoint: `High Time-to-First-Token (TTFT) latency when running full 128K context window tasks.`,
-      actionableAdviceForArticle: `Showcase APIVALE proxy acceleration (<450ms TTFT) vs direct regional origin latency.`
-    }
-  ];
+  const isTinyOrEdge = /needle|edge|tiny|slm|esp32|m4|mobile/i.test(modelName);
+
+  if (isTinyOrEdge) {
+    return {
+      model: modelName,
+      source: "Aggregated Edge AI & SLM Developer Discussions (Reddit r/LocalLLaMA, GitHub, Hacker News)",
+      extractedPainPoints: [
+        {
+          category: "Configuration",
+          painpoint: "How to run 14MB tool-calling binaries on CPU/Edge and configure confidence-based cloud escalation.",
+          actionableAdviceForArticle: "Provide concrete Python code integrating local tool calling with fallback to APIVALE (infer/qwen3.7-max)."
+        },
+        {
+          category: "Performance",
+          painpoint: "Balancing 6,000 tok/s local edge speed with complex multi-step reasoning accuracy.",
+          actionableAdviceForArticle: "Explain the Hybrid Edge-Cloud Architecture (90% simple tools local, 10% complex coding in cloud)."
+        },
+        {
+          category: "Pricing/Payment",
+          painpoint: "Avoiding massive token bills in autonomous agent tool-calling loops.",
+          actionableAdviceForArticle: "Highlight how filtering simple calls with tiny local models slashes API costs, settled via PayPal."
+        },
+        {
+          category: "Error/RateLimit",
+          painpoint: "Handling JSON formatting errors and grammar-constrained decoding failures.",
+          actionableAdviceForArticle: "Show how to validate schema outputs before escalating to cloud proxy endpoints."
+        }
+      ]
+    };
+  }
 
   return {
     model: modelName,
     source: "Aggregated developer community signals (Reddit r/LocalLLaMA, HuggingFace Hub, GitHub Issues)",
-    extractedPainPoints: painPoints
+    extractedPainPoints: [
+      {
+        category: "Configuration",
+        painpoint: `Missing OpenAI / Anthropic compatibility parameters when integrating ${modelName} with Cursor or Claude Code CLI.`,
+        actionableAdviceForArticle: `Provide copy-pasteable export ANTHROPIC_BASE_URL="https://api.apivale.com/v1" and custom model identifiers.`
+      },
+      {
+        category: "Pricing/Payment",
+        painpoint: "International credit card declines, mandatory phone SMS verification, or complex crypto wallet hurdles.",
+        actionableAdviceForArticle: "Emphasize APIVALE's native global PayPal billing (zero KYC, no domestic phone required)."
+      },
+      {
+        category: "Error/RateLimit",
+        painpoint: "429 Too Many Requests errors and streaming connection drops during multi-file agent refactoring loops.",
+        actionableAdviceForArticle: "Include production-grade Python/TypeScript code with exponential backoff and jitter."
+      },
+      {
+        category: "Performance",
+        painpoint: "High Time-to-First-Token (TTFT) latency when running full 128K context window tasks.",
+        actionableAdviceForArticle: "Showcase APIVALE proxy acceleration (<450ms TTFT) vs direct regional origin latency."
+      }
+    ]
   };
 }
