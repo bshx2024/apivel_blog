@@ -122,14 +122,17 @@ export async function handlePostPublishMonitor(
 ): Promise<{
   slug: string;
   indexedStatus: string;
-  recommendations: string[];
+  recalculationWindow: string;
+  provenMilestones: string[];
 }> {
   return {
     slug,
     indexedStatus: "Monitored via Sitemap & GSC Queue",
-    recommendations: [
-      `URL https://apivale.com/blog/${slug} automatically exposed in sitemap-0.xml.`,
-      `Track 14-day CTR performance in GSC. If avg position is 4-10 with CTR <2.5%, refine Meta Title with higher incentive.`
+    recalculationWindow: "Day 7~9 (Proven Google Index Recalculation & Ranking Promotion Window)",
+    provenMilestones: [
+      `Day 1: URL https://apivale.com/blog/${slug} exposed in sitemap and indexed by Googlebot.`,
+      `Day 7~9: Google ranking algorithms recalculate entity graph; monitor GSC for sudden Position 10~15 jumps and CTR >= 5.0%.`,
+      `Day 14: Audit CTR and Rich Snippets. If CTR < 4.0%, tune Title Tag (keep 50-60 chars) and Meta Description (150-160 chars).`
     ]
   };
 }

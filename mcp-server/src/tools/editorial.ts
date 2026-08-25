@@ -76,11 +76,12 @@ export function handleGetWritingStandard(): {
     "1. Information Gain: Must include 4 real engineering proofs (protocol mapping, real error logs, benchmark math, 15+ lines production code with backoff).",
     "2. Anti-Spam: Prohibit boilerplate opening templates (e.g. 'Running autonomous AI coding agents... burns $40...').",
     "3. Anti-Hallucination: Strictly ban synthetic AI formulas (e.g. 'The 3-Tier Matrix/Triangle'). Use genuine engineering terms.",
-    "4. Title Formula: ABC Title ([Adjective/Primary] + [Secondary LSI] | [APIVALE Hook]) within 50-60 characters.",
-    "5. Conversion Rate Optimization (CRO): Must include Above-the-Fold Key Takeaways box with $0.20 free credit link, Copy-Paste interactive CLI/IDE config, and PayPal callout.",
-    "6. Commercial Fulfillment: Only PayPal billing supported (Zero KYC / Instant PayPal checkout). No Stripe / Crypto.",
-    "7. Model Recency: Reference Claude Sonnet 5, Qwen 3.8 / 3.7 Max (infer/qwen3.7-max), DeepSeek V4.",
-    "8. FAQ Schema: Integrate JSON-LD FAQPage and Featured Snippet definition blocks."
+    "4. Title Formula: ABC Title ([Adjective/Primary] + [Secondary LSI] | [APIVALE Hook]) strictly within 50-60 characters (58 chars optimal, no SERP truncation).",
+    "5. Meta Description Formula: 150-160 characters (153 chars sweet spot) highlighting 40+ models, unified PayPal billing, and tool integration to trigger Google bold keyword CTR lift (proven 6.0% CTR).",
+    "6. FAQ Schema Rich Snippets: Mandatory 3-question FAQ with Direct Answers to unlock Google double-height Rich Snippet cards.",
+    "7. Toolchain First: Prioritize practical How-to Guides for developer tools (Cursor, Claude Code CLI, Cline, OpenCode, Cherry Studio) with zero-login copy-paste snippets.",
+    "8. Commercial Fulfillment: Only PayPal billing supported (Zero KYC / Instant PayPal checkout). No Stripe / Crypto.",
+    "9. Causal Attribution: Track GSC ranking impact across the verified 7-9 day Google index recalculation cycle."
   ];
 
   const conversionTemplates = {

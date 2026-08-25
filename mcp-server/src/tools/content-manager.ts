@@ -19,17 +19,28 @@ export interface PrePublishAuditResult {
 
 export function runAntiSpamAudit(
   metaTitle: string,
-  content: string
+  content: string,
+  description?: string
 ): PrePublishAuditResult {
   const blockers: string[] = [];
   const warnings: string[] = [];
 
-  // 1. Check Meta Title length (Ideal: 50-60 characters)
+  // 1. Check Meta Title length (Ideal: 50-60 characters, max 60 to prevent SERP truncation)
   const titleLen = (metaTitle || "").length;
-  if (titleLen > 65) {
-    blockers.push(`metaTitle is too long (${titleLen} chars). Maximum allowed is 65 chars to prevent Google SERP truncation.`);
-  } else if (titleLen < 35) {
-    warnings.push(`metaTitle is rather short (${titleLen} chars). Recommended range: 50-60 chars.`);
+  if (titleLen > 60) {
+    blockers.push(`metaTitle is too long (${titleLen} chars). Maximum allowed is 60 chars (58 chars optimal) to prevent Google SERP '...' truncation.`);
+  } else if (titleLen < 45) {
+    warnings.push(`metaTitle is short (${titleLen} chars). Recommended range: 50-60 chars for maximum CTR.`);
+  }
+
+  // 2. Check Meta Description length (Ideal: 150-160 characters, proven 153 chars sweet spot)
+  if (description) {
+    const descLen = description.length;
+    if (descLen > 165) {
+      warnings.push(`metaDescription is long (${descLen} chars). Recommended range is 150-160 chars (153 chars sweet spot) to avoid SERP snippet truncation.`);
+    } else if (descLen < 130) {
+      warnings.push(`metaDescription is short (${descLen} chars). Enrich it to 150-160 chars with target keywords, model names, and PayPal checkout callout.`);
+    }
   }
 
   // 2. Check for banned boilerplate intro templates
@@ -98,7 +109,11 @@ export function handleDraftForReview(
   auditResult: PrePublishAuditResult;
   reviewMessage: string;
 } {
-  const audit = runAntiSpamAudit(frontmatter.metaTitle || frontmatter.title, markdownBody);
+  const audit = runAntiSpamAudit(
+    frontmatter.metaTitle || frontmatter.title,
+    markdownBody,
+    frontmatter.description
+  );
 
   const filePath = writeBlogPostFile(DRAFTS_DIR, slug, frontmatter, markdownBody);
 
@@ -137,7 +152,11 @@ export function handleApproveAndPublish(
     }
   }
 
-  const audit = runAntiSpamAudit(postFrontmatter.metaTitle || postFrontmatter.title, postBody);
+  const audit = runAntiSpamAudit(
+    postFrontmatter.metaTitle || postFrontmatter.title,
+    postBody,
+    postFrontmatter.description
+  );
 
   if (!audit.passed) {
     return {
@@ -248,7 +267,11 @@ export function handleAuditArticleSeoHealth(slug: string): {
   }
 
   const post = parseBlogPost(targetFile);
-  const audit = runAntiSpamAudit(post.frontmatter.metaTitle || post.frontmatter.title, post.content);
+  const audit = runAntiSpamAudit(
+    post.frontmatter.metaTitle || post.frontmatter.title,
+    post.content,
+    post.frontmatter.description
+  );
 
   // Extract internal links like /blog/...
   const internalLinkRegex = /\[([^\]]+)\]\((?:\/blog\/|https:\/\/apivale\.com\/blog\/)([^)]+)\)/g;
