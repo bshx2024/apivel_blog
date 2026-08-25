@@ -4,13 +4,15 @@ interface Props {
 	description?: string;
 	image?: string;
 	canonicalUrl?: string;
+	schema?: Record<string, any> | Record<string, any>[] | null;
 }
 
 const { 
 	title, 
 	description = "APIVALE - High-performance unified API routing gateway for developers. Low-latency, zero-friction access to DeepSeek, GLM, and multimodal models.",
 	image = "/blog/og-cover.png",
-	canonicalUrl
+	canonicalUrl,
+	schema
 } = Astro.props;
 
 const siteTitle = title.includes('APIVALE') ? title : `${title} | APIVALE`;
@@ -53,6 +55,11 @@ const resolvedCanonical = canonicalUrl || new URL(Astro.url.pathname, Astro.site
 		<meta name="twitter:title" content={siteTitle} />
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={image} />
+
+		<!-- Schema.org JSON-LD -->
+		{schema && (
+			<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+		)}
 
 		<!-- Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">

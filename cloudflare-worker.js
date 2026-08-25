@@ -11,6 +11,25 @@
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+
+    // ==========================================
+    // NATIVE 301 PERMANENT REDIRECTS (EDGE LEVEL)
+    // ==========================================
+    const PERMANENT_REDIRECTS = {
+      "/blog/cursor-pro-vs-own-api-key": "/blog/cursor-pro-vs-custom-api-key/",
+      "/blog/cursor-pro-vs-own-api-key/": "/blog/cursor-pro-vs-custom-api-key/",
+      "/cursor-pro-vs-own-api-key": "/blog/cursor-pro-vs-custom-api-key/",
+      "/cursor-pro-vs-own-api-key/": "/blog/cursor-pro-vs-custom-api-key/",
+      "/blog/connect-glm-5-3-to-claude-code-cli": "/blog/connect-glm-5-3-to-claude-code-cli-cursor/",
+      "/blog/connect-glm-5-3-to-claude-code-cli/": "/blog/connect-glm-5-3-to-claude-code-cli-cursor/",
+      "/blog/how-to-connect-glm-5-3-to-claude-code-cli-cursor": "/blog/connect-glm-5-3-to-claude-code-cli-cursor/",
+      "/blog/how-to-connect-glm-5-3-to-claude-code-cli-cursor/": "/blog/connect-glm-5-3-to-claude-code-cli-cursor/"
+    };
+
+    if (PERMANENT_REDIRECTS[url.pathname]) {
+      const redirectTarget = new URL(PERMANENT_REDIRECTS[url.pathname], `https://${url.hostname}`).href;
+      return Response.redirect(redirectTarget, 301);
+    }
     
     // ==========================================
     // CONFIGURATION: Replace with your hosted blog domain

@@ -50,12 +50,79 @@ let defaultClient = 'claude-code';
 if (slugLower.includes('cursor')) defaultClient = 'cursor';
 else if (slugLower.includes('windsurf')) defaultClient = 'windsurf';
 else if (slugLower.includes('opencode')) defaultClient = 'opencode';
+
+const canonicalPageUrl = `https://apivale.com/blog/${post.id}/`;
+const postImageUrl = post.data.image ? (post.data.image.startsWith('http') ? post.data.image : `https://apivale.com${post.data.image}`) : 'https://apivale.com/blog/og-cover.png';
+
+const blogPostingSchema = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "BlogPosting",
+			"@id": `${canonicalPageUrl}#article`,
+			"isPartOf": {
+				"@type": "WebPage",
+				"@id": canonicalPageUrl
+			},
+			"headline": post.data.title,
+			"description": post.data.description,
+			"image": postImageUrl,
+			"datePublished": post.data.date.toISOString(),
+			"dateModified": post.data.date.toISOString(),
+			"author": {
+				"@type": "Person",
+				"name": post.data.author,
+				"jobTitle": post.data.authorTitle || "Technical Specialist, APIVALE",
+				"url": "https://apivale.com/about"
+			},
+			"publisher": {
+				"@type": "Organization",
+				"name": "APIVALE",
+				"url": "https://apivale.com",
+				"logo": {
+					"@type": "ImageObject",
+					"url": "https://apivale.com/favicon.svg"
+				}
+			},
+			"mainEntityOfPage": {
+				"@type": "WebPage",
+				"@id": canonicalPageUrl
+			}
+		},
+		{
+			"@type": "BreadcrumbList",
+			"@id": `${canonicalPageUrl}#breadcrumb`,
+			"itemListElement": [
+				{
+					"@type": "ListItem",
+					"position": 1,
+					"name": "Home",
+					"item": "https://apivale.com"
+				},
+				{
+					"@type": "ListItem",
+					"position": 2,
+					"name": "Blog",
+					"item": "https://apivale.com/blog/"
+				},
+				{
+					"@type": "ListItem",
+					"position": 3,
+					"name": post.data.title,
+					"item": canonicalPageUrl
+				}
+			]
+		}
+	]
+};
 ---
 
 <Layout 
 	title={pageTitle} 
 	description={post.data.description}
 	image={post.data.image}
+	canonicalUrl={canonicalPageUrl}
+	schema={blogPostingSchema}
 >
 	<article class="blog-post">
 		<!-- Back to blog -->
