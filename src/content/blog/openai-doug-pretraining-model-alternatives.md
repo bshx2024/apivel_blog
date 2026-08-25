@@ -275,7 +275,7 @@ OpenAI "Doug" is an internal codename for OpenAI's upcoming base-model pre-train
 You can resolve APIVALE proxy 429 errors by implementing exponential backoff retry logic with jitter or configuring APIVALE's multi-model failover chain (switching dynamically between `claude-sonnet-5`, `infer/qwen3.8-max`, and `infer/deepseek-v4-pro`).
 
 ### How does [Qwen 3.8](/blog/qwen-3-8-27b-gguf-benchmarks-ollama-vs-api-guide) Max compare to Claude Sonnet 5 for coding agents?
-Claude Sonnet 5 leads in complex multi-file refactoring logic and tool calling precision, while Qwen 3.8 Max (<code class="text-indigo-300">infer/qwen3.8-max</code>) provides a larger 1M-token context window and faster TTFT (~260ms) at a 46% lower input token cost.
+Claude Sonnet 5 leads in complex multi-file refactoring logic and [tool calling](/blog/needle-2-tool-calling-model-edge-cloud-guide) precision, while Qwen 3.8 Max (<code class="text-indigo-300">infer/qwen3.8-max</code>) provides a larger 1M-token context window and faster TTFT (~260ms) at a 46% lower input token cost.
 
 ### Can I pay for Anthropic, OpenAI, and DeepSeek APIs using PayPal on APIVALE?
 Yes. APIVALE supports **PayPal (global PayPal billing / credit cards via PayPal)** as a primary payment method, allowing developers worldwide to access all flagship models without US credit card rejections or identity verification requirements.

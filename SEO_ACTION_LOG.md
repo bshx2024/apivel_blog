@@ -31,6 +31,14 @@
 ---
 
 
+
+## 📝 优化行动记录 (2026-08)
+
+### 📅 2026-08-25 - 📝 [内容动作]: 上线 Needle 2 (14MB) 端云协同工具调用首发指南，轮换作者为 Kenji Tanaka，打通全站内链
+* **影响页面/关键词**：/blog/needle-2-tool-calling-model-edge-cloud-guide, needle 2 model, cactus compute needle, tool calling slm
+* **动作详情**：上线 Needle 2 (14MB) 端云协同工具调用首发指南，轮换作者为 Kenji Tanaka，打通全站内链
+* **预期因果假设**：抢占 2026年8月 最新开源 14MB 独立端侧工具调用大热点，通过端云协同降低90%成本的叙事引导开发者接入 APIVALE 网关
+
 ## 📝 优化行动记录 (2026-08)
 
 ### 📅 2026-08-25 - 📝 [内容动作]: 上线 Qwen 3.8 27B GGUF 显存计算与云端网关对比首发指南，全站打通内链
