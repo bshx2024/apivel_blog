@@ -113,7 +113,7 @@ export async function handleMonitorEmergingLlmTrends(): Promise<{
   if (serpApiKey) {
     try {
       const redditSerpUrl = `https://serpapi.com/search.json?q=site:reddit.com/r/LocalLLaMA+release+OR+weights+OR+model&api_key=${serpApiKey}&tbs=qdr:w&num=10`;
-      const redditRes = await axios.get(redditSerpUrl, { timeout: 8000 });
+      const redditRes = await axios.get(redditSerpUrl, { timeout: 15000 });
       const redditResults = redditRes.data?.organic_results || [];
 
       channelsScanned.push(`Reddit r/LocalLLaMA (${redditResults.length} weekly threads)`);

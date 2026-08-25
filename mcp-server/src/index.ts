@@ -20,6 +20,7 @@ import {
 } from "./tools/trend-radar";
 
 import { handleFetchLast30DaysIntelligence } from "./tools/last-30-days";
+import { handleRunReedGrowthCruise } from "./tools/reed-growth-engine";
 
 import {
   handleDraftForReview,
@@ -372,6 +373,18 @@ server.tool(
   },
   async ({ topic }) => {
     const result = await handleFetchLast30DaysIntelligence(topic);
+    return {
+      content: [{ type: "text", text: JSON.stringify(result, null, 2) }]
+    };
+  }
+);
+
+server.tool(
+  "run_reed_growth_cruise",
+  "Reed Autonomous Growth Hacker: Sniffs breaking model trends & 30-day pain points, audits GSC underdog queries (positions 4-15) for Top 3 promotion, and prescribes CRO micro-tools",
+  {},
+  async () => {
+    const result = await handleRunReedGrowthCruise();
     return {
       content: [{ type: "text", text: JSON.stringify(result, null, 2) }]
     };
