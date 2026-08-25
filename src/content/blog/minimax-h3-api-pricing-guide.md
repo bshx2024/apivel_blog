@@ -1,16 +1,27 @@
 ---
-title: "MiniMax H3 API Pricing: Real Cost Breakdown vs Sora & Runway (2026 Guide)"
-metaTitle: "MiniMax H3 API Pricing: $0.13/s Video (60% Off Sora & Runway)"
-description: "MiniMax H3 API real cost breakdown: $0.13/s for 2K video. See side-by-side pricing vs Sora ($0.50/s) & Runway ($0.40/s), plus easy PayPal checkout on APIVALE."
-date: "2026-08-25"
-author: "Kenji Tanaka"
-authorTitle: "AI Developer Relations Engineer & Multimodal API Integrations, APIVALE"
-authorBio: "Kenji Tanaka is an AI Developer Relations Engineer specializing in multimodal API integrations, video generation pipelines, and front-end interface customization."
-tags: ["MiniMax H3", "Hailuo 3.0", "API Pricing", "Open Weights", "Video AI", "PayPal"]
-image: "/blog/minimax-h3-cover.png"
-lang: "en"
+title: 'MiniMax H3 API Pricing: Real Cost Breakdown vs Sora & Runway (2026 Guide)'
+metaTitle: 'MiniMax H3 API Pricing: $0.13/s Video (60% Off Sora & Runway)'
+description: >-
+  MiniMax H3 API real cost breakdown: $0.13/s for 2K video. See side-by-side
+  pricing vs Sora ($0.50/s) & Runway ($0.40/s), plus easy PayPal checkout on
+  APIVALE.
+date: '2026-08-25'
+author: Kenji Tanaka
+authorTitle: 'AI Developer Relations Engineer & Multimodal API Integrations, APIVALE'
+authorBio: >-
+  Kenji Tanaka is an AI Developer Relations Engineer specializing in multimodal
+  API integrations, video generation pipelines, and front-end interface
+  customization.
+tags:
+  - MiniMax H3
+  - Hailuo 3.0
+  - API Pricing
+  - Open Weights
+  - Video AI
+  - PayPal
+image: /blog/minimax-h3-cover.png
+lang: en
 ---
-
 <div class="mb-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-emerald-950/80 text-emerald-400 border border-emerald-500/30">
   <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
   <span>Last Updated: August 2026 • Verified Production API Pricing</span>
@@ -269,7 +280,7 @@ if __name__ == "__main__":
 ### How much does MiniMax H3 (Hailuo 3.0) API cost per second and token?
 MiniMax H3 API pricing starts at ~$0.13 per second for 2K video rendering with native stereo audio, and $0.15 per 1M context tokens for multimodal text reasoning. This represents an approximate 70% cost reduction compared to closed proprietary video generation endpoints ($0.40–$0.50/s).
 
-### How does MiniMax H3 pricing compare to DeepSeek V4 and Qwen 3.8?
+### How does MiniMax H3 pricing compare to DeepSeek V4 and [Qwen 3.8](/blog/qwen-3-8-27b-gguf-benchmarks-ollama-vs-api-guide)?
 MiniMax H3 text and multimodal tokens ($0.15 input / $0.35 output per 1M tokens) are competitively priced against DeepSeek V4 ($0.14 input / $0.28 output) and Qwen 3.8 Max ($0.20 input / $0.60 output), while adding native omni-modal audio-visual rendering capabilities not present in standard LLMs.
 
 ### Can I pay for MiniMax H3 API using PayPal?

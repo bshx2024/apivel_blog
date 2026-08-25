@@ -1,16 +1,25 @@
 ---
-title: "How to Connect Qwen 3.8 to Claude Code CLI (Save 80% Token Spend)"
-metaTitle: "Connect Qwen 3.8 to Claude Code CLI (80% Off) | APIVALE"
-description: "Learn how to connect Qwen 3.8 to Claude Code CLI. Cut API token costs by 80% ($0.60/1M) via APIVALE PayPal billing. Claim $0.20 free starter credit!"
-date: "2026-07-30"
-author: "Alex Rivera"
-authorTitle: "Senior Cloud Architect & API Integrations, APIVALE"
-authorBio: "Alex Rivera is a cloud architect specializing in high-concurrency routing, API gateway latency optimization, and developer proxy tools."
-tags: ["Qwen 3.8", "Qwen 3.7", "Claude Code", "Anthropic API", "APIVALE", "PayPal"]
-image: "/blog/og-cover.png"
-lang: "en"
+title: How to Connect Qwen 3.8 to Claude Code CLI (Save 80% Token Spend)
+metaTitle: Connect Qwen 3.8 to Claude Code CLI (80% Off) | APIVALE
+description: >-
+  Learn how to connect Qwen 3.8 to Claude Code CLI. Cut API token costs by 80%
+  ($0.60/1M) via APIVALE PayPal billing. Claim $0.20 free starter credit!
+date: '2026-07-30'
+author: Alex Rivera
+authorTitle: 'Senior Cloud Architect & API Integrations, APIVALE'
+authorBio: >-
+  Alex Rivera is a cloud architect specializing in high-concurrency routing, API
+  gateway latency optimization, and developer proxy tools.
+tags:
+  - Qwen 3.8
+  - Qwen 3.7
+  - Claude Code
+  - Anthropic API
+  - APIVALE
+  - PayPal
+image: /blog/og-cover.png
+lang: en
 ---
-
 <div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
@@ -372,7 +381,7 @@ Yes. Both CLI tools support standard Anthropic messages protocols. Setting `ANTH
 ### Why is my Claude Code CLI getting an auth error with Qwen 3.8?
 Auth errors indicate a missing or invalid `ANTHROPIC_AUTH_TOKEN`. Verify your APIVALE API key is exported correctly in your terminal session.
 
-### Can I pay for Qwen 3.8 API tokens with PayPal on APIVALE?
+### Can I pay for [Qwen 3.8](/blog/qwen-3-8-27b-gguf-benchmarks-ollama-vs-api-guide) API tokens with PayPal on APIVALE?
 Yes. APIVALE supports global PayPal billing and credit cards via PayPal, enabling international developers to bypass credit card restrictions and identity verification limits.
 
 ### Does APIVALE support SSE streaming for Qwen 3.8 in terminal tools?

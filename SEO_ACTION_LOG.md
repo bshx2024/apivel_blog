@@ -30,6 +30,14 @@
 
 ---
 
+
+## 📝 优化行动记录 (2026-08)
+
+### 📅 2026-08-25 - 📝 [内容动作]: 上线 Qwen 3.8 27B GGUF 显存计算与云端网关对比首发指南，全站打通内链
+* **影响页面/关键词**：/blog/qwen-3-8-27b-gguf-benchmarks-ollama-vs-api-guide, qwen 3.8 27b gguf, vram requirements
+* **动作详情**：上线 Qwen 3.8 27B GGUF 显存计算与云端网关对比首发指南，全站打通内链
+* **预期因果假设**：通过抢占 HuggingFace 170万下载量新开源模型量化词，拦截本地显存不足的开发者转化为云端 API 网关付费用户
+
 ## 📅 历史优化动作全景日志 (Historic Action Log)
 
 | 日期 (Date) | 动作类型 (Category) | 动作详情与影响对象 (Details & Target URLs / Keywords) |
