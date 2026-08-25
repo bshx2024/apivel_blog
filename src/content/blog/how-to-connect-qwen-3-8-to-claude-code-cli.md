@@ -264,7 +264,7 @@ Autonomous developer tools execute iterative tool-calling loops—reading file t
 2. **Global PayPal Billing**: Bypass credit card rejections and KYC hurdles with native **PayPal global billing**.
 3. **Protocol Compatibility**: APIVALE translates Anthropic `/v1/messages` payload structures, tool call schemas, and SSE streams directly into Qwen 3.8 responses.
 
-For detailed model evaluations, check out our companion guides on [How to Connect Claude Opus 5 to Claude Code CLI](/blog/how-to-connect-claude-opus-5-to-claude-code-cli), [How to Connect Kimi K3 to Claude Code CLI](/blog/how-to-connect-kimi-k3-to-claude-code-cli), [How to Connect Qwen 3.8 to Cursor IDE](/blog/qwen-3-8-cursor-setup), [Cursor Pro vs. Own API Key Cost Analysis](/blog/cursor-pro-vs-own-api-key/), and [Qwen 3.8 vs Kimi K3 Comparison](/blog/qwen-3-8-vs-kimi-k3-coding-agent-api).
+For detailed model evaluations, check out our companion guides on [How to Connect Claude Opus 5 to Claude Code CLI](/blog/how-to-connect-claude-opus-5-to-claude-code-cli), [How to Connect Kimi K3 to Claude Code CLI](/blog/how-to-connect-kimi-k3-to-claude-code-cli), [How to Connect Qwen 3.8 to Cursor IDE](/blog/qwen-3-8-cursor-setup), [Cursor Pro vs. Own API Key Cost Analysis](/blog/cursor-pro-vs-custom-api-key/), and [Qwen 3.8 vs Kimi K3 Comparison](/blog/qwen-3-8-vs-kimi-k3-coding-agent-api).
 
 ---
 

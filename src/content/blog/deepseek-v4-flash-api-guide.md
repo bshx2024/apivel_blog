@@ -138,7 +138,7 @@ To use DeepSeek-V4-Flash inside Cursor Composer:
 3. Paste your APIVALE API key (`sk-apivale-...`).
 4. Under **Add Custom Model**, enter `deepseek-v4-flash` and enable it as your primary model.
 
-For token math comparisons between fixed subscriptions and custom keys, consult our guide on [Cursor Pro vs. Own API Key](/blog/cursor-pro-vs-own-api-key/).
+For token math comparisons between fixed subscriptions and custom keys, consult our guide on [Cursor Pro vs. Own API Key](/blog/cursor-pro-vs-custom-api-key/).
 
 ---
 

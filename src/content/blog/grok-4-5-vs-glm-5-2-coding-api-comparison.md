@@ -98,7 +98,7 @@ Connecting Cursor IDE to Grok 4.5 or GLM-5.2 via APIVALE allows developers to by
 6. Under custom model names, add `glm-5.2` or `infer/grok-4.5` and enable them.
 7. Click Save. Your editor is now connected to a 1M-context coding engine.
 
-*(For detailed editor integration, read our complete guide on [how to use Zhipu AI in Cursor Editor](/blog/how-to-use-z-ai-api-in-cursor-editor/) and [Cursor Pro vs Own API Key](/blog/cursor-pro-vs-own-api-key/).)*
+*(For detailed editor integration, read our complete guide on [how to use Zhipu AI in Cursor Editor](/blog/how-to-use-z-ai-api-in-cursor-editor/) and [Cursor Pro vs Own API Key](/blog/cursor-pro-vs-custom-api-key/).)*
 
 ---
 

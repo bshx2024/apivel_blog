@@ -165,7 +165,7 @@ Setting up BYOK in Cursor takes less than half a minute. Follow these step-by-st
 5. **Paste API Key**: Enter your APIVALE API key (`sk-apivale-xxxxxxxxxxxx`).
 6. **Add Custom Model Strings**: Under **Custom Models**, add `deepseek-v4-flash`, `infer/qwen3.7-max`, and `claude-sonnet-5`.
 
-For troubleshooting routing issues or SSE stream buffering errors, see our dedicated tutorial on [How to Set Up Custom Endpoints in Cursor](/blog/cursor-pro-vs-own-api-key/).
+For troubleshooting routing issues or SSE stream buffering errors, see our dedicated tutorial on [How to Set Up Custom Endpoints in Cursor](/blog/cursor-pro-vs-custom-api-key/).
 
 ---
 
