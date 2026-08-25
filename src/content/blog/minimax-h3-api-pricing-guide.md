@@ -1,8 +1,8 @@
 ---
-title: "MiniMax H3 API Pricing: Real Cost Breakdown vs DeepSeek & Qwen (2026 Guide)"
-metaTitle: "MiniMax H3 API Pricing: $0.13/s vs DeepSeek & Qwen | APIVALE"
-description: "MiniMax H3 API costs $0.13/s for 2K video and $0.15/1M tokens (60% cheaper). Compare real-world costs vs DeepSeek V4 & Qwen 3.8. Fund via PayPal on APIVALE."
-date: "2026-07-31"
+title: "MiniMax H3 API Pricing: Real Cost Breakdown vs Sora & Runway (2026 Guide)"
+metaTitle: "MiniMax H3 API Pricing: $0.13/s Video (60% Off Sora & Runway)"
+description: "MiniMax H3 API real cost breakdown: $0.13/s for 2K video. See side-by-side pricing vs Sora ($0.50/s) & Runway ($0.40/s), plus easy PayPal checkout on APIVALE."
+date: "2026-08-25"
 author: "Kenji Tanaka"
 authorTitle: "AI Developer Relations Engineer & Multimodal API Integrations, APIVALE"
 authorBio: "Kenji Tanaka is an AI Developer Relations Engineer specializing in multimodal API integrations, video generation pipelines, and front-end interface customization."
@@ -11,12 +11,17 @@ image: "/blog/minimax-h3-cover.png"
 lang: "en"
 ---
 
+<div class="mb-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-emerald-950/80 text-emerald-400 border border-emerald-500/30">
+  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+  <span>Last Updated: August 2026 • Verified Production API Pricing</span>
+</div>
+
 <div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
-    <li><strong>Disruptive Price-Performance ($0.13/sec):</strong> MiniMax H3 (Hailuo 3.0) delivers 2K native video generation with synchronized stereo audio at ~$0.13/s—over 60% cheaper than legacy closed-source models ($0.40–$0.50/s).</li>
+    <li><strong>Disruptive Price-Performance ($0.13/sec):</strong> MiniMax H3 (Hailuo 3.0) delivers 2K native video generation with synchronized stereo audio at ~$0.13/s—over 60% cheaper than proprietary video generators like Runway Gen-3 ($0.40/s) and Sora ($0.50/s).</li>
     <li><strong>Multimodal & Text Token Economics:</strong> MiniMax text and multimodal context tokens start at $0.15 per 1M tokens, competing directly on cost with DeepSeek V4 ($0.14/1M) and Qwen 3.8 Max ($0.20/1M).</li>
-    <li><strong>Zero-KYC PayPal Global Access:</strong> Developers can bypass regional payment blocks and phone verification barriers by funding MiniMax H3 API usage directly via PayPal on APIVALE.</li>
+    <li><strong>Zero-KYC PayPal Global Access:</strong> Developers can bypass credit card decline blocks, SMS verification, and funding walls by accessing MiniMax H3 API directly via PayPal on APIVALE.</li>
   </ul>
 </div>
 

@@ -43,6 +43,7 @@ Achieving maximum token efficiency requires addressing redundant data at every s
 | :--- | :--- | :--- | :--- |
 | **Terminal Output Filtering** | Stripping boilerplate log messages, CLI warnings, and ANSI codes | **60% - 90%** | [Read Spoke 3: Terminal Noise Interception](/blog/reduce-llm-api-costs-terminal-noise/) |
 | **Visual Prompt Compression** | Compressing massive text context into high-density vision layouts | **80% - 93%** | [Read Spoke 2: Visual Prompt Compression](/blog/visual-prompt-compression-pxpipe/) |
+| **Multimodal Cost Arbitrage** | Generating 2K video and spatial audio at 60% lower cost than Sora/Runway | **60% - 71%** | [Read MiniMax H3 API Pricing Guide](/blog/minimax-h3-api-pricing-guide/) |
 | **Pay-As-You-Go Gateway & Cache** | Avoiding subscription caps, using caching, and swapping models | **50% - 96%** | [Read Spoke 1: Cursor Pro vs. Custom Keys](/blog/cursor-pro-vs-custom-api-key/) |
 
 ---
@@ -72,7 +73,7 @@ For extremely large context inputs, such as massive system instruction sets or A
 The final pillar is replacing expensive, US-centric routing systems or flat subscriptions with a developer-focused, pay-as-you-go proxy.
 *   **Wholesale Token Costs**: Why pay Claude 3.5 Sonnet prices for simple linting or syntax checks? You can configure your agent to route lightweight tasks to **DeepSeek V4** (priced at **$0.14 per 1M input / $0.28 per 1M output tokens**) through APIVALE.
 *   **Context Caching**: APIVALE honors model context caching. When you run consecutive agent turns on the same codebase, cache hits are **fully free**, eliminating the repetitive context charge.
-*   **No Stripe Billing Limits**: Many global builders struggle with credit card declines on US-focused platforms. APIVALE provides localized Stripe payment processing and USDT/USDC options, preventing production key suspensions.
+*   **Global PayPal Billing**: Many global builders struggle with credit card declines on US-focused platforms. APIVALE provides seamless **PayPal Global Billing** and instant top-ups, preventing production key suspensions.
 
 ---
 
