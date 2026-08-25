@@ -93,28 +93,130 @@ export function handleSyncAndDeploy(commitMessage: string): {
 
 export async function handleFetchGscPerformance(
   days = 28,
-  minImpressions = 50
+  minImpressions = 1
 ): Promise<{
   configured: boolean;
-  data?: any;
+  siteUrl: string;
+  totalQueriesRetrieved: number;
+  opportunityQueries: Array<{
+    query: string;
+    clicks: number;
+    impressions: number;
+    ctr: string;
+    position: string;
+    opportunityType: "Top 3 High CTR" | "Striking Distance (Pos 4-20)" | "High Impression Low CTR (Content Gap)";
+    actionAdvice: string;
+  }>;
   message: string;
 }> {
   const env = loadEnvConfig();
-  const serviceAccountPath = env.GSC_SERVICE_ACCOUNT_PATH;
-  const siteUrl = env.GSC_SITE_URL || "https://apivale.com/";
+  const serviceAccountPath = env.GSC_SERVICE_ACCOUNT_PATH || "E:\\kaifa\\credentials\\gsc-service-account.json";
+  const siteUrl = env.GSC_SITE_URL || "sc-domain:apivale.com";
 
   if (!serviceAccountPath || !fs.existsSync(serviceAccountPath)) {
     return {
       configured: false,
-      message:
-        "Google Search Console API is not configured yet. Provide your Google Service Account JSON file path in .env.mcp (GSC_SERVICE_ACCOUNT_PATH) to activate real-time ranking and CTR extraction."
+      siteUrl,
+      totalQueriesRetrieved: 0,
+      opportunityQueries: [],
+      message: "Google Search Console API key file not found at " + serviceAccountPath
     };
   }
 
-  return {
-    configured: true,
-    message: `GSC credentials found at ${serviceAccountPath}. Real-time querying ready for site: ${siteUrl}.`
-  };
+  try {
+    const { google } = await import("googleapis");
+    const auth = new google.auth.GoogleAuth({
+      keyFile: serviceAccountPath,
+      scopes: ["https://www.googleapis.com/auth/webmasters.readonly"]
+    });
+
+    const searchconsole = google.searchconsole({ version: "v1", auth });
+
+    const today = new Date();
+    const end = new Date(today.getTime() - 2 * 24 * 60 * 60 * 1000);
+    const start = new Date(today.getTime() - (days + 2) * 24 * 60 * 60 * 1000);
+
+    const startDate = start.toISOString().split("T")[0];
+    const endDate = end.toISOString().split("T")[0];
+
+    const analyticsRes = await searchconsole.searchanalytics.query({
+      siteUrl,
+      requestBody: {
+        startDate,
+        endDate,
+        dimensions: ["query"],
+        rowLimit: 50
+      }
+    });
+
+    const rows = analyticsRes.data.rows || [];
+    const opportunities: Array<{
+      query: string;
+      clicks: number;
+      impressions: number;
+      ctr: string;
+      position: string;
+      opportunityType: "Top 3 High CTR" | "Striking Distance (Pos 4-20)" | "High Impression Low CTR (Content Gap)";
+      actionAdvice: string;
+    }> = [];
+
+    for (const r of rows) {
+      const q = r.keys?.[0] || "";
+      const clicks = r.clicks || 0;
+      const impressions = r.impressions || 0;
+      const ctrVal = (r.ctr || 0) * 100;
+      const posVal = r.position || 0;
+
+      if (impressions < minImpressions) continue;
+
+      let oppType: "Top 3 High CTR" | "Striking Distance (Pos 4-20)" | "High Impression Low CTR (Content Gap)" = "Striking Distance (Pos 4-20)";
+      let advice = "";
+
+      if (posVal <= 3.5) {
+        oppType = "Top 3 High CTR";
+        advice = "Dominant Position. Protect snippet with 58-char title and FAQSchema.";
+      } else if (posVal <= 20) {
+        oppType = "Striking Distance (Pos 4-20)";
+        advice = "Striking Distance! Enhance article H2 depth or weave 2 more internal links to push into Top 3.";
+      } else {
+        oppType = "High Impression Low CTR (Content Gap)";
+        advice = "Content Gap. Create dedicated long-tail pillar guide or add explicit H3 section.";
+      }
+
+      opportunities.push({
+        query: q,
+        clicks,
+        impressions,
+        ctr: `${ctrVal.toFixed(2)}%`,
+        position: posVal.toFixed(1),
+        opportunityType: oppType,
+        actionAdvice: advice
+      });
+    }
+
+    // Sort: Striking distance first, then by impressions
+    opportunities.sort((a, b) => {
+      if (parseFloat(a.position) <= 20 && parseFloat(b.position) > 20) return -1;
+      if (parseFloat(a.position) > 20 && parseFloat(b.position) <= 20) return 1;
+      return b.impressions - a.impressions;
+    });
+
+    return {
+      configured: true,
+      siteUrl,
+      totalQueriesRetrieved: opportunities.length,
+      opportunityQueries: opportunities,
+      message: `Successfully pulled ${opportunities.length} real queries from Google Search Console (${startDate} ~ ${endDate}).`
+    };
+  } catch (err: any) {
+    return {
+      configured: false,
+      siteUrl,
+      totalQueriesRetrieved: 0,
+      opportunityQueries: [],
+      message: `GSC query failed: ${err?.message || err}`
+    };
+  }
 }
 
 export async function handlePostPublishMonitor(

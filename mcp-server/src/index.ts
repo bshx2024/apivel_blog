@@ -321,10 +321,10 @@ server.tool(
 
 server.tool(
   "fetch_gsc_performance",
-  "Pulls Google Search Console performance data for low-hanging fruit queries (Phase 2 GSC API)",
+  "Pulls Google Search Console performance data for low-hanging fruit queries and real rankings (GSC API)",
   {
-    days: z.number().optional().default(28),
-    min_impressions: z.number().optional().default(50)
+    days: z.number().optional().default(28).describe("Lookback window in days (e.g. 28)"),
+    min_impressions: z.number().optional().default(1).describe("Minimum impressions threshold (default: 1)")
   },
   async ({ days, min_impressions }) => {
     const result = await handleFetchGscPerformance(days, min_impressions);
