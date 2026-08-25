@@ -226,9 +226,10 @@ if __name__ == "__main__":
 * **Root Cause:** Attempting to load Qwen 3.8 27B Q5_K_M or Q8_0 with a 32K context window onto a 16GB/24GB GPU.
 * **Resolution:** Downgrade quantization to `Q4_K_S` via `ollama run qwen3.8:27b-q4_k_s` or redirect traffic to APIVALE’s cloud endpoint where 128K context is dynamically allocated without local VRAM constraints.
 
-### 2. `HTTP 401 Unauthorized: Invalid API Key`
-* **Root Cause:** Passing OpenAI headers to an Anthropic endpoint or omitting the `Bearer` scheme.
-* **Resolution:** In Claude Code CLI, ensure `ANTHROPIC_BASE_URL="https://api.apivale.com/v1"` is set alongside `ANTHROPIC_AUTH_TOKEN`. APIVALE automatically handles header protocol translation.
+### 3. Compare with Other Edge & Cloud Models
+* Read our [Needle 2 AI Model Guide](/blog/needle-2-tool-calling-model-edge-cloud-guide/) for ultra-lightweight 14MB tool-calling deployment.
+* Read our [Ox Alpha 1M Context Setup Guide](/blog/ox-alpha-claude-code-cursor-setup/) for SWE-bench code refactoring.
+* Read our [OpenRouter 429 Alternatives Guide](/blog/openrouter-alternatives/) for high-concurrency cloud pools.
 
 ---
 
