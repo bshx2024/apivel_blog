@@ -5,6 +5,8 @@ export interface SerpIntentResult {
   query: string;
   market: string;
   autocompleteSuggestions: string[];
+  peopleAlsoAsk?: string[];
+  relatedSearches?: string[];
   recommendedKeywordArchitecture: {
     tier1TitleH1: string[];
     tier2H2Subtopics: string[];
@@ -17,6 +19,30 @@ export async function handleAnalyzeGoogleSearchIntent(
   query: string,
   market = "us"
 ): Promise<SerpIntentResult> {
+  const env = loadEnvConfig();
+  const serpApiKey = env.SERPAPI_KEY;
+
+  let paaQuestions: string[] = [];
+  let relatedSearches: string[] = [];
+
+  // If SerpAPI is configured, fetch live PAA & Related Searches
+  if (serpApiKey) {
+    try {
+      const serpUrl = `https://serpapi.com/search.json?q=${encodeURIComponent(query)}&api_key=${serpApiKey}&engine=google&gl=${market}&hl=en&num=5`;
+      const serpRes = await axios.get(serpUrl, { timeout: 8000 });
+      
+      paaQuestions = (serpRes.data?.related_questions || [])
+        .map((q: any) => q.question)
+        .filter(Boolean);
+
+      relatedSearches = (serpRes.data?.related_searches || [])
+        .map((r: any) => r.query)
+        .filter(Boolean);
+    } catch {
+      // Graceful fallback to Autocomplete
+    }
+  }
+
   const url = `https://suggestqueries.google.com/complete/search?client=chrome&hl=en&gl=${market}&q=${encodeURIComponent(query)}`;
 
   try {
@@ -28,21 +54,18 @@ export async function handleAnalyzeGoogleSearchIntent(
       }
     });
 
-    // Google returns format: [query, [suggestions...], [descriptions...], ...]
     const rawSuggestions: string[] =
       Array.isArray(response.data) && Array.isArray(response.data[1])
         ? response.data[1]
         : [];
 
-    // Filter and clean suggestions
     const suggestions = rawSuggestions.filter(
       s => typeof s === "string" && s.trim().length > 0
     );
 
-    // Derive 3-tier keyword architecture mapping
     const titleCandidates: string[] = [];
     const h2Candidates: string[] = [];
-    const faqCandidates: string[] = [];
+    const faqCandidates: string[] = [...paaQuestions];
 
     for (const sug of suggestions) {
       const lower = sug.toLowerCase();
@@ -73,7 +96,10 @@ export async function handleAnalyzeGoogleSearchIntent(
       }
     }
 
-    // Ensure fallback items if Google suggestions are skewed
+    if (relatedSearches.length > 0) {
+      h2Candidates.push(...relatedSearches.slice(0, 4));
+    }
+
     if (titleCandidates.length === 0 && suggestions.length > 0) {
       titleCandidates.push(`How to Use ${query} (Setup & Cost Guide)`);
     }
@@ -89,12 +115,16 @@ export async function handleAnalyzeGoogleSearchIntent(
       query,
       market,
       autocompleteSuggestions: suggestions,
+      peopleAlsoAsk: paaQuestions.slice(0, 5),
+      relatedSearches: relatedSearches.slice(0, 6),
       recommendedKeywordArchitecture: {
         tier1TitleH1: titleCandidates.slice(0, 3),
-        tier2H2Subtopics: h2Candidates.slice(0, 5),
-        tier3FaqQuestions: faqCandidates.slice(0, 4)
+        tier2H2Subtopics: [...new Set(h2Candidates)].slice(0, 6),
+        tier3FaqQuestions: [...new Set(faqCandidates)].slice(0, 4)
       },
-      note: "Data fetched in real-time from Google Autocomplete. Suggestions reflect actual high-frequency user search intent."
+      note: serpApiKey 
+        ? "Enriched in real-time with Google Autocomplete + SerpAPI (Live PAA & Related Searches)."
+        : "Data fetched in real-time from Google Autocomplete."
     };
   } catch (error: any) {
     return {
@@ -130,9 +160,11 @@ export async function handleAnalyzeSerpCompetitors(
   configured: boolean;
   keyword: string;
   topCompetitors?: Array<{ title: string; link: string; snippet: string }>;
+  peopleAlsoAsk?: string[];
+  relatedSearches?: string[];
   contentGapAnalysis?: {
-    mustCoverTopics: string[];
-    suggestedInformationGainPoints: string[];
+    competitorCoveredThemes: string[];
+    apivaleWinningAngles: string[];
   };
   guidance?: string;
 }> {
@@ -144,34 +176,40 @@ export async function handleAnalyzeSerpCompetitors(
       configured: false,
       keyword,
       guidance:
-        "SerpAPI Key is not configured. To enable live competitor extraction, set SERPAPI_KEY in .env.mcp. In Phase 1, use analyze_google_search_intent for 100% free Google Autocomplete intent mapping."
+        "SerpAPI Key is not configured. Set SERPAPI_KEY in .env.mcp to enable live competitor extraction."
     };
   }
 
   try {
     const url = `https://serpapi.com/search.json?q=${encodeURIComponent(keyword)}&api_key=${apiKey}&engine=google&gl=us&hl=en&num=5`;
-    const res = await axios.get(url, { timeout: 8000 });
+    const res = await axios.get(url, { timeout: 10000 });
     const organic = (res.data?.organic_results || []).slice(0, 5);
 
     const competitors = organic.map((item: any) => ({
       title: item.title,
       link: item.link,
-      snippet: item.snippet
+      snippet: item.snippet || ""
     }));
+
+    const paa = (res.data?.related_questions || []).map((q: any) => q.question).filter(Boolean);
+    const related = (res.data?.related_searches || []).map((r: any) => r.query).filter(Boolean);
 
     return {
       configured: true,
       keyword,
       topCompetitors: competitors,
+      peopleAlsoAsk: paa,
+      relatedSearches: related,
       contentGapAnalysis: {
-        mustCoverTopics: [
-          "Step-by-step terminal and IDE configuration commands",
-          "Official pricing vs proxy token discount math",
-          "401/429 status code handling with backoff code"
+        competitorCoveredThemes: [
+          "Basic model release announcements and parameter counts",
+          "Generic benchmark scores without reproducible test commands",
+          "Official cloud pricing without proxy cost arbitrage"
         ],
-        suggestedInformationGainPoints: [
-          "Direct PayPal global billing proof without KYC",
-          "15+ line retry interceptor for Claude Code CLI and Cursor"
+        apivaleWinningAngles: [
+          "Zero-KYC global PayPal billing vs international credit card failure",
+          "Concrete 15+ line Python retry script with exponential backoff for 429 errors",
+          "Sub-450ms TTFT proxy routing with Claude Code CLI and Cursor IDE one-click configs"
         ]
       }
     };
