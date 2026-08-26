@@ -22,7 +22,7 @@ lang: "en"
 
 The release of **DeepSeek-V4-Flash API** marks a major shift in high-throughput LLM inference, delivering sub-150ms Time-to-First-Token (TTFT) and an ultra-low pricing model ($0.10/1M input and $0.40/1M output tokens). For developers orchestrating high-frequency agent loops, background linter bots, or continuous testing pipelines, V4-Flash provides near-instant response speeds at a fraction of standard API rates.
 
-By routing requests through APIVALE's proxy infrastructure, developers can integrate DeepSeek-V4-Flash into OpenAI-compatible clients and Anthropic-based CLI tooling with dedicated high-concurrency pools and seamless PayPal billing.
+By routing requests through APIVALE's proxy infrastructure, developers can integrate DeepSeek-V4-Flash into OpenAI-compatible clients and Anthropic-based CLI tooling with dedicated high-concurrency pools and seamless Waffo billing. If you need image analysis alongside text reasoning, check out our [DeepSeek V4 Flash Vision API setup and 384-token cost guide](/blog/deepseek-v4-flash-vision-api-guide).
 
 ```bash
 # Call official DeepSeek-V4-Flash API globally via APIVALE Proxy

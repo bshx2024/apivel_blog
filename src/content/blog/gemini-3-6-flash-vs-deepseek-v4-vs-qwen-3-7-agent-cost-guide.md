@@ -48,11 +48,13 @@ To evaluate true cost-efficiency, we must examine both raw token pricing per mil
 | **Gemini 3.6 Flash** | **$1.50** | **$7.50** | **17% Output Token Compression** | Google AI Studio / Vertex |
 | **Claude Sonnet 5** | **$3.00** | **$15.00** | Industry Standard Vibe Coding Benchmark | Official Console / APIVALE |
 
+*(For visual agent workflows, see how the [DeepSeek V4 Flash Vision API](/blog/deepseek-v4-flash-vision-api-guide/) enforces a fixed 384-token cap per image).*
+
 ---
 
 <div class="my-6 border-l-4 border-indigo-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Definition</span>
-  <h4 class="mt-1 text-md font-semibold text-white">Agent Token Compression vs. Raw Pass-Through Discounting</h4>
+  <div class="mt-1 text-base font-semibold text-white">Agent Token Compression vs. Raw Pass-Through Discounting</div>
   <p class="mt-2 text-sm text-gray-300"><strong>Token Compression</strong> (used by Gemini 3.6 Flash) reduces the total count of generated output tokens by streamlining verbose code steps. <strong>Raw Pass-Through Discounting</strong> (used by DeepSeek V4 and Qwen 3.7 via APIVALE) lowers the unit cost per token, allowing agents to execute verbose tool-calling loops at a fraction of the cost.</p>
 </div>
 
