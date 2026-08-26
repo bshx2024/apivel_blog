@@ -74,6 +74,383 @@ Before diving into setup details, compare how native provider subscriptions, Cod
 
 ---
 
+<div class="codexbar-calc-widget">
+  <form id="codexbar-calc-form" onsubmit="return false;">
+    <div class="widget-header">
+      <span class="widget-badge">Interactive Simulator</span>
+      <h3 class="text-xl font-bold text-white mt-1">AI Coding Agent Quota & Failover Cost Calculator</h3>
+      <p class="widget-subtitle">Estimate token burn, 5-hour cooldown frequency, and cost savings by routing through APIVALE</p>
+    </div>
+    <div class="widget-grid">
+      <div class="calculator-inputs">
+        <div class="calc-input-group">
+          <label for="codex-calc-model">Coding Agent Model</label>
+          <div class="select-wrapper">
+            <select id="codex-calc-model">
+              <option value="deepseek" selected>DeepSeek V4 ($0.27/1M) - Max Efficiency</option>
+              <option value="qwen">Qwen 3.7 Max ($0.60/1M) - High SWE Accuracy</option>
+              <option value="claude">Claude Sonnet 5 ($2.80/1M) - Flagship Reasoning</option>
+            </select>
+          </div>
+        </div>
+        <div class="calc-input-group">
+          <div class="slider-label-row">
+            <label for="codex-hours-slider">Daily Coding Hours (CLI / Cursor)</label>
+            <div class="input-with-unit">
+              <input type="number" id="codex-hours-num" min="1" max="14" value="5" class="custom-number-input" />
+              <span class="unit-text">hrs / day</span>
+            </div>
+          </div>
+          <input type="range" id="codex-hours-slider" min="1" max="14" value="5" class="custom-slider" />
+        </div>
+        <div class="calc-input-group">
+          <label for="codex-intensity-select">Agent Multi-Turn Intensity</label>
+          <div class="select-wrapper">
+            <select id="codex-intensity-select">
+              <option value="1">Standard (Single prompt & inline diffs - ~2M tokens/mo)</option>
+              <option value="2.5" selected>Heavy Agent Loop (Auto-lint, file tree crawl - ~15M tokens/mo)</option>
+              <option value="5">Autonomous Multi-Agent (OpenCode / SWE loops - ~35M tokens/mo)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="calculator-results">
+        <div class="cost-row">
+          <div class="cost-label">Official Rate-Limit Risk (Monthly)</div>
+          <div class="cost-value cooldown-warning" id="codex-lockout-val">~8 Cooldown Locks</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">Official Plan + Overage Burn</div>
+          <div class="cost-value direct-cost" id="codex-direct-cost-val">$75.00</div>
+        </div>
+        <div class="cost-row">
+          <div class="cost-label">APIVALE Gateway Cost</div>
+          <div class="cost-value apivale-cost" id="codex-apivale-cost-val">$10.12</div>
+        </div>
+        <div class="savings-card">
+          <div class="savings-percentage-row">
+            <span class="savings-badge">Estimated Savings</span>
+            <span class="savings-percentage" id="codex-savings-pct">86.5%</span>
+          </div>
+          <div class="savings-amount" id="codex-savings-amt">$64.88 / mo</div>
+          <p class="savings-note">⚡ 0 Rate-Limit Downtime. PayPal instant billing with zero Stripe card blocks.</p>
+          <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=codexbar-calc" class="calc-cta-btn">Claim Free $0.20 Starter Credit (+ 50% Bonus)</a>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<style>
+.codexbar-calc-widget {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: 16px;
+  padding: 24px;
+  margin: 32px 0;
+  color: #f1f5f9;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+.codexbar-calc-widget .widget-badge {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+.codexbar-calc-widget .widget-subtitle {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin: 4px 0 0 0;
+  line-height: 1.4;
+}
+.codexbar-calc-widget .widget-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 28px;
+  margin-top: 20px;
+}
+@media (max-width: 768px) {
+  .codexbar-calc-widget .widget-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+.codexbar-calc-widget .calculator-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  justify-content: center;
+}
+.codexbar-calc-widget .calc-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.codexbar-calc-widget .calc-input-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #cbd5e1;
+}
+.codexbar-calc-widget .select-wrapper {
+  position: relative;
+  width: 100%;
+}
+.codexbar-calc-widget .select-wrapper select {
+  width: 100%;
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 9px 32px 9px 14px;
+  color: #ffffff;
+  font-size: 0.85rem;
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.codexbar-calc-widget .select-wrapper select:focus {
+  border-color: #10b981;
+}
+.codexbar-calc-widget .select-wrapper::after {
+  content: '▼';
+  font-size: 0.65rem;
+  color: #94a3b8;
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.codexbar-calc-widget .slider-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.codexbar-calc-widget .input-with-unit {
+  display: flex;
+  align-items: center;
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  padding: 2px 8px;
+}
+.codexbar-calc-widget .custom-number-input {
+  background: transparent;
+  border: none;
+  color: #10b981;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  width: 32px;
+  text-align: right;
+  outline: none;
+  margin-right: 4px;
+}
+.codexbar-calc-widget .unit-text {
+  font-size: 0.8rem;
+  color: #10b981;
+  font-weight: 700;
+}
+.codexbar-calc-widget .custom-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: #1e293b;
+  outline: none;
+  margin: 6px 0;
+}
+.codexbar-calc-widget .custom-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #10b981;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+  transition: transform 0.1s, background-color 0.2s;
+}
+.codexbar-calc-widget .custom-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background: #059669;
+}
+.codexbar-calc-widget .calculator-results {
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.codexbar-calc-widget .cost-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+  padding-bottom: 6px;
+}
+.codexbar-calc-widget .cost-label {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+.codexbar-calc-widget .cost-value {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.codexbar-calc-widget .cooldown-warning {
+  color: #fbbf24;
+  font-weight: 700;
+}
+.codexbar-calc-widget .direct-cost {
+  color: #f43f5e;
+}
+.codexbar-calc-widget .apivale-cost {
+  color: #34d399;
+  font-weight: 700;
+}
+.codexbar-calc-widget .savings-card {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.05) 100%);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  border-radius: 10px;
+  padding: 14px;
+  text-align: center;
+}
+.codexbar-calc-widget .savings-percentage-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.codexbar-calc-widget .savings-badge {
+  background: #10b981;
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.codexbar-calc-widget .savings-percentage {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #34d399;
+}
+.codexbar-calc-widget .savings-amount {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+.codexbar-calc-widget .savings-note {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin: 0 0 12px 0;
+  line-height: 1.3;
+}
+.codexbar-calc-widget .calc-cta-btn {
+  display: block;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+.codexbar-calc-widget .calc-cta-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+  color: #ffffff;
+}
+</style>
+
+<script>
+(function() {
+  function initCodexCalc() {
+    const hoursSlider = document.getElementById('codex-hours-slider');
+    const hoursNum = document.getElementById('codex-hours-num');
+    const modelSelect = document.getElementById('codex-calc-model');
+    const intensitySelect = document.getElementById('codex-intensity-select');
+    const lockoutEl = document.getElementById('codex-lockout-val');
+    const directCostEl = document.getElementById('codex-direct-cost-val');
+    const apivaleCostEl = document.getElementById('codex-apivale-cost-val');
+    const savingsPctEl = document.getElementById('codex-savings-pct');
+    const savingsAmtEl = document.getElementById('codex-savings-amt');
+
+    if (!hoursSlider || !hoursNum || !modelSelect || !intensitySelect) return;
+
+    // Rates per 1M blended tokens (Input 80%, Output 20%)
+    const modelRates = {
+      deepseek: (0.27 * 0.8) + (1.10 * 0.2), // ~$0.436/1M
+      qwen: (0.60 * 0.8) + (2.40 * 0.2),     // ~$0.96/1M
+      claude: (2.80 * 0.8) + (14.00 * 0.2)   // ~$5.04/1M
+    };
+
+    function recalculate() {
+      const hours = parseFloat(hoursSlider.value) || 5;
+      const intensity = parseFloat(intensitySelect.value) || 2.5;
+      const modelKey = modelSelect.value || 'deepseek';
+      const apivaleRate = modelRates[modelKey] || modelRates.deepseek;
+
+      // Base monthly tokens (in Millions) = hours * intensity * 22 working days * 0.15M
+      const monthlyTokensM = (hours * intensity * 22 * 0.12);
+
+      // Lockout risk calculation
+      const lockouts = Math.round(hours * intensity * 0.65);
+      lockoutEl.textContent = `~${lockouts} Cooldown Locks / mo`;
+
+      // Direct official baseline cost ($20 base tier + overage per 1M)
+      const officialOverageRate = modelKey === 'claude' ? 7.50 : 3.00;
+      const totalDirect = Math.max(20, 20 + (monthlyTokensM * officialOverageRate));
+      const totalApivale = Math.max(1, monthlyTokensM * apivaleRate);
+
+      const netSavings = Math.max(0, totalDirect - totalApivale);
+      const savingsPct = totalDirect > 0 ? ((netSavings / totalDirect) * 100).toFixed(1) : '0';
+
+      directCostEl.textContent = '$' + totalDirect.toFixed(2);
+      apivaleCostEl.textContent = '$' + totalApivale.toFixed(2);
+      savingsPctEl.textContent = savingsPct + '%';
+      savingsAmtEl.textContent = '$' + netSavings.toFixed(2) + ' / mo';
+    }
+
+    hoursSlider.addEventListener('input', function() {
+      hoursNum.value = hoursSlider.value;
+      recalculate();
+    });
+
+    hoursNum.addEventListener('input', function() {
+      hoursSlider.value = hoursNum.value;
+      recalculate();
+    });
+
+    modelSelect.addEventListener('change', recalculate);
+    intensitySelect.addEventListener('change', recalculate);
+    recalculate();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCodexCalc);
+  } else {
+    initCodexCalc();
+  }
+})();
+</script>
+
+---
+
 <div class="my-6 border-l-4 border-indigo-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Definition</span>
   <h4 class="mt-1 text-md font-semibold text-white">CodexBar Quota Router Architecture</h4>

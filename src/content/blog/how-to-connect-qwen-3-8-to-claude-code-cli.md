@@ -1,8 +1,8 @@
 ---
-title: How to Connect Qwen 3.8 to Claude Code CLI (Save 80% Token Spend)
-metaTitle: Connect Qwen 3.8 to Claude Code CLI (80% Off) | APIVALE
+title: How to Connect Qwen 3.8 to Claude Code CLI & Cursor (Save 80% Token Spend)
+metaTitle: Qwen 3.8 Cursor & Claude Code Setup (80% Off) | APIVALE
 description: >-
-  Learn how to connect Qwen 3.8 to Claude Code CLI. Cut API token costs by 80%
+  Learn how to connect Qwen 3.8 to Cursor and Claude Code CLI. Cut API token costs by 80%
   ($0.60/1M) via APIVALE PayPal billing. Claim $0.20 free starter credit!
 date: '2026-07-30'
 author: Alex Rivera
@@ -12,8 +12,10 @@ authorBio: >-
   gateway latency optimization, and developer proxy tools.
 tags:
   - Qwen 3.8
+  - Qwen 3.8 Cursor
   - Qwen 3.7
   - Claude Code
+  - Cursor
   - Anthropic API
   - APIVALE
   - PayPal

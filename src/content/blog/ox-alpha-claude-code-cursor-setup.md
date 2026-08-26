@@ -1,12 +1,12 @@
 ---
 title: "Ox Alpha Claude Code Setup: How to Connect 0xAlpha to CLI & Cursor (2026)"
-metaTitle: "Ox Alpha Claude Code Setup: Native API Guide | APIVALE"
-description: "Step-by-step guide to configure Ox Alpha (0xAlpha) in Claude Code CLI & Cursor. Bypass rate limits with native Anthropic protocol proxy via APIVALE."
+metaTitle: "How to Use Ox Alpha in Claude Code & Cursor | APIVALE"
+description: "Step-by-step guide on how to use Ox Alpha (0xAlpha) in Claude Code CLI & Cursor. Bypass rate limits with native Anthropic protocol proxy via APIVALE."
 date: "2026-08-23"
 author: "Alex Rivera"
 authorTitle: "Senior Cloud Architect & API Integrations, APIVALE"
 authorBio: "Alex Rivera is a cloud architect specializing in high-concurrency LLM routing, API gateway latency optimization, and developer proxy tools."
-tags: ["Ox Alpha", "0xAlpha", "Claude Code", "Cursor", "GLM-5.3", "Anthropic API", "APIVALE", "PayPal"]
+tags: ["Ox Alpha", "0xAlpha", "How to use ox alpha in claude code", "Claude Code", "Cursor", "GLM-5.3", "Anthropic API", "APIVALE", "PayPal"]
 image: "/blog/og-cover.png"
 lang: "en"
 ---

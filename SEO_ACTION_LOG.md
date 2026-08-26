@@ -35,6 +35,28 @@
 
 ## 📝 优化行动记录 (2026-08)
 
+### 📅 2026-08-26 - ⚙️ [技术/UX 动作]: CRO 增长攻坚：为 3 篇重点流量文章嵌入响应式交互计算器 (Micro-Tool Widgets)
+* **影响页面/关键词**：
+  * `/blog/best-api-search-company-homepage-guide/` (`best api search for company homepages`, `company domain lookup api`)
+  * `/blog/bypass-zhipu-ai-real-name-verification/` (`zhipu ai kyc bypass`, `glm-5.2 api zero kyc`)
+  * `/blog/codexbar-windows-setup-safety-guide/` (`codexbar windows setup`, `claude code rate limit bypass`)
+* **动作详情**：
+  * 为 3 篇平均停留时长仅 ~16s 的纯文本流量页面分别定制并注入了现代暗黑拟态风格的交互式 Micro-Tool 组件：
+    1. **Company Lookup ROI & Cost Calculator**（企业主页与域名批量解析成本计算器）
+    2. **Zhipu GLM Zero-KYC Cost & Token Calculator**（智谱 GLM 零 KYC 跨国结算与 Token 计算器）
+    3. **AI Coding Agent Quota & Failover Cost Calculator**（CodexBar 额度熔断风险与多模型备用降本模拟器）
+  * 预期将页面停留时间 (Dwell Time) 提升至 2 分钟以上，大幅降低跳出率，并带动 $0.20 Free Credit / PayPal 即时充值注册转化。
+
+### 📅 2026-08-26 - 📝 [内容动作]: Reed Growth 巡航 Underdog 潜能词精修：PayPal 变现痛点与 Cursor/CLI 标题与内链网络强化
+* **影响页面/关键词**：
+  * `/blog/openrouter-alternatives/` (`openrouter paypal`, `openrouter alternative`)
+  * `/blog/how-to-reduce-opencode-token-costs/` (`opencode paypal`, `opencode token cost`)
+  * `/blog/how-to-connect-qwen-3-8-to-claude-code-cli/` (`qwen 3.8 cursor`, `qwen 3.8 claude code`)
+  * `/blog/ox-alpha-claude-code-cursor-setup/` (`how to use ox alpha in claude code`)
+* **动作详情**：
+  * 基于 Reed Growth Cruise 扫描出 GSC 排名 5-11 位的潜能转化词（CTR 13%~20%），全面微调 4 篇核心文章 Meta Title（严格控制在 50~55 字符内），精准命中 `openrouter paypal`、`opencode paypal`、`qwen 3.8 cursor` 与 `how to use ox alpha in claude code`。
+  * 交叉织入高权重内链网络，打通 OpenRouter 替代方案与 OpenCode / Ox Alpha 低成本 coding agent 场景，直接引流 PayPal 即时充值转化。
+
 ### 📅 2026-08-25 - 📝 [内容动作]: 重构 Grok Bot 指南：新增 Supergrok+ 周度限流破解与 OpenClaw/Hermes 多智能体成本套利小节，Title 精准优化至 50 字符
 * **影响页面/关键词**：/blog/grok-bot-api-setup-pricing-troubleshooting, grok bot rate limit, supergrok limit bypass, grok api pricing, openclaw hermes
 * **动作详情**：重构 Grok Bot 指南：新增 Supergrok+ 周度限流破解与 OpenClaw/Hermes 多智能体成本套利小节，Title 精准优化至 50 字符
