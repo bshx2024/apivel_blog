@@ -29,6 +29,7 @@ export function handleWeaveInternalLinks(
 
   const targetLinkUrl = `/blog/${targetSlug}`;
 
+  // Pass 1: Direct exact text matching
   for (const post of publishedPosts) {
     if (post.slug === targetSlug) continue;
     if (injections.length >= maxInjections) break;
@@ -80,6 +81,64 @@ export function handleWeaveInternalLinks(
 
         injectedForThisPost = true;
       }
+    }
+  }
+
+  // Pass 2: Semantic contextual fallback injection if exact matches were insufficient
+  if (injections.length < maxInjections) {
+    // Rank unlinked posts by topic relevance to anchor keywords
+    const targetTerms = [
+      ...anchorKeywords.map(k => k.toLowerCase().split(/\s+/)).flat(),
+      targetSlug.toLowerCase().split("-")
+    ].flat().filter(t => t.length > 2);
+
+    const scoredPosts = publishedPosts
+      .filter(post => post.slug !== targetSlug && !post.content.includes(targetLinkUrl) && !post.content.includes(`/${targetSlug}`))
+      .map(post => {
+        let score = 0;
+        const postText = (post.slug + " " + (post.frontmatter.title || "") + " " + post.content).toLowerCase();
+        for (const term of targetTerms) {
+          if (postText.includes(term)) score += 1;
+        }
+        return { post, score };
+      })
+      .filter(item => item.score > 0)
+      .sort((a, b) => b.score - a.score);
+
+    for (const { post } of scoredPosts) {
+      if (injections.length >= maxInjections) break;
+
+      let modifiedBody = post.content;
+      const calloutText = `\n\n*(Looking for related setups? Check out our complete [${targetTitle}](${targetLinkUrl})).*`;
+
+      // Find an optimal place to inject (before FAQ, before Conclusion, or after first comparison table)
+      let insertIndex = -1;
+      const markers = ["## Frequently Asked Questions", "### FAQ", "## Conclusion", "## Summary", "---"];
+      
+      for (const marker of markers) {
+        const idx = modifiedBody.indexOf(marker);
+        if (idx !== -1) {
+          insertIndex = idx;
+          break;
+        }
+      }
+
+      if (insertIndex !== -1) {
+        modifiedBody = modifiedBody.substring(0, insertIndex) + calloutText + "\n\n" + modifiedBody.substring(insertIndex);
+      } else {
+        modifiedBody += calloutText;
+      }
+
+      writeBlogPostFile(BLOG_DIR, post.slug, post.frontmatter, modifiedBody);
+
+      injections.push({
+        sourceSlug: post.slug,
+        sourceTitle: post.frontmatter.title || post.slug,
+        injectedAnchor: targetTitle,
+        linkInserted: `[${targetTitle}](${targetLinkUrl})`,
+        snippetBefore: "Contextual paragraph break",
+        snippetAfter: calloutText.trim()
+      });
     }
   }
 
