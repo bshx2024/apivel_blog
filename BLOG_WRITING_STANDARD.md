@@ -12,7 +12,7 @@
 | :--- | :--- | :--- |
 | **受众定位** | 传统企业决策者（偏重商业 ROI 与政策） | 开发者、独立创作者、AI 工程师、CTO（偏重技术实现、成本与可靠性） |
 | **文章字数** | 2500 - 3500 词 | **1500 - 2500 词**（包含可运行代码与数学推算，行文高效直接、无废话） |
-| **核心卖点** | 概念灌输、宏观趋势 | **PayPal 全球快捷支付、免实名、免+86手机号、100% 官方代理路由、低延迟高并发** |
+| **核心卖点** | 概念灌输、宏观趋势 | **Waffo 全球聚合支付、免实名、免+86手机号、100% 官方代理路由、低延迟高并发** |
 | **技术元素** | 理论原理、趋势报告 | **可直接运行的代码 (cURL/Python/TS)、异常处理、延迟与 Token 成本计算公式** |
 | **GEO 重点** | 行业权威背书 | **直击痛点（API 401/403/429/502 错误码排查、代理 Header 冲突、流式缓冲丢包）** |
 
@@ -50,14 +50,21 @@
   - 验证目标关键词是否挂载在搜索量最大的父级主题下（例如搜索 `qwen 3.7 max api` 时，确认父级主题是否为 `qwen 3.7 max claude code setup`）。以父级主题为 Primary Target 才能获得最大流量上限。
   - 提取 1-2 个竞争对手共享的高频次要关键词（Secondary LSI），自然融入 Title Tag 和 H2/H3 小标题。
 - **实体-概念网络设计 (Entity-Relationship Network Audit)**：
-  - 明确文章包含的 **3-5 个核心实体链 (Entity Chains)**（例如：`APIVALE Router` $\rightarrow$ `OpenAI SDK Protocol` $\rightarrow$ `Claude Code CLI` $\rightarrow$ `PayPal Billing`）。确保正文中核心实体及其强关联概念自然共现，构建高密度实体图谱。
+  - 明确文章包含的 **3-5 个核心实体链 (Entity Chains)**（例如：`APIVALE Router` $\rightarrow$ `OpenAI SDK Protocol` $\rightarrow$ `Claude Code CLI` $\rightarrow$ `Waffo Billing`）。确保正文中核心实体及其强关联概念自然共现，构建高密度实体图谱。
+- **实体-概念网络设计 (Entity-Relationship Network Audit)**：
+- 查阅 `KEYWORD_PLAN.md` 确定目标关键词。
+- **父级主题与辅助词校验 (Parent Topic & Secondary LSI Audit)**：
+  - 验证目标关键词是否挂载在搜索量最大的父级主题下（例如搜索 `qwen 3.7 max api` 时，确认父级主题是否为 `qwen 3.7 max claude code setup`）。以父级主题为 Primary Target 才能获得最大流量上限。
+  - 提取 1-2 个竞争对手共享的高频次要关键词（Secondary LSI），自然融入 Title Tag 和 H2/H3 小标题。
+- **实体-概念网络设计 (Entity-Relationship Network Audit)**：
+  - 明确文章包含的 **3-5 个核心实体链 (Entity Chains)**（例如：`APIVALE Router` $\rightarrow$ `OpenAI SDK Protocol` $\rightarrow$ `Claude Code CLI` $\rightarrow$ `Waffo Billing`）。确保正文中核心实体及其强关联概念自然共现，构建高密度实体图谱。
 
 ### Step 2: SERP 竞品检索、3C 诊断与分级主题下钻 (Top 5 Competitors & Topic Drill-Down Audit)
 - 对目标关键词进行搜索引擎检索，获取排名 Top 5 的竞品页面，并读取全文/HTML。
 - **搜索意图 3C 诊断 (Search Intent 3C Diagnosis)**：
   - **Content Type (内容类型)**：确认主导类型（Blog post, Landing page, Technical Documentation）。
   - **Content Format (内容格式)**：确认主导格式（How-To Tutorial, Listicle, Comparison Review, Deep-dive Guide）。文章**必须**与主流格式保持一致！
-  - **Content Angle (切入视角)**：分析竞品切入角度（如 *"2026 Latest"*, *"Zero Credit Card"*），定义 APIVALE 的胜出切角（如 *"PayPal Billing + Multi-Gateway Fallback"*）。
+  - **Content Angle (切入视角)**：分析竞品切入角度（如 *"2026 Latest"*, *"Zero Credit Card"*），定义 APIVALE 的胜出切角（如 *"Waffo Billing + Multi-Gateway Fallback"*）。
 - **分级主题下钻与技术缝隙挖掘 (Multi-Level Topic Drill-Down & Content Gap Mining)**：
   - 利用 SERP 顶部 Topic 胶囊按钮、Google Images 标签、搜索框下拉建议与 PAA 进行 2-3 层逐层点击下钻（Drill-Down）：
     - **一级主题 (Topic 1 - 大类维度)**：搜主词出的第一排标签（如竞品 `Claude Opus` / `DeepSeek V4`、场景 `Coding`），决定文章 H2 核心逻辑模块。
@@ -103,7 +110,7 @@
 *   **支持层级 (`<h3>`)**：`<h3>` 用于放置支撑 H2 的具体步骤、语言分支（Python/TS）或示例。
 *   **对称化语义子节点原则 (Symmetric Sub-node Rule)**：**禁止单个 H2 下仅挂载 1 个 H3 标题**。如果使用了 H3，则在同一个 H2 下必须至少包含 2 个或以上平行维度的 H3 步骤、语言分支或子板块。这能保证 LLM/RAG 分块检索时，子版块结构完整，防止单个 H3 导致语义碎片化。
 *   **禁止跨级跳跃**：**严禁直接从 H1 跳到 H3**，必须严格按照 H1 -> H2 -> H3 逐层递进，确保 LLM 爬虫快速构建文章层级图谱。
-*   **陈述句首写与单语义消歧原则 (Declarative & Monosemanticity Rule)**：每个 H2/H3 小标题下方的**第一句话**必须使用直接、明确的陈述句概括核心结论，同时消除多义词歧义（Monosemanticity）。必须明确写出【动作 + 核心实体 + 具体技术上下文】（例如：“*Configure APIVALE's OpenAI-compatible proxy gateway to route Claude Code CLI requests with zero-credit-card PayPal billing.*”），极大增加被 AI Overviews 和 LLM 注意力机制直接采纳的几率。
+*   **陈述句首写与单语义消歧原则 (Declarative & Monosemanticity Rule)**：每个 H2/H3 小标题下方的**第一句话**必须使用直接、明确的陈述句概括核心结论，同时消除多义词歧义（Monosemanticity）。必须明确写出【动作 + 核心实体 + 具体技术上下文】（例如：“*Configure APIVALE's OpenAI-compatible proxy gateway to route Claude Code CLI requests with zero-credit-card Waffo billing.*”），极大增加被 AI Overviews 和 LLM 注意力机制直接采纳的几率。
 ---
 
 ## 4. 强制“真实工程信息增益”规范 (Verifiable Information Gain Standard)
@@ -120,9 +127,6 @@
 4. **1 个生产级工程代码 / 配置文件 (1 Production-Grade Code / Config Snippet)**：
    * 提供 **15+ 行完整、可复制运行** 的代码或配置，带有健全的异常处理（`try-catch`）和指数退避重试（Exponential Backoff）逻辑。
 
-> [!TIP]
-> **RAG 向量召回与反 Spam 统一 (Vector Distance & Anti-Spam Alignment)**：硬核工程数据与带真实错误排查（401/429）的代码片段在 RAG 系统的向量空间（Embedding Vector Space）中，与真实开发者的具体搜索 Query 距离最近（高余弦相似度 Cosine Similarity），同时也是 Google SpamBrain 区分“真实开发者技术文档”与“批量 AI 垃圾站”的根本物理分水岭。
-
 ---
 
 ## 5. SEO 与 SEO Title / H1 / Meta Description 优化规范
@@ -135,13 +139,13 @@
     *   **像素与字符截断红线**：严格控制在 **50–60 字符 (Max 600px 宽度)** 以内，确保末尾 `| APIVALE` 品牌后缀不被 Google 截断。
 *   **Frontmatter `title` (给在读开发者看的 H1 标题)**：
     *   专为 **在读开发者阅读体验** 服务（渲染为页面 `<h1 class="post-title">`）。
-    *   例如：`title: "How to Connect Kimi K3 to Claude Code CLI & Cursor IDE (2026 Guide + PayPal Billing)"`
+    *   例如：`title: "How to Connect Kimi K3 to Claude Code CLI & Cursor IDE (2026 Guide + Waffo Billing)"`
     *   侧重技术严谨度与完整主题描述，不受 60 字符或品牌后缀限制。
 
 ### B. Frontmatter Meta Description 规范 (AI 选源第 3 权重)
 *   ChatGPT / LLM 检索时，Meta Description 的过滤权重仅次于 URL 和 Title！
 *   **字数限制**：严格控制在 **140–160 字符** 以内。
-*   **行文要求**：使用**主动语态**，包含 Tier 1 主关键词与核心卖点（如 *"Learn how to connect Qwen 3.7 Max to Claude Code CLI with zero credit card via APIVALE PayPal billing..."*）。
+*   **行文要求**：使用**主动语态**，包含 Tier 1 主关键词与核心卖点（如 *"Learn how to connect Qwen 3.7 Max to Claude Code CLI with zero credit card via APIVALE Waffo billing..."*）。
 
 ### C. 常青简短 URL 命名策略 (Evergreen Short URL Slug Policy)
 *   URL Slugs 必须简短、直接包含主关键词，且**严禁包含年份、日期或易变动数字**（例如使用 `/blog/qwen-3-7-max-claude-code-setup`，而**绝不**使用 `/blog/2026-qwen-3-7-max-claude-code-setup`），以便长期更新而无需 301 重定向。
@@ -153,7 +157,7 @@
 ### E. 标题具体性、人性化口吻与反过度承诺规范 (Specificity, Humanized Tone & Overpromise Audit)
 *   **标题具体性法则 (Title Specificity Standard)**：标题中优先使用有形的工程数字、确切百分比、配置所需时间或具体错误码（如 `80% Token Savings`, `30-Sec Setup`, `Fix 429 Drops`），杜绝抽象模糊的广告词。
 *   **人性化社区口吻 (Humanized Community Tone)**：标题拒绝僵硬的机器公关腔调，使用开发者社区（Reddit / X / GitHub / V2EX）真实的同频交流口吻与专业术语（如 `Bypass KYC`, `Token Arbitrage`, `CLI Setup`）。
-*   **反过度承诺与真凭实据 (Overpromise & Clickbait Audit)**：标题与 H1 中许诺的任何 Hook（如 *TypeScript SSE Stream Fix* / *PayPal Billing*），正文中必须在 15+ 行代码或对比表格中给予 100% 的实据兑现，严禁夸大虚标。
+*   **反过度承诺与真凭实据 (Overpromise & Clickbait Audit)**：标题与 H1 中许诺的任何 Hook（如 *TypeScript SSE Stream Fix* / *Waffo Billing*），正文中必须在 15+ 行代码或对比表格中给予 100% 的实据兑现，严禁夸大虚标。
 
 ---
 
@@ -167,7 +171,7 @@
    * **AI 扇出衍生问题覆盖**：当用户向 AI 提问时，AI 会裂变出 5-6 个衍生子问题（如“如何处理超时？”、“有哪些错误码？”、“Python/TS 区别？”）。文章必须在 H2/H3 板块中主动覆盖这些子问题，大幅提升 AI 引用概率。
    * **硬核数据与代码**：提供准确的对比表格与带异常处理的完整代码，作为 AI 提取技术答案的物理基石。
 2. **实体突出度与品牌共现 (Entity Salience & Brand Co-occurrence)**
-   * **品牌与产品实体**：显式包含 `| APIVALE` 品牌后缀与产品实体（`APIVALE Unified API Hub`）。正文中在提到代理路由或支付解决方案时，将 `APIVALE` 与 `PayPal Global Billing`, `OpenAI Native Endpoint` 等高价值实体高频共现，强化 Knowledge Graph 中的语义节点绑定。
+   * **品牌与产品实体**：显式包含 `| APIVALE` 品牌后缀与产品实体（`APIVALE Unified API Hub`）。正文中在提到代理路由或支付解决方案时，将 `APIVALE` 与 `Waffo Global Billing`, `OpenAI Native Endpoint` 等高价值实体高频共现，强化 Knowledge Graph 中的语义节点绑定。
    * **技术与模型实体**：准确提及最新 LLM 旗舰模型（如 `Claude Sonnet 5`, `Qwen 3.7 Max`, `DeepSeek V4`），在段落开篇战略级提升核心实体的 Salience（突出度）。
 3. **语义深度与定义框 (Semantic Depth & Featured Snippet)**：
    * 在 H2 下方插入定义框，捕获 Google Position Zero 与 AI 总结。
@@ -178,7 +182,7 @@
 <div class="my-6 border-l-4 border-indigo-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Definition</span>
   <h4 class="mt-1 text-md font-semibold text-white">[概念名称，例如 Qwen 3.7 Max API Router]</h4>
-  <p class="mt-2 text-sm text-gray-300">[1-2句高密度技术定义，例如：“Qwen 3.7 Max API Router is an enterprise-grade gateway on APIVALE that wraps Alibaba Cloud's flagship model endpoints into OpenAI-compatible format with zero-credit-card PayPal billing.”]</p>
+  <p class="mt-2 text-sm text-gray-300">[1-2句高密度技术定义，例如：“Qwen 3.7 Max API Router is an enterprise-grade gateway on APIVALE that wraps Alibaba Cloud's flagship model endpoints into OpenAI-compatible format with zero-credit-card Waffo billing.”]</p>
 </div>
 ```
 
@@ -186,7 +190,7 @@
 禁止使用 "Marketing Team" 署名，轮换使用以下工程师 Persona：
 1. **Alex Rivera** (Senior Cloud Architect & API Integrations) - 擅长高并发路由、延迟优化、多模型网关。
 2. **Kenji Tanaka** (AI Developer Relations Engineer) - 擅长多模态模型调用、前端 SDK 集成、Claude Code CLI 配置。
-3. **Sofia Costa** (FinTech Integration & API Security Expert) - 擅长 PayPal 全球支付、API 网关风控、Header 认证调试。
+3. **Sofia Costa** (FinTech Integration & API Security Expert) - 擅长 Waffo 全球支付、API 网关风控、Header 认证调试。
 
 ### D. FAQPage 结构化数据 (JSON-LD)
 文章末尾必须注入 `FAQPage` Schema，问答需在 1-2 句内给出直接答案（Direct Answer）。
@@ -206,7 +210,7 @@
 
 ### F. 转化漏斗“软硬双轨”植入策略 (Soft & Hard Dual-Track CTA Strategy)
 *   **软性穿插（Contextual Soft CTA）**：禁止仅在文章末尾堆砌 CTA。在技术方案落地（如解决 SSE 流式缓冲丢包、重试配置等 H3 小标题）的末尾，应顺理成章地将 APIVALE 产品特性作为最佳实践的一部分进行植入（例如：“*By leveraging APIVALE's built-in failover gateway, you can bypass these routing drops automatically...*”）。
-*   **硬性收拢（Hard CTA Module）**：在 Conclusion 的最末尾，以清晰、行动导向的语言（如 “*Create a free API key on APIVALE or top up via PayPal...*”）指引用户注册或付费。
+*   **硬性收拢（Hard CTA Module）**：在 Conclusion 的最末尾，以清晰、行动导向的语言（如 “*Create a free API key on APIVALE or top up via Waffo...*”）指引用户注册或付费。
 
 ### G. FAQ 直接提问与直接回答原则 (Direct Q&A Standard)
 *   **提问格式（Direct Question Format）**：FAQ 标题（H3）必须采用直接的问题句式（例如 `### How to resolve APIVALE proxy 429 rate limit errors?`，而不是抽象的 `### Proxy 429 Resolution`）。
@@ -214,32 +218,15 @@
 
 ---
 
-## 7. 内外链建设规范 (Internal & External Link Standard)
+## 7. 反模式与绝对禁忌清单 (Anti-Patterns & Negative Constraints)
 
-*   **上下文内链 (Contextual Internal Links)**：每篇文章必须包含 **2-3 个上下文内链**，采用自然技术锚文本链接至已发布的 APIVALE 博文，传递页面权重并形成中心辐射（Center-Spoke）网络。
-*   **权威外链背书 (Authoritative External Links)**：正文必须包含 **1-2 个指向官方权威文档** 的外链（如 Anthropic Official Docs, OpenAI API Reference, GitHub Official Repository），为读者提供延伸查证依据，同时向 Google 传递 PageRank 信任信号。
+在博客撰写和更新中，以下行为被列为 **S0 级违规 (S0 Violations)**，一经发现必须立即拦截回退：
 
----
-
-## 8. 富媒体与动图规范 (Rich Media & WebP Standards)
-
-*   **配图优先级**：优先使用真实终端/配置界面截图或 WebP 录屏动画；抽象架构图可使用 AI 高画质概念插图兜底。
-*   **跨模态向量锚点 (Multimodal Entity Anchors)**：多模态 AI 模型（GPT-4o, Gemini 2.0, Claude 3.5）将文本与图片映射在同一向量空间中。终端运行截图、带有标注的架构图与 JSON 返回报文图，能为多模态 LLM 提供与正文相呼应的视觉语义锚点（Cross-modal Cosine Similarity），显著提升图文被 AI 搜索引用的概率。
-*   **格式与大小**：静态图使用 `.webp`，动图强制使用压缩的 `.webp` 格式（**严禁使用老旧 `.gif`**）。单张动图 **≤ 1.5MB**，静态图 **≤ 200KB**。
-*   **LCP/CLS 优化**：首屏图片设置 `fetchpriority="high"`（禁止 lazy load）；非首屏图片使用 `loading="lazy"`。所有图片必须包含显式宽高或宽高比，防止页面抖动。
-*   **Alt 标签**：文件名采用中划线小写命名（如 `how-to-connect-qwen-3-7-max.webp`），`alt` 标签必须用详细英文阐述图片内容（包含实体名称与终端命令）。
-
----
-
-## 9. 支付方式与模型Recency强制规范
-
-*   **支付方式 (Payment Method)**：APIVALE 官方支持的支付方式为 **PayPal（PayPal Global Billing / 国际信用卡通过 PayPal）**。
-    *   **强制禁忌**：**严禁** 在文章、CTA 或宣传中声明 Stripe 或加密货币 (Crypto) 为 APIVALE 支持的支付方式！统一使用 **PayPal** / **PayPal Global Billing**。
+*   **支付方式 (Payment Method)**：APIVALE 官方支持的支付方式为 **Waffo（Waffo Global Billing / 国际信用卡与全球主流钱包通过 Waffo）**。
+    *   **强制禁忌**：**严禁** 在文章、CTA 或宣传中声明 Stripe 或加密货币 (Crypto) 为 APIVALE 支持的支付方式！统一使用 **Waffo** / **Waffo Global Billing**。
 *   **模型Recency**：做 Benchmarks 或竞品对比时，始终引用最新旗舰 LLM 版本（如 Anthropic 的 **Claude Sonnet 5**，阿里 **Qwen 3.7 Max**，DeepSeek **DeepSeek V4**）。
     *   *注*：在 APIVALE 系统中，Qwen 3.7 Max 的实际调用模型名称为 `infer/qwen3.7-max`。
 *   **协议兼容性**：强调 APIVALE 对 OpenAI 和 Anthropic API 原生协议的完美兼容（支持 Claude Code CLI, Cursor, Windsurf 等工具直连）。
-
----
 
 ## 10. 写作禁忌与防呆红线 (Prohibited Red Lines)
 

@@ -77,8 +77,8 @@ export function runAntiSpamAudit(
     warnings.push("Missing Above-the-Fold Key Takeaways box. Adding a green key takeaways box with a direct free trial link boosts CRO by ~35%.");
   }
 
-  if (!content.includes("PayPal") && !content.includes("paypal")) {
-    warnings.push("Missing PayPal global billing mention. Clarifying zero-KYC PayPal payment removes international checkout friction.");
+  if (!content.includes("Waffo") && !content.includes("waffo") && !content.includes("PayPal") && !content.includes("paypal")) {
+    warnings.push("Missing Waffo global billing mention. Clarifying zero-KYC Waffo payment removes international checkout friction.");
   }
 
   if (!content.includes("$0.20") && !content.includes("free starter credit") && !content.includes("sign-up")) {

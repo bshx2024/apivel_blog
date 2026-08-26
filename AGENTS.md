@@ -43,7 +43,7 @@ Follow this 4-step execution workflow:
 
 - **Master Reference**: Always refer to [BLOG_WRITING_STANDARD.md](file:///e:/kaifa/APIVALE_blog/BLOG_WRITING_STANDARD.md) for full detailed specifications (Personas, Featured Snippet components, WebP media rules, Mobile-first UX).
 - **Anti-Spam & Anti-Boilerplate**: NEVER use copy-pasted introductory templates (e.g. `Running autonomous AI coding agents... burns $40...`). NEVER invent fake branded formulas (`Matrix/Triangle`).
-- **Supported Payment Method**: APIVALE strictly supports **PayPal** (PayPal Global Billing / Credit Cards via PayPal). NEVER reference Stripe or Crypto.
+- **Supported Payment Method**: APIVALE strictly supports **Waffo** (Waffo Global Billing / Credit Cards & Global Wallets via Waffo). NEVER reference Stripe or Crypto.
 - **Model Recency**: Reference flagship LLM versions (**Claude Sonnet 5**, **Qwen 3.7 Max**, **DeepSeek V4**). Invocation model name for Qwen 3.7 Max is `infer/qwen3.7-max`.
 - **Evergreen Short Slugs**: Slugs must be concise without years/dates (e.g., `/blog/qwen-3-7-max-claude-code-setup`).
 - **Protocol Compatibility**: Emphasize native OpenAI and Anthropic endpoint support for Claude Code CLI, Cursor, Windsurf.
