@@ -357,8 +357,8 @@ Experience 320B MoE reasoning with 18B active throughput, 1M context windows, an
   <p class="text-gray-300 max-w-xl mx-auto mb-6 text-sm">
     Help us dimension dedicated GPU clusters for GLM-5.3 Flash (Ox Alpha). Register to vote for priority allocation, test with $0.20 free starter credits, and pay via Waffo global billing.
   </p>
-  <a href="https://apivale.com/sign-up?redirect=/blog/glm-5-3-flash-ox-alpha-api-pricing-guide/" class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-xl transition-all shadow-lg hover:shadow-indigo-500/25">
-    🚀 Request Early Access & Claim Free Credits
+  <a href="https://apivale.com/sign-up?redirect=/blog/glm-5-3-flash-ox-alpha-api-pricing-guide/" style="display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); color: #ffffff !important; text-decoration: none !important; padding: 12px 28px; border-radius: 10px; font-weight: 700; font-size: 14px; box-shadow: 0 4px 16px rgba(79, 70, 229, 0.45); transition: all 0.2s ease;">
+    🚀 Request Early Access & Claim $0.20 Free Quota →
   </a>
 </div>
 
