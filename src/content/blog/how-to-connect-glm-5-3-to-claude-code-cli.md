@@ -23,7 +23,7 @@ lang: "en"
 <div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
   <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Related Model & IDE Guides</span>
   <p class="mt-1 text-sm text-gray-300">
-    Looking to test the stealth 1M-context model <strong>Ox Alpha (0xAlpha)</strong>? Read our <a href="/blog/ox-alpha-claude-code-cursor-setup" class="text-emerald-400 hover:underline font-semibold">Ox Alpha Claude Code & Cursor Setup Guide</a>. For Cursor IDE configuration with GLM-5.3, check our <a href="/blog/connect-glm-5-3-to-claude-code-cli-cursor" class="text-cyan-400 hover:underline font-semibold">How to Connect GLM-5.3 to Cursor IDE Guide</a>.
+    Looking for the high-throughput 320B MoE model? Read our <a href="/blog/glm-5-3-flash-ox-alpha-api-pricing-guide" class="text-cyan-400 hover:underline font-semibold">GLM-5.3 Flash (Ox Alpha) Benchmarks & Pricing Guide</a> and the <a href="/blog/ox-alpha-claude-code-cursor-setup" class="text-emerald-400 hover:underline font-semibold">Ox Alpha Setup Guide</a>. For Cursor IDE configuration, check our <a href="/blog/connect-glm-5-3-to-claude-code-cli-cursor" class="text-cyan-400 hover:underline font-semibold">GLM-5.3 Cursor IDE Guide</a>.
   </p>
 </div>
 

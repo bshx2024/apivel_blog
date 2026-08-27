@@ -45,7 +45,7 @@ graph LR
   <p class="mt-2 text-sm text-gray-300">Ox Alpha Protocol Bridge is an enterprise proxy layer on APIVALE that maps the 1M-context <code>stealth/ox-alpha</code> model and its GLM-5.3 underlying architecture into native Anthropic <code>/v1/messages</code> and OpenAI <code>/v1/chat/completions</code> formats, providing high-concurrency rate limits, token savings, and PayPal settlement.</p>
 </div>
 
-Ox Alpha is an anonymous frontier AI reasoning model engineered specifically for long-horizon agentic software development, repository-wide refactoring, and multimodal debugging. Technical fingerprinting across tokenizer boundaries and error schemas indicates that Ox Alpha shares its underlying core with Zhipu AI's **GLM-5.3** architecture (see our companion [GLM-5.3 Claude Code CLI setup guide](/blog/how-to-connect-glm-5-3-to-claude-code-cli/)).
+Ox Alpha is an anonymous frontier AI reasoning model engineered specifically for long-horizon agentic software development, repository-wide refactoring, and multimodal debugging. Technical disclosures and infrastructure benchmarks confirm that Ox Alpha is Zhipu AI's unannounced **GLM-5.3-Flash (320B MoE)** architecture (see our full <a href="/blog/glm-5-3-flash-ox-alpha-api-pricing-guide" class="text-cyan-400 hover:underline font-semibold">GLM-5.3 Flash (Ox Alpha) Benchmarks & Pricing Guide</a> and our companion <a href="/blog/how-to-connect-glm-5-3-to-claude-code-cli" class="text-cyan-400 hover:underline font-semibold">GLM-5.3 Claude Code CLI setup guide</a>).
 
 ### Key Technical Specifications
 * **Context Window**: 1,048,576 tokens (~750,000 words of source code in a single prompt).

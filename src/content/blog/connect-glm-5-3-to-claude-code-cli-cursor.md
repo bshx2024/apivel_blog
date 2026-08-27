@@ -21,9 +21,9 @@ lang: "en"
 </div>
 
 <div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
-  <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Looking for Claude Code CLI Integration?</span>
+  <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Related GLM & Agent Setup Guides</span>
   <p class="mt-1 text-sm text-gray-300">
-    If you want to configure GLM-5.3 inside the command line with Anthropic protocol proxying and terminal agent execution, read our dedicated <a href="/blog/how-to-connect-glm-5-3-to-claude-code-cli" class="text-cyan-400 hover:underline font-semibold">How to Connect GLM-5.3 to Claude Code CLI Guide</a>. For developers evaluating alternative open-weights models in Cursor, see our <a href="/blog/qwen-3-8-cursor-setup" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Cursor Setup & Rules Guide</a>.
+    Looking for higher token throughput and lower costs? Read our <a href="/blog/glm-5-3-flash-ox-alpha-api-pricing-guide" class="text-cyan-400 hover:underline font-semibold">GLM-5.3 Flash (Ox Alpha) Benchmarks & Pricing Guide</a> and our <a href="/blog/how-to-connect-glm-5-3-to-claude-code-cli" class="text-cyan-400 hover:underline font-semibold">GLM-5.3 Claude Code CLI Guide</a>. For alternative open models, see our <a href="/blog/qwen-3-8-cursor-setup" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Cursor Guide</a>.
   </p>
 </div>
 
