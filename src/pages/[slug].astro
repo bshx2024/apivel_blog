@@ -40,11 +40,29 @@ const isPriceOrBenchmark = /price|cost|saving|benchmark|comparison|versus|vs|dee
 const isCliOrSetup = /cli|cursor|windsurf|opencode|connect|setup|config|mcp|guide|access|bypass/i.test(slugLower + ' ' + titleLower);
 
 let initialModel = 'kimi-k3';
-if (slugLower.includes('qwen')) initialModel = 'qwen-37';
-else if (slugLower.includes('deepseek')) initialModel = 'deepseek-v4';
-else if (slugLower.includes('opus')) initialModel = 'claude-opus-5';
-else if (slugLower.includes('minimax')) initialModel = 'minimax-h3';
-else if (slugLower.includes('sonnet')) initialModel = 'claude-sonnet-5';
+if (slugLower.includes('glm-5-3-flash') || slugLower.includes('glm-5.3-flash') || slugLower.includes('ox-alpha') || slugLower.includes('0xalpha')) {
+	initialModel = 'glm-5.3-flash';
+} else if (slugLower.includes('glm-5-3') || slugLower.includes('glm-5.3') || slugLower.includes('glm') || slugLower.includes('zhipu')) {
+	initialModel = 'glm-5.3';
+} else if (slugLower.includes('qwen-3-8-flash') || slugLower.includes('qwen-3.8-flash')) {
+	initialModel = 'qwen-38-flash';
+} else if (slugLower.includes('qwen-3-8') || slugLower.includes('qwen-3.8') || slugLower.includes('qwen')) {
+	initialModel = 'qwen-38';
+} else if (slugLower.includes('deepseek')) {
+	initialModel = 'deepseek-v4';
+} else if (slugLower.includes('gemini')) {
+	initialModel = 'gemini-37';
+} else if (slugLower.includes('grok')) {
+	initialModel = 'grok-45';
+} else if (slugLower.includes('needle')) {
+	initialModel = 'needle-2';
+} else if (slugLower.includes('opus')) {
+	initialModel = 'claude-opus-5';
+} else if (slugLower.includes('minimax') || slugLower.includes('hailuo')) {
+	initialModel = 'minimax-h3';
+} else if (slugLower.includes('sonnet') || slugLower.includes('claude') || slugLower.includes('fable')) {
+	initialModel = 'claude-sonnet-5';
+}
 
 let defaultClient = 'claude-code';
 if (slugLower.includes('cursor')) defaultClient = 'cursor';

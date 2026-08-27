@@ -23,12 +23,18 @@ const { initialModel = 'kimi-k3' } = Astro.props;
       <label class="calc-label" for="calcModelSelect">Select LLM Model:</label>
       <div class="calc-select-wrapper">
         <select id="calcModelSelect" class="calc-select">
-          <option value="kimi-k3" selected={initialModel === 'kimi-k3'}>Moonshot Kimi K3 2.8T ($3.00/1M input)</option>
-          <option value="qwen-37" selected={initialModel === 'qwen-37'}>Alibaba Qwen 3.7 Max ($1.20/1M input)</option>
-          <option value="deepseek-v4" selected={initialModel === 'deepseek-v4'}>DeepSeek V4 Flash ($0.27/1M input)</option>
-          <option value="claude-sonnet-5" selected={initialModel === 'claude-sonnet-5'}>Claude Sonnet 5 ($3.00/1M input)</option>
-          <option value="claude-opus-5" selected={initialModel === 'claude-opus-5'}>Claude Opus 5 ($15.00/1M input)</option>
-          <option value="minimax-h3" selected={initialModel === 'minimax-h3'}>MiniMax H3 ($0.13/sec 2K Video)</option>
+          <option value="glm-5.3-flash" selected={initialModel === 'glm-5.3-flash'}>GLM-5.3 Flash (Ox Alpha) ($0.08/1M In · Save 60%)</option>
+          <option value="glm-5.3" selected={initialModel === 'glm-5.3'}>Zhipu GLM-5.3 743B ($0.50/1M In · Save 64%)</option>
+          <option value="qwen-38-flash" selected={initialModel === 'qwen-38-flash'}>Qwen 3.8 Flash Next ($0.05/1M In · Save 75%)</option>
+          <option value="qwen-38" selected={initialModel === 'qwen-38' || initialModel === 'qwen-37'}>Alibaba Qwen 3.8 Max ($0.48/1M In · Save 60%)</option>
+          <option value="deepseek-v4" selected={initialModel === 'deepseek-v4'}>DeepSeek V4 Flash ($0.14/1M In · Save 48%)</option>
+          <option value="gemini-37" selected={initialModel === 'gemini-37'}>Gemini 3.7 Flash ($0.08/1M In · Save 47%)</option>
+          <option value="grok-45" selected={initialModel === 'grok-45'}>xAI Grok 4.5 ($0.90/1M In · Save 55%)</option>
+          <option value="claude-sonnet-5" selected={initialModel === 'claude-sonnet-5'}>Claude Sonnet 5 ($1.50/1M In · Save 50%)</option>
+          <option value="claude-opus-5" selected={initialModel === 'claude-opus-5'}>Claude Opus 5 ($6.90/1M In · Save 54%)</option>
+          <option value="kimi-k3" selected={initialModel === 'kimi-k3'}>Moonshot Kimi K3 2.8T ($1.20/1M In · Save 60%)</option>
+          <option value="needle-2" selected={initialModel === 'needle-2'}>Needle 2 AI Tool Calling ($0.03/1M In · Save 70%)</option>
+          <option value="minimax-h3" selected={initialModel === 'minimax-h3'}>MiniMax H3 ($0.06/sec 2K Video · Save 54%)</option>
         </select>
       </div>
     </div>
@@ -68,7 +74,7 @@ const { initialModel = 'kimi-k3' } = Astro.props;
       <div class="result-box apivale-box">
         <span class="box-label">APIVALE Proxy Rate</span>
         <div class="box-price highlight-price" id="apivalePriceDisplay">$12.00 <span class="per-mo">/ mo</span></div>
-        <span class="box-note green-note" id="savingsBadge">⚡ Save 60% with PayPal</span>
+        <span class="box-note green-note" id="savingsBadge">⚡ Save 60% with Waffo</span>
       </div>
     </div>
 
@@ -76,7 +82,7 @@ const { initialModel = 'kimi-k3' } = Astro.props;
     <div class="calc-footer">
       <div class="footer-info">
         <span class="info-icon">💳</span>
-        <span>Supports PayPal Global Billing, Zero KYC & Instant API Key Setup</span>
+        <span>Supports Waffo Global Billing, Zero KYC & Instant API Key Setup</span>
       </div>
       <div class="footer-actions">
         <button type="button" class="calc-copy-btn" id="calcCopyCurlBtn">
@@ -109,18 +115,25 @@ const { initialModel = 'kimi-k3' } = Astro.props;
 
     // Pricing per 1M tokens (Official vs APIVALE)
     const modelRates = {
-      'kimi-k3': { official: 3.00, apivale: 1.20, name: 'Kimi K3 2.8T' },
-      'qwen-37': { official: 1.20, apivale: 0.48, name: 'Qwen 3.7 Max' },
-      'deepseek-v4': { official: 0.27, apivale: 0.14, name: 'DeepSeek V4 Flash' },
-      'claude-sonnet-5': { official: 3.00, apivale: 1.50, name: 'Claude Sonnet 5' },
-      'claude-opus-5': { official: 15.00, apivale: 6.90, name: 'Claude Opus 5' },
-      'minimax-h3': { official: 0.13, apivale: 0.06, isVideo: true, name: 'MiniMax H3 Video' }
+      'glm-5.3-flash': { official: 0.20, apivale: 0.08, name: 'GLM-5.3 Flash (Ox Alpha)', modelKey: 'infer/glm-5.3-flash' },
+      'glm-5.3': { official: 1.40, apivale: 0.50, name: 'Zhipu GLM-5.3 743B', modelKey: 'infer/glm-5.3' },
+      'qwen-38-flash': { official: 0.20, apivale: 0.05, name: 'Qwen 3.8 Flash Next', modelKey: 'infer/qwen-3.8-flash-next' },
+      'qwen-38': { official: 1.20, apivale: 0.48, name: 'Qwen 3.8 Max', modelKey: 'infer/qwen3.7-max' },
+      'qwen-37': { official: 1.20, apivale: 0.48, name: 'Qwen 3.7 Max', modelKey: 'infer/qwen3.7-max' },
+      'deepseek-v4': { official: 0.27, apivale: 0.14, name: 'DeepSeek V4 Flash', modelKey: 'deepseek-v4-flash' },
+      'gemini-37': { official: 0.15, apivale: 0.08, name: 'Gemini 3.7 Flash', modelKey: 'infer/gemini-3.7-flash' },
+      'grok-45': { official: 2.00, apivale: 0.90, name: 'xAI Grok 4.5', modelKey: 'infer/grok-4.5' },
+      'claude-sonnet-5': { official: 3.00, apivale: 1.50, name: 'Claude Sonnet 5', modelKey: 'claude-3-5-sonnet-20241022' },
+      'claude-opus-5': { official: 15.00, apivale: 6.90, name: 'Claude Opus 5', modelKey: 'claude-3-opus-20240229' },
+      'kimi-k3': { official: 3.00, apivale: 1.20, name: 'Kimi K3 2.8T', modelKey: 'kimi-k3' },
+      'needle-2': { official: 0.10, apivale: 0.03, name: 'Needle 2 AI', modelKey: 'infer/needle-2' },
+      'minimax-h3': { official: 0.13, apivale: 0.06, isVideo: true, name: 'MiniMax H3 Video', modelKey: 'minimax-h3' }
     };
 
     function updateCalculation() {
       const selectedKey = modelSelect.value;
       const millions = parseFloat(tokenSlider.value) || 10;
-      const rateInfo = modelRates[selectedKey] || modelRates['kimi-k3'];
+      const rateInfo = modelRates[selectedKey] || modelRates['glm-5.3-flash'] || modelRates['kimi-k3'];
 
       if (tokenValueDisplay) {
         tokenValueDisplay.innerText = rateInfo.isVideo ? `${millions * 100} Secs 2K Video` : `${millions}M Tokens`;
@@ -137,7 +150,7 @@ const { initialModel = 'kimi-k3' } = Astro.props;
         apivalePriceDisplay.innerHTML = `$${apivaleCost} <span class="per-mo">/ mo</span>`;
       }
       if (savingsBadge) {
-        savingsBadge.innerText = `⚡ Save ${savingsPct}% via PayPal`;
+        savingsBadge.innerText = `⚡ Save ${savingsPct}% via Waffo`;
       }
     }
 

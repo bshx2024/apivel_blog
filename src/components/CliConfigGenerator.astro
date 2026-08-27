@@ -31,10 +31,16 @@ const { defaultClient = 'claude-code', defaultModel = 'qwen-37' } = Astro.props;
     <div class="config-field">
       <label class="field-label" for="cliModelSelect">Target AI Model:</label>
       <select id="cliModelSelect" class="config-select">
-        <option value="infer/qwen3.7-max" selected={defaultModel === 'qwen-37'}>Alibaba Qwen 3.7 Max (infer/qwen3.7-max)</option>
-        <option value="kimi-k3" selected={defaultModel === 'kimi-k3'}>Moonshot Kimi K3 2.8T MoE (kimi-k3)</option>
+        <option value="infer/glm-5.3-flash" selected={defaultModel === 'glm-5.3-flash'}>GLM-5.3 Flash (Ox Alpha) (infer/glm-5.3-flash)</option>
+        <option value="infer/glm-5.3" selected={defaultModel === 'glm-5.3'}>Zhipu GLM-5.3 743B (infer/glm-5.3)</option>
+        <option value="infer/qwen-3.8-flash-next" selected={defaultModel === 'qwen-38-flash'}>Qwen 3.8 Flash Next (infer/qwen-3.8-flash-next)</option>
+        <option value="infer/qwen3.7-max" selected={defaultModel === 'qwen-38' || defaultModel === 'qwen-37'}>Alibaba Qwen 3.8 / 3.7 Max (infer/qwen3.7-max)</option>
         <option value="deepseek-v4-flash" selected={defaultModel === 'deepseek-v4'}>DeepSeek V4 Flash (deepseek-v4-flash)</option>
-        <option value="claude-sonnet-5" selected={defaultModel === 'claude-sonnet-5'}>Claude Sonnet 5 (claude-3-5-sonnet-20241022)</option>
+        <option value="infer/gemini-3.7-flash" selected={defaultModel === 'gemini-37'}>Gemini 3.7 Flash (infer/gemini-3.7-flash)</option>
+        <option value="infer/grok-4.5" selected={defaultModel === 'grok-45'}>xAI Grok 4.5 (infer/grok-4.5)</option>
+        <option value="claude-3-5-sonnet-20241022" selected={defaultModel === 'claude-sonnet-5'}>Claude Sonnet 5 (claude-3-5-sonnet-20241022)</option>
+        <option value="kimi-k3" selected={defaultModel === 'kimi-k3'}>Moonshot Kimi K3 2.8T MoE (kimi-k3)</option>
+        <option value="infer/needle-2" selected={defaultModel === 'needle-2'}>Needle 2 AI Tool Calling (infer/needle-2)</option>
       </select>
     </div>
 
@@ -51,7 +57,7 @@ export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
 export ANTHROPIC_API_KEY="sk-apivale-your-api-key"
 
 # Launch Claude Code CLI with target model
-claude --model infer/qwen3.7-max</code></pre>
+claude --model infer/glm-5.3-flash</code></pre>
     </div>
 
     <!-- Footer Note & CTA -->
