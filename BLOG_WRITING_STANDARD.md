@@ -80,10 +80,24 @@
 - 落地 **E-E-A-T 权威锚点**（如 *"基于 APIVALE 生产网关 10,000+ 次 API Agent 调用的实测数据..."*）。
 - 落地 **独特性“4 个 1”规范**（详见第 4 节）。
 
-### Step 4: 撰写、AI 同行自审与合规验证 (Drafting & Review Loop)
-- 在 `src/content/blog/<article-slug>.md` 撰写 Markdown 文件。
-- **AI 同行自审机制 (AI Peer Review Loop)**：以高级 DevOps / 架构师视角自审代码可运行性、逻辑严密性与语言流畅度，杜绝机械化 AI 腔调。
-- 启动 dev server 验证渲染表现 (`http://localhost:4321/blog/...`)，确认无误后提交 git 仓库。
+### Step 4: 撰写、前置体检与原子双向发布门禁 (Drafting, Pre-Flight Audit & Atomic Bidirectional Publishing)
+
+在执行 Step 4 时，AI 智能体与技术编辑**必须在单次任务中原子化完成以下 5 大门禁闭环**，严禁留存半成品：
+
+1. **Gate 1 (撰写与 CRO 交互工具注入)**：
+   - 在 `src/content/blog/<article-slug>.md` 撰写 Markdown 文件；
+   - 严格落实“4 项真实工程增益” + 注入**响应式 CRO 交互微工具（Vanilla JS 成本计算器或规则生成器）** + **FAQ JSON-LD Schema** + 严格 AST 对称标题。
+2. **Gate 2 (前置自动化 SEO 健康度体检)**：
+   - 自动运行 `audit_article_seo_health` 工具；
+   - 强制确保：0 Blockers、0 Warnings、MetaTitle 50–60 字符、正文 1500–2500 词、全面落实 Waffo 支付标准。
+3. **Gate 3 (原子双向内链织网 - 必须同步修改老文章)**：
+   - 自动在站内检索同主题/相关主题的 2~3 篇核心高权重老文章；
+   - **在同一次修改中直接打开并编辑这些老文章**，将新文章作为上下文精准锚文本/Mermaid 节点织入老文章正文，实现双向权重闭环，坚决杜绝孤岛页面。
+4. **Gate 4 (动作日志强制归档)**：
+   - 在 `SEO_ACTION_LOG.md` 顶部按格式自动归档当日动作、影响 URL、目标关键词与 14 天因果假设。
+5. **Gate 5 (原子提交、推送与线上 200 状态验证)**：
+   - 将新博文、老博文修改、动作日志在同一次 Git 事务中提交并推送至 `origin main`；
+   - 验证 CI/CD 编译与 CDN 线上生成状态，确保线上 URL 返回 200 且正常渲染。
 
 ---
 
@@ -99,9 +113,10 @@
 ├── 5. Defined Snippet Box (定义框：捕捉 Position Zero 精选摘要)
 ├── 6. Comparison Table (前 20% 处：价格、限频、支持模型的硬核对比)
 ├── 7. Technical Modules (2-3个 H2/H3 核心板块，回答 AI Query Fan-Out 衍生子问题)
-├── 8. Developer FAQ (针对 AI GEO 抓取的 3-4 个精炼技术问答)
-├── 9. Schema JSON-LD (FAQPage 结构化数据)
-└── 10. CTA Module (开发者导向：PayPal 快捷充值、API Key 免费创建)
+├── 8. Interactive CRO Micro-Tool (交互式计算器/配置生成器组件)
+├── 9. Developer FAQ (针对 AI GEO 抓取的 3-4 个精炼技术问答)
+├── 10. Schema JSON-LD (FAQPage 结构化数据)
+└── 11. CTA Module (开发者导向：Waffo 快捷充值、API Key 免费创建)
 ```
 
 ### H 标签语义树排版红线 (Heading AST Hierarchy)

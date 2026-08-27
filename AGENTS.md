@@ -30,12 +30,25 @@ Follow this 4-step execution workflow:
 - Ensure strict compliance with the **"4 Real Engineering Gains" Checklist** (Verifiable Protocol Architecture Proof, Real Benchmark/Math Data, Edge-Case & Error Troubleshooting, 15+ line Production Code/Config).
 - Formulate Title Tag using **ABC Title Formula** (`[Adjective/Primary Keyword] + [Benefit / Secondary LSI] | [APIVALE Hook]`) within **50–60 characters (max 600px)** and append `| APIVALE`.
 
-### Step 4: Drafting, Compliance & Action Logging
-- Write article in `src/content/blog/<article-slug>.md`.
-- Run **AI Peer Review Loop** as a senior DevOps reviewer to check code validity, logic, and phrasing.
-- Verify full compliance with [BLOG_WRITING_STANDARD.md](file:///e:/kaifa/APIVALE_blog/BLOG_WRITING_STANDARD.md) and the **Anti-Spam Pre-Publish Checklist**.
-- Log the optimization entry in [SEO_ACTION_LOG.md](file:///e:/kaifa/APIVALE_blog/SEO_ACTION_LOG.md).
-- Compile and test on dev server (`http://localhost:4321/blog/...`), then commit and push.
+### Step 4: Drafting, Pre-Flight Audit & Atomic Bidirectional Publishing
+
+When executing Step 4, Reed and coding assistants **MUST execute the following 5-Gate Atomic Protocol** in a single complete transaction (never leave partial work):
+
+1. **Gate 1 (Drafting & CRO Tool)**:
+   - Write article in `src/content/blog/<article-slug>.md` with strict AST symmetry (1 H1, symmetrical H2 $\rightarrow$ H3, no H4 jumping).
+   - Inject the **4 Real Engineering Gains** + embedded **Responsive Interactive Micro-Tool Widget** (vanilla JS calculator or config generator) + **FAQ JSON-LD Schema**.
+2. **Gate 2 (Automated Pre-Flight SEO Health Audit)**:
+   - Run `audit_article_seo_health` against the new slug.
+   - Enforce: 0 blockers, 0 warnings, MetaTitle in 50–60 chars, Waffo Global Billing strictly enforced.
+3. **Gate 3 (Atomic Bidirectional Mesh Weaving - MUST MODIFY OLD POSTS)**:
+   - Search the repository for 2–3 existing high-authority pillar articles in the same or adjacent topic cluster.
+   - **Immediately open and edit those existing articles** to inject contextual inbound anchor links and Mermaid failover nodes pointing to the new article.
+   - *Rule*: Never publish a new post as an orphan. Outbound and inbound links MUST be committed together.
+4. **Gate 4 (Action Log Auto-Archive)**:
+   - Append the standardized entry to [SEO_ACTION_LOG.md](file:///e:/kaifa/APIVALE_blog/SEO_ACTION_LOG.md) documenting target URL, keywords, exact technical changes, and 14-day causality hypothesis.
+5. **Gate 5 (Atomic Commit, Push & Live Status Verification)**:
+   - Stage all modified files (new article + updated old articles + action log) in a single Git commit and push to `origin main`.
+   - Verify deployment build completion and confirm live 200 response on `https://apivale.com/blog/<slug>/`.
 
 ---
 
