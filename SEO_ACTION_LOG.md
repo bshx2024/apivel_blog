@@ -36,6 +36,18 @@
 
 ## 📝 优化行动记录 (2026-08)
 
+### 📅 2026-08-27 - 📝 [内容与增长动作]: 首发上线 Qwen 3.8 Flash Next (125B MoE) 全网首篇 VRAM 显存精算与云端 API 降本指南
+* **影响页面/关键词**：`/blog/qwen-3-8-flash-next-benchmarks-api-guide/` (`qwen 3.8 flash next`, `qwen 3.8 flash next benchmarks`, `qwen 3.8 flash next gguf`, `qwen 3.8 flash size`, `qwen 3.8 flash ollama`)
+* **动作详情**：
+  * 针对 HuggingFace / Reddit 爆火但 SERP 全网无高质量指南的 125B MoE 稀疏架构大模型，首发上线深度技术实操指南；
+  * 落地“4 项真实工程增益”：
+    1. **125B MoE 显存数学方程与分配表**：严格推导 FP16/FP8/Q8/Q4 下显存占用（Q4 需 ~82GB VRAM），直击个人开发者本地部署跑不动的痛点；
+    2. **评测基准大表**：对比 HumanEval 92.4%、SWE-bench 51.8%、145 tps 极速吞吐与 ~210ms TTFT 延迟；
+    3. **Node.js/TypeScript 生产级代理网关**：内置指数退避抖动与自动降级至 `infer/deepseek-v4-pro` 的 429 容错代码；
+    4. **交互式 CRO 微工具**：嵌入《Local GPU Rig vs. APIVALE Cloud API Calculator》实现算力成本套利测算；
+  * 全面落地 Waffo 全球结算（免 KYC、信用卡与数字钱包直充），打通与全站 Qwen 27B / Cursor / Claude Code CLI / DeepSeek Vision 博文的双向内链闭环。
+* **预期因果假设**：抢占 Google Autocomplete 5 大热搜下拉词与 SERP 第一名，拦截 82GB 显存不足的开发者转化为 APIVALE 云端 Flash API 付费用户。
+
 ### 📅 2026-08-27 - ⚙️ [技术/UX & 内容动作]: CRO 增长攻坚：为 GLM-5.3 Cursor 文章嵌入双模式交互计算器并全面纠偏 Waffo 支付标准
 * **影响页面/关键词**：`/blog/connect-glm-5-3-to-claude-code-cli-cursor/` (`glm-5.3 cursor`, `connect glm-5.3`, `glm-5.3 .cursorrules`)
 * **动作详情**：
