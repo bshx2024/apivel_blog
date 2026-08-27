@@ -37,8 +37,9 @@ The differences in onboarding complexity and payment methods between the direct 
 | **Phone Number** | Mainland Chinese (+86) only | Global email (Google, GitHub, standard mail) |
 | **Identity Verification** | Chinese National ID or Business License | None required (No KYC) |
 | **GLM-5.2 Pricing (1M)** | $1.40 Input / $4.40 Output | **$0.50 Input / $2.50 Output (Save up to 64%)** |
+| **GLM-5.3 Flash (Ox Alpha)**| Mandatory KYC & +86 Phone | **$0.08 Input / $0.25 Output (<a href="/blog/glm-5-3-flash-ox-alpha-api-pricing-guide" class="text-cyan-400 hover:underline font-semibold">See Flash Guide</a>)** |
 | **API Format** | Custom SDK or dynamic JWT credentials | OpenAI-compatible Bearer API Key |
-| **Payment & Top-Ups** | Alipay / WeChat Pay / Corporate bank transfer | **PayPal Global Billing** / Credit Cards via PayPal |
+| **Payment & Top-Ups** | Alipay / WeChat Pay / Corporate bank transfer | **Waffo Global Billing** / Credit Cards via Waffo |
 | **Global Access Speed** | Highly latent outside China | Edge CDN routed (low latency) |
 
 ---
