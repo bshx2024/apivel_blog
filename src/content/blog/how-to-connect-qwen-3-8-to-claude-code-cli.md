@@ -32,9 +32,9 @@ lang: en
 </div>
 
 <div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
-  <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Looking for Cursor IDE Integration?</span>
+  <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Related Qwen Setup Guides</span>
   <p class="mt-1 text-sm text-gray-300">
-    If you want to configure Qwen 3.8 inside Cursor IDE with custom <code>.cursorrules</code>, OpenAI Base URL overrides, and Composer workflows, read our dedicated <a href="/blog/qwen-3-8-cursor-setup" class="text-cyan-400 hover:underline font-semibold">How to Connect Qwen 3.8 to Cursor IDE Guide</a>.
+    Configuring different workflows? Read our guides on <a href="/blog/qwen-3-8-cursor-setup" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 in Cursor IDE</a> and the newly released <a href="/blog/qwen-3-8-flash-next-benchmarks-api-guide" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Flash Next (125B MoE) Benchmarks & Cloud API Guide</a>.
   </p>
 </div>
 
@@ -66,8 +66,8 @@ Alibaba's **Qwen 3.8-Max** features a 2.4-trillion parameter Mixture-of-Experts 
 graph LR
     A["Claude Code CLI"] -->|Anthropic /v1/messages| B["APIVALE Global Gateway"]
     B -->|Protocol Translation| C["infer/qwen3.8-max (2.4T MoE)"]
-    B -->|Failover Route| D["infer/qwen3.7-max"]
-    B -->|Billing Engine| E["PayPal Global Billing"]
+    B -->|Failover Route| D["infer/qwen-3.8-flash-next"]
+    B -->|Billing Engine| E["Waffo Global Billing (Zero KYC)"]
 ```
 
 ---

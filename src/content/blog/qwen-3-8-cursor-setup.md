@@ -44,16 +44,16 @@ lang: "en"
 
 For software engineers utilizing **Cursor IDE** and **Cursor Composer** for full-stack refactoring, the default 500 fast request monthly allocation on Cursor Pro burns out within the first week of intensive sprint cycles. Once exhausted, additional fast requests incur $0.10 per call or revert to slow queue throttles. Concurrently, proprietary frontier models like Claude Sonnet 5 command $3.00/$15.00 per million tokens, causing multi-turn agent sessions to rack up substantial cloud bills.
 
-Deploying Alibaba Cloud's flagship 2.4-trillion parameter **Qwen 3.8-Max** locally requires an enterprise cluster of 18x NVIDIA H200 GPUs (over 2.4TB VRAM). Attempting to bridge local Ollama instances into Cursor fails due to Cursor's cloud routing architecture (`api2.cursor.sh`), which cannot resolve `localhost:11434` without complex tunnel daemons.
+Deploying Alibaba Cloud's flagship 2.4-trillion parameter **Qwen 3.8-Max** locally requires an enterprise cluster of 18x NVIDIA H200 GPUs (over 2.4TB VRAM). (For developers seeking lightning-fast 140+ tps token generation and sparse MoE scaling, explore our <a href="/blog/qwen-3-8-flash-next-benchmarks-api-guide" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Flash Next Benchmarks & API Guide</a>). Attempting to bridge local Ollama instances into Cursor fails due to Cursor's cloud routing architecture (`api2.cursor.sh`), which cannot resolve `localhost:11434` without complex tunnel daemons.
 
-By configuring Cursor's native OpenAI Base URL override to point to APIVALE (`https://api.apivale.com/v1`), developers unlock unthrottled Qwen 3.8-Max inference with zero hardware overhead, 80% token cost reduction, and seamless **PayPal global billing**.
+By configuring Cursor's native OpenAI Base URL override to point to APIVALE (`https://api.apivale.com/v1`), developers unlock unthrottled Qwen 3.8-Max inference with zero hardware overhead, 80% token cost reduction, and seamless **Waffo global billing**.
 
 ```mermaid
 graph LR
     A["Cursor IDE (Chat / Composer)"] -->|OpenAI /v1/chat/completions| B["APIVALE Global Gateway"]
     B -->|Dynamic Routing| C["infer/qwen3.8-max (2.4T MoE)"]
-    B -->|Automatic Failover| D["infer/qwen3.7-max"]
-    B -->|Zero-KYC Billing| E["PayPal Global Billing"]
+    B -->|Automatic Failover| D["infer/qwen-3.8-flash-next"]
+    B -->|Zero-KYC Billing| E["Waffo Global Billing"]
 ```
 
 ---
