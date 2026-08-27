@@ -47,13 +47,15 @@ export async function handleMonitorEmergingLlmTrends(): Promise<{
       const slugNorm = post.slug.toLowerCase().replace(/[^a-z0-9]/g, "");
       const titleNorm = post.frontmatter.title.toLowerCase().replace(/[^a-z0-9]/g, "");
       
-      if (slugNorm.includes(normName) || titleNorm.includes(normName)) {
+      // Exact slug or title match
+      if (slugNorm === normName || titleNorm.includes(normName)) {
         return { isCovered: true, slug: post.slug };
       }
 
+      // Check tags: only mark covered if exact tag match or if tag explicitly contains the full variant
       for (const tag of post.frontmatter.tags || []) {
         const tagNorm = tag.toLowerCase().replace(/[^a-z0-9]/g, "");
-        if (tagNorm.includes(normName) || normName.includes(tagNorm)) {
+        if (tagNorm === normName) {
           return { isCovered: true, slug: post.slug };
         }
       }
