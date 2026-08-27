@@ -36,6 +36,16 @@
 
 ## 📝 优化行动记录 (2026-08)
 
+### 📅 2026-08-27 - ⚙️ [技术/UX & 内容动作]: CRO 增长攻坚：为 GLM-5.3 Cursor 文章嵌入双模式交互计算器并全面纠偏 Waffo 支付标准
+* **影响页面/关键词**：`/blog/connect-glm-5-3-to-claude-code-cli-cursor/` (`glm-5.3 cursor`, `connect glm-5.3`, `glm-5.3 .cursorrules`)
+* **动作详情**：
+  * 为进入 Day 7~14 权重重排关键期的 GLM-5.3 Cursor 指南嵌入现代化暗黑风双模式交互组件 **《GLM-5.3 Cursor BYOK Cost & Rules Configurator》**：
+    1. **Cost Savings Calculator**：支持 200~5000 次月度请求滑动测算，实时对比 Cursor Pro $0.10/次附加费 vs APIVALE $0.0038/次（立省 96.2%）；
+    2. **.cursorrules Generator**：支持按 TypeScript / Python / Rust / Go 多技术栈与 Thinking 强度动态生成生产级规则并一键复制；
+  * 全面纠偏 Frontmatter tags、描述与正文中的 PayPal 历史残留，统一升级为 **Waffo Global Billing**（信用卡与全球数字钱包免 KYC 直充）；
+  * 打通与 `/blog/how-to-connect-glm-5-3-to-claude-code-cli`、`/blog/qwen-3-8-cursor-setup`、`/blog/openrouter-alternatives` 及 `/blog/deepseek-v4-flash-vision-api-guide` 的双向高权重锚文本内链网络。
+* **预期因果假设**：将页面停留时间 (Dwell Time) 从 ~16s 提升至 2 分钟以上，向 Google 释放强交互行为信号，推动 `glm-5.3 cursor` 冲入 GSC Top 10 并带动 Waffo 注册与充值转化。
+
 ### 📅 2026-08-26 - 📝 [内容动作]: Published DeepSeek V4 Flash Vision API multimodal integration & cost guide with 384-token math, error handling, and Waffo payment flow.
 * **影响页面/关键词**：/blog/deepseek-v4-flash-vision-api-guide | deepseek v4 flash vision api
 * **动作详情**：Published DeepSeek V4 Flash Vision API multimodal integration & cost guide with 384-token math, error handling, and Waffo payment flow.
