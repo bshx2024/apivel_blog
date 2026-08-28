@@ -36,6 +36,18 @@
 
 ## 📝 优化行动记录 (2026-08)
 
+### 📅 2026-08-28 - 📝 [内容与增长动作]: 全网首发腾讯 Hy4 Preview (Hunyuan 4) 770B MoE 架构、1M 上下文评测与 Claude Code/Cursor 接入指南
+* **影响页面/关键词**：`/blog/hy4-preview-api-claude-code-cursor-setup/` (`hy4 preview api`, `how to use hy4 preview in cursor`, `hy4 preview claude code`, `hy4 preview openrouter`, `tencent hy4 preview pricing`, `hy4 preview vs kimi k3`)
+* **动作详情**：
+  * 抓住 2026-08-28 腾讯正式开源 Hy4 preview (770B MoE / 49B Active / 1M Context) 零竞品窗口期，首发上线全网首篇体系化英文开发者实战指南；
+  * 落地“4 项真实工程增益”：
+    1. **770B MoE 架构与协议流转 Proof**：解析 78 层 (1 Dense + 77 稀疏 MoE / 256 Routed Experts) 与 1M 超长上下文在 Agent 场景中的协议转发机制；
+    2. **工程盲测评测大表**：展示 203 项真实工程任务盲测分数 (Hy4 Preview 2.99 vs Kimi K3 2.94 vs GLM-5.3 2.92) 与 Token 成本精算；
+    3. **15+ 行生产级代码与配置**：提供完整的 Claude Code CLI 环境变量配置、Cursor `.cursorrules` 与 Python Async 指数退避重试流式客户端；
+    4. **交互式 CRO 微工具**：嵌入《Hy4 Preview 1M Context & Agent Cost Calculator》支持滑动测算多轮 Agent 循环节约费用；
+  * 全面落地 Waffo 全球结算（支持 Credit Cards, PayPal, 全球数字钱包，免 KYC 立即开通），并同步修改 `how-to-connect-kimi-k3-to-claude-code-cli.md`、`connect-glm-5-3-to-claude-code-cli-cursor.md`、`openrouter-alternatives.md` 织入双向高权重内链。
+* **预期因果假设**：抢占 Google 下拉词 `hy4 preview openrouter` 及社区即时搜索流量，利用 1M 上下文与 2.99 盲测高分吸引 Claude Code 与 Cursor 开发者，通过 Waffo 全球免 KYC 充值实现高意图开发者转化。
+
 ### 📅 2026-08-27 - 📝 [内容与增长动作]: 首发上线 GLM-5.3 Flash (Ox Alpha) 320B MoE 架构揭秘、SWE-bench 评测与 API 降本指南
 * **影响页面/关键词**：`/blog/glm-5-3-flash-ox-alpha-api-pricing-guide/` (`glm 5.3 flash`, `glm 5.3 flash pricing`, `glm 5.3 flash benchmarks`, `glm 5.3 flash openrouter`, `glm 5.3 flash ox alpha`)
 * **动作详情**：

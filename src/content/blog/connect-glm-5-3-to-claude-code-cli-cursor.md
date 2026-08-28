@@ -57,9 +57,13 @@ By leveraging APIVALE's OpenAI-compatible routing gateway, developers can Bring 
 graph LR
     A["Cursor IDE (Composer / Chat / Inline)"] -->|OpenAI Protocol Base URL Override| B["APIVALE Global Gateway"]
     B -->|Smart Route & Thinking Injection| C["infer/glm-5.3 (743B MoE)"]
+    B -->|Sparse 770B MoE Route| F["infer/hy4-preview (1M Context)"]
     B -->|Fallback Route| D["infer/deepseek-v4-pro"]
     B -->|Billing Engine| E["Waffo Global Billing (Zero KYC)"]
 ```
+
+> [!TIP]
+> Looking for alternative 1M-context open-source MoE engines for Cursor and Claude Code? Check out our newly published guide on [Hy4 Preview API Setup (770B MoE & 1M Context)](/blog/hy4-preview-api-claude-code-cursor-setup/).
 
 ---
 

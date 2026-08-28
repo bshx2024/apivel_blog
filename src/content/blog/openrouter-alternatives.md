@@ -58,6 +58,7 @@ When evaluating the **5 best OpenRouter alternatives in 2026**, comparing cost p
 | Model Name | OpenRouter Price (Input / Output) | APIVALE Price (Input / Output) | Cost Savings |
 | :--- | :--- | :--- | :--- |
 | **Claude Sonnet 5** | $3.00 / $15.00 | **$2.80 / $14.00** | **7% Cheaper** |
+| **Hy4 Preview (770B MoE)** | Rate Limited / High Latency | **$0.25 / $0.85 (<a href="/blog/hy4-preview-api-claude-code-cursor-setup" class="text-cyan-400 hover:underline font-semibold">See Guide</a>)** | **Unmetered 1M Context** |
 | **GLM-5.3 Flash (Ox Alpha)** | $0.20 / $0.60 (Markup) | **$0.08 / $0.25 (<a href="/blog/glm-5-3-flash-ox-alpha-api-pricing-guide" class="text-cyan-400 hover:underline font-semibold">See Guide</a>)** | **60% Cheaper / Sub-180ms** |
 | **DeepSeek V4 Flash** | $0.55 / $2.19 | **$0.14 / $0.55** | **75% Cheaper** |
 | **Zhipu GLM-5.2** | Connection Unstable | **$0.50 / $2.50** | **100% Stable Routing** |
