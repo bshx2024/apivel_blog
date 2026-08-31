@@ -22,28 +22,29 @@ In this comprehensive guide, we analyze CodexBar's architecture, audit its secur
 <div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
-    <li>CodexBar is a native macOS menu bar utility for monitoring AI model quotas, but Windows and Linux developers can achieve complete quota tracking via APIVALE's unified dashboard and CLI proxies.</li>
-    <li>Evaluating "Is CodexBar safe" reveals that reading local Keychain credentials and browser cookies poses potential exposure risks; isolating production API keys via APIVALE custom gateways eliminates raw credential exposure.</li>
-    <li>Bypass official session caps and 5-hour rate limit walls for flagship models like <strong>Claude Sonnet 5</strong>, <strong>Qwen 3.7 Max</strong> (<code>infer/qwen3.7-max</code>), and <strong>DeepSeek V4</strong> by combining CodexBar monitoring with APIVALE's Waffo global billing endpoints.</li>
+    <li><strong>CodexBar on Windows</strong>: While Peter Steinberger's native CodexBar is built for macOS, Windows 10/11 and Linux developers can achieve complete quota tracking via WSL2 CLI builds, community Windows ports (like <code>Win-CodexBar</code>), or APIVALE's cross-platform web telemetry.</li>
+    <li><strong>Is CodexBar Safe?</strong>: Security audits show reading local Keychain credentials and browser cookies creates credential exposure risks; isolating production API keys via custom proxy gateways eliminates raw token leakage on Windows and macOS.</li>
+    <li><strong>Rate-Limit Bypass</strong>: Overcome official session caps and 5-hour cooldown walls for flagship models like <strong>Claude Sonnet 5</strong>, <strong>Qwen 3.7 Max</strong> (<code>infer/qwen3.7-max</code>), and <strong>DeepSeek V4</strong> by combining CodexBar monitoring with APIVALE's Waffo global billing endpoints.</li>
   </ul>
 </div>
 
 <div class="my-6 border border-indigo-500/40 bg-indigo-950/20 rounded-xl p-5 shadow-lg">
-  <h3 class="text-base font-bold text-indigo-400 mb-1">💻 How to Run CodexBar on Windows (WSL2 Quick Setup)</h3>
+  <div class="text-base font-bold text-indigo-400 mb-1">💻 Quick Setup: Running CodexBar on Windows via WSL2</div>
+  <p class="text-xs text-gray-300 mb-2">Execute this 4-step terminal sequence to run the headless CodexBar CLI inside Windows 10/11:</p>
   <ol class="text-sm text-gray-200 leading-relaxed list-decimal list-inside space-y-1 mt-2">
     <li>Open <strong>PowerShell</strong> or <strong>WSL2 Terminal</strong> on Windows 10/11.</li>
     <li>Clone the repository: <code>git clone https://github.com/steipete/CodexBar.git</code></li>
-    <li>Build the headless CLI binary: <code>cd CodexBar && swift build -c release</code></li>
-    <li>Execute status check or connect to <strong>APIVALE Gateway</strong> for cross-platform web telemetry.</li>
+    <li>Build the headless CLI binary: <code>cd CodexBar && swift build -c release --product codexbar-cli</code></li>
+    <li>Run telemetry check or connect to <strong>APIVALE Gateway</strong> for cross-platform quota management.</li>
   </ol>
 </div>
 
----
-
-### Quick Test: Verify APIVALE Gateway Endpoint with cURL
-
-Before configuring your terminal agents or menu bar monitors, test APIVALE's high-concurrency Anthropic-compatible endpoint directly from your terminal:
-
+<div class="my-6 border border-slate-700 bg-slate-900/80 rounded-xl p-4 shadow-sm">
+  <div class="flex items-center justify-between mb-2">
+    <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">cURL Verification</span>
+    <span class="text-xs text-gray-400">Test APIVALE Endpoint Before Setup</span>
+  </div>
+  <p class="text-xs text-gray-300 mb-2">Before configuring CodexBar for Windows or terminal agents, verify high-concurrency routing with cURL:</p>
 ```bash
 # Verify APIVALE routing for flagship Claude Sonnet 5
 curl -X POST "https://api.apivale.com/v1/messages" \
@@ -56,10 +57,11 @@ curl -X POST "https://api.apivale.com/v1/messages" \
     "messages": [{"role": "user", "content": "Ping APIVALE endpoint"}]
   }'
 ```
+</div>
 
 ---
 
-## Official Subscriptions vs. CodexBar vs. APIVALE Gateway
+## Official Subscriptions vs. CodexBar on Windows vs. APIVALE Gateway
 
 Before diving into setup details, compare how native provider subscriptions, CodexBar monitoring, and APIVALE proxy gateways handle quota tracking, security, and billing:
 
@@ -557,18 +559,27 @@ For Windows developers who prefer a visual dashboard without compiling Swift pac
 
 ## CodexBar Alternatives and Comparative Analysis
 
-Evaluate competing menu bar tools and implementation strategies for cross-platform developers.
+Evaluate competing menu bar tools, open-source Windows ports, and failover gateway architectures for cross-platform developers.
+
+### Community Windows Ports: Evaluating Win-CodexBar and CodexBar-Win
+
+Because official CodexBar is exclusive to macOS, several open-source contributors have developed Windows ports to monitor AI coding quotas in the Windows taskbar and system tray:
+
+1. **Win-CodexBar (by nesszer / SourceForge / winstall WinGet)**: A C#/.NET Windows tray application that periodically polls Claude Code and Copilot quota status. While it brings the native visual health bar to the Windows taskbar, it requires manual API token configuration and relies on local cookie parsing.
+2. **CodexBar-Win (by babakarto / GitHub)**: A lightweight Python and system tray utility designed for Windows developers running Claude Code CLI.
+3. **The Core Limitation of Desktop Monitors**: Both `Win-CodexBar` on Windows and native `CodexBar` on macOS are **passive telemetry monitors**. When your Claude Sonnet 5 or DeepSeek session hits official 5-hour cooldown limits, a tray monitor only informs you that you are blocked—it cannot prevent agent failure.
 
 ### Top CodexBar Alternatives for Windows Developers (Feature Matrix)
 
 In this comprehensive **CodexBar review and comparative evaluation**, developers seeking a reliable **CodexBar alternative for Windows** or multi-platform quota trackers have several open-source and gateway-level options (see our deep dive on [Cursor Pro vs. Custom API Key](/blog/cursor-pro-vs-custom-api-key/) for broader IDE cost comparisons):
 
-| Feature / Metric | CodexBar (steipete) | Claude Cap | QuotaBar | APIVALE Dashboard |
+| Feature / Metric | CodexBar (steipete) | Win-CodexBar (Windows) | Claude Cap | APIVALE Gateway Dashboard |
 | :--- | :--- | :--- | :--- | :--- |
-| **Primary Focus** | Multi-Provider (40+) | Claude Code Specific | Multi-Model Focus | Enterprise Gateway Telemetry |
-| **Keychain Access** | Auto-Detect / Local | Minimalist CLI Read | Manual Token Input | Revocable API Key |
-| **OS Compatibility** | macOS (Native) | macOS (Shell Script) | macOS (Swift) | Web / Cross-Platform (Windows/Ubuntu/Mac) |
-| **Auto-Failover** | Read-Only | Read-Only | Read-Only | **Automated Router Fallback** |
+| **Primary Platform** | macOS (Menu Bar) | Windows 10/11 (System Tray) | macOS (CLI Script) | Web / Cross-Platform (Windows/Ubuntu/Mac) |
+| **Model Scope** | 40+ Providers | Claude / Copilot Focus | Claude Code Specific | **Claude Sonnet 5, Qwen 3.7 Max, DeepSeek V4** |
+| **Keychain Access** | Auto-Detect / Local | Manual Token Input | Minimalist CLI Read | Isolated Revocable Gateway Key |
+| **Failover Capability** | Passive Alert Only | Passive Alert Only | Passive Alert Only | **Automated Router Fallback (Zero Downtime)** |
+| **Billing Integration** | Free Tool | Free Tool | Free Tool | **Waffo Global Billing (Zero KYC)** |
 
 ### The Multi-Gateway Limit Balancing Protocol (MGLBP)
 

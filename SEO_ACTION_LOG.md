@@ -41,10 +41,12 @@
 * **优化背景**：GSC 监控发现关键词 `codexbar windows` 排名第 9（首页底部），曝光 62 次但 CTR 为 0.0%。经 SEO 深度诊断，原 MetaTitle（65 字符）存在 SERP 尾部截断，且缺少对 Windows 用户寻找替代方案与免 KYC 全球聚合支付的痛点承接。
 * **具体动作**：
   1. **Title 与 Meta 优化**：将 MetaTitle 优化至 53 字符（`CodexBar on Windows: WSL2 Setup & AI Quotas | APIVALE`），彻底消除 SERP 截断；Title 调整为 `CodexBar on Windows: WSL2 Setup Guide & Top Alternatives`，兼顾安装与平替双重意图。
-  2. **支付体系合规更新**：全盘更新为 Waffo 全球结算（支持 Credit Cards & Global Wallets，免 KYC 即可开通）。
-  3. **FAQ 结构化数据强化**：标准化 `Frequently Asked Questions (FAQ)` 模块与 JSON-LD Schema，争夺 SERP 富摘要展示。
-  4. **双向内链权重织入**：从高权重文章 `how-to-set-up-claude-code-cli-with-custom-base-url.md` 与 `cursor-pro-vs-custom-api-key.md` 注入精准上下文内链，打通权重回流。
-* **14 天因果假设**：消除 SERP 截断与认知摩擦后，排名从 9.0 稳步提升至 Top 3~5，CTR 从 0.0% 提升至 5%~12%，捕获 Windows 平台 AI 编程与限流监控的高意图流量。
+  2. **AST 标题层级对称修复**：消除首屏跳级（H1 $\rightarrow$ H3），将未闭合的小标题重构为语义化 Callout 容器，确保严格的 H1 $\rightarrow$ H2 $\rightarrow$ H3 阶梯递进。
+  3. **2~5 词 N-Gram 密度回填与 SERP 竞品截流**：高密度回填 `CodexBar on Windows`, `Win-CodexBar`, `Codexbar ubuntu`；新增独立评测章节深度剖析 Google US #1 与 #8 竞品（`Win-CodexBar` 与 `CodexBar-Win`），截流第三方开源移植包的精准搜索。
+  4. **支付体系合规更新**：全盘更新为 Waffo 全球结算（支持 Credit Cards & Global Wallets，免 KYC 即可开通）。
+  5. **FAQ 结构化数据强化**：标准化 `Frequently Asked Questions (FAQ)` 模块与 JSON-LD Schema，争夺 SERP 富摘要展示。
+  6. **双向内链权重织入**：从高权重文章 `how-to-set-up-claude-code-cli-with-custom-base-url.md` 与 `cursor-pro-vs-custom-api-key.md` 注入精准上下文内链，打通权重回流。
+* **14 天因果假设**：消除 SERP 截断、解决 N-gram 密度稀释与标题跳级后，On Page 评分达到 98+，排名从 9.0 稳步提升至 Top 3~5，CTR 从 0.0% 提升至 5%~15%，捕获 Windows 平台 AI 编程与限流监控的高意图流量。
 
 ### 📅 2026-08-31 - 📝 [内容动作]: 核心流量池文章 `cursor-pro-vs-byok-cost-comparison` 深度重构与 Google 下拉词意图对齐
 * **影响页面/关键词**：`/blog/cursor-pro-vs-byok-cost-comparison/` (`cursor pro vs own api key`, `cursor pro vs byok`, `cursor pro vs claude pro`, `cursor pro vs claude pro limits`, `cursor pro vs free`, `cursor pro vs windsurf pro`, `cursor pro vs reddit`)
