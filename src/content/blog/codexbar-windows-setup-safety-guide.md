@@ -515,11 +515,14 @@ By routing requests through APIVALE, your primary billing accounts and master cr
 
 Deploy quota tracking strategies on Windows and Linux environments where native macOS menu bar apps cannot run.
 
-### Running the Bundled CodexBar CLI on Linux and Windows WSL
+### Running the Bundled CodexBar CLI on Linux and Windows WSL (Ubuntu / Debian Guide)
 
-CodexBar contains a standalone command-line interface (`codexbar` CLI). Linux and Windows developers using Windows Subsystem for Linux (WSL) can compile and execute the CLI tool directly inside Linux terminals:
+CodexBar contains a standalone command-line interface (`codexbar` CLI). Linux and Windows developers using Ubuntu on Windows Subsystem for Linux (WSL2) or native Ubuntu / Debian distributions can compile and execute the headless CLI tool directly inside Linux terminals:
 
 ```bash
+# Optional: Ensure Swift toolchain is installed on Ubuntu / Debian / WSL2
+# sudo apt update && sudo apt install -y swift-lang (or download via swift.org)
+
 # Clone the repository and build the headless CLI binary
 git clone https://github.com/steipete/CodexBar.git
 cd CodexBar
@@ -533,7 +536,7 @@ swift build -c release --product codexbar-cli
 
 For Windows developers who prefer a visual dashboard without compiling Swift packages, **APIVALE provides a web-based quota and telemetry dashboard**:
 * **Real-time RPM/TPM Meters**: Track active requests per minute (RPM) and tokens per minute (TPM) across **Claude Sonnet 5**, **Qwen 3.7 Max**, and **DeepSeek V4**.
-* **Zero OS Restrictions**: Works natively inside any web browser on Windows 11, Linux, or macOS.
+* **Zero OS Restrictions**: Works natively inside any web browser on Windows 11, Linux (Ubuntu/Debian/Arch), or macOS.
 * **Unified Billing Balance**: Monitor total token expenditure across all connected AI models in a single view funded via Waffo Global Billing.
 
 ```
@@ -554,17 +557,17 @@ For Windows developers who prefer a visual dashboard without compiling Swift pac
 
 ## CodexBar Alternatives and Comparative Analysis
 
-Evaluate competing menu bar tools and implementation strategies.
+Evaluate competing menu bar tools and implementation strategies for cross-platform developers.
 
-### Feature Matrix: CodexBar vs. Claude Cap vs. QuotaBar
+### Top CodexBar Alternatives for Windows Developers (Feature Matrix)
 
-Developers evaluating quota tracking utilities have several open-source options (see our deep dive on [Cursor Pro vs. Custom API Key](/blog/cursor-pro-vs-custom-api-key/) for broader IDE cost comparisons):
+In this comprehensive **CodexBar review and comparative evaluation**, developers seeking a reliable **CodexBar alternative for Windows** or multi-platform quota trackers have several open-source and gateway-level options (see our deep dive on [Cursor Pro vs. Custom API Key](/blog/cursor-pro-vs-custom-api-key/) for broader IDE cost comparisons):
 
 | Feature / Metric | CodexBar (steipete) | Claude Cap | QuotaBar | APIVALE Dashboard |
 | :--- | :--- | :--- | :--- | :--- |
 | **Primary Focus** | Multi-Provider (40+) | Claude Code Specific | Multi-Model Focus | Enterprise Gateway Telemetry |
 | **Keychain Access** | Auto-Detect / Local | Minimalist CLI Read | Manual Token Input | Revocable API Key |
-| **OS Compatibility** | macOS (Native) | macOS (Shell Script) | macOS (Swift) | Web / Cross-Platform |
+| **OS Compatibility** | macOS (Native) | macOS (Shell Script) | macOS (Swift) | Web / Cross-Platform (Windows/Ubuntu/Mac) |
 | **Auto-Failover** | Read-Only | Read-Only | Read-Only | **Automated Router Fallback** |
 
 ### The Multi-Gateway Limit Balancing Protocol (MGLBP)
