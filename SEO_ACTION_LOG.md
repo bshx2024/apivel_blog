@@ -34,6 +34,24 @@
 
 
 
+## 📝 优化行动记录 (2026-09)
+
+### 📅 2026-09-01 - 📝 [内容动作]: P0 核心意图重构：修复 CodexBar Windows (前 10 零点击) 与 Cursor Pro vs Own API Key (1139 曝光 0.5% CTR 漏斗)
+* **影响页面/关键词**：
+  1. `/blog/codexbar-windows-setup-safety-guide/` (`codexbar windows`, `codexbar on windows`, `codexbar wsl2`)
+  2. `/blog/cursor-pro-vs-custom-api-key/` (`cursor pro vs own api key`, `cursor pro vs custom api key`, `cursor pro api key`)
+* **优化背景**：GSC 深度实盘审计发现两大高 ROI 意图断层：
+  - `codexbar windows` 排名 9.0，曝光 62 次，CTR 0.0%（标题与用户“Windows 能否用/替代方案”痛点错位）；
+  - `cursor-pro-vs-custom-api-key` 拥有全站第 2 大曝光（1139 次），排名 13.4，CTR 仅 0.5%（全站最大流量漏斗，需前置 Own API Key 意图并对齐搜索词）。
+* **具体动作**：
+  1. **CodexBar Windows**：Title 升级为 `CodexBar Windows Setup: Run on Windows 11 & Top Alternatives`，MetaTitle 锁定 56 字符 `CodexBar on Windows Setup: WSL2 & Alternatives | APIVALE`，Description 强化 Windows 10/11 与 WSL2 配置。
+  2. **Cursor Pro vs Own API Key**：Title 升级为 `Cursor Pro vs Own API Key: Real Cost Math & Setup (Save 96%)`，MetaTitle 锁定 56 字符 `Cursor Pro vs Own API Key: Real Cost Breakdown | APIVALE`，直击 20 刀订阅 vs 自填 Key 成本对比意图。
+* **14 天因果假设**：
+  - `codexbar windows` 从 0 点击提升至 5%~10% CTR，冲入前 5 名；
+  - `cursor-pro-vs-custom-api-key` 从第 13 名跳升至 Top 5，CTR 从 0.5% 跃升至 3%~5%，每月新增 40~60 个精准高客单充值用户点击。
+
+---
+
 ## 📝 优化行动记录 (2026-08)
 
 ### 📅 2026-08-31 - 📝 [内容动作]: GLM-5.3 Flash (Ox Alpha) 核心主页强化：注入 "What is Ox Alpha" 定义模块与 FAQ Schema 争夺 Featured Snippet
