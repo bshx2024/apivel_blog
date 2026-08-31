@@ -36,6 +36,16 @@
 
 ## 📝 优化行动记录 (2026-08)
 
+### 📅 2026-08-31 - 📝 [内容动作]: 核心流量池文章 `cursor-pro-vs-byok-cost-comparison` 深度重构与 Google 下拉词意图对齐
+* **影响页面/关键词**：`/blog/cursor-pro-vs-byok-cost-comparison/` (`cursor pro vs own api key`, `cursor pro vs byok`, `cursor pro vs claude pro`, `cursor pro vs claude pro limits`, `cursor pro vs free`, `cursor pro vs windsurf pro`, `cursor pro vs reddit`)
+* **优化背景**：该文 GSC 曝光 1,139 次但点击仅 6 次（CTR 0.5%，平均排名 13.4）。
+* **具体动作**：
+  1. **标题与 Meta 重构**：MetaTitle 精准控制在 54 字符（`Cursor Pro vs BYOK: Real Cost & Limits Guide | APIVALE`），MetaDescription 压至 152 字符，避免 SERP 截断。
+  2. **全面覆盖 Google 下拉词与 PASF 语义图谱**：新增 H2/H3 专门对比 `Cursor Pro vs Claude Pro limits`、`Cursor Pro vs Free (自带 Key)`，并加入竞品横向全景表（Windsurf Pro, Claude Pro, Cursor Pro, Free+BYOK）。
+  3. **首屏注入交互式 ROI 微工具**：嵌入原生 JS 动态计算器，可根据开发者每月请求量与所选模型（DeepSeek V4, Qwen 3.7 Max, Claude Sonnet 5）实时算出省钱比例与盈亏平衡点，极大延长 Dwell Time。
+  4. **合规化更新**：全盘更新为 Waffo 全球聚合支付描述，补充 4 条结构化 FAQ Schema 争夺 Featured Snippet。
+* **14 天因果假设**：核心词排名从 13.4 突破至首页 Top 3，CTR 从 0.5% 跃升至 5%~15%，月点击量提升 10~20 倍。
+
 ### 📅 2026-08-28 - 📝 [内容与增长动作]: 全网首发腾讯 Hy4 Preview (Hunyuan 4) 770B MoE 架构、1M 上下文评测与 Claude Code/Cursor 接入指南
 * **影响页面/关键词**：`/blog/hy4-preview-api-claude-code-cursor-setup/` (`hy4 preview api`, `how to use hy4 preview in cursor`, `hy4 preview claude code`, `hy4 preview openrouter`, `tencent hy4 preview pricing`, `hy4 preview vs kimi k3`)
 * **动作详情**：
