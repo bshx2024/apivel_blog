@@ -346,7 +346,8 @@ app.listen(PORT, () => console.log(`Proxy running on port ${PORT}`));
 * **Resolution:** Ensure `ANTHROPIC_BASE_URL="https://api.apivale.com/v1"` is exported. APIVALE automatically bridges Anthropic Messages headers to Ox Alpha reasoning endpoints.
 
 ### 3. Compare with Other Frontier Coding Models
-* Read our [GLM-5.3 Claude Code Setup Guide](/blog/how-to-connect-glm-5-3-to-claude-code-cli/) to explore native 128K output capabilities.
+* Read our [GLM-5.3 Cursor & Claude Code Setup Guide](/blog/connect-glm-5-3-to-claude-code-cli-cursor/) to explore native 128K output and .cursorrules configurations.
+* Read our [Qwen 3.8 Claude Code & Cursor Setup Guide](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/) to cut token spend by 80% while retaining high SWE-bench accuracy.
 * Read our [Qwen 3.8 27B GGUF vs Cloud Proxy Guide](/blog/qwen-3-8-27b-gguf-benchmarks-ollama-vs-api-guide/) for local VRAM memory math.
 * Read our [Claude Sonnet 5 vs Frontier LLM Guide](/blog/how-to-connect-claude-opus-5-to-claude-code-cli/) for cost comparison.
 

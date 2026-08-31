@@ -50,6 +50,23 @@
   - `codexbar windows` 从 0 点击提升至 5%~10% CTR，冲入前 5 名；
   - `cursor-pro-vs-custom-api-key` 从第 13 名跳升至 Top 5，CTR 从 0.5% 跃升至 3%~5%，每月新增 40~60 个精准高客单充值用户点击。
 
+### 📅 2026-09-01 - 🔗 [内容/链接动作]: P1 Underdog 关键词内链提权：为 Ox Alpha 与 Qwen 3.8 冲刺 Google Top 3
+* **目标与受众页面**：
+  1. `/blog/ox-alpha-claude-code-cursor-setup/` (`ox alpha claude code`, `ox alpha cursor`, `how to use ox alpha in claude code`, `ox alpha in cursor`)
+  2. `/blog/how-to-connect-qwen-3-8-to-claude-code-cli/` (`qwen 3.8 cursor`, `add qwen to cursor`, `qwen 3.8 claude code setup`)
+* **来源支柱页面**：
+  - `/blog/connect-glm-5-3-to-claude-code-cli-cursor/`
+  - `/blog/deepseek-v4-flash-api-guide/`
+  - `/blog/kimi-k3-model-deep-dive-guide/`
+* **具体动作**：
+  1. **GLM-5.3 页面**：注入精确锚文本 `how to use Ox Alpha in Claude Code & Cursor` 及 `how to connect Qwen 3.8 to Claude Code CLI & Cursor`，并在 Mermaid 网关拓扑图中扩展 `ox-alpha (GLM-5.3 Flash 320B)` 与 `qwen-3.8-27b` 路由节点。
+  2. **DeepSeek-V4-Flash 页面**：在第一节与架构段落织入针对高并发 MoE 编程替代场景的直接内链。
+  3. **Kimi K3 页面**：在终端多 Agent 对比与 Cursor 配置章节植入双向呼应锚文本。
+  4. **Qwen 3.8 / Ox Alpha 互链**：完成双向上下文网状互通，消灭单向孤岛。
+* **14 天因果假设**：
+  - `ox alpha in cursor`（当前排名 3.6）和 `how to use ox alpha in claude code`（当前排名 5.1）全面推进到 Google SERP Top 1 ~ Top 3；
+  - `qwen 3.8 cursor`（当前排名 5.9，57 曝光）进入前 3 名，CTR 从 8.6% 提升至 25%+。
+
 ---
 
 ## 📝 优化行动记录 (2026-08)

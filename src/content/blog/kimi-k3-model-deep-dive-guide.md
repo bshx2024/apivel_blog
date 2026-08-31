@@ -1,4 +1,4 @@
-﻿---
+---
 title: "2026 Kimi K3 Model Deep Dive: 2.8T MoE Architecture, Cursor & CLI Integration & Token Cost Guide"
 metaTitle: "Kimi K3 Model Guide [Hardware & MoE Specs] | APIVALE"
 description: "Deep dive into Moonshot 2.8T Kimi K3 MoE architecture. Compare TerminalBench scores, Claude Sonnet 5 costs, and Cursor CLI setup on APIVALE."
@@ -49,6 +49,9 @@ source ~/.zshrc
 # 4. Launch Anthropic Claude Code CLI for autonomous terminal tasks
 npx @anthropic-ai/claude-code "Analyze current repo structure and refactor performance bottlenecks"
 ```
+
+> [!TIP]
+> Comparing alternative high-speed coding agents? Follow our guide on [how to connect Qwen 3.8 to Claude Code CLI & Cursor](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/) to cut token spend by 80%, or check out our setup walkthrough for [Ox Alpha in Claude Code & Cursor](/blog/ox-alpha-claude-code-cursor-setup/).
 
 ### Cursor & Windsurf IDE Integration Setup
 

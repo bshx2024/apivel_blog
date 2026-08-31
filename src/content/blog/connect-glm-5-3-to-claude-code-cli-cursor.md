@@ -21,9 +21,9 @@ lang: "en"
 </div>
 
 <div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
-  <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Related GLM & Agent Setup Guides</span>
+  <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Related GLM & Coding Agent Guides</span>
   <p class="mt-1 text-sm text-gray-300">
-    Looking for higher token throughput and lower costs? Read our <a href="/blog/glm-5-3-flash-ox-alpha-api-pricing-guide" class="text-cyan-400 hover:underline font-semibold">GLM-5.3 Flash (Ox Alpha) Benchmarks & Pricing Guide</a> and our <a href="/blog/how-to-connect-glm-5-3-to-claude-code-cli" class="text-cyan-400 hover:underline font-semibold">GLM-5.3 Claude Code CLI Guide</a>. For alternative open models, see our <a href="/blog/qwen-3-8-cursor-setup" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Cursor Guide</a>.
+    Looking for higher token throughput and lower costs? Follow our step-by-step tutorial on <a href="/blog/ox-alpha-claude-code-cursor-setup/" class="text-cyan-400 hover:underline font-semibold">how to use Ox Alpha in Claude Code & Cursor</a>, read our <a href="/blog/glm-5-3-flash-ox-alpha-api-pricing-guide/" class="text-cyan-400 hover:underline font-semibold">GLM-5.3 Flash (Ox Alpha) Benchmarks & Pricing Guide</a>, and learn <a href="/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="text-cyan-400 hover:underline font-semibold">how to connect Qwen 3.8 to Claude Code CLI & Cursor</a> to cut token spend by 80%.
   </p>
 </div>
 
@@ -57,13 +57,15 @@ By leveraging APIVALE's OpenAI-compatible routing gateway, developers can Bring 
 graph LR
     A["Cursor IDE (Composer / Chat / Inline)"] -->|OpenAI Protocol Base URL Override| B["APIVALE Global Gateway"]
     B -->|Smart Route & Thinking Injection| C["infer/glm-5.3 (743B MoE)"]
+    B -->|High-Speed Coding Agent Route| G["ox-alpha (GLM-5.3 Flash 320B)"]
+    B -->|SWE Benchmark Routing| H["qwen-3.8-27b (Alibaba)"]
     B -->|Sparse 770B MoE Route| F["infer/hy4-preview (1M Context)"]
     B -->|Fallback Route| D["infer/deepseek-v4-pro"]
     B -->|Billing Engine| E["Waffo Global Billing (Zero KYC)"]
 ```
 
 > [!TIP]
-> Looking for alternative 1M-context open-source MoE engines for Cursor and Claude Code? Check out our newly published guide on [Hy4 Preview API Setup (770B MoE & 1M Context)](/blog/hy4-preview-api-claude-code-cursor-setup/).
+> Looking for alternative high-speed MoE coding engines? Check out our complete setup walkthrough for [how to use Ox Alpha in Claude Code & Cursor](/blog/ox-alpha-claude-code-cursor-setup/) and our guide on [connecting Qwen 3.8 to Claude Code CLI and Cursor](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/).
 
 ---
 
