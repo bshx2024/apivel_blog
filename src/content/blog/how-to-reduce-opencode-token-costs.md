@@ -17,6 +17,13 @@ By routing OpenCode agent traffic through APIVALE's multi-protocol gateway, engi
 
 In this guide, you will learn how to configure OpenCode and OpenCodeX to route requests through APIVALE’s high-concurrency API gateway using cost-optimized models like **`deepseek-v4`** and **`infer/qwen3.7-max`**. We also cover global **PayPal billing** setup and provide a production-ready TypeScript proxy script to handle SSE stream buffering drops and automatic 429 rate-limit retries.
 
+<div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
+  <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Step-by-Step Setup Guide</span>
+  <p class="mt-1 text-sm text-gray-300">
+    Need a complete walkthrough for OpenCode Zen, OpenCode Go, and Open WebUI? Read our dedicated guide on <a href="/blog/opencode-paypal-billing-api-proxy-guide/" class="text-cyan-400 hover:underline font-semibold">OpenCode PayPal Billing & Open WebUI API Proxy Setup</a> with Docker configurations and Waffo global billing.
+  </p>
+</div>
+
 <div class="my-6 border-l-4 border-indigo-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Featured Snippet: Slashing OpenCode Token Spending</span>
   <h4 class="mt-1 text-md font-semibold text-white">How to Route OpenCode CLI to APIVALE Gateway</h4>

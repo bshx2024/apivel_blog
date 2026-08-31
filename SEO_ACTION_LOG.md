@@ -36,6 +36,20 @@
 
 ## 📝 优化行动记录 (2026-09)
 
+### 📅 2026-09-01 - 📝 [内容/发布动作]: 发布《OpenCode PayPal Billing & API Proxy Setup (Open WebUI Guide)》独立长尾实操指南与双向内链织入
+* **影响页面/关键词**：
+  - 新建页面：`/blog/opencode-paypal-billing-api-proxy-guide/` (`opencode paypal`, `opencode to paypal`, `opencode zen paypal`, `opencode go api key`, `open webui paypal`)
+  - 织入来源页面：`/blog/how-to-reduce-opencode-token-costs/`、`/blog/openrouter-alternatives/`
+* **优化背景**：GSC 实盘与 Google Autocomplete 预测均显示 `opencode paypal`（当前排名 5.9，CTR 21.4%）具备极高 Commercial Intent，但过去缺乏独立承接页导致用户跳转至聚合页，存在 Pogo-sticking 跳出风险。
+* **具体动作**：
+  1. **新建实操长文**：围绕 Google 下拉词（`opencode to paypal`, `opencode zen paypal`, `OpenCode Go API key`, `OpenCode Zen pricing`）编写 3000+ 字工程级配置指南；
+  2. **工程与 CRO 组件**：内嵌响应式 OpenCode/Open WebUI 算费微工具、Docker Compose 配置模版、Node.js 自动重试与故障转移代理脚本；
+  3. **FAQ JSON-LD Schema**：注入 4 个标准 PAA 结构化问答；
+  4. **双向内链织入**：在 `how-to-reduce-opencode-token-costs` 与 `openrouter-alternatives` 头部注入高权重入口链接。
+* **14 天因果假设**：
+  - `opencode paypal`、`opencode zen paypal` 全面锁定 Google 前 3 名；
+  - 消除空壳落地页跳出率，单月获取 30+ 高净值直充与 API Key 生成用户。
+
 ### 📅 2026-09-01 - 📝 [内容动作]: P0 核心意图重构：修复 CodexBar Windows (前 10 零点击) 与 Cursor Pro vs Own API Key (1139 曝光 0.5% CTR 漏斗)
 * **影响页面/关键词**：
   1. `/blog/codexbar-windows-setup-safety-guide/` (`codexbar windows`, `codexbar on windows`, `codexbar wsl2`)
