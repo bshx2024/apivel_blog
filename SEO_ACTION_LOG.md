@@ -36,6 +36,15 @@
 
 ## 📝 优化行动记录 (2026-08)
 
+### 📅 2026-08-31 - 📝 [内容动作]: GLM-5.3 Flash (Ox Alpha) 核心主页强化：注入 "What is Ox Alpha" 定义模块与 FAQ Schema 争夺 Featured Snippet
+* **影响页面/关键词**：`/blog/glm-5-3-flash-ox-alpha-api-pricing-guide/` (`what is ox alpha`, `what is ox alpha on openrouter`, `ox alpha vs claude sonnet`, `ox alpha benchmarks`)
+* **优化背景**：为避免新建第 3 篇 Ox Alpha 造成站内关键词自相蚕食（Keyword Cannibalization），采取集中打法将权威权重聚焦在单一核心主页。抓住 8 月 27 日上线后的 7 天高频复抓窗口期，系统性补齐定义型意图。
+* **具体动作**：
+  1. **H2 结构重构**：将原 `What is GLM-5.3 Flash` 升级为 `## What is Ox Alpha? Model Identity, Architecture & Benchmark Breakdown`，并在下方新增 `### Dissecting OpenRouter's Stealth Ox Alpha Identity` 详细解析 Tokenizer 与 320B/18B 架构逆向验证过程。
+  2. **Featured Snippet 结构化定义**：在段落头部植入标准 Definition 容器，正面直接回答 `What is Ox Alpha (GLM-5.3 Flash)?`。
+  3. **FAQ JSON-LD 拓展**：在 Schema 中注入 `What is Ox Alpha on OpenRouter?` 与 `Is Ox Alpha the same model as GLM-5.3 Flash?`，精准争夺 Google PAA（People Also Ask）和第 0 位富媒体展示。
+* **14 天因果假设**：Google 重新收录后，在搜索 `what is ox alpha` 时直接触发 Featured Snippet 精选摘要，将该词搜索流量集中导入该页，并带动 APIVALE 免费试用转化。
+
 ### 📅 2026-08-31 - 📝 [内容动作]: CodexBar Windows 搜索意图精准对齐、Title 长度缩减与双向内链权重织入
 * **影响页面/关键词**：`/blog/codexbar-windows-setup-safety-guide/` (`codexbar windows`, `codexbar for windows`, `is codexbar safe`, `codexbar alternatives`)
 * **优化背景**：GSC 监控发现关键词 `codexbar windows` 排名第 9（首页底部），曝光 62 次但 CTR 为 0.0%。经 SEO 深度诊断，原 MetaTitle（65 字符）存在 SERP 尾部截断，且缺少对 Windows 用户寻找替代方案与免 KYC 全球聚合支付的痛点承接。
