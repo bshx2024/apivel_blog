@@ -97,6 +97,8 @@ $env:ANTHROPIC_AUTH_TOKEN="apivale-key-xxxxxxxxxx"
 npx @anthropic-ai/claude-code
 ```
 
+> **Tip for Windows Developers**: If you want real-time menu bar quota telemetry or need to run status checks on Windows 10/11, check our step-by-step [CodexBar on Windows & WSL2 Setup Guide](/blog/codexbar-windows-setup-safety-guide/).
+
 ---
 
 ## Advanced: Building a Local Claude Code Router

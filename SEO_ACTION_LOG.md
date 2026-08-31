@@ -36,6 +36,16 @@
 
 ## 📝 优化行动记录 (2026-08)
 
+### 📅 2026-08-31 - 📝 [内容动作]: CodexBar Windows 搜索意图精准对齐、Title 长度缩减与双向内链权重织入
+* **影响页面/关键词**：`/blog/codexbar-windows-setup-safety-guide/` (`codexbar windows`, `codexbar for windows`, `is codexbar safe`, `codexbar alternatives`)
+* **优化背景**：GSC 监控发现关键词 `codexbar windows` 排名第 9（首页底部），曝光 62 次但 CTR 为 0.0%。经 SEO 深度诊断，原 MetaTitle（65 字符）存在 SERP 尾部截断，且缺少对 Windows 用户寻找替代方案与免 KYC 全球聚合支付的痛点承接。
+* **具体动作**：
+  1. **Title 与 Meta 优化**：将 MetaTitle 优化至 53 字符（`CodexBar on Windows: WSL2 Setup & AI Quotas | APIVALE`），彻底消除 SERP 截断；Title 调整为 `CodexBar on Windows: WSL2 Setup Guide & Top Alternatives`，兼顾安装与平替双重意图。
+  2. **支付体系合规更新**：全盘更新为 Waffo 全球结算（支持 Credit Cards & Global Wallets，免 KYC 即可开通）。
+  3. **FAQ 结构化数据强化**：标准化 `Frequently Asked Questions (FAQ)` 模块与 JSON-LD Schema，争夺 SERP 富摘要展示。
+  4. **双向内链权重织入**：从高权重文章 `how-to-set-up-claude-code-cli-with-custom-base-url.md` 与 `cursor-pro-vs-custom-api-key.md` 注入精准上下文内链，打通权重回流。
+* **14 天因果假设**：消除 SERP 截断与认知摩擦后，排名从 9.0 稳步提升至 Top 3~5，CTR 从 0.0% 提升至 5%~12%，捕获 Windows 平台 AI 编程与限流监控的高意图流量。
+
 ### 📅 2026-08-31 - 📝 [内容动作]: 核心流量池文章 `cursor-pro-vs-byok-cost-comparison` 深度重构与 Google 下拉词意图对齐
 * **影响页面/关键词**：`/blog/cursor-pro-vs-byok-cost-comparison/` (`cursor pro vs own api key`, `cursor pro vs byok`, `cursor pro vs claude pro`, `cursor pro vs claude pro limits`, `cursor pro vs free`, `cursor pro vs windsurf pro`, `cursor pro vs reddit`)
 * **优化背景**：该文 GSC 曝光 1,139 次但点击仅 6 次（CTR 0.5%，平均排名 13.4）。

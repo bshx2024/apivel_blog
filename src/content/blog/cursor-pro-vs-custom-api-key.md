@@ -201,7 +201,7 @@ $$\text{Total Monthly Spend} = 500 \times \$0.00112 = \mathbf{\$0.56}$$
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
-For teams evaluating command-line agent alternatives, check our breakdown on [Connecting Qwen 3.8 to Claude Code CLI](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/) and [Grok 4.5 vs Claude Fable 5 API Comparison](/blog/grok-4-5-vs-claude-fable-5-coding-agent-api/).
+For teams evaluating command-line agent alternatives and quota monitors, check our breakdown on [Connecting Qwen 3.8 to Claude Code CLI](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/), [CodexBar on Windows & Quota Tracking](/blog/codexbar-windows-setup-safety-guide/), and [Grok 4.5 vs Claude Fable 5 API Comparison](/blog/grok-4-5-vs-claude-fable-5-coding-agent-api/).
 
 ---
 
