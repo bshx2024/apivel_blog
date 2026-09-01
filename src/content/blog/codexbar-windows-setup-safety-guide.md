@@ -756,7 +756,7 @@ CodexBar's native GUI app is built exclusively for macOS. However, Windows and L
 You can fix 429 rate limit errors by pointing Claude Code CLI to APIVALE's high-concurrency gateway. Set `export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"` and `export ANTHROPIC_AUTH_TOKEN="your_apivale_key"` in your shell profile to bypass individual account rate limits.
 
 ### How does APIVALE handle global billing and payments?
-APIVALE provides global **Waffo billing** support, allowing developers worldwide to pay for API usage via international credit cards and global digital wallets without needing complex KYC verifications or experiencing regional credit card blocks.
+APIVALE provides global **Waffo Global Billing and PayPal** support, allowing developers worldwide to pay for API usage via international credit cards, digital wallets, and PayPal without needing complex KYC verifications or experiencing regional credit card blocks.
 
 <script type="application/ld+json">
 {
@@ -792,7 +792,7 @@ APIVALE provides global **Waffo billing** support, allowing developers worldwide
       "name": "How does APIVALE handle global billing and payments?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "APIVALE provides global Waffo billing support, allowing developers worldwide to pay for API usage via international credit cards and global digital wallets without needing complex KYC verifications or experiencing regional credit card blocks."
+        "text": "APIVALE provides global Waffo Global Billing and PayPal support, allowing developers worldwide to pay for API usage via international credit cards, digital wallets, and PayPal without needing complex KYC verifications or experiencing regional credit card blocks."
       }
     }
   ]
