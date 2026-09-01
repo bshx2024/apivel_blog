@@ -1,7 +1,7 @@
 ---
-title: "OpenCode PayPal Billing & API Proxy Setup (Open WebUI Guide)"
-metaTitle: "OpenCode PayPal & API Proxy Setup (Open WebUI) | APIVALE"
-description: "Complete guide on OpenCode PayPal billing. Top up OpenCode Zen & Open WebUI API keys with PayPal/Waffo, bypass card declines, and cut token spend with APIVALE."
+title: "OpenCode PayPal Billing & API Proxy Setup Guide (2026)"
+metaTitle: "OpenCode PayPal Billing & API Proxy Setup | APIVALE"
+description: "Complete guide on OpenCode PayPal billing. Top up OpenCode Zen & Go API keys with PayPal/Waffo, bypass card declines, and cut token costs with APIVALE."
 date: "2026-09-01"
 author: "Sofia Costa"
 authorTitle: "FinTech Integration & API Security Expert, APIVALE"
@@ -110,7 +110,7 @@ Use this interactive simulator to calculate your monthly token usage, estimate o
   <form id="opencode-calc-form" onsubmit="return false;">
     <div class="widget-header">
       <span class="widget-badge">Interactive CRO Simulator</span>
-      <h3 class="text-xl font-bold text-white mt-1">OpenCode & Open WebUI Cost Calculator</h3>
+      <div class="text-xl font-bold text-white mt-1">OpenCode & Open WebUI Cost Calculator</div>
       <p class="widget-subtitle">Estimate token burn, rate-limit cooldown risks, and net savings via APIVALE Waffo gateway</p>
     </div>
     <div class="widget-grid">
