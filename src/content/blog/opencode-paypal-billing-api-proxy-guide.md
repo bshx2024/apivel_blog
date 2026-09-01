@@ -1,7 +1,7 @@
 ---
-title: "OpenCode PayPal Billing & API Proxy Setup Guide (2026)"
-metaTitle: "OpenCode PayPal Billing & API Proxy Setup | APIVALE"
-description: "Complete guide on OpenCode PayPal billing. Top up OpenCode Zen & Go API keys with PayPal/Waffo, bypass card declines, and cut token costs with APIVALE."
+title: "OpenCode Zen PayPal Billing & API Proxy Setup Guide (2026)"
+metaTitle: "OpenCode Zen PayPal Billing & API Proxy | APIVALE"
+description: "Complete guide on OpenCode Zen PayPal billing. Top up OpenCode Zen & Go API keys with PayPal/Waffo, bypass card declines, and cut token costs."
 date: "2026-09-01"
 author: "Sofia Costa"
 authorTitle: "FinTech Integration & API Security Expert, APIVALE"
