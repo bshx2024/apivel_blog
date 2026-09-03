@@ -36,6 +36,26 @@
 
 ## 📝 优化行动记录 (2026-09)
 
+### 📅 2026-09-03 - 📝 [内容/发布动作]: 首发上线《Claude Fable 5.1 Price, Benchmarks & Claude Code Cost Reduction Guide》与三向原子双向内链织网
+* **影响页面/关键词**：
+  - 新建页面：`/blog/claude-fable-5-1-price-claude-code-guide/` (`claude fable 5.1 price`, `claude fable 5.1 cost`, `claude fable 5.1 and mythos 5.1`, `claude fable 5.1 vs opus 5`, `claude fable 5.1 prompt guide`, `claude fable 5.1 benchmarks`, `reduce claude code token costs`)
+  - 织入来源页面：`/blog/grok-4-5-vs-claude-fable-5-coding-agent-api/`、`/blog/kimi-k3-vs-claude-fable-5-coding-agent-api/`、`/blog/how-to-set-up-claude-code-cli-with-custom-base-url/`
+* **优化背景**：Anthropic 于 2026 年 9 月 1 日最新推出面向长程自主编程智能体的 Claude Fable 5.1，宣称 Prompt Caching 费用大降 75% ($1.25/1M)。Google Autocomplete 下拉词与 PAA 迅速爆出高意图搜索（`cost`、`price`、`vs opus 5`、`mythos 5.1`、`is fable 5.1 on claude pro`）。抓住全网尚无体系化工程账单与降本指南的 48 小时极速红利期，以“欧美高价模型为靶，国模出海（Qwen 3.8/Kimi K3）混合套利降本 85% 为实操方案”打造爆款收割。
+* **具体动作**：
+  1. **作者轮替**：轮换为 **Alex Rivera**（Senior Cloud Architect & API Integrations），强化高并发路由与成本精算权威度；
+  2. **4项真实工程增益落地**：
+     - 解析 Fable 5.1 与受限 Mythos 5.1（EFS 安全框架）的架构差异与长程记忆状态机制；
+     - 给出 SWE-bench Verified（92.6%）与 Terminal-Bench 真实测评大表，推导 Prompt Caching 75% 缓存数学公式；
+     - 针对 Claude Code CLI 运行时可能出现的 HTTP 400 `unrecognized field 'cache_control'` 与 SSE 长连接心跳超时给出排坑指南；
+     - 编写 45+ 行生产级 Python 动态混合分流代理脚本（带指数退避与自动降级机制）；
+  3. **交互式 CRO 微工具**：嵌入原生 JS 动态交互组件《Claude Fable 5.1 vs. APIVALE Hybrid Spend Calculator》，支持开发者滑动调整月度请求与 Context 长度，实时计算 85% 省钱比例；
+  4. **PAA 结构化问答与 FAQ Schema**：精准收录 4 个 Google 实时 PAA 核心考题并注入 JSON-LD 结构化数据；
+  5. **原子三向内链织入**：在 `grok-4-5-vs-claude-fable-5`、`kimi-k3-vs-claude-fable-5`、`how-to-set-up-claude-code-cli` 中植入高权重入口锚文本；
+  6. **Waffo 全球结算合规**：全面落地 Waffo Global Billing 标准（信用卡与全球主流钱包免 KYC 直充）。
+* **14 天因果假设**：
+  - 抢占 `claude fable 5.1 price` 与 `claude fable 5.1 cost` 谷歌 SERP 首页 Top 3；
+  - 拦截海外寻找 Fable 5.1 价格与 Claude Code 降本的高净值开发者，通过 85% 混合路由将国模（Qwen 3.8/Kimi K3）出海变现，单月获取 50+ Waffo 充值注册用户。
+
 ### 📅 2026-09-01 - 📝 [内容/发布动作]: 发布《OpenCode PayPal Billing & API Proxy Setup (Open WebUI Guide)》独立长尾实操指南与双向内链织入
 * **影响页面/关键词**：
   - 新建页面：`/blog/opencode-paypal-billing-api-proxy-guide/` (`opencode paypal`, `opencode to paypal`, `opencode zen paypal`, `opencode go api key`, `open webui paypal`)

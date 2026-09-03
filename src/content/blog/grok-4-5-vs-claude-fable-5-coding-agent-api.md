@@ -22,6 +22,11 @@ lang: "en"
 
 Evaluating frontier LLMs for software engineering workflows requires balancing latency, reasoning depth, and inference economics. SpaceXAI's **Grok 4.5** introduces an ultra-responsive coding architecture tailored for high-speed terminal execution ($2.00 / $6.00 per 1M tokens), while Anthropic's **Claude Fable 5** focuses on deep architectural planning ($10.00 / $50.00 per 1M tokens).
 
+<div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
+  <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">September 2026 Model Update</span>
+  <p class="mt-1 text-sm text-gray-300">Anthropic has released <strong>Claude Fable 5.1</strong> featuring a 75% prompt caching discount. See our complete breakdown on <a href="/blog/claude-fable-5-1-price-claude-code-guide/" class="text-cyan-400 hover:underline font-semibold">Claude Fable 5.1 Price, Benchmarks & Claude Code Cost Reduction</a>.</p>
+</div>
+
 In this benchmark guide, we compare Grok 4.5 and Claude Fable 5 across SWE-bench accuracy, token latency, and multi-model routing architectures. You will learn how to route both models via APIVALE's unified gateway using global **PayPal billing**, saving up to **80% on total development spend** without compromising code correctness.
 
 ---

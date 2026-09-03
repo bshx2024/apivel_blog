@@ -4,9 +4,11 @@
 export function tokenize(text: string): Set<string> {
   const words = text
     .toLowerCase()
+    .replace(/(?<=\d)\.(?=\d)/g, "DOT")
     .replace(/[^\w\s-]/g, " ")
+    .replace(/DOT/g, ".")
     .split(/[\s-]+/)
-    .filter(w => w.length > 1);
+    .filter(w => w.length > 1 || /\d/.test(w));
   return new Set(words);
 }
 
@@ -50,8 +52,8 @@ export function calculateTopicOverlap(
   
   const matchedTerms: string[] = [];
   for (const kw of targetSet) {
-    const kwTokens = kw.split(/\s+/);
-    if (kwTokens.every(token => corpusTokens.has(token.toLowerCase()))) {
+    const kwTokens = Array.from(tokenize(kw));
+    if (kwTokens.length > 0 && kwTokens.every(token => corpusTokens.has(token.toLowerCase()))) {
       matchedTerms.push(kw);
     }
   }

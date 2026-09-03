@@ -13,7 +13,7 @@ lang: "en"
 
 Anthropic's new **Claude Code CLI** brings an agentic coding assistant directly into your terminal. However, running Claude Code on large codebases triggers an enormous volume of input tokens because the CLI repeatedly scans your workspace. This developer workflow quickly runs into official API rate limits (TPM/RPM quotas) and can result in massive, unexpected monthly bills.
 
-For developers outside official billing regions, or teams seeking to optimize costs and bypass rate-limiting bottlenecks, redirecting the CLI using a custom endpoint is the ultimate workaround. You can also route terminal agents directly to frontier models like [Claude Opus 5](/blog/how-to-connect-claude-opus-5-to-claude-code-cli/), [Qwen 3.8-Max](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/), or [Qwen 3.7-Max](/blog/how-to-connect-qwen-3-7-to-claude-code-cli/).
+For developers outside official billing regions, or teams seeking to optimize costs and bypass rate-limiting bottlenecks, redirecting the CLI using a custom endpoint is the ultimate workaround. You can also route terminal agents directly to frontier models like [Claude Fable 5.1 (with 85% hybrid cost savings)](/blog/claude-fable-5-1-price-claude-code-guide/), [Claude Opus 5](/blog/how-to-connect-claude-opus-5-to-claude-code-cli/), [Qwen 3.8-Max](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/), or [Qwen 3.7-Max](/blog/how-to-connect-qwen-3-7-to-claude-code-cli/).
 
 In this guide, we show you how to configure Claude Code to use a custom proxy gateway by setting the `anthropic_base_url` and `anthropic_auth_token` variables, and how to build a custom `claude-code-router` to dynamically balance and audit requests.
 

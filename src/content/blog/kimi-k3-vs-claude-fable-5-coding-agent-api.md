@@ -22,6 +22,11 @@ lang: "en"
 
 With Moonshot AI's official release of the 2.8T parameter **Kimi K3** and Anthropic's **Claude Fable 5**, the developer community is witnessing a major shift in the autonomous coding agent landscape. Building enterprise-grade coding agents requires balancing model performance, context window costs, and rate limits. Choosing between Kimi K3 vs Claude Fable 5 is no longer about finding a "one-size-fits-all" model; it is about building a specialized, multi-model hybrid architecture.
 
+<div class="my-4 border-l-4 border-emerald-500 bg-gray-900/90 rounded-r-lg p-4">
+  <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">September 2026 Model Update</span>
+  <p class="mt-1 text-sm text-gray-300">Anthropic has released <strong>Claude Fable 5.1</strong> with 75% cheaper prompt caching. Learn how to combine Fable 5.1 with Kimi K3 in our <a href="/blog/claude-fable-5-1-price-claude-code-guide/" class="text-emerald-400 hover:underline font-semibold">Claude Fable 5.1 Price & Claude Code Cost Reduction Guide</a>.</p>
+</div>
+
 For developers setting up custom endpoints in IDEs like Cursor or terminal tools like Claude Code, access barriers can be highly disruptive. Chinese KYC and phone number verification block access to Moonshot AI’s native endpoints, while Stripe fraud flags frequently decline international developer cards on Anthropic. **APIVALE** solves this by providing a unified gateway, allowing you to call both models via a single key, billed globally through PayPal.
 
 You can verify your connection to both endpoints with a simple, unified cURL command:
