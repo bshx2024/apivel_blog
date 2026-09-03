@@ -34,6 +34,14 @@
 
 
 
+
+## 📝 优化行动记录 (2026-09)
+
+### 📅 2026-09-03 - 📝 [内容动作]: 首发上线《fal.ai H3 Max vs Seedance 2.5 vs Kling: AI Video API Cost Benchmark》横评文章，注入互动型视频模型成本计算器，作者轮换为 Sofia Costa，并双向织网至 minimax-h3-api-pricing-guide 与 how-to-access-hy3-deepseek-without-86-phone。
+* **影响页面/关键词**：/blog/fal-ai-h3-max-vs-seedance-kling-cost-benchmark/ (fal.ai h3 max, minimax h3 max vs seedance, minimax h3 vs kling, mini max h3 vs ltx 2.3, minimax h3 max resolution, ai video api pricing)
+* **动作详情**：首发上线《fal.ai H3 Max vs Seedance 2.5 vs Kling: AI Video API Cost Benchmark》横评文章，注入互动型视频模型成本计算器，作者轮换为 Sofia Costa，并双向织网至 minimax-h3-api-pricing-guide 与 how-to-access-hy3-deepseek-without-86-phone。
+* **预期因果假设**：借助 fal.ai 刚在 Hacker News 宣发 H3 Max 的热度窗口（48-72h 峰值），结合 Google 下拉框的高意图搜索（resolution、duration、vs ltx 2.3），抢占 SERP Top 3。通过多模型分层路由解构，将海外创作者引流至 APIVALE 的 Waffo 全球结算通道，预计 14 天内捕获首波 300+ 搜索展示，带来高客单价 API 充值转化。
+
 ## 📝 优化行动记录 (2026-09)
 
 ### 📅 2026-09-03 - 📝 [内容/发布动作]: 首发上线《Claude Fable 5.1 Price, Benchmarks & Claude Code Cost Reduction Guide》与三向原子双向内链织网
