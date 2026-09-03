@@ -46,7 +46,7 @@ Based on APIVALE production telemetry across 14,000+ multimodal video generation
 
 <div class="my-6 border-l-4 border-indigo-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Definition</span>
-  <h4 class="mt-1 text-md font-semibold text-white">AI Video Model Routing Pipeline</h4>
+  <div class="mt-1 text-md font-semibold text-white">AI Video Model Routing Pipeline</div>
   <p class="mt-2 text-sm text-gray-300">An AI Video Model Routing Pipeline is a multi-tier proxy architecture that dispatches text-to-video and image-to-video jobs across different models (such as LTX 2.3, fal.ai H3 Max, Seedance 2.5, and Kling 3.0) based on target resolution, duration, motion complexity, and per-second token costs.</p>
 </div>
 
@@ -136,7 +136,7 @@ Calculate your monthly infrastructure spend across single-model setups versus an
   <div class="flex items-center justify-between flex-wrap gap-2 mb-4 pb-3 border-b border-gray-800">
     <div>
       <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-950/80 px-2.5 py-1 rounded border border-emerald-500/20">Production Estimator</span>
-      <h3 class="text-lg font-bold text-white mt-2">AI Video Model Routing & Budget Calculator</h3>
+      <div class="text-lg font-bold text-white mt-2">AI Video Model Routing & Budget Calculator</div>
     </div>
     <span class="text-xs text-gray-400">Updated for Sept 2026 Rates</span>
   </div>
@@ -469,8 +469,34 @@ Waffo provides localized merchant processing and global PayPal billing across in
 }
 </script>
 
+<div class="my-8 p-6 rounded-2xl bg-gray-900/90 border border-gray-800 shadow-xl">
+  <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Related Video AI & Gateway Architecture Guides</span>
+  <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+    <a href="/blog/minimax-h3-api-pricing-guide/" class="p-4 rounded-xl bg-gray-950/80 border border-gray-800 hover:border-emerald-500/40 transition-colors block group">
+      <div class="text-xs font-semibold text-emerald-400 mb-1">Pricing Deep-Dive</div>
+      <div class="text-sm font-bold text-white group-hover:text-emerald-300">MiniMax H3 API Pricing: $0.13/s Video vs Sora & Runway →</div>
+      <p class="mt-1 text-xs text-gray-400">Analyze 2K native frame costs, token economics, and Waffo global billing.</p>
+    </a>
+    <a href="/blog/how-to-access-hy3-deepseek-without-86-phone/" class="p-4 rounded-xl bg-gray-950/80 border border-gray-800 hover:border-emerald-500/40 transition-colors block group">
+      <div class="text-xs font-semibold text-emerald-400 mb-1">Access Protocol</div>
+      <div class="text-sm font-bold text-white group-hover:text-emerald-300">How to Access Chinese AI APIs (Kling, Hunyuan, DeepSeek) →</div>
+      <p class="mt-1 text-xs text-gray-400">Bypass +86 phone SMS requirements and Chinese ID verification friction.</p>
+    </a>
+    <a href="/blog/openrouter-alternatives/" class="p-4 rounded-xl bg-gray-950/80 border border-gray-800 hover:border-emerald-500/40 transition-colors block group">
+      <div class="text-xs font-semibold text-emerald-400 mb-1">Gateway Benchmark</div>
+      <div class="text-sm font-bold text-white group-hover:text-emerald-300">OpenRouter Alternatives: Top Unified Multi-Model API Hubs →</div>
+      <p class="mt-1 text-xs text-gray-400">Compare latency, multi-provider failover routing, and zero-KYC global billing.</p>
+    </a>
+    <a href="/blog/infrastructure-for-hybrid-llm-agent-deployments/" class="p-4 rounded-xl bg-gray-950/80 border border-gray-800 hover:border-emerald-500/40 transition-colors block group">
+      <div class="text-xs font-semibold text-emerald-400 mb-1">Enterprise Infra</div>
+      <div class="text-sm font-bold text-white group-hover:text-emerald-300">Infrastructure for Hybrid AI Agent Deployments →</div>
+      <p class="mt-1 text-xs text-gray-400">Architect high-throughput model fallback pipelines with jittered retry loops.</p>
+    </a>
+  </div>
+</div>
+
 <div class="my-10 p-8 rounded-2xl bg-gradient-to-br from-gray-900 via-emerald-950/40 to-gray-900 border border-emerald-500/40 shadow-2xl text-center">
-  <h3 class="text-2xl font-extrabold text-white">Start Building Multi-Model AI Video Pipelines Today</h3>
+  <div class="text-2xl font-extrabold text-white">Start Building Multi-Model AI Video Pipelines Today</div>
   <p class="mt-3 text-sm text-gray-300 max-w-xl mx-auto">
     Stop juggling overseas payment declines and platform rate limits. Route fal.ai H3 Max, Seedance 2.5, Kling 3.0, and LTX 2.3 through APIVALE's unified gateway with seamless Waffo global billing.
   </p>
