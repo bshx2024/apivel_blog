@@ -25,7 +25,7 @@ lang: en
 ---
 With the official release of **Qwen 3.7** and its flagship successor **Qwen 3.8** (see our guide on [how to connect Qwen 3.8 to Claude Code CLI](/blog/how-to-connect-qwen-3-8-to-claude-code-cli)), Alibaba Cloud has ushered in what developers across Reddit, Hacker News, and X are calling the "Agent Era." Demonstrating SOTA performance on benchmarks like SWE-bench Pro and Terminal Bench 2.0, Qwen 3.7 excels at long-horizon autonomous coding—running multi-hour terminal loops, automated debugging, and multi-file project refactoring without human intervention.
 
-While Anthropic's flagship **Claude Sonnet 5** remains the benchmark for interactive reasoning, Qwen 3.7 has captured global developer attention as a closed-source, API-only frontier model with **native Anthropic API protocol compatibility**.
+While Anthropic's flagship **Claude Sonnet 5** and OpenAI's newly unveiled **GPT-6 Astra** (see our [GPT-6 Astra Price & Cost Optimization Guide](/blog/gpt-6-astra-api-pricing-guide/)) push frontier reasoning boundaries, Qwen 3.7 has captured global developer attention as an ultra-efficient, cost-effective coding engine with **native Anthropic API protocol compatibility**.
 
 In this guide, we show you how to configure Anthropic's **Claude Code CLI** and terminal agent tools to run directly on Qwen 3.7 using the `ANTHROPIC_BASE_URL` environment setting, routed through **APIVALE’s global high-concurrency gateway**.
 

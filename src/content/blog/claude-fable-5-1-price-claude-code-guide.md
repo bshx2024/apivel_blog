@@ -80,7 +80,7 @@ While the 75% caching discount reduces the cost of persisting historical convers
 
 Review verified performance data extracted from Anthropic's official system evaluations and real-world developer testbeds. In standardized software engineering evaluations, Fable 5.1 achieved an outstanding **92.6% on SWE-bench Verified**, representing a measurable improvement over Fable 5 (91.8%) and closely tracking Claude Opus 5 (94.2%).
 
-On Terminal-Bench 2.1 (which evaluates an agent's ability to navigate POSIX environments, debug failed compilation outputs, and execute multi-step Git cherry-picks), Fable 5.1 resolved **93.1% of scenarios**. However, comparative benchmarking reveals that Chinese frontier models deliver competitive parity at an order-of-magnitude discount: Moonshot AI's **Kimi K3** achieves a 93.4% SWE-bench score, while Alibaba's **Qwen 3.8 Max** matches 91.2% on standard code synthesis tasks while costing 94% less on base input tokens.
+On Terminal-Bench 2.1 (which evaluates an agent's ability to navigate POSIX environments, debug failed compilation outputs, and execute multi-step Git cherry-picks), Fable 5.1 resolved **93.1% of scenarios**. However, comparative benchmarking reveals that Chinese frontier models deliver competitive parity at an order-of-magnitude discount: Moonshot AI's **Kimi K3** achieves a 93.4% SWE-bench score, while Alibaba's **Qwen 3.8 Max** matches 91.2% on standard code synthesis tasks while costing 94% less on base input tokens. For teams comparing Anthropic's flagship against OpenAI's frontier computer-use model, see our complete [GPT-6 Astra vs Claude Fable 5.1 Price & Benchmark Guide](/blog/gpt-6-astra-api-pricing-guide/) to analyze token burn and hybrid gateway routing.
 
 ---
 
