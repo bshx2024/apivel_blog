@@ -36,6 +36,14 @@
 
 
 
+
+## 📝 优化行动记录 (2026-09)
+
+### 📅 2026-09-04 - ⚙️ [技术/UX 动作]: 针对军师 SEO 体检反馈完成深度重构：将 H1 缩减至 65 字符（消除超长扣分），彻底消除 H2->H4 标题层级跳级，强化 3-gram/4-gram 商业意图词密度（GPT-6 Astra API price / cost / benchmarks），注入相关模型降本集群导航以延长会话留存。
+* **影响页面/关键词**：/blog/gpt-6-astra-api-pricing-guide/ (gpt 6 astra api, gpt 6 astra price, gpt 6 astra cost, gpt 6 astra benchmarks)
+* **动作详情**：针对军师 SEO 体检反馈完成深度重构：将 H1 缩减至 65 字符（消除超长扣分），彻底消除 H2->H4 标题层级跳级，强化 3-gram/4-gram 商业意图词密度（GPT-6 Astra API price / cost / benchmarks），注入相关模型降本集群导航以延长会话留存。
+* **预期因果假设**：纠偏泛新闻赛道错位，将页面精准锁定在商业变现意图词「gpt 6 astra api / price / cost」，消除 5 项 On-page 扣分并延长用户停留时间，预计 On Page 分数提升至 98+ 并加速 GSC 展现爆发。
+
 ## 📝 优化行动记录 (2026-09)
 
 ### 📅 2026-09-04 - 📝 [内容动作]: 首发上线《GPT-6 Astra Price, Benchmarks & API Setup Guide: Slash $50/M Token Burn with Hybrid Gateways》并完成多向原子双向内链织网与作者轮换（Kenji Tanaka）。嵌入原生 JS 成本计算器，直击 $50/M 输出天价痛点，以“Astra 高阶规划 + Qwen 3.7 Max / DeepSeek V4 执行”混合网关方案引导海外开发者通过 Waffo 全球结算充值。
