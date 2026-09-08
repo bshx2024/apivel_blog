@@ -39,6 +39,14 @@
 
 
 
+
+## 📝 优化行动记录 (2026-09)
+
+### 📅 2026-09-08 - 🔗 [外链与推广]: 在 GitHub 活跃开源项目 icoretech/codex-pooler (Issue #351) 落地高质量技术切磋式回复，成功植入 Cursor BYOK 深度指南自然锚文本外链
+* **影响页面/关键词**：/blog/cursor-pro-vs-byok-cost-comparison/, 外链源: https://github.com/icoretech/codex-pooler/issues/351#issuecomment-xxx, 核心词: 'cursor byok', 'cursor custom api key', 'cursor override base url'
+* **动作详情**：在 GitHub 活跃开源项目 icoretech/codex-pooler (Issue #351) 落地高质量技术切磋式回复，成功植入 Cursor BYOK 深度指南自然锚文本外链
+* **预期因果假设**：通过 GitHub 高权重真实开发者讨论页（包含 Cursor BYOK、Override OpenAI Base URL、reasoning_effort 核心主题）注入高质量反向外链，结合已完成的 Ox Alpha 内链权重双轮驱动，在 14 天内将 cursor-pro-vs-byok-cost-comparison 页面（当前排名 9.6）推入 Google SERP 首页前 5，并带来高转化开发者自然点击
+
 ## 📝 优化行动记录 (2026-09)
 
 ### 📅 2026-09-08 - ⚙️ [技术/UX 动作]: Inject contextual anchor internal links in top-performing Ox Alpha article pointing to Cursor BYOK and CodexBar Windows guides
