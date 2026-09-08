@@ -29,18 +29,18 @@
 └──────────────────────────┬─────────────────────────────┘
                            │
 ┌──────────────────────────▼─────────────────────────────┐
-│ Step 2: SERP Competitor 3C & Topic Drill-Down Audit   │
-│ 3C 意图诊断 -> 竞品框架保底 -> 分级主题下钻 Content Gap│
+│ Step 2: SERP 3C & Primary-Source Mining Audit          │
+│ 3C 诊断 -> 社区原声采掘 -> 分级下钻 Content Gap         │
 └──────────────────────────┬─────────────────────────────┘
                            │
 ┌──────────────────────────▼─────────────────────────────┐
-│ Step 3: Outranking Strategy & "4 Ones" Architecture    │
-│ 倒金字塔大纲 -> PAS 引言 -> 独特性 4 个 1 -> ABC Title  │
+│ Step 3: Outranking & Honesty Architecture              │
+│ PAS + 社区原声 -> Honesty Ranks -> 4 项工程增益         │
 └──────────────────────────┬─────────────────────────────┘
                            │
 ┌──────────────────────────▼─────────────────────────────┐
-│ Step 4: Drafting, AI Peer Review & Compliance Check    │
-│ Markdown 撰写 -> DevOps 逻辑自审 -> DevServer 验证提交   │
+│ Step 4: Drafting, Pre-Flight Audit & Atomic Publishing │
+│ Gate 1-5 原子闭环 -> HTTP 探针 -> 双向织网 -> 线上验证   │
 └────────────────────────────────────────────────────────┘
 ```
 
@@ -59,12 +59,19 @@
 - **实体-概念网络设计 (Entity-Relationship Network Audit)**：
   - 明确文章包含的 **3-5 个核心实体链 (Entity Chains)**（例如：`APIVALE Router` $\rightarrow$ `OpenAI SDK Protocol` $\rightarrow$ `Claude Code CLI` $\rightarrow$ `Waffo Billing`）。确保正文中核心实体及其强关联概念自然共现，构建高密度实体图谱。
 
-### Step 2: SERP 竞品检索、3C 诊断与分级主题下钻 (Top 5 Competitors & Topic Drill-Down Audit)
+### Step 2: SERP 竞品检索、3C 诊断与社区原声采掘 (SERP 3C & Primary-Source Mining Audit)
 - 对目标关键词进行搜索引擎检索，获取排名 Top 5 的竞品页面，并读取全文/HTML。
 - **搜索意图 3C 诊断 (Search Intent 3C Diagnosis)**：
   - **Content Type (内容类型)**：确认主导类型（Blog post, Landing page, Technical Documentation）。
   - **Content Format (内容格式)**：确认主导格式（How-To Tutorial, Listicle, Comparison Review, Deep-dive Guide）。文章**必须**与主流格式保持一致！
   - **Content Angle (切入视角)**：分析竞品切入角度（如 *"2026 Latest"*, *"Zero Credit Card"*），定义 APIVALE 的胜出切角（如 *"Waffo Billing + Multi-Gateway Fallback"*）。
+- **真实社区原声采掘 (Primary-Source Social Mining - 防杜撰机制)**：
+  - 核心原则：**真实用户原声是无法抄袭的护城河 (Primary-source content is the moat)**。
+  - **采掘通道（禁止模型凭空脑补）**：
+    - GitHub Issues 检索（通过官方开放 API 或真实抓取，提取官方仓库中的真实报错与用户 Issue）；
+    - Reddit / Hacker News 检索（通过 `site:reddit.com` / `site:news.ycombinator.com` 检索真实讨论串与 URL）；
+  - **采掘内容**：提取 1 条真实的开发者报错痛点、抱怨或配置困惑（包含真实的 URL、平台和作者 handle）。
+  - **防幻觉降级兜底**：若该技术极为前沿冷门，无法搜索到 100% 可验证的外部帖子，**坚决严禁造假**！必须降级为“官方 RFC/官方文档直链”或“APIVALE 生产网关脱敏工单日志”。
 - **分级主题下钻与技术缝隙挖掘 (Multi-Level Topic Drill-Down & Content Gap Mining)**：
   - 利用 SERP 顶部 Topic 胶囊按钮、Google Images 标签、搜索框下拉建议与 PAA 进行 2-3 层逐层点击下钻（Drill-Down）：
     - **一级主题 (Topic 1 - 大类维度)**：搜主词出的第一排标签（如竞品 `Claude Opus` / `DeepSeek V4`、场景 `Coding`），决定文章 H2 核心逻辑模块。
@@ -72,23 +79,29 @@
     - **三级主题 (Topic 3 - 硬核细节)**：再次下钻刷出的细节（如 `base_url` / `429 Error`），决定 15+ 行代码示例与避坑解决方案。
 - **双轨组合拳原则 (Baseline vs. Outranking Rule)**：
   - **Top 5 竞品 3C 诊断 = 保底线 (Baseline)**：决定文章格式与基础骨架，确保符合 Google 已认可的搜索意图，拿到进入前 10 名的门票。
-  - **分级主题下钻 = 冲第一 (Outranking)**：挖出竞品未触及的技术盲区 (Content Gap)，赋予文章极高的**信息增益 (Information Gain)** 和 GEO 引用率。
+  - **分级主题下钻 + 社区原声 = 冲第一 (Outranking)**：挖出竞品未触及的技术盲区与真实原声，赋予文章极高的**信息增益 (Information Gain)** 和不可替代性。
 
-### Step 3: 超越策略与“独特性 4 个 1”架构设计 (Outranking Strategy)
+### Step 3: 超越策略与客观中立架构设计 (Outranking & Honesty Architecture)
 - 制定 3 层关键词架构（Tier 1 主词在 Title/H1/前100字；Tier 2 LSI 词在 H2/H3；Tier 3 品牌与竞品词在正文）。
-- 落地 **PAS 引言公式**（Problem 痛点 -> Agitate 放大痛苦 -> Solve 引入 APIVALE 方案）。
+- 落地 **PAS 引言公式**（结合 Step 2 挖掘的真实开发者原声痛点切入 -> Agitate 放大痛苦 -> Solve 引入 APIVALE 方案）。
 - 落地 **E-E-A-T 权威锚点**（如 *"基于 APIVALE 生产网关 10,000+ 次 API Agent 调用的实测数据..."*）。
-- 落地 **独特性“4 个 1”规范**（详见第 4 节）。
+- 落地 **客观披露与诚实评测机制 (Honesty Ranks Standard)**：
+  - 在竞品与方案对比中，坦诚指出竞品的物理正向优势（如官方直签 SOC2 合规、AWS 内部 VPC 专线打通），同时清晰界定 APIVALE 专长领域（Waffo 全球免实名支付、跨网关智能故障转移、开箱即用）。客观透明反而极大提升开发者信赖感。
+- 落地 **独特性“4 项工程增益”规范**（详见第 4 节）。
 
 ### Step 4: 撰写、前置体检与原子双向发布门禁 (Drafting, Pre-Flight Audit & Atomic Bidirectional Publishing)
 
 在执行 Step 4 时，AI 智能体与技术编辑**必须在单次任务中原子化完成以下 5 大门禁闭环**，严禁留存半成品：
 
-1. **Gate 1 (撰写与 CRO 交互工具注入)**：
+1. **Gate 1 (撰写、真实原声与 CRO 交互工具注入)**：
    - 在 `src/content/blog/<article-slug>.md` 撰写 Markdown 文件；
-   - 严格落实“4 项真实工程增益” + 注入**响应式 CRO 交互微工具（Vanilla JS 成本计算器或规则生成器）** + **FAQ JSON-LD Schema** + 严格 AST 对称标题。
-2. **Gate 2 (前置自动化 SEO 健康度体检)**：
+   - 严格落实“4 项真实工程增益” + 植入可点击验证的**真实社区原声卡片（或官方 RFC/脱敏日志降级引用）**；
+   - 对比表格中必须包含客观“竞品正向优势列 (Best for...)”与当日抓取核验的时间戳；
+   - 注入**响应式 CRO 交互微工具（Vanilla JS 成本计算器或规则生成器）** + **FAQ JSON-LD Schema** + 严格 AST 对称标题。
+2. **Gate 2 (前置自动化 SEO 健康度与真实性体检)**：
    - 自动运行 `audit_article_seo_health` 工具；
+   - **外部链接 HTTP 探针**：自动校验正文中所有外部链接（特别是 GitHub Issue / Reddit 引用），必须返回 `HTTP 200`，任何 404 死链直接作为 S0 Blocker 拦截！
+   - **对比数据核验**：确保对比表格包含最新官方核准时间戳与来源出处说明；
    - 强制确保：0 Blockers、0 Warnings、MetaTitle 50–60 字符、正文 1500–2500 词、全面落实 Waffo 支付标准。
 3. **Gate 3 (原子双向内链织网 - 必须同步修改老文章)**：
    - 自动在站内检索同主题/相关主题的 2~3 篇核心高权重老文章；
@@ -110,13 +123,14 @@
 ├── 2. Frontmatter Description (140-160字符, AI 引用第3权重摘要)
 ├── 3. Key Takeaways Module (核心要点速览框：包含 3 个高密度技术/实践结论)
 ├── 4. PAS Introduction (痛点陈述 + E-E-A-T 锚点 + 可运行的最简 cURL 代码示例)
-├── 5. Defined Snippet Box (定义框：捕捉 Position Zero 精选摘要)
-├── 6. Comparison Table (前 20% 处：价格、限频、支持模型的硬核对比)
-├── 7. Technical Modules (2-3个 H2/H3 核心板块，回答 AI Query Fan-Out 衍生子问题)
-├── 8. Interactive CRO Micro-Tool (交互式计算器/配置生成器组件)
-├── 9. Developer FAQ (针对 AI GEO 抓取的 3-4 个精炼技术问答)
-├── 10. Schema JSON-LD (FAQPage 结构化数据)
-└── 11. CTA Module (开发者导向：Waffo 快捷充值、API Key 免费创建)
+├── 5. Primary-Source Community Voice (真实社区原声卡片：引用真实可跳转的 GitHub Issue / Reddit 原声，或降级为脱敏网关日志)
+├── 6. Defined Snippet Box (定义框：捕捉 Position Zero 精选摘要)
+├── 7. Objective Comparison Table (前 20% 处：含客观 "Best for..." 竞品正向优势列与核验时间戳的硬核对比)
+├── 8. Technical Modules (2-3个 H2/H3 核心板块，回答 AI Query Fan-Out 衍生子问题)
+├── 9. Interactive CRO Micro-Tool (交互式计算器/配置生成器组件)
+├── 10. Developer FAQ (针对 AI GEO 抓取的 3-4 个精炼技术问答)
+├── 11. Schema JSON-LD (FAQPage 结构化数据)
+└── 12. CTA Module (开发者导向：Waffo 快捷充值、API Key 免费创建)
 ```
 
 ### H 标签语义树排版红线 (Heading AST Hierarchy)
@@ -128,17 +142,21 @@
 *   **陈述句首写与单语义消歧原则 (Declarative & Monosemanticity Rule)**：每个 H2/H3 小标题下方的**第一句话**必须使用直接、明确的陈述句概括核心结论，同时消除多义词歧义（Monosemanticity）。必须明确写出【动作 + 核心实体 + 具体技术上下文】（例如：“*Configure APIVALE's OpenAI-compatible proxy gateway to route Claude Code CLI requests with zero-credit-card Waffo billing.*”），极大增加被 AI Overviews 和 LLM 注意力机制直接采纳的几率。
 ---
 
-## 4. 强制“真实工程信息增益”规范 (Verifiable Information Gain Standard)
+## 4. 强制“真实工程信息增益与客观事实”规范 (Verifiable Information Gain Standard)
 
 为严格遵循 Google **Link Information Gain Patent（信息增益专利）** 与 **SpamBrain（反大规模内容滥用 / Scaled Content Abuse）** 规范，彻底杜绝同质化与机械化 AI 生成特征，每篇文章**必须**满足以下“4 项真实工程增益”清单：
 
 1. **1 个真实工程/协议架构实现 (1 Verifiable Architecture / Protocol Translation Proof)**：
    * 严禁凭空发明虚假的英文方法论（如自造 *"The 3-Tier Matrix / Triangle"* 等脱离现实的空洞词汇）。
    * 必须基于真实的工程实现（如：“*基于 OpenAI 与 Anthropic `/v1/messages` 协议差异的 Request Header 透传与 Thinking 标签转译架构*”、“*针对 SSE 长连接超时与 MoE 激活延迟的代理层 Keep-Alive 机制*”）。
-2. **1 组真实工程实测 / 确定性成本推算数据 (1 Set of Real Benchmark / Calculated Token Economics)**：
-   * 包含真实的 TTFT (首字延迟)、延迟分布测算或确定性场景的数学成本推算表（注明测试基准条件，如 100 次并发采样或固定 100k context 测试）。
-3. **1 个可复现的高级避坑排错方案 (1 Edge-Case & Trap Troubleshooting Solution)**：
-   * 解决竞品未触及的技术盲区，必须给出具体的报错日志/HTTP 状态码及修复前后代码（如 `400 invalid_request_error: unrecognized field 'thinking'`、SSE 流式缓冲丢包、Context 剪裁掉包、高并发 RPM 突破排查）。
+2. **1 组包含“客观竞品正向优势列”与当日核验时间戳的实测/成本数据 (1 Set of Verified Benchmark & Objective Comparison Data)**：
+   * **当日官方文档核验 (Write-Time Verification)**：对比表格中的官方定价、Token 费率、限频参数必须直接抓取自当日官方页面，严禁凭大模型记忆猜测。表格底部显式附带 `*Note: Pricing and parameters verified via official docs as of [Month Year].*`。
+   * **客观披露竞品正向优势 ("Best for..." Honesty Column)**：必须基于无可辩驳的客观事实标注竞品的真正强项（如官方原厂直签享有 *“Direct Enterprise SOC2 Type II & SLA Guarantee”*，云厂商享有 *“Existing Cloud Committed Spend (MACC) & Private VPC Peering”*）。以诚实赢得开发者与 Google 的信赖。
+   * 性能基准数据（TTFT、TPS）必须注明物理测试环境（如 AWS US-East 节点 100 次单并发采样）或引用 Artificial Analysis / LMSYS 权威第三方公开发布的数据。
+3. **1 处经过可达性核验的真实社区原声与避坑方案 (1 Verifiable Community Voice & Trap Troubleshooting)**：
+   * 必须包含 1 处真实的开发者原声引用（GitHub Issue、Reddit 或技术论坛真实帖子），包含 verbatim 原文字句、真实来源链接与平台/作者。**所有外链必须通过 Gate 2 的 HTTP 200 可达性探针，严禁杜撰 404 死链**。
+   * *降级规范*：若极度冷门无法获取真实社区外链，必须降级为官方 RFC 链接或 APIVALE 网关匿名脱敏工单日志，坚决不造假。
+   * 紧密结合解决竞品未触及的技术盲区，给出具体的报错日志/HTTP 状态码及修复前后代码（如 `400 invalid_request_error`、`429 Rate Limit`、SSE 流式缓冲丢包）。
 4. **1 个生产级工程代码 / 配置文件 (1 Production-Grade Code / Config Snippet)**：
    * 提供 **15+ 行完整、可复制运行** 的代码或配置，带有健全的异常处理（`try-catch`）和指数退避重试（Exponential Backoff）逻辑。
 
@@ -229,7 +247,24 @@
 
 ### G. FAQ 直接提问与直接回答原则 (Direct Q&A Standard)
 *   **提问格式（Direct Question Format）**：FAQ 标题（H3）必须采用直接的问题句式（例如 `### How to resolve APIVALE proxy 429 rate limit errors?`，而不是抽象的 `### Proxy 429 Resolution`）。
-*   **回答格式（Direct Answer Format）**：FAQ 的回答中，第一句话（最多前两句）必须直接、明确地回答该问题（例如“You can resolve APIVALE proxy 429 errors by implementing exponential backoff retry logic with jitter.”），随后再展开技术解析或代码配置。这极大地方便了 Perplexity / AI Overviews 召回并提取直接答案。
+*   **回答格式（Direct Answer Format）**：FAQ 的回答中，第一句话（最多前两句）必须直接、明确地回答该问题（例如"You can resolve APIVALE proxy 429 errors by implementing exponential backoff retry logic with jitter."），随后再展开技术解析或代码配置。这极大地方便了 Perplexity / AI Overviews 召回并提取直接答案。
+
+### H. "社区原声实证框" (Community Voice Box) 格式
+针对真实开发者痛点或 Issue 引用，使用以下 HTML 结构：
+```html
+<div class="my-6 border-l-4 border-amber-500 bg-gray-900 rounded-r-lg p-5">
+  <div class="flex items-center justify-between">
+    <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Community Voice / Verified Experience</span>
+    <span class="text-xs text-gray-400">[GitHub Issue #1042 / Reddit r/ClaudeAI]</span>
+  </div>
+  <blockquote class="mt-2 text-sm italic text-gray-200">
+    "[Verbatim quote from the real developer describing the specific error code, timeout, or billing block]..."
+  </blockquote>
+  <p class="mt-2 text-xs text-gray-400">
+    — <a href="[Verified Live URL]" target="_blank" rel="noopener noreferrer" class="text-indigo-400 underline hover:text-indigo-300">@[AuthorHandle] on [Platform]</a>
+  </p>
+</div>
+```
 
 ---
 
@@ -254,12 +289,14 @@
 7. **严禁单个 H2 下仅挂载 1 个 H3 标题**（违反对称化语义子节点原则）。
 8. **严禁 FAQ 采用抽象名词标题**（必须采用直白疑问句，且首句直接回答）。
 9. **严禁仅在文章末尾硬性堆砌 CTA**（必须在技术板块中包含至少 1 处软性穿插）。
+10. **严禁杜撰外部引用与伪造 404 链接**：正文中引用的所有 GitHub Issue、Reddit 帖子或外链，必须通过真实的 HTTP 200 可达性探针。严禁模型脑补编造不存在的 URL、Issue 编号或作者 handle（冷门无结果时必须优雅降级为官方 RFC 链接或网关脱敏日志）。
+11. **严禁在对比表格中捏造数据与恶意拉踩竞品**：竞品定价必须抓取自当日官方页面并标注核验时间戳；竞品优势列 ("Best for...") 必须基于客观物理事实公允呈现（如承认原厂直接 SOC2 合规），严禁使用虚假数据抹黑竞品。
 
 ---
 
 ## 11. Google SpamBrain / 规模化内容滥用防范自检清单 (Anti-Spam Pre-Publish Checklist)
 
-在撰写和发布任何博文前，必须自检以下 4 项以确保完全免疫 Google Spam 算法：
+在撰写和发布任何博文前，必须自检以下 5 项以确保完全免疫 Google Spam 算法：
 
 | 检查维度 | 合规标准 (Pass) | 违规红线 (Fail) |
 | :--- | :--- | :--- |
@@ -267,3 +304,4 @@
 | **2. 首段指纹 (Intro Shingles)** | 从该技术特有的架构瓶颈、协议映射或特定报错切入，全网及站内唯一 | 出现 `Running autonomous AI coding agents like... burns $40` 等套话 |
 | **3. 概念真实性 (Verifiable Entity)** | 所有协议、参数、架构名词均来自官方 RFC、官方文档或真实工程实现 | 出现 AI 虚构的 `[Brand] Matrix / Triangle` 伪方法论 |
 | **4. 文本独立度 (Uniqueness)** | 站内多文章间正文相似度（Jaccard Index）低于 30% | 仅替换变量名（如只将 Qwen 替换为 Kimi）的模板化批量生成 |
+| **5. 引用与外链真实度 (External Provenance)** | 引用真实存在的 GitHub Issue / Reddit 帖子（HTTP 200）或降级为脱敏网关日志 | 编造虚假的 Reddit URL、不存在的 GitHub Issue 或 404 死链 |

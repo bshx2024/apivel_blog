@@ -40,6 +40,11 @@
 
 ## 📝 优化行动记录 (2026-09)
 
+### 📅 2026-09-08 - 📝 [内容动作]: 针对 GSC 排名第 14.9 位的《fal.ai H3 Max vs Seedance 2.5 vs Kling: AI Video API Cost Benchmark》执行原子双向网状内链织网（Bidirectional Mesh Weaving）。从全站流量与权重最高的 3 大支柱页面（Ox Alpha、MiniMax H3、Qwen 3.8 CLI）注入精准语义锚文本内链，并在目标文章中反向织入 Agent 多模态协同与核心支柱回链，打破孤岛状态。
+* **影响页面/关键词**：/blog/fal-ai-h3-max-vs-seedance-kling-cost-benchmark/ (fal ai pricing, fal ai video api cost, fal.ai h3 max vs seedance 2.5 vs kling, ai video api benchmark), /blog/ox-alpha-claude-code-cursor-setup/, /blog/minimax-h3-api-pricing-guide/, /blog/how-to-connect-qwen-3-8-to-claude-code-cli/
+* **动作详情**：1) 在全站第一大权重页 `ox-alpha-claude-code-cursor-setup`（GSC 展示 1,567 / 点击 148）对比章节注入多模态视频管线锚文本；2) 在同簇最高相关支柱页 `minimax-h3-api-pricing-guide` 深入重构视频成本横评叙述并强化高意图锚文本；3) 在 `how-to-connect-qwen-3-8-to-claude-code-cli`（展示 1,421 / 点击 42）中注入异步视频轮询调度指南；4) 在目标文章末尾推荐卡片及 Python 异步轮询处织入回流 Ox Alpha 与 Qwen 3.8 的双向闭环回链。完成 SEO Health Audit 检查通过（0 blockers, 0 warnings, Title 55 chars）。
+* **预期因果假设**：通过全站顶级 PageRank 与最强同簇相关性的双向汇聚，打破第二页（14.9 位）徘徊僵局，14 天内将目标关键词（fal ai pricing, fal ai video api benchmark）推入 Google SERP 首页 Top 10（第 5~8 位），预估带来 200+ 增量曝光与 10+ 高客单视频 API 充值点击。
+
 ### 📅 2026-09-08 - 📝 [内容动作]: 1) 从高权重高CTR的Ox Alpha页面织入Cursor BYOK精准上下文内链，并将目标页Title前置强化Cursor BYOK以突破9.6名与0点击；2) 从Claude Code及Qwen CLI运维章节精准织入CodexBar Windows内链，并前置微调其Title以提振9.0名排名。
 * **影响页面/关键词**：/blog/cursor-pro-vs-byok-cost-comparison (cursor byok), /blog/codexbar-windows-setup-safety-guide (codexbar windows), /blog/ox-alpha-claude-code-cursor-setup, /blog/claude-fable-5-1-price-claude-code-guide, /blog/how-to-connect-qwen-3-7-to-claude-code-cli
 * **动作详情**：1) 从高权重高CTR的Ox Alpha页面织入Cursor BYOK精准上下文内链，并将目标页Title前置强化Cursor BYOK以突破9.6名与0点击；2) 从Claude Code及Qwen CLI运维章节精准织入CodexBar Windows内链，并前置微调其Title以提振9.0名排名。

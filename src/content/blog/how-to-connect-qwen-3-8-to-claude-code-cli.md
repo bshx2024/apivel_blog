@@ -318,7 +318,7 @@ npx @anthropic-ai/claude-code
 
 Cursor IDE connects via OpenAI protocol rather than Anthropic protocol. For the full walkthrough on configuring Cursor Settings, Base URL override, and production `.cursorrules` tuning for Qwen 3.8, visit our dedicated [Qwen 3.8 Cursor Setup Guide](/blog/qwen-3-8-cursor-setup).
 
-For web search integration, see our guide on [Best API Search for Company Homepages](/blog/best-api-search-company-homepage-guide).
+For web search integration, see our guide on [Best API Search for Company Homepages](/blog/best-api-search-company-homepage-guide). If your developer pipeline coordinates AI video generation alongside agentic coding, check our [fal.ai H3 Max vs Seedance 2.5 vs Kling: AI Video API Cost Benchmark](/blog/fal-ai-h3-max-vs-seedance-kling-cost-benchmark/) to calculate per-second rendering savings and prevent upstream timeout drops.
 
 ---
 

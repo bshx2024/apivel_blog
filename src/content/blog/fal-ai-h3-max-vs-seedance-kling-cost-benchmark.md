@@ -372,6 +372,9 @@ if __name__ == "__main__":
     print(f"Render Complete! Video URL: {result['video_url']}")
 ```
 
+> [!NOTE]
+> **Orchestrating Video with AI Coding Agents:** When integrating asynchronous video generation polling into terminal-based workflows or IDE copilots, review our setup guides for [Ox Alpha in Claude Code & Cursor](/blog/ox-alpha-claude-code-cursor-setup/) and [Qwen 3.8 CLI Pipelines](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/) to optimize background task execution and avoid agent-level timeout aborts.
+
 ---
 
 ## 6. Payment Settlement Architecture: Eliminating Overseas Card Declines with Waffo
@@ -487,10 +490,10 @@ Waffo provides localized merchant processing and global PayPal billing across in
       <div class="text-sm font-bold text-white group-hover:text-emerald-300">OpenRouter Alternatives: Top Unified Multi-Model API Hubs →</div>
       <p class="mt-1 text-xs text-gray-400">Compare latency, multi-provider failover routing, and zero-KYC global billing.</p>
     </a>
-    <a href="/blog/infrastructure-for-hybrid-llm-agent-deployments/" class="p-4 rounded-xl bg-gray-950/80 border border-gray-800 hover:border-emerald-500/40 transition-colors block group">
-      <div class="text-xs font-semibold text-emerald-400 mb-1">Enterprise Infra</div>
-      <div class="text-sm font-bold text-white group-hover:text-emerald-300">Infrastructure for Hybrid AI Agent Deployments →</div>
-      <p class="mt-1 text-xs text-gray-400">Architect high-throughput model fallback pipelines with jittered retry loops.</p>
+    <a href="/blog/ox-alpha-claude-code-cursor-setup/" class="p-4 rounded-xl bg-gray-950/80 border border-gray-800 hover:border-emerald-500/40 transition-colors block group">
+      <div class="text-xs font-semibold text-emerald-400 mb-1">Autonomous Coding Agents</div>
+      <div class="text-sm font-bold text-white group-hover:text-emerald-300">Ox Alpha in Claude Code & Cursor: 1M Context Setup →</div>
+      <p class="mt-1 text-xs text-gray-400">Build automated media pipeline scripts and orchestrate multi-model workflows with 85% cost savings.</p>
     </a>
   </div>
 </div>
