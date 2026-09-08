@@ -38,6 +38,14 @@
 
 
 
+
+## 📝 优化行动记录 (2026-09)
+
+### 📅 2026-09-08 - ⚙️ [技术/UX 动作]: Inject contextual anchor internal links in top-performing Ox Alpha article pointing to Cursor BYOK and CodexBar Windows guides
+* **影响页面/关键词**：/blog/ox-alpha-claude-code-cursor-setup, /blog/cursor-pro-vs-byok-cost-comparison, /blog/codexbar-windows-setup-safety-guide, keywords: 'cursor byok', 'run codexbar on windows'
+* **动作详情**：Inject contextual anchor internal links in top-performing Ox Alpha article pointing to Cursor BYOK and CodexBar Windows guides
+* **预期因果假设**：Pass topical PageRank equity from #1 traffic asset (Ox Alpha, pos 5.4, 148 clicks) to Cursor BYOK (currently pos 9.6) and CodexBar guide to break past Google Page 1 top-5 boundary within 14 days
+
 ## 📝 优化行动记录 (2026-09)
 
 ### 📅 2026-09-08 - 📝 [内容动作]: 针对 GSC 排名第 14.9 位的《fal.ai H3 Max vs Seedance 2.5 vs Kling: AI Video API Cost Benchmark》执行原子双向网状内链织网（Bidirectional Mesh Weaving）。从全站流量与权重最高的 3 大支柱页面（Ox Alpha、MiniMax H3、Qwen 3.8 CLI）注入精准语义锚文本内链，并在目标文章中反向织入 Agent 多模态协同与核心支柱回链，打破孤岛状态。

@@ -210,6 +210,10 @@ $env:ANTHROPIC_MODEL="stealth/ox-alpha"
 claude
 ```
 
+> [!TIP]
+> **Windows Token Quota Monitoring:** Want a visual real-time status bar for your token quotas while developing on PC? Learn how to [run CodexBar on Windows](/blog/codexbar-windows-setup-safety-guide/) safely paired with APIVALE's gateway.
+
+
 ### 2. Direct cURL Protocol Verification
 
 To verify your **Ox Alpha Claude Code setup** before running complex multi-step refactoring, send a direct cURL validation request:
@@ -353,6 +357,7 @@ app.listen(PORT, () => console.log(`Proxy running on port ${PORT}`));
 * Read our [Qwen 3.8 Claude Code & Cursor Setup Guide](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/) to cut token spend by 80% while retaining high SWE-bench accuracy.
 * Read our [Qwen 3.8 27B GGUF vs Cloud Proxy Guide](/blog/qwen-3-8-27b-gguf-benchmarks-ollama-vs-api-guide/) for local VRAM memory math.
 * Read our [Claude Sonnet 5 vs Frontier LLM Guide](/blog/how-to-connect-claude-opus-5-to-claude-code-cli/) for cost comparison.
+* Evaluating IDE cost structures? See our complete breakdown on [Cursor BYOK: Bring Your Own API Key Setup](/blog/cursor-pro-vs-byok-cost-comparison/) to eliminate subscription caps with custom keys.
 * Orchestrating AI video pipelines or multimodal agents alongside code? Benchmark our [fal.ai H3 Max vs Seedance 2.5 vs Kling: AI Video API Cost Benchmark](/blog/fal-ai-h3-max-vs-seedance-kling-cost-benchmark/) to slash rendering budgets by 74%.
 
 ---
