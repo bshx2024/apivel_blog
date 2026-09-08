@@ -173,6 +173,9 @@ Analyze where token budgets are actually consumed in Claude Code CLI and Cursor 
 
 Dispatching these routine queries to Fable 5.1 costs $10.00/$50.00 per million tokens. By redirecting routine terminal tasks to **Qwen 3.8 Max** (`$0.60 / $1.80`) or **Kimi K3** (`$0.30 / $1.00`), and reserving the frontier model exclusively for initial system architecture decomposition and complex multi-file logic, developers achieve an immediate **85% overall cost reduction** without sacrificing coding accuracy.
 
+> [!TIP]
+> **Real-Time Terminal Quota Tracking on Windows & Mac:** When running autonomous multi-turn loops in Claude Code CLI, token consumption can spike rapidly without visual feedback. If you are developing on PC and need a real-time status bar or CLI quota tracker to prevent 5-hour cooldown walls, check our [CodexBar Windows Setup & Safety Audit Guide](/blog/codexbar-windows-setup-safety-guide/).
+
 ### 2. Production Dynamic Routing Proxy with Fallback & Error Handling
 
 Deploy this production-ready Python proxy script to dynamically route requests based on task complexity, featuring automated exponential backoff, Bearer authentication, and instant fallback:

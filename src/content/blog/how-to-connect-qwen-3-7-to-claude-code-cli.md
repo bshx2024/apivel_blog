@@ -78,6 +78,9 @@ Anthropic's Claude Code CLI powered by Claude Sonnet 5 is arguably the most prod
 1. **Token Cost Burn**: Terminal agents continuously resubmit workspace file trees, lint outputs, and bash execution logs back into the context window. In a 2-hour debugging session, Claude Code can easily consume 20M+ tokens. Using official Claude Sonnet 5 rates ($3.00/$15.00), a single complex issue resolution can cost $30–$50.
 2. **Rate Limit Throttling**: Official Tier 1 and Tier 2 API accounts frequently hit `429 Rate Limit Exceeded` during heavy tool-calling loops, halting autonomous task completion midway through an edit.
 
+> [!TIP]
+> **Monitoring Agent Token Burn on Windows:** While routing Claude Code CLI to Qwen 3.7 Max dramatically lowers your per-token cost, running continuous agent debugging loops still burns millions of tokens in the background. Windows developers can track real-time terminal consumption using our [CodexBar Windows Setup Guide](/blog/codexbar-windows-setup-safety-guide/) to monitor quota health and avoid rate limit pauses.
+
 By setting `ANTHROPIC_BASE_URL` to point to **APIVALE**, you can route Claude Code directly to **Qwen 3.7-Max**. You gain **80% token cost savings** ($0.60 Input / $2.40 Output), near-zero throttling, and unhindered long-horizon reasoning.
 
 ---

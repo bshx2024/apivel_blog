@@ -37,6 +37,14 @@
 
 
 
+
+## 📝 优化行动记录 (2026-09)
+
+### 📅 2026-09-08 - 📝 [内容动作]: 1) 从高权重高CTR的Ox Alpha页面织入Cursor BYOK精准上下文内链，并将目标页Title前置强化Cursor BYOK以突破9.6名与0点击；2) 从Claude Code及Qwen CLI运维章节精准织入CodexBar Windows内链，并前置微调其Title以提振9.0名排名。
+* **影响页面/关键词**：/blog/cursor-pro-vs-byok-cost-comparison (cursor byok), /blog/codexbar-windows-setup-safety-guide (codexbar windows), /blog/ox-alpha-claude-code-cursor-setup, /blog/claude-fable-5-1-price-claude-code-guide, /blog/how-to-connect-qwen-3-7-to-claude-code-cli
+* **动作详情**：1) 从高权重高CTR的Ox Alpha页面织入Cursor BYOK精准上下文内链，并将目标页Title前置强化Cursor BYOK以突破9.6名与0点击；2) 从Claude Code及Qwen CLI运维章节精准织入CodexBar Windows内链，并前置微调其Title以提振9.0名排名。
+* **预期因果假设**：14天内将 cursor byok (当前排名9.6/98曝光) 与 codexbar windows (当前排名9.0/86曝光) 推进至 Google SERP Top 3~5，并利用标题前置高意图Hook将两者的CTR从0%提振至5%~12%以上。
+
 ## 📝 优化行动记录 (2026-09)
 
 ### 📅 2026-09-04 - ⚙️ [技术/UX 动作]: 针对军师 SEO 体检反馈完成深度重构：将 H1 缩减至 65 字符（消除超长扣分），彻底消除 H2->H4 标题层级跳级，强化 3-gram/4-gram 商业意图词密度（GPT-6 Astra API price / cost / benchmarks），注入相关模型降本集群导航以延长会话留存。
