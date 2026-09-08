@@ -40,6 +40,14 @@
 
 
 
+
+## 📝 优化行动记录 (2026-09)
+
+### 📅 2026-09-08 - 🔗 [外链与推广]: 在 X (Twitter) 采用防限流 Thread Hook 双推策略（主推文输出痛点与算账勾子，首评自然挂载带有完整 Twitter Card 的博客外链）成功发布 Cursor BYOK 推广推文
+* **影响页面/关键词**：/blog/cursor-pro-vs-byok-cost-comparison/ (cursor byok, cursor pro vs byok, cursor custom api key), 社交发布源: X.com @Jackmo4578 Thread (https://x.com/Jackmo4578/status/...)
+* **动作详情**：在 X (Twitter) 采用防限流 Thread Hook 双推策略（主推文输出痛点与算账勾子，首评自然挂载带有完整 Twitter Card 的博客外链）成功发布 Cursor BYOK 推广推文
+* **预期因果假设**：通过 X.com 开发者社区社交信号注入与 Twitter Card 丰富卡片展示，加速 Google 爬虫对 /blog/cursor-pro-vs-byok-cost-comparison/ 的重爬与权威度背书，配合当天完成的 Ox Alpha 站内内链以及 GitHub 深度技术外链，形成三维立体合力，在 14 天内将核心词 cursor byok 推进至 Google SERP 首页 Top 3~5，并捕获首批海外真实开发者社交自然流量
+
 ## 📝 优化行动记录 (2026-09)
 
 ### 📅 2026-09-08 - 🔗 [外链与推广]: 在 GitHub 活跃开源项目 icoretech/codex-pooler (Issue #351) 落地高质量技术切磋式回复，成功植入 Cursor BYOK 深度指南自然锚文本外链
