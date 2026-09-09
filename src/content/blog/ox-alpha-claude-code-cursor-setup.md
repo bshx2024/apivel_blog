@@ -252,7 +252,7 @@ curl https://api.apivale.com/v1/messages \
 ```
 
 > [!TIP]
-> **Cursor BYOK Economics vs. $20/mo Pro Subscription:** Configuring custom API keys in Cursor Free lets you use Ox Alpha and frontier models with zero monthly subscription fees. For developers deciding between keeping Cursor Pro or switching to custom keys, check out our comprehensive [Cursor BYOK vs. Cursor Pro Cost & Limits Breakdown](/blog/cursor-pro-vs-byok-cost-comparison/) to see how pay-as-you-go saves up to 96.6% on token spend.
+> **BYOK Cursor Economics vs. $20/mo Pro Subscription:** Configuring custom API keys via BYOK in Cursor Free lets you run Ox Alpha and [Qwen 3.8 in Cursor](/blog/qwen-3-8-cursor-setup/) with zero monthly subscription fees. For developers evaluating whether to keep Cursor Pro or switch to custom keys, check out our comprehensive [Cursor BYOK vs. Cursor Pro Cost & Limits Breakdown](/blog/cursor-pro-vs-byok-cost-comparison/) to see how pay-as-you-go saves up to 96.6% on token spend.
 
 ---
 

@@ -421,7 +421,7 @@ app.post('/v1/chat/completions', async (req: Request, res: Response): Promise<vo
 app.listen(PORT, () => console.log(`Cursor Gateway Proxy active on http://localhost:${PORT}`));
 ```
 
-For more details on multi-model routing and alternatives, see our guides on [OpenRouter Alternatives with PayPal](/blog/openrouter-alternatives) and [DeepSeek Harness Custom API Key Guide](/blog/deepseek-harness-custom-api-key-rate-limit-fix).
+For more details on multi-model routing and alternatives, see our step-by-step tutorial on [how to use Ox Alpha in Claude Code & Cursor](/blog/ox-alpha-claude-code-cursor-setup/), our setup guide for [CodexBar on Windows 11](/blog/codexbar-windows-setup-safety-guide/) to monitor token quotas visually, our comparison of [OpenRouter Alternatives with PayPal](/blog/openrouter-alternatives), and [DeepSeek Harness Custom API Key Guide](/blog/deepseek-harness-custom-api-key-rate-limit-fix).
 
 ---
 

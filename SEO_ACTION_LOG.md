@@ -43,6 +43,11 @@
 
 ## 📝 优化行动记录 (2026-09)
 
+### 📅 2026-09-09 - 📝 [内容动作]: 针对 GSC 核心高潜力查询执行 P0 级 CTR 提振与内链织网：1) 重写 CodexBar Windows 指南 MetaTitle (严格 52 字符) 及 Description，对齐 66 展现/1.52% 低 CTR 的痛点意图；2) 优化 FAQ H3 及 JSON-LD Schema 为 "How do I run CodexBar on Windows or Linux?"；3) 在 Ox Alpha、GLM-5.3 及 Qwen 3.8 Cursor 核心页面间完成 CodexBar Windows 与 BYOK 双向内链织网。
+* **影响页面/关键词**：/blog/codexbar-windows-setup-safety-guide/ (codexbar windows), /blog/ox-alpha-claude-code-cursor-setup/ (ox alpha cursor, byok cursor), /blog/connect-glm-5-3-to-claude-code-cli-cursor/, /blog/qwen-3-8-cursor-setup/
+* **动作详情**：1) 针对 GSC 展现量 66、排名 9.1 但 CTR 仅 1.52% 的异常漏斗，将 Meta Title 精简前置为 `CodexBar Windows Setup: Run on PC & Safety | APIVALE`（严格 52 字符，杜绝 SERP 截断）；2) 同步优化 Description 与 FAQ Schema，强化 "Windows 11 & 10 via WSL2 or native ports" 核心意图；3) 从高权重页 GLM-5.3 Cursor 与 Qwen 3.8 Cursor 注入指向 CodexBar Windows 的精准上下文锚文本内链；4) 在 Ox Alpha 文章中前置强化 BYOK Cursor 权威内链回流。
+* **预期因果假设**：消除 SERP 截断并精准匹配 Windows 开发者配环境心智，预计在 14 天内将 `codexbar windows` 的 CTR 从 1.52% 提振至 6%~10% 以上，推动排名从 9.1 位挤入 Top 5，周增自然点击 5~10 次；同时巩固 Ox Alpha 与 Qwen 3.8 Cursor 的 Top 3 霸榜地位。
+
 ### 📅 2026-09-08 - 🔗 [外链与推广]: 在 X (Twitter) 采用防限流 Thread Hook 双推策略（主推文输出痛点与算账勾子，首评自然挂载带有完整 Twitter Card 的博客外链）成功发布 Cursor BYOK 推广推文
 * **影响页面/关键词**：/blog/cursor-pro-vs-byok-cost-comparison/ (cursor byok, cursor pro vs byok, cursor custom api key), 社交发布源: X.com @Jackmo4578 Thread (https://x.com/Jackmo4578/status/...)
 * **动作详情**：在 X (Twitter) 采用防限流 Thread Hook 双推策略（主推文输出痛点与算账勾子，首评自然挂载带有完整 Twitter Card 的博客外链）成功发布 Cursor BYOK 推广推文

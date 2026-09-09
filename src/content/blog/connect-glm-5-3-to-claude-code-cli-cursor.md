@@ -405,7 +405,8 @@ When adding a custom model in Cursor, ensure the model identifier matches APIVAL
 
 If routing through a local enterprise proxy server, Cursor may reject self-signed certificates.
 
-* **Fix**: Route directly to `https://api.apivale.com/v1` via standard HTTPS without local man-in-the-middle proxy certificates.
+### Edge Case 3: Tracking Token Burn & Session Limits on Windows
+When running extensive multi-file Composer refactors, tracking session burn rates prevents surprise quota exhaustion. Windows developers can follow our guide on [how to run CodexBar on Windows 11 & 10](/blog/codexbar-windows-setup-safety-guide/) to monitor quota health bars or use APIVALE's unified web dashboard.
 
 ---
 
