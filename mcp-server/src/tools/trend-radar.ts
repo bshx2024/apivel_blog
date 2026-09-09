@@ -203,11 +203,92 @@ export async function handleMonitorEmergingLlmTrends(): Promise<{
     console.error("HN scan error:", err.message);
   }
 
+  // ---------------------------------------------------------------------------
+  // 4. Channel 4: OpenRouter Real-time Global Model Registry Probing (Zero-Latency)
+  // ---------------------------------------------------------------------------
+  try {
+    const openrouterRes = await axios.get("https://openrouter.ai/api/v1/models", {
+      timeout: 8000,
+      headers: { "User-Agent": "Antigravity-Reed-Sentinel/2.0" }
+    });
+
+    const orModels: any[] = openrouterRes.data?.data || [];
+    channelsScanned.push(`OpenRouter Global Registry (${orModels.length} models probed)`);
+
+    // Sort by created timestamp descending (most recent first)
+    const sortedOrModels = [...orModels].sort((a, b) => (b.created || 0) - (a.created || 0));
+
+    for (const model of sortedOrModels.slice(0, 40)) {
+      const modelId: string = model.id || "";
+      const modelName: string = model.name || modelId;
+      const cleanName = modelId.split("/").pop() || modelId;
+      const { isCovered, slug } = checkCovered(cleanName);
+
+      trendingModels.push({
+        id: modelId,
+        source: "OpenRouter Registry",
+        authorOrDomain: modelId.split("/")[0] || "Gateway",
+        titleOrId: modelName,
+        downloadsOrScore: model.created,
+        isCoveredOnSite: isCovered,
+        coveredArticleSlug: slug,
+        suggestedAction: isCovered
+          ? `Refresh /blog/${slug} with new pricing: in $${model.pricing?.prompt || 0}/1M, out $${model.pricing?.completion || 0}/1M.`
+          : `⚡ BREAKING ZERO-DAY RELEASE: ${modelName} active on OpenRouter. Publish API guide immediately.`
+      });
+
+      // Priority injection: If it's from a flagship lab (deepseek, qwen, anthropic, openai, mistral, zhipu) and uncovered
+      const isFlagshipLab = /deepseek|qwen|anthropic|openai|mistral|zhipu|meta|google/i.test(modelId);
+      if (!isCovered && isFlagshipLab && cleanName.length >= 4 && !highPriorityTargets.some(t => t.name.toLowerCase() === cleanName.toLowerCase())) {
+        highPriorityTargets.unshift({
+          name: cleanName,
+          source: "OpenRouter Global Registry (Proactive)",
+          description: `Zero-day active model: ${modelName} (Context: ${model.context_length || 'N/A'}, Price: $${model.pricing?.prompt || 0}/1M)`,
+          recommendedSlug: `${cleanName.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-api-guide`
+        });
+      }
+    }
+  } catch (err: any) {
+    console.error("OpenRouter Sentinel probing error:", err.message);
+  }
+
+  // ---------------------------------------------------------------------------
+  // 5. Channel 5: LiteLLM Multi-Provider Proxy Release Radar
+  // ---------------------------------------------------------------------------
+  try {
+    const litellmRes = await axios.get("https://api.github.com/repos/BerriAI/litellm/releases?per_page=3", {
+      timeout: 5000,
+      headers: { "User-Agent": "Antigravity-Reed-Sentinel/2.0" }
+    });
+
+    const releases: any[] = Array.isArray(litellmRes.data) ? litellmRes.data : [];
+    channelsScanned.push(`LiteLLM Gateway Releases (${releases.length} tags)`);
+
+    for (const rel of releases) {
+      const bodyText: string = rel.body || "";
+      // Look for model integrations like 'DeepSeek V4.1', 'Qwen 3.8', 'Claude Sonnet 5'
+      const matches = bodyText.matchAll(/(?:Support(?:ed)?|Add(?:ed)?)\s+([A-Za-z0-9_.-]+(?:\s+[Vv]?[0-9.]+|\s+Flash|\s+Max|\s+Pro))/gi);
+      for (const m of matches) {
+        const candidate = m[1].trim();
+        if (candidate.length >= 4 && !checkCovered(candidate).isCovered && !highPriorityTargets.some(t => t.name.toLowerCase() === candidate.toLowerCase())) {
+          highPriorityTargets.push({
+            name: candidate,
+            source: "LiteLLM Client Releases",
+            description: `Newly supported in LiteLLM runtime (${rel.tag_name}): ${candidate}`,
+            recommendedSlug: `${candidate.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-setup-guide`
+          });
+        }
+      }
+    }
+  } catch (err: any) {
+    console.error("LiteLLM Release Sentinel error:", err.message);
+  }
+
   return {
     totalScanned: trendingModels.length,
     channelsScanned,
-    trendingModels: trendingModels.slice(0, 30),
-    highPriorityUncoveredTargets: highPriorityTargets.slice(0, 6),
+    trendingModels: trendingModels.slice(0, 40),
+    highPriorityUncoveredTargets: highPriorityTargets.slice(0, 8),
     scanTimestamp: new Date().toISOString()
   };
 }
