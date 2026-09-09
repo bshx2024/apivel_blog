@@ -43,6 +43,11 @@
 
 ## 📝 优化行动记录 (2026-09)
 
+### 📅 2026-09-09 - 📝 [内容动作]: 针对突发热点 "DeepSeek V4.1 Flash (0910 Beta)" 执行老文新鲜度激活与诚实架构引流：1) 在 /blog/deepseek-v4-flash-api-guide/ 头部植入 September 2026 避坑专栏与架构图，深度剖析 48 小时硬到期与 20 并发 429 陷阱，引导至 APIVALE 500+ RPM 商业稳定通道；2) 更新 MetaTitle (55字符) 与 Description 捕获 0910 突发搜索；3) 在 deepseek-harness 429 排查区双向织入引流内链。
+* **影响页面/关键词**：/blog/deepseek-v4-flash-api-guide/ (deepseek v4.1 flash, deepseek-v4.1-flash-expires-on-0910, deepseek v4.1 flash api setup, deepseek v4 flash pricing), /blog/deepseek-harness-custom-api-key-rate-limit-fix/
+* **动作详情**：1) 针对 9月8日 突发内测的 `deepseek-v4.1-flash-expires-on-0910`，采取“不建短命新文，借高权重老文激活 Freshness”策略；2) 植入真实调用代码、3 大生产陷阱（48h 到期、20 限频、支付拒卡）与 APIVALE 稳定版高并发替代方案架构图；3) 在 FAQ 与 JSON-LD Schema 中精准覆盖该长尾问答；4) 在僚机文章 `deepseek-harness` 429 报错处注入双向链接回流。
+* **预期因果假设**：利用现有已被 Google 收录并在 GSC 拥有曝光基础的 Flash 指南页面，在 24~48 小时内拦截正在全网暴涨的 `deepseek v4.1 flash` 突发技术搜索，以诚实技术架构建立开发者信任，在零库存风险下将面临 429 限频的内测开发者引流至 APIVALE 注册与 Waffo/PayPal 充值，预计带来 50+ 突发自然点击与 10+ 真实转化。
+
 ### 📅 2026-09-09 - 📝 [内容动作]: 针对 GSC 核心高潜力查询执行 P0 级 CTR 提振与内链织网：1) 重写 CodexBar Windows 指南 MetaTitle (严格 52 字符) 及 Description，对齐 66 展现/1.52% 低 CTR 的痛点意图；2) 优化 FAQ H3 及 JSON-LD Schema 为 "How do I run CodexBar on Windows or Linux?"；3) 在 Ox Alpha、GLM-5.3 及 Qwen 3.8 Cursor 核心页面间完成 CodexBar Windows 与 BYOK 双向内链织网。
 * **影响页面/关键词**：/blog/codexbar-windows-setup-safety-guide/ (codexbar windows), /blog/ox-alpha-claude-code-cursor-setup/ (ox alpha cursor, byok cursor), /blog/connect-glm-5-3-to-claude-code-cli-cursor/, /blog/qwen-3-8-cursor-setup/
 * **动作详情**：1) 针对 GSC 展现量 66、排名 9.1 但 CTR 仅 1.52% 的异常漏斗，将 Meta Title 精简前置为 `CodexBar Windows Setup: Run on PC & Safety | APIVALE`（严格 52 字符，杜绝 SERP 截断）；2) 同步优化 Description 与 FAQ Schema，强化 "Windows 11 & 10 via WSL2 or native ports" 核心意图；3) 从高权重页 GLM-5.3 Cursor 与 Qwen 3.8 Cursor 注入指向 CodexBar Windows 的精准上下文锚文本内链；4) 在 Ox Alpha 文章中前置强化 BYOK Cursor 权威内链回流。

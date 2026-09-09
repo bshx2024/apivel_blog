@@ -275,7 +275,7 @@ In AI software engineering, a "harness" refers to the runtime environment and to
 No. Under the DeepSeek framework, an AI Agent equals "Model (Soul) + Harness (Infrastructure)". The LLM provides reasoning capabilities, while the harness provides the plugins, sandboxes, and execution loops that turn raw model outputs into real-world workspace actions.
 
 ### How do I fix 429 Too Many Requests errors in DeepSeek Harness (`dsh`)?
-You can resolve 429 rate limit errors in DeepSeek Harness by setting your custom base URL to APIVALE's high-concurrency gateway (`https://api.apivale.com/v1`) in `~/.dsh/.credentials.yaml`. APIVALE's infrastructure supports up to 2,000+ RPM without throttling agent execution loops.
+You can resolve 429 rate limit errors in DeepSeek Harness by setting your custom base URL to APIVALE's high-concurrency gateway (`https://api.apivale.com/v1`) in `~/.dsh/.credentials.yaml`. If you are testing the temporary `deepseek-v4.1-flash-expires-on-0910` beta and hitting official 20-concurrency throttling, read our [DeepSeek V4.1 Flash 0910 Beta troubleshooting and production setup guide](/blog/deepseek-v4-flash-api-guide/) to route through APIVALE's 500+ RPM pools without lockouts.
 
 ### How do I configure a custom API key in DeepSeek Harness CLI?
 Set your custom API key by updating `~/.dsh/.credentials.yaml` under the `providers` section or by exporting `export DEEPSEEK_API_KEY="sk-apivale-your_key"` and `export DEEPSEEK_BASE_URL="https://api.apivale.com/v1"` in your terminal.
