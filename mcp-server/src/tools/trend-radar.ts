@@ -110,31 +110,31 @@ export async function handleMonitorEmergingLlmTrends(): Promise<{
   }
 
   // ---------------------------------------------------------------------------
-  // 2. Channel 2: Reddit r/LocalLLaMA Real-Time Discussions (via SerpAPI)
+  // 2. Channel 2: Reddit Multi-Subreddit Real-Time Discussions (via SerpAPI)
   // ---------------------------------------------------------------------------
   if (serpApiKey) {
     try {
-      const redditSerpUrl = `https://serpapi.com/search.json?q=site:reddit.com/r/LocalLLaMA+release+OR+weights+OR+model&api_key=${serpApiKey}&tbs=qdr:w&num=10`;
+      const redditSerpUrl = `https://serpapi.com/search.json?q=site:reddit.com+(r/LocalLLaMA+OR+r/OpenAI+OR+r/DeepSeek+OR+r/ClaudeAI+OR+r/opencode)+("release"+OR+"beta"+OR+"expires"+OR+"new+model"+OR+"API")&api_key=${serpApiKey}&tbs=qdr:d&num=15`;
       const redditRes = await axios.get(redditSerpUrl, { timeout: 15000 });
       const redditResults = redditRes.data?.organic_results || [];
 
-      channelsScanned.push(`Reddit r/LocalLLaMA (${redditResults.length} weekly threads)`);
+      channelsScanned.push(`Reddit AI Subreddits (${redditResults.length} 24h threads)`);
 
       for (const thread of redditResults) {
         const title = thread.title || "";
         const snippet = thread.snippet || "";
         const combined = `${title} ${snippet}`;
 
-        // Extract model tokens like Needle, Ox Alpha, Ornith, Qwen
-        const match = combined.match(/(?:introducing|released?|new model|distilled|weights?)\s+([A-Za-z0-9_.-]{3,20})/i);
-        const candidateName = match ? match[1] : title.slice(0, 30);
+        // Extract model tokens like DeepSeek V4.1, Needle, Ox Alpha, Ornith, Qwen
+        const match = combined.match(/(?:introducing|released?|new model|testing|preview|expires-on)\s+([A-Za-z0-9_.-]{3,35})/i);
+        const candidateName = match ? match[1] : title.replace(/[:|–—].*$/, "").trim().slice(0, 35);
 
         const { isCovered, slug } = checkCovered(candidateName);
 
         trendingModels.push({
           id: thread.link || candidateName,
           source: "Reddit r/LocalLLaMA",
-          authorOrDomain: "r/LocalLLaMA",
+          authorOrDomain: "Reddit AI",
           titleOrId: title,
           downloadsOrScore: 100,
           isCoveredOnSite: isCovered,
@@ -144,10 +144,10 @@ export async function handleMonitorEmergingLlmTrends(): Promise<{
             : `Cover breaking Reddit release: ${candidateName}.`
         });
 
-        if (!isCovered && !highPriorityTargets.some(t => t.name.toLowerCase() === candidateName.toLowerCase())) {
+        if (!isCovered && candidateName.length >= 4 && !highPriorityTargets.some(t => t.name.toLowerCase() === candidateName.toLowerCase())) {
           highPriorityTargets.push({
             name: candidateName,
-            source: "Reddit r/LocalLLaMA",
+            source: "Reddit AI Subreddits",
             description: title,
             recommendedSlug: `${candidateName.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-guide`
           });
@@ -159,11 +159,11 @@ export async function handleMonitorEmergingLlmTrends(): Promise<{
   }
 
   // ---------------------------------------------------------------------------
-  // 3. Channel 3: Hacker News Real-Time Algolia AI Stream
+  // 3. Channel 3: Hacker News Real-Time Algolia AI Stream (Models, Betas & Previews)
   // ---------------------------------------------------------------------------
   try {
     const hnRes = await axios.get(
-      "https://hn.algolia.com/api/v1/search_by_date?tags=story&query=model+OR+LLM+OR+distilled+OR+quant&hitsPerPage=15",
+      "https://hn.algolia.com/api/v1/search_by_date?tags=story&query=model+OR+LLM+OR+DeepSeek+OR+preview+OR+beta+OR+expires&hitsPerPage=25",
       { timeout: 5000 }
     );
 
@@ -186,6 +186,18 @@ export async function handleMonitorEmergingLlmTrends(): Promise<{
           ? `Reference HN discussion in /blog/${slug}.`
           : `Investigate HN release: ${title.slice(0, 40)}.`
       });
+
+      // Extract model names from HN titles like "DeepSeek v4.1 Flash is now available"
+      const hnMatch = title.match(/([A-Za-z0-9_.-]+\s+(?:v?[0-9.]+|Flash|Max|Plus|Pro|Mini))/i);
+      const hnCandidate = hnMatch ? hnMatch[1].trim() : "";
+      if (hnCandidate && !checkCovered(hnCandidate).isCovered && !highPriorityTargets.some(t => t.name.toLowerCase() === hnCandidate.toLowerCase())) {
+        highPriorityTargets.push({
+          name: hnCandidate,
+          source: "Hacker News",
+          description: title,
+          recommendedSlug: `${hnCandidate.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-guide`
+        });
+      }
     }
   } catch (err: any) {
     console.error("HN scan error:", err.message);

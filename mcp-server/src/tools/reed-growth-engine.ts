@@ -126,23 +126,41 @@ export interface ReedGrowthReport {
 export async function handleRunReedGrowthCruise(): Promise<ReedGrowthReport> {
   const publishedPosts = getAllPublishedPosts();
 
-  // 1. Step 1: Emerging Model & Viral Pain-Point Sniffing
+  // 1. Step 1: Emerging Model & Viral Pain-Point Sniffing (Multi-Target Fallback Loop)
   const trends = await handleMonitorEmergingLlmTrends();
-  let candidateTarget = trends.highPriorityUncoveredTargets[0] || {
-    name: "Qwen 3.8 Max",
-    source: "HuggingFace Hub",
-    description: "Trending lightweight agentic model with rapid developer adoption.",
-    recommendedSlug: "qwen-3-8-max-guide"
-  };
+  const candidates = trends.highPriorityUncoveredTargets.length > 0
+    ? trends.highPriorityUncoveredTargets
+    : [{
+        name: "Qwen 3.8 Max",
+        source: "HuggingFace Hub",
+        description: "Trending lightweight agentic model with rapid developer adoption.",
+        recommendedSlug: "qwen-3-8-max-guide"
+      }];
 
-  const cleanName = candidateTarget.name.replace(/[^a-zA-Z0-9 ]/g, " ").trim();
-  
-  // 2. Step 2: Google Trends Anti-Spike Filter (New Safety Firewall)
-  const trendsDiagnosis = await checkGoogleTrendsCurve(cleanName);
-  const painPointData = await handleFetchLast30DaysIntelligence(cleanName);
+  let selectedTarget = candidates[0];
+  let selectedCleanName = selectedTarget.name.replace(/[^a-zA-Z0-9 ._-]/g, " ").trim();
+  let selectedDiagnosis = await checkGoogleTrendsCurve(selectedCleanName);
+  let selectedVerdict: "APPROVED_FOR_STANDALONE" | "ABSORB_INTO_EXISTING_MATRIX_ONLY" = 
+    selectedDiagnosis.curveClassification === "SustainableGrowth" ? "APPROVED_FOR_STANDALONE" : "ABSORB_INTO_EXISTING_MATRIX_ONLY";
 
-  const isApproved = trendsDiagnosis.curveClassification === "SustainableGrowth";
-  const actionVerdict = isApproved ? "APPROVED_FOR_STANDALONE" : "ABSORB_INTO_EXISTING_MATRIX_ONLY";
+  // If first target is SpikeAndDie, fall through up to 3 candidates to find real gems
+  for (let i = 1; i < Math.min(candidates.length, 4); i++) {
+    if (selectedVerdict === "APPROVED_FOR_STANDALONE") break;
+
+    const nextTarget = candidates[i];
+    const nextCleanName = nextTarget.name.replace(/[^a-zA-Z0-9 ._-]/g, " ").trim();
+    const nextDiagnosis = await checkGoogleTrendsCurve(nextCleanName);
+
+    if (nextDiagnosis.curveClassification === "SustainableGrowth") {
+      selectedTarget = nextTarget;
+      selectedCleanName = nextCleanName;
+      selectedDiagnosis = nextDiagnosis;
+      selectedVerdict = "APPROVED_FOR_STANDALONE";
+      break;
+    }
+  }
+
+  const painPointData = await handleFetchLast30DaysIntelligence(selectedCleanName);
 
   // 3. Step 3: Underdog Promoter (Queries in GSC ranking positions 4.0 - 15.0)
   const underdogPromotions: Array<{
@@ -212,21 +230,21 @@ export async function handleRunReedGrowthCruise(): Promise<ReedGrowthReport> {
     }
   }
 
-  const slug = cleanName.toLowerCase().replace(/\s+/g, "-") + "-api-guide";
+  const slug = selectedCleanName.toLowerCase().replace(/[^a-z0-9]+/g, "-") + "-api-guide";
 
   return {
-    executiveSummary: `Reed Autonomous Growth Cruise completed. Google Trends Filter evaluated "${cleanName}" as ${trendsDiagnosis.curveClassification} (${actionVerdict}). Identified ${underdogPromotions.length} GSC underdog queries ready for Top 3 promotion and ${croActions.length} CRO interactive tool injection opportunities.`,
+    executiveSummary: `Reed Autonomous Growth Cruise completed. Google Trends Filter evaluated "${selectedCleanName}" as ${selectedDiagnosis.curveClassification} (${selectedVerdict}). Identified ${underdogPromotions.length} GSC underdog queries ready for Top 3 promotion and ${croActions.length} CRO interactive tool injection opportunities.`,
     breakingTrendTarget: {
-      modelOrTopic: cleanName,
-      source: candidateTarget.source,
-      googleTrendsDiagnosis: trendsDiagnosis,
+      modelOrTopic: selectedCleanName,
+      source: selectedTarget.source,
+      googleTrendsDiagnosis: selectedDiagnosis,
       developerPainPoint: painPointData.developerPainPoints.pricingAndRateLimit[0] || "Rate limits & high token costs in continuous loops.",
       recommendedSlug: slug,
-      recommendedTitle: `${cleanName} Guide: Setup, Benchmarks & Cloud API (2026)`,
-      recommendedMetaTitle: `${cleanName} Guide: Setup & Cloud API | APIVALE`,
-      recommendedDescription: `Complete setup guide for ${cleanName}. Learn local deployment, latency benchmarks, bypass rate limits with APIVALE, and PayPal billing.`,
-      microToolConcept: `Interactive ${cleanName} Token Calculator & Framework Selector (Python/cURL/Cursor).`,
-      actionVerdict
+      recommendedTitle: `${selectedCleanName} Guide: Setup, Benchmarks & Cloud API (2026)`,
+      recommendedMetaTitle: `${selectedCleanName} Guide: Setup & Cloud API | APIVALE`,
+      recommendedDescription: `Complete setup guide for ${selectedCleanName}. Learn local deployment, latency benchmarks, bypass rate limits with APIVALE, and PayPal billing.`,
+      microToolConcept: `Interactive ${selectedCleanName} Token Calculator & Framework Selector (Python/cURL/Cursor).`,
+      actionVerdict: selectedVerdict
     },
     underdogPromotions,
     croMicroToolActions: croActions,
