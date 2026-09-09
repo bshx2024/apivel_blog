@@ -43,10 +43,10 @@
 
 ## 📝 优化行动记录 (2026-09)
 
-### 📅 2026-09-09 - 📝 [内容动作]: 针对突发热点 "DeepSeek V4.1 Flash (0910 Beta)" 执行老文新鲜度激活与诚实架构引流：1) 在 /blog/deepseek-v4-flash-api-guide/ 头部植入 September 2026 避坑专栏与架构图，深度剖析 48 小时硬到期与 20 并发 429 陷阱，引导至 APIVALE 500+ RPM 商业稳定通道；2) 更新 MetaTitle (55字符) 与 Description 捕获 0910 突发搜索；3) 在 deepseek-harness 429 排查区双向织入引流内链。
-* **影响页面/关键词**：/blog/deepseek-v4-flash-api-guide/ (deepseek v4.1 flash, deepseek-v4.1-flash-expires-on-0910, deepseek v4.1 flash api setup, deepseek v4 flash pricing), /blog/deepseek-harness-custom-api-key-rate-limit-fix/
-* **动作详情**：1) 针对 9月8日 突发内测的 `deepseek-v4.1-flash-expires-on-0910`，采取“不建短命新文，借高权重老文激活 Freshness”策略；2) 植入真实调用代码、3 大生产陷阱（48h 到期、20 限频、支付拒卡）与 APIVALE 稳定版高并发替代方案架构图；3) 在 FAQ 与 JSON-LD Schema 中精准覆盖该长尾问答；4) 在僚机文章 `deepseek-harness` 429 报错处注入双向链接回流。
-* **预期因果假设**：利用现有已被 Google 收录并在 GSC 拥有曝光基础的 Flash 指南页面，在 24~48 小时内拦截正在全网暴涨的 `deepseek v4.1 flash` 突发技术搜索，以诚实技术架构建立开发者信任，在零库存风险下将面临 429 限频的内测开发者引流至 APIVALE 注册与 Waffo/PayPal 充值，预计带来 50+ 突发自然点击与 10+ 真实转化。
+### 📅 2026-09-09 - 📝 [内容动作]: 针对突发热点 "DeepSeek V4.1 Flash (0910 Beta)" 执行 SERP 一手情报精准打靶：1) 根据实测 Google Autocomplete（0910 github, 0910 download, 0910 manual）及 SERP 竞品 AIHubMix ($0.14/$0.28) 战局，将 MetaTitle 微调为 `DeepSeek V4.1 Flash 0910 API: Setup & Manual | APIVALE`（57字符精确包含 0910 和 manual）；2) 补充 Python SDK Manual 完整示例、明确辟谣无本地 GGUF/权重下载、对比 APIVALE $0.14 零加价批发价与 $0.20 免绑卡测试金；3) 在 FAQ 与 JSON-LD 增加 "Can I download DeepSeek V4.1 Flash 0910 weights or GGUF?"。
+* **影响页面/关键词**：/blog/deepseek-v4-flash-api-guide/ (deepseek v4.1 flash 0910, deepseek v4.1 flash 0910 download, deepseek v4.1 flash manual, deepseek v4.1 flash github, deepseek-v4.1-flash-expires-on-0910), /blog/deepseek-harness-custom-api-key-rate-limit-fix/
+* **动作详情**：1) 根据真实 SERP 下拉词与搜索结果排布，精准打靶用户对“能否 download GGUF”、“官方 API manual 怎么写”的核心关切；2) 阻击 SERP 第 5 名竞品中转站 AIHubMix，突出 APIVALE 原厂批发价、无 20 并发限制及 Waffo/PayPal 结算优势；3) FAQ 与 JSON-LD 结构化数据全量对齐；4) deepseek-harness 429 报错处双向内链引流。
+* **预期因果假设**：通过精确命中用户在搜索框输入的 0910 manual / download / github 长尾下拉词，配合 57 字符无截断 Title，在 24~48 小时内直接超越 Reddit/HackerNews/AIHubMix，打入 Google SERP 前 3 名，截获高意图开发者技术点击并实现 APIVALE 注册充值转化。
 
 ### 📅 2026-09-09 - 📝 [内容动作]: 针对 GSC 核心高潜力查询执行 P0 级 CTR 提振与内链织网：1) 重写 CodexBar Windows 指南 MetaTitle (严格 52 字符) 及 Description，对齐 66 展现/1.52% 低 CTR 的痛点意图；2) 优化 FAQ H3 及 JSON-LD Schema 为 "How do I run CodexBar on Windows or Linux?"；3) 在 Ox Alpha、GLM-5.3 及 Qwen 3.8 Cursor 核心页面间完成 CodexBar Windows 与 BYOK 双向内链织网。
 * **影响页面/关键词**：/blog/codexbar-windows-setup-safety-guide/ (codexbar windows), /blog/ox-alpha-claude-code-cursor-setup/ (ox alpha cursor, byok cursor), /blog/connect-glm-5-3-to-claude-code-cli-cursor/, /blog/qwen-3-8-cursor-setup/
