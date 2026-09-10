@@ -36,15 +36,15 @@ lang: "en"
 
 Developers adopting **DeepSeek Harness** (accessed via the `dsh` CLI command or local Desktop UI) frequently encounter execution failures caused by strict API rate limits (`429 Too Many Requests`) and server overloads (`503 Service Overloaded`). Because `dsh` operates on an autonomous agent architecture—executing multi-turn file indexing, terminal tool calls, and self-correcting loops—it fires off dense bursts of parallel API calls that quickly exhaust default platform quotas.
 
-Developers can resolve concurrency bottlenecks and eliminate 429 exceptions by supplying a custom API key and overriding the default `base_url` to route requests through APIVALE's high-throughput proxy network.
+Developers can resolve concurrency bottlenecks and eliminate 429 exceptions by supplying a custom API key and overriding the default `base_url` to route requests through APIVALE's high-throughput proxy network. If your workflow requires the latest 437 tokens/s multimodal speed, review our setup guide for the official [DeepSeek V4.1 Flash API (0910 Release)](/blog/deepseek-v4-flash-api-guide/).
 
 ```mermaid
 graph LR
     A["DeepSeek Harness CLI / Desktop (dsh)"] -->|OpenAI / Anthropic Protocol| B["APIVALE High-Concurrency Gateway"]
-    B -->|Zero 429 Rate Limits| C["DeepSeek V4 Pro"]
+    B -->|437 t/s Zero-429 Relay| C["DeepSeek V4.1 Flash"]
     B -->|Fallback Routing| D["infer/qwen3.7-max"]
     B -->|Multi-Model Router| E["Claude Sonnet 5"]
-    B -->|Global Checkout| F["PayPal Global Billing"]
+    B -->|Global Checkout| F["Waffo Global Billing"]
 ```
 
 ---
