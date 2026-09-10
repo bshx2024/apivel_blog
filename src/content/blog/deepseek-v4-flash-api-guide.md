@@ -1,6 +1,6 @@
 ---
-title: "DeepSeek V4.1 Flash (0910): Cursor & Claude Code Setup Guide"
-metaTitle: "DeepSeek V4.1 Flash (0910): Cursor & Claude Code | APIVALE"
+title: "DeepSeek V4.1 Flash API: Setup for Cursor & Claude Code (0910 Release)"
+metaTitle: "DeepSeek V4.1 Flash: Cursor & Claude Code API | APIVALE"
 description: "Complete setup guide for DeepSeek V4.1 Flash (0910 release) in Cursor & Claude Code CLI. 437 t/s benchmarks, fix 429 errors & Waffo global billing."
 date: "2026-09-10"
 author: "Kenji Tanaka"
@@ -19,6 +19,15 @@ lang: "en"
     <li><strong>Official Traffic Reroute & Auto-Discount:</strong> Requests originally directed to DeepSeek V4 Pro are automatically rerouted to V4.1 Flash and billed at the lower Flash tier ($0.14/1M input, $0.28/1M output).</li>
     <li><strong>Production Gateway Failover:</strong> Route Cursor Composer and Claude Code CLI through APIVALE for unthrottled 500+ RPM pools, bypassing official 429 timeouts and foreign credit card rejections with <strong>Waffo Global Billing</strong>.</li>
   </ul>
+</div>
+
+<div class="my-4 p-3.5 bg-gray-950/90 border border-indigo-500/30 rounded-xl flex items-center flex-wrap gap-2 text-xs shadow-lg backdrop-blur-sm">
+  <span class="text-indigo-400 font-bold uppercase tracking-wider flex items-center gap-1">⚡ Quick Jump:</span>
+  <a href="#benchmarks" class="px-3 py-1.5 bg-gray-900 hover:bg-indigo-950 border border-gray-700 hover:border-indigo-500 rounded-lg text-gray-200 transition-all font-medium">📊 437 t/s Benchmarks</a>
+  <a href="#deprecation" class="px-3 py-1.5 bg-gray-900 hover:bg-indigo-950 border border-gray-700 hover:border-indigo-500 rounded-lg text-gray-200 transition-all font-medium">🛠️ 0910 Error Fix</a>
+  <a href="#calculator" class="px-3 py-1.5 bg-gray-900 hover:bg-indigo-950 border border-gray-700 hover:border-indigo-500 rounded-lg text-emerald-300 transition-all font-medium">💰 Cost Calculator</a>
+  <a href="#setup" class="px-3 py-1.5 bg-gray-900 hover:bg-indigo-950 border border-gray-700 hover:border-indigo-500 rounded-lg text-cyan-300 transition-all font-medium">💻 Cursor & Claude Code Setup</a>
+  <a href="#faq" class="px-3 py-1.5 bg-gray-900 hover:bg-indigo-950 border border-gray-700 hover:border-indigo-500 rounded-lg text-gray-400 transition-all font-medium">❓ FAQ</a>
 </div>
 
 <div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
@@ -68,6 +77,8 @@ curl https://apivale.com/v1/chat/completions \
 
 ---
 
+<div id="deprecation"></div>
+
 ## ⚡ September 10, 2026 Official Release: DeepSeek V4.1 Flash Transition
 
 On September 8, 2026, DeepSeek deployed an unannounced internal beta testing model labeled `deepseek-v4.1-flash-expires-on-0910` on their official API. As of **September 10, 2026**, this experimental testing phase has concluded, transitioning into the production release of **DeepSeek V4.1 Flash** ([verified on DeepSeek API Updates](https://api-docs.deepseek.com/updates/)).
@@ -111,6 +122,8 @@ This real-world telemetry illustrates the fundamental barrier of single-provider
 * **Credit Card Regional Lockouts**: International developers frequently encounter payment gateway denials when attempting to top up direct platform credits.
 
 ---
+
+<div id="benchmarks"></div>
 
 ## DeepSeek V4.1 Flash Benchmarks: 437 Tokens/s & Multimodal Vision Upgrade
 
@@ -160,6 +173,8 @@ Independent benchmark sweeps highlight three primary performance breakthroughs (
 | **Claude Sonnet 5** | Proprietary Dense | 200,000 | 75 tokens/s | $3.00 / $15.00 | Mission-critical greenfield architecture & zero-shot styling |
 
 ---
+
+<div id="calculator"></div>
 
 ## Interactive Token Cost & Speed Arbitrage Calculator
 
@@ -261,6 +276,8 @@ Use this responsive utility to calculate monthly token expenditure and cost arbi
 </script>
 
 ---
+
+<div id="setup"></div>
 
 ## How to Connect DeepSeek V4.1 Flash API to Claude Code CLI & Cursor
 
@@ -370,6 +387,8 @@ if __name__ == "__main__":
 ```
 
 ---
+
+<div id="faq"></div>
 
 ## Frequently Asked Questions (FAQ)
 
