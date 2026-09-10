@@ -43,7 +43,7 @@ To evaluate true cost-efficiency, we must examine both raw token pricing per mil
 
 | Model Name | Input Price (per 1M) | Output Price (per 1M) | Unique Cost / Technical Highlight | Primary Access Method |
 | :--- | :--- | :--- | :--- | :--- |
-| **DeepSeek V4** | **$0.14** | **$0.55** | **Ultra-Low Cost Leader** (-95% vs. Sonnet 5) | APIVALE Gateway / Direct |
+| [**DeepSeek V4.1 Flash**](/blog/deepseek-v4-flash-api-guide/) | **$0.14** | **$0.28** | **Ultra-Low Cost Leader** (437 t/s & -95% vs. Sonnet 5) | APIVALE Gateway / Direct |
 | **Qwen 3.7-Max** (`infer/qwen3.7-max`) | **$0.60** | **$2.40** | **SOTA Agentic Tool-Calling** & SWE-bench Pro | APIVALE Gateway / Cloud |
 | **Gemini 3.6 Flash** | **$1.50** | **$7.50** | **17% Output Token Compression** | Google AI Studio / Vertex |
 | **Claude Sonnet 5** | **$3.00** | **$15.00** | Industry Standard Vibe Coding Benchmark | Official Console / APIVALE |

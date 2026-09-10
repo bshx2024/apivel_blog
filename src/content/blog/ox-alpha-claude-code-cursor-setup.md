@@ -63,7 +63,7 @@ In independent developer evaluations on SWE-bench Lite and repository bug fixing
 | **GLM-5.3 (Official)** | 1,048,576 | 87.6% | 240ms | 64 tok/s | $0.50 / $2.00 | Enterprise (No KYC) |
 | **Claude Sonnet 5** | 200,000 | 92.4% | 310ms | 82 tok/s | $3.00 / $15.00 | Standard Tier |
 | **Qwen 3.7 Max (`infer/qwen3.7-max`)** | 1,000,000 | 86.8% | 185ms | 94 tok/s | $0.60 / $2.40 | Ultra-High |
-| **DeepSeek V4** | 128,000 | 85.1% | 210ms | 110 tok/s | $0.27 / $1.10 | High |
+| [**DeepSeek V4.1 Flash**](/blog/deepseek-v4-flash-api-guide/) | **1,000,000** | **85.1%** | **120ms** | **437 tok/s** | **$0.14 / $0.28** | Ultra-High (via APIVALE) |
 
 ```
     ┌─────────────────────────────────────────────────────────────┐

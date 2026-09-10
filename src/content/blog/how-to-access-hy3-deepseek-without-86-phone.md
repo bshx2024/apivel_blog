@@ -15,7 +15,7 @@ The release of state-of-the-art Chinese models like **Tencent Hunyuan Hy3** (a M
 
 However, global developers face a frustrating roadblock when trying to access them: official platforms require a **Chinese (+86) mobile phone number** for registration, mainland Chinese identity or corporate license verification, and local payment methods like Alipay or WeChat Pay. 
 
-In this guide, we walk you through how to bypass these registration barriers and integrate Tencent Hunyuan Hy3 and DeepSeek V4 into your stack in under two minutes using APIVALE.
+In this guide, we walk you through how to bypass these registration barriers and integrate Tencent Hunyuan Hy3 and DeepSeek V4 into your stack in under two minutes using APIVALE. For the latest high-throughput multimodal setup and 437 t/s benchmarks, follow our dedicated [DeepSeek V4.1 Flash API setup guide for Cursor & Claude Code](/blog/deepseek-v4-flash-api-guide/).
 
 ### Quick Start: Call Hy3 & DeepSeek V4 via APIVALE
 
