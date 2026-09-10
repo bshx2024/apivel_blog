@@ -1,4 +1,4 @@
----
+﻿---
 title: "DeepSeek V4.1 Flash API: Setup for Cursor & Claude Code (0910 Release)"
 metaTitle: "DeepSeek V4.1 Flash: Cursor & Claude Code API | APIVALE"
 description: "Complete setup guide for DeepSeek V4.1 Flash (0910 release) in Cursor & Claude Code CLI. 437 t/s benchmarks, fix 429 errors & Waffo global billing."
@@ -398,6 +398,10 @@ DeepSeek V4.1 Flash is an ultra-low-cost commercial model billed at $0.14 per 1M
 ### How do I fix the deepseek-v4.1-flash-expires-on-0910 expiration error?
 The `deepseek-v4.1-flash-expires-on-0910` tag was a 48-hour temporary preview that expired on September 10, 2026. Update your model string to `deepseek-v4.1-flash` in your scripts, Claude Code environment variables, or Cursor configuration.
 
+### Why does the official console show "Deepseek Flash" while the community and guides call it "DeepSeek V4.1 Flash"? (官方显示与社区命名释疑)
+**Q: 官方后台显示模型为 Deepseek Flash，为什么社区和博文称其为 DeepSeek V4.1 Flash？**  
+**A:** 官方在 2026 年 9 月 10 日的正式更新中，将原预览测试期（expires-on-0910）的 V4.1 极速与原生视觉架构直接合并进了生产级 Flash 引擎。为方便开发者无缝迁移，APIVALE 网关对 deepseek-v4.1-flash 与 deepseek-v4-flash 提供了双向等价别名路由，传入两者均可原生调用最新的 437 t/s 多模态视觉模型，无需担心命名冲突。
+
 ### How fast is DeepSeek V4.1 Flash compared to GLM 5.1 and GLM 5.3?
 In verified community tests, DeepSeek V4.1 Flash achieves decoding throughput between 400 and 437 tokens/s, outperforming GLM 5.1 (~220 tokens/s) and GLM 5.3 Flash (~310 tokens/s). Its Time-to-First-Token (TTFT) averages under 120ms on cached inputs.
 
@@ -429,6 +433,14 @@ APIVALE operates distributed high-concurrency connection pools (500+ RPM) with a
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Update your model configuration from deepseek-v4.1-flash-expires-on-0910 to the production model string deepseek-v4.1-flash."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does the official console display 'Deepseek Flash' while community guides call it 'DeepSeek V4.1 Flash'?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Official updates on September 10, 2026 merged the V4.1 preview architecture into the production Deepseek Flash engine. APIVALE provides bidirectional alias routing for deepseek-v4.1-flash and deepseek-v4-flash to invoke the identical 437 t/s multimodal engine."
       }
     },
     {
