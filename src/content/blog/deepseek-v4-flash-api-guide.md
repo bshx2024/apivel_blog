@@ -1,5 +1,5 @@
 ---
-title: "DeepSeek V4.1 Flash API Guide (0910 Release): Pricing & Setup"
+title: "DeepSeek V4.1 Flash (0910): Cursor & Claude Code Setup Guide"
 metaTitle: "DeepSeek V4.1 Flash (0910): Cursor & Claude Code | APIVALE"
 description: "Complete setup guide for DeepSeek V4.1 Flash (0910 release) in Cursor & Claude Code CLI. 437 t/s benchmarks, fix 429 errors & Waffo global billing."
 date: "2026-09-10"
