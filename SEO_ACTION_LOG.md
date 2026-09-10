@@ -43,6 +43,13 @@
 
 ## 📝 优化行动记录 (2026-09)
 
+### 📅 2026-09-10 - 🔗 [外链与推广]: 针对 DeepSeek 0910 突发变更与客户端模型名称报错，在 GitHub 活跃开源项目（steven5210/astra-fable-project-room #59 与 can1357/oh-my-pi #11508）落地 2 条高价值排错方案与代码，成功注入 DeepSeek V4.1 Flash 指南自然权威外链
+* **影响页面/关键词**：/blog/deepseek-v4-flash-api-guide/ (deepseek v4.1 flash, deepseek-flash, deepseek 0910, model_mismatch, deepseek-v4.1-flash-expires-on-0910, deepseek claude code cli, stream_options include_usage)
+  * 外链源 1: `https://github.com/steven5210/astra-fable-project-room/issues/59` (针对首包返回 `deepseek-flash` 触发 `model_mismatch` 提供严格规范的 Canonical Alias Set TypeScript 校验函数，并证明 V4.1 多模态真实交付)
+  * 外链源 2: `https://github.com/can1357/oh-my-pi/issues/11508` (针对客户端 Catalog 命名权衡给出双别名注册建议，规避 #11511 丢失 thinking 参数缺陷，并警示 Anthropic 协议下流式 usage 必需参数)
+* **动作详情**：基于“90% 实打实代码与技术排错 + 10% 自然出处”的纯白帽精准布道打法：1) 针对客户端校验严格的开发者提供生产级双别名平滑兼容代码，正面打消其对 V4.1 原生视觉与 437 t/s 推理性能的疑虑；2) 针对主流工具链 Catalog 维护者的 4 个架构争议提供第一手真实生产网关建议，并自然带入 `https://apivale.com/blog/deepseek-v4-flash-api-guide/` 作为基准测试与协议配置落地指南。
+* **预期因果假设**：借助 GitHub 超高域名权重（Domain Authority 96+）及与 0910 故障完全吻合的超强技术上下文，向 Google 注入高质量反向链接与实体语义关联；预计 3~7 天内随着两篇 Issue 被 Googlebot 抓取建立索引，拦截开发者搜索报错代码（`model_mismatch`、`deepseek-v4.1-flash-expires-on-0910`）的长尾技术流量，并协同带动落地页在 Google SERP 首页 Top 3 的排位固化。
+
 ### 📅 2026-09-10 - 📝 [内容动作]: 针对突发热点 "DeepSeek V4.1 Flash (0910 正式转正与全网实测)" 执行核心落地页全面重构与 CRO 注入：1) 迎合 0910 当日 beta 截止，将 MetaTitle 升级为 `DeepSeek V4.1 Flash API & Pricing Guide (0910) | APIVALE`（严格 56 字符）；2) 引用全网真实一手社区原声（X 知名工程师 Ivan Fioravanti 实测 350+ t/s 但官方在高负荷下 "failing quite often" 报错实况），直击官方并发 429 痛点；3) 注入实测客观对比表（包含 Geeky Gadgets 权威评测 437 t/s、Terminal Bench 2.1 84.2 分、Reddit/Singularity 98% Astra 分数比对）；4) 注入响应式 CRO 交互微工具（实时计算对比 Claude Sonnet 5 节省 97% 账单，一键复制 Cursor/Claude Code 配置）；5) 补齐 FAQ H2 语义树与完整 FAQPage JSON-LD Schema；6) 与 `deepseek-harness-custom-api-key-rate-limit-fix` 和 `deepseek-v4-flash-vision-api-guide` 完成双向网状内链织网。
 * **影响页面/关键词**：/blog/deepseek-v4-flash-api-guide/ (deepseek v4.1 flash, deepseek v4.1 flash 0910, deepseek v4.1 flash benchmark, deepseek-v4-flash vs deepseek-v4-pro, deepseek v4 flash vs glm5 1, deepseek v4.1 flash api pricing), /blog/deepseek-harness-custom-api-key-rate-limit-fix/, /blog/deepseek-v4-flash-vision-api-guide/
 * **动作详情**：1) 根据实况 SERP 排位（阻击排在第 1 位的 Vercel AI Gateway 标题结构），重塑内容架构；2) 植入 15+ 行 Python 带指数退避防 429 重试脚本；3) 严格遵循 Waffo 全球结算标准；4) 补齐内链回流网。
