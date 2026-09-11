@@ -43,6 +43,11 @@
 
 ## 📝 优化行动记录 (2026-09)
 
+### 📅 2026-09-11 - 📝 [内容动作]: 针对突发热点 "DeepSeek V4.1 Flash" 避免关键词自相蚕食（Cannibalization Check 阻断新建 75% 冲突页面），对核心落地页 `/blog/deepseek-v4-flash-api-guide/` 执行高价值【内容增补与新鲜度刷新 (Content Freshness)】：1) 深入剖析 9月10日晚至11日晨社区（Reddit r/LocalLLaMA、GitHub LiteLLM/Dify）爆发的 Model ID 变更混乱（官方主 ID `deepseek-flash` 与 `deepseek-v4.1-flash` 别名映射矩阵、9月14日 V4-Pro 强制并入排期表）；2) 针对 20 并发打爆导致 Agent 循环中断（HTTP 429）与 552B (196B Engram) 本地硬件不可行痛点，提供深度原声拆解与 APIVALE 500+ RPM 专属池解法；3) 保持 0 错误 0 警告通过 SEO Health 审计。
+* **影响页面/关键词**：/blog/deepseek-v4-flash-api-guide/ (deepseek-v4.1-flash, deepseek-flash, deepseek flash api setup, deepseek-v4.1-flash 429 rate limit, deepseek 552b local inference)
+* **动作详情**：1) 运行 `check_keyword_cannibalization` 阻断低效新建 URL；2) 在现有 3,500+ 词落地页中注入“Model Identifier Matrix (Sept 10–14)”和三项一手摩擦拆解；3) 运行 `audit_article_seo_health` 确认 0 warnings, 0 blockers，Title 55 字符严密合规。
+* **预期因果假设**：借助已有排位与外链沉淀，向 Google 算法释放及时的 Freshness 强信号，避免权重分散，在 24–48 小时内稳固并冲击目标词的 Google SERP Top 3，精准截流因官方 429 限流和海外绑卡失败而寻找高稳定商用 API 的开发者。
+
 ### 📅 2026-09-10 - 🔗 [外链与推广]: 针对 DeepSeek 0910 突发变更与客户端模型名称报错，在 GitHub 活跃开源项目（steven5210/astra-fable-project-room #59 与 can1357/oh-my-pi #11508）落地 2 条高价值排错方案与代码，成功注入 DeepSeek V4.1 Flash 指南自然权威外链
 * **影响页面/关键词**：/blog/deepseek-v4-flash-api-guide/ (deepseek v4.1 flash, deepseek-flash, deepseek 0910, model_mismatch, deepseek-v4.1-flash-expires-on-0910, deepseek claude code cli, stream_options include_usage)
   * 外链源 1: `https://github.com/steven5210/astra-fable-project-room/issues/59` (针对首包返回 `deepseek-flash` 触发 `model_mismatch` 提供严格规范的 Canonical Alias Set TypeScript 校验函数，并证明 V4.1 多模态真实交付)
