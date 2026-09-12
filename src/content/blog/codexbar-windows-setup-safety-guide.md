@@ -733,10 +733,10 @@ Explore essential developer guides and cost calculators designed to optimize you
     <div class="text-base font-bold text-white group-hover:text-indigo-300 mb-2">Claude Code CLI Custom Base URL</div>
     <p class="text-xs text-gray-300 leading-relaxed">Step-by-step instructions to configure environment variables and bypass 5-hour rate limits.</p>
   </a>
-  <a href="/blog/how-to-connect-qwen-3-7-to-claude-code-cli/" class="block p-5 bg-slate-900/90 border border-slate-700 hover:border-purple-500/60 rounded-xl transition shadow-lg group">
+  <a href="/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="block p-5 bg-slate-900/90 border border-slate-700 hover:border-purple-500/60 rounded-xl transition shadow-lg group">
     <div class="text-xs font-bold text-purple-400 uppercase tracking-wider mb-1">Model Integration</div>
-    <div class="text-base font-bold text-white group-hover:text-purple-300 mb-2">Connect Qwen 3.7 to Claude Code</div>
-    <p class="text-xs text-gray-300 leading-relaxed">How to use CodexBar on Windows alongside high-accuracy coding models like infer/qwen3.7-max.</p>
+    <div class="text-base font-bold text-white group-hover:text-purple-300 mb-2">Connect Qwen 3.8 to Claude Code</div>
+    <p class="text-xs text-gray-300 leading-relaxed">How to track token burn rates when routing multi-turn terminal agents to Qwen 3.8-Max MoE.</p>
   </a>
 </div>
 

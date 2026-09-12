@@ -98,6 +98,9 @@ export ANTHROPIC_MODEL="infer/qwen3.8-max"
 npx @anthropic-ai/claude-code
 ```
 
+> [!TIP]
+> **Windows Token Quota Tracking:** Running autonomous multi-turn loops in Claude Code CLI can quickly deplete session quotas without visual feedback. If you are developing on PC, follow our [CodexBar Windows setup guide](/blog/codexbar-windows-setup-safety-guide/) to monitor your terminal token burn rate in real time via WSL2 or native telemetry.
+
 ### Interactive Qwen 3.8 API Playground & Test Terminal
 
 Test your APIVALE endpoint and Qwen 3.8 model execution directly inside this article:

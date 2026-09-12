@@ -43,6 +43,15 @@
 
 ## 📝 优化行动记录 (2026-09)
 
+### 📅 2026-09-12 - 📝 [内容动作]: CodexBar Windows (GSC 92 曝光 / 排名 9.0) 权重提振：从全站两大核心高曝光流量支柱页面精准织入双向闭环网状内链 (Bidirectional Mesh Weaving)
+* **影响页面/关键词**：`/blog/codexbar-windows-setup-safety-guide/` (`codexbar windows`, `codexbar for windows`, `win-codexbar`, `codexbar wsl2`, `codexbar quota tracking`), `/blog/how-to-connect-qwen-3-8-to-claude-code-cli/`, `/blog/cursor-pro-vs-byok-cost-comparison/`
+* **优化背景**：GSC 实测数据显示关键词 `codexbar windows` 处于第 9.0 位（92 次曝光 / 1 次点击，CTR 1.09%），处于突破进入 Top 3~5 的临界冲刺带。原标题已有完整 Windows Setup 语义，核心瓶颈在于站内权威内链加权不足。
+* **具体动作**：
+  1. **高流量源页面 1 权重加持**：在全站第三大流量支柱 [`how-to-connect-qwen-3-8-to-claude-code-cli.md`](file:///e:/kaifa/APIVALE_blog/src/content/blog/how-to-connect-qwen-3-8-to-claude-code-cli.md)（1,518 次曝光）中注入针对 Windows / WSL2 开发者的终端 Quota 监控 Tip，精准植入内链指向该页。
+  2. **高流量源页面 2 权重加持**：在 [`cursor-pro-vs-byok-cost-comparison.md`](file:///e:/kaifa/APIVALE_blog/src/content/blog/cursor-pro-vs-byok-cost-comparison.md)（760 次曝光，高频承接 Cursor 额度痛点）中针对 Composer 多轮循环快速消耗 fast request 的痛点，注入桌面级 Quota 状态栏监控内链。
+  3. **双向闭环互通（Mesh Loop）**：在 [`codexbar-windows-setup-safety-guide.md`](file:///e:/kaifa/APIVALE_blog/src/content/blog/codexbar-windows-setup-safety-guide.md) 底部的相关推荐卡片中，对齐升级指向最新的 Qwen 3.8 指南与 BYOK 成本对比，形成闭环双向 PageRank 权重流转。
+* **14 天因果假设**：通过两大高权重页面的上下文锚文本传递权重，加速 Googlebot 对 CodexBar 页面的权重重估，推动核心词 `codexbar windows` 从第 9.0 名推入第 3~5 名，CTR 从 1.09% 提升至 8%~15%。
+
 ### 📅 2026-09-11 - 📝 [内容动作]: 针对突发热点 "DeepSeek V4.1 Flash" 避免关键词自相蚕食（Cannibalization Check 阻断新建 75% 冲突页面），对核心落地页 `/blog/deepseek-v4-flash-api-guide/` 执行高价值【内容增补与新鲜度刷新 (Content Freshness)】：1) 深入剖析 9月10日晚至11日晨社区（Reddit r/LocalLLaMA、GitHub LiteLLM/Dify）爆发的 Model ID 变更混乱（官方主 ID `deepseek-flash` 与 `deepseek-v4.1-flash` 别名映射矩阵、9月14日 V4-Pro 强制并入排期表）；2) 针对 20 并发打爆导致 Agent 循环中断（HTTP 429）与 552B (196B Engram) 本地硬件不可行痛点，提供深度原声拆解与 APIVALE 500+ RPM 专属池解法；3) 保持 0 错误 0 警告通过 SEO Health 审计。
 * **影响页面/关键词**：/blog/deepseek-v4-flash-api-guide/ (deepseek-v4.1-flash, deepseek-flash, deepseek flash api setup, deepseek-v4.1-flash 429 rate limit, deepseek 552b local inference)
 * **动作详情**：1) 运行 `check_keyword_cannibalization` 阻断低效新建 URL；2) 在现有 3,500+ 词落地页中注入“Model Identifier Matrix (Sept 10–14)”和三项一手摩擦拆解；3) 运行 `audit_article_seo_health` 确认 0 warnings, 0 blockers，Title 55 字符严密合规。

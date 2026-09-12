@@ -154,6 +154,9 @@ Cursor Pro integrates seamlessly into VS Code forks, but heavy **Composer multi-
 * After 500 requests, queries enter **slow queues** during peak US/Europe working hours, with latency spiking from 1.2s to 18+ seconds per generation.
 * Upgrading to Pro+ or paying on-demand overage fees significantly inflates the monthly bill.
 
+> [!TIP]
+> **Track Quotas on Windows & Mac:** When running heavy Composer agent loops in Cursor, token burn rates can spike unexpectedly. Windows developers can follow our [CodexBar Windows setup and safety guide](/blog/codexbar-windows-setup-safety-guide/) to monitor real-time token quotas and session health bars from the desktop.
+
 ### Why BYOK Resolves Both Limits
 By utilizing **Cursor Free + APIVALE BYOK**:
 1. You operate directly inside Cursor IDE with full Composer support.
