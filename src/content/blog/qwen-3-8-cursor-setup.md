@@ -1,6 +1,6 @@
 ---
 title: "How to Connect Qwen 3.8 to Cursor IDE: Custom API Key, .cursorrules & Cost Guide"
-metaTitle: "Qwen 3.8 to Cursor IDE: Custom API Key & Setup | APIVALE"
+metaTitle: "Qwen 3.8 Cursor Setup: Custom API Key & Rules | APIVALE"
 description: "Connect Qwen 3.8 to Cursor IDE with a custom OpenAI API key, base URL, .cursorrules tuning, and PayPal billing. Slash API token costs by 80% with zero KYC lock!"
 date: "2026-08-21"
 author: "Kenji Tanaka"

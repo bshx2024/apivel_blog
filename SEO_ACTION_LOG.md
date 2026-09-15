@@ -41,6 +41,14 @@
 
 
 
+
+## 📝 优化行动记录 (2026-09)
+
+### 📅 2026-09-15 - 📝 [内容动作]: Decouple Qwen 3.8 search intent: Refocus how-to-connect-qwen-3-8-to-claude-code-cli on Claude Code CLI and route Cursor traffic to dedicated qwen-3-8-cursor-setup with high-authority callout box and targeted metaTitles
+* **影响页面/关键词**：/blog/how-to-connect-qwen-3-8-to-claude-code-cli, /blog/qwen-3-8-cursor-setup (qwen 3.8 cursor, qwen 3.8 claude code)
+* **动作详情**：Decouple Qwen 3.8 search intent: Refocus how-to-connect-qwen-3-8-to-claude-code-cli on Claude Code CLI and route Cursor traffic to dedicated qwen-3-8-cursor-setup with high-authority callout box and targeted metaTitles
+* **预期因果假设**：Eliminate cannibalization between CLI and Cursor articles. Push 'qwen 3.8 cursor' from position 4.0 into Top 3 within 14 days and increase combined CTR by 15%.
+
 ## 📝 优化行动记录 (2026-09)
 
 ### 📅 2026-09-13 - 🔗 [外链与推广]: 围绕 DeepSeek V4.1 Flash 冲刺 Google Top 3，在 GitHub 活跃开源项目落地 DA 96+ 源码级技术反链，并完成 X.com 专属防限流 Thread Hook 与 Reddit 高互动破冰发帖

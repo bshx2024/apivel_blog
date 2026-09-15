@@ -1,9 +1,9 @@
 ---
-title: How to Connect Qwen 3.8 to Claude Code CLI & Cursor (Save 80% Token Spend)
-metaTitle: Qwen 3.8 Cursor & Claude Code Setup (80% Off) | APIVALE
+title: "How to Connect Qwen 3.8 to Claude Code CLI (Save 80% Token Spend)"
+metaTitle: "Connect Qwen 3.8 to Claude Code CLI: Setup Guide | APIVALE"
 description: >-
-  Learn how to connect Qwen 3.8 to Cursor and Claude Code CLI. Cut API token costs by 80%
-  ($0.60/1M) via APIVALE PayPal billing. Claim $0.20 free starter credit!
+  Learn how to connect Qwen 3.8 to Claude Code CLI. Cut API token costs by 80%
+  ($0.60/1M) via APIVALE with sub-500ms TTFT and Waffo global billing.
 date: '2026-07-30'
 author: Alex Rivera
 authorTitle: 'Senior Cloud Architect & API Integrations, APIVALE'
@@ -12,13 +12,12 @@ authorBio: >-
   gateway latency optimization, and developer proxy tools.
 tags:
   - Qwen 3.8
-  - Qwen 3.8 Cursor
-  - Qwen 3.7
   - Claude Code
-  - Cursor
+  - Qwen 3.7
+  - Claude Code CLI
   - Anthropic API
   - APIVALE
-  - PayPal
+  - Waffo
 image: /blog/og-cover.png
 lang: en
 ---
@@ -317,9 +316,16 @@ $env:ANTHROPIC_MODEL="infer/qwen3.8-max"
 npx @anthropic-ai/claude-code
 ```
 
-### 3. Connect Qwen 3.8 to Cursor IDE (Dedicated Guide)
+### 3. Looking for Cursor IDE Integration Instead?
 
-Cursor IDE connects via OpenAI protocol rather than Anthropic protocol. For the full walkthrough on configuring Cursor Settings, Base URL override, and production `.cursorrules` tuning for Qwen 3.8, visit our dedicated [Qwen 3.8 Cursor Setup Guide](/blog/qwen-3-8-cursor-setup).
+While Claude Code CLI communicates natively via Anthropic's `/v1/messages` protocol, Cursor IDE operates strictly on OpenAI-compatible `/v1/chat/completions` specifications. If you are developing inside Cursor Composer rather than the terminal CLI, connecting Qwen 3.8 requires distinct OpenAI Base URL overrides, specific APIVALE headers, and `.cursorrules` system prompt tuning.
+
+<div class="my-5 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4 shadow-md">
+  <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Dedicated Cursor Integration Walkthrough</span>
+  <p class="mt-1 text-sm text-gray-300">
+    For the complete step-by-step tutorial on configuring OpenAI Base URL overrides, custom API keys, and production-tested <code>.cursorrules</code> templates specifically inside the IDE, visit our dedicated <a href="/blog/qwen-3-8-cursor-setup" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Cursor Setup Guide (Custom API Key &amp; Cost Guide)</a>.
+  </p>
+</div>
 
 For web search integration, see our guide on [Best API Search for Company Homepages](/blog/best-api-search-company-homepage-guide). If your developer pipeline coordinates AI video generation alongside agentic coding, check our [fal.ai H3 Max vs Seedance 2.5 vs Kling: AI Video API Cost Benchmark](/blog/fal-ai-h3-max-vs-seedance-kling-cost-benchmark/) to calculate per-second rendering savings and prevent upstream timeout drops.
 
