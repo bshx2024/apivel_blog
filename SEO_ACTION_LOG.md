@@ -42,6 +42,14 @@
 
 
 
+
+## 📝 优化行动记录 (2026-09)
+
+### 📅 2026-09-15 - 🔗 [外链与推广]: Upgrade internal linking to 100% SEO best practice: Standardize canonical trailing slashes across all internal links, inject Related Guides visual card into Cursor article, and replace cross-cluster video link with relevant terminal noise cost reduction guide
+* **影响页面/关键词**：/blog/how-to-connect-qwen-3-8-to-claude-code-cli/, /blog/qwen-3-8-cursor-setup/ (qwen 3.8 cursor, claude code cli, cursor byok)
+* **动作详情**：Upgrade internal linking to 100% SEO best practice: Standardize canonical trailing slashes across all internal links, inject Related Guides visual card into Cursor article, and replace cross-cluster video link with relevant terminal noise cost reduction guide
+* **预期因果假设**：Standardize PageRank flow, prevent 301 crawl-budget waste from missing slashes, and strengthen topical silo purity between CLI, Cursor, and agent cost reduction guides.
+
 ## 📝 优化行动记录 (2026-09)
 
 ### 📅 2026-09-15 - 📝 [内容动作]: Decouple Qwen 3.8 search intent: Refocus how-to-connect-qwen-3-8-to-claude-code-cli on Claude Code CLI and route Cursor traffic to dedicated qwen-3-8-cursor-setup with high-authority callout box and targeted metaTitles

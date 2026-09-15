@@ -20,6 +20,13 @@ lang: "en"
   </ul>
 </div>
 
+<div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
+  <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Related Agent &amp; Model Setup Guides</span>
+  <p class="mt-1 text-sm text-gray-300">
+    Configuring different agent workflows? Follow our companion guide on <a href="/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="text-cyan-400 hover:underline font-semibold">How to Connect Qwen 3.8 to Claude Code CLI</a>, compare BYOK plans in our <a href="/blog/cursor-pro-vs-custom-api-key/" class="text-cyan-400 hover:underline font-semibold">Cursor Pro vs Custom API Key Cost Analysis</a>, or explore <a href="/blog/qwen-3-8-flash-next-benchmarks-api-guide/" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Flash Next Benchmarks &amp; API Guide</a>.
+  </p>
+</div>
+
 <div id="single-url-interactive-banner" class="my-6 border border-indigo-500/30 bg-gradient-to-r from-indigo-950/40 via-purple-950/20 to-gray-900 rounded-xl p-6 shadow-xl">
   <div class="flex items-center justify-between flex-wrap gap-3 mb-3">
     <span class="inline-flex items-center text-xs font-bold uppercase tracking-wider text-cyan-400 bg-cyan-950/60 border border-cyan-800/50 px-3 py-1 rounded-full">
@@ -44,7 +51,7 @@ lang: "en"
 
 For software engineers utilizing **Cursor IDE** and **Cursor Composer** for full-stack refactoring, the default 500 fast request monthly allocation on Cursor Pro burns out within the first week of intensive sprint cycles. Once exhausted, additional fast requests incur $0.10 per call or revert to slow queue throttles. Concurrently, proprietary frontier models like Claude Sonnet 5 command $3.00/$15.00 per million tokens, causing multi-turn agent sessions to rack up substantial cloud bills.
 
-Deploying Alibaba Cloud's flagship 2.4-trillion parameter **Qwen 3.8-Max** locally requires an enterprise cluster of 18x NVIDIA H200 GPUs (over 2.4TB VRAM). (For developers seeking lightning-fast 140+ tps token generation and sparse MoE scaling, explore our <a href="/blog/qwen-3-8-flash-next-benchmarks-api-guide" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Flash Next Benchmarks & API Guide</a>). Attempting to bridge local Ollama instances into Cursor fails due to Cursor's cloud routing architecture (`api2.cursor.sh`), which cannot resolve `localhost:11434` without complex tunnel daemons.
+Deploying Alibaba Cloud's flagship 2.4-trillion parameter **Qwen 3.8-Max** locally requires an enterprise cluster of 18x NVIDIA H200 GPUs (over 2.4TB VRAM). (For developers seeking lightning-fast 140+ tps token generation and sparse MoE scaling, explore our <a href="/blog/qwen-3-8-flash-next-benchmarks-api-guide/" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Flash Next Benchmarks & API Guide</a>). Attempting to bridge local Ollama instances into Cursor fails due to Cursor's cloud routing architecture (`api2.cursor.sh`), which cannot resolve `localhost:11434` without complex tunnel daemons.
 
 By configuring Cursor's native OpenAI Base URL override to point to APIVALE (`https://api.apivale.com/v1`), developers unlock unthrottled Qwen 3.8-Max inference with zero hardware overhead, 80% token cost reduction, and seamless **Waffo global billing**.
 
@@ -225,7 +232,7 @@ In an active development sprint spanning 500 Cursor Composer agent interactions,
 - **Total APIVALE Qwen 3.8-Max Cost**: **$3.00 total spend**
 - **Cursor Pro Extra Request Overage**: $500 \times \$0.10 = \mathbf{\$50.00}$
 
-By bringing your own API key (BYOK) powered by APIVALE's gateway, you save **$47.00 (94% reduction)** across every 500 heavy coding requests. For additional insights on cost management, review our comprehensive analysis on [Cursor Pro vs Custom API Key Costs](/blog/cursor-pro-vs-custom-api-key) and [Qwen 3.8 Max Benchmarks Preview Guide](/blog/qwen-3-8-max-benchmarks-preview-guide).
+By bringing your own API key (BYOK) powered by APIVALE's gateway, you save **$47.00 (94% reduction)** across every 500 heavy coding requests. For additional insights on cost management, review our comprehensive analysis on [Cursor Pro vs Custom API Key Costs](/blog/cursor-pro-vs-custom-api-key/) and [Qwen 3.8 Max Benchmarks Preview Guide](/blog/qwen-3-8-max-benchmarks-preview-guide/).
 
 ### Time-to-First-Token (TTFT) and Code Generation Throughput
 
@@ -296,7 +303,7 @@ Verify that Cursor Chat and Composer establish a clean HTTP 200 SSE streaming ha
    > *"Explain how Go goroutines manage stack resizing compared to OS threads."*
 4. Confirm that the response streams immediately with sub-500ms initial token rendering.
 
-If you also work extensively in terminal CLI workflows, check out our companion tutorial on [How to Connect Qwen 3.8 to Claude Code CLI](/blog/how-to-connect-qwen-3-8-to-claude-code-cli).
+If you also work extensively in terminal CLI workflows, check out our companion tutorial on [How to Connect Qwen 3.8 to Claude Code CLI](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/).
 
 ---
 
@@ -421,7 +428,7 @@ app.post('/v1/chat/completions', async (req: Request, res: Response): Promise<vo
 app.listen(PORT, () => console.log(`Cursor Gateway Proxy active on http://localhost:${PORT}`));
 ```
 
-For more details on multi-model routing and alternatives, see our step-by-step tutorial on [how to use Ox Alpha in Claude Code & Cursor](/blog/ox-alpha-claude-code-cursor-setup/), our setup guide for [CodexBar on Windows 11](/blog/codexbar-windows-setup-safety-guide/) to monitor token quotas visually, our comparison of [OpenRouter Alternatives with PayPal](/blog/openrouter-alternatives), and [DeepSeek Harness Custom API Key Guide](/blog/deepseek-harness-custom-api-key-rate-limit-fix).
+For more details on multi-model routing and alternatives, see our step-by-step tutorial on [how to use Ox Alpha in Claude Code & Cursor](/blog/ox-alpha-claude-code-cursor-setup/), our setup guide for [CodexBar on Windows 11](/blog/codexbar-windows-setup-safety-guide/) to monitor token quotas visually, our comparison of [OpenRouter Alternatives with PayPal](/blog/openrouter-alternatives/), and [DeepSeek Harness Custom API Key Guide](/blog/deepseek-harness-custom-api-key-rate-limit-fix/).
 
 ---
 
