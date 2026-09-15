@@ -22,7 +22,7 @@ lang: "en"
 
 Multimodal AI workflows—from screenshot-to-code pipelines to document OCR and UI testing agents—have long been bottlenecked by unpredictable image tokenization. Proprietary models slice high-resolution images into dynamic tile grids, frequently consuming 1,200 to 2,000 tokens per image.
 
-Following the text and native multimodal throughput of the official [DeepSeek V4.1 Flash API (0910 Release & 437 t/s Benchmarks)](/blog/deepseek-v4-flash-api-guide), the **DeepSeek-V4-Flash-Vision-Exp** model introduces a leap in visual reasoning efficiency. Combining a 284B MoE (13B active) architecture with a 384-token fixed ceiling, developers can execute continuous vision loops at micro-cent pricing. Developers can also [access DeepSeek without domestic phone numbers](/blog/how-to-access-hy3-deepseek-without-86-phone) globally via APIVALE.
+Following the text and native multimodal throughput of the official [DeepSeek V4.1 Flash API (0910 Release & 437 t/s Benchmarks)](/blog/deepseek-v4-flash-api-guide/), the **DeepSeek-V4-Flash-Vision-Exp** model introduces a leap in visual reasoning efficiency. Combining a 284B MoE (13B active) architecture with a 384-token fixed ceiling, developers can execute continuous vision loops at micro-cent pricing. Developers can also [access DeepSeek without domestic phone numbers](/blog/how-to-access-hy3-deepseek-without-86-phone/) globally via APIVALE.
 
 ```bash
 # Execute a multimodal vision request via APIVALE OpenAI-compatible proxy

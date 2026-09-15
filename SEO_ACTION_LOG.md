@@ -45,6 +45,14 @@
 
 
 
+
+## 📝 优化行动记录 (2026-09)
+
+### 📅 2026-09-15 - 🔗 [外链与推广]: Complete DeepSeek topic cluster internal link mesh: Inject contextual anchor links to 429 rate limit guide and +86 phone bypass guide into DeepSeek V4.1 Flash article, normalize inbound links in vision article, and purify Qwen anchor text
+* **影响页面/关键词**：/blog/deepseek-v4-flash-api-guide/, /blog/deepseek-v4-flash-vision-api-guide/ (deepseek v4.1 flash api, deepseek 429 fix, access deepseek without 86 phone)
+* **动作详情**：Complete DeepSeek topic cluster internal link mesh: Inject contextual anchor links to 429 rate limit guide and +86 phone bypass guide into DeepSeek V4.1 Flash article, normalize inbound links in vision article, and purify Qwen anchor text
+* **预期因果假设**：Form an airtight DeepSeek topic cluster (Pillar + 429 Fix + +86 Phone Bypass + Vision), circulating internal PageRank, increasing dwell time, and accelerating Google Top 3 ranking for the DeepSeek V4.1 Flash API cluster.
+
 ## 📝 优化行动记录 (2026-09)
 
 ### 📅 2026-09-15 - 📝 [内容动作]: Align DeepSeek V4.1 Flash article with real Google search autocomplete and PAA keywords: Update Title, MetaTitle, and H2/H3s to target deepseek v4.1 flash api, benchmark, size, price, release date, free, 1 bit, vs v4-pro, kv cache, and reddit
