@@ -58,7 +58,7 @@ lang: "en"
 
 Alibaba's **Qwen 3.8-Max** establishes a new benchmark for open-weights-derived Mixture-of-Experts (MoE) architectures, delivering 88.4% on SWE-bench Verified and rivaling proprietary frontier models across multi-turn reasoning and agentic tool invocation. While enterprise self-hosting of its 2.4-trillion parameters requires multi-node H200 GPU infrastructure, cloud developers frequently encounter rate limitations or regional payment frictions.
 
-Through APIVALE's unified routing gateway, developers can immediately access **Qwen 3.8-Max preview capacity** (`infer/qwen3.8-max`), achieving an 80% cost reduction ($0.60/1M input tokens) with standard OpenAI and Anthropic endpoint interfaces and global PayPal billing.
+Through APIVALE's unified routing gateway, developers can immediately access **Qwen 3.8-Max preview capacity** (`infer/qwen3.8-max`), achieving an 80% cost reduction ($0.60/1M input tokens) with standard OpenAI and Anthropic endpoint interfaces and global Waffo billing. For developers specifically optimizing terminal IDE workflows, read our companion breakdown on [running Qwen 3.8 Max as an alternative to Claude Opus 5.2 in Claude Code CLI](/blog/claude-code-opus-5-2-alternative-qwen-3-8-max/).
 
 <div class="my-6 border-l-4 border-indigo-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Definition</span>

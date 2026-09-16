@@ -44,14 +44,14 @@ lang: "en"
 
 Anthropic's flagship **Claude Opus 5** model delivers industry-leading reasoning for complex system refactoring, multi-file code synthesis, and deep architectural debugging. However, invoking Opus 5 directly in continuous agent loops can create operational challenges: steep token consumption costs during multi-turn exploration, hourly rate-limit throttles (429 exceptions), and payment verification failures on corporate or international payment cards.
 
-By connecting Claude Code CLI and Cursor to APIVALE's high-concurrency gateway, developers gain unified access to Opus 5 with dedicated throughput pools, automated failover routes, and flexible global PayPal billing.
+By connecting Claude Code CLI and Cursor to APIVALE's high-concurrency gateway, developers gain unified access to Opus 5 with dedicated throughput pools, automated failover routes, and flexible global Waffo billing. Exploring unannounced model updates? Read our deep-dive analysis on the [Claude Opus 5.2 grayscale and Qwen 3.8 Max alternative in Claude Code](/blog/claude-code-opus-5-2-alternative-qwen-3-8-max/).
 
 ```mermaid
 graph LR
     A["Claude Code CLI / Cursor"] -->|Anthropic /v1/messages| B["APIVALE Global Gateway"]
     B -->|Dedicated Upstream Pool| C["Claude Opus 5 (claude-opus-5)"]
-    B -->|Failover Route| D["Claude Sonnet 5 / Qwen 3.7 Max"]
-    B -->|Billing Engine| E["PayPal Global Billing"]
+    B -->|Grayscale & Cost Alternative| D["Qwen 3.8 Max (Opus 5.2 Drop-in)"]
+    B -->|Billing Engine| E["Waffo Global Billing"]
 ```
 
 ---

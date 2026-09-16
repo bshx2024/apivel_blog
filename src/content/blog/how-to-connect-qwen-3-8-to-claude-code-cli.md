@@ -33,7 +33,7 @@ lang: en
 <div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
   <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Related Agent & Model Setup Guides</span>
   <p class="mt-1 text-sm text-gray-300">
-    Configuring different agent workflows? Follow our step-by-step tutorial on <a href="/blog/ox-alpha-claude-code-cursor-setup/" class="text-cyan-400 hover:underline font-semibold">how to use Ox Alpha in Claude Code & Cursor</a>, read our <a href="/blog/connect-glm-5-3-to-claude-code-cli-cursor/" class="text-cyan-400 hover:underline font-semibold">GLM-5.3 Cursor IDE Integration Guide</a>, or explore <a href="/blog/qwen-3-8-flash-next-benchmarks-api-guide/" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Flash Next Benchmarks & API Guide</a>.
+    Configuring different agent workflows? Compare against stealth frontier models in our <a href="/blog/claude-code-opus-5-2-alternative-qwen-3-8-max/" class="text-cyan-400 hover:underline font-semibold">Claude Opus 5.2 vs Qwen 3.8 Max in Claude Code</a> guide, follow our step-by-step tutorial on <a href="/blog/ox-alpha-claude-code-cursor-setup/" class="text-cyan-400 hover:underline font-semibold">how to use Ox Alpha in Claude Code & Cursor</a>, or read our <a href="/blog/connect-glm-5-3-to-claude-code-cli-cursor/" class="text-cyan-400 hover:underline font-semibold">GLM-5.3 Cursor IDE Integration Guide</a>.
   </p>
 </div>
 
