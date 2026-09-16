@@ -116,7 +116,7 @@ x-client-version: claude-code-cli/1.8.4
 
 ### The 2026 Knowledge Cutoff & Milestone Gap
 
-Anthropic moved directly from Opus 5.0 to 5.2 to match rapid industry advancements, specifically the emergence of GPT-6 Sol and retirement of legacy GPT-5.5 models. You can test your session's training cutoff by asking about events after February 2026:
+Anthropic moved directly from Opus 5.0 to 5.2 to match rapid industry advancements, specifically the emergence of GPT-6 Sol and the [October 14 retirement of legacy GPT-5.5 models](/blog/gpt-6-sol-vs-deepseek-v4/). Developers previously maintaining pipelines on Claude Opus 5 can review our foundational [how to connect Claude Opus 5 to Claude Code CLI](/blog/how-to-connect-claude-opus-5-to-claude-code-cli/) setup guide. You can test your session's training cutoff by asking about events after February 2026:
 
 ```text
 > Query: What were the key announcements regarding frontier AI models on April 16, 2026?
@@ -197,7 +197,7 @@ graph LR
 
 ## How to Configure Claude Code CLI with Qwen 3.8 (Step-by-Step)
 
-Connecting Claude Code CLI to APIVALE requires configuring standard environment variables without editing binary files.
+Connecting Claude Code CLI to APIVALE requires configuring standard environment variables without editing binary files. For benchmark verification and token comparisons, inspect our [Qwen 3.8 Max benchmark preview guide](/blog/qwen-3-8-max-benchmarks-preview-guide/), or refer to our complete walkthrough on [how to connect Qwen 3.8 to Claude Code CLI](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/).
 
 ### Terminal Environment & Custom Endpoint Setup
 

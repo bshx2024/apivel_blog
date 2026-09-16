@@ -130,7 +130,7 @@ Understanding OpenAI's product hierarchy clarifies why the **GPT-6 Sol vs DeepSe
 ### Grayscale Testing in LMSYS Arena & Sol vs Astra Tiering
 
 Telemetry records from LMSYS Chatbot Arena show OpenAI dividing its GPT-6 release into distinct tiers:
-* **GPT-6 Astra:** The primary flagship model optimized for computer vision, SVG animation modeling, and complex spatial physics.
+* **GPT-6 Astra:** The primary flagship model optimized for computer vision, SVG animation modeling, and complex spatial physics (explore our detailed breakdown on [GPT-6 Astra API price tiers and benchmarks](/blog/gpt-6-astra-api-pricing-guide/)).
 * **GPT-6 Sol:** An economical daily driver designed for high-concurrency tasks, lower token pricing, and standard ChatGPT subscriber pools.
 
 While Sol achieves faster generation speeds through speculative decoding, early benchmarks reveal code generation drawbacks: outputs frequently contain bloated class structures and unnecessary helper functions.
@@ -174,7 +174,7 @@ export class SimpleRateLimiter {
 
 ### Direct AST Accuracy: How DeepSeek V4 Solves Over-Abstraction
 
-DeepSeek V4 was trained on curated software engineering datasets with strict penalties for token redundancy. In autonomous refactoring loops, DeepSeek V4 targets specific AST nodes directly without rewriting unaffected classes.
+DeepSeek V4 was trained on curated software engineering datasets with strict penalties for token redundancy. In autonomous refactoring loops, DeepSeek V4 targets specific AST nodes directly without rewriting unaffected classes. For high-throughput streaming and multimodal endpoints, explore our [DeepSeek V4 Flash API architecture guide](/blog/deepseek-v4-flash-api-guide/).
 
 This precision reduces output token consumption, speeds up test suites, and eliminates circular linter errors in automated CI/CD environments.
 
@@ -182,7 +182,7 @@ This precision reduces output token consumption, speeds up test suites, and elim
 
 ## Production Migration: Moving from OpenAI Endpoints to DeepSeek V4
 
-Transitioning enterprise services from OpenAI to DeepSeek V4 on APIVALE requires updating environment variables without rewriting client application logic.
+Transitioning enterprise services from OpenAI to DeepSeek V4 on APIVALE requires updating environment variables without rewriting client application logic. If you are also deploying terminal-based autonomous agents alongside backend microservices, explore our companion breakdown on [running Qwen 3.8 Max in Claude Code CLI](/blog/claude-code-opus-5-2-alternative-qwen-3-8-max/), or review our [tri-model enterprise cost benchmark](/blog/gemini-3-6-flash-vs-deepseek-v4-vs-qwen-3-7-agent-cost-guide/).
 
 ### Zero-Code Base URL Switch for Python, LangChain & Autogen
 
