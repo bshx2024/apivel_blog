@@ -213,11 +213,22 @@ export ANTHROPIC_API_KEY="sk-apivale-prod-7f9a2e38c1b44d5e90a"
 
 # Select Qwen 3.8 Max as your active model engine
 export ANTHROPIC_MODEL="infer/qwen3.8-max"
-export API_TIMEOUT_MS="180000"
+
+# Set timeout to 10 minutes to prevent client drops during massive 300k+ token context pre-fills
+export API_TIMEOUT_MS="600000"
 
 # Verify CLI configuration
 claude --print-config
 ```
+
+<div class="my-6 border-l-4 border-amber-500 bg-gray-900 rounded-r-lg p-5">
+  <span class="text-xs font-bold uppercase tracking-wider text-amber-400">⚡ Cost &amp; Timeout Guard: Massive Context Optimization</span>
+  <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
+    <li><strong>Trigger 87.5% OFF Automatic Caching (0.125x Rate):</strong> APIVALE provides native 1.25-折 prompt caching on Qwen 3.8 Max ($0.10/1M cached vs $0.80/1M uncached). Ensure your client keeps system prompts and static file orders consistent to maintain prefix cache hits across conversation turns.</li>
+    <li><strong>Prevent Client-Side Timeouts:</strong> When feeding 300,000+ tokens of codebase context into 2.4T MoE models, deep pre-fill compute takes 90–150 seconds. Setting <code>API_TIMEOUT_MS=600000</code> prevents local agents from abruptly disconnecting before generation completes.</li>
+    <li><strong>Dual-Model Cost Reduction Strategy:</strong> For iterative codebase grep and bulk file reading, route to ultra-low-cost streaming models like <code>glm-5.3-flash</code> ($0.04/1M) or <code>deepseek-v4.1-flash</code> ($0.10/1M), reserving Qwen 3.8 Max for final architectural code synthesis.</li>
+  </ul>
+</div>
 
 Execute tasks directly from your workspace:
 

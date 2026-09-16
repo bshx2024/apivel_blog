@@ -300,6 +300,9 @@ export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
 export ANTHROPIC_AUTH_TOKEN="apivale-key-xxxxxxxxxxxxxxxx"
 export ANTHROPIC_MODEL="infer/qwen3.8-max"
 
+# Set timeout to 10 minutes to prevent client disconnections during 300k+ token repo pre-fills
+export API_TIMEOUT_MS=600000
+
 source ~/.zshrc
 npx @anthropic-ai/claude-code
 ```
@@ -313,8 +316,20 @@ $env:ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
 $env:ANTHROPIC_AUTH_TOKEN="apivale-key-xxxxxxxxxxxxxxxx"
 $env:ANTHROPIC_MODEL="infer/qwen3.8-max"
 
+# Prevent timeouts on massive full-repository contexts
+$env:API_TIMEOUT_MS="600000"
+
 npx @anthropic-ai/claude-code
 ```
+
+<div class="my-6 border-l-4 border-amber-500 bg-gray-900 rounded-r-lg p-5">
+  <span class="text-xs font-bold uppercase tracking-wider text-amber-400">⚡ Cost &amp; Timeout Guard: Massive Context Optimization</span>
+  <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
+    <li><strong>Trigger 87.5% OFF Automatic Caching (0.125x Rate):</strong> APIVALE provides native 1.25-折 prompt caching on Qwen 3.8 Max ($0.10/1M cached vs $0.80/1M uncached). Ensure your client keeps system prompts and static file orders consistent to maintain prefix cache hits across conversation turns.</li>
+    <li><strong>Prevent Client-Side Timeouts:</strong> When feeding 300,000+ tokens of codebase context into 2.4T MoE models, deep pre-fill compute takes 90–150 seconds. Setting <code>API_TIMEOUT_MS=600000</code> prevents local agents from abruptly disconnecting before generation completes.</li>
+    <li><strong>Dual-Model Cost Reduction Strategy:</strong> For iterative codebase grep and bulk file reading, route to ultra-low-cost streaming models like <code>glm-5.3-flash</code> ($0.04/1M) or <code>deepseek-v4.1-flash</code> ($0.10/1M), reserving Qwen 3.8 Max for final architectural code synthesis.</li>
+  </ul>
+</div>
 
 ### 3. Looking for Cursor IDE Integration Instead?
 
