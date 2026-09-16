@@ -33,7 +33,7 @@ lang: "en"
 <div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
   <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Related Agent & Model Setup Guides</span>
   <p class="mt-1 text-sm text-gray-300">
-    Configuring different agent workflows? Follow our step-by-step tutorial on <a href="/blog/ox-alpha-claude-code-cursor-setup/" class="text-cyan-400 hover:underline font-semibold">how to use Ox Alpha in Claude Code & Cursor</a>, see how to <a href="/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="text-cyan-400 hover:underline font-semibold">connect Qwen 3.8 to Claude Code CLI</a>, or explore our <a href="/blog/deepseek-v4-flash-vision-api-guide/" class="text-cyan-400 hover:underline font-semibold">DeepSeek V4 Flash Vision 384-Token Setup Guide</a>.
+    Migrating from OpenAI? Read our <a href="/blog/gpt-6-sol-vs-deepseek-v4-migration-guide/" class="text-cyan-400 hover:underline font-semibold">GPT-6 Sol vs DeepSeek V4 (GPT-5.5 Migration Guide)</a>, follow our step-by-step tutorial on <a href="/blog/ox-alpha-claude-code-cursor-setup/" class="text-cyan-400 hover:underline font-semibold">how to use Ox Alpha in Claude Code & Cursor</a>, or explore our <a href="/blog/deepseek-v4-flash-vision-api-guide/" class="text-cyan-400 hover:underline font-semibold">DeepSeek V4 Flash Vision Setup Guide</a>.
   </p>
 </div>
 
