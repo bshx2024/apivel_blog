@@ -173,7 +173,7 @@ ANTHROPIC_BASE_URL=https://api.apivale.com
 ANTHROPIC_API_KEY=sk-apivale-prod-live-credential-token
 ```
 
-When Octop boots, `apply_env_file` loads these variables before starting internal server workers, immediately connecting your Octop AI Assistant setup to APIVALE.
+When Octop boots, `apply_env_file` loads these variables before starting internal server workers, immediately connecting your Octop AI Assistant setup to APIVALE. If you plan to delegate automated coding sessions to external terminal agents via `octop acp`, consult our production guide on [Claude Code CLI proxy configurations](/blog/claude-code-opus-5-2-alternative-qwen-3-8-max/) for token window limits and model failover parameters.
 
 ### Production Python Healthcheck with Exponential Backoff
 
@@ -286,7 +286,7 @@ APIVALE incorporates **Waffo Global Billing**, enabling developers to fund their
 
 ## Performance & Cost Arbitrage: Benchmark Analysis
 
-Balancing local compute with cloud proxy routing determines the overall operating cost of your Octop AI Assistant setup. This benchmark table compares key metrics across infrastructure options:
+Balancing local compute with cloud proxy routing determines the overall operating cost of your Octop AI Assistant setup. For architectural blueprints on partitioning edge tasks to local models while escalating complex prompts to cloud gateways, review our deep dive on [hybrid LLM agent deployments](/blog/infrastructure-for-hybrid-llm-agent-deployments/). This benchmark table compares key metrics across infrastructure options:
 
 | Deployment Architecture | Time-to-First-Token (TTFT) | Sustained Output (TPS) | Monthly Cost (100k msg/mo) | Direct Enterprise Best-for Column | APIVALE Strategic Advantage |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -300,7 +300,7 @@ Balancing local compute with cloud proxy routing determines the overall operatin
 
 ## Interactive CRO Micro-Tool: Octop Token Burn & Cost Calculator
 
-Estimate your monthly agent token consumption and calculate operational savings for your Octop AI Assistant setup when routing through APIVALE:
+Estimate your monthly agent token consumption and calculate operational savings for your Octop AI Assistant setup when routing through APIVALE. Autonomous agents with recursive tool loops burn millions of tokens in minutes; explore our proven tactics for [slashing coding agent token costs by 85%](/blog/how-to-reduce-opencode-token-costs/) using context compaction and prompt caching:
 
 <div id="octop-calculator-widget" class="my-8 p-6 bg-gray-900 border border-indigo-500/40 rounded-xl text-gray-200">
   <div class="text-lg font-bold text-white mb-2">Octop Multi-Agent Token & Cost Estimator</div>
