@@ -20,7 +20,7 @@ In this guide, you will learn how to configure OpenCode and OpenCodeX to route r
 <div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
   <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Step-by-Step Setup Guide</span>
   <p class="mt-1 text-sm text-gray-300">
-    Need a complete walkthrough for OpenCode Zen, OpenCode Go, and Open WebUI? Read our dedicated guide on <a href="/blog/opencode-paypal-billing-api-proxy-guide/" class="text-cyan-400 hover:underline font-semibold">OpenCode PayPal Billing & Open WebUI API Proxy Setup</a> with Docker configurations and Waffo global billing.
+    Need a complete walkthrough for OpenCode Zen, OpenCode Go, and Open WebUI? Read our dedicated guide on <a href="/blog/opencode-paypal-billing-api-proxy-guide/" class="text-cyan-400 hover:underline font-semibold">OpenCode PayPal Billing & Open WebUI API Proxy Setup</a>, or see our <a href="/blog/octop-ai-assistant-setup-guide/" class="text-cyan-400 hover:underline font-semibold">Octop AI Assistant Setup Guide</a> for ACP delegation and IM channel automation.
   </p>
 </div>
 
