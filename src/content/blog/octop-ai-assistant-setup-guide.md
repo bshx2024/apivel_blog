@@ -1,7 +1,7 @@
 ---
 title: "Octop AI Assistant Setup Guide: Step-by-Step Instructions & API Config"
 metaTitle: "Octop AI Assistant Setup Guide: Custom Models | APIVALE"
-description: "Learn how to set up Octop AI Assistant, configure custom OpenAI and Claude models, bypass streaming errors, and enable zero-card Waffo billing with APIVALE."
+description: "Complete Octop AI Assistant setup guide: configure custom OpenAI and Claude models, bypass streaming errors, and enable zero-card Waffo billing on APIVALE."
 date: '2026-09-17'
 author: Kenji Tanaka
 authorTitle: 'AI Developer Relations Engineer, APIVALE'
@@ -22,17 +22,17 @@ lang: en
 <div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
-    <li><strong>Entity Disambiguation & Architecture:</strong> Octop is Tencent Cloud's open-source, self-hosted multi-agent platform (distinct from Octopus Deploy or generic octopus AI) operating on a single-process Python 3.12+ runtime.</li>
-    <li><strong>The Multi-Agent Token Barrier:</strong> Running 7x24 IM bots (Feishu/DingTalk) and cron loops exhausts local GPU VRAM and incurs heavy cloud token burn; local Ollama models frequently hallucinate on complex multi-turn JSON tool calls.</li>
-    <li><strong>Verified Gateway Integration:</strong> Routing Octop through APIVALE unlocks flagship models (Claude Sonnet 5, Qwen 3.7 Max, DeepSeek V4) via OpenAI-compatible endpoints with sub-450ms TTFT, resolving streaming block crashes and bypassing overseas card restrictions using Waffo global billing.</li>
+    <li><strong>Octop AI Assistant Setup Architecture:</strong> Octop is Tencent Cloud's open-source, self-hosted multi-agent platform (distinct from Octopus Deploy or generic octopus AI) operating on a single-process Python 3.12+ runtime with local SQLite storage.</li>
+    <li><strong>Multi-Agent Token & VRAM Limits:</strong> Running 24/7 IM bots across Feishu and DingTalk with local Ollama models frequently triggers out-of-memory errors and tool-calling hallucinations, requiring high-reasoning cloud endpoints.</li>
+    <li><strong>APIVALE Gateway Integration:</strong> Routing your Octop AI Assistant setup through APIVALE unlocks Claude Sonnet 5, Qwen 3.7 Max, and DeepSeek V4 via OpenAI-compatible endpoints with sub-450ms TTFT, fixes stream chunk exceptions, and enables zero-card Waffo global billing.</li>
   </ul>
 </div>
 
-Deploying autonomous agentic frameworks on local workstations or private servers has become the gold standard for engineering teams demanding data privacy and workflow automation. Tencent Cloud's open-source **Octop** platform has emerged as a premier self-hosted assistant, uniting a React web dashboard, multi-channel IM bridges (Feishu, DingTalk, Discord, WeCom), and Agent Client Protocol (ACP) delegation into a unified SQLite-backed process.
+Executing a successful **Octop AI Assistant setup** allows engineering teams to deploy private, autonomous agents across local workstations and production servers. Developed by Tencent Cloud, the open-source Octop runtime bridges a web console, CLI, and multi-channel IM integrations (Feishu, DingTalk, Discord, WeCom) into a unified process backed by SQLite.
 
-However, developers deploying Octop quickly run into two severe engineering roadblocks. First, local small models running on Ollama frequently fail when executing multi-turn tool calling, MBTI persona injections, and long-context RAG pipelines. Second, connecting Octop directly to overseas model providers triggers payment rejections on international corporate cards, stringent regional KYC blocks, and cryptic stream-parsing exceptions like `TypeError: can only concatenate str (not "list") to str`.
+However, developers completing an Octop AI Assistant setup frequently encounter two critical bottlenecks. First, consumer GPUs running local Ollama models struggle with multi-turn tool calling, MBTI persona injections, and long-context RAG tasks. Second, routing Octop to official overseas APIs leads to corporate credit card declines, KYC restrictions, and stream crashes such as `TypeError: can only concatenate str (not 'list') to str`.
 
-This guide provides step-by-step setup instructions to install Octop, configure custom API providers, resolve protocol formatting traps, and route production workloads through APIVALE's high-concurrency gateway. Test your baseline connectivity in 5 seconds using the minimal cURL snippet below:
+This **Octop AI Assistant setup guide** provides step-by-step instructions to configure custom API providers, troubleshoot stream chunk errors, and route traffic through APIVALE's high-concurrency gateway. Test your API connection in seconds with this minimal cURL command:
 
 ```bash
 curl -X POST "https://api.apivale.com/v1/chat/completions" \
@@ -40,7 +40,7 @@ curl -X POST "https://api.apivale.com/v1/chat/completions" \
   -H "Content-Type: application/json" \
   -d '{
     "model": "infer/qwen3.7-max",
-    "messages": [{"role": "user", "content": "Ping Octop gateway test"}],
+    "messages": [{"role": "user", "content": "Octop AI Assistant setup test"}],
     "stream": false
   }'
 ```
@@ -49,50 +49,50 @@ curl -X POST "https://api.apivale.com/v1/chat/completions" \
 
 <div class="my-6 border-l-4 border-indigo-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Definition</span>
-  <h4 class="mt-1 text-md font-semibold text-white">Octop AI Assistant Platform</h4>
-  <p class="mt-2 text-sm text-gray-300">Octop is an open-source, local-first multi-agent runtime developed by Tencent Cloud that serves a web console, CLI, and IM channel bridges out of a single process. It maintains an isolated SQLite control plane at ~/.octop/ and routes tool execution via the Harness stack and ACP protocol.</p>
+  <div class="mt-1 text-md font-semibold text-white">Octop AI Assistant Platform</div>
+  <p class="mt-2 text-sm text-gray-300">Octop is an open-source, self-hosted multi-agent AI assistant framework developed by Tencent Cloud. It coordinates local and cloud LLMs across Web, CLI, and IM messaging channels from a single-process runtime under ~/.octop/, separate from commercial CI/CD platforms like Octopus Deploy.</p>
 </div>
 
 <div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
   <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Related Agent & Proxy Architectures</span>
   <p class="mt-1 text-sm text-gray-300">
-    Looking to optimize broader agent infrastructure? Explore our architectural guide on <a href="/blog/infrastructure-for-hybrid-llm-agent-deployments/" class="text-cyan-400 hover:underline font-semibold">Hybrid LLM Agent Deployments (Local + Cloud Routing)</a>, learn how to <a href="/blog/how-to-reduce-opencode-token-costs/" class="text-cyan-400 hover:underline font-semibold">Slash OpenCode CLI Token Costs by 85%</a>, or configure your coding tools via our <a href="/blog/claude-code-opus-5-2-alternative-qwen-3-8-max/" class="text-cyan-400 hover:underline font-semibold">Claude Code CLI Proxy Setup</a>.
+    Optimizing broader agent deployments? Read our architecture guide on <a href="/blog/infrastructure-for-hybrid-llm-agent-deployments/" class="text-cyan-400 hover:underline font-semibold">Hybrid LLM Agent Deployments (Local + Cloud Routing)</a>, learn how to <a href="/blog/how-to-reduce-opencode-token-costs/" class="text-cyan-400 hover:underline font-semibold">Slash OpenCode CLI Token Costs by 85%</a>, or configure your coding tools via our <a href="/blog/claude-code-opus-5-2-alternative-qwen-3-8-max/" class="text-cyan-400 hover:underline font-semibold">Claude Code CLI Proxy Setup</a>.
   </p>
 </div>
 
 ---
 
-## Octop AI Assistant Setup Instructions: CLI & System Installation
+## Octop AI Assistant Setup Instructions: CLI & Environment Installation
 
-Installing Octop requires preparing a clean Python 3.12+ virtual environment and executing the unified initialization wizard. Octop encapsulates its entire state—including user credentials, agent workspaces, session histories, and provider keys—within the local `~/.octop/` directory.
+Deploying your Octop AI Assistant setup requires configuring a clean Python 3.12+ virtual environment and executing the initialization wizard. Octop stores all user credentials, agent workspaces, session histories, and model provider keys in the local `~/.octop/` directory.
 
 ### Initializing Environment and Core CLI
 
-Execute the standard bootstrap commands to clone the official repository or install the published package via pip. Ensure your host machine meets the baseline runtime requirements before running the initialization command.
+Begin the Octop AI Assistant setup by creating an isolated virtual environment and installing the core package. Ensure your environment meets the Python 3.12+ baseline requirement before running initialization commands:
 
 ```bash
 # Create dedicated Python 3.12 virtual environment
 python3.12 -m venv ~/.octop-venv
 source ~/.octop-venv/bin/activate
 
-# Install octop from PyPI or official repository
+# Install octop CLI
 pip install --upgrade octop
 
-# Verify CLI installation
+# Verify installation
 octop --version
 ```
 
-Once installed, execute the first-run initialization wizard:
+Once installed, run the interactive initialization wizard to configure the administrative database:
 
 ```bash
 octop init
 ```
 
-The CLI will prompt you to set the initial administrator username and master password. This step populates `~/.octop/config.json` and creates the default SQLite database (`octop.db`) configured with Write-Ahead Logging (WAL) mode for multi-threaded read/write performance.
+The wizard prompts you for an administrative username and password, generates `~/.octop/config.json`, and initializes the local SQLite database (`octop.db`) using Write-Ahead Logging (WAL) mode for concurrent access.
 
 ### Configuring Admin Security and Process Defaults
 
-Configuring the control-plane security settings ensures that remote web access and IM webhook listeners do not expose administrative functions. The core daemon configuration resides at `~/.octop/config.json`.
+Securing your Octop AI Assistant setup prevents unauthorized remote console access while maintaining responsive IM channel listeners. The server configuration is maintained in `~/.octop/config.json`:
 
 ```json
 {
@@ -114,10 +114,10 @@ Configuring the control-plane security settings ensures that remote web access a
 }
 ```
 
-To launch the background server daemon and inspect runtime logs, execute:
+To run your Octop AI Assistant setup in the background as a persistent system service, execute:
 
 ```bash
-# Start Octop server in the background
+# Start Octop daemon in background
 octop service start
 
 # Monitor live execution output
@@ -128,11 +128,11 @@ tail -f ~/.octop/octop.log
 
 ## Working Setup Examples: Custom OpenAI & Claude API Providers
 
-Integrating external cloud models into Octop requires configuring the underlying `harness-agent` router to map model IDs to API endpoints. While Octop includes presets for local Ollama, production-grade agentic loops require high-reasoning models like Claude Sonnet 5, Qwen 3.7 Max, and DeepSeek V4.
+Connecting high-performance models to your Octop AI Assistant setup requires binding external endpoints to Octop's internal `harness-agent` router. While local Ollama models serve simple offline tasks, production-grade agentic teams require frontier models like Claude Sonnet 5, Qwen 3.7 Max, and DeepSeek V4.
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
-│                        Octop Runtime Architecture                      │
+│                     Octop AI Assistant Setup Router                    │
 │                                                                        │
 │  [ IM Webhooks: Feishu / DingTalk / Discord ]   [ ACP: Claude Code ]  │
 │                           │                              │             │
@@ -158,30 +158,28 @@ Integrating external cloud models into Octop requires configuring the underlying
 
 ### Environment-Based Global Provider Injection
 
-Injecting provider credentials via `~/.octop/env` guarantees that every spawned agent expert inherits valid API routes. Unlike per-agent settings configured in the React UI, process-level environment variables survive workspace resets and expert template migrations.
-
-Open or create `~/.octop/env` and define your APIVALE routing credentials:
+Setting up global environment variables ensures that all agents in your Octop AI Assistant setup automatically inherit authenticated cloud routes. Configuring `~/.octop/env` guarantees credentials persist across workspace resets and template changes:
 
 ```bash
 # ~/.octop/env
-# Global API Gateway Configuration for Octop Runtime
+# Global API Gateway Configuration for Octop AI Assistant Setup
 OPENAI_API_BASE=https://api.apivale.com/v1
 OPENAI_API_KEY=sk-apivale-prod-live-credential-token
 DEFAULT_CHAT_MODEL=infer/qwen3.7-max
 FALLBACK_CHAT_MODEL=claude-sonnet-5-20260901
 
-# ACP Outbound Proxy Variables
+# ACP Outbound Proxy Variables for Claude Code
 ANTHROPIC_BASE_URL=https://api.apivale.com
 ANTHROPIC_API_KEY=sk-apivale-prod-live-credential-token
 ```
 
-When Octop reboots, `OctopServer.start` executes `apply_env_file` before loading `config.json`, instantly binding all internal LangChain and `harness-agent` instances to the specified proxy gateway.
+When Octop boots, `apply_env_file` loads these variables before starting internal server workers, immediately connecting your Octop AI Assistant setup to APIVALE.
 
 ### Production Python Healthcheck with Exponential Backoff
 
-Executing a robust pre-flight check validates that your Octop installation can successfully dispatch requests through the APIVALE proxy without encountering connection drops or rate-limit lockouts.
+Validating your Octop AI Assistant setup before deployment confirms your proxy endpoint handles streaming requests and rate-limit scenarios reliably.
 
-Save and run the following standalone verification script (`verify_octop_api.py`):
+Run this verification script (`verify_octop_api.py`) to test your Octop AI Assistant setup:
 
 ```python
 import os
@@ -204,7 +202,7 @@ def test_octop_apivale_gateway():
         "model": "infer/qwen3.7-max",
         "messages": [
             {"role": "system", "content": "You are Octop Harness Core Router."},
-            {"role": "user", "content": "Return a 1-sentence connectivity verification."}
+            {"role": "user", "content": "Verify Octop AI Assistant setup."}
         ],
         "temperature": 0.2,
         "stream": False
@@ -222,17 +220,17 @@ def test_octop_apivale_gateway():
             if response.status_code == 200:
                 data = response.json()
                 content = data["choices"][0]["message"]["content"]
-                print(f"[OK] Gateway Connected in {elapsed_ms:.1f}ms: '{content}'")
+                print(f"[OK] Octop Gateway Verified in {elapsed_ms:.1f}ms: '{content}'")
                 return True
             elif response.status_code == 429:
                 wait_time = base_delay * (2 ** (attempt - 1))
-                print(f"[WARN] 429 Rate Limit encountered. Retrying in {wait_time}s...")
+                print(f"[WARN] 429 Rate Limit. Retrying in {wait_time}s...")
                 time.sleep(wait_time)
             else:
                 print(f"[ERROR] HTTP {response.status_code}: {response.text}")
                 return False
         except requests.exceptions.RequestException as exc:
-            print(f"[ERROR] Connection attempt {attempt} failed: {str(exc)}")
+            print(f"[ERROR] Attempt {attempt} failed: {str(exc)}")
             time.sleep(base_delay * attempt)
 
     return False
@@ -247,7 +245,7 @@ if __name__ == "__main__":
 
 ## Community Voice & Troubleshooting: Edge-Case Engineering Fixes
 
-Understanding production failure modes prevents catastrophic agent halts when deploying autonomous cron jobs or handling high-volume group chat traffic. Real developer telemetry reveals critical edge-case incompatibilities in raw model responses.
+Addressing production issues early keeps your Octop AI Assistant setup resilient during continuous background operations. Telemetry from active deployments highlights specific protocol exceptions in streaming chunk handling.
 
 <div class="my-6 border border-amber-500/30 bg-gray-900/60 rounded-lg p-5">
   <div class="flex items-center justify-between mb-2">
@@ -262,17 +260,17 @@ Understanding production failure modes prevents catastrophic agent halts when de
 
 ### Resolving Stream Block TypeErrors in agent.stream
 
-Resolving stream chunk crashes requires standardizing how the proxy handles chunked delta payloads before they reach Octop's `orcakit_harness_agent`. As documented in GitHub Issue #704, when newer multimodal or reasoning models emit delta tokens wrapped inside structured content blocks (e.g. `[{"type": "text", "text": "..."}]`), Octop's internal string accumulator crashes with a fatal Python exception.
+Fixing stream chunk crashes in your Octop AI Assistant setup requires standardizing chunk payloads before they reach `orcakit_harness_agent`. As reported in GitHub Issue #704, when newer models stream array-wrapped content blocks (e.g., `[{"type": "text", "text": "..."}]`), Octop's internal accumulator crashes with a TypeError.
 
-APIVALE's proxy gateway automatically normalizes outgoing Server-Sent Events (SSE). When streaming OpenAI-compatible completions, APIVALE's proxy flattens structured array fragments into standard string deltas (`delta.content = "..."`) unless explicitly requested otherwise. If you maintain custom client plugins inside `~/.octop/plugins/`, ensure your handler unpacks incoming chunks safely:
+APIVALE's proxy gateway resolves this issue automatically by normalizing outgoing Server-Sent Events (SSE) into standard string deltas (`delta.content = "..."`). For custom plugins inside `~/.octop/plugins/`, use this defensive parsing helper:
 
 ```python
-# Safe chunk extraction pattern for Octop plugins
+# Safe chunk extraction pattern for Octop AI Assistant setup
 def extract_stream_delta(chunk):
     delta = chunk.get("choices", [{}])[0].get("delta", {})
     content = delta.get("content", "")
     
-    # Handle legacy string vs array content blocks
+    # Normalize list-wrapped blocks into flat string
     if isinstance(content, list):
         return "".join([block.get("text", "") for block in content if isinstance(block, dict)])
     return content or ""
@@ -280,21 +278,21 @@ def extract_stream_delta(chunk):
 
 ### Overcoming International Payment Restrictions with Waffo
 
-Overcoming credit card declines enables uninterrupted autonomous operation for development teams based outside North America. Official overseas cloud providers enforce strict merchant restrictions, causing frequent billing failures and account suspensions on recurring developer subscriptions.
+Eliminating overseas payment hurdles ensures your Octop AI Assistant setup maintains continuous uptime. Direct subscriptions with international AI platforms regularly fail due to strict fraud filters, overseas card restrictions, and invasive KYC checks.
 
-APIVALE integrates **Waffo Global Billing**, allowing engineering teams to purchase high-volume API credits via major credit cards and regional digital wallets through Waffo. With zero recurring lock-in, no international card decline friction, and no invasive identity verification, your Octop agents maintain uninterrupted 24/7 uptime.
+APIVALE incorporates **Waffo Global Billing**, enabling developers to fund their Octop AI Assistant setup with domestic credit cards and regional digital wallets via Waffo. With zero recurring lock-in, no international card decline risk, and no KYC walls, your multi-agent bots stay operational 24/7.
 
 ---
 
 ## Performance & Cost Arbitrage: Benchmark Analysis
 
-Selecting the optimal backend balance between local edge compute and cloud proxy routing determines the total operational expense of your Octop deployment. The benchmark data below compares raw execution metrics across deployment modes.
+Balancing local compute with cloud proxy routing determines the overall operating cost of your Octop AI Assistant setup. This benchmark table compares key metrics across infrastructure options:
 
 | Deployment Architecture | Time-to-First-Token (TTFT) | Sustained Output (TPS) | Monthly Cost (100k msg/mo) | Direct Enterprise Best-for Column | APIVALE Strategic Advantage |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Local Host (Ollama / Mac Studio M2 Ultra)** | 820ms | 38 tok/s | Hardware Amortization (~$4,000 upfront) | **Best for air-gapped, zero-data-leakage compliance where no cloud traffic is permitted.** | Zero upfront hardware cost, access to 100B+ flagship models without VRAM bottlenecks. |
-| **Official Direct Cloud (Anthropic / OpenAI)** | 540ms | 72 tok/s | ~$180 - $340 / mo (Token Overage) | **Best for Fortune 500 enterprises with direct SOC2 Type II compliance and existing Master Service Agreements.** | Eliminates corporate card declines via Waffo Global Billing; unified single key across all models. |
-| **APIVALE Unified Gateway (Routing Hub)** | **410ms** | **84 tok/s** | **$45 - $85 / mo (Arbitraged)** | **Best for agile teams needing high concurrency, zero-KYC setup, and instant top-ups.** | Sub-450ms TTFT, automatic stream normalization, native Claude Code CLI and Cursor compatibility. |
+| **Local Host (Ollama / Mac Studio M2 Ultra)** | 820ms | 38 tok/s | Hardware Cost (~$4,000 upfront) | **Best for air-gapped, zero-data-leakage compliance where external networking is prohibited.** | Zero hardware investment, instant access to 100B+ flagship models without VRAM saturation. |
+| **Official Direct Cloud (Anthropic / OpenAI)** | 540ms | 72 tok/s | ~$180 - $340 / mo (Token Overage) | **Best for Fortune 500 enterprises with direct SOC2 Type II compliance and enterprise master contracts.** | Prevents card declines via Waffo Global Billing; unified single key across all models. |
+| **APIVALE Unified Gateway (Routing Hub)** | **410ms** | **84 tok/s** | **$45 - $85 / mo (Arbitraged)** | **Best for agile teams needing high concurrency, zero-KYC setup, and instant credit top-ups.** | Sub-450ms TTFT, automatic SSE stream normalization, native Claude Code CLI and Cursor compatibility. |
 
 *Note: Pricing and parameters verified via official docs as of September 2026. Latency benchmarks measured across 100 single-concurrency requests from AWS US-East infrastructure.*
 
@@ -302,10 +300,10 @@ Selecting the optimal backend balance between local edge compute and cloud proxy
 
 ## Interactive CRO Micro-Tool: Octop Token Burn & Cost Calculator
 
-Calculate your monthly agent token consumption and quantify cost savings when switching from official direct billing to APIVALE's arbitraged gateway. Adjust the parameters to reflect your team's workload.
+Estimate your monthly agent token consumption and calculate operational savings for your Octop AI Assistant setup when routing through APIVALE:
 
 <div id="octop-calculator-widget" class="my-8 p-6 bg-gray-900 border border-indigo-500/40 rounded-xl text-gray-200">
-  <h4 class="text-lg font-bold text-white mb-2">Octop Multi-Agent Token & Cost Estimator</h4>
+  <div class="text-lg font-bold text-white mb-2">Octop Multi-Agent Token & Cost Estimator</div>
   <p class="text-xs text-gray-400 mb-6">Simulate token burn for background cron tasks, group chat bots, and ACP coding loops.</p>
   
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -319,7 +317,7 @@ Calculate your monthly agent token consumption and quantify cost savings when sw
       </div>
     </div>
     <div>
-      <label class="block text-xs font-semibold uppercase text-indigo-400 mb-1">Daily Inbound Messages per Agent</label>
+      <label class="block text-xs font-semibold uppercase text-indigo-400 mb-1">Daily Messages per Agent</label>
       <input type="range" id="calc-msgs" min="20" max="500" value="100" step="10" class="w-full accent-indigo-500" oninput="updateOctopCalc()">
       <div class="flex justify-between text-xs text-gray-400 mt-1">
         <span>20 msgs</span>
@@ -378,7 +376,7 @@ function updateOctopCalc() {
   const totalTokens = monthlyMsgs * ctx;
   const totalTokensM = totalTokens / 1000000;
 
-  let directRate = 3.0; // per 1M tokens avg
+  let directRate = 3.0;
   let apivaleRate = 0.8;
 
   if (model === 'qwen') {
@@ -409,14 +407,14 @@ document.addEventListener('DOMContentLoaded', updateOctopCalc);
 ### What is Octop, and how does it differ from Octopus Deploy?
 Octop is an open-source, self-hosted multi-agent AI assistant developed by Tencent Cloud that coordinates local and cloud LLMs across Web, CLI, and IM messaging channels. In contrast, Octopus Deploy is a commercial DevOps release management and automated software deployment server completely unrelated to artificial intelligence runtimes.
 
-### How do I configure custom OpenAI-compatible models in Octop?
-Define `OPENAI_API_BASE=https://api.apivale.com/v1` and `OPENAI_API_KEY=YOUR_KEY` in the global `~/.octop/env` configuration file, then restart the daemon with `octop service restart`. Every agent expert automatically inherits the route and uses the specified endpoint for chat completions.
+### How do I configure custom OpenAI-compatible models in an Octop AI Assistant setup?
+Define `OPENAI_API_BASE=https://api.apivale.com/v1` and `OPENAI_API_KEY=YOUR_KEY` in `~/.octop/env`, then restart the daemon using `octop service restart`. All agents in your Octop AI Assistant setup automatically inherit the route for chat completions.
 
 ### Can I run Claude Sonnet 5 or DeepSeek V4 in Octop without an international credit card?
-Yes. By using APIVALE's proxy gateway, developers can purchase credits via Waffo Global Billing using standard credit cards and domestic payment wallets without undergoing KYC verification or triggering overseas banking declines.
+Yes. Using APIVALE's proxy gateway, developers can fund their Octop AI Assistant setup via Waffo Global Billing using regular credit cards and domestic digital wallets without undergoing KYC verification or triggering overseas banking declines.
 
-### How does Octop connect to Claude Code CLI via the ACP protocol?
-Octop features native ACP (Agent Client Protocol) support. By configuring `octop acp --agent main`, external coding assistants can delegate complex programming tasks directly to Claude Code CLI using APIVALE's `ANTHROPIC_BASE_URL` routing.
+### How does an Octop AI Assistant setup connect to Claude Code CLI via ACP?
+Octop provides native ACP (Agent Client Protocol) support. Running `octop acp --agent main` allows external coding tools to delegate programming tasks directly to Claude Code CLI using APIVALE's `ANTHROPIC_BASE_URL` routing.
 
 ---
 
@@ -435,10 +433,10 @@ Octop features native ACP (Agent Client Protocol) support. By configuring `octop
     },
     {
       "@type": "Question",
-      "name": "How do I configure custom OpenAI-compatible models in Octop?",
+      "name": "How do I configure custom OpenAI-compatible models in an Octop AI Assistant setup?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Define OPENAI_API_BASE=https://api.apivale.com/v1 and OPENAI_API_KEY=YOUR_KEY in the global ~/.octop/env configuration file, then restart the daemon with octop service restart. Every agent expert automatically inherits the route and uses the specified endpoint for chat completions."
+        "text": "Define OPENAI_API_BASE=https://api.apivale.com/v1 and OPENAI_API_KEY=YOUR_KEY in ~/.octop/env, then restart the daemon using octop service restart. All agents in your Octop AI Assistant setup automatically inherit the route for chat completions."
       }
     },
     {
@@ -446,15 +444,15 @@ Octop features native ACP (Agent Client Protocol) support. By configuring `octop
       "name": "Can I run Claude Sonnet 5 or DeepSeek V4 in Octop without an international credit card?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. By using APIVALE's proxy gateway, developers can purchase credits via Waffo Global Billing using standard credit cards and domestic payment wallets without undergoing KYC verification or triggering overseas banking declines."
+        "text": "Yes. Using APIVALE's proxy gateway, developers can fund their Octop AI Assistant setup via Waffo Global Billing using regular credit cards and domestic digital wallets without undergoing KYC verification or triggering overseas banking declines."
       }
     },
     {
       "@type": "Question",
-      "name": "How does Octop connect to Claude Code CLI via the ACP protocol?",
+      "name": "How does an Octop AI Assistant setup connect to Claude Code CLI via ACP?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Octop features native ACP (Agent Client Protocol) support. By configuring octop acp --agent main, external coding assistants can delegate complex programming tasks directly to Claude Code CLI using APIVALE's ANTHROPIC_BASE_URL routing."
+        "text": "Octop provides native ACP (Agent Client Protocol) support. Running octop acp --agent main allows external coding tools to delegate programming tasks directly to Claude Code CLI using APIVALE's ANTHROPIC_BASE_URL routing."
       }
     }
   ]
@@ -463,8 +461,8 @@ Octop features native ACP (Agent Client Protocol) support. By configuring `octop
 
 ---
 
-## Ready to Supercharge Your Octop AI Assistant?
+## Ready to Complete Your Octop AI Assistant Setup?
 
-Eliminate overseas payment rejections and optimize your agent token expenses today. Connect Octop to Claude Sonnet 5, Qwen 3.7 Max, and DeepSeek V4 through APIVALE's sub-450ms routing proxy.
+Eliminate payment friction and optimize your agent token budget today. Connect your Octop AI Assistant setup to Claude Sonnet 5, Qwen 3.7 Max, and DeepSeek V4 through APIVALE's sub-450ms routing proxy.
 
 👉 **[Create Your Free APIVALE Account](https://apivale.com/)** to claim your **$0.20 free starter credit** upon sign-up and fund your balance securely via Waffo Global Billing with zero subscription lock-in.
