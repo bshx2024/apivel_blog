@@ -50,6 +50,14 @@
 
 
 
+
+## 📝 优化行动记录 (2026-09)
+
+### 📅 2026-09-18 - ⚙️ [技术/UX 动作]: De-stuffed Qwen3.8-Omni-Flash API setup guide: naturalized redundant entity mentions to bring multi-word keyword density into the safe 2.2% zone and trimmed prose to eliminate word count penalty.
+* **影响页面/关键词**：/blog/qwen-3-8-omni-flash-api-setup, 'Qwen3.8-Omni-Flash API', 'Qwen3.8-Omni-Flash API setup'
+* **动作详情**：De-stuffed Qwen3.8-Omni-Flash API setup guide: naturalized redundant entity mentions to bring multi-word keyword density into the safe 2.2% zone and trimmed prose to eliminate word count penalty.
+* **预期因果假设**：Reduce multi-word density from 3.96% to optimal ~2.2% to prevent Google over-optimization flags, while maintaining #1 N-gram ranking and pushing On-Page audit score to 98+.
+
 ## 📝 优化行动记录 (2026-09)
 
 ### 📅 2026-09-18 - 📝 [内容动作]: Fine-tuned Qwen3.8-Omni-Flash API setup guide: consolidated 3-5 word N-grams ('Qwen3.8-Omni-Flash API', 'Qwen3.8-Omni-Flash API key'), aligned target intent with URL slug, and trimmed word count to improve theme focus and address SERP cannibalization.
