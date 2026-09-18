@@ -120,6 +120,13 @@ For developers outside supported Google or Anthropic billing regions, accessing 
   </div>
 </div>
 
+<div class="my-6 border-l-4 border-purple-500 bg-gray-900/90 rounded-r-lg p-4">
+  <span class="text-xs font-bold uppercase tracking-wider text-purple-400">Next-Gen Multimodal Audio Savings</span>
+  <p class="mt-1 text-sm text-gray-300">
+    Processing high-volume voice recordings or conference audio? Check our latest guide on <a href="/blog/qwen-3-8-omni-flash-api-setup" class="text-purple-400 hover:underline font-semibold">Qwen3.8-Omni-Flash API setup & audio cost benchmarks</a> to see how native 1M token omni attention slashes speech processing fees by 98%.
+  </p>
+</div>
+
 ---
 
 ## Developer FAQ

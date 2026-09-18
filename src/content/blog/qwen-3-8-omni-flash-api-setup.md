@@ -123,7 +123,7 @@ The new model delivers dominant scores across specialized audio comprehension an
 * **Speaker Diarization:** The AliMeeting DER drop from 88.11% down to 3.35% enables precise automated attribution for multi-speaker conferences without manual tagging.
 
 ### Where Gemini 3.8 Flash Remains Strong
-* **Video Agent Operations:** Gemini 3.8 Flash leads on AgenticVBench (45.0 vs 36.8) and OmniGAIA (78.6 vs 74.0). For visual UI workflows and frame-by-frame bounding-box tracking, Gemini remains best-in-class.
+* **Video Agent Operations:** Gemini 3.8 Flash leads on AgenticVBench (45.0 vs 36.8) and OmniGAIA (78.6 vs 74.0). For visual UI workflows and frame-by-frame bounding-box tracking, Gemini remains best-in-class (compare with our [Gemini Flash vs Qwen agent cost guide](/blog/gemini-3-6-flash-vs-deepseek-v4-vs-qwen-3-7-agent-cost-guide)).
 
 ---
 
@@ -155,7 +155,7 @@ Supported by Qwen-MM-Plugins, it scans long video files, pinpoints exact timesta
 Legacy transcription pipelines bill per audio minute, then apply secondary token rates when feeding text transcripts to an LLM:
 
 * **Legacy Pipeline:** 1 hour Whisper transcription (~$0.36) + 9,000 transcript tokens passed to GPT-4o (~$0.05) = **~$0.41 per hour**.
-* **Omni Token Pipeline:** 1 hour of audio converts to ~50,000 input tokens. At $0.15 per 1M tokens, base cost is **$0.0075 per hour**. With context caching enabled ($0.016/1M), recurring calls cost **$0.0008 per hour**—a **98.2% cost reduction**.
+* **Omni Token Pipeline:** 1 hour of audio converts to ~50,000 input tokens. At $0.15 per 1M tokens, base cost is **$0.0075 per hour**. With context caching enabled ($0.016/1M), recurring calls cost **$0.0008 per hour**—a **98.2% cost reduction** (see our full [LLM cost optimization guide](/blog/llm-cost-optimization-guide)).
 
 ### Interactive Multimodal Cost Calculator
 

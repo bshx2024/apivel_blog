@@ -52,6 +52,14 @@
 
 
 
+
+## 📝 优化行动记录 (2026-09)
+
+### 📅 2026-09-18 - 🔗 [外链与推广]: Upgraded internal linking to SEO industry best practices: injected in-text contextual links to Gemini comparison and LLM cost optimization clusters; diversified inbound anchor text across 3 pillar articles.
+* **影响页面/关键词**：/blog/qwen-3-8-omni-flash-api-setup, /blog/gemini-3-6-flash-vs-deepseek-v4-vs-qwen-3-7-agent-cost-guide, /blog/qwen-3-8-flash-next-benchmarks-api-guide
+* **动作详情**：Upgraded internal linking to SEO industry best practices: injected in-text contextual links to Gemini comparison and LLM cost optimization clusters; diversified inbound anchor text across 3 pillar articles.
+* **预期因果假设**：Establish a high-relevance cross-cluster topical mesh between Qwen, Gemini, and Cost Optimization silos. This maximizes PageRank flow, enhances dwell time across related guides, and boosts overall domain topical authority.
+
 ## 📝 优化行动记录 (2026-09)
 
 ### 📅 2026-09-18 - ⚙️ [技术/UX 动作]: Updated metaTitle to 'Qwen3.8-Omni-Flash API Setup & Cost Guide | APIVALE' (51 chars) to achieve 100% keyword symmetry across Title, H1, and URL.
