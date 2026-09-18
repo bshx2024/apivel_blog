@@ -27,7 +27,7 @@ In this guide, you will learn how to configure OpenCode and OpenCodeX to route r
 <div class="my-6 border-l-4 border-indigo-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Featured Snippet: Slashing OpenCode Token Spending</span>
   <h4 class="mt-1 text-md font-semibold text-white">How to Route OpenCode CLI to APIVALE Gateway</h4>
-  <p class="mt-2 text-sm text-gray-300">To slash OpenCode token spending by 85%, configure your OpenCode environment to use APIVALE as its custom OpenAI-compatible or Anthropic-compatible base URL (<code>https://apivale.com/v1</code>). Route heavy agent loops to <code>deepseek-v4</code> or <code>infer/qwen3.7-max</code> using an APIVALE API key funded via PayPal with zero credit card restrictions.</p>
+  <p class="mt-2 text-sm text-gray-300">To slash OpenCode token spending by 85%, configure your OpenCode environment to use APIVALE as its custom OpenAI-compatible or Anthropic-compatible base URL (<code>https://apivale.com/v1</code>). Route heavy agent loops to <code>deepseek-v4</code> or <code>infer/qwen3.7-max</code> using an APIVALE API key funded via Waffo global billing with zero credit card restrictions. For multi-tier setups coordinating SOTA multimodal planning with low-cost workers, explore our <a href="/blog/gemini-4-pro-release-date-pricing-benchmarks/">Gemini 4 Pro & Hybrid Gateway Guide</a>.</p>
 </div>
 
 ```mermaid
@@ -35,7 +35,8 @@ graph LR
     A["OpenCode CLI / OpenCodeX Proxy"] -->|OpenAI or Anthropic Protocol| B["APIVALE Unified Gateway"]
     B -->|Protocol Bridge & Load Balancing| C["deepseek-v4 ($0.27/1M)"]
     B -->|Model Failover Router| D["infer/qwen3.7-max ($0.60/1M)"]
-    B -->|Global Account Billing| E["PayPal Global Billing"]
+    B -->|Multimodal Visual Planner| F["Gemini 4 Pro (Argon)"]
+    B -->|Global Account Billing| E["Waffo Global Billing"]
 ```
 
 ---

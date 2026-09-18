@@ -59,7 +59,7 @@ lang: en
 
 Developer communities erupted in September 2026 when network traffic inspection revealed that Anthropic had quietly initiated grayscale testing inside Claude Code CLI. Select terminal sessions were no longer routing to Opus 5.0—they were executing against an unreleased model identifier: `opus-5.2`.
 
-For software engineers, Opus 5.2 promises major leaps in SVG math, 3D CSS rendering, and agentic code refactoring. However, 95% of developers cannot access this private grayscale pool. Furthermore, official Opus pricing ($15.00/1M input tokens) remains exorbitant, causing continuous agent loops to trigger steep invoices and tier-1 429 rate limit errors.
+For software engineers, Opus 5.2 promises major leaps in SVG math, 3D CSS rendering, and agentic code refactoring (capabilities similarly emerging in Google's newly tested [Gemini 4 Pro model](/blog/gemini-4-pro-release-date-pricing-benchmarks/)). However, 95% of developers cannot access this private grayscale pool. Furthermore, official Opus pricing ($15.00/1M input tokens) remains exorbitant, causing continuous agent loops to trigger steep invoices and tier-1 429 rate limit errors.
 
 Based on over 25,000 production sessions across APIVALE's global routing cluster, you do not need to wait for Anthropic's invitation lottery. By connecting Alibaba Cloud's flagship **Qwen 3.8 Max** (`infer/qwen3.8-max`) via APIVALE's Anthropic-compatible proxy, developers can harness frontier coding capabilities with zero payment friction.
 
