@@ -1,6 +1,6 @@
 ---
 title: "Qwen3.8-Omni-Flash API Setup: Native Omni & 98% Audio Cost Drop"
-metaTitle: "Qwen3.8-Omni-Flash API: Native Omni & Cost Guide | APIVALE"
+metaTitle: "Qwen3.8-Omni-Flash API Setup & Cost Guide | APIVALE"
 description: "Master Qwen3.8-Omni-Flash API setup. Learn native omni architecture, 1M context audio processing, 98% cost savings vs Whisper, and zero-KYC Waffo billing."
 date: "2026-09-18"
 author: "Elena Rostova"

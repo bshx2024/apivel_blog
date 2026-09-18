@@ -51,6 +51,14 @@
 
 
 
+
+## 📝 优化行动记录 (2026-09)
+
+### 📅 2026-09-18 - ⚙️ [技术/UX 动作]: Updated metaTitle to 'Qwen3.8-Omni-Flash API Setup & Cost Guide | APIVALE' (51 chars) to achieve 100% keyword symmetry across Title, H1, and URL.
+* **影响页面/关键词**：/blog/qwen-3-8-omni-flash-api-setup, 'Qwen3.8-Omni-Flash API Setup'
+* **动作详情**：Updated metaTitle to 'Qwen3.8-Omni-Flash API Setup & Cost Guide | APIVALE' (51 chars) to achieve 100% keyword symmetry across Title, H1, and URL.
+* **预期因果假设**：Eliminate 2-point penalty for Title keyword coverage (moving from 75% to 100% token match for 'qwen3 8-omni-flash api setup'), achieving a 98+ On-Page SEO score.
+
 ## 📝 优化行动记录 (2026-09)
 
 ### 📅 2026-09-18 - ⚙️ [技术/UX 动作]: De-stuffed Qwen3.8-Omni-Flash API setup guide: naturalized redundant entity mentions to bring multi-word keyword density into the safe 2.2% zone and trimmed prose to eliminate word count penalty.
