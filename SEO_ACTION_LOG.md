@@ -49,6 +49,14 @@
 
 
 
+
+## 📝 优化行动记录 (2026-09)
+
+### 📅 2026-09-18 - 📝 [内容动作]: Fine-tuned Qwen3.8-Omni-Flash API setup guide: consolidated 3-5 word N-grams ('Qwen3.8-Omni-Flash API', 'Qwen3.8-Omni-Flash API key'), aligned target intent with URL slug, and trimmed word count to improve theme focus and address SERP cannibalization.
+* **影响页面/关键词**：/blog/qwen-3-8-omni-flash-api-setup, 'Qwen3.8-Omni-Flash API', 'Qwen3.8-Omni-Flash API key'
+* **动作详情**：Fine-tuned Qwen3.8-Omni-Flash API setup guide: consolidated 3-5 word N-grams ('Qwen3.8-Omni-Flash API', 'Qwen3.8-Omni-Flash API key'), aligned target intent with URL slug, and trimmed word count to improve theme focus and address SERP cannibalization.
+* **预期因果假设**：Directly resolve the 3-5 word keyword density gap (from 0 to top rank in N-gram density table) and eliminate search intent drift toward generic model downloads, securing top 3 ranking in 'Qwen3.8-Omni-Flash API setup' within 10 days.
+
 ## 📝 优化行动记录 (2026-09)
 
 ### 📅 2026-09-18 - 📝 [内容动作]: Published Qwen3.8-Omni-Flash API setup guide with native omni 1M context, 98% cheaper audio math, interactive calculator, and bidirectional internal links woven into 2 pillar Qwen articles.

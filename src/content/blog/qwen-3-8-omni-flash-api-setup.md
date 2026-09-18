@@ -14,16 +14,16 @@ lang: "en"
 <div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
-    <li><strong>Native End-to-End Multimodality:</strong> Qwen3.8-Omni-Flash processes text, image, audio, and video natively without fragile ASR cascading, slashing audio token processing costs by over 98% ($0.15/1M input, $0.016 cached).</li>
-    <li><strong>1M Token Context & AliMeeting Breakthrough:</strong> Ingest up to 992K tokens of continuous audio with speaker diarization error rate (DER) plummeting from 88.11% to 3.35% on AliMeeting benchmarks.</li>
-    <li><strong>Zero-KYC Cloud Routing via APIVALE:</strong> Access Qwen3.8-Omni-Flash via OpenAI-compatible endpoints with global settlement via Waffo (supporting cards and local wallets), bypassing Chinese mainland phone or RAM account constraints.</li>
+    <li><strong>Native End-to-End Multimodality:</strong> The <strong>Qwen3.8-Omni-Flash API</strong> processes text, image, audio, and video directly without ASR cascading, cutting audio token fees by over 98% ($0.15/1M input, $0.016 cached).</li>
+    <li><strong>1M Token Context & AliMeeting Breakthrough:</strong> Feed up to 992K tokens of continuous audio into the <strong>Qwen3.8-Omni-Flash API</strong> with speaker diarization error rate (DER) dropping from 88.11% to 3.35%.</li>
+    <li><strong>Zero-KYC Cloud Routing via APIVALE:</strong> Complete your <strong>Qwen3.8-Omni-Flash API setup</strong> via OpenAI-compatible endpoints with global Waffo billing, bypassing domestic phone verification.</li>
   </ul>
 </div>
 
 <div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
   <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Related Qwen Ecosystem Guides</span>
   <p class="mt-1 text-sm text-gray-300">
-    Selecting the right model for your workload? Explore our dedicated analyses for <a href="/blog/qwen-3-8-flash-next-benchmarks-api-guide" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Flash Next for Coding</a>, <a href="/blog/qwen-3-8-cursor-setup" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 in Cursor IDE</a>, and our flagship <a href="/blog/qwen-3-8-max-benchmarks-preview-guide" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Max Architecture Review</a>.
+    Evaluating different models? Check our technical guides for <a href="/blog/qwen-3-8-flash-next-benchmarks-api-guide" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Flash Next for Coding</a>, <a href="/blog/qwen-3-8-cursor-setup" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 in Cursor IDE</a>, and our <a href="/blog/qwen-3-8-max-benchmarks-preview-guide" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Max Architecture Review</a>.
   </p>
 </div>
 
@@ -37,7 +37,7 @@ lang: "en"
     </span>
   </div>
   <p id="user-auth-status-desc" class="text-sm text-gray-300 mb-4 leading-relaxed">
-    Deploy Qwen3.8-Omni-Flash directly in your audio transcription or agent pipelines. Sign up on APIVALE to receive <strong>$0.20 free starter credit</strong> and auto-populate your personal token into the code snippets below.
+    Complete your <strong>Qwen3.8-Omni-Flash API setup</strong> with instant provisioning. Claim <strong>$0.20 free starter credit</strong> on APIVALE to generate your personal <strong>Qwen3.8-Omni-Flash API key</strong>.
   </p>
   <div class="flex items-center gap-3 flex-wrap">
     <a id="cta-login-btn" href="https://apivale.com/sign-up?redirect=/blog/qwen-3-8-omni-flash-api-setup/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
@@ -49,11 +49,9 @@ lang: "en"
   </div>
 </div>
 
-Building audio processing agents with traditional stacks—daisy-chaining Whisper for automated speech recognition (ASR), chunking text windows, and routing through an LLM—presents severe engineering bottlenecks: cumulative transcription drift, lost acoustic inflection, and crippling per-minute fees. Processing a 3-hour executive meeting or podcast episode frequently racks up dollars in API compute while still failing to identify who spoke what.
+Traditional audio pipelines chain Whisper speech recognition to an LLM, causing transcription drift, lost acoustic nuances, and steep per-minute charges. The **Qwen3.8-Omni-Flash API** replaces this stack with native omni inference, processing audio waveforms directly inside a 1-million-token attention context at **$0.15 per million input tokens** ($0.016 cached).
 
-The launch of Alibaba's **Qwen3.8-Omni-Flash** disrupts this paradigm. Built as a fully native omni model rather than an assembly of stitched sub-models, Qwen3.8-Omni-Flash handles text, high-resolution imagery, video, and multi-channel spatial audio directly within a massive 1-million-token context window. At **$0.15 per million input tokens** ($0.016 for cached inputs), it cuts audio ingestion costs by **over 98%** compared to traditional ASR pipelines.
-
-Here is how you can ping the native omni endpoint immediately through the APIVALE proxy gateway:
+Test the **Qwen3.8-Omni-Flash API setup** immediately using this standard cURL payload:
 
 ```bash
 curl https://api.apivale.com/v1/chat/completions \
@@ -84,7 +82,7 @@ curl https://api.apivale.com/v1/chat/completions \
 
 ## What is Qwen3.8-Omni-Flash? (Architecture & 1M Context)
 
-Qwen3.8-Omni-Flash is Alibaba's native all-modality foundation model engineered to process text, image, audio, and video inputs end-to-end within a single unified Transformer architecture. Unlike composite pipelines, it ingests multi-channel waveforms directly into its attention layers, offering a 1-million-token context window (up to 992,000 raw input tokens and 131,000 output tokens) with context caching support.
+The **Qwen3.8-Omni-Flash API** provides access to Alibaba's native all-modality foundation model, engineered to process text, image, audio, and video inputs end-to-end within a single unified Transformer architecture. Unlike composite pipelines, it ingests multi-channel waveforms directly into attention layers, offering a 1-million-token context window (up to 992,000 raw input tokens and 131,000 output tokens) with context caching support.
 
 <div class="my-6 border border-gray-800 bg-gray-900/60 rounded-xl p-5">
   <div class="flex items-center gap-2 mb-3">
@@ -106,9 +104,7 @@ Qwen3.8-Omni-Flash is Alibaba's native all-modality foundation model engineered 
 
 ## Benchmark Comparison: Is Qwen3.8-Omni-Flash Better Than Gemini 3.8 Flash?
 
-Qwen3.8-Omni-Flash achieves dominant scores across specialized audio comprehension and multimodal tool execution benchmarks, while Google Gemini 3.8 Flash maintains a measured edge on spatial video agent benchmarks.
-
-The table below outlines benchmark metrics verified as of September 18, 2026:
+The **Qwen3.8-Omni-Flash API** delivers dominant scores across specialized audio comprehension and multimodal tool execution benchmarks, while Google Gemini 3.8 Flash retains an edge on spatial video benchmarks.
 
 | Benchmark / Capability | Qwen3.8-Omni-Flash | Gemini 3.8 Flash | Whisper Large v3 + LLM | Best for... |
 | :--- | :--- | :--- | :--- | :--- |
@@ -122,48 +118,48 @@ The table below outlines benchmark metrics verified as of September 18, 2026:
 
 *Verified Date: 2026-09-18. Source: Alibaba Cloud Bailian & Official Qwen Team Technical Disclosure.*
 
-### Key Strengths of Qwen3.8-Omni-Flash
-* **Audio Superiority:** In SpotSoundBench (67.2 vs 39.7) and MMAU (81.8 vs 76.9), Qwen3.8-Omni-Flash demonstrates deeper acoustic understanding, including ambient noise discrimination, tonal nuances, and 113 languages/dialects.
-* **Speaker Diarization Transformation:** The AliMeeting diarization error rate (DER) drop from 88.11% (in Qwen3.5-Omni-Plus) down to 3.35% means you can feed continuous boardroom discussions without manually tagging attendees.
+### Key Strengths of Qwen3.8-Omni-Flash API
+* **Audio Superiority:** In SpotSoundBench (67.2 vs 39.7) and MMAU (81.8 vs 76.9), the **Qwen3.8-Omni-Flash API** captures acoustic events, tonal nuances, and 113 languages/dialects.
+* **Speaker Diarization Transformation:** The AliMeeting DER drop from 88.11% down to 3.35% enables precise automated attribution for multi-speaker conferences without manual tagging.
 
 ### Where Gemini 3.8 Flash Remains Strong
-* **Video Agent Operations:** Gemini 3.8 Flash retains a noticeable advantage on AgenticVBench (45.0 vs 36.8) and OmniGAIA (78.6 vs 74.0). If your workflow relies on multi-step visual GUI navigation or fine-grained video bounding-box tracking, Gemini remains best-in-class.
+* **Video Agent Operations:** Gemini 3.8 Flash leads on AgenticVBench (45.0 vs 36.8) and OmniGAIA (78.6 vs 74.0). For visual UI workflows and frame-by-frame bounding-box tracking, Gemini remains best-in-class.
 
 ---
 
 ## What Can Omni Flash Do? Core Capabilities
 
-Qwen3.8-Omni-Flash replaces fragmented multi-step pipelines with unified multimodality:
+The **Qwen3.8-Omni-Flash API** unifies multimodal processing into a single forward pass:
 
 ```mermaid
 graph TD
-    A["Raw Multimodal Ingestion (1M Tokens)"] --> B["Qwen3.8-Omni-Flash Core Attention Engine"]
+    A["Raw Multimodal Ingestion (1M Tokens)"] --> B["Qwen3.8-Omni-Flash API Core Engine"]
     B --> C["Audio/Speech Analysis (113 Dialects, 4-Channel Spatial)"]
     B --> D["Video & Visual RAG (720p 1 FPS Ingestion)"]
     B --> E["Agent Tool Calling (Qwen-MM-Plugins / Subtitles / Edits)"]
-    C --> F["Direct Markdown Output / Actionable JSON"]
+    C --> F["Direct Structured Output / JSON Actions"]
     D --> F
     E --> F
 ```
 
 ### 1. 113 Dialects and Multi-Channel Spatial Audio
-Qwen3.8-Omni-Flash parses binaural stereo and quad-channel spatial audio. It detects speaker positioning, background events, and spoken nuances across 113 localized languages and dialects without requiring external acoustic preprocessors.
+The **Qwen3.8-Omni-Flash API** analyzes binaural stereo and quad-channel spatial sound, recognizing speaker direction, acoustic environments, and dialectal nuances across 113 languages without separate acoustic filters.
 
 ### 2. Native Agentic Tool Delivery
-Paired with the Qwen-MM-Plugins ecosystem and Qwen-Live-Harness, the model navigates full-length video recordings, pinpoints exact timestamps, executes function calls, and produces automated subtitles, cut-lists, and formatted executive summaries in a single inference cycle.
+Supported by Qwen-MM-Plugins, the model scans long video files, pinpoints exact timestamps, calls external functions, and outputs formatted summaries, chapters, and SRT subtitles in a single inference call.
 
 ---
 
 ## Cost Math: How It Cuts Audio Processing Costs by 98%
 
-Traditional audio transcription architectures bill per minute of processed audio, then apply second-tier token pricing when passing the transcript into an LLM for summarization:
+Legacy transcription pipelines bill per audio minute, then apply secondary token rates when feeding text transcripts to an LLM:
 
-* **Legacy Pipeline:** 1 hour of audio transcription via Whisper (~$0.36) + ~9,000 transcript tokens passed to GPT-4o with context (~$0.05) = **~$0.41 per hour**.
-* **Qwen3.8-Omni-Flash:** Processes raw audio directly into token representations. 1 hour of audio consumes approximately 45,000–60,000 input tokens. At $0.15 per 1M tokens, the base cost is **$0.0075 per hour**. With prompt caching enabled ($0.016 per 1M tokens), recurrent queries cost **$0.0008 per hour**—a **98.2% cost reduction**.
+* **Legacy Pipeline:** 1 hour Whisper transcription (~$0.36) + 9,000 transcript tokens passed to GPT-4o (~$0.05) = **~$0.41 per hour**.
+* **Qwen3.8-Omni-Flash API:** 1 hour of audio converts to ~50,000 input tokens. At $0.15 per 1M tokens, base cost is **$0.0075 per hour**. With context caching enabled ($0.016/1M), recurring calls cost **$0.0008 per hour**—a **98.2% cost reduction**.
 
 ### Interactive Multimodal Cost Calculator
 
-Estimate your monthly savings by switching from traditional ASR + LLM cascades to Qwen3.8-Omni-Flash:
+Estimate monthly savings with the **Qwen3.8-Omni-Flash API setup**:
 
 <div class="my-6 border border-emerald-500/30 bg-gray-900 rounded-xl p-6 shadow-xl">
   <h4 class="text-sm font-bold uppercase tracking-wider text-emerald-400 mb-4">
@@ -207,22 +203,14 @@ Estimate your monthly savings by switching from traditional ASR + LLM cascades t
   function updateAudioCostCalc() {
     const hours = parseFloat(document.getElementById('calc-audio-hours').value) || 0;
     const cacheRate = (parseFloat(document.getElementById('calc-cache-rate').value) || 0) / 100;
-    
-    // Whisper Large ($0.006/min = $0.36/hr) + LLM Summary (~$0.05/hr) = ~$0.41/hr
     const whisperCost = hours * 0.41;
-    
-    // Gemini 3.8 Flash (~$0.14/hr effective audio token pricing)
     const geminiCost = hours * (0.14 * (1 - cacheRate * 0.6));
-    
-    // Qwen3.8-Omni-Flash (50,000 tokens/hr -> $0.0075 uncached, $0.0008 cached)
     const qwenTokenCostPerHr = (50000 / 1000000) * (0.15 * (1 - cacheRate) + 0.016 * cacheRate);
     const qwenOutputPerHr = (1500 / 1000000) * 0.47;
     const qwenCost = hours * (qwenTokenCostPerHr + qwenOutputPerHr);
-    
     document.getElementById('cost-whisper').innerText = '$' + whisperCost.toFixed(2);
     document.getElementById('cost-gemini').innerText = '$' + geminiCost.toFixed(2);
     document.getElementById('cost-qwen').innerText = '$' + qwenCost.toFixed(2);
-    
     const savingsPct = whisperCost > 0 ? (((whisperCost - qwenCost) / whisperCost) * 100).toFixed(1) : '0';
     const diff = (whisperCost - qwenCost).toFixed(2);
     document.getElementById('cost-savings').innerText = savingsPct + '% ($' + diff + '/mo)';
@@ -235,11 +223,11 @@ Estimate your monthly savings by switching from traditional ASR + LLM cascades t
 
 ## Production API Setup via APIVALE Gateway
 
-Alibaba Cloud Bailian restricts direct access to specific localized business accounts, complex RAM role definitions, and domestic payment options. Through the **APIVALE** high-speed gateway, developers can consume `qwen3.8-omni-flash` using standard OpenAI-compatible endpoints with global payment settlement via **Waffo** (supporting credit cards and regional digital wallets) with zero personal identity verification.
+Alibaba Cloud Bailian restricts direct access to specific business credentials, RAM policies, and domestic payment options. Through the **APIVALE** gateway, developers execute a rapid **Qwen3.8-Omni-Flash API setup** using standard OpenAI SDKs, backed by **Waffo** global billing (credit cards, debit cards, local wallets) with zero identity verification.
 
 ### Production Python Audio Extraction Pipeline (15+ Lines)
 
-The following production script streams a local audio file to the APIVALE proxy, triggers native speaker diarization, and extracts timestamped action items:
+This script submits local audio to the **Qwen3.8-Omni-Flash API** for automated diarization:
 
 ```python
 import base64
@@ -247,7 +235,7 @@ import os
 import requests
 
 def analyze_audio_with_qwen(audio_file_path: str, prompt_instruction: str) -> dict:
-    """Sends raw audio to Qwen3.8-Omni-Flash via APIVALE gateway for native analysis."""
+    """Sends raw audio to Qwen3.8-Omni-Flash API via APIVALE for native speaker diarization."""
     api_key = os.getenv("APIVALE_API_KEY", "YOUR_APIVALE_KEY")
     endpoint = "https://api.apivale.com/v1/chat/completions"
 
@@ -297,17 +285,17 @@ if __name__ == "__main__":
 
 ## Frequently Asked Questions (Developer FAQ)
 
-### Do I need Flash Attention 2.0 or local GPU drivers to run Qwen3.8-Omni-Flash?
-No. While open-source model releases like Qwen2-VL or Qwen 32B frequently throw the common `qwenlmheadmodel does not support flash attention 2.0 yet` error when compiling local CUDA kernels, **Qwen3.8-Omni-Flash is a fully managed cloud API**. You do not need local GPUs, FlashAttention libraries, or PyTorch builds. Simply send HTTP audio payloads to the APIVALE gateway.
+### Do I need Flash Attention 2.0 or local GPU drivers for Qwen3.8-Omni-Flash API setup?
+No. Open-source weights like Qwen2-VL frequently trigger `qwenlmheadmodel does not support flash attention 2.0 yet` errors on local CUDA environments. In contrast, the **Qwen3.8-Omni-Flash API** is a managed cloud endpoint requiring zero local GPUs, PyTorch drivers, or FlashAttention compiling.
 
 ### What is the maximum audio duration supported in a single request?
-Qwen3.8-Omni-Flash supports up to 1,000,000 context tokens (~992,000 maximum input tokens). Because raw speech tokens compress to approximately 50,000 tokens per hour of audio, you can submit **up to 15 to 18 hours of continuous audio** in a single API call without chunking or manual splitting.
+The **Qwen3.8-Omni-Flash API** supports up to 1,000,000 context tokens (~992,000 input tokens). Because speech compresses to roughly 50,000 tokens per audio hour, you can send **15 to 18 hours of continuous audio** in one request without chunking.
 
 ### How does Qwen3.8-Omni-Flash compare to Qwen 3.8 Flash Next?
-Qwen 3.8 Flash Next is a text-focused 125B MoE model optimized for code autocomplete and IDE agents (detailed in our [Qwen 3.8 Flash Next guide](/blog/qwen-3-8-flash-next-benchmarks-api-guide)). Qwen3.8-Omni-Flash is dedicated to high-density multimodal perception (audio, video, spatial sound, and imagery) with end-to-end tool calling.
+Qwen 3.8 Flash Next is a text-focused 125B MoE model built for code autocomplete (see our [Qwen 3.8 Flash Next guide](/blog/qwen-3-8-flash-next-benchmarks-api-guide)). The **Qwen3.8-Omni-Flash API** is dedicated to high-density multimodal perception (audio, video, spatial sound) with agentic tool execution.
 
-### How do I purchase APIVALE credits without an overseas credit card?
-APIVALE integrates **Waffo Global Billing**, allowing international and regional developers to recharge balances seamlessly using credit cards, debit cards, and mainstream global wallets with zero KYC verification requirements.
+### How do I acquire a Qwen3.8-Omni-Flash API key without an overseas credit card?
+You can create a **Qwen3.8-Omni-Flash API key** on APIVALE instantly. Balances recharge through **Waffo Global Billing**, supporting international cards and local digital wallets with zero KYC requirements.
 
 ---
 
@@ -318,7 +306,7 @@ Deploy native multimodal speech recognition and long-context audio reasoning at 
 <div class="my-8 text-center p-8 bg-gradient-to-br from-indigo-950/60 via-purple-950/40 to-gray-900 border border-indigo-500/40 rounded-2xl shadow-2xl">
   <h3 class="text-2xl font-bold text-white mb-2">Claim Your $0.20 Free Multimodal API Credit</h3>
   <p class="text-gray-300 max-w-xl mx-auto mb-6 text-sm">
-    Experience 98% cheaper audio ingestion with Qwen3.8-Omni-Flash on APIVALE. Zero KYC, instant activation, and seamless Waffo global settlement.
+    Complete your Qwen3.8-Omni-Flash API setup on APIVALE today. Zero KYC, instant activation, and seamless Waffo global settlement.
   </p>
   <a href="https://apivale.com/sign-up?redirect=/blog/qwen-3-8-omni-flash-api-setup/" class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-xl transition-all shadow-lg hover:shadow-indigo-500/25">
     🚀 Create Free APIVALE Account
