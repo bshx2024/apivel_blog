@@ -6,7 +6,7 @@ date: "2026-08-23"
 author: "Alex Rivera"
 authorTitle: "Senior Cloud Architect & API Integrations, APIVALE"
 authorBio: "Alex Rivera is a cloud architect specializing in high-concurrency LLM routing, API gateway latency optimization, and developer proxy tools."
-tags: ["Ox Alpha", "0xAlpha", "How to use ox alpha in claude code", "Claude Code", "Cursor", "GLM-5.3", "Anthropic API", "APIVALE", "PayPal"]
+tags: ["Ox Alpha", "0xAlpha", "How to use ox alpha in claude code", "Claude Code", "Cursor", "GLM-5.3", "Anthropic API", "APIVALE", "Waffo", "OpenCode", "Ox Alpha Parameters"]
 image: "/blog/og-cover.png"
 lang: "en"
 ---
@@ -15,8 +15,8 @@ lang: "en"
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
     <li><strong>1-Million-Token Context & SWE-bench Leader:</strong> The stealth AI coding model Ox Alpha (also known as <code>0xAlpha</code> or <code>stealth/ox-alpha</code>) achieves 88.2% on SWE-bench Lite with 1,048,576 tokens of context.</li>
-    <li><strong>Dual-Protocol Gateway:</strong> Complete your <strong>Ox Alpha Claude Code setup</strong> and <strong>0xAlpha Cursor API integration</strong> with <a href="https://apivale.com/sign-up?redirect=/blog/ox-alpha-claude-code-cursor-setup/" class="text-emerald-400 hover:underline font-semibold">APIVALE (Claim $0.20 Free Credit)</a> with zero header mismatches.</li>
-    <li><strong>Global PayPal Billing & Zero KYC:</strong> Access Ox Alpha without mainland phone numbers (+86), identity verification locks, or international credit card rejections.</li>
+    <li><strong>Dual-Protocol Gateway:</strong> Complete your <strong>Ox Alpha Claude Code setup</strong>, <strong>0xAlpha Cursor API integration</strong>, and <strong>OpenCode CLI connection</strong> with <a href="https://apivale.com/sign-up?redirect=/blog/ox-alpha-claude-code-cursor-setup/" class="text-emerald-400 hover:underline font-semibold">APIVALE (Claim $0.20 Free Credit)</a> with zero header mismatches.</li>
+    <li><strong>Waffo Global Billing & Zero KYC:</strong> Access Ox Alpha without mainland phone numbers (+86), identity verification locks, or international credit card rejections via Waffo Global Billing.</li>
   </ul>
 </div>
 
@@ -24,32 +24,48 @@ Developers running autonomous coding loops in **Claude Code CLI**, **Cursor Comp
 
 However, setting up Ox Alpha in production CLI tools triggers significant friction: free preview endpoints suffer from **429 Too Many Requests** throttling, 504 gateway timeouts (leading developers to search for [high-speed OpenRouter alternatives](/blog/openrouter-alternatives/)), and strict Anthropic protocol header mismatches.
 
-This guide provides an empirical walkthrough: technical fingerprinting behind Ox Alpha's architecture, benchmark comparisons against Claude Sonnet 5, complete terminal setup commands, and a production-grade TypeScript proxy with automatic failover and PayPal global billing.
+This guide provides an empirical walkthrough: technical fingerprinting behind Ox Alpha's architecture and parameters, benchmark comparisons against Claude Sonnet 5, complete terminal setup commands (Claude Code, Cursor, OpenCode), and a production-grade TypeScript proxy with automatic failover and Waffo global billing.
 
 ```mermaid
 graph LR
-    A["Claude Code CLI & Cursor"] -->|Anthropic / OpenAI Protocol| B["APIVALE Unified Gateway"]
+    A["Claude Code CLI, Cursor & OpenCode"] -->|Anthropic / OpenAI Protocol| B["APIVALE Unified Gateway"]
     B -->|Zero-Latency Relay| C["Ox Alpha (stealth/ox-alpha)"]
     B -->|Automated Failover| D["GLM-5.3 / Qwen 3.7 Max"]
     B -->|Frontier Standard| E["Claude Sonnet 5"]
-    B -->|Global Checkout| F["PayPal Global Billing"]
+    B -->|Global Checkout| F["Waffo Global Billing"]
 ```
 
 ---
 
-## 1. What is Ox Alpha (0xAlpha)? Mystery Origin & Architecture
+## 1. What is Ox Alpha (0xAlpha)? Mystery Origin, Parameters & Architecture
 
 <div class="my-6 border-l-4 border-indigo-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Definition</span>
   <div class="mt-1 text-md font-semibold text-white">Ox Alpha (0xAlpha) Protocol Bridge</div>
-  <p class="mt-2 text-sm text-gray-300">Ox Alpha Protocol Bridge is an enterprise proxy layer on APIVALE that maps the 1M-context <code>stealth/ox-alpha</code> model and its GLM-5.3 underlying architecture into native Anthropic <code>/v1/messages</code> and OpenAI <code>/v1/chat/completions</code> formats, providing high-concurrency rate limits, token savings, and PayPal settlement.</p>
+  <p class="mt-2 text-sm text-gray-300">Ox Alpha Protocol Bridge is an enterprise proxy layer on APIVALE that maps the 1M-context <code>stealth/ox-alpha</code> model and its GLM-5.3 underlying architecture into native Anthropic <code>/v1/messages</code> and OpenAI <code>/v1/chat/completions</code> formats, providing high-concurrency rate limits, token savings, and Waffo settlement.</p>
+</div>
+
+<div class="my-6 border-l-4 border-amber-500 bg-gray-900 rounded-r-lg p-5">
+  <div class="flex items-center gap-2">
+    <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Verified Community Voice</span>
+    <span class="text-xs text-gray-400 font-mono">r/LocalLLaMA & r/OpenRouter</span>
+  </div>
+  <blockquote class="mt-2 text-sm italic text-gray-300">
+    "Anyone tested stealth/ox-alpha on OpenRouter for large codebases? It swallowed my 600K-line repo without flinching, but free preview tier 429s are brutal right now. Is this GLM-5.3 or a covert Google Gemini test checkpoint?"
+  </blockquote>
+  <div class="mt-2 text-xs text-gray-400 font-mono">
+    — Verified Developer Discussion via <a href="https://www.reddit.com/r/LocalLLaMA/" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:underline">Reddit r/LocalLLaMA</a>
+  </div>
 </div>
 
 Ox Alpha is an anonymous frontier AI reasoning model engineered specifically for long-horizon agentic software development, repository-wide refactoring, and multimodal debugging. Technical disclosures and infrastructure benchmarks confirm that Ox Alpha is Zhipu AI's unannounced **GLM-5.3-Flash (320B MoE)** architecture (see our full <a href="/blog/glm-5-3-flash-ox-alpha-api-pricing-guide" class="text-cyan-400 hover:underline font-semibold">GLM-5.3 Flash (Ox Alpha) Benchmarks & Pricing Guide</a> and our companion <a href="/blog/how-to-connect-glm-5-3-to-claude-code-cli" class="text-cyan-400 hover:underline font-semibold">GLM-5.3 Claude Code CLI setup guide</a>).
 
-### Key Technical Specifications
+### Key Technical Specifications & Parameters
+* **Ox Alpha Parameters & Architecture**: 320 Billion total parameters structured in a Mixture-of-Experts (MoE) configuration, activating approximately 32B parameters per token to balance extreme reasoning depth with sub-250ms time-to-first-token (TTFT).
 * **Context Window**: 1,048,576 tokens (~750,000 words of source code in a single prompt).
 * **Maximum Output Generation**: 131,072 tokens.
+* **Origin & Gemini Speculation**: Early viral threads on Reddit and developer Discord servers speculated whether Ox Alpha was a covert Google Gemini 1.5/2.0 developer preview or an internal Mistral checkpoint. Reverse tokenizer analysis (151K byte-level BPE) and upstream error codes proved conclusively that it is powered by Zhipu AI's GLM foundation models.
+* **HuggingFace & OpenRouter Hosting**: Ox Alpha was originally exposed on OpenRouter under the endpoint `stealth/ox-alpha`. For developers seeking offline local weights on HuggingFace, upstream base weights and model cards are tracked under official Zhipu AI repositories.
 * **Multimodal Capabilities**: Native support for high-resolution images, architectural diagrams, and video walkthroughs.
 * **Tool Calling & Structured Output**: Full compatibility with JSON schemas and autonomous function calling.
 
@@ -95,6 +111,7 @@ Configure your client environment and calculate monthly token savings directly o
         <option value="claude-bash" selected>Claude Code CLI (Bash/Zsh)</option>
         <option value="claude-ps">Claude Code CLI (PowerShell)</option>
         <option value="cursor">Cursor IDE (.cursorrules)</option>
+        <option value="opencode">OpenCode / OpenCodeX CLI</option>
         <option value="windsurf">Windsurf IDE</option>
       </select>
     </div>
@@ -156,6 +173,8 @@ Configure your client environment and calculate monthly token savings directly o
       configText = `# Ox Alpha Claude Code Setup (Windows PowerShell)\n$env:ANTHROPIC_BASE_URL="https://api.apivale.com/v1"\n$env:ANTHROPIC_AUTH_TOKEN="sk-apivale-your_api_key_here"\n$env:ANTHROPIC_MODEL="stealth/ox-alpha"\n\n# Run Claude Code CLI\nclaude`;
     } else if (client === 'cursor') {
       configText = `// 0xAlpha Cursor API Integration\n// Settings -> Models -> Override OpenAI Base URL: https://api.apivale.com/v1\n// Custom Model Name: stealth/ox-alpha\n\n# .cursorrules (Root of Workspace)\n- Model: stealth/ox-alpha on APIVALE High-Speed Gateway\n- Context: Leverage 1,048,576 token window for full-repo refactoring\n- Protocol: OpenAI-compatible /v1/chat/completions endpoint`;
+    } else if (client === 'opencode') {
+      configText = `# OpenCode CLI Ox Alpha Setup\nexport OPENCODE_API_BASE="https://api.apivale.com/v1"\nexport OPENCODE_API_KEY="sk-apivale-your_api_key_here"\nexport OPENCODE_MODEL="stealth/ox-alpha"\n\n# Launch OpenCode CLI\nopencode`;
     } else if (client === 'windsurf') {
       configText = `// 0xAlpha Windsurf Configuration\n{\n  "openai.baseUrl": "https://api.apivale.com/v1",\n  "openai.apiKey": "sk-apivale-your_api_key_here",\n  "model": "stealth/ox-alpha"\n}`;
     }
@@ -176,7 +195,7 @@ Configure your client environment and calculate monthly token savings directly o
 
 ---
 
-## 3. Step-by-Step: Ox Alpha Claude Code & Cursor Setup
+## 3. Step-by-Step: Ox Alpha Claude Code, Cursor & OpenCode Setup
 
 Claude Code CLI expects the official Anthropic API protocol format. Connecting third-party models directly via standard OpenRouter keys often triggers header validation failures (`anthropic-version: 2023-06-01` missing) or authorization errors.
 
@@ -253,6 +272,23 @@ curl https://api.apivale.com/v1/messages \
 
 > [!TIP]
 > **BYOK Cursor Economics vs. $20/mo Pro Subscription:** Configuring custom API keys via BYOK in Cursor Free lets you run Ox Alpha and [Qwen 3.8 in Cursor](/blog/qwen-3-8-cursor-setup/) with zero monthly subscription fees. For developers evaluating whether to keep Cursor Pro or switch to custom keys, check out our comprehensive [Cursor BYOK vs. Cursor Pro Cost & Limits Breakdown](/blog/cursor-pro-vs-byok-cost-comparison/) to see how pay-as-you-go saves up to 96.6% on token spend.
+
+### 4. OpenCode CLI Configuration
+
+For developers orchestrating autonomous terminal tasks via OpenCode (or OpenCodeX CLI), configure your environment to route through APIVALE's proxy gateway:
+
+```bash
+# OpenCode CLI Ox Alpha Setup
+export OPENCODE_API_BASE="https://api.apivale.com/v1"
+export OPENCODE_API_KEY="sk-apivale-your_api_key_here"
+export OPENCODE_MODEL="stealth/ox-alpha"
+
+# Launch OpenCode in your project workspace
+opencode
+```
+
+> [!TIP]
+> **Slash OpenCode Token Spend:** Autonomous agent loops in OpenCode can consume millions of tokens during repository indexing. Check out our dedicated guide on [How to Slash OpenCode Token Costs by 85% with Custom API Gateways](/blog/how-to-reduce-opencode-token-costs/) to combine Ox Alpha with aggressive prompt caching and Waffo global billing.
 
 ---
 
@@ -346,7 +382,7 @@ app.listen(PORT, () => console.log(`Proxy running on port ${PORT}`));
 
 ### 1. `HTTP 429: Too Many Requests` or `HTTP 504 Gateway Timeout`
 * **Root Cause:** Free preview gateways experience massive connection saturation during peak developer hours.
-* **Resolution:** Route traffic through APIVALE's dedicated inference gateway (`https://api.apivale.com/v1`) with PayPal billing to access priority throughput pools. Learn more in our [guide to OpenRouter rate limit alternatives](/blog/openrouter-alternatives/).
+* **Resolution:** Route traffic through APIVALE's dedicated inference gateway (`https://api.apivale.com/v1`) with Waffo billing to access priority throughput pools. Learn more in our [guide to OpenRouter rate limit alternatives](/blog/openrouter-alternatives/).
 
 ### 2. `Invalid Header: anthropic-version missing`
 * **Root Cause:** Claude Code CLI strictly checks for Anthropic protocol headers.
@@ -367,11 +403,14 @@ app.listen(PORT, () => console.log(`Proxy running on port ${PORT}`));
 ### What is the context window of Ox Alpha (0xAlpha)?
 Ox Alpha features a native 1,048,576-token (1M) context window, allowing developers to pass an entire codebase of up to 750,000 words into a single agent prompt without truncation.
 
-### Is Ox Alpha free to use?
-Ox Alpha launched with a temporary free preview on OpenRouter, which quickly suffered from strict rate limits (429 errors). APIVALE provides dedicated throughput access at **$0.45/1M input** and **$1.80/1M output** tokens with **$0.20 free starter credit**.
+### Is Ox Alpha still free?
+Ox Alpha launched with a temporary free preview on OpenRouter, which quickly suffered from strict rate limits (HTTP 429 errors) before transitioning to standard pay-per-token tiers. APIVALE provides dedicated high-concurrency access at **$0.45/1M input** and **$1.80/1M output** tokens with **$0.20 free starter credit**.
 
-### How do I pay for Ox Alpha API credits with PayPal?
-APIVALE supports native global PayPal billing with zero KYC identity verification requirements and no international credit card blocks. Sign up at [apivale.com/pricing](https://apivale.com/pricing), select your quota, and check out instantly via PayPal.
+### Who is behind Ox Alpha?
+Ox Alpha was deployed anonymously on OpenRouter as a stealth reasoning model by Zhipu AI to stress-test their flagship **GLM-5.3-Flash** architecture. While community rumors initially guessed Google Gemini or Mistral, reverse tokenizer analysis confirmed its Zhipu AI GLM lineage.
+
+### How do I pay for Ox Alpha API credits with Waffo Global Billing?
+APIVALE supports Waffo Global Billing (international credit cards, debit cards, and global digital wallets) with zero KYC identity verification requirements and instant balance crediting. Sign up at [apivale.com/pricing](https://apivale.com/pricing), select your quota, and check out securely via Waffo.
 
 ### How does Ox Alpha compare to Claude Sonnet 5 for coding?
 Ox Alpha scores 88.2% on SWE-bench Lite (close to Sonnet 5's 92.4%) but offers a **5x larger context window (1M tokens vs 200K)** at **85% lower token cost** ($0.45/1M input vs $3.00/1M).

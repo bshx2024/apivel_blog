@@ -75,7 +75,7 @@ Autonomous coding agents generate long context windows due to recursive prompt h
 
 > [!NOTE]
 > **Why OpenCode Developers Need Multi-Model Gateway Routing**  
-> OpenCode allows developers to specify different models for different tasks (e.g. lightweight editing vs. deep architectural reasoning). Routing simple syntax edits to `deepseek-v4` while sending massive context refactoring to `infer/qwen3.7-max` maximizes performance while keeping overall API expenses to a fraction of single-provider costs.
+> OpenCode allows developers to specify different models for different tasks (e.g. lightweight editing vs. deep architectural reasoning). Routing simple syntax edits to `deepseek-v4` while sending massive context refactoring to `infer/qwen3.7-max` or [Ox Alpha in OpenCode & Claude Code](/blog/ox-alpha-claude-code-cursor-setup/) maximizes performance with up to 1M context while keeping overall API expenses to a fraction of single-provider costs.
 
 ---
 
