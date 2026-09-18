@@ -36,7 +36,7 @@ lang: "en"
 
 Developers orchestrating autonomous coding agents, interactive IDE workflows, and multi-agent systems face a persistent engineering tradeoff: cutting-edge frontier intelligence versus sustainable token economics. When community intelligence revealed that Google is stealthily benchmarking its upcoming **Gemini 4 Pro** model on public evaluation arenas, excitement surged around its unprecedented SVG illustration capabilities and spatial reasoning. However, relying exclusively on raw frontier models for multi-turn loops rapidly triggers steep billing spikes and regional rate limits.
 
-Based on telemetry from over 120,000 production agent calls handled through the APIVALE gateway, developers achieve the highest system throughput by decoupling visual spatial reasoning from routine code synthesis. Through APIVALE's unified protocol proxy, developers can harness Gemini 4 Pro for top-level architectural drafting while seamlessly routing heavy terminal workloads to high-throughput Chinese models like Qwen 3.8 Max and DeepSeek V4—all funded through global Waffo billing without overseas credit card rejections.
+Based on telemetry from over 120,000 production agent calls handled through the APIVALE gateway, developers achieve the highest system throughput by decoupling visual spatial reasoning from routine code synthesis. Through APIVALE's unified protocol proxy, developers can harness Gemini 4 Pro for top-level architectural drafting while seamlessly routing heavy terminal workloads to high-throughput Chinese models like [Qwen 3.8 Max](/blog/qwen-3-8-cursor-setup/) and [DeepSeek V4](/blog/deepseek-v4-flash-api-guide/)—all funded through global Waffo billing without overseas credit card rejections.
 
 ```bash
 # Verify gateway connectivity and multi-model availability via APIVALE
@@ -88,8 +88,8 @@ Evaluate how Gemini 4 Pro compares against industry frontier models across multi
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Google Gemini 4 Pro (Argon)** | Closed Arena Blind Testing (`gemini-3.8-flash`) | SOTA Spatial Reasoning & Clean SVG Vector Generation | ~$3.50 / $10.50 *(Projected)* | Strict Vertex AI Regional Rate Limits | **Best for:** Zero-shot UI layout generation, complex SVG vector graphics, and 2M+ multimodal document ingestion. |
 | **OpenAI GPT-6 Astra Pro** | Enterprise Preview / GA | Frontier General Reasoning & Python Sandboxing | ~$4.00 / $12.00 | Standard Enterprise Concurrency | **Best for:** Native Azure Private VPC integrations and direct enterprise SOC2 Type II compliance guarantees. |
-| **Qwen 3.8 Max (Alibaba Cloud)** | GA Production on APIVALE | 92% Frontier SWE-bench Coding Performance | **$0.40 / $1.20** | 120 RPM / 2M TPM Burst Routing | **Best for:** Continuous 24/7 autonomous coding loops (Claude Code CLI / Cursor) at **88% lower token cost**. |
-| **DeepSeek V4 (MoE)** | GA Production on APIVALE | Mathematical Reasoning & Algorithmic Synthesis | **$0.27 / $1.10** | High-Throughput Cluster Routing | **Best for:** High-volume algorithmic refactoring, competitive programming logic, and budget-constrained startups. |
+| **[Qwen 3.8 Max (Alibaba Cloud)](/blog/qwen-3-8-cursor-setup/)** | GA Production on APIVALE | 92% Frontier SWE-bench Coding Performance | **$0.40 / $1.20** | 120 RPM / 2M TPM Burst Routing | **Best for:** Continuous 24/7 autonomous coding loops (Claude Code CLI / Cursor) at **88% lower token cost**. |
+| **[DeepSeek V4 (MoE)](/blog/deepseek-v4-flash-api-guide/)** | GA Production on APIVALE | Mathematical Reasoning & Algorithmic Synthesis | **$0.27 / $1.10** | High-Throughput Cluster Routing | **Best for:** High-volume algorithmic refactoring, competitive programming logic, and budget-constrained startups. |
 
 *Note: Pricing and parameters verified via official developer documentation, LMSYS community telemetry, and APIVALE gateway benchmarks as of September 2026.*
 
@@ -416,6 +416,24 @@ Gemini 4 Pro excels at complex spatial reasoning, native SVG vector generation, 
 
 ### How do I access Gemini 4 Pro and Chinese LLMs without an overseas credit card?
 You can access both Google Gemini models and Chinese flagship models with zero overseas credit card requirements by connecting through APIVALE. APIVALE provides unified OpenAI and Anthropic compatible endpoints backed by Waffo global billing, supporting standard credit cards and international digital wallets with zero KYC friction.
+
+<div class="my-8 p-5 bg-gray-900/80 border border-gray-800 rounded-xl">
+  <div class="text-xs font-bold uppercase tracking-wider text-indigo-400 mb-3">📚 Recommended Technical Guides</div>
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+    <a href="/blog/qwen-3-8-cursor-setup/" class="p-3 bg-gray-950/60 border border-gray-800 hover:border-indigo-500/50 rounded-lg block transition-all group">
+      <div class="font-semibold text-gray-200 group-hover:text-indigo-400">Qwen 3.8 Cursor Guide ↗</div>
+      <div class="text-xs text-gray-400 mt-1">Configure custom API keys, .cursorrules & BYOK routing.</div>
+    </a>
+    <a href="/blog/gemini-3-7-flash-claude-code-setup/" class="p-3 bg-gray-950/60 border border-gray-800 hover:border-indigo-500/50 rounded-lg block transition-all group">
+      <div class="font-semibold text-gray-200 group-hover:text-indigo-400">Gemini 3.7 Flash Setup ↗</div>
+      <div class="text-xs text-gray-400 mt-1">Connect sub-second TTFT Flash models to Claude Code.</div>
+    </a>
+    <a href="/blog/deepseek-v4-flash-api-guide/" class="p-3 bg-gray-950/60 border border-gray-800 hover:border-indigo-500/50 rounded-lg block transition-all group">
+      <div class="font-semibold text-gray-200 group-hover:text-indigo-400">DeepSeek V4 API Guide ↗</div>
+      <div class="text-xs text-gray-400 mt-1">Slash token costs by 90% via unified proxy endpoints.</div>
+    </a>
+  </div>
+</div>
 
 ---
 
