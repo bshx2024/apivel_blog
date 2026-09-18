@@ -23,7 +23,7 @@ lang: "en"
 <div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
   <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Related GLM & Ox Alpha Guides</span>
   <p class="mt-1 text-sm text-gray-300">
-    Looking for specific client integrations? Read our dedicated walkthroughs for <a href="/blog/ox-alpha-claude-code-cursor-setup" class="text-cyan-400 hover:underline font-semibold">Ox Alpha Claude Code & Cursor Setup</a>, <a href="/blog/how-to-connect-glm-5-3-to-claude-code-cli" class="text-cyan-400 hover:underline font-semibold">Connecting GLM-5.3 to Claude Code CLI</a>, and <a href="/blog/connect-glm-5-3-to-claude-code-cli-cursor" class="text-cyan-400 hover:underline font-semibold">GLM-5.3 Cursor IDE .cursorrules Guide</a>.
+    Need extreme 200 tokens/s throughput and native visual coding? Read our comprehensive tutorial on <a href="/blog/glm-5-3-flashx-extreme-speed-vision-api-guide" class="text-emerald-400 hover:underline font-semibold">GLM-5.3-FlashX API Setup & 200 TPS Pricing</a>. Also check our dedicated walkthroughs for <a href="/blog/ox-alpha-claude-code-cursor-setup" class="text-cyan-400 hover:underline font-semibold">Ox Alpha Claude Code & Cursor Setup</a>, <a href="/blog/how-to-connect-glm-5-3-to-claude-code-cli" class="text-cyan-400 hover:underline font-semibold">Connecting GLM-5.3 to Claude Code CLI</a>, and <a href="/blog/connect-glm-5-3-to-claude-code-cli-cursor" class="text-cyan-400 hover:underline font-semibold">GLM-5.3 Cursor IDE .cursorrules Guide</a>.
   </p>
 </div>
 
