@@ -1,9 +1,9 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
+import BlogCtaCard from '../components/BlogCtaCard.astro';
 import ApiPriceCalculator from '../components/ApiPriceCalculator.astro';
 import CliConfigGenerator from '../components/CliConfigGenerator.astro';
-import BlogCtaCard from '../components/BlogCtaCard.astro';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
@@ -32,36 +32,72 @@ const authorAvatars: Record<string, string> = {
 };
 const avatarUrl = authorAvatars[post.data.author];
 
-// Topic detection for automatic tool widget selection
+// Topic and Model detection for widgets and dynamic conversion CTAs
 const slugLower = post.id.toLowerCase();
 const titleLower = post.data.title.toLowerCase();
+const tagsLower = (post.data.tags || []).map((t: string) => t.toLowerCase()).join(' ');
+const postMeta = `${slugLower} ${titleLower} ${tagsLower}`;
 
 const isPriceOrBenchmark = /price|cost|saving|benchmark|comparison|versus|vs|deepseek|minimax|rate/i.test(slugLower + ' ' + titleLower);
 const isCliOrSetup = /cli|cursor|windsurf|opencode|connect|setup|config|mcp|guide|access|bypass/i.test(slugLower + ' ' + titleLower);
 
-let initialModel = 'kimi-k3';
-if (slugLower.includes('glm-5-3-flash') || slugLower.includes('glm-5.3-flash') || slugLower.includes('ox-alpha') || slugLower.includes('0xalpha')) {
+let initialModel = 'glm-5.3-flash';
+let targetTopic = 'general';
+
+if (postMeta.includes('flashx') || postMeta.includes('glm-5.3-flashx') || postMeta.includes('glm-5-3-flashx')) {
+	targetTopic = 'glm-5.3-flashx';
+	initialModel = 'glm-5.3-flashx';
+} else if (postMeta.includes('glm-5-3-flash') || postMeta.includes('glm-5.3-flash') || postMeta.includes('ox-alpha') || postMeta.includes('0xalpha')) {
+	targetTopic = 'glm-5.3-flash';
 	initialModel = 'glm-5.3-flash';
-} else if (slugLower.includes('glm-5-3') || slugLower.includes('glm-5.3') || slugLower.includes('glm') || slugLower.includes('zhipu')) {
+} else if (postMeta.includes('glm-5-3') || postMeta.includes('glm-5.3') || postMeta.includes('glm-5') || postMeta.includes('glm-4') || postMeta.includes('zhipu') || postMeta.includes('z-ai') || postMeta.includes('智谱')) {
+	targetTopic = 'zhipu';
 	initialModel = 'glm-5.3';
-} else if (slugLower.includes('qwen-3-8-flash') || slugLower.includes('qwen-3.8-flash')) {
+} else if (postMeta.includes('qwen-3-8-omni') || postMeta.includes('qwen-3.8-omni') || postMeta.includes('omni-flash')) {
+	targetTopic = 'qwen-3.8-omni';
 	initialModel = 'qwen-38-flash';
-} else if (slugLower.includes('qwen-3-8') || slugLower.includes('qwen-3.8') || slugLower.includes('qwen')) {
+} else if (postMeta.includes('qwen-3-8-flash') || postMeta.includes('qwen-3.8-flash')) {
+	targetTopic = 'qwen-3.8-flash';
+	initialModel = 'qwen-38-flash';
+} else if (postMeta.includes('qwen') || postMeta.includes('通义千问')) {
+	targetTopic = 'qwen';
 	initialModel = 'qwen-38';
-} else if (slugLower.includes('deepseek')) {
+} else if (postMeta.includes('deepseek') || postMeta.includes('深度求索')) {
+	targetTopic = 'deepseek';
 	initialModel = 'deepseek-v4';
-} else if (slugLower.includes('gemini')) {
+} else if (postMeta.includes('hunyuan') || postMeta.includes('hy3') || postMeta.includes('hy4') || postMeta.includes('混元')) {
+	targetTopic = 'hunyuan';
+	initialModel = 'deepseek-v4';
+} else if (postMeta.includes('gemini-4') || postMeta.includes('gemini 4')) {
+	targetTopic = 'gemini';
 	initialModel = 'gemini-37';
-} else if (slugLower.includes('grok')) {
+} else if (postMeta.includes('gemini') || postMeta.includes('谷歌')) {
+	targetTopic = 'gemini';
+	initialModel = 'gemini-37';
+} else if (postMeta.includes('grok') || postMeta.includes('xai')) {
+	targetTopic = 'grok';
 	initialModel = 'grok-45';
-} else if (slugLower.includes('needle')) {
+} else if (postMeta.includes('needle')) {
+	targetTopic = 'needle';
 	initialModel = 'needle-2';
-} else if (slugLower.includes('opus')) {
-	initialModel = 'claude-opus-5';
-} else if (slugLower.includes('minimax') || slugLower.includes('hailuo')) {
+} else if (postMeta.includes('minimax') || postMeta.includes('hailuo') || postMeta.includes('海螺')) {
+	targetTopic = 'minimax';
 	initialModel = 'minimax-h3';
-} else if (slugLower.includes('sonnet') || slugLower.includes('claude') || slugLower.includes('fable')) {
+} else if (postMeta.includes('kimi') || postMeta.includes('moonshot') || postMeta.includes('月之暗面')) {
+	targetTopic = 'kimi';
+	initialModel = 'kimi-k3';
+} else if (postMeta.includes('opus') || postMeta.includes('claude-opus')) {
+	targetTopic = 'claude';
+	initialModel = 'claude-opus-5';
+} else if (postMeta.includes('sonnet') || postMeta.includes('claude') || postMeta.includes('fable')) {
+	targetTopic = 'claude';
 	initialModel = 'claude-sonnet-5';
+} else if (postMeta.includes('gpt-5.6') || postMeta.includes('gpt-5-6') || postMeta.includes('gpt-6') || postMeta.includes('luna') || postMeta.includes('sol') || postMeta.includes('astra')) {
+	targetTopic = 'gpt56';
+	initialModel = 'kimi-k3';
+} else if (postMeta.includes('cursor') || postMeta.includes('composer') || postMeta.includes('cline') || postMeta.includes('windsurf') || postMeta.includes('opencode')) {
+	targetTopic = 'cursor';
+	initialModel = 'glm-5.3-flash';
 }
 
 let defaultClient = 'claude-code';
@@ -151,7 +187,7 @@ const blogPostingSchema = {
 		<!-- Post Header -->
 		<header class="post-header">
 			<div class="post-tags">
-				{post.data.tags.map((tag) => (
+				{post.data.tags.map((tag: string) => (
 					<span class="tag-badge">{tag}</span>
 				))}
 			</div>
@@ -162,7 +198,7 @@ const blogPostingSchema = {
 					{avatarUrl ? (
 						<img src={avatarUrl} alt={post.data.author} class="avatar-img" width="48" height="48" />
 					) : (
-						post.data.author.split(' ').map(n => n[0]).join('')
+						post.data.author.split(' ').map((n: string) => n[0]).join('')
 					)}
 				</div>
 				<div class="author-meta-info">
@@ -196,7 +232,7 @@ const blogPostingSchema = {
 		</div>
 
 		<!-- Dynamic Inline CTA Banner -->
-		<div class="dynamic-inline-banner" id="dynamicInlineBanner" style="display: none;">
+		<div class="dynamic-inline-banner" id="dynamicInlineBanner" data-target-topic={targetTopic} style="display: none;">
 			<div class="banner-content">
 				<div class="inline-badge" id="inlineBadgeText">💡 Trial Access</div>
 				<div class="inline-title" id="inlineTitle">Test APIs Without KYC</div>
@@ -219,7 +255,7 @@ const blogPostingSchema = {
 					{avatarUrl ? (
 						<img src={avatarUrl} alt={post.data.author} class="avatar-img" width="60" height="60" />
 					) : (
-						post.data.author.split(' ').map(n => n[0]).join('')
+						post.data.author.split(' ').map((n: string) => n[0]).join('')
 					)}
 				</div>
 				<div class="author-box-content">
@@ -231,7 +267,7 @@ const blogPostingSchema = {
 	</article>
 
 	<!-- Dynamic Floating CTA Card -->
-	<div class="dynamic-floating-cta" id="dynamicFloatingCta" style="display: none;">
+	<div class="dynamic-floating-cta" id="dynamicFloatingCta" data-target-topic={targetTopic} style="display: none;">
 		<button class="close-cta-btn" id="closeCtaBtn" aria-label="Close promotion">✕</button>
 		<div class="cta-badge">
 			<span class="pulse-dot"></span>
@@ -247,26 +283,464 @@ const blogPostingSchema = {
 	<!-- Client-Side Script for dynamic localized copy and content-aware target targeting -->
 	<script is:inline>
 		document.addEventListener('DOMContentLoaded', () => {
-			// Floating Card
 			const ctaContainer = document.getElementById('dynamicFloatingCta');
 			const closeBtn = document.getElementById('closeCtaBtn');
-			
-			const isClosed = sessionStorage.getItem('apivale_blog_cta_closed') === 'true';
-
-			// Banner Elements
 			const inlineBanner = document.getElementById('dynamicInlineBanner');
 			
-			// Detect Content Keywords
-			const docText = document.body.innerText || '';
-			const isKimi = /kimi|moonshot|月之暗面/i.test(docText);
-			const isZhipu = /zhipu|glm|智谱/i.test(docText);
-			const isDeepSeek = /deepseek|hunyuan|混元/i.test(docText);
-			const isCursor = /cursor|composer|cline|api key/i.test(docText);
-			const isGptCost = /gpt-5\.6|luna|terra|sol/i.test(docText);
+			const isClosed = sessionStorage.getItem('apivale_blog_cta_closed') === 'true';
 
 			// Detect Browser Language
 			const userLang = navigator.language || navigator.userLanguage || 'en';
 			const isZh = userLang.toLowerCase().startsWith('zh');
+
+			// Determine Target Topic (Priority: data attribute injected by Astro server -> fallback to body inspection)
+			let topic = ctaContainer?.getAttribute('data-target-topic') || inlineBanner?.getAttribute('data-target-topic') || 'general';
+
+			if (!topic || topic === 'general') {
+				const postTitle = document.querySelector('.post-title')?.innerText?.toLowerCase() || '';
+				const postBody = document.querySelector('.post-body')?.innerText?.toLowerCase() || '';
+				const fullArticleText = postTitle + ' ' + postBody;
+
+				if (fullArticleText.includes('flashx') || fullArticleText.includes('glm-5.3-flashx') || fullArticleText.includes('glm-5-3-flashx')) {
+					topic = 'glm-5.3-flashx';
+				} else if (fullArticleText.includes('ox-alpha') || fullArticleText.includes('glm-5.3-flash') || fullArticleText.includes('glm-5-3-flash')) {
+					topic = 'glm-5.3-flash';
+				} else if (fullArticleText.includes('zhipu') || fullArticleText.includes('glm') || fullArticleText.includes('智谱')) {
+					topic = 'zhipu';
+				} else if (fullArticleText.includes('omni-flash') || fullArticleText.includes('qwen-3.8-omni')) {
+					topic = 'qwen-3.8-omni';
+				} else if (fullArticleText.includes('qwen') || fullArticleText.includes('通义千问')) {
+					topic = 'qwen';
+				} else if (fullArticleText.includes('deepseek') || fullArticleText.includes('深度求索')) {
+					topic = 'deepseek';
+				} else if (fullArticleText.includes('hunyuan') || fullArticleText.includes('混元')) {
+					topic = 'hunyuan';
+				} else if (fullArticleText.includes('gemini') || fullArticleText.includes('谷歌')) {
+					topic = 'gemini';
+				} else if (fullArticleText.includes('kimi') || fullArticleText.includes('moonshot') || fullArticleText.includes('月之暗面')) {
+					topic = 'kimi';
+				} else if (fullArticleText.includes('cursor') || fullArticleText.includes('composer')) {
+					topic = 'cursor';
+				} else if (fullArticleText.includes('gpt-5.6') || fullArticleText.includes('luna') || fullArticleText.includes('sol')) {
+					topic = 'gpt56';
+				} else {
+					topic = 'general';
+				}
+			}
+
+			const TOPIC_CONFIG = {
+				'glm-5.3-flashx': {
+					floating: {
+						en: {
+							badge: '⚡ 200 TPS Vision',
+							title: 'Run GLM-5.3-FlashX at 200 TPS',
+							desc: 'Native visual coding for Claude Code & Cursor. Bypass Zhipu KYC limits. Sign up via GitHub for $0.20 free credit (+ 50% 1st top-up bonus).',
+							btnText: 'Try GLM-5.3-FlashX Instantly',
+							utmCampaign: 'glm53_flashx'
+						},
+						zh: {
+							badge: '⚡ 200 TPS 极速视觉',
+							title: '免实名体验 GLM-5.3-FlashX',
+							desc: '200 tokens/s 极速视觉编程！直连 Claude Code & Cursor，绕过国内手机号与 Coding Plan 门槛，GitHub 登录即送 $0.20 (+ 50% 首充奖励)。',
+							btnText: '一键免登录体验 FlashX →',
+							utmCampaign: 'glm53_flashx'
+						}
+					},
+					inline: {
+						en: {
+							badge: '⚡ FlashX API Pipeline',
+							title: 'Connect GLM-5.3-FlashX Vision Coding Endpoints',
+							desc: 'Ditch +86 phone verification and Coding Plan barriers. High-concurrency 200 TPS vision-to-code API endpoints. Test in our playground with $0.20 free credit.',
+							btnText: 'Test FlashX Playground',
+							utmCampaign: 'glm53_flashx'
+						},
+						zh: {
+							badge: '⚡ FlashX 极速多模态',
+							title: '想要免实名高速调用 GLM-5.3-FlashX？',
+							desc: '200 tokens/s 超高吞吐视觉编程，免去 +86 绑定与官方实名门槛。通过 APIVALE 一键登录获取 $0.20 体验金，支持 Playground 与 API 直连。',
+							btnText: '立即免实名测试 FlashX →',
+							utmCampaign: 'glm53_flashx'
+						}
+					}
+				},
+				'glm-5.3-flash': {
+					floating: {
+						en: {
+							badge: '⚡ Ox Alpha Speed',
+							title: 'Call GLM-5.3-Flash (Ox Alpha)',
+							desc: 'Next-gen cost-effective coding model. Connect to Claude Code & Cursor at $0.20/M. GitHub signup gives $0.20 free credit (+ 50% top-up bonus).',
+							btnText: 'Try GLM-5.3-Flash Now',
+							utmCampaign: 'glm53_flash'
+						},
+						zh: {
+							badge: '⚡ Ox Alpha 极速',
+							title: '免实名测试 GLM-5.3-Flash',
+							desc: '新一代高性价比编程模型 (Ox Alpha)。直连 Claude Code 与 Cursor，跳过实名墙，GitHub 授权即送 $0.20 体验金。',
+							btnText: '一键体验 GLM-5.3-Flash →',
+							utmCampaign: 'glm53_flash'
+						}
+					},
+					inline: {
+						en: {
+							badge: '⚡ Ox Alpha High-Speed',
+							title: 'Bypass KYC for GLM-5.3-Flash (Ox Alpha)',
+							desc: 'Zero +86 phone requirements. Test GLM-5.3-Flash directly in our web playground or fetch API keys for Cursor & Claude Code.',
+							btnText: 'Test GLM-5.3-Flash Playground',
+							utmCampaign: 'glm53_flash'
+						},
+						zh: {
+							badge: '⚡ Ox Alpha 极速通道',
+							title: '想免实名测试 GLM-5.3-Flash (Ox Alpha)？',
+							desc: '极致性价比编程模型，跳过复杂的国内实名验证。通过 APIVALE 获得 $0.20 免费额度，支持 Playground 在线测试与 API 直连。',
+							btnText: '立即免实名测试 GLM-5.3-Flash →',
+							utmCampaign: 'glm53_flash'
+						}
+					}
+				},
+				'zhipu': {
+					floating: {
+						en: {
+							badge: '🎁 Trial Credit',
+							title: 'Bypass Zhipu KYC Limits',
+							desc: 'Ditch +86 phone and ID requirements. Call GLM-5.3 & GLM-4 globally. Sign up with GitHub for $0.20 free credit (+ 50% 1st top-up bonus).',
+							btnText: 'Try Zhipu Models Instantly',
+							utmCampaign: 'zhipu_bypass'
+						},
+						zh: {
+							badge: '🔥 限时体验',
+							title: '免实名测试 Zhipu AI / GLM',
+							desc: '跳过国内手机号与身份证实名墙。直接调用 GLM-5.3/GLM-4 等模型，使用 GitHub 一键登录即送 $0.20 (+ 首充送 50%)。',
+							btnText: '一键免登录体验 Playground →',
+							utmCampaign: 'zhipu_bypass'
+						}
+					},
+					inline: {
+						en: {
+							badge: '💡 Trial Access',
+							title: 'Bypass Zhipu AI KYC Today',
+							desc: 'Get $0.20 starting bonus upon GitHub registration. Test GLM-5.3 and GLM-4 in our online playground without any Chinese phone verification.',
+							btnText: 'Test Zhipu Playground',
+							utmCampaign: 'zhipu_bypass'
+						},
+						zh: {
+							badge: '💡 免实名通道',
+							title: '想免实名测试 Zhipu AI / GLM 模型？',
+							desc: '通过 APIVALE 绕过复杂的实名墙与 +86 手机绑定。绑定 GitHub 即可获得 $0.20 免费额度 (首充加赠 50%)，支持在浏览器中即开即用进行测试！',
+							btnText: '立即免登录体验 Playground →',
+							utmCampaign: 'zhipu_bypass'
+						}
+					}
+				},
+				'qwen-3.8-omni': {
+					floating: {
+						en: {
+							badge: '🎙️ Omni Multimodal',
+							title: 'Call Qwen3.8-Omni-Flash API',
+							desc: 'Native end-to-end speech and vision processing with ultra-low latency. Sign up with GitHub for $0.20 free credit (+ 50% 1st top-up bonus).',
+							btnText: 'Try Omni-Flash Instantly',
+							utmCampaign: 'qwen_omni'
+						},
+						zh: {
+							badge: '🎙️ 全模态语音视觉',
+							title: '免实名调用 Qwen3.8-Omni-Flash',
+							desc: '原生端到端超低延迟语音与视觉多模态！免去国内手机验证，GitHub 一键登录即送 $0.20 (+ 首充送 50%)。',
+							btnText: '一键体验 Omni-Flash →',
+							utmCampaign: 'qwen_omni'
+						}
+					},
+					inline: {
+						en: {
+							badge: '🎙️ Omni Audio & Vision',
+							title: 'Test Qwen3.8-Omni-Flash Without Mainland KYC',
+							desc: 'Deploy native omni audio/vision reasoning pipelines globally. Instant access with $0.20 free test credits in our online playground.',
+							btnText: 'Test Omni Playground',
+							utmCampaign: 'qwen_omni'
+						},
+						zh: {
+							badge: '🎙️ Omni 全模态通道',
+							title: '想免实名体验 Qwen3.8-Omni-Flash 语音视觉多模态？',
+							desc: '原生音视频全模态低延迟交互，免去繁琐实名审核。通过 APIVALE 一键登录获取 $0.20 体验金，支持控制台 Playground 与 API 调用。',
+							btnText: '立即体验 Omni-Flash →',
+							utmCampaign: 'qwen_omni'
+						}
+					}
+				},
+				'qwen': {
+					floating: {
+						en: {
+							badge: '🎁 Trial Credit',
+							title: 'Bypass Qwen 3.8 Verification',
+							desc: 'Access Alibaba Qwen 3.8 & 3.7 globally without +86 phone restrictions. Sign up with GitHub for $0.20 free credit (+ 50% bonus).',
+							btnText: 'Try Qwen Instantly',
+							utmCampaign: 'qwen_bypass'
+						},
+						zh: {
+							badge: '🔥 限时体验',
+							title: '免实名测试通义千问 Qwen 3.8',
+							desc: '跳过国内手机号校验，直接调用 Qwen 3.8 全系列高并发模型，GitHub 一键登录即送 $0.20 体验额度。',
+							btnText: '一键免登录体验 Qwen →',
+							utmCampaign: 'qwen_bypass'
+						}
+					},
+					inline: {
+						en: {
+							badge: '💡 Trial Access',
+							title: 'Connect Qwen 3.8 Globally Without KYC',
+							desc: 'Direct OpenAI-compatible endpoints for Qwen 3.8 Max & Flash. GitHub sign-on with $0.20 free credit (+ 50% 1st top-up bonus).',
+							btnText: 'Test Qwen Playground',
+							utmCampaign: 'qwen_bypass'
+						},
+						zh: {
+							badge: '💡 免实名通道',
+							title: '想免实名测试阿里千问 Qwen 3.8 接口？',
+							desc: '免去国内手机号绑定与企业实名门槛。通过 APIVALE 获得 $0.20 体验金，支持 Playground 在线调试与 Claude Code / Cursor 直连。',
+							btnText: '立即体验 Qwen 接口 →',
+							utmCampaign: 'qwen_bypass'
+						}
+					}
+				},
+				'deepseek': {
+					floating: {
+						en: {
+							badge: '🎁 Trial Credit',
+							title: 'Bypass DeepSeek Blocks',
+							desc: 'Get direct REST API endpoints without mainland Chinese verifications. High concurrency, no 503 errors, and instant trial credit.',
+							btnText: 'Try DeepSeek Instantly',
+							utmCampaign: 'deepseek_bypass'
+						},
+						zh: {
+							badge: '🔥 限时体验',
+							title: '免实名直连 DeepSeek-V4',
+							desc: '免去 +86 手机注册与身份审核。直连 DeepSeek-V4，高并发稳定不熔断，GitHub 登录即送 $0.20 体验额度。',
+							btnText: '一键体验 DeepSeek →',
+							utmCampaign: 'deepseek_bypass'
+						}
+					},
+					inline: {
+						en: {
+							badge: '💡 Trial Access',
+							title: 'Call DeepSeek-V4 Globally Without KYC',
+							desc: 'No mainland KYC or identity blocks. Get instant credit on registration and start playing with frontier LLMs immediately.',
+							btnText: 'Test DeepSeek Playground',
+							utmCampaign: 'deepseek_bypass'
+						},
+						zh: {
+							badge: '💡 免实名通道',
+							title: '想免实名测试 DeepSeek-V4 高并发接口？',
+							desc: '免去官方实名认证与高峰期限流阻碍。通过 APIVALE 一键登录即可获得 $0.20 体验金，支持控制台 Playground 与 API 调用。',
+							btnText: '立即体验 DeepSeek →',
+							utmCampaign: 'deepseek_bypass'
+						}
+					}
+				},
+				'hunyuan': {
+					floating: {
+						en: {
+							badge: '🎁 Trial Credit',
+							title: 'Bypass Tencent Hunyuan Limits',
+							desc: 'Call Hunyuan Hy3 / Hy4 globally without Chinese real-name KYC. Sign up with GitHub for $0.20 free credit (+ 50% top-up bonus).',
+							btnText: 'Try Hunyuan Instantly',
+							utmCampaign: 'hunyuan_bypass'
+						},
+						zh: {
+							badge: '🔥 限时体验',
+							title: '免实名测试腾讯混元 Hunyuan',
+							desc: '跳过腾讯云企业实名与国内身份审核。直连 Hunyuan Hy3 / Hy4 极速推理，GitHub 授权即送 $0.20。',
+							btnText: '一键体验混元 →',
+							utmCampaign: 'hunyuan_bypass'
+						}
+					},
+					inline: {
+						en: {
+							badge: '💡 Trial Access',
+							title: 'Call Hunyuan Globally Without Mainland KYC',
+							desc: 'Direct REST API endpoints for Tencent Hunyuan models. High concurrency, instant registration bonus, and zero domestic hurdles.',
+							btnText: 'Test Hunyuan Playground',
+							utmCampaign: 'hunyuan_bypass'
+						},
+						zh: {
+							badge: '💡 免实名通道',
+							title: '想免实名测试腾讯混元大模型接口？',
+							desc: '免去复杂的云端企业实名流程。通过 APIVALE 一键登录即可获得 $0.20 体验金，直接在网页控制台在线调用与测试。',
+							btnText: '立即体验混元 →',
+							utmCampaign: 'hunyuan_bypass'
+						}
+					}
+				},
+				'gemini': {
+					floating: {
+						en: {
+							badge: '⚡ High Concurrency',
+							title: 'Access Gemini 4 Pro & 3.7 Flash',
+							desc: 'Bypass geo-restrictions and card verification blocks. High-speed Gemini endpoints compatible with Claude Code & Cursor.',
+							btnText: 'Try Gemini Instantly',
+							utmCampaign: 'gemini_access'
+						},
+						zh: {
+							badge: '⚡ 高速免风控',
+							title: '免风控调用 Gemini 4 Pro / 3.7',
+							desc: '跳过海外双币信用卡绑定与地区封锁风控。统一 API Key 稳定直连 Gemini 最新模型，送 $0.20 免费体验金。',
+							btnText: '一键体验 Gemini →',
+							utmCampaign: 'gemini_access'
+						}
+					},
+					inline: {
+						en: {
+							badge: '⚡ High Concurrency',
+							title: 'High-Speed Gemini 4 Pro & 3.7 API Endpoints',
+							desc: 'Reliable global routing for Gemini models. Zero ban risk, pay-per-token with PayPal/crypto, and test immediately in playground.',
+							btnText: 'Test Gemini Playground',
+							utmCampaign: 'gemini_access'
+						},
+						zh: {
+							badge: '⚡ 稳定代理通道',
+							title: '需要稳定免封号的 Gemini 4 Pro / 3.7 接口？',
+							desc: '解决海外绑卡困难与 IP 频频风控问题。APIVALE 提供高可用 OpenAI 兼容端点，注册即送 $0.20 免费体验金。',
+							btnText: '立即测试 Gemini 接口 →',
+							utmCampaign: 'gemini_access'
+						}
+					}
+				},
+				'kimi': {
+					floating: {
+						en: {
+							badge: '🎁 Trial Credit',
+							title: 'Bypass Kimi K3 Geoblocks',
+							desc: 'Ditch +86 phone and mainland payment constraints. Call Kimi K3 2.8T globally. Sign up with GitHub for $0.20 free credit (+ 50% 1st top-up bonus).',
+							btnText: 'Try Kimi K3 Instantly',
+							utmCampaign: 'kimi_bypass'
+						},
+						zh: {
+							badge: '🔥 限时体验',
+							title: '免实名测试 Kimi K3 2.8T',
+							desc: '跳过国内手机号与支付卡校验。直接调用 Kimi K3 2.8T 大模型，使用 GitHub 一键登录即刻体验送 $0.20。',
+							btnText: '一键免登录体验 Kimi →',
+							utmCampaign: 'kimi_bypass'
+						}
+					},
+					inline: {
+						en: {
+							badge: '💡 Trial Access',
+							title: 'Bypass Kimi K3 Verification',
+							desc: 'Test Moonshot Kimi K3 globally in our online playground. Direct REST API endpoints, GitHub sign-on, and $0.20 free test credits (+ 50% 1st top-up bonus).',
+							btnText: 'Test Kimi Playground',
+							utmCampaign: 'kimi_bypass'
+						},
+						zh: {
+							badge: '💡 免实名通道',
+							title: '想免实名测试 Kimi K3 2.8T 接口？',
+							desc: '免去官方手机绑定与充值门槛限制。通过 APIVALE 绑定 GitHub 即可获得 $0.20 体验金 (首充加赠 50%)，直接在网页端 Playground 进行调试。',
+							btnText: '立即体验 Kimi 接口 →',
+							utmCampaign: 'kimi_bypass'
+						}
+					}
+				},
+				'cursor': {
+					floating: {
+						en: {
+							badge: '💻 BYOK Savings',
+							title: 'Save on Cursor Composer Loops',
+							desc: 'Use your own API keys via APIVALE. Prevent throttling, pay-as-you-go, and get $0.20 free signup bonus.',
+							btnText: 'Get Cursor API Key',
+							utmCampaign: 'cursor_optimization'
+						},
+						zh: {
+							badge: '💻 开发者专属',
+							title: 'Cursor 专属免实名 API Key',
+							desc: '打破 Cursor 订阅次数瓶颈。按 Token 付费使用 DeepSeek / Claude / GLM，GitHub 绑定即送 $0.20。',
+							btnText: '获取 Cursor 专属 Key →',
+							utmCampaign: 'cursor_optimization'
+						}
+					},
+					inline: {
+						en: {
+							badge: '💻 Developer Channel',
+							title: 'Reduce Cursor API Costs by 95%',
+							desc: 'Switch Cursor base URL to APIVALE and use pay-as-you-go keys. Zero monthly fixed subscription, high concurrency, and free trial credit.',
+							btnText: 'Get Config & Key',
+							utmCampaign: 'cursor_optimization'
+						},
+						zh: {
+							badge: '💻 开发者提效',
+							title: '在 Cursor 中配置你自己的 API Key',
+							desc: '拒绝高额订阅，拒绝限流。使用 APIVALE 代理，支持 PayPal 全球充值，绑定 GitHub 免费体验 $0.20 起步额度。',
+							btnText: '立即配置 Cursor 代理 →',
+							utmCampaign: 'cursor_optimization'
+						}
+					}
+				},
+				'gpt56': {
+					floating: {
+						en: {
+							badge: '📊 Cost Optimization',
+							title: 'Route GPT-5.6 Smarter, Pay Less',
+							desc: 'Stop routing everything to Sol. Use APIVALE to dynamically switch between Luna, Terra, and Sol — plus Claude and DeepSeek — from a single API key.',
+							btnText: 'Try Smart Routing',
+							utmCampaign: 'gpt56_cost'
+						},
+						zh: {
+							badge: '📊 成本优化',
+							title: '动态路由 GPT-5.6，节省 67% 成本',
+							desc: '拒绝全量昂贵推理！通过 APIVALE 智能在 Luna、Terra、Sol 及 Claude 间无缝分流，GitHub 登录送 $0.20。',
+							btnText: '一键体验智能路由 →',
+							utmCampaign: 'gpt56_cost'
+						}
+					},
+					inline: {
+						en: {
+							badge: '📊 Cost Optimization',
+							title: 'Cut Your GPT-5.6 Bill by 8x',
+							desc: 'Route simple tasks to Luna ($1/M), keep complex reasoning on Sol ($5/M). One APIVALE key, 10+ models, real-time cost tracking. Get $0.20 free to start.',
+							btnText: 'Start Saving Costs',
+							utmCampaign: 'gpt56_cost'
+						},
+						zh: {
+							badge: '📊 智能调度通道',
+							title: '如何将 GPT-5.6 API 成本降低 8 倍？',
+							desc: '轻量任务走 Luna，深度推理走 Sol。单一 APIVALE 密钥聚合 10+ 款主流模型，新用户注册即享 $0.20 免费测试金。',
+							btnText: '立即开始降本增效 →',
+							utmCampaign: 'gpt56_cost'
+						}
+					}
+				},
+				'general': {
+					floating: {
+						en: {
+							badge: '🎁 Trial Credit',
+							title: 'Get Free Multi-LLM API Key',
+							desc: 'Sign up via GitHub for instant $0.20 credit (+ 50% bonus). Zero KYC, unified OpenAI-compatible endpoint for 40+ models.',
+							btnText: 'Try Playground Instantly',
+							utmCampaign: 'general'
+						},
+						zh: {
+							badge: '🔥 限时体验',
+							title: '免实名一键体验主流 AI',
+							desc: '整合 DeepSeek, Claude, GLM, Qwen 等多款顶尖大模型。免去实名认证，新用户注册即送 $0.20 体验金。',
+							btnText: '一键免登录体验 Playground →',
+							utmCampaign: 'general'
+						}
+					},
+					inline: {
+						en: {
+							badge: '💡 Trial Access',
+							title: 'Test APIs Without KYC',
+							desc: 'Sign up via GitHub for instant $0.20 free credit (+ 50% 1st top-up bonus). Access DeepSeek, GLM, and Claude in our playground instantly.',
+							btnText: 'Test Playground',
+							utmCampaign: 'general'
+						},
+						zh: {
+							badge: '💡 免实名通道',
+							title: '免实名一键测试国内主流大模型',
+							desc: '聚合 DeepSeek、Hunyuan、Zhipu GLM 以及 Claude 3.5 Sonnet。新用户授权登录送 $0.20 起步额度，免去各项限制。',
+							btnText: '立即免登录体验 Playground →',
+							utmCampaign: 'general'
+						}
+					}
+				}
+			};
+
+			const activeConfig = TOPIC_CONFIG[topic] || TOPIC_CONFIG['general'];
+			const langKey = isZh ? 'zh' : 'en';
 
 			// --- 1. Populate Floating CTA ---
 			if (ctaContainer && !isClosed) {
@@ -275,66 +749,14 @@ const blogPostingSchema = {
 				const descEl = document.getElementById('ctaDesc');
 				const actionBtn = document.getElementById('ctaActionBtn');
 
-				let badge = '🎁 Trial Credit';
-				let title = 'Get Free API Key';
-				let desc = 'Sign up via GitHub for instant $0.20 credit (+ 50% bonus). No KYC required.';
-				let btnText = 'Try Playground Instantly';
-				let utmCampaign = 'general';
+				const floatingData = activeConfig.floating[langKey] || activeConfig.floating['en'];
 
-				if (isZh) {
-					badge = '🔥 限时体验';
-					btnText = '一键免登录体验 Playground →';
-					if (isKimi) {
-						title = '免实名测试 Kimi K3';
-						desc = '跳过国内手机号与支付卡校验。直接调用 Kimi K3 2.8T 大模型，使用 GitHub 一键登录即刻体验。';
-						utmCampaign = 'kimi_bypass';
-					} else if (isZhipu) {
-						title = '免实名测试 Zhipu AI';
-						desc = '跳过国内手机号与身份证实名墙。直接调用 GLM-4/5.2 等模型，使用 GitHub 一键登录即刻体验。';
-						utmCampaign = 'zhipu_bypass';
-					} else if (isDeepSeek) {
-						title = '免实名测试 Hunyuan & DeepSeek';
-						desc = '免去 +86 手机注册与身份审核。直连 Hunyuan Hy3 / DeepSeek-V4，极速响应免备案。';
-						utmCampaign = 'deepseek_bypass';
-					} else if (isCursor) {
-						title = 'Cursor 专属免实名 API Key';
-						desc = '打破 Cursor 订阅次数瓶颈。按 Token 付费使用 DeepSeek / Claude，GitHub 绑定即送 $0.20。';
-						utmCampaign = 'cursor_optimization';
-					} else {
-						title = '免实名一键体验主流 AI';
-						desc = '整合 DeepSeek, Claude, GLM 等多款大模型。支持 PayPal 充值，新用户即送 $0.20。';
-						utmCampaign = 'default';
-					}
-				} else {
-					if (isKimi) {
-						title = 'Bypass Kimi K3 Geoblocks';
-						desc = 'Ditch +86 phone and mainland payment constraints. Call Kimi K3 2.8T globally. Sign up with GitHub for $0.20 free credit (+ 50% 1st top-up bonus).';
-						utmCampaign = 'kimi_bypass';
-					} else if (isZhipu) {
-						title = 'Bypass Zhipu KYC Limits';
-						desc = 'Ditch +86 phone and ID requirements. Call GLM-4/5.2 globally. Sign up with GitHub for $0.20 free credit (+ 50% 1st top-up bonus).';
-						utmCampaign = 'zhipu_bypass';
-					} else if (isDeepSeek) {
-						title = 'Bypass DeepSeek & Hunyuan Blocks';
-						desc = 'Get direct REST API endpoints without mainland Chinese verifications. High concurrency and instant trial.';
-						utmCampaign = 'deepseek_bypass';
-					} else if (isCursor) {
-						title = 'Save on Cursor Composer Loops';
-						desc = 'Use your own API keys via APIVALE. Prevent throttling, pay-as-you-go, and get $0.20 free signup bonus.';
-						utmCampaign = 'cursor_optimization';
-					} else if (isGptCost) {
-						title = 'Route GPT-5.6 Smarter, Pay Less';
-						desc = 'Stop routing everything to Sol. Use APIVALE to dynamically switch between Luna, Terra, and Sol — plus Claude and DeepSeek — from a single API key.';
-						utmCampaign = 'gpt56_cost';
-					}
-				}
-
-				if (badgeText) badgeText.innerText = badge;
-				if (titleEl) titleEl.innerText = title;
-				if (descEl) descEl.innerText = desc;
+				if (badgeText) badgeText.innerText = floatingData.badge;
+				if (titleEl) titleEl.innerText = floatingData.title;
+				if (descEl) descEl.innerText = floatingData.desc;
 				if (actionBtn) {
-					actionBtn.innerText = btnText;
-					actionBtn.href = `https://apivale.com/sign-in?redirect=%2Fplayground&utm_source=apivale_blog&utm_medium=blog_floating_card&utm_campaign=${utmCampaign}`;
+					actionBtn.innerText = floatingData.btnText;
+					actionBtn.href = `https://apivale.com/sign-in?redirect=%2Fplayground&utm_source=apivale_blog&utm_medium=blog_floating_card&utm_campaign=${floatingData.utmCampaign}`;
 				}
 
 				setTimeout(() => {
@@ -357,66 +779,14 @@ const blogPostingSchema = {
 				const descEl = document.getElementById('inlineDesc');
 				const actionBtn = document.getElementById('inlineActionBtn');
 
-				let badge = '💡 Trial Access';
-				let title = 'Test APIs Without KYC';
-				let desc = 'Sign up via GitHub for instant $0.20 free credit (+ 50% 1st top-up bonus). Access DeepSeek, GLM, and Claude in our playground instantly.';
-				let btnText = 'Test Playground';
-				let utmCampaign = 'general';
+				const inlineData = activeConfig.inline[langKey] || activeConfig.inline['en'];
 
-				if (isZh) {
-					badge = '💡 免实名通道';
-					btnText = '立即免登录体验 Playground →';
-					if (isKimi) {
-						title = '想免实名测试 Kimi K3 2.8T 接口？';
-						desc = '免去官方手机绑定与充值门槛限制。通过 APIVALE 绑定 GitHub 即可获得 $0.20 体验金 (首充加赠 50%)，直接在网页端 Playground 进行调试。';
-						utmCampaign = 'kimi_bypass';
-					} else if (isZhipu) {
-						title = '想免实名测试 Zhipu AI / GLM 模型？';
-						desc = '通过 APIVALE 绕过复杂的实名墙与 +86 手机绑定。绑定 GitHub 即可获得 $0.20 免费额度 (首充加赠 50%)，支持在浏览器中即开即用进行测试，无需实名！';
-						utmCampaign = 'zhipu_bypass';
-					} else if (isDeepSeek) {
-						title = '想免实名测试 Hunyuan 或 DeepSeek 接口？';
-						desc = '免去官方实名认证阻碍。通过 APIVALE 一键登录即可获得 $0.20 体验金 (首充加赠 50%)，直接在控制台 Playground 进行模型调试与接口调用。';
-						utmCampaign = 'deepseek_bypass';
-					} else if (isCursor) {
-						title = '在 Cursor 中配置你自己的 API Key';
-						desc = '拒绝高额订阅，拒绝限流。使用 APIVALE 代理，支持 PayPal 全球充值，绑定 GitHub 免费体验 $0.20 起步额度。';
-						utmCampaign = 'cursor_optimization';
-					} else {
-						title = '免实名一键测试国内主流大模型';
-						desc = '聚合 DeepSeek、Hunyuan、Zhipu GLM 以及 Claude 3.5 Sonnet。新用户授权登录送 $0.20 起步额度，免去各项限制。';
-						utmCampaign = 'default';
-					}
-				} else {
-					if (isKimi) {
-						title = 'Bypass Kimi K3 Verification';
-						desc = 'Test Moonshot Kimi K3 globally in our online playground. Direct REST API endpoints, GitHub sign-on, and $0.20 free test credits (+ 50% 1st top-up bonus).';
-						utmCampaign = 'kimi_bypass';
-					} else if (isZhipu) {
-						title = 'Bypass Zhipu AI KYC Today';
-						desc = 'Get $0.20 starting bonus upon GitHub registration. Test GLM-4 and GLM-5.2 in our online playground without any Chinese phone verification.';
-						utmCampaign = 'zhipu_bypass';
-					} else if (isDeepSeek) {
-						title = 'Call DeepSeek & Hunyuan Globally';
-						desc = 'No mainland KYC or identity blocks. Get instant credit on registration and start playing with frontier Chinese LLMs immediately.';
-						utmCampaign = 'deepseek_bypass';
-					} else if (isCursor) {
-						title = 'Reduce Cursor API Costs by 95%';
-						desc = 'Switch Cursor base URL to APIVALE and use pay-as-you-go keys. Zero monthly fixed subscription, high concurrency, and free trial credit.';
-						utmCampaign = 'cursor_optimization';
-					} else if (isGptCost) {
-						title = 'Cut Your GPT-5.6 Bill by 8x';
-						desc = 'Route simple tasks to Luna ($1/M), keep complex reasoning on Sol ($5/M). One APIVALE key, 10+ models, real-time cost tracking. Get $0.20 free to start.';
-						utmCampaign = 'gpt56_cost';
-					}
-				}
-
-				if (badgeText) badgeText.innerText = badge;
-				if (titleEl) titleEl.innerText = title;
-				if (descEl) descEl.innerText = desc;
+				if (badgeText) badgeText.innerText = inlineData.badge;
+				if (titleEl) titleEl.innerText = inlineData.title;
+				if (descEl) descEl.innerText = inlineData.desc;
 				if (actionBtn) {
-					actionBtn.innerText = btnText;
-					actionBtn.href = `https://apivale.com/sign-in?redirect=%2Fplayground&utm_source=apivale_blog&utm_medium=blog_inline_banner&utm_campaign=${utmCampaign}`;
+					actionBtn.innerText = inlineData.btnText;
+					actionBtn.href = `https://apivale.com/sign-in?redirect=%2Fplayground&utm_source=apivale_blog&utm_medium=blog_inline_banner&utm_campaign=${inlineData.utmCampaign}`;
 				}
 
 				inlineBanner.style.display = 'block';

@@ -31,6 +31,7 @@ const { defaultClient = 'claude-code', defaultModel = 'qwen-37' } = Astro.props;
     <div class="config-field">
       <label class="field-label" for="cliModelSelect">Target AI Model:</label>
       <select id="cliModelSelect" class="config-select">
+        <option value="infer/glm-5.3-flashx" selected={defaultModel === 'glm-5.3-flashx'}>GLM-5.3 FlashX Vision (200 TPS) (infer/glm-5.3-flashx)</option>
         <option value="infer/glm-5.3-flash" selected={defaultModel === 'glm-5.3-flash'}>GLM-5.3 Flash (Ox Alpha) (infer/glm-5.3-flash)</option>
         <option value="infer/glm-5.3" selected={defaultModel === 'glm-5.3'}>Zhipu GLM-5.3 743B (infer/glm-5.3)</option>
         <option value="infer/qwen-3.8-flash-next" selected={defaultModel === 'qwen-38-flash'}>Qwen 3.8 Flash Next (infer/qwen-3.8-flash-next)</option>
