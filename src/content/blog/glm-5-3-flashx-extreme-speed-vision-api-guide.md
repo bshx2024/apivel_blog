@@ -133,7 +133,7 @@ Understanding the token economics and billing mechanisms of GLM-5.3-FlashX is cr
 *Verified Date: 2026-09-18. Source: <a href="https://z.ai" class="text-cyan-400 hover:underline" target="_blank" rel="noopener noreferrer">Z.AI</a> Official Documentation & APIVALE Network Telemetry.*
 
 ### Official Token Rates: Input, Output, and 0.57 RMB Cache Hits
-Official pricing sets GLM-5.3-FlashX at approximately 2.5x the base rate of the text-only Flash version: ¥2.00 ($0.28) per 1M input tokens and ¥7.00 ($0.98) per 1M output tokens. However, in agentic environments where system instructions, repository file trees, and static rulesets persist across turns, the **Prompt Cache Hit pricing of ¥0.57 ($0.08) per 1M tokens** dramatically reduces effective runtime costs. For typical coding sessions with an 85% cache hit ratio, token expenditure drops to roughly 20% of base input costs.
+Official pricing sets GLM-5.3-FlashX at approximately 2.5x the base rate of the text-only Flash version: ¥2.00 ($0.28) per 1M input tokens and ¥7.00 ($0.98) per 1M output tokens. However, in agentic environments where system instructions, repository file trees, and static rulesets persist across turns, the **Prompt Cache Hit pricing of ¥0.57 ($0.08) per 1M tokens** dramatically reduces effective runtime costs. For typical coding sessions with an 85% cache hit ratio, token expenditure drops to roughly 20% of base input costs (explore our complete <a href="/blog/llm-cost-optimization-guide" class="text-cyan-400 hover:underline font-semibold">LLM API cost optimization guide</a> for automated cache warming and token budgeting strategies).
 
 ### The Coding Plan Dilemma: Why GLM-5.3-FlashX API Demands Pure Commercial Billing
 Many developers who purchased Zhipu's flat-rate "Coding Plan" subscription were surprised to find that GLM-5.3-FlashX cannot be invoked through those prepaid quotas. Because high-throughput 200 tokens/s inference requires dedicated GPU cluster provisioning, the model is restricted exclusively to commercial pay-per-token API endpoints. For overseas developers or teams without domestic enterprise bank verification, accessing these endpoints directly is virtually impossible. APIVALE bridges this gap by providing instant API key provisioning backed by Waffo global billing (supporting global credit cards and digital wallets).
@@ -240,7 +240,7 @@ graph LR
 ```
 
 ### Protocol Translation & Base URL Environment Configuration
-Claude Code CLI communicates natively using Anthropic's `/v1/messages` protocol. APIVALE translates incoming messages, function calling schemas, and visual attachments into format specifications compatible with GLM-5.3-FlashX in real time.
+Claude Code CLI communicates natively using Anthropic's `/v1/messages` protocol (see our foundational guide on <a href="/blog/how-to-set-up-claude-code-cli-with-custom-base-url" class="text-cyan-400 hover:underline font-semibold">setting up Claude Code CLI with custom Base URLs</a> to debug header forwarding drops). APIVALE translates incoming messages, function calling schemas, and visual attachments into format specifications compatible with GLM-5.3-FlashX in real time.
 
 Configure Claude Code CLI in your terminal:
 
@@ -262,7 +262,7 @@ For Cursor IDE:
 1. Navigate to **Cursor Settings &rarr; Models**.
 2. Under **OpenAI Base URL**, enter: `https://api.apivale.com/v1`.
 3. Under **API Key**, enter your APIVALE token.
-4. In the Model Names list, add `glm-5.3-flashx` and toggle it as active.
+4. In the Model Names list, add `glm-5.3-flashx` and toggle it as active (for complex repository auditing, see our companion walkthrough on <a href="/blog/connect-glm-5-3-to-claude-code-cli-cursor" class="text-cyan-400 hover:underline font-semibold">configuring GLM-5.3 in Cursor IDE with custom .cursorrules</a>).
 
 ### 15+ Line Production Proxy & Failover Wrapper
 When deploying high-throughput visual coding agents in CI pipelines, transient rate limits must be handled gracefully. This Node.js production wrapper provides automatic exponential backoff, image payload validation, and automatic failover:
