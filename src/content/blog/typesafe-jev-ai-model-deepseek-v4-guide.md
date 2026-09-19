@@ -4,7 +4,11 @@ metaTitle: "TypeSafe Jev AI Model: DeepSeek V4 Fast Routing | APIVALE"
 description: "Master the TypeSafe Jev AI model for sub-second agent routing. Pair Jev decision primitives with DeepSeek V4 on APIVALE to slash API costs with Waffo billing."
 date: "2026-09-19"
 author: "Kenji Tanaka"
+authorTitle: "AI Developer Relations Engineer, APIVALE"
+authorBio: "Kenji Tanaka specializes in AI agent workflows, developer SDK integrations, and sub-second multi-model routing architectures."
 tags: ["TypeSafe Jev", "Jev AI Model", "DeepSeek V4", "Agent Routing", "LLM Cost Optimization"]
+image: "/blog/og-cover.png"
+lang: "en"
 slug: "typesafe-jev-ai-model-deepseek-v4-guide"
 ---
 
