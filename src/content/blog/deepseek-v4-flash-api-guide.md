@@ -1,7 +1,7 @@
 ---
-title: "DeepSeek V4.1 Flash API: Benchmarks, Price, Model Size & Setup Guide"
-metaTitle: "DeepSeek V4.1 Flash API: Benchmark, Price & Setup | APIVALE"
-description: "Complete developer guide for DeepSeek V4.1 Flash API. Explore 437 t/s benchmarks, 284B size, token price, KV cache architecture, 1-bit limits & Waffo billing."
+title: "DeepSeek V4.1 Flash API: 437 t/s Benchmarks, Pricing & Agent Setup Guide"
+metaTitle: "DeepSeek V4.1 Flash API: 437 t/s Benchmark & Price | APIVALE"
+description: "DeepSeek V4.1 Flash API developer guide: 437 t/s throughput benchmarks, token pricing, Cursor & Claude Code setup, plus zero-rate-limit Waffo billing."
 date: "2026-09-10"
 author: "Kenji Tanaka"
 authorTitle: "AI Developer Relations Engineer, APIVALE"
@@ -33,7 +33,7 @@ lang: "en"
 <div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
   <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Related Agent & Model Setup Guides</span>
   <p class="mt-1 text-sm text-gray-300">
-    Migrating from OpenAI? Read our <a href="/blog/gpt-6-sol-vs-deepseek-v4/" class="text-cyan-400 hover:underline font-semibold">GPT-6 Sol vs DeepSeek V4 (GPT-5.5 Migration Guide)</a>, follow our step-by-step tutorial on <a href="/blog/ox-alpha-claude-code-cursor-setup/" class="text-cyan-400 hover:underline font-semibold">how to use Ox Alpha in Claude Code & Cursor</a>, or explore our <a href="/blog/deepseek-v4-flash-vision-api-guide/" class="text-cyan-400 hover:underline font-semibold">DeepSeek V4 Flash Vision Setup Guide</a>.
+    Migrating from OpenAI? Read our <a href="/blog/gpt-6-sol-vs-deepseek-v4/" class="text-cyan-400 hover:underline font-semibold">GPT-6 Sol vs DeepSeek V4 (GPT-5.5 Migration Guide)</a>, follow our step-by-step tutorial on <a href="/blog/ox-alpha-claude-code-cursor-setup/" class="text-cyan-400 hover:underline font-semibold">how to use Ox Alpha in Claude Code & Cursor</a>, resolve 404 deprecations with our <a href="/blog/unbiased-pareto-ai-api-stealth-union-alpha-setup/" class="text-cyan-400 hover:underline font-semibold">Unbiased Pareto AI API Setup Guide</a>, calculate token savings with <a href="/blog/cursor-pro-vs-custom-api-key/" class="text-cyan-400 hover:underline font-semibold">Cursor BYOK custom API keys</a>, or explore our <a href="/blog/deepseek-v4-flash-vision-api-guide/" class="text-cyan-400 hover:underline font-semibold">DeepSeek V4 Flash Vision Setup Guide</a>.
   </p>
 </div>
 
@@ -349,7 +349,7 @@ To run DeepSeek V4.1 Flash within Cursor Composer:
 3. Enter your APIVALE API key (`sk-apivale-...`).
 4. Under **Add Custom Model**, enter `deepseek-v4.1-flash` and toggle it as the active model.
 
-For detailed token savings comparisons between native subscriptions and custom API keys, read our breakdown on [Cursor Pro vs. Own API Key](/blog/cursor-pro-vs-custom-api-key/).
+For detailed token savings comparisons between native subscriptions and custom API keys, read our breakdown on [Cursor BYOK vs. Cursor Pro Real Cost Math](/blog/cursor-pro-vs-custom-api-key/).
 
 ### 4. Connecting Windsurf IDE to DeepSeek V4.1 Flash
 

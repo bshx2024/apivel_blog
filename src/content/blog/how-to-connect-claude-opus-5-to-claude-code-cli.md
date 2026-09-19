@@ -352,6 +352,9 @@ $env:ANTHROPIC_MODEL="claude-opus-5"
 npx @anthropic-ai/claude-code
 ```
 
+> [!TIP]
+> **Windows Token Quota Monitoring:** Want a native status bar on Windows 11/10 to monitor your token burn rates while running Claude Code CLI? Check out our [CodexBar Windows Setup Guide](/blog/codexbar-windows-setup-safety-guide/) to prevent sudden rate limit pauses.
+
 ### 3. Connecting Cursor IDE & Windsurf to Claude Opus 5
 
 Cursor IDE allows setting custom base URLs for Anthropic and OpenAI compatible providers. To route Cursor to Claude Opus 5:
@@ -360,6 +363,8 @@ Cursor IDE allows setting custom base URLs for Anthropic and OpenAI compatible p
 2. Under **Anthropic** or **OpenAI API**, enable **Override Base URL**.
 3. Set the Base URL to `https://api.apivale.com/v1` and paste your APIVALE key into the API Key field.
 4. Under **Add Custom Model**, enter `claude-opus-5`, toggle it **ON**, and select it in Cursor Chat (`Cmd + L`) or Composer (`Cmd + I`).
+
+For detailed pricing math comparing fixed Cursor subscriptions with custom API key token routing, see our [Cursor BYOK vs Pro Real Cost Breakdown](/blog/cursor-pro-vs-custom-api-key/).
 
 ---
 

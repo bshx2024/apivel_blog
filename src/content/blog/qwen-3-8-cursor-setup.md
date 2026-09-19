@@ -23,7 +23,7 @@ lang: "en"
 <div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
   <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Related Agent &amp; Model Setup Guides</span>
   <p class="mt-1 text-sm text-gray-300">
-    Configuring different agent workflows? Follow our companion guide on <a href="/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="text-cyan-400 hover:underline font-semibold">How to Connect Qwen 3.8 to Claude Code CLI</a>, compare BYOK plans in our <a href="/blog/cursor-pro-vs-custom-api-key/" class="text-cyan-400 hover:underline font-semibold">Cursor Pro vs Custom API Key Cost Analysis</a>, or explore <a href="/blog/qwen-3-8-flash-next-benchmarks-api-guide/" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Flash Next Benchmarks &amp; API Guide</a>.
+    Configuring different agent workflows? Follow our companion guide on <a href="/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="text-cyan-400 hover:underline font-semibold">How to Connect Qwen 3.8 to Claude Code CLI</a>, compare BYOK plans in our <a href="/blog/cursor-pro-vs-custom-api-key/" class="text-cyan-400 hover:underline font-semibold">Cursor Pro vs Custom API Key Cost Analysis</a>, benchmark extreme throughput with our <a href="/blog/deepseek-v4-flash-api-guide/" class="text-cyan-400 hover:underline font-semibold">DeepSeek V4.1 Flash API 437 t/s Benchmark Guide</a>, or explore <a href="/blog/qwen-3-8-flash-next-benchmarks-api-guide/" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Flash Next Benchmarks &amp; API Guide</a>.
   </p>
 </div>
 
@@ -232,7 +232,7 @@ In an active development sprint spanning 500 Cursor Composer agent interactions,
 - **Total APIVALE Qwen 3.8-Max Cost**: **$3.00 total spend**
 - **Cursor Pro Extra Request Overage**: $500 \times \$0.10 = \mathbf{\$50.00}$
 
-By bringing your own API key (BYOK) powered by APIVALE's gateway, you save **$47.00 (94% reduction)** across every 500 heavy coding requests. For additional insights on cost management, review our comprehensive analysis on [Cursor Pro vs Custom API Key Costs](/blog/cursor-pro-vs-custom-api-key/) and [Qwen 3.8 Max Benchmarks Preview Guide](/blog/qwen-3-8-max-benchmarks-preview-guide/).
+By bringing your own API key (BYOK) powered by APIVALE's gateway, you save **$47.00 (94% reduction)** across every 500 heavy coding requests. For developers seeking sub-cent micro-task routing or extreme token throughput, compare with our [DeepSeek V4.1 Flash API 437 t/s Benchmark & Pricing Guide](/blog/deepseek-v4-flash-api-guide/) ($0.14/1M input). For additional insights on cost management, review our comprehensive analysis on [Cursor Pro vs Custom API Key Costs](/blog/cursor-pro-vs-custom-api-key/) and [Qwen 3.8 Max Benchmarks Preview Guide](/blog/qwen-3-8-max-benchmarks-preview-guide/).
 
 ### Time-to-First-Token (TTFT) and Code Generation Throughput
 

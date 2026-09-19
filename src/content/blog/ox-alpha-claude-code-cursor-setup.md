@@ -24,13 +24,14 @@ Developers running autonomous coding loops in **Claude Code CLI**, **Cursor Comp
 
 However, setting up Ox Alpha in production CLI tools triggers significant friction: free preview endpoints suffer from **429 Too Many Requests** throttling, 504 gateway timeouts (leading developers to search for [high-speed OpenRouter alternatives](/blog/openrouter-alternatives/)), and strict Anthropic protocol header mismatches.
 
-This guide provides an empirical walkthrough: technical fingerprinting behind Ox Alpha's architecture and parameters, benchmark comparisons against Claude Sonnet 5, complete terminal setup commands (Claude Code, Cursor, OpenCode), and a production-grade TypeScript proxy with automatic failover and Waffo global billing.
+This guide provides an empirical walkthrough: technical fingerprinting behind Ox Alpha's architecture and parameters, benchmark comparisons against Claude Sonnet 5, complete terminal setup commands (Claude Code, Cursor, OpenCode), and a production-grade TypeScript proxy with automatic failover (such as to [high-throughput DeepSeek V4.1 Flash (437 t/s)](/blog/deepseek-v4-flash-api-guide/) or the composite [Unbiased Pareto AI API (fixing stealth/union-alpha 404)](/blog/unbiased-pareto-ai-api-stealth-union-alpha-setup/)) and Waffo global billing.
 
 ```mermaid
 graph LR
     A["Claude Code CLI, Cursor & OpenCode"] -->|Anthropic / OpenAI Protocol| B["APIVALE Unified Gateway"]
     B -->|Zero-Latency Relay| C["Ox Alpha (stealth/ox-alpha)"]
-    B -->|Automated Failover| D["GLM-5.3 / Qwen 3.7 Max"]
+    B -->|Automated Failover| D["DeepSeek V4.1 Flash / GLM-5.3"]
+    B -->|Composite Stealth Route| G["Unbiased Pareto (unbiased/pareto)"]
     B -->|Frontier Standard| E["Claude Sonnet 5"]
     B -->|Global Checkout| F["Waffo Global Billing"]
 ```
@@ -271,7 +272,7 @@ curl https://api.apivale.com/v1/messages \
 ```
 
 > [!TIP]
-> **BYOK Cursor Economics vs. $20/mo Pro Subscription:** Configuring custom API keys via BYOK in Cursor Free lets you run Ox Alpha and [Qwen 3.8 in Cursor](/blog/qwen-3-8-cursor-setup/) with zero monthly subscription fees. For developers evaluating whether to keep Cursor Pro or switch to custom keys, check out our comprehensive [Cursor BYOK vs. Cursor Pro Cost & Limits Breakdown](/blog/cursor-pro-vs-byok-cost-comparison/) to see how pay-as-you-go saves up to 96.6% on token spend.
+> **BYOK Cursor Economics vs. $20/mo Pro Subscription:** Configuring custom API keys via BYOK in Cursor Free lets you run Ox Alpha and [Qwen 3.8 in Cursor](/blog/qwen-3-8-cursor-setup/) with zero monthly subscription fees. For developers evaluating whether to keep Cursor Pro or switch to custom keys, check out our comprehensive [Cursor BYOK vs. Cursor Pro Cost & Limits Breakdown](/blog/cursor-pro-vs-custom-api-key/) to see how pay-as-you-go saves up to 96.6% on token spend.
 
 ### 4. OpenCode CLI Configuration
 
@@ -390,10 +391,11 @@ app.listen(PORT, () => console.log(`Proxy running on port ${PORT}`));
 
 ### 3. Compare with Other Frontier Coding Models
 * Read our [GLM-5.3 Cursor & Claude Code Setup Guide](/blog/connect-glm-5-3-to-claude-code-cli-cursor/) to explore native 128K output and .cursorrules configurations.
+* Read our [DeepSeek V4.1 Flash API 437 t/s Benchmark & Setup Guide](/blog/deepseek-v4-flash-api-guide/) to access 400+ t/s reasoning at $0.14/1M tokens.
 * Read our [Qwen 3.8 Claude Code & Cursor Setup Guide](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/) to cut token spend by 80% while retaining high SWE-bench accuracy.
 * Read our [Qwen 3.8 27B GGUF vs Cloud Proxy Guide](/blog/qwen-3-8-27b-gguf-benchmarks-ollama-vs-api-guide/) for local VRAM memory math.
 * Read our [Claude Sonnet 5 vs Frontier LLM Guide](/blog/how-to-connect-claude-opus-5-to-claude-code-cli/) for cost comparison.
-* Evaluating IDE cost structures? See our complete breakdown on [Cursor BYOK: Bring Your Own API Key Setup](/blog/cursor-pro-vs-byok-cost-comparison/) to eliminate subscription caps with custom keys.
+* Evaluating IDE cost structures? See our complete breakdown on [Cursor BYOK vs. Cursor Pro Real Cost Math](/blog/cursor-pro-vs-custom-api-key/) to eliminate subscription caps with custom keys.
 * Orchestrating AI video pipelines or multimodal agents alongside code? Benchmark our [fal.ai H3 Max vs Seedance 2.5 vs Kling: AI Video API Cost Benchmark](/blog/fal-ai-h3-max-vs-seedance-kling-cost-benchmark/) to slash rendering budgets by 74%.
 
 ---

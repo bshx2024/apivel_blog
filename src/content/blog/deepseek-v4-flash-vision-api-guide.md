@@ -282,7 +282,7 @@ Image token consumption is hard-capped at 384 tokens per image regardless of ori
 APIVALE natively supports global **Waffo payment methods**, including international credit cards and major digital wallets. Users can top up their account balance with zero KYC and without requiring a Chinese +86 phone number.
 
 ### Can I use DeepSeek V4 Flash Vision with Cursor and Claude Code CLI?
-Yes. Configure your IDE or CLI base URL to `https://apivale.com/v1` and point your model selection parameter to `deepseek-v4-flash-vision-exp`. See our [Cursor Pro vs. BYOK cost analysis](/blog/cursor-pro-vs-byok-cost-comparison) for comparative benchmarks.
+Yes. Configure your IDE or CLI base URL to `https://apivale.com/v1` and point your model selection parameter to `deepseek-v4-flash-vision-exp`. See our [Cursor BYOK vs. Cursor Pro cost analysis](/blog/cursor-pro-vs-custom-api-key/) for comparative benchmarks.
 
 ---
 

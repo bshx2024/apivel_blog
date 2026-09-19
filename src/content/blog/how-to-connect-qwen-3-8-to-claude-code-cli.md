@@ -33,7 +33,7 @@ lang: en
 <div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
   <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Related Agent & Model Setup Guides</span>
   <p class="mt-1 text-sm text-gray-300">
-    Configuring different agent workflows? Compare against stealth frontier models in our <a href="/blog/claude-code-opus-5-2-alternative-qwen-3-8-max/" class="text-cyan-400 hover:underline font-semibold">Claude Opus 5.2 vs Qwen 3.8 Max in Claude Code</a> guide, check our setup for <a href="/blog/qwen-3-8-omni-flash-api-setup/" class="text-cyan-400 hover:underline font-semibold">native omni audio processing with Qwen3.8-Omni-Flash</a>, or read our <a href="/blog/connect-glm-5-3-to-claude-code-cli-cursor/" class="text-cyan-400 hover:underline font-semibold">GLM-5.3 Cursor IDE Integration Guide</a>.
+    Configuring different agent workflows? Compare against stealth frontier models in our <a href="/blog/claude-code-opus-5-2-alternative-qwen-3-8-max/" class="text-cyan-400 hover:underline font-semibold">Claude Opus 5.2 vs Qwen 3.8 Max in Claude Code</a> guide, benchmark throughput with our <a href="/blog/deepseek-v4-flash-api-guide/" class="text-cyan-400 hover:underline font-semibold">DeepSeek V4.1 Flash API 437 t/s benchmark & pricing guide</a>, check our setup for <a href="/blog/qwen-3-8-omni-flash-api-setup/" class="text-cyan-400 hover:underline font-semibold">native omni audio processing with Qwen3.8-Omni-Flash</a>, or read our <a href="/blog/connect-glm-5-3-to-claude-code-cli-cursor/" class="text-cyan-400 hover:underline font-semibold">GLM-5.3 Cursor & Claude Code Guide</a>.
   </p>
 </div>
 
@@ -327,7 +327,7 @@ npx @anthropic-ai/claude-code
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
     <li><strong>Trigger 87.5% OFF Automatic Caching (0.125x Rate):</strong> APIVALE provides native 1.25-折 prompt caching on Qwen 3.8 Max ($0.10/1M cached vs $0.80/1M uncached). Ensure your client keeps system prompts and static file orders consistent to maintain prefix cache hits across conversation turns.</li>
     <li><strong>Prevent Client-Side Timeouts:</strong> When feeding 300,000+ tokens of codebase context into 2.4T MoE models, deep pre-fill compute takes 90–150 seconds. Setting <code>API_TIMEOUT_MS=600000</code> prevents local agents from abruptly disconnecting before generation completes.</li>
-    <li><strong>Dual-Model Cost Reduction Strategy:</strong> For iterative codebase grep and bulk file reading, route to ultra-low-cost streaming models like <code>glm-5.3-flash</code> ($0.04/1M) or <code>deepseek-v4.1-flash</code> ($0.10/1M), reserving Qwen 3.8 Max for final architectural code synthesis.</li>
+    <li><strong>Dual-Model Cost Reduction Strategy:</strong> For iterative codebase grep and bulk file reading, route to ultra-low-cost streaming models like <code>glm-5.3-flash</code> ($0.04/1M) or <a href="/blog/deepseek-v4-flash-api-guide/" class="text-cyan-400 hover:underline font-semibold">DeepSeek V4.1 Flash (437 t/s throughput at $0.14/1M)</a>, reserving Qwen 3.8 Max for final architectural code synthesis.</li>
   </ul>
 </div>
 

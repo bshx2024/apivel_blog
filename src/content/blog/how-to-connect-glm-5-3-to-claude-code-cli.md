@@ -288,6 +288,9 @@ For Windows PowerShell users:
 [System.Environment]::SetEnvironmentVariable('ANTHROPIC_MODEL', 'infer/glm-5.3', 'User')
 ```
 
+> [!TIP]
+> **Real-Time Windows Quota Telemetry:** Running continuous CLI agent sessions on Windows? Learn how to monitor token burn rates directly from your desktop taskbar with our [CodexBar Windows 11/10 Setup Guide](/blog/codexbar-windows-setup-safety-guide/).
+
 ### Step 3: Verify Model Invocation & Tool Calling
 
 Run a test prompt in Claude Code CLI to confirm that tool execution, file editing, and bash execution operate smoothly.

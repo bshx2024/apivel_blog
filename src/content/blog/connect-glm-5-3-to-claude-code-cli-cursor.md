@@ -1,7 +1,7 @@
 ---
-title: "How to Connect GLM-5.3 to Cursor IDE (Setup, .cursorrules & BYOK Cost Guide)"
-metaTitle: "Connect GLM-5.3 to Cursor IDE (.cursorrules) | APIVALE"
-description: "Learn how to connect GLM-5.3 to Cursor IDE and Windsurf. Configure custom .cursorrules, OpenAI Base URL overrides, and Waffo global billing with zero KYC."
+title: "How to Connect GLM-5.3 to Cursor & Claude Code CLI (BYOK Guide)"
+metaTitle: "Connect GLM-5.3 to Cursor & Claude Code CLI | APIVALE"
+description: "Connect GLM-5.3 to Cursor IDE and Claude Code CLI. Step-by-step custom base URL setup, .cursorrules config, and zero-KYC global access via Waffo."
 date: "2026-08-14"
 author: "Kenji Tanaka"
 authorTitle: "AI Developer Relations Engineer, APIVALE"
@@ -14,7 +14,7 @@ lang: "en"
 <div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
-    <li><strong>96% BYOK Cost Savings:</strong> Replacing Cursor Pro extra fast requests ($0.10/request) with APIVALE's GLM-5.3 endpoint cuts per-request cost to ~$0.0038.</li>
+    <li><strong>96% BYOK Cost Savings:</strong> Replacing Cursor Pro extra fast requests ($0.10/request) with APIVALE's GLM-5.3 endpoint cuts per-request cost to ~$0.0038. See our detailed <a href="/blog/cursor-pro-vs-custom-api-key/" class="text-emerald-400 hover:underline font-semibold">Cursor BYOK vs Pro cost math</a>.</li>
     <li><strong>1M Context in Composer:</strong> Ingest full multi-file repositories in Cursor Composer without context degradation or token truncation.</li>
     <li><strong>Zero-KYC Waffo Global Billing:</strong> Bypasses mainland +86 phone verification and foreign card decline issues on official Zhipu portals with instant checkout via Waffo.</li>
   </ul>
@@ -23,7 +23,7 @@ lang: "en"
 <div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
   <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Related GLM & Coding Agent Guides</span>
   <p class="mt-1 text-sm text-gray-300">
-    Looking for higher token throughput and lower costs? Follow our step-by-step tutorial on <a href="/blog/ox-alpha-claude-code-cursor-setup/" class="text-cyan-400 hover:underline font-semibold">how to use Ox Alpha in Claude Code & Cursor</a>, read our <a href="/blog/glm-5-3-flash-ox-alpha-api-pricing-guide/" class="text-cyan-400 hover:underline font-semibold">GLM-5.3 Flash (Ox Alpha) Benchmarks & Pricing Guide</a>, and learn <a href="/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="text-cyan-400 hover:underline font-semibold">how to connect Qwen 3.8 to Claude Code CLI & Cursor</a> to cut token spend by 80%.
+    Looking for higher token throughput and lower costs? Follow our step-by-step tutorial on <a href="/blog/ox-alpha-claude-code-cursor-setup/" class="text-cyan-400 hover:underline font-semibold">how to use Ox Alpha in Claude Code & Cursor</a>, read our <a href="/blog/glm-5-3-flash-ox-alpha-api-pricing-guide/" class="text-cyan-400 hover:underline font-semibold">GLM-5.3 Flash (Ox Alpha) Benchmarks & Pricing Guide</a>, see our breakdown on <a href="/blog/cursor-pro-vs-custom-api-key/" class="text-cyan-400 hover:underline font-semibold">Cursor BYOK vs Pro subscription cost math</a>, and learn <a href="/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="text-cyan-400 hover:underline font-semibold">how to connect Qwen 3.8 to Claude Code CLI & Cursor</a> to cut token spend by 80%.
   </p>
 </div>
 
