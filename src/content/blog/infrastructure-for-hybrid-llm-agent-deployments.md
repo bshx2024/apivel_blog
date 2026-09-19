@@ -64,7 +64,7 @@ To understand the benefits of a hybrid approach, let’s compare the three main 
 <div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
   <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Production Multi-Agent Framework</span>
   <p class="mt-1 text-sm text-gray-300">
-    Deploying a local-first multi-agent environment with IM channels? Read our comprehensive <a href="/blog/octop-ai-assistant-setup-guide/" class="text-cyan-400 hover:underline font-semibold">Octop AI Assistant Setup Guide</a> to configure Tencent Cloud's open-source framework with APIVALE's OpenAI and Claude proxy routing.
+    Deploying a local-first multi-agent environment with IM channels? Read our comprehensive <a href="/blog/octop-ai-assistant-setup-guide/" class="text-cyan-400 hover:underline font-semibold">Octop AI Assistant Setup Guide</a> to configure Tencent Cloud's open-source framework with APIVALE's OpenAI and Claude proxy routing. Looking for sub-second intent classification? Explore our guide on <a href="/blog/typesafe-jev-ai-model-deepseek-v4-guide/" class="text-indigo-400 hover:underline font-semibold">pairing the TypeSafe Jev AI model with DeepSeek V4</a> to execute 70ms decision passes before escalating heavy tasks.
   </p>
 </div>
 
