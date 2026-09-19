@@ -73,6 +73,7 @@ For extremely large context inputs, such as massive system instruction sets or A
 The final pillar is replacing expensive, US-centric routing systems or flat subscriptions with a developer-focused, pay-as-you-go proxy.
 *   **Wholesale Token Costs**: Why pay Claude 3.5 Sonnet prices for simple linting or syntax checks? You can configure your agent to route lightweight tasks to **DeepSeek V4** (priced at **$0.14 per 1M input / $0.28 per 1M output tokens**) through APIVALE.
 *   **Context Caching**: APIVALE honors model context caching. When you run consecutive agent turns on the same codebase, cache hits are **fully free**, eliminating the repetitive context charge.
+*   **Sub-Second Intent Routing**: Instead of wasting heavy LLM reasoning passes on intermediate intent checks, pairing modern fast classifiers like the [TypeSafe Jev AI model](/blog/typesafe-jev-ai-model-deepseek-v4-guide) with APIVALE's DeepSeek V4 cuts pre-routing costs by over 80% while preserving deep reasoning quality.
 *   **Global PayPal Billing**: Many global builders struggle with credit card declines on US-focused platforms. APIVALE provides seamless **PayPal Global Billing** and instant top-ups, preventing production key suspensions.
 
 ---

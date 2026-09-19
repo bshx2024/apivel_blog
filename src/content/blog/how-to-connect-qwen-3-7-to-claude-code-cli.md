@@ -125,7 +125,7 @@ npx @anthropic-ai/claude-code
 
 ## Advanced: Dynamic Model Switching Router (Node.js & Python)
 
-If your development workflow requires switching between Claude Sonnet 5 for architect-level planning and Qwen 3.7-Max for routine refactoring, you can run a lightweight local proxy router.
+If your development workflow requires switching between Claude Sonnet 5 for architect-level planning and Qwen 3.7-Max for routine refactoring, you can run a lightweight local proxy router, or pair upstream System 1 classifiers like the [TypeSafe Jev AI model](/blog/typesafe-jev-ai-model-deepseek-v4-guide/) for deterministic intent routing.
 
 ### TypeScript / Node.js Router Script
 
