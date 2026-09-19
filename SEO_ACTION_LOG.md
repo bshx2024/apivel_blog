@@ -58,7 +58,7 @@
 
 ## 📝 优化行动记录 (2026-09)
 
-### 📅 2026-09-19 - ⚙️ [技术/UX 动作]: 根据哥飞/web.cafe On-Page SEO 诊断完成 Pareto 文章靶向提分（纠正推断词赛道错位 + 1~4 词 N-gram 密度榜霸榜 + 正文精炼至 1607 词黄金区间 + 首屏 30 秒 404 极速修复防跳出）
+### 📅 2026-09-19 - ⚙️ [技术/UX 动作]: 根据哥飞/web.cafe On-Page SEO 诊断完成 Pareto 文章两阶段靶向提分（第一阶段：93分冲刺98分纠正赛道错位；第二阶段：精准校准多词密度至 2.68% 消除堆砌警报，正文词数控制在 1491 词黄金区间冲刺 100 满分）
 
 * **影响页面/关键词**：
   * **影响页面**：`/blog/unbiased-pareto-ai-api-stealth-union-alpha-setup/`
@@ -66,19 +66,19 @@
 
 * **诊断反馈与优化动作对照**：
   1. **主词赛道纠偏（消除赛道错位警报）**：
-     * *诊断*：原标题与 H1 强调 `stealth/union-alpha`，导致搜索引擎算法错误将其推断为已废弃的旧词赛道，面临 Reddit/OpenRouter 历史死链竞争。
+     * *诊断*：原标题与 H1 强调 `stealth/union-alpha`，导致搜索引擎算法错误将其推断为已废弃的旧词赛道。
      * *动作*：Title 调整为 `Unbiased Pareto AI API: Setup Guide & 404 Fix | APIVALE`（55 字符），H1 调整为 `Unbiased Pareto AI API: Official Setup & stealth/union-alpha 404 Fix`，将 `stealth/union-alpha` 降级为副修饰痛点词，牢牢锁定 `Unbiased Pareto AI API` 为唯一第一实体。
-  2. **N-gram 密度榜加权覆盖（拿回 6.4 分）**：
-     * *诊断*：1 词、4 词、5 词未上榜，3 词仅排第 9，密度分大跌。
-     * *动作*：在全篇 H2/H3 章节首句、定义框、FAQ 规范化嵌入 `Unbiased Pareto AI API`。经词频测算，`Unbiased Pareto AI API` 4 词词频达到 40 次（出现率 2.48%），在 2-gram、3-gram、4-gram 密度榜上**全线登顶第 1 名**。
+  2. **多词密度精准校准（消除 6.96% 堆砌警告，拿回 1.5 分）**：
+     * *诊断*：4 词密度 6.96% 偏高（多词词组 >3% 即属堆砌），谨防过度优化惩罚。
+     * *动作*：将正文中冗余的 `Unbiased Pareto AI API` 适度降频替换为代词与变体，将 4 词词频精准控制在 10 次（全 HTML 约 15 次），密度精准降至 **2.68%**（严格落在 <3.0% 黄金安全区间），且在 2-gram、3-gram、4-gram 密度榜全部保持 **第 1 名**。
   3. **正文词数精炼（拿回 1 分）**：
-     * *诊断*：全页 2871 词微超建议区间（1200~1800 词）。
-     * *动作*：剔除冗余修饰，精炼核心段落，纯净正文词数精准收敛至 **1,607 词**，进入最佳区间。
+     * *诊断*：全页 2529 词微超建议区间（1200~1800 词）。
+     * *动作*：剔除冗余修饰，精炼核心段落，纯净正文词数精准收敛至 **1,491 词**，处于 1200~1800 黄金区间正中央。
   4. **首屏 30 秒修复卡片（压制 84% 跳出率）**：
-     * 在首屏（正文开头上方）植入醒目的「30-Second Quick Fix: stealth/union-alpha 404 Resolution」卡片，开发者进入页面无需滚动直接复制 1 行替换参数，极大降低跳出率并延长页面停留。
+     * 在首屏植入醒目的「30-Second Quick Fix: stealth/union-alpha 404 Resolution」卡片，进入页面无需滚动直接复制 1 行替换参数，极大降低跳出率并延长页面停留。
 
 * **预期因果假设**：
-  * 将 On-Page SEO 评分从 93 (A) 提升至 98+ (A+)，消除赛道错位告警，Google 与 AITDK 100% 将 `Unbiased Pareto AI API` 识别为唯一核心实体。
+  * 将 On-Page SEO 评分从 98 (A) 冲刺至 **100 分（A+ 完美满分）**，消除赛道错位与关键词堆砌两大算法风险，Google 与 AITDK 100% 将 `Unbiased Pareto AI API` 识别为唯一核心实体。
 
 ### 📅 2026-09-19 - 📝 [内容/实战截流动作]: 针对 Google Trends 爆发词（unbiased ai 与 union alpha 双双突破 BREAKOUT +5000%）极速上线《Unbiased Pareto AI API: Fix stealth/union-alpha 404 & Cursor Setup Guide》深度实操长文（Kenji Tanaka 工程师轮换署名）
 
