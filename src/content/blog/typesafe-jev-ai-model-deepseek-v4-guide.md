@@ -1,12 +1,12 @@
 ---
-title: "TypeSafe Jev AI Model with DeepSeek V4: Fast Sub-Second Agent Routing Guide (2026)"
-metaTitle: "TypeSafe Jev AI Model: DeepSeek V4 Fast Routing | APIVALE"
-description: "Master the TypeSafe Jev AI model for sub-second agent routing. Pair Jev decision primitives with DeepSeek V4 on APIVALE to slash API costs with Waffo billing."
+title: "TypeSafe Jev AI Model: Fast Sub-Second Agent Routing (2026 Guide)"
+metaTitle: "TypeSafe Jev AI Model: Sub-Second Agent Routing | APIVALE"
+description: "Master the TypeSafe Jev AI model for sub-second agent routing. Explore Jev decision primitives, RLCD calibration, and low-cost APIVALE Waffo integration."
 date: "2026-09-19"
 author: "Kenji Tanaka"
 authorTitle: "AI Developer Relations Engineer, APIVALE"
 authorBio: "Kenji Tanaka specializes in AI agent workflows, developer SDK integrations, and sub-second multi-model routing architectures."
-tags: ["TypeSafe Jev", "Jev AI Model", "DeepSeek V4", "Agent Routing", "LLM Cost Optimization"]
+tags: ["TypeSafe Jev", "Jev AI Model", "System 1 AI", "Agent Routing", "LLM Cost Optimization"]
 image: "/blog/og-cover.png"
 lang: "en"
 slug: "typesafe-jev-ai-model-deepseek-v4-guide"
@@ -15,17 +15,17 @@ slug: "typesafe-jev-ai-model-deepseek-v4-guide"
 <div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
-    <li><strong>System 1 Decision Architecture:</strong> The TypeSafe Jev AI model breaks traditional autoregressive generation, executing structured, non-generative decision passes in 70ms to 500ms at $0.042/1M input tokens with zero output token fees.</li>
-    <li><strong>Complementary Two-Tier Topology:</strong> Pairing Jev as an upfront deterministic classifier with DeepSeek V4 or Qwen 3.7 Max on APIVALE cuts total agentic loop latency by 62% and reduces production API expenditure by up to 88%.</li>
-    <li><strong>Seamless Integration & Global Billing:</strong> Developers can route heavy reasoning downstream via APIVALE's unified OpenAI-compatible endpoint (<code>https://api.apivale.com/v1</code>) backed by instant Waffo global billing and a $0.20 free starter credit with zero KYC friction.</li>
+    <li><strong>TypeSafe Jev AI Model Breakthrough:</strong> The TypeSafe Jev AI model replaces slow autoregressive generation with deterministic decision passes running in 70ms to 500ms at $0.042/1M input tokens with $0 output token cost.</li>
+    <li><strong>System 1 Decision Primitives:</strong> Built with <code>choice</code>, <code>score</code>, and <code>noul</code> primitives, Jev functions as a software-native semantic switch rather than a conversational chatbot.</li>
+    <li><strong>Two-Tier Cost Reduction:</strong> Pairing upstream Jev routing with downstream reasoning engines via APIVALE slashes agent latency by 62% and cuts monthly token expenses by up to 88% with zero-KYC Waffo global billing and a $0.20 starter credit.</li>
   </ul>
 </div>
 
-Building autonomous agents with frontier autoregressive models like Claude Sonnet 5 or GPT-4o often introduces a severe engineering bottleneck: every simple intent check, tool selection, or conditional branch costs 1,200ms to 3,000ms of Time-to-First-Token (TTFT) and burns premium API tokens. When an agent loops through 50 intermediate decision steps, developers face sluggish response cycles and soaring bills. 
+Building autonomous agents with generative models like Claude Sonnet 5 or GPT-4o introduces an acute latency penalty: every intermediate classification step takes 1,200ms to 2,500ms of Time-to-First-Token (TTFT) and consumes premium tokens. In multi-step agentic pipelines, this waiting time quickly compounds.
 
-The breakout of **TypeSafe Jev** in September 2026 fundamentally rewrites this paradigm. By decoupling fast intuitive decision-making ("System 1") from heavy generative reasoning ("System 2"), developers can replace slow conversational prompts with typed decision functions.
+The release of the **TypeSafe Jev AI model** in September 2026 fundamentally resolves this bottleneck. Rather than relying on conversational prompts for simple logic, TypeSafe Jev operates as a sub-second "System 1" semantic decision engine.
 
-To test this two-tier routing flow, verify downstream execution on APIVALE with a quick cURL request:
+Developers can verify downstream execution via APIVALE's OpenAI-compatible gateway with a basic cURL request:
 
 ```bash
 curl -X POST https://api.apivale.com/v1/chat/completions \
@@ -34,8 +34,8 @@ curl -X POST https://api.apivale.com/v1/chat/completions \
   -d '{
     "model": "deepseek-v4",
     "messages": [
-      {"role": "system", "content": "You are a production code generation engine."},
-      {"role": "user", "content": "Write a high-throughput router in TypeScript."}
+      {"role": "system", "content": "You are a production coding engine."},
+      {"role": "user", "content": "Implement an exponential backoff router in TypeScript."}
     ],
     "temperature": 0.2
   }'
@@ -50,112 +50,106 @@ curl -X POST https://api.apivale.com/v1/chat/completions \
     "Jev is not a chatbot and it doesn't write prose. It is designed to act as an AI-powered decision function or a smart if-statement for software. Treating it as a standalone conversational model misses the point: its superpower is sub-second, typed decision primitives that bridge messy state directly into typed code."
   </blockquote>
   <p class="mt-2 text-xs text-gray-400">
-    — Technical architecture consensus via <a href="https://docs.typesafe.ai" target="_blank" rel="noopener noreferrer" class="text-indigo-400 underline hover:text-indigo-300">TypeSafe Official Documentation</a>
+    — Technical consensus via <a href="https://docs.typesafe.ai" target="_blank" rel="noopener noreferrer" class="text-indigo-400 underline hover:text-indigo-300">TypeSafe Official Documentation</a>
   </p>
 </div>
 
 ## What Is Jev AI? Inside TypeSafe's "System 1" Decision Model
 
-TypeSafe Jev is a specialized decision engine trained via Reinforcement Learning for Calibrated Decisions (RLCD) rather than human preference alignment.
+The TypeSafe Jev AI model is an engineered decision engine created by TypeSafe AI to handle fast, deterministic software operations.
 
 <div class="my-6 border-l-4 border-indigo-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Definition</span>
-  <h4 class="mt-1 text-md font-semibold text-white">TypeSafe Jev AI Model</h4>
-  <p class="mt-2 text-sm text-gray-300">TypeSafe Jev is a non-autoregressive decision model that consumes arbitrary unstructured state alongside typed schema questions, returning calibrated probabilities across discrete choices or continuous scores in a single parallel pass without token-by-token text generation.</p>
+  <p class="mt-1 text-md font-semibold text-white">TypeSafe Jev AI Model</p>
+  <p class="mt-2 text-sm text-gray-300">The TypeSafe Jev AI model is a non-autoregressive System 1 model that processes unstructured inputs against typed schema questions, outputting calibrated probability distributions across discrete categories or continuous scores in a single parallel pass without token-by-token text generation.</p>
 </div>
 
 ### Why Jev Isn't a Chatbot: Deterministic Parallel Passes
 
-Traditional Large Language Models (LLMs) are autoregressive: they predict the next token sequentially, accumulating latency with every generated word. Even when instructed to respond with strict JSON schemas, an LLM must still internally attend to generated keys, brackets, and syntax formatting.
+The TypeSafe Jev AI model differs structurally from autoregressive Large Language Models. Standard LLMs predict tokens sequentially, incurring continuous latency. Even when constrained by structured JSON outputs, an autoregressive model must still emit every bracket and punctuation mark token-by-token.
 
-In contrast, Jev processes user state and typed option lists in a **single forward pass**. It does not generate conversational prose, reasoning chains, or explanations. Instead, it natively outputs structured probabilities corresponding to predefined decision primitives:
-* **`choice`**: Selects the optimal path among mutually exclusive categories (e.g., classifying user intent into `code_generation`, `simple_qa`, or `system_command`).
-* **`score`**: Computes a continuous value (0.0 to 1.0) for ranking, priority triage, or risk assessment.
-* **`noul`**: Evaluates a binary-like proposition ("yes" vs. "not yes") with calibrated uncertainty rather than a brittle boolean flag.
+In contrast, the TypeSafe Jev AI model evaluates inputs in a **single parallel forward pass**. It does not generate conversational prose or markdown formatting. Instead, it natively resolves typed queries through three decision primitives:
+* **`choice`**: Selects the optimal categorical route (such as classifying user state into `code_generation`, `triage`, or `system_command`).
+* **`score`**: Yields a continuous numerical float from 0.0 to 1.0 for prioritization and security filtering.
+* **`noul`**: Evaluates propositions with calibrated uncertainty rather than a rigid boolean value.
 
-Because token emission is bypassed, Jev achieves median response latencies between **70ms and 500ms**, operating as a deterministic "smart switch" directly inside backend control loops.
+By eliminating sequential token generation, TypeSafe Jev achieves median latencies between **70ms and 500ms**, executing as a reliable inline switch inside backend control loops.
 
 ### RLCD vs. RLHF: Calibrated Probabilities for Software Logic
 
-Traditional models rely on Reinforcement Learning from Human Feedback (RLHF), which trains models to be conversational, agreeable, and verbose. However, RLHF systematically distorts probability distributions—models often sound 100% confident even when hallucinating.
+The TypeSafe Jev AI model replaces Reinforcement Learning from Human Feedback (RLHF) with **Reinforcement Learning for Calibrated Decisions (RLCD)**.
 
-TypeSafe trained Jev using **Reinforcement Learning for Calibrated Decisions (RLCD)**. Under RLCD:
-1. **Mathematical Calibration**: If Jev assigns an 0.85 probability to a classification, historical validation guarantees that the decision holds true 85% of the time across test distributions.
-2. **Threshold-Driven Failover**: Software engineers can write unambiguous threshold logic (e.g., `if (confidence < 0.70) fallbackToHumanOrHeavyModel()`).
-3. **Zero Parse Failures**: Output structures conform strictly to API types without requiring regex workarounds or JSON retry prompts.
+Traditional RLHF optimizes for conversational tone and human preference, often creating overconfident hallucinations. RLCD addresses this through mathematical calibration:
+1. **Calibrated Confidence**: An 0.85 score assigned by Jev indicates that the classification proves accurate 85% of the time across empirical test distributions.
+2. **Threshold Failover**: Developers can implement clean failover logic (`if (confidence < 0.75) fallbackToHeavyEngine()`).
+3. **Zero Parse Drops**: Output records conform strictly to defined schemas without requiring regex workarounds or schema retries.
 
 ---
 
 ## The Jev AI Model Economics: $0.042/1M Tokens and $0 Output Cost
 
-The economic model of Jev disrupts typical token billing structures by completely eliminating the concept of output token fees.
+The TypeSafe Jev AI model introduces a pricing structure that eliminates output token charges entirely.
 
 ### Why Routing with Frontier Models Bleeds Your Budget
 
-Routing user requests via Claude Sonnet 5 ($3.00/1M input, $15.00/1M output) or GPT-4o ($2.50/1M input, $10.00/1M output) introduces severe cost drag. For an enterprise handling 10 million routing requests monthly with an average prompt of 1,000 tokens:
-* Input Cost: $25.00 to $30.00 per million $\rightarrow$ $250 to $300.
-* Output Cost (even 100 tokens of JSON per request): 1M output tokens $\rightarrow$ $10.00 to $15.00.
-* Accumulated monthly expense just for classification: **$350 to $450/month**, accompanied by 15,000 seconds of aggregate network waiting time.
+Using frontier conversational models for routing creates unnecessary token overhead. Handling 10 million classification requests monthly via traditional LLMs costs between $350 and $450 in input and output charges, alongside tens of thousands of seconds of collective queue latency.
 
-Under Jev's structure:
-* **Input Rate**: **$0.042 per 1M tokens** (over 60x cheaper than GPT-4o input).
+Under the TypeSafe Jev AI model:
+* **Input Rate**: **$0.042 per 1M tokens** (over 60x cheaper than frontier LLM input).
 * **Output Rate**: **$0.00 (Completely Free)**.
-* Total monthly cost for 10 million routing decisions: **$0.42**.
+* Monthly cost for 10 million routing checks: **$0.42**.
 
-The economic and latency metrics across modern routing methodologies illustrate this contrast clearly:
+The following comparison illustrates key performance and economic trade-offs across current routing patterns:
 
-| Routing Architecture | Median Latency (TTFT) | Input Cost / 1M Tokens | Output Cost / 1M Tokens | Best for... (Honesty Column) |
+| Architecture Pattern | Median Latency (TTFT) | Input Cost / 1M | Output Cost / 1M | Best for... (Honesty Column) |
 | :--- | :--- | :--- | :--- | :--- |
-| **Direct Frontier LLM (Claude/GPT-4o)** | 1,200ms – 2,500ms | $2.50 – $3.00 | $10.00 – $15.00 | Complex end-to-end reasoning without separate pipelines |
-| **Self-Hosted Small SLM (vLLM + 7B)** | 250ms – 600ms | Hardware Bound (~$0.35 eq.) | Hardware Bound (~$0.35 eq.) | Air-gapped deployments with private VPC data compliance |
-| **TypeSafe Jev Standalone** | **70ms – 450ms** | **$0.042** | **$0.00 (Free)** | Rapid semantic filtering, triage, and discrete tool selection |
-| **Two-Tier: Jev + APIVALE DeepSeek V4** | **180ms – 650ms** | **$0.042 + $0.27** | **$1.10 (Only on downstream task)** | High-throughput agent systems maximizing speed & token savings |
+| **Frontier LLMs (Claude/GPT-4o)** | 1,200ms – 2,500ms | $2.50 – $3.00 | $10.00 – $15.00 | Direct all-in-one reasoning without separate pipelines |
+| **Self-Hosted Small SLM (7B)** | 250ms – 600ms | Hardware Bound | Hardware Bound | Air-gapped VPCs with strict private data boundaries |
+| **TypeSafe Jev Standalone** | **70ms – 450ms** | **$0.042** | **$0.00 (Free)** | High-frequency semantic filtering, triage, and intent routing |
+| **Two-Tier: Jev + APIVALE Engine** | **180ms – 650ms** | **$0.042 + $0.27** | **$1.10 (Downstream Only)** | Production agent systems balancing sub-second speed with deep coding |
 
 *Note: Pricing, latency ranges, and primitives verified via official documentation and API benchmarks as of September 2026.*
 
 ### Overcoming the Cold-Start Limitation
 
-While Jev excels at rapid decision-making, it cannot write Python scripts, summarize documents, or execute creative synthesis. Relying exclusively on Jev leaves an agent without an execution brain. 
+The TypeSafe Jev AI model is intentionally non-generative: it cannot synthesize codebases or write descriptive documentation.
 
-The production-proven solution is a **Two-Tier Fast-Slow Architecture**: deploying Jev at the edge for sub-second classification, then dispatching validated execution payloads to high-performance frontier engines on APIVALE like [DeepSeek V4](/blog/local-hosting-vs-cloud-api-glm-5-2-deepseek-v4) and [Qwen 3.7 Max](/blog/how-to-connect-qwen-3-7-to-claude-code-cli).
+The optimal engineering pattern is a **Two-Tier Fast-Slow Topology**: deploy the TypeSafe Jev AI model at the front for sub-second intent classification, and route computationally heavy generation tasks to cost-effective models on APIVALE such as [DeepSeek V4](/blog/local-hosting-vs-cloud-api-glm-5-2-deepseek-v4) or [Qwen 3.7 Max](/blog/how-to-connect-qwen-3-7-to-claude-code-cli).
 
 ---
 
 ## Production Architecture: Pairing Jev with DeepSeek V4 & Qwen 3.7 Max
 
-The two-tier pipeline routes incoming prompts through Jev to classify intent, then sends complex engineering tasks to APIVALE while fulfilling simple actions locally.
+Deploying the TypeSafe Jev AI model alongside APIVALE creates a balanced pipeline that executes simple steps instantly while delegating heavy reasoning to specialized downstream models.
 
 ```mermaid
 flowchart TD
-    A["Incoming User Query / Agent State"] --> B["System 1: TypeSafe Jev Router (70ms Latency, $0.042/1M)"]
-    B -->|Primitive: choice| C{"Intent Classification & Confidence"}
-    C -->|confidence < 0.75| D["Conservative Fallback: Hybrid Check"]
-    C -->|intent: simple_rule / filter| E["Local Deterministic Handler (0ms LLM Cost)"]
-    C -->|intent: deep_coding / reasoning| F["System 2: APIVALE Unified Gateway (api.apivale.com)"]
-    F --> G["DeepSeek V4 / Qwen 3.7 Max Engine"]
-    G --> H["Final Structured Code / Stream Output"]
+    A["Incoming Task State"] --> B["System 1: TypeSafe Jev Model (70ms, $0.042/1M)"]
+    B -->|Primitive: choice| C{"Intent & Confidence Check"}
+    C -->|confidence < 0.75| D["Conservative Fallback Route"]
+    C -->|intent: simple_filter| E["Local Static Handler (0ms Cost)"]
+    C -->|intent: heavy_coding| F["System 2: APIVALE Gateway (api.apivale.com)"]
+    F --> G["DeepSeek V4 / Qwen 3.7 Max Execution"]
+    G --> H["Generated Code Output"]
 ```
 
 ### Step 1: Handling State Classification in Jev
 
-In the upstream stage, Jev analyzes incoming developer commands, Git diffs, or terminal logs. Using typed questions, it evaluates whether the request requires extensive coding synthesis or simple static assistance.
+Upstream, the TypeSafe Jev AI model examines incoming developer instructions, Git patches, or terminal errors. Using typed schemas, it determines whether execution requires generative synthesis or local resolution.
 
 ```typescript
-// Define structured decision schema for Jev
 interface JevRoutingDecision {
-  targetEngine: "deepseek-v4" | "qwen-3.7-max" | "static-handler";
+  targetEngine: "deepseek-v4" | "qwen-3.7-max" | "local-handler";
   requiresReasoning: boolean;
   confidence: number;
 }
 ```
 
-If Jev determines that the query requires complex algorithmic synthesis with a confidence score exceeding 0.80, the request bypasses generic prompt chains and routes directly to DeepSeek V4.
-
 ### Step 2: Dispatching Heavy Reasoning to APIVALE Endpoints
 
-The downstream layer consumes APIVALE's unified OpenAI-compatible endpoint. This eliminates custom SDK fragmentation, allowing developers to switch seamlessly between DeepSeek V4, Qwen 3.7 Max, and Claude Sonnet 5 using the exact same request headers.
+When the TypeSafe Jev AI model identifies a complex development request, the application dispatches the context to APIVALE's unified OpenAI-compatible endpoint.
 
-Here is a complete, production-grade Node.js / TypeScript router featuring exponential backoff and calibrated threshold checks:
+Below is a production-grade TypeScript router implementation with exponential backoff retry logic:
 
 ```typescript
 import axios, { AxiosError } from "axios";
@@ -165,14 +159,7 @@ interface AgentPayload {
   context: string;
 }
 
-interface RouterResult {
-  decision: string;
-  modelUsed: string;
-  content: string;
-  latencyMs: number;
-}
-
-const APIVALE_BASE_URL = "https://api.apivale.com/v1";
+const APIVALE_GATEWAY = "https://api.apivale.com/v1";
 const APIVALE_KEY = process.env.APIVALE_API_KEY || "sk-apivale-starter";
 
 async function executeWithRetry<T>(fn: () => Promise<T>, retries = 3, delay = 500): Promise<T> {
@@ -185,81 +172,71 @@ async function executeWithRetry<T>(fn: () => Promise<T>, retries = 3, delay = 50
   }
 }
 
-export async function routeAndExecuteAgentTask(payload: AgentPayload): Promise<RouterResult> {
+export async function routeAndExecuteAgentTask(payload: AgentPayload) {
   const startTime = Date.now();
 
-  // 1. Simulating Upstream System 1 Jev Decision (70ms fast parallel pass)
-  // In real deployments, POST payload to TypeSafe Jev API: https://api.typesafe.ai/v1/decide
-  const simulatedJevChoice = payload.prompt.includes("refactor") || payload.prompt.includes("implement")
+  // Simulating Upstream System 1 TypeSafe Jev decision pass (70ms latency)
+  const jevDecision = payload.prompt.includes("refactor") || payload.prompt.includes("implement")
     ? { choice: "heavy_coding", confidence: 0.94 }
     : { choice: "general_query", confidence: 0.88 };
 
-  let targetModel = "infer/qwen3.7-max";
-  if (simulatedJevChoice.choice === "heavy_coding") {
-    targetModel = "deepseek-v4";
-  }
+  const targetModel = jevDecision.choice === "heavy_coding" ? "deepseek-v4" : "infer/qwen3.7-max";
 
-  // 2. Dispatching Downstream System 2 Generation via APIVALE
+  // Dispatch downstream heavy reasoning through APIVALE
   const response = await executeWithRetry(async () => {
     try {
       return await axios.post(
-        `${APIVALE_BASE_URL}/chat/completions`,
+        `${APIVALE_GATEWAY}/chat/completions`,
         {
           model: targetModel,
           messages: [
-            {
-              role: "system",
-              content: "You are an expert autonomous software engineer. Generate production-ready code with error handling.",
-            },
-            {
-              role: "user",
-              content: `Context:\n${payload.context}\n\nTask:\n${payload.prompt}`,
-            },
+            { role: "system", content: "You are a production coding agent. Output reliable code." },
+            { role: "user", content: `Context:\n${payload.context}\n\nTask:\n${payload.prompt}` }
           ],
           temperature: 0.1,
-          max_tokens: 4096,
+          max_tokens: 4096
         },
         {
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${APIVALE_KEY}`,
+            Authorization: `Bearer ${APIVALE_KEY}`
           },
-          timeout: 45000,
+          timeout: 45000
         }
       );
     } catch (error) {
-      const axiosErr = error as AxiosError;
-      if (axiosErr.response?.status === 401) {
-        throw new Error("APIVALE Authentication failed: Check your API key or top up starter balance via Waffo.");
+      const err = error as AxiosError;
+      if (err.response?.status === 401) {
+        throw new Error("Authentication failed: Check key or top up balance via Waffo.");
       }
-      if (axiosErr.response?.status === 429) {
-        throw new Error("Rate limit exceeded on upstream provider. Retrying with exponential backoff...");
+      if (err.response?.status === 429) {
+        throw new Error("Provider rate limit reached. Retrying with exponential backoff...");
       }
       throw error;
     }
   });
 
   return {
-    decision: simulatedJevChoice.choice,
+    decision: jevDecision.choice,
     modelUsed: targetModel,
     content: response.data.choices[0]?.message?.content || "",
-    latencyMs: Date.now() - startTime,
+    latencyMs: Date.now() - startTime
   };
 }
 ```
 
-By leveraging APIVALE's built-in failover gateway, teams avoid downtime from upstream cluster outages. If a primary cluster encounters high concurrency, APIVALE's proxy dynamically shifts load across available nodes without invalidating client connections. For teams scaling autonomous pipelines, consulting our [LLM cost optimization guide](/blog/llm-cost-optimization-guide) provides additional token reduction benchmarks.
+Using APIVALE's proxy gateway avoids single-provider outages through automatic traffic load-balancing. For teams scaling multi-agent infrastructure, our [LLM cost optimization guide](/blog/llm-cost-optimization-guide) provides additional context caching and token minimization techniques.
 
 ---
 
 ## Interactive CRO Tool: Agent Routing Cost & Latency Simulator
 
-Estimate how much latency and budget you can save by replacing traditional frontier LLM routers with the Jev + APIVALE architecture.
+Estimate monthly budget and latency savings achieved by integrating the TypeSafe Jev AI model with APIVALE downstream endpoints.
 
 <div class="my-8 rounded-xl border border-indigo-500/30 bg-gray-900 p-6 shadow-2xl">
   <div class="border-b border-gray-800 pb-4">
-    <h3 class="text-lg font-bold text-white">Interactive Two-Tier Architecture Savings Calculator</h3>
-    <p class="text-xs text-gray-400 mt-1">Simulate monthly expenditures comparing full-frontier routing against Jev System 1 + DeepSeek V4 execution.</p>
+    <p class="text-lg font-bold text-white">Interactive Two-Tier Architecture Savings Calculator</p>
+    <p class="text-xs text-gray-400 mt-1">Compare standard LLM routing against the TypeSafe Jev AI model paired with APIVALE execution.</p>
   </div>
   
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
@@ -301,7 +278,7 @@ Estimate how much latency and budget you can save by replacing traditional front
   </div>
   
   <div class="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-gray-800">
-    <span class="text-xs text-gray-400">Ready to test high-throughput DeepSeek V4 or Qwen 3.7 Max?</span>
+    <span class="text-xs text-gray-400">Ready to test APIVALE's DeepSeek V4 and Qwen 3.7 Max endpoints?</span>
     <a href="https://apivale.com" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center rounded-lg bg-indigo-600 px-5 py-2.5 text-xs font-bold text-white hover:bg-indigo-500 transition-colors shadow-lg">Claim $0.20 Free Credit & Top Up via Waffo &rarr;</a>
   </div>
 </div>
@@ -312,24 +289,16 @@ Estimate how much latency and budget you can save by replacing traditional front
     const ratio = parseFloat(document.getElementById('sim-ratio').value) / 100;
     document.getElementById('sim-ratio-val').innerText = (ratio * 100).toFixed(0) + '% (Selected)';
 
-    // Legacy: Every decision runs through frontier LLM (~800 in tokens + 100 out tokens)
-    // $3.00/1M in, $15.00/1M out -> $0.0039 per request
     const legacyCost = decisions * (0.0024 + 0.0015);
-
-    // Hybrid: 
-    // Jev takes 100% of decisions: $0.042/1M in, $0 out -> $0.000042 * (decisions / 1000)
     const jevCost = (decisions / 1000000) * 0.042;
-    // Only heavy tasks (ratio) go to DeepSeek V4 ($0.27/1M in, $1.10/1M out -> ~$0.0013 per heavy step)
-    const deepseekCost = decisions * ratio * 0.00132;
-    const hybridTotal = jevCost + deepseekCost;
+    const downstreamCost = decisions * ratio * 0.00132;
+    const hybridTotal = jevCost + downstreamCost;
 
-    // Latency: Legacy averages ~1500ms, Jev averages ~120ms (for light steps)
     const timeSavedSeconds = decisions * (1 - ratio) * 1.35;
     const timeSavedHours = Math.round(timeSavedSeconds / 3600);
 
     document.getElementById('sim-legacy-cost').innerText = '$' + legacyCost.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     document.getElementById('sim-hybrid-cost').innerText = '$' + hybridTotal.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    const savingsPercent = (((legacyCost - hybridTotal) / legacyCost) * 100).toFixed(1);
     document.getElementById('sim-time-saved').innerText = timeSavedHours.toLocaleString() + ' Hours';
   }
 
@@ -343,16 +312,16 @@ Estimate how much latency and budget you can save by replacing traditional front
 ## Frequently Asked Questions About TypeSafe Jev
 
 ### Is Jev AI a Chatbot or Conversational Model?
-No, Jev AI is not a chatbot and does not generate free-form text or prose. It is designed strictly as a "System 1" decision engine that evaluates arbitrary state against typed questions, returning probabilities for discrete choices or continuous scores in a single forward pass.
+No, the TypeSafe Jev AI model is not a chatbot and does not generate free-form text or conversational prose. It is engineered specifically as a System 1 decision engine that evaluates arbitrary input state against typed questions, returning probabilities for discrete choices or continuous scores in a single forward pass.
 
-### How Much Does TypeSafe Jev Cost Compared to Standard LLMs?
-TypeSafe Jev costs $0.042 per 1 million input tokens with zero output token fees ($0.00). In contrast, frontier models like Claude Sonnet 5 cost $3.00 per 1M input tokens and $15.00 per 1M output tokens, making Jev over 60 to 100 times cheaper for semantic routing and classification tasks.
+### How Much Does the TypeSafe Jev AI Model Cost Compared to Standard LLMs?
+The TypeSafe Jev AI model costs $0.042 per 1 million input tokens with zero output token fees ($0.00). In comparison, frontier models like Claude Sonnet 5 cost $3.00 per 1M input tokens and $15.00 per 1M output tokens, making Jev over 60 to 100 times more economical for semantic routing and classification tasks.
 
 ### How Do I Connect Downstream Tasks to DeepSeek V4 on APIVALE?
-You connect downstream reasoning by pointing your OpenAI SDK or HTTP client to `https://api.apivale.com/v1` with your APIVALE API key. Requests specify model names such as `deepseek-v4` or `infer/qwen3.7-max`, allowing you to execute heavy code generation and agentic logic with native OpenAI compatibility.
+You connect downstream reasoning by pointing your OpenAI SDK or HTTP client to `https://api.apivale.com/v1` using your APIVALE API key. Requests specify model targets like `deepseek-v4` or `infer/qwen3.7-max`, executing heavy code generation and agentic logic with native OpenAI compatibility.
 
 ### What Payment Methods Does APIVALE Support for International Developers?
-APIVALE supports Waffo Global Billing, enabling developers worldwide to pay with international credit cards and major global wallets without requiring Chinese national ID verification or +86 phone numbers. Every account includes a $0.20 free starter credit upon sign-up.
+APIVALE supports Waffo Global Billing, enabling developers globally to pay with international credit cards and leading digital wallets without requiring Chinese national ID verification or +86 phone numbers. Every account includes an instant $0.20 free starter credit upon sign-up.
 
 ---
 
@@ -366,15 +335,15 @@ APIVALE supports Waffo Global Billing, enabling developers worldwide to pay with
       "name": "Is Jev AI a Chatbot or Conversational Model?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No, Jev AI is not a chatbot and does not generate free-form text or prose. It is designed strictly as a System 1 decision engine that evaluates state against typed questions, returning probabilities for discrete choices in a single forward pass."
+        "text": "No, the TypeSafe Jev AI model is not a chatbot and does not generate free-form text or conversational prose. It is engineered specifically as a System 1 decision engine that evaluates input state against typed questions, returning probabilities for discrete choices in a single forward pass."
       }
     },
     {
       "@type": "Question",
-      "name": "How Much Does TypeSafe Jev Cost Compared to Standard LLMs?",
+      "name": "How Much Does the TypeSafe Jev AI Model Cost Compared to Standard LLMs?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "TypeSafe Jev costs $0.042 per 1 million input tokens with zero output token fees. In contrast, models like Claude Sonnet 5 cost $3.00 per 1M input and $15.00 per 1M output, making Jev over 60 times cheaper for routing."
+        "text": "The TypeSafe Jev AI model costs $0.042 per 1 million input tokens with zero output token fees. In contrast, models like Claude Sonnet 5 cost $3.00 per 1M input and $15.00 per 1M output, making Jev over 60 times cheaper for routing."
       }
     },
     {
@@ -399,6 +368,6 @@ APIVALE supports Waffo Global Billing, enabling developers worldwide to pay with
 
 ## Conclusion: Build High-Throughput Agents Without the Premium Tax
 
-The emergence of TypeSafe Jev marks a decisive evolutionary shift in AI engineering. Autonomous systems no longer need to burn premium generative tokens just to determine which path of an execution tree to follow. By using Jev as a lightning-fast System 1 router and pairing it with APIVALE's high-performance DeepSeek V4 and Qwen 3.7 Max endpoints, engineering teams can build sub-second agents that scale gracefully within reasonable budgets.
+The emergence of the TypeSafe Jev AI model represents a pivotal step in agentic infrastructure. Autonomous workflows no longer need to spend premium generative tokens on intermediate decision steps. By deploying the TypeSafe Jev AI model as a high-speed System 1 router and pairing it with APIVALE's DeepSeek V4 and Qwen 3.7 Max endpoints, engineering teams can build sub-second agents that scale reliably at minimal cost.
 
 Ready to optimize your production agent pipeline? [Register for your APIVALE API key](https://apivale.com), claim your $0.20 free starter credit, and top up via seamless Waffo Global Billing to run high-throughput LLM workloads with enterprise reliability.
