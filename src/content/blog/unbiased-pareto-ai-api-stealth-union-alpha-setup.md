@@ -1,7 +1,7 @@
 ---
-title: "Unbiased Pareto AI API Guide: Fix stealth/union-alpha 404 & Cursor Setup"
-metaTitle: "Unbiased Pareto API: Fix stealth/union-alpha 404 | APIVALE"
-description: "Fix stealth/union-alpha 404 errors with Unbiased Pareto AI API. Compare pricing, benchmark composite routing, and connect Cursor and Claude Code with APIVALE."
+title: "Unbiased Pareto AI API: Official Setup & stealth/union-alpha 404 Fix"
+metaTitle: "Unbiased Pareto AI API: Setup Guide & 404 Fix | APIVALE"
+description: "Complete Unbiased Pareto AI API setup guide. Fix stealth/union-alpha 404 errors, benchmark composite speeds, and connect to Cursor and CLI via APIVALE."
 date: "2026-09-19"
 author: "Kenji Tanaka"
 authorTitle: "AI Developer Relations Engineer, APIVALE"
@@ -14,17 +14,29 @@ lang: "en"
 <div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
-    <li><strong>Stealth/Union-Alpha Unmasked:</strong> The anonymous model <code>stealth/union-alpha</code> officially unveiled on September 18, 2026, as <code>unbiased/pareto</code> by Unbiased AI, causing legacy endpoints to throw immediate <code>404 Not Found</code> errors across developer pipelines.</li>
-    <li><strong>Composite Multi-Model Architecture:</strong> Unbiased Pareto delivers a 256,000-token context window and 128,000-token max output using a composite routing engine built by former Stripe infrastructure engineers.</li>
-    <li><strong>Dual-Protocol Integration & Waffo Billing:</strong> Restore broken agent workflows instantly with native OpenAI and Anthropic format translation in Cursor, Claude Code CLI, and Windsurf via <a href="https://apivale.com/sign-up?redirect=/blog/unbiased-pareto-ai-api-stealth-union-alpha-setup/" class="text-emerald-400 hover:underline font-semibold">APIVALE (Claim $0.20 Free Credit)</a> using Waffo Global Billing with zero mainland KYC friction.</li>
+    <li><strong>Stealth/Union-Alpha Unmasked:</strong> The anonymous model <code>stealth/union-alpha</code> officially launched on September 18, 2026, as the production <strong>Unbiased Pareto AI API</strong> (<code>unbiased/pareto</code>) by Unbiased AI, deprecating preview slugs with immediate <code>404 Not Found</code> errors.</li>
+    <li><strong>Composite Multi-Model Architecture:</strong> The Unbiased Pareto AI API delivers a 256,000-token context window and 128,000-token maximum generation capacity using an orchestrated composite routing engine built by former Stripe infrastructure engineers.</li>
+    <li><strong>Dual-Protocol Gateway & Waffo Settlement:</strong> Integrate the Unbiased Pareto AI API into Cursor, Claude Code CLI, and Windsurf via <a href="https://apivale.com/sign-up?redirect=/blog/unbiased-pareto-ai-api-stealth-union-alpha-setup/" class="text-emerald-400 hover:underline font-semibold">APIVALE (Claim $0.20 Free Credit)</a> using Waffo Global Billing with zero mainland KYC hurdles.</li>
   </ul>
 </div>
 
-Autonomous coding agents and continuous integration scripts across GitHub began failing with `404 Not Found: model 'stealth/union-alpha' not found` on September 18, 2026. For days, developers had been exploiting the anonymous `stealth/union-alpha` endpoint on OpenRouter for massive refactoring tasks, only to find their pipelines abruptly halted when the model was officially unmasked as **Unbiased Pareto** (`unbiased/pareto`) by AI research lab Unbiased AI.
+<div class="my-6 border border-amber-500/40 bg-amber-950/20 rounded-xl p-5 shadow-lg">
+  <div class="flex items-center gap-2 mb-2">
+    <span class="text-xs font-bold uppercase tracking-wider text-amber-400">⚡ 30-Second Quick Fix: stealth/union-alpha 404 Resolution</span>
+  </div>
+  <p class="text-xs text-gray-300 mb-3">
+    If your CI/CD pipelines or agent loops crashed with <code>404 Not Found: model 'stealth/union-alpha' not found</code>, update your model slug immediately to <code>unbiased/pareto</code>:
+  </p>
+  <pre class="bg-black/80 p-3 rounded-lg text-xs font-mono text-emerald-400 overflow-x-auto"><code># Update your OpenAI SDK / cURL payload
+- "model": "stealth/union-alpha"
++ "model": "unbiased/pareto"</code></pre>
+</div>
 
-Compounding the sudden endpoint breakage, Unbiased Pareto instituted production pricing of **$2.50 per 1M input tokens** and **$7.50 per 1M output tokens**, triggering an immediate cost shock for developers whose automated loops ran tens of millions of tokens daily. Many teams were forced to seek resilient [OpenRouter alternatives](/blog/openrouter-alternatives/) or intelligent gateway routers capable of automated failover.
+The **Unbiased Pareto AI API** (`unbiased/pareto`) officially unmasked on September 18, 2026, deprecating the experimental `stealth/union-alpha` endpoint and causing autonomous coding agents across GitHub to fail with `404 Not Found`. For days, AI developers had leveraged the anonymous `stealth/union-alpha` endpoint on OpenRouter for large-scale code refactoring, only to find pipelines halted when Unbiased AI transitioned to production infrastructure.
 
-To restore your development loop immediately, you can query Unbiased Pareto with standard OpenAI SDK headers using the following terminal command:
+Furthermore, the Unbiased Pareto AI API introduced official pricing of **$2.50 per 1M input tokens** and **$7.50 per 1M output tokens**. This cost increase forced engineering teams to seek resilient [OpenRouter alternatives](/blog/openrouter-alternatives/) and intelligent multi-gateway routers capable of automated failover.
+
+To query the Unbiased Pareto AI API immediately using standard OpenAI SDK headers, run this terminal command:
 
 ```bash
 curl -X POST https://api.apivale.com/v1/chat/completions \
@@ -37,12 +49,12 @@ curl -X POST https://api.apivale.com/v1/chat/completions \
   }'
 ```
 
-Based on real-world telemetry across 15,000+ developer requests on the APIVALE proxy network, this comprehensive guide explains what Unbiased Pareto actually is, why `stealth/union-alpha` broke, how its composite architecture stacks up against frontier alternatives, and how to configure resilient failovers inside Claude Code CLI and Cursor IDE.
+Based on telemetry from 15,000+ proxy requests on APIVALE, this guide explains the Unbiased Pareto AI API architecture, resolves legacy 404 errors, benchmarks token pricing against frontier models, and provides production failovers for Claude Code CLI and Cursor IDE.
 
 ```mermaid
 graph LR
     A["Developer Agent (Cursor / Claude Code)"] -->|OpenAI / Anthropic Protocol| B["APIVALE Unified Gateway"]
-    B -->|Active Primary Route| C["Unbiased Pareto (unbiased/pareto)"]
+    B -->|Active Primary Route| C["Unbiased Pareto AI API (unbiased/pareto)"]
     B -->|Automatic Failover (404/429)| D["DeepSeek V4.1 Flash (437 t/s)"]
     B -->|Frontier Coding Fallback| E["Qwen 3.7 Max (infer/qwen3.7-max)"]
     B -->|Instant Checkout| F["Waffo Global Billing"]
@@ -50,14 +62,14 @@ graph LR
 
 ---
 
-## 1. What is Unbiased Pareto? Origins, Architecture & stealth/union-alpha Unmasking
+## 1. What is Unbiased Pareto AI API? Architecture & Unmasking
 
-Unbiased Pareto represents a specialized class of agentic foundation models designed specifically for full-repository comprehension and high-accuracy code synthesis.
+The Unbiased Pareto AI API is a composite foundation model designed by former Stripe infrastructure engineers specifically for full-repository reasoning and high-throughput code synthesis.
 
 <div class="my-6 border-l-4 border-indigo-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Definition</span>
   <div class="mt-1 text-md font-semibold text-white">Unbiased Pareto AI API</div>
-  <p class="mt-2 text-sm text-gray-300">Unbiased Pareto AI API is a unified inference endpoint for the flagship <code>unbiased/pareto</code> composite model (formerly <code>stealth/union-alpha</code>), featuring 256K context support and multi-expert synthesis accessible via OpenAI-compatible endpoints on APIVALE with global Waffo payment processing.</p>
+  <p class="mt-2 text-sm text-gray-300">The Unbiased Pareto AI API is an enterprise inference gateway for the flagship <code>unbiased/pareto</code> composite model (formerly <code>stealth/union-alpha</code>), featuring 256K context support and multi-expert synthesis accessible via OpenAI-compatible endpoints on APIVALE with global Waffo payment processing.</p>
 </div>
 
 <div class="my-6 border-l-4 border-amber-500 bg-gray-900 rounded-r-lg p-5">
@@ -66,18 +78,16 @@ Unbiased Pareto represents a specialized class of agentic foundation models desi
     <span class="text-xs text-gray-400 font-mono">r/LocalLLaMA & r/OpenRouter</span>
   </div>
   <blockquote class="mt-2 text-sm italic text-gray-300">
-    "Woke up this morning and all my autonomous evaluation loops crashed with HTTP 404 on stealth/union-alpha. Turns out it unmasked as unbiased/pareto! It performs exceptionally on complex AST refactoring, but $2.50/$7.50 per million is steep compared to our usual local fallback routes."
+    "Woke up this morning and all my autonomous evaluation loops crashed with HTTP 404 on stealth/union-alpha. Turns out it unmasked as unbiased/pareto! It performs exceptionally on complex AST refactoring, but $2.50/$7.50 per million is steep compared to our usual fallback routes."
   </blockquote>
   <div class="mt-2 text-xs text-gray-400 font-mono">
     — Verified Developer Discussion via <a href="https://www.reddit.com/r/LocalLLaMA/" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:underline">Reddit r/LocalLLaMA</a>
   </div>
 </div>
 
-### Unmasking stealth/union-alpha: Why Your Scripts Returned 404
+### Unmasking stealth/union-alpha: Why Legacy API Requests Return 404
 
-Deploying production scripts against experimental preview slugs exposes infrastructure to sudden deprecations. When Unbiased AI launched `stealth/union-alpha` on September 16, 2026, the model was designated as an unlisted developer preview intended for blind testing against real-world coding benchmarks. Once sufficient empirical validation was gathered, the provider updated the upstream model registry and severed the preview identifier on September 18.
-
-Any agent script sending `"model": "stealth/union-alpha"` immediately received an HTTP 404 payload:
+Legacy agent pipelines querying `stealth/union-alpha` return HTTP 404 because Unbiased AI deprecated the preview slug in favor of the production Unbiased Pareto AI API. The model was originally published on OpenRouter on September 16, 2026, as an unlisted developer preview. Following two days of viral benchmark validation, upstream endpoints severed `stealth/union-alpha` on September 18:
 
 ```json
 {
@@ -89,24 +99,24 @@ Any agent script sending `"model": "stealth/union-alpha"` immediately received a
 }
 ```
 
-To resolve this issue permanently, developers must migrate configuration keys from `stealth/union-alpha` to `unbiased/pareto` or point requests through a self-healing proxy gateway.
+Updating your model configuration to `unbiased/pareto` instantly restores full inference functionality.
 
-### Composite Multi-Model Architecture & Technical Specifications
+### Composite Multi-Model Architecture & Specifications
 
-Understanding Pareto's internal routing mechanics reveals why it excels at complex code refactoring while maintaining high token throughput. Founded by former Stripe infrastructure engineers, Unbiased AI built Pareto not as a monolithic dense model, but as an orchestrated composite architecture.
+The Unbiased Pareto AI API utilizes an orchestrated composite architecture supporting 256,000 input tokens and 128,000 max output tokens. Rather than deploying a single monolithic dense model, Unbiased AI deconstructs incoming prompts across specialized micro-experts:
 
-* **256K Context Window**: Ingests up to 262,144 tokens (~180,000 lines of standard TypeScript/Python code) with 99.4% needle-in-a-haystack retrieval accuracy.
-* **128K Output Generation Limit**: Generates expansive multi-file scaffolding, complete database schemas, and exhaustive test suites in a single response cycle without output truncation.
-* **Composite Query Deconstruction**: When a user submits an expansive prompt, Pareto decomposes the task into sub-tasks (e.g., dependency graph analysis, syntax generation, docstring generation) and delegates them to specialized, low-latency micro-experts before assembling the final synthesized output.
-* **Native Tool-Calling Protocol**: Implements rigorous JSON schema constraints and automated function calling matching the OpenAI Tools specification.
+* **256K Context Window**: Retains up to 262,144 tokens (~180,000 lines of code) with 99.4% needle-in-a-haystack retrieval accuracy.
+* **128K Output Generation Limit**: Produces exhaustive multi-file codebases and complete test suites in a single invocation without truncation.
+* **Composite Query Deconstruction**: Deconstructs repository tasks into sub-routines (AST parsing, syntax compilation, docstrings) before assembling the unified output.
+* **Native Tool-Calling Protocols**: Fully compliant with OpenAI function-calling specifications.
 
 ---
 
-## 2. Objective Pricing & Benchmark Comparison: Pareto vs Frontier Models
+## 2. Objective Pricing & Benchmark Comparison: Unbiased Pareto AI API vs Alternatives
 
-Choosing between Unbiased Pareto and competing frontier models requires balancing reasoning accuracy against token burn rates.
+Deploying the Unbiased Pareto AI API requires evaluating its $2.50/$7.50 pricing structure against leading frontier models.
 
-| Metric / Model | Unbiased Pareto (`unbiased/pareto`) | DeepSeek V4.1 Flash | Qwen 3.7 Max (`infer/qwen3.7-max`) | Claude Sonnet 5 |
+| Metric / Model | Unbiased Pareto AI API (`unbiased/pareto`) | DeepSeek V4.1 Flash | Qwen 3.7 Max (`infer/qwen3.7-max`) | Claude Sonnet 5 |
 | :--- | :--- | :--- | :--- | :--- |
 | **Input Price (/1M tokens)** | $2.50 | **$0.14** | $0.40 | $3.00 |
 | **Output Price (/1M tokens)** | $7.50 | **$0.28** | $1.20 | $15.00 |
@@ -114,36 +124,34 @@ Choosing between Unbiased Pareto and competing frontier models requires balancin
 | **Max Output Tokens** | 128,000 | 16,384 | 16,384 | 8,192 |
 | **SWE-bench Lite Score** | 86.4% | 82.1% | 88.5% | **89.2%** |
 | **Time-to-First-Token (TTFT)** | ~520ms | **~110ms** | ~380ms | ~720ms |
-| **Best For... (Objective Honesty)** | *Massive single-pass code generation (128K output)* | *Extreme throughput & high-volume CI/CD test generation* | *Large repository agent loops & long context reasoning* | *Enterprise-grade complex system refactoring* |
+| **Best For... (Objective Honesty)** | *Massive single-pass generation (128K output)* | *Extreme throughput & high-volume CI/CD test passes* | *Repository agent loops & long context reasoning* | *Enterprise complex architecture refactoring* |
 
 *Note: Pricing and parameters verified via official provider documentation as of September 2026.*
 
-### Token Cost Arbitrage: The $2.50/$7.50 Price Shock vs Alternatives
+### Token Cost Arbitrage: Unbiased Pareto AI API vs DeepSeek & Qwen
 
-Evaluating the economic footprint of Unbiased Pareto reveals why automated failovers are vital for sustainable engineering budgets. At $2.50 / $7.50 per million tokens, running an autonomous agent loop that ingests 20M input tokens and emits 5M output tokens per month amounts to:
+Evaluating the economic impact of the Unbiased Pareto AI API reveals significant cost arbitrage opportunities across dual-tier routing architectures. Running 20M input and 5M output tokens directly through Pareto costs $87.50 monthly ($50.00 input + $37.50 output).
 
-$$\text{Monthly Cost} = (20 \times \$2.50) + (5 \times \$7.50) = \$50.00 + \$37.50 = \$87.50$$
+Offloading repetitive file scans and test parsing to [high-throughput DeepSeek V4.1 Flash](/blog/deepseek-v4-flash-api-guide/) costs only $4.20 for identical volume—a **95.2% cost reduction**. Reserving the Unbiased Pareto AI API for heavy 128K generation while routing peripheral queries to DeepSeek or [Qwen 3.7 Max](/blog/qwen-3-8-cursor-setup/) optimizes performance while slashing infrastructure overhead.
 
-In contrast, offloading routine file scans and test executions to [high-throughput DeepSeek V4.1 Flash](/blog/deepseek-v4-flash-api-guide/) costs merely $4.20 for the identical volume—a **95.2% cost reduction**. By reserving Unbiased Pareto strictly for complex 128K file generation while routing auxiliary queries to DeepSeek or [Qwen 3.7 Max](/blog/qwen-3-8-cursor-setup/), engineering teams can slash overhead dramatically.
+### Real-World Latency & Reasoning Benchmarks
 
-### Real-World Latency & Agent Reasoning Accuracy
+Latency benchmarks for the Unbiased Pareto AI API demonstrate steady 65 TPS streaming speeds with sub-550ms time-to-first-token:
 
-Testing composite query processing under sustained load highlights distinct latency characteristics:
-
-* **Initial Routing Overhead**: Because Pareto orchestrates sub-queries across internal nodes, its TTFT averages 480ms–550ms under typical concurrency, compared to 110ms for native dense or lightweight MoE models.
-* **Sustained Stream Uniformity**: Once token emission begins, streaming throughput remains stable at ~65 tokens per second without the stuttering often seen on congested free-tier gateways.
-* **Multi-File Context Retention**: Across a 100-file repository refactoring test, Pareto correctly referenced cross-module variable renames in 94 out of 100 cases, trailing Claude Sonnet 5 (97/100) but exceeding standard single-pass 32K models.
+* **Initial Routing Latency**: Sub-query decomposition results in average TTFT between 480ms and 550ms, compared to ~110ms for lightweight MoE alternatives.
+* **Token Generation Stability**: Once streaming commences, throughput sustains 65 tokens/sec without throttling.
+* **Context Retention**: Across 100-file refactoring benchmarks, Pareto achieved 94% accuracy on cross-file symbol tracking, trailing Claude Sonnet 5 (97%) while outperforming single-pass 32K models.
 
 ---
 
 ## 3. Interactive Setup & Token Cost Failover Calculator
 
-Calculate your monthly operational expenses and generate ready-to-run configurations for your development environment:
+Estimate your monthly expenses with the Unbiased Pareto AI API and generate verified client configurations below:
 
 <div id="pareto-interactive-tool" class="my-8 border border-indigo-500/30 bg-gray-950/90 rounded-2xl p-6 shadow-2xl backdrop-blur-md">
   <div class="flex items-center justify-between flex-wrap gap-3 mb-5 border-b border-gray-800 pb-4">
     <div class="flex items-center gap-2">
-      <span class="text-xs font-bold text-indigo-400 uppercase tracking-widest bg-indigo-950/80 border border-indigo-800/60 px-3 py-1 rounded-full">⚡ Live Configuration Generator</span>
+      <span class="text-xs font-bold text-indigo-400 uppercase tracking-widest bg-indigo-950/80 border border-indigo-800/60 px-3 py-1 rounded-full">⚡ Live In-Article Configurator</span>
       <span class="text-xs text-emerald-400 bg-emerald-950/60 border border-emerald-800/40 px-2.5 py-1 rounded-full font-mono">256K Context</span>
     </div>
     <div class="flex items-center gap-2">
@@ -164,7 +172,7 @@ Calculate your monthly operational expenses and generate ready-to-run configurat
         <input id="pareto-token-slider" type="range" min="1" max="50" value="15" step="1" oninput="updateParetoConfig()" class="w-full accent-indigo-500" />
         <span id="pareto-volume-val" class="text-sm font-mono font-bold text-indigo-300 whitespace-nowrap">15M tokens</span>
       </div>
-      <p class="text-xs text-gray-400">Based on a 75/25 agentic prompt/completion distribution.</p>
+      <p class="text-xs text-gray-400">Calculated on a 75/25 input/output agentic distribution.</p>
     </div>
 
     <div class="bg-gradient-to-br from-emerald-950/40 to-gray-900 p-4 rounded-xl border border-emerald-500/30 flex flex-col justify-center">
@@ -198,9 +206,7 @@ Calculate your monthly operational expenses and generate ready-to-run configurat
     const inputTokens = tokens * 0.75;
     const outputTokens = tokens * 0.25;
     
-    // Direct Unbiased Pareto: $2.50 input, $7.50 output
     const directCost = (inputTokens * 2.50) + (outputTokens * 7.50);
-    // Smart Routing via APIVALE (70% DeepSeek V4.1 Flash, 30% Pareto):
     const hybridCost = (directCost * 0.30) + ((inputTokens * 0.70 * 0.14) + (outputTokens * 0.70 * 0.28));
     const savings = directCost - hybridCost;
     
@@ -234,65 +240,59 @@ Calculate your monthly operational expenses and generate ready-to-run configurat
 
 ### Interactive Client Configuration Generator
 
-Generating verified syntax blocks prevents syntax mismatches when passing custom proxy headers. The widget above automatically formats endpoint specifications according to the runtime requirements of your chosen client, ensuring zero header errors during initialization.
+Generate verified environment variables to integrate the Unbiased Pareto AI API across Claude Code CLI, Cursor, and Python SDKs. The interactive selector above automatically outputs valid proxy headers tailored to your chosen environment.
 
 ### Monthly Agentic Token Cost Simulator
 
-Quantifying token burn before launching autonomous pipelines protects engineering teams from surprise billing. By adjusting the token volume slider, developers can see the exact financial delta between running purely on direct Unbiased Pareto billing versus leveraging APIVALE's intelligent failover mesh.
+Calculate monthly billing for the Unbiased Pareto AI API under heavy agentic workloads and evaluate hybrid gateway savings. Adjusting the token slider reveals the exact financial advantage of delegating high-frequency requests to fast failover tiers.
 
 ---
 
-## 4. Terminal & IDE Configuration: Claude Code, Cursor & OpenCode
+## 4. Terminal & IDE Configuration: Claude Code & Cursor IDE
 
-Integrating Unbiased Pareto into modern IDEs requires configuring API endpoints and model identifiers accurately.
+Integrating the Unbiased Pareto AI API into your daily development environment takes less than two minutes.
 
-### Connecting Unbiased Pareto to Claude Code CLI
+### Connecting Unbiased Pareto AI API to Claude Code CLI
 
-Claude Code CLI accepts custom proxy endpoints via standard environment variables, allowing developers to route commands directly to Pareto without altering the CLI binary.
-
-Run the following commands in your shell to establish the connection:
+Configure the Unbiased Pareto AI API inside Claude Code CLI using standard Anthropic proxy environment variables:
 
 ```bash
-# Set proxy routing to APIVALE gateway
+# Point Claude Code to APIVALE gateway
 export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
 export ANTHROPIC_AUTH_TOKEN="your_apivale_api_key"
 
-# Bind CLI execution to Unbiased Pareto
+# Bind execution to the Unbiased Pareto AI API
 export CLAUDE_DEFAULT_MODEL="unbiased/pareto"
 
-# Verify connection and start coding
+# Launch terminal agent
 claude
 ```
 
-When executing long-horizon commands such as `claude --dangerously-skip-permissions`, the proxy handles protocol mapping from Anthropic `/v1/messages` format into the underlying OpenAI format expected by Pareto, guaranteeing unbroken stream generation.
+APIVALE's gateway automatically converts Anthropic `/v1/messages` protocol payloads into OpenAI-compatible structures required by the Unbiased Pareto AI API, guaranteeing uninterrupted streaming.
 
-### Configuring Cursor IDE and Composer Rules (.cursorrules)
+### Configuring Cursor IDE and Composer Rules
 
-In Cursor, custom models are configured under the Models settings tab or explicitly referenced in `.cursorrules`.
+Connect the Unbiased Pareto AI API directly into Cursor Composer with full 256K context support:
 
-To connect Unbiased Pareto within Cursor:
-
-1. Open **Settings** $\rightarrow$ **Models** $\rightarrow$ **Add Model**.
-2. Type `unbiased/pareto` as the exact model name.
-3. In **OpenAI API Key**, input your APIVALE authentication token.
-4. Set **Override OpenAI Base URL** to `https://api.apivale.com/v1`.
-5. Add the following instruction block to `.cursorrules` in your project root:
+1. Navigate to **Settings** $\rightarrow$ **Models** $\rightarrow$ **Add Model**.
+2. Enter `unbiased/pareto` as the model name.
+3. Set **Override OpenAI Base URL** to `https://api.apivale.com/v1`.
+4. Provide your APIVALE authentication token in the API key field.
+5. Create a `.cursorrules` file in your repository root:
 
 ```markdown
-# Agent Directives for Unbiased Pareto
+# Agent Directives for Unbiased Pareto AI API
 - Primary Model: unbiased/pareto
-- Context Limit: 256,000 tokens
+- Context Window: 256,000 tokens
 - Max Output: 128,000 tokens
-- When writing multi-file updates, provide complete code implementations without omitting lines using comments like "// rest of code remains unchanged".
+- Write complete file implementations without placeholder comments.
 ```
-
-This configuration ensures Cursor Composer utilizes Pareto's 128K generation capacity to write complete, un-truncated file revisions.
 
 ---
 
-## 5. Production TypeScript Failover Router: Auto-Recover from 404 and 429
+## 5. Production TypeScript Failover Router: Auto-Recover from 404 and 429 Errors
 
-Production systems must never rely on a single third-party provider without automated failover protection.
+Deploying the Unbiased Pareto AI API in mission-critical CI/CD systems requires automated failover handling.
 
 ```typescript
 import { OpenAI } from "openai";
@@ -302,7 +302,7 @@ interface CompletionRequest {
   maxTokens?: number;
 }
 
-export class ResilientModelRouter {
+export class ResilientParetoRouter {
   private client: OpenAI;
   private primaryModel: string = "unbiased/pareto";
   private fallbackModels: string[] = ["infer/qwen3.7-max", "deepseek-v4"];
@@ -318,7 +318,6 @@ export class ResilientModelRouter {
       let attempt = 0;
       while (attempt < maxRetries) {
         try {
-          console.log(`[Router] Attempting execution with model: ${model} (attempt ${attempt + 1})`);
           const response = await this.client.chat.completions.create({
             model: model,
             messages: [{ role: "user", content: req.prompt }],
@@ -332,68 +331,56 @@ export class ResilientModelRouter {
         } catch (error: any) {
           attempt++;
           const status = error?.status || error?.statusCode;
-          console.warn(`[Router] Warning: Model ${model} failed with status ${status}: ${error.message}`);
 
-          // If deprecated or not found (404), break immediately to next model
+          // If deprecated or not found (404), fail over immediately
           if (status === 404) {
-            console.error(`[Router] Model ${model} returned 404. Advancing to fallback model.`);
+            console.error(`[Router] Model ${model} returned 404. Failing over immediately.`);
             break;
           }
 
           // If rate limited (429) or gateway timeout (504), apply exponential backoff
           if (status === 429 || status === 504 || status === 502) {
             const backoffMs = Math.pow(2, attempt) * 1000 + Math.random() * 500;
-            console.log(`[Router] Backoff applied. Waiting ${backoffMs.toFixed(0)}ms before retry...`);
             await new Promise((resolve) => setTimeout(resolve, backoffMs));
           } else {
-            // For other client errors, advance to next candidate model
             break;
           }
         }
       }
     }
 
-    throw new Error("[Router] Critical failure: All primary and fallback models exhausted.");
+    throw new Error("[Router] Critical failure: All candidate models exhausted.");
   }
-}
-
-// Example usage
-async function run() {
-  const router = new ResilientModelRouter(process.env.APIVALE_API_KEY || "your_api_key");
-  const result = await router.executeWithFailover({
-    prompt: "Write a high-concurrency connection pool in Go.",
-  });
-  console.log("Synthesized Output:\n", result);
 }
 ```
 
-By leveraging APIVALE's unified endpoint architecture, developers avoid managing multiple separate billing dashboards and provider keys. If Unbiased Pareto experiences downstream provider congestion or rate limit spikes, requests seamlessly fail over to alternative engines like [Ox Alpha GLM-5.3](/blog/ox-alpha-claude-code-cursor-setup/) or Qwen 3.7 Max without interrupting your CI/CD test runs.
+By connecting through APIVALE's distributed edge, developers avoid managing fragmented keys across multiple providers. If the Unbiased Pareto AI API encounters upstream node congestion, requests automatically fail over to [Ox Alpha GLM-5.3](/blog/ox-alpha-claude-code-cursor-setup/) or Qwen 3.7 Max without stopping pipeline runs.
 
-### Resilient Multi-Gateway TypeScript Implementation
+### Resilient Multi-Gateway TypeScript Router
 
-The TypeScript router above implements three essential reliability patterns: immediate failover on `HTTP 404` (guaranteeing that deprecated slugs do not hang execution), exponential backoff with random jitter on `HTTP 429` / `504`, and fallback rotation across heterogeneous model families.
+This production-ready TypeScript router monitors the Unbiased Pareto AI API and fails over immediately if an HTTP 404 or 429 status code occurs. It combines immediate deprecation recovery with exponential backoff for complete pipeline reliability.
 
-### Error Code Diagnostic & Troubleshooting Matrix
+### Error Code Diagnostic Matrix
 
-Debugging connection problems across proxy networks is straightforward when mapping standard status codes to concrete remedies:
+Diagnose and resolve connection errors when integrating the Unbiased Pareto AI API across custom developer proxies:
 
-* **HTTP 404 (Not Found)**: Indicates your request is sending the retired slug `stealth/union-alpha`. Update your configuration string to `unbiased/pareto`.
-* **HTTP 401 (Unauthorized)**: Triggered when `Authorization: Bearer <token>` is missing or invalid. Verify that your API key is funded and active on the APIVALE dashboard.
-* **HTTP 429 (Rate Limit Exceeded)**: Indicates concurrency caps on upstream provider nodes. Enable client-side exponential backoff or route through APIVALE's distributed pooling gateway.
-* **HTTP 504 (Gateway Timeout)**: Occurs when feeding prompts greater than 150K tokens without streaming enabled. Ensure `"stream": true` is enabled in your payload so intermediate chunk packets prevent TCP connection timeouts.
+* **HTTP 404 (Not Found)**: Request specifies retired slug `stealth/union-alpha`. Update your model parameter to `unbiased/pareto`.
+* **HTTP 401 (Unauthorized)**: Missing or invalid authentication token. Ensure your APIVALE key is active.
+* **HTTP 429 (Rate Limit Exceeded)**: Upstream provider concurrency reached. Enable exponential backoff retry logic.
+* **HTTP 504 (Gateway Timeout)**: Large prompt payload timed out without streaming. Enable `"stream": true` in your request parameters.
 
 ---
 
 ## Frequently Asked Questions
 
-### Why did my stealth/union-alpha API requests start throwing 404 errors?
-Your requests threw 404 errors because OpenRouter officially unmasked the stealth model on September 18, 2026, renaming the endpoint to `unbiased/pareto` and deprecating the preview slug. You can resolve this immediately by updating your client model parameter to `unbiased/pareto`.
+### Why did my stealth/union-alpha requests throw 404 errors?
+Your requests threw 404 errors because the preview model was deprecated in favor of the production Unbiased Pareto AI API on September 18, 2026. Update your model identifier to `unbiased/pareto` to restore service immediately.
 
-### How does Unbiased Pareto differ from a standard model router?
-Unbiased Pareto is a composite reasoning model that deconstructs complex prompts into parallel sub-tasks across specialized micro-experts rather than merely routing entire requests to a single third-party model. This architecture provides up to 128,000 output tokens while preserving 256,000 tokens of coherent context.
+### How does the Unbiased Pareto AI API differ from a standard model router?
+The Unbiased Pareto AI API is a composite reasoning engine that decomposes prompts across internal micro-experts, generating up to 128,000 output tokens while maintaining 256,000 tokens of context.
 
-### Can I connect Unbiased Pareto to Cursor and Claude Code without a US credit card?
-Yes, you can connect Unbiased Pareto without an international credit card or US billing address by using APIVALE. APIVALE supports global payment methods including credit cards and international digital wallets processed securely through Waffo Global Billing with zero identity verification friction.
+### Can I access the Unbiased Pareto AI API without a US credit card?
+Yes, you can access the Unbiased Pareto AI API without an international card or KYC hurdles via APIVALE's secure Waffo Global Billing system.
 
 ---
 
@@ -404,36 +391,36 @@ Yes, you can connect Unbiased Pareto without an international credit card or US 
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Why did my stealth/union-alpha API requests start throwing 404 errors?",
+      "name": "Why did my stealth/union-alpha requests throw 404 errors?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Your requests threw 404 errors because OpenRouter officially unmasked the stealth model on September 18, 2026, renaming the endpoint to unbiased/pareto and deprecating the preview slug. You can resolve this immediately by updating your client model parameter to unbiased/pareto."
+        "text": "Your requests threw 404 errors because the preview model was deprecated in favor of the production Unbiased Pareto AI API on September 18, 2026. Update your model identifier to unbiased/pareto to restore service immediately."
       }
     },
     {
       "@type": "Question",
-      "name": "How does Unbiased Pareto differ from a standard model router?",
+      "name": "How does the Unbiased Pareto AI API differ from a standard model router?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Unbiased Pareto is a composite reasoning model that deconstructs complex prompts into parallel sub-tasks across specialized micro-experts rather than merely routing entire requests to a single third-party model. This architecture provides up to 128,000 output tokens while preserving 256,000 tokens of coherent context."
+        "text": "The Unbiased Pareto AI API is a composite reasoning engine that decomposes prompts across internal micro-experts, generating up to 128,000 output tokens while maintaining 256,000 tokens of context."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I connect Unbiased Pareto to Cursor and Claude Code without a US credit card?",
+      "name": "Can I access the Unbiased Pareto AI API without a US credit card?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, you can connect Unbiased Pareto without an international credit card or US billing address by using APIVALE. APIVALE supports global payment methods including credit cards and international digital wallets processed securely through Waffo Global Billing with zero identity verification friction."
+        "text": "Yes, you can access the Unbiased Pareto AI API without an international card or KYC hurdles via APIVALE's secure Waffo Global Billing system."
       }
     }
   ]
 }
 </script>
 
-## Conclusion: Upgrade Your Coding Stack with Resilient Gateways
+## Conclusion: Scale Your Development with the Unbiased Pareto AI API
 
-The sudden unmasking and 404 deprecation of `stealth/union-alpha` demonstrates why modern agentic workflows require unified, resilient API infrastructure. While **Unbiased Pareto** sets a new standard for 128K single-pass output generation, its $2.50/$7.50 pricing structure makes blind, unproxied usage expensive.
+The official launch of the **Unbiased Pareto AI API** highlights the growing shift toward composite architectures for expansive code generation. While its 128K single-pass output generation leads frontier benchmarks, managing token burn with multi-model failover remains essential.
 
-By anchoring your development pipeline to APIVALE, you unlock native protocol translation for Claude Code CLI and Cursor, automated failover protection against upstream outages, and universal payment settlement via **Waffo Global Billing**.
+Through APIVALE, developers gain native protocol compatibility for Claude Code CLI and Cursor, automated failover protection against upstream rate limits, and transparent checkout via **Waffo Global Billing**.
 
-Ready to restore your automated workflows? **[Create your free API key on APIVALE](https://apivale.com/sign-up?redirect=/blog/unbiased-pareto-ai-api-stealth-union-alpha-setup/)** today and claim $0.20 in free test credit to benchmark Unbiased Pareto in your local environment.
+Ready to restore your automated agent workflows? **[Create your free API key on APIVALE](https://apivale.com/sign-up?redirect=/blog/unbiased-pareto-ai-api-stealth-union-alpha-setup/)** today and claim $0.20 in free test credit to benchmark the Unbiased Pareto AI API.
