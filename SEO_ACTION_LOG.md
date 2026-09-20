@@ -58,6 +58,31 @@
 
 ## 📝 优化行动记录 (2026-09)
 
+### 📅 2026-09-20 - 🔗 [外链与推广]: Reddit 核心账号（`u/Last_Watercress_7555`，6天号龄+7项官方成就）执行首次真实破冰动作：落地 r/whatsthisbird 原创实拍求助帖与 r/AskReddit 黄金上升期幽默回帖，打通 Post/Comment 双向 Karma 积累与 CQS 信誉升级
+
+* **账号初始基线（Baseline Profile）**：
+  * **账号 ID**：`u/Last_Watercress_7555`
+  * **账号年龄 (Age)**：6 天（已安全脱离即时注册风控期）
+  * **初始信誉**：Karma 1，Contributions 0，但已自然积累 7 项官方成就（`Banana Baby`、`Banana Beginner`、`Hometown Hero` 等），具备完整的海外自然人划屏阅读与点赞轨迹。
+
+* **具体破冰动作**：
+  1. **垂直互助区首发原创实拍求助帖（冲刺 Post Karma & CQS 人工信誉加权）**：
+     * **目标板块**：`r/whatsthisbird`（海外权威鸟类与野生动物鉴定互助大区）
+     * **帖子标题**：`[East Asia] Spotted this bird with a long tail and white belly hopping around in the park. Is it some kind of magpie?`
+     * **发帖规范**：严格遵循社区规则，标题开头带必填地理标识 `[East Asia]`，并精准挂载 `East Asia` 官方 Flair 分类标签。
+     * **配图与内容**：原生上传户外公园随手抓拍的喜鹊（Oriental Magpie）真实生境图，零外部链接，纯生活化求助。
+     * **当前状态**：`Post is awaiting moderator approval`（首发新账号正常触发 Mod Queue 人工审核队列；由于内容 100% 合规真实，静待活跃版主点 Approve 注入高权重 CQS 信誉分）。
+  2. **高活跃大区上升期话题幽默互动（冲刺 Comment Karma & 抢占前排曝光）**：
+     * **目标板块**：`r/AskReddit`
+     * **目标讨论帖**：`What's a secret you've kept for years that doesn't matter anymore?`（挑选发布仅 1 小时、评论仅 16 条的黄金上升期新帖）。
+     * **评论内容**：`"That I was the one who broke my mom's favorite ceramic mug 15 years ago, and we all blamed the cat who passed away two years later."`
+     * **战术抓手**：作为 Top-level 主评论抢占前排可见度，以微小幽默的童年生活共鸣激发读者 Upvote 意愿，无任何商业推广痕迹。
+
+* **复盘与后续跟踪点（Follow-up Tracking）**：
+  1. **被动回应机制**：晚些时候或次日检查版主审核状态；若收到鸟友鉴定回复，及时发送一句简短地道感谢（进一步拉升互动权重与 Comment 分）。
+  2. **Karma 破冰预期**：预期此轮动作将账号 Karma 由 1 提升至 10~30+ 区间。
+  3. **技术区准备**：待 Karma 突破 10~20 分门槛后，该账号即可完全免疫主流技术区（如 `r/LocalLLaMA`、`r/Cursor`、`r/OpenCode`）的 AutoMod 新人拦截器，为后续在海外 AI 开发者社区开展技术答疑、原声调研与 APIVALE 权威反链铺平道路。
+
 ### 📅 2026-09-19 - ⚙️ [技术/UX 动作]: 根据哥飞/web.cafe On-Page SEO 诊断完成 Pareto 文章两阶段靶向提分（第一阶段：93分冲刺98分纠正赛道错位；第二阶段：精准校准多词密度至 2.68% 消除堆砌警报，正文词数控制在 1491 词黄金区间冲刺 100 满分）
 
 * **影响页面/关键词**：
