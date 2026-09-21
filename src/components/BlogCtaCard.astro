@@ -2,12 +2,19 @@
 interface Props {
   title?: string;
   subtitle?: string;
+  currentSlug?: string;
+  currentPath?: string;
 }
 
 const {
   title = "🚀 Instant Access to DeepSeek V4 Pro, Qwen 3.7 Max & GLM-5.2",
-  subtitle = "Connect official Chinese AI APIs instantly to Cursor, Claude Code CLI, and OpenAI SDKs with zero KYC."
+  subtitle = "Connect official Chinese AI APIs instantly to Cursor, Claude Code CLI, and OpenAI SDKs with zero KYC.",
+  currentSlug = "",
+  currentPath = ""
 } = Astro.props;
+
+const redirectTarget = currentPath || (currentSlug ? `/blog/${currentSlug}` : '/docs');
+const campaign = currentSlug || 'blog_cta_card';
 ---
 
 <div class="blog-cta-card">
@@ -39,7 +46,7 @@ const {
     </div>
 
     <div class="cta-action">
-      <a href="https://apivale.com/sign-up?redirect=/docs&utm_source=apivale_blog&utm_medium=blog_cta_card" class="cta-btn">
+      <a href={`https://apivale.com/sign-up?redirect=${encodeURIComponent(redirectTarget)}&utm_source=apivale_blog&utm_medium=blog_cta_card&utm_campaign=${campaign}`} class="cta-btn">
         <span>⚡ 1-Click Claim Free API Key ($0.20 Trial) →</span>
       </a>
       <span class="cta-note">Zero KYC. No credit card required. Connect instantly via GitHub/Google.</span>

@@ -169,6 +169,67 @@ const blogPostingSchema = {
 		}
 	]
 };
+interface KeyTakeawayItem {
+	label: string;
+	value: string;
+	isCode?: boolean;
+	highlight?: boolean;
+}
+
+const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.keyTakeaways.length > 0)
+	? post.data.keyTakeaways
+	: (() => {
+		if (targetTopic === 'gemini') {
+			return [
+				{ label: 'SDK Compatibility', value: 'OpenAI & Anthropic Native SDKs', isCode: false },
+				{ label: 'Target Model', value: 'gemini-3.7-flash / gemini-4-pro', isCode: true },
+				{ label: 'Gateway Endpoint', value: 'baseURL: "https://api.apivale.com/v1"', isCode: true },
+				{ label: 'Developer Sandbox', value: '$0.20 Free Credit (Zero KYC & Card)', highlight: true }
+			];
+		} else if (targetTopic === 'qwen') {
+			return [
+				{ label: 'Flagship Invocation', value: 'infer/qwen3.7-max', isCode: true },
+				{ label: 'Target Workflows', value: 'Claude Code CLI, Cursor, Windsurf' },
+				{ label: 'Integration Base URL', value: 'https://api.apivale.com/v1', isCode: true },
+				{ label: 'Billing & Quota', value: 'Waffo Global Billing ($0.20 Trial)', highlight: true }
+			];
+		} else if (targetTopic === 'claude') {
+			return [
+				{ label: 'Protocol Architecture', value: 'Native Anthropic Protocol / Sub-50ms', isCode: false },
+				{ label: 'Target Engine', value: 'Claude Sonnet 5 / Claude 3.7', isCode: true },
+				{ label: 'CLI Config Variable', value: 'ANTHROPIC_BASE_URL="https://api.apivale.com/v1"', isCode: true },
+				{ label: 'Developer Quota', value: '$0.20 Instant Credit (No Card Required)', highlight: true }
+			];
+		} else if (targetTopic === 'deepseek') {
+			return [
+				{ label: 'Direct Model Engines', value: 'DeepSeek V4 / DeepSeek R1 Reasoning', isCode: true },
+				{ label: 'High-Concurrency Failover', value: 'Multi-Cluster Active Routing (Zero 429)', isCode: false },
+				{ label: 'Compatible Endpoint', value: 'https://api.apivale.com/v1', isCode: true },
+				{ label: 'Instant Sandbox Access', value: '$0.20 Free Test Credits (No KYC)', highlight: true }
+			];
+		} else if (targetTopic === 'glm') {
+			return [
+				{ label: 'Target Model', value: 'infer/glm-5.3 / glm-5.3-flash', isCode: true },
+				{ label: 'Developer Tooling', value: 'Claude Code CLI, Cursor .cursorrules', isCode: false },
+				{ label: 'API Gateway', value: 'https://api.apivale.com/v1', isCode: true },
+				{ label: 'Billing & Onboarding', value: 'Waffo Global Billing ($0.20 Free Trial)', highlight: true }
+			];
+		} else if (targetTopic === 'cursor') {
+			return [
+				{ label: 'IDE Integration', value: 'Cursor Custom API Key / OpenAI Format', isCode: false },
+				{ label: 'Recommended Models', value: 'Claude Sonnet 5, Qwen 3.7 Max, DeepSeek V4', isCode: false },
+				{ label: 'Override Base URL', value: 'https://api.apivale.com/v1', isCode: true },
+				{ label: 'Developer Sandbox', value: '$0.20 Free Credit (Zero Card / No KYC)', highlight: true }
+			];
+		} else {
+			return [
+				{ label: 'Universal Gateway', value: 'baseURL: "https://api.apivale.com/v1"', isCode: true },
+				{ label: 'Supported Ecosystems', value: 'Cursor, Claude Code, Cline, Windsurf', isCode: false },
+				{ label: 'Global Billing Rail', value: 'Waffo Global Billing (Zero KYC)', isCode: false },
+				{ label: 'Sandbox Quota', value: '$0.20 Developer Credit (No Card Required)', highlight: true }
+			];
+		}
+	})();
 ---
 
 <Layout 
@@ -220,22 +281,20 @@ const blogPostingSchema = {
 				<span class="takeaways-title">Quick Technical Reference</span>
 			</div>
 			<div class="takeaways-grid">
-				<div class="takeaway-item">
-					<div class="item-label">OpenAI SDK Compatibility</div>
-					<div class="item-value"><code>baseURL: "https://apivale.com/v1"</code></div>
-				</div>
-				<div class="takeaway-item">
-					<div class="item-label">Supported Dev Tools</div>
-					<div class="item-value">Cursor, Claude Code CLI, Cline, Windsurf, LangChain</div>
-				</div>
-				<div class="takeaway-item">
-					<div class="item-label">Developer Trial Quota</div>
-					<div class="item-value"><span class="highlight-credit">$0.20 Free Credit</span> (No KYC & No Card Required)</div>
-				</div>
-				<div class="takeaway-item">
-					<div class="item-label">Direct Model Access</div>
-					<div class="item-value">Claude 3.7, DeepSeek V3/R1, Qwen 2.5/3.8, GLM-5.3</div>
-				</div>
+				{keyTakeaways.map((item) => (
+					<div class="takeaway-item">
+						<div class="item-label">{item.label}</div>
+						<div class="item-value">
+							{item.isCode ? (
+								<code>{item.value}</code>
+							) : item.highlight ? (
+								<span class="highlight-credit">{item.value}</span>
+							) : (
+								item.value
+							)}
+						</div>
+					</div>
+				))}
 			</div>
 		</div>
 
@@ -273,7 +332,7 @@ const blogPostingSchema = {
 		</div>
 
 		<!-- Reusable Technical Developer CTA Card -->
-		<BlogCtaCard />
+		<BlogCtaCard currentSlug={post.id} currentPath={`/blog/${post.id}`} />
 
 		<!-- Post Footer Author Box -->
 		<footer class="post-footer">
@@ -852,6 +911,75 @@ const blogPostingSchema = {
 
 				inlineBanner.style.display = 'block';
 			}
+
+			// --- 3. Inject 1-Click Code Copy Buttons into all Pre Code Blocks ---
+			const preBlocks = document.querySelectorAll('.post-body pre');
+			preBlocks.forEach((pre) => {
+				if (pre.querySelector('.code-copy-btn')) return;
+				
+				const copyBtn = document.createElement('button');
+				copyBtn.className = 'code-copy-btn';
+				copyBtn.type = 'button';
+				copyBtn.setAttribute('aria-label', 'Copy code to clipboard');
+				copyBtn.innerHTML = `
+					<svg class="copy-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+					<span class="copy-label">Copy</span>
+				`;
+
+				copyBtn.addEventListener('click', async (e) => {
+					e.preventDefault();
+					const codeEl = pre.querySelector('code') || pre;
+					const textToCopy = codeEl.innerText.trim();
+
+					try {
+						await navigator.clipboard.writeText(textToCopy);
+						copyBtn.classList.add('copied');
+						copyBtn.innerHTML = `
+							<svg class="check-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+							<span class="copy-label" style="color: #10b981; font-weight: 700;">Copied!</span>
+						`;
+						setTimeout(() => {
+							copyBtn.classList.remove('copied');
+							copyBtn.innerHTML = `
+								<svg class="copy-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+								<span class="copy-label">Copy</span>
+							`;
+						}, 1800);
+					} catch (err) {
+						console.error('Failed to copy code snippet: ', err);
+					}
+				});
+
+				pre.style.position = 'relative';
+				pre.appendChild(copyBtn);
+			});
+
+			// --- 4. Gracefully Upgrade Inline Legacy Alert Buttons to Smooth In-Place Feedback ---
+			document.querySelectorAll('button[onclick*="alert("]').forEach((btn) => {
+				const onclickStr = btn.getAttribute('onclick') || '';
+				if (onclickStr.includes('alert(')) {
+					btn.removeAttribute('onclick');
+					btn.addEventListener('click', async (e) => {
+						e.preventDefault();
+						const match = onclickStr.match(/navigator\.clipboard\.writeText\(([\s\S]*?)\);/);
+						if (match && match[1]) {
+							try {
+								const text = new Function(`return ${match[1]}`)();
+								await navigator.clipboard.writeText(text);
+								const origText = btn.innerText;
+								btn.innerText = '✓ Copied!';
+								btn.style.color = '#34d399';
+								setTimeout(() => {
+									btn.innerText = origText;
+									btn.style.color = '';
+								}, 1800);
+							} catch (err) {
+								console.error('Copy fallback error:', err);
+							}
+						}
+					});
+				}
+			});
 		});
 	</script>
 </Layout>
@@ -1574,6 +1702,61 @@ const blogPostingSchema = {
 	.highlight-credit {
 		color: #34d399;
 		font-weight: 700;
+	}
+
+	/* Code Block 1-Click Copy Button */
+	.post-body pre {
+		position: relative !important;
+	}
+	.code-copy-btn {
+		position: absolute;
+		top: 0.75rem;
+		right: 0.75rem;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+		padding: 0.3rem 0.65rem;
+		font-size: 0.75rem;
+		font-weight: 600;
+		font-family: inherit;
+		color: #94a3b8;
+		background: rgba(30, 41, 59, 0.85);
+		border: 1px solid rgba(255, 255, 255, 0.12);
+		border-radius: 6px;
+		cursor: pointer;
+		backdrop-filter: blur(6px);
+		transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+		z-index: 10;
+		user-select: none;
+	}
+	.code-copy-btn:hover {
+		color: #f8fafc;
+		background: rgba(51, 65, 85, 0.95);
+		border-color: rgba(99, 102, 241, 0.5);
+		transform: translateY(-1px);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+	}
+	.code-copy-btn.copied {
+		background: rgba(16, 185, 129, 0.15);
+		border-color: rgba(16, 185, 129, 0.4);
+		color: #34d399;
+	}
+
+	@media (max-width: 640px) {
+		.takeaways-grid {
+			grid-template-columns: 1fr;
+			gap: 0.5rem;
+		}
+		.key-takeaways-card {
+			padding: 1rem;
+			margin-bottom: 1.5rem;
+		}
+		.code-copy-btn {
+			top: 0.5rem;
+			right: 0.5rem;
+			padding: 0.25rem 0.5rem;
+			font-size: 0.7rem;
+		}
 	}
 
 </style>

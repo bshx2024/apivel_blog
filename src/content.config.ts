@@ -14,6 +14,12 @@ const blogCollection = defineCollection({
 		tags: z.array(z.string()),
 		image: z.string().optional().default('/blog/og-cover.png'),
 		lang: z.string().optional().default('en'),
+		keyTakeaways: z.array(z.object({
+			label: z.string(),
+			value: z.string(),
+			isCode: z.boolean().optional(),
+			highlight: z.boolean().optional(),
+		})).optional(),
 	}),
 });
 
