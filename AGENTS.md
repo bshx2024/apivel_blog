@@ -37,7 +37,10 @@ When executing Step 4, Reed and coding assistants **MUST execute the following 5
 
 1. **Gate 1 (Drafting, Community Voice & CRO Tool)**:
    - Write article in `src/content/blog/<article-slug>.md` with strict AST symmetry (1 H1, symmetrical H2 $\rightarrow$ H3, no H4 jumping).
+   - Configure frontmatter `keyTakeaways` array with 4 explicit technical parameters matching user search intent (protocol, target model ID, baseURL, free trial quota).
    - Inject the **4 Real Engineering Gains** + embedded **Community Voice Box** + **Objective Comparison Table** + embedded **Responsive Interactive Micro-Tool Widget** (vanilla JS calculator or config generator) + **FAQ JSON-LD Schema**.
+   - Enforce **Contextual CTA Redirect**: ensure all CTA links carry `redirect=/blog/<slug>` to prevent context loss.
+   - Enforce **Zero-Alert Rule**: code blocks rely on automated 1-Click Copy UI; NEVER hand-craft native `alert()` popups in markdown.
 2. **Gate 2 (Automated Pre-Flight SEO Health & Link Audit)**:
    - Run `audit_article_seo_health` against the new slug.
    - Enforce: 0 blockers, 0 warnings, MetaTitle in 50–60 chars, all external URLs probe HTTP 200, Waffo Global Billing strictly enforced.
@@ -57,10 +60,13 @@ When executing Step 4, Reed and coding assistants **MUST execute the following 5
 
 - **Master Reference**: Always refer to [BLOG_WRITING_STANDARD.md](file:///e:/kaifa/APIVALE_blog/BLOG_WRITING_STANDARD.md) for full detailed specifications (Personas, Featured Snippet components, WebP media rules, Mobile-first UX).
 - **Anti-Spam & Anti-Boilerplate**: NEVER use copy-pasted introductory templates (e.g. `Running autonomous AI coding agents... burns $40...`). NEVER invent fake branded formulas (`Matrix/Triangle`).
+- **Answer-First & Zero Pogo-Sticking**: Provide structured `keyTakeaways` in frontmatter for instant 1-second answers. NEVER trigger invasive modal popups before 25s or 35% scroll depth.
 - **Supported Payment Method**: APIVALE strictly supports **Waffo** (Waffo Global Billing / Credit Cards & Global Wallets via Waffo). NEVER reference Stripe or Crypto.
 - **Model Recency**: Reference flagship LLM versions (**Claude Sonnet 5**, **Qwen 3.7 Max**, **DeepSeek V4**). Invocation model name for Qwen 3.7 Max is `infer/qwen3.7-max`.
 - **Evergreen Short Slugs**: Slugs must be concise without years/dates (e.g., `/blog/qwen-3-7-max-claude-code-setup`).
 - **Protocol Compatibility**: Emphasize native OpenAI and Anthropic endpoint support for Claude Code CLI, Cursor, Windsurf.
+- **Seamless Context Redirect**: CTA links must specify `redirect=/blog/<slug>` so readers return to their active session.
+- **Zero-Alert UX**: Never write `onclick="...alert(...)"`. Code copy buttons must use smooth in-place state transitions.
 
 ---
 

@@ -121,16 +121,43 @@
 ```
 ├── 1. Title Tag & H1 (双轨分工, ABC 标题公式, 50-60字符 cap)
 ├── 2. Frontmatter Description (140-160字符, AI 引用第3权重摘要)
-├── 3. Key Takeaways Module (核心要点速览框：包含 3 个高密度技术/实践结论)
-├── 4. PAS Introduction (痛点陈述 + E-E-A-T 锚点 + 可运行的最简 cURL 代码示例)
-├── 5. Primary-Source Community Voice (真实社区原声卡片：引用真实可跳转的 GitHub Issue / Reddit 原声，或降级为脱敏网关日志)
-├── 6. Defined Snippet Box (定义框：捕捉 Position Zero 精选摘要)
-├── 7. Objective Comparison Table (前 20% 处：含客观 "Best for..." 竞品正向优势列与核验时间戳的硬核对比)
-├── 8. Technical Modules (2-3个 H2/H3 核心板块，回答 AI Query Fan-Out 衍生子问题)
-├── 9. Interactive CRO Micro-Tool (交互式计算器/配置生成器组件)
-├── 10. Developer FAQ (针对 AI GEO 抓取的 3-4 个精炼技术问答)
-├── 11. Schema JSON-LD (FAQPage 结构化数据)
-└── 12. CTA Module (开发者导向：Waffo 快捷充值、API Key 免费创建)
+├── 3. Frontmatter keyTakeaways (结构化答案前置要点：SDK兼容协议/旗舰调用标识/Base URL/免卡测试额度)
+├── 4. Answer-First Key Takeaways Module (首屏 1 秒高密度技术速览卡片，杜绝模板化硬编码)
+├── 5. PAS Introduction (痛点陈述 + E-E-A-T 锚点 + 可运行的最简 cURL 代码示例)
+├── 6. Primary-Source Community Voice (真实社区原声卡片：引用真实可跳转的 GitHub Issue / Reddit 原声，或降级为脱敏网关日志)
+├── 7. Defined Snippet Box (定义框：捕捉 Position Zero 精选摘要)
+├── 8. Objective Comparison Table (前 20% 处：含客观 "Best for..." 竞品正向优势列与核验时间戳的硬核对比)
+├── 9. Technical Modules (2-3个 H2/H3 核心板块，回答 AI Query Fan-Out 衍生子问题)
+├── 10. Interactive CRO Micro-Tool (交互式计算器/配置生成器组件)
+├── 11. Developer FAQ (针对 AI GEO 抓取的 3-4 个精炼技术问答)
+├── 12. Schema JSON-LD (FAQPage 结构化数据)
+└── 13. Contextual CTA Module (开发者导向：Waffo 快捷充值、API Key 免费创建，携带当前文章无缝回跳)
+```
+
+#### Frontmatter keyTakeaways 结构化配置规范
+为贯彻 **答案前置法则（Answer-First / BLUF 原则）** 并彻底杜绝全站模板化硬编码，每篇博文在 Frontmatter 中应配置专属的 `keyTakeaways` 数组（系统将优先读取并渲染）：
+```yaml
+---
+title: "How to Connect Qwen 3.8 to Cursor IDE: Custom API Key, .cursorrules & Cost Guide"
+metaTitle: "Qwen 3.8 Cursor Setup: Custom API Key & Rules | APIVALE"
+description: "Connect Qwen 3.8 to Cursor IDE with custom API key, baseURL override, and Waffo global billing..."
+date: "2026-08-21"
+author: "Kenji Tanaka"
+authorTitle: "AI Developer Relations Engineer, APIVALE"
+tags: ["Qwen 3.8", "Cursor", "OpenAI API", "APIVALE", "Waffo"]
+keyTakeaways:
+  - label: "Flagship Invocation"
+    value: "infer/qwen3.7-max"
+    isCode: true
+  - label: "Target Workflows"
+    value: "Claude Code CLI, Cursor, Windsurf"
+  - label: "Integration Base URL"
+    value: "https://api.apivale.com/v1"
+    isCode: true
+  - label: "Billing & Quota"
+    value: "Waffo Global Billing ($0.20 Trial)"
+    highlight: true
+---
 ```
 
 ### H 标签语义树排版红线 (Heading AST Hierarchy)
@@ -228,22 +255,27 @@
 ### D. FAQPage 结构化数据 (JSON-LD)
 文章末尾必须注入 `FAQPage` Schema，问答需在 1-2 句内给出直接答案（Direct Answer）。
 
-### E. "核心要点速览框" (Key Takeaways Box) 格式
-针对核心要点总结，在 Frontmatter Description 下方（即引言之前）使用以下 HTML 结构：
+### E. "核心要点速览框" (Key Takeaways Box) 格式与个性化要求
+1. **Frontmatter 结构化优先（推荐）**：每篇博文应优先在 Frontmatter 中配置专属 `keyTakeaways` 数组，包含 4 项专有技术指标（SDK兼容模式、目标模型确切标识、Gateway Base URL、免卡测试额度）。系统模板将自动渲染至黄金首屏 1 秒处。
+2. **正文备选内嵌结构**：若在 Markdown 中直接内嵌，必须使用以下样式，且必须紧贴 H1/导言下方，严禁使用泛化空洞的营销文字，直接回答搜索意图：
 ```html
 <div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
-    <li>[核心结论 1：概括文章最重要的一点技术/业务结论]</li>
-    <li>[核心结论 2：指出工程实操或避坑关键点]</li>
-    <li>[核心结论 3：强调 APIVALE 解决方案的价值与优势]</li>
+    <li><strong>SDK 兼容协议</strong>：原生 OpenAI / Anthropic 兼容协议 (<code>https://api.apivale.com/v1</code>)</li>
+    <li><strong>旗舰调用标识</strong>：<code>infer/qwen3.7-max</code> (或目标模型确切 ID)</li>
+    <li><strong>工程避坑关键</strong>：避免 429 与 SSE 流式断连的最佳生产配置</li>
+    <li><strong>免卡测试额度</strong>：支持 Waffo 全球结算，新用户赠送 $0.20 免卡免实名测试金额</li>
   </ul>
 </div>
 ```
 
-### F. 转化漏斗“软硬双轨”植入策略 (Soft & Hard Dual-Track CTA Strategy)
+### F. 转化漏斗“软硬双轨”与“上下文无缝回跳”策略 (Soft & Hard Dual-Track CTA Strategy)
 *   **软性穿插（Contextual Soft CTA）**：禁止仅在文章末尾堆砌 CTA。在技术方案落地（如解决 SSE 流式缓冲丢包、重试配置等 H3 小标题）的末尾，应顺理成章地将 APIVALE 产品特性作为最佳实践的一部分进行植入（例如：“*By leveraging APIVALE's built-in failover gateway, you can bypass these routing drops automatically...*”）。
 *   **硬性收拢（Hard CTA Module）**：在 Conclusion 的最末尾，以清晰、行动导向的语言（如 “*Create a free API key on APIVALE or top up via Waffo...*”）指引用户注册或付费。
+*   **上下文无缝回跳法则（Contextual Seamless Redirect Rule - 强制红线）**：
+    *   博文落地页中包含的所有注册/登录/体验 CTA 按钮（无论是内嵌卡片还是组件），其跳转链接**必须**动态携带 `redirect=/blog/<current-slug>` 与 `utm_campaign=<current-slug>`。
+    *   **严禁**跳转到没有任何上下文的通用空白登录页或 `/docs`，必须确保海外开发者授权/注册完成后直接返回当前正在阅读的文章，杜绝上下文脱节和被强推拉新的反感。
 
 ### G. FAQ 直接提问与直接回答原则 (Direct Q&A Standard)
 *   **提问格式（Direct Question Format）**：FAQ 标题（H3）必须采用直接的问题句式（例如 `### How to resolve APIVALE proxy 429 rate limit errors?`，而不是抽象的 `### Proxy 429 Resolution`）。
@@ -291,6 +323,8 @@
 9. **严禁仅在文章末尾硬性堆砌 CTA**（必须在技术板块中包含至少 1 处软性穿插）。
 10. **严禁杜撰外部引用与伪造 404 链接**：正文中引用的所有 GitHub Issue、Reddit 帖子或外链，必须通过真实的 HTTP 200 可达性探针。严禁模型脑补编造不存在的 URL、Issue 编号或作者 handle（冷门无结果时必须优雅降级为官方 RFC 链接或网关脱敏日志）。
 11. **严禁在对比表格中捏造数据与恶意拉踩竞品**：竞品定价必须抓取自当日官方页面并标注核验时间戳；竞品优势列 ("Best for...") 必须基于客观物理事实公允呈现（如承认原厂直接 SOC2 合规），严禁使用虚假数据抹黑竞品。
+12. **严禁使用原生阻塞式弹窗 (`alert()` / `confirm()`)**：正文代码块由系统统一自动注入平滑无干扰的悬浮 1-Click Copy 按钮，严禁在 Markdown 正文或内嵌自定义 HTML 中手写 `onclick="...alert(...)"` 等原生系统弹窗，杜绝打断海外开发者的阅读与实操心流。
+13. **严禁侵入式开屏遮挡与强制注册墙 (Zero Experience Shock / BLUF 原则)**：黄金首屏必须在无滚轮状态下直呈核心答案（通过 Frontmatter `keyTakeaways` 呈现参数/端点/SDK）。严禁在开屏前 25 秒或正文滚动不足 35% 时触发任何形式的模态遮罩或弹窗，彻底杜绝 Google 判定 2 秒跳出（Pogo-sticking）降权风险。
 
 ---
 
