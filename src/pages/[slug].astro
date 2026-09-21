@@ -178,6 +178,7 @@ const blogPostingSchema = {
 	canonicalUrl={canonicalPageUrl}
 	schema={blogPostingSchema}
 >
+	<div class="reading-progress-container"><div class="reading-progress-bar" id="readingProgressBar"></div></div>
 	<article class="blog-post">
 		<!-- Back to blog -->
 		<div class="back-nav">
@@ -211,6 +212,32 @@ const blogPostingSchema = {
 				</div>
 			</div>
 		</header>
+
+		<!-- Answer-First / Key Takeaways & Quick Reference Card (Zero Pogo-Sticking) -->
+		<div class="key-takeaways-card">
+			<div class="takeaways-header">
+				<span class="takeaways-badge">📌 KEY TAKEAWAYS</span>
+				<span class="takeaways-title">Quick Technical Reference</span>
+			</div>
+			<div class="takeaways-grid">
+				<div class="takeaway-item">
+					<div class="item-label">OpenAI SDK Compatibility</div>
+					<div class="item-value"><code>baseURL: "https://apivale.com/v1"</code></div>
+				</div>
+				<div class="takeaway-item">
+					<div class="item-label">Supported Dev Tools</div>
+					<div class="item-value">Cursor, Claude Code CLI, Cline, Windsurf, LangChain</div>
+				</div>
+				<div class="takeaway-item">
+					<div class="item-label">Developer Trial Quota</div>
+					<div class="item-value"><span class="highlight-credit">$0.20 Free Credit</span> (No KYC & No Card Required)</div>
+				</div>
+				<div class="takeaway-item">
+					<div class="item-label">Direct Model Access</div>
+					<div class="item-value">Claude 3.7, DeepSeek V3/R1, Qwen 2.5/3.8, GLM-5.3</div>
+				</div>
+			</div>
+		</div>
 
 		<!-- Zero-Login Interactive Tool Widgets (Above the Fold) -->
 		{isPriceOrBenchmark && (
@@ -283,6 +310,15 @@ const blogPostingSchema = {
 	<!-- Client-Side Script for dynamic localized copy and content-aware target targeting -->
 	<script is:inline>
 		document.addEventListener('DOMContentLoaded', () => {
+			const progressBar = document.getElementById('readingProgressBar');
+			if (progressBar) {
+				window.addEventListener('scroll', () => {
+					const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+					const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+					const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+					progressBar.style.width = scrolled + '%';
+				}, { passive: true });
+			}
 			const ctaContainer = document.getElementById('dynamicFloatingCta');
 			const closeBtn = document.getElementById('closeCtaBtn');
 			const inlineBanner = document.getElementById('dynamicInlineBanner');
@@ -756,12 +792,37 @@ const blogPostingSchema = {
 				if (descEl) descEl.innerText = floatingData.desc;
 				if (actionBtn) {
 					actionBtn.innerText = floatingData.btnText;
-					actionBtn.href = `https://apivale.com/sign-in?redirect=%2Fplayground&utm_source=apivale_blog&utm_medium=blog_floating_card&utm_campaign=${floatingData.utmCampaign}`;
+					actionBtn.href = `https://apivale.com/sign-up?redirect=${encodeURIComponent(window.location.pathname)}&utm_source=apivale_blog&utm_medium=blog_floating_card&utm_campaign=${floatingData.utmCampaign}`;
 				}
 
-				setTimeout(() => {
+				let ctaShown = false;
+				const showCtaSmoothly = () => {
+					if (ctaShown || sessionStorage.getItem('apivale_blog_cta_closed') === 'true') return;
+					ctaShown = true;
 					ctaContainer.style.display = 'block';
-				}, 1500);
+					ctaContainer.style.opacity = '0';
+					ctaContainer.style.transform = 'translateY(16px)';
+					ctaContainer.style.transition = 'opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+					requestAnimationFrame(() => {
+						ctaContainer.style.opacity = '1';
+						ctaContainer.style.transform = 'translateY(0)';
+					});
+				};
+
+				// Trigger 1: Deep scroll (35% of article depth, ensuring user is genuinely reading)
+				const handleScrollTrigger = () => {
+					const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+					if (scrollTotal > 0 && (window.scrollY / scrollTotal) >= 0.35) {
+						showCtaSmoothly();
+						window.removeEventListener('scroll', handleScrollTrigger);
+					}
+				};
+				window.addEventListener('scroll', handleScrollTrigger, { passive: true });
+
+				// Trigger 2: High engagement time (reading continuously for 25s without interruption)
+				setTimeout(() => {
+					showCtaSmoothly();
+				}, 25000);
 			}
 
 			if (closeBtn && ctaContainer) {
@@ -1428,4 +1489,91 @@ const blogPostingSchema = {
 			width: auto;
 		}
 	}
+
+	/* Reading Progress Bar */
+	.reading-progress-container {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 3px;
+		background: transparent;
+		z-index: 9999;
+	}
+	.reading-progress-bar {
+		height: 100%;
+		width: 0%;
+		background: linear-gradient(90deg, #3b82f6, #6366f1, #10b981);
+		transition: width 0.1s ease-out;
+	}
+
+	/* Key Takeaways & Quick Reference Card */
+	.key-takeaways-card {
+		margin-bottom: 2rem;
+		padding: 1.25rem 1.5rem;
+		border-radius: 12px;
+		background: linear-gradient(145deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%);
+		border: 1px solid rgba(99, 102, 241, 0.25);
+		box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.3);
+	}
+	.takeaways-header {
+		display: flex;
+		align-items: center;
+		gap: 0.6rem;
+		margin-bottom: 1rem;
+	}
+	.takeaways-badge {
+		font-size: 0.7rem;
+		font-weight: 800;
+		letter-spacing: 0.06em;
+		color: #818cf8;
+		background: rgba(99, 102, 241, 0.15);
+		padding: 0.15rem 0.5rem;
+		border-radius: 9999px;
+		border: 1px solid rgba(99, 102, 241, 0.3);
+	}
+	.takeaways-title {
+		font-size: 0.95rem;
+		font-weight: 700;
+		color: #f1f5f9;
+	}
+	.takeaways-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 0.85rem;
+	}
+	.takeaway-item {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+		background: rgba(255, 255, 255, 0.03);
+		padding: 0.6rem 0.8rem;
+		border-radius: 8px;
+		border: 1px solid rgba(255, 255, 255, 0.05);
+	}
+	.item-label {
+		font-size: 0.72rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: #94a3b8;
+	}
+	.item-value {
+		font-size: 0.85rem;
+		color: #e2e8f0;
+		font-weight: 500;
+		line-height: 1.4;
+	}
+	.item-value code {
+		background: rgba(15, 23, 42, 0.7);
+		color: #38bdf8;
+		padding: 0.1rem 0.35rem;
+		border-radius: 4px;
+		font-size: 0.78rem;
+	}
+	.highlight-credit {
+		color: #34d399;
+		font-weight: 700;
+	}
+
 </style>
