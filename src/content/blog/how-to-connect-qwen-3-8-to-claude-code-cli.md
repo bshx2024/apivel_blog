@@ -1,9 +1,7 @@
 ---
-title: "How to Connect Qwen 3.8 to Claude Code CLI (Save 80% Token Spend)"
-metaTitle: "Connect Qwen 3.8 to Claude Code CLI: Setup Guide | APIVALE"
-description: >-
-  Learn how to connect Qwen 3.8 to Claude Code CLI. Cut API token costs by 80%
-  ($0.60/1M) via APIVALE with sub-500ms TTFT and Waffo global billing.
+title: "How to Connect Qwen 3.8 to Claude Code (Save 80% Token Spend)"
+metaTitle: "Qwen 3.8 Claude Code Setup: Connect & Save 80% | APIVALE"
+description: "Complete guide for Qwen 3.8 Claude Code setup. Slash coding token costs by 80% ($0.60/1M) via APIVALE gateway with sub-500ms TTFT, prompt caching, and PayPal billing."
 date: '2026-07-30'
 author: Alex Rivera
 authorTitle: 'Senior Cloud Architect & API Integrations, APIVALE'
@@ -11,6 +9,7 @@ authorBio: >-
   Alex Rivera is a cloud architect specializing in high-concurrency routing, API
   gateway latency optimization, and developer proxy tools.
 tags:
+  - Qwen 3.8 Claude Code
   - Qwen 3.8
   - Claude Code
   - Qwen 3.7
@@ -24,7 +23,7 @@ lang: en
 <div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
-    <li><strong>80% Cost Reduction:</strong> Routing Claude Code CLI to Qwen 3.8 via <a href="https://apivale.com/sign-up?redirect=/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="text-emerald-400 hover:underline font-semibold">APIVALE (Claim $0.20 Free Credit)</a> cuts input costs to $0.60/1M tokens.</li>
+    <li><strong>80% Cost Reduction:</strong> Running Qwen 3.8 in Claude Code via <a href="https://apivale.com/sign-up?redirect=/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="text-emerald-400 hover:underline font-semibold">APIVALE (Claim $0.20 Free Credit)</a> cuts input costs to $0.60/1M tokens.</li>
     <li><strong>Sub-500ms TTFT:</strong> APIVALE's proxy reduces Time-to-First-Token to ~420ms—50% faster than baseline endpoints.</li>
     <li><strong>Global PayPal Billing:</strong> Bypasses credit card rejections and KYC blocks with native PayPal support.</li>
     <li><strong>First Top-Up Privilege (+50% Bonus):</strong> Automatically get +50% extra compute credits. Top up <strong>$5 &rarr; get $7.50</strong> (&approx; 3M Tokens, Never Expire), or grab the popular <strong>$29 Developer Pack (40M Tokens, 56% OFF)</strong>.</li>
@@ -32,9 +31,9 @@ lang: en
 </div>
 
 <div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
-  <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Related Agent & Model Setup Guides</span>
+  <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Related Model & Terminal Guides</span>
   <p class="mt-1 text-sm text-gray-300">
-    Configuring different agent workflows? Compare against stealth frontier models in our <a href="/blog/claude-code-opus-5-2-alternative-qwen-3-8-max/" class="text-cyan-400 hover:underline font-semibold">Claude Opus 5.2 vs Qwen 3.8 Max in Claude Code</a> guide, benchmark throughput with our <a href="/blog/deepseek-v4-flash-api-guide/" class="text-cyan-400 hover:underline font-semibold">DeepSeek V4.1 Flash API 437 t/s benchmark & pricing guide</a>, check our setup for <a href="/blog/qwen-3-8-omni-flash-api-setup/" class="text-cyan-400 hover:underline font-semibold">native omni audio processing with Qwen3.8-Omni-Flash</a>, or read our <a href="/blog/connect-glm-5-3-to-claude-code-cli-cursor/" class="text-cyan-400 hover:underline font-semibold">GLM-5.3 Cursor & Claude Code Guide</a>.
+    Exploring alternative high-speed models? Read our viral benchmark guide on <a href="/blog/ox-alpha-claude-code-cursor-setup/" class="text-cyan-400 hover:underline font-semibold">Ox Alpha in Claude Code & Cursor Setup (0xAlpha vs Sonnet)</a>, compare against stealth frontier models in our <a href="/blog/claude-code-opus-5-2-alternative-qwen-3-8-max/" class="text-cyan-400 hover:underline font-semibold">Claude Opus 5.2 vs Qwen 3.8 Max in Claude Code</a> guide, benchmark speed with our <a href="/blog/deepseek-v4-flash-api-guide/" class="text-cyan-400 hover:underline font-semibold">DeepSeek V4.1 Flash API benchmark</a>, or check our <a href="/blog/connect-glm-5-3-to-claude-code-cli-cursor/" class="text-cyan-400 hover:underline font-semibold">GLM-5.3 Cursor & Claude Code Guide</a>.
   </p>
 </div>
 
@@ -60,7 +59,7 @@ lang: en
   </div>
 </div>
 
-Alibaba's **Qwen 3.8-Max** features a 2.4-trillion parameter Mixture-of-Experts (MoE) architecture engineered for deep multi-file codebase reasoning and autonomous tool-calling loops. While Claude Code CLI natively points to Anthropic's cloud endpoints, developers can route terminal requests directly to Qwen 3.8 via APIVALE's protocol gateway, cutting input token spend to **$0.60/1M** (an 80% cost reduction) without sacrificing execution precision.
+Alibaba's **Qwen 3.8-Max** features a 2.4-trillion parameter Mixture-of-Experts (MoE) architecture engineered for deep multi-file codebase reasoning and autonomous tool-calling loops. While Claude Code natively points to Anthropic's cloud endpoints, developers can route terminal requests directly to Qwen 3.8 via APIVALE's protocol gateway, cutting input token spend to **$0.60/1M** (an 80% cost reduction) without sacrificing execution precision.
 
 ```mermaid
 graph LR
@@ -74,7 +73,7 @@ graph LR
 
 ## What is the Qwen 3.8 API Gateway on APIVALE?
 
-Configure APIVALE's OpenAI-compatible proxy gateway to route Claude Code CLI requests to Qwen 3.8 with zero credit card requirements and PayPal billing.
+Configure APIVALE's OpenAI-compatible proxy gateway for seamless Qwen 3.8 Claude Code execution with zero credit card requirements and PayPal billing.
 
 <div class="my-6 border-l-4 border-indigo-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Definition</span>
@@ -82,9 +81,9 @@ Configure APIVALE's OpenAI-compatible proxy gateway to route Claude Code CLI req
   <p class="mt-2 text-sm text-gray-300">Qwen 3.8 API Gateway is a developer proxy on APIVALE that translates Alibaba Cloud's 2.4T MoE model endpoints into standard OpenAI and Anthropic compatible formats with global PayPal billing.</p>
 </div>
 
-### Quick Start: Route Claude Code CLI to Qwen 3.8 in 30 Seconds
+### Quick Start: Qwen 3.8 Claude Code in 30 Seconds
 
-To connect Claude Code CLI to Qwen 3.8 via APIVALE, export `ANTHROPIC_BASE_URL="https://api.apivale.com/v1"`, `ANTHROPIC_AUTH_TOKEN="your_apivale_key"`, and `ANTHROPIC_MODEL="infer/qwen3.8-max"`.
+To complete your Qwen 3.8 Claude Code setup via APIVALE, export `ANTHROPIC_BASE_URL="https://api.apivale.com/v1"`, `ANTHROPIC_AUTH_TOKEN="your_apivale_key"`, and `ANTHROPIC_MODEL="infer/qwen3.8-max"`.
 
 ```bash
 # Point Claude Code CLI to APIVALE's Anthropic-compatible protocol bridge
@@ -342,7 +341,7 @@ Evaluating Qwen 3.8 against Anthropic flagship models demonstrates significant c
 
 ---
 
-## Why Connect Claude Code CLI to Qwen 3.8 via APIVALE?
+## Why Run Qwen 3.8 in Claude Code via APIVALE?
 
 Autonomous developer tools execute iterative tool-calling loops—reading file trees, running bash commands, analyzing lint outputs, and resubmitting full prompt histories. In a typical 2-hour refactoring session, an agent consumes 15M to 30M tokens.
 
@@ -364,9 +363,9 @@ Yes. Alibaba Cloud pre-trained Qwen 3.8 with native OpenAI and Anthropic protoco
 
 ---
 
-## How to Connect Qwen 3.8 to Claude Code CLI (Setup Guide)
+## Qwen 3.8 Claude Code Setup Guide
 
-### 1. Connect Qwen 3.8 to Claude Code CLI (macOS & Linux)
+### 1. Connect Qwen 3.8 to Claude Code (macOS & Linux)
 
 Update your shell profile (`~/.zshrc` or `~/.bashrc`):
 
@@ -382,7 +381,7 @@ source ~/.zshrc
 npx @anthropic-ai/claude-code
 ```
 
-### 2. Connect Qwen 3.8 to Claude Code CLI (Windows PowerShell)
+### 2. Windows PowerShell Setup for Qwen 3.8 in Claude Code
 
 For Windows PowerShell:
 
@@ -470,7 +469,7 @@ app.listen(PORT, () => console.log(`Qwen 3.8 Bridge running on http://localhost:
 
 ## Frequently Asked Questions (Developer FAQ)
 
-### How do I connect Qwen 3.8 to Claude Code CLI without editing source code?
+### How do I connect Qwen 3.8 to Claude Code without editing source code?
 Export `ANTHROPIC_BASE_URL="https://api.apivale.com/v1"`, `ANTHROPIC_AUTH_TOKEN="your_key"`, and `ANTHROPIC_MODEL="infer/qwen3.8-max"`. Claude Code CLI automatically routes requests through APIVALE.
 
 ### Is Qwen 3.8 faster and cheaper than Claude Sonnet 5 for coding?
@@ -479,7 +478,7 @@ Yes. Qwen 3.8-Max via APIVALE achieves ~420ms TTFT (50% faster) and costs **80% 
 ### Can I use Qwen 3.8 in both Qwen Code CLI and Claude Code CLI?
 Yes. Both CLI tools support standard Anthropic messages protocols. Setting `ANTHROPIC_BASE_URL="https://api.apivale.com/v1"` routes both through APIVALE without local GPU setup.
 
-### Why is my Claude Code CLI getting an auth error with Qwen 3.8?
+### Why is Claude Code getting an auth error with Qwen 3.8?
 Auth errors indicate a missing or invalid `ANTHROPIC_AUTH_TOKEN`. Verify your APIVALE API key is exported correctly in your terminal session.
 
 ### Can I pay for [Qwen 3.8](/blog/qwen-3-8-27b-gguf-benchmarks-ollama-vs-api-guide/) API tokens with PayPal on APIVALE?
@@ -497,7 +496,7 @@ Yes. APIVALE provides full Server-Sent Events (SSE) streaming compatibility, ena
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How do I connect Qwen 3.8 to Claude Code CLI without editing source code?",
+      "name": "How do I connect Qwen 3.8 to Claude Code without editing source code?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "You can connect Qwen 3.8 to Claude Code CLI without editing source code by exporting APIVALE's custom Anthropic base URL, authorization token, and model name variables in your terminal. Once set, Claude Code CLI natively redirects its /v1/messages requests to APIVALE, which translates the protocol seamlessly."
@@ -521,7 +520,7 @@ Yes. APIVALE provides full Server-Sent Events (SSE) streaming compatibility, ena
     },
     {
       "@type": "Question",
-      "name": "Why is my Claude Code CLI getting an auth error with Qwen 3.8?",
+      "name": "Why is Claude Code getting an auth error with Qwen 3.8?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Authentication errors usually mean ANTHROPIC_AUTH_TOKEN is missing or incorrect. Ensure your APIVALE API key is exported properly in your shell configuration profile."
