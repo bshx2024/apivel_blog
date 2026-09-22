@@ -250,7 +250,7 @@ Test your APIVALE endpoint and model execution directly inside this article:
 
 ---
 
-## Benchmark & Cost Comparison vs. Claude Sonnet 5 vs. Claude Sonnet 5
+## Qwen 3.8 vs. Claude Sonnet 5 Benchmark & Cost Comparison
 
 Evaluating the 2.4T MoE architecture against Anthropic flagship models demonstrates significant cost savings and faster Time-to-First-Token (TTFT).
 
