@@ -73,12 +73,12 @@ graph LR
 
 ## What is the Qwen 3.8 API Gateway on APIVALE?
 
-Configure APIVALE's OpenAI-compatible proxy gateway for seamless Qwen 3.8 Claude Code execution with zero credit card requirements and PayPal billing.
+Configure APIVALE's OpenAI-compatible proxy gateway for seamless Qwen 3.8 execution with zero credit card requirements and PayPal billing.
 
 <div class="my-6 border-l-4 border-indigo-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Definition</span>
   <div class="mt-1 text-md font-semibold text-white">Qwen 3.8 API Gateway</div>
-  <p class="mt-2 text-sm text-gray-300">Qwen 3.8 API Gateway is a developer proxy on APIVALE that translates Alibaba Cloud's 2.4T MoE model endpoints into standard OpenAI and Anthropic compatible formats with global PayPal billing.</p>
+  <p class="mt-2 text-sm text-gray-300">This gateway is a developer proxy on APIVALE that translates Alibaba Cloud's 2.4T MoE model endpoints into standard OpenAI and Anthropic compatible formats with global PayPal billing.</p>
 </div>
 
 ### Quick Start: Qwen 3.8 Claude Code in 30 Seconds
@@ -102,7 +102,7 @@ npx @anthropic-ai/claude-code
 
 ### Interactive Qwen 3.8 API Playground & Test Terminal
 
-Test your APIVALE endpoint and Qwen 3.8 model execution directly inside this article:
+Test your APIVALE endpoint and model execution directly inside this article:
 
 <div id="qwen-live-playground-container" class="my-6 border border-indigo-500/20 bg-gray-950/90 rounded-2xl p-6 shadow-2xl backdrop-blur-md">
   <div class="flex items-center justify-between flex-wrap gap-3 mb-5 border-b border-gray-800 pb-4">
@@ -252,7 +252,7 @@ Test your APIVALE endpoint and Qwen 3.8 model execution directly inside this art
 
 ## Qwen 3.8 Benchmark & Cost Comparison vs. Claude Sonnet 5
 
-Evaluating Qwen 3.8 against Anthropic flagship models demonstrates significant cost savings and faster Time-to-First-Token (TTFT).
+Evaluating the 2.4T MoE architecture against Anthropic flagship models demonstrates significant cost savings and faster Time-to-First-Token (TTFT).
 
 | Metric / Specification | Official Claude Sonnet 5 | Qwen 3.8-Max (via APIVALE) |
 | :--- | :--- | :--- |
@@ -345,7 +345,7 @@ Evaluating Qwen 3.8 against Anthropic flagship models demonstrates significant c
 
 Autonomous developer tools execute iterative tool-calling loops—reading file trees, running bash commands, analyzing lint outputs, and resubmitting full prompt histories. In a typical 2-hour refactoring session, an agent consumes 15M to 30M tokens.
 
-1. **80% Cost Reduction**: Official Sonnet 5 charges $3.00 / $15.00 per 1M tokens ($40+ per bug fix). Qwen 3.8-Max via APIVALE costs **$0.60 / $2.40 per 1M tokens**.
+1. **80% Cost Reduction**: Official Sonnet 5 charges $3.00 / $15.00 per 1M tokens ($40+ per bug fix). The flagship model via APIVALE costs **$0.60 / $2.40 per 1M tokens**.
 2. **Global PayPal Billing**: Bypass credit card rejections and KYC hurdles with native **PayPal global billing**.
 3. **Protocol Compatibility**: APIVALE translates Anthropic `/v1/messages` payload structures, tool call schemas, and SSE streams directly into Qwen 3.8 responses.
 
@@ -353,9 +353,9 @@ For detailed model evaluations, check out our companion guides on [How to Connec
 
 ---
 
-## Can You Use Qwen 3.8 in Both Qwen Code CLI and Claude Code CLI?
+## Can You Run This Model in Both Qwen Code CLI and Claude Code?
 
-Yes. Alibaba Cloud pre-trained Qwen 3.8 with native OpenAI and Anthropic protocol specifications. When configured with APIVALE's proxy (`https://api.apivale.com/v1`), both **Qwen Code CLI** and **Claude Code CLI** treat APIVALE as a high-concurrency drop-in backend without custom client patches.
+Yes. Alibaba Cloud pre-trained the model with native OpenAI and Anthropic protocol specifications. When configured with APIVALE's proxy (`https://api.apivale.com/v1`), both **Qwen Code CLI** and **Claude Code CLI** treat APIVALE as a high-concurrency drop-in backend without custom client patches.
 
 - **Zero Local VRAM Requirements**: Run 2.4T MoE intelligence without an enterprise GPU cluster.
 - **Unified Key & PayPal Billing**: Power Qwen Code CLI, Claude Code CLI, Cursor, and Windsurf from a single balance.
@@ -420,7 +420,7 @@ For web search integration, see our guide on [Best API Search for Company Homepa
 
 ---
 
-## Production Proxy Architecture for Qwen 3.8 API Integration
+## Production Proxy Architecture for Gateway API Integration
 
 Deploying a local Express middleware proxy provides dynamic model translation and prevents SSE stream buffering drops during continuous AI agent loops:
 
@@ -462,7 +462,7 @@ app.post('/v1/messages', async (req: Request, res: Response): Promise<void> => {
   }
 });
 
-app.listen(PORT, () => console.log(`Qwen 3.8 Bridge running on http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`APIVALE Bridge running on http://localhost:${PORT}`));
 ```
 
 ---
@@ -475,16 +475,16 @@ Export `ANTHROPIC_BASE_URL="https://api.apivale.com/v1"`, `ANTHROPIC_AUTH_TOKEN=
 ### Is Qwen 3.8 faster and cheaper than Claude Sonnet 5 for coding?
 Yes. Qwen 3.8-Max via APIVALE achieves ~420ms TTFT (50% faster) and costs **80% less** ($0.60/1M input tokens vs $3.00/1M for Sonnet 5).
 
-### Can I use Qwen 3.8 in both Qwen Code CLI and Claude Code CLI?
+### Can I use this model in both Qwen Code CLI and Claude Code?
 Yes. Both CLI tools support standard Anthropic messages protocols. Setting `ANTHROPIC_BASE_URL="https://api.apivale.com/v1"` routes both through APIVALE without local GPU setup.
 
-### Why is Claude Code getting an auth error with Qwen 3.8?
+### Why is Claude Code getting an auth error during proxy routing?
 Auth errors indicate a missing or invalid `ANTHROPIC_AUTH_TOKEN`. Verify your APIVALE API key is exported correctly in your terminal session.
 
-### Can I pay for [Qwen 3.8](/blog/qwen-3-8-27b-gguf-benchmarks-ollama-vs-api-guide/) API tokens with PayPal on APIVALE?
+### Can I pay for [API tokens](/blog/qwen-3-8-27b-gguf-benchmarks-ollama-vs-api-guide/) with PayPal on APIVALE?
 Yes. APIVALE supports global PayPal billing and credit cards via PayPal, enabling international developers to bypass credit card restrictions and identity verification limits.
 
-### Does APIVALE support SSE streaming for Qwen 3.8 in terminal tools?
+### Does APIVALE support SSE streaming for coding agents in terminal tools?
 Yes. APIVALE provides full Server-Sent Events (SSE) streaming compatibility, enabling real-time terminal progress indicators without buffering lag.
 
 ---
@@ -507,7 +507,7 @@ Yes. APIVALE provides full Server-Sent Events (SSE) streaming compatibility, ena
       "name": "Is Qwen 3.8 faster and cheaper than Claude Sonnet 5 for coding?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Qwen 3.8-Max via APIVALE achieves a Time-to-First-Token (TTFT) of ~420ms (50% faster than baseline endpoints) and cuts token costs by up to 80% compared to Claude Sonnet 5."
+        "text": "Yes. The 2.4T MoE model via APIVALE achieves a Time-to-First-Token (TTFT) of ~420ms (50% faster than baseline endpoints) and cuts token costs by up to 80% compared to Claude Sonnet 5."
       }
     },
     {
@@ -528,10 +528,10 @@ Yes. APIVALE provides full Server-Sent Events (SSE) streaming compatibility, ena
     },
     {
       "@type": "Question",
-      "name": "Can I pay for Qwen 3.8 API tokens with PayPal on APIVALE?",
+      "name": "Can I pay for API tokens with PayPal on APIVALE?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, you can pay for Qwen 3.8 API tokens with PayPal on APIVALE, which natively supports global PayPal billing and major credit cards via PayPal. This allows international developers to bypass Stripe credit card restrictions or identity verification blocks without local limits."
+        "text": "Yes, you can pay for API tokens with PayPal on APIVALE, which natively supports global PayPal billing and major credit cards via PayPal. This allows international developers to bypass Stripe credit card restrictions or identity verification blocks without local limits."
       }
     },
     {
