@@ -1,7 +1,7 @@
 ---
-title: "How to Connect Qwen 3.8 to Claude Code (Save 80% Token Spend)"
-metaTitle: "Qwen 3.8 Claude Code Setup: Connect & Save 80% | APIVALE"
-description: "Complete guide for Qwen 3.8 Claude Code setup. Slash coding token costs by 80% ($0.60/1M) via APIVALE gateway with sub-500ms TTFT, prompt caching, and PayPal billing."
+title: "Qwen 3.8 in Claude Code: Connect & Save 80% Token Costs"
+metaTitle: "Qwen 3.8 in Claude Code Setup: Connect & Save 80% | APIVALE"
+description: "Connect Qwen 3.8 to Claude Code. Slash API token costs by 80% ($0.60/1M) via APIVALE gateway with sub-500ms TTFT, prompt caching, and PayPal billing."
 date: '2026-07-30'
 author: Alex Rivera
 authorTitle: 'Senior Cloud Architect & API Integrations, APIVALE'
@@ -86,14 +86,14 @@ Configure APIVALE's OpenAI-compatible proxy gateway for seamless Qwen 3.8 Claude
 To complete your Qwen 3.8 Claude Code setup via APIVALE, export `ANTHROPIC_BASE_URL="https://api.apivale.com/v1"`, `ANTHROPIC_AUTH_TOKEN="your_apivale_key"`, and `ANTHROPIC_MODEL="infer/qwen3.8-max"`.
 
 ```bash
-# Point Claude Code CLI to APIVALE's Anthropic-compatible protocol bridge
+# Point your terminal agent to APIVALE's Anthropic-compatible protocol bridge
 export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
 export ANTHROPIC_AUTH_TOKEN="your_apivale_api_key"
 
 # Use infer/qwen3.8-max as active model
 export ANTHROPIC_MODEL="infer/qwen3.8-max"
 
-# Launch Anthropic Claude Code CLI
+# Launch your terminal coding agent
 npx @anthropic-ai/claude-code
 ```
 
@@ -550,7 +550,7 @@ Yes. APIVALE provides full Server-Sent Events (SSE) streaming compatibility, ena
 
 <div class="cta-card">
   <div class="cta-card-title text-lg font-bold text-white mb-2">⚡ Connect Qwen 3.8 to Your CLI & IDE with APIVALE</div>
-  <p class="cta-card-text">Supercharge your Claude Code CLI, Cursor, and Windsurf workflows with Qwen 3.8 via APIVALE. Enjoy 80% lower token costs compared to Claude Sonnet 5, zero rate limits, and seamless PayPal billing. Register to claim your free $0.20 test credit, and enjoy automatic +50% extra credits on your first top-up ($5 gets $7.50; $29 Developer Pack gets 40M Tokens at 56% OFF)!</p>
+  <p class="cta-card-text">Supercharge your terminal coding, Cursor, and Windsurf workflows with Qwen 3.8 via APIVALE. Enjoy 80% lower token costs compared to Claude Sonnet 5, zero rate limits, and seamless PayPal billing. Register to claim your free $0.20 test credit, and enjoy automatic +50% extra credits on your first top-up ($5 gets $7.50; $29 Developer Pack gets 40M Tokens at 56% OFF)!</p>
   <div class="cta-card-actions">
     <a href="https://apivale.com/pricing?utm_source=apivale_blog&utm_medium=blog_bottom_cta&utm_campaign=how-to-connect-qwen-3-8-to-claude-code-cli" class="cta-primary-btn">Claim 56% OFF Developer Pack ($29) &rarr;</a>
     <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-connect-qwen-3-8-to-claude-code-cli" class="cta-secondary-btn">Get Free API Key ($0.20 Trial)</a>
