@@ -1,7 +1,7 @@
 ---
-title: "How to Connect Xiaomi MiMo-V2.6 Pro to Claude Code CLI & Cursor: 1M Context API Setup & Cost Guide"
-metaTitle: "Xiaomi MiMo-V2.6 Pro Setup: Claude Code & API | APIVALE"
-description: "Connect Xiaomi MiMo-V2.6 Pro to Claude Code CLI and Cursor. Master 1M context routing, SGLang protocol proxying, and Waffo global billing with zero credit cards."
+title: "Connect Xiaomi MiMo-V2.6 Pro to Claude Code & Cursor (Setup Guide)"
+metaTitle: "Xiaomi MiMo-V2.6 Pro Claude Code Setup: API Guide | APIVALE"
+description: "Connect Xiaomi MiMo-V2.6 Pro to Claude Code CLI and Cursor. Master 1M context routing, protocol proxying, and Waffo global billing with zero credit cards."
 date: "2026-09-22"
 author: "Alex Rivera"
 authorTitle: "Senior Cloud Architect & API Integrations, APIVALE"
@@ -21,19 +21,19 @@ keyTakeaways:
     highlight: true
 ---
 
-On September 22, 2026, Xiaomi officially unveiled and open-sourced its next-generation foundation model family: **MiMo-V2.6**. Centered around recursive self-improvement (RSI) and asynchronous Group Relative Policy Optimization (GRPO), the flagship **MiMo-V2.6-Pro** introduces an omnimodal architecture with an astounding 1.02-trillion total parameters (activating ~42 billion parameters per token via dynamic Mixture-of-Experts) paired with a native **1,000,000 token (1M) context window**. For software engineers and autonomous agent builders running [Claude Code CLI](/blog/how-to-connect-qwen-3-8-to-claude-code-cli) and Cursor IDE, MiMo-V2.6 Pro represents a watershed moment: enterprise-grade long-context reasoning and repository-wide code comprehension at a fraction of closed-source proprietary API costs.
+On September 22, 2026, Xiaomi officially released and open-sourced **MiMo-V2.6**, its next-generation foundation model family. Built on recursive self-improvement (RSI) and asynchronous Group Relative Policy Optimization (GRPO), the flagship **MiMo-V2.6-Pro** features a 1.02-trillion parameter MoE architecture (activating ~42B parameters per token) paired with a native **1,000,000 token (1M) context window**. For engineers running [Claude Code CLI](/blog/how-to-connect-qwen-3-8-to-claude-code-cli) and Cursor IDE, MiMo-V2.6 Pro delivers whole-repository comprehension at 75% lower cost than proprietary frontier APIs.
 
 <div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
     <li><strong>SDK Compatibility Protocol</strong>: Native Anthropic and OpenAI wire protocol endpoints (<code class="text-indigo-300">https://api.apivale.com/v1</code>).</li>
-    <li><strong>Flagship Invocation Model</strong>: <code class="text-indigo-300">infer/mimo-v2.6-pro</code> for 1M reasoning and <code class="text-indigo-300">infer/mimo-v2.6-flash</code> for high-throughput batch agent tasks.</li>
+    <li><strong>Flagship Invocation Model</strong>: <code class="text-indigo-300">infer/mimo-v2.6-pro</code> for 1M reasoning and <code class="text-indigo-300">infer/mimo-v2.6-flash</code> for high-throughput batch tasks.</li>
     <li><strong>Engineering Edge-Case Fix</strong>: SSE streaming heartbeat injection prevents Claude Code CLI stream idle drops during long-horizon reasoning.</li>
-    <li><strong>Global Waffo Billing</strong>: Instant activation via Waffo Global Billing with no KYC or Chinese phone number required; includes $0.20 free starter credit for zero-risk testing.</li>
+    <li><strong>Global Waffo Billing</strong>: Instant activation via Waffo Global Billing with zero KYC or phone verification; includes $0.20 free starter credit.</li>
   </ul>
 </div>
 
-Navigating the friction of sovereign telephony verification, geographic IP fencing, and incompatible streaming wire formats often prevents international development teams from operationalizing open-weight frontiers. In this comprehensive technical guide, we break down the architecture of Xiaomi MiMo-V2.6 Pro, demonstrate how to configure seamless wire-protocol routing via APIVALE's unified gateway, benchmark token costs against Claude Sonnet 5, and resolve the persistent Server-Sent Events (SSE) idle timeout issues that plague 1M-token agent pipelines.
+Navigating sovereign phone verification, geographic fencing, and mismatched streaming wire protocols often blocks developers from testing new open weights. In this guide, we show you how to configure seamless wire-protocol routing through APIVALE's gateway, benchmark token costs against Claude Sonnet 5, and resolve Server-Sent Events (SSE) idle timeouts across deep 1M-token contexts.
 
 <div class="my-6 border-l-4 border-amber-500 bg-gray-900 rounded-r-lg p-5">
   <div class="flex items-center justify-between">
@@ -58,7 +58,7 @@ curl -X POST https://api.apivale.com/v1/messages \
     "model": "infer/mimo-v2.6-pro",
     "max_tokens": 1024,
     "messages": [
-      {"role": "user", "content": "Analyze our monorepo architecture and output AST refactoring plan."}
+      {"role": "user", "content": "Analyze monorepo AST architecture and output refactoring plan."}
     ]
   }'
 ```
@@ -67,17 +67,17 @@ curl -X POST https://api.apivale.com/v1/messages \
 
 ## 1. Architectural Overview: Why Xiaomi MiMo-V2.6 Pro Matters for AI Coding Agents
 
-Understanding the internal mechanics of Xiaomi MiMo-V2.6 Pro reveals why it performs exceptionally well in autonomous developer environments like Claude Code, Cursor, and Windsurf.
+Understanding the sparse activation design of Xiaomi MiMo-V2.6 Pro explains its high throughput in autonomous agent environments like Claude Code, Cursor, and Windsurf.
 
 <div class="my-6 border-l-4 border-indigo-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Definition</span>
-  <h4 class="mt-1 text-md font-semibold text-white">Xiaomi MiMo-V2.6 Pro API Gateway Router</h4>
-  <p class="mt-2 text-sm text-gray-300">Xiaomi MiMo-V2.6 Pro API Gateway Router is an enterprise-grade proxy layer on APIVALE that seamlessly wraps Xiaomi's 1.02-trillion parameter omnimodal MoE foundation model into standard OpenAI and Anthropic /v1/messages formats, offering 1M context processing, automated streaming heartbeats, and zero-credit-card Waffo global billing.</p>
+  <div class="mt-1 text-md font-semibold text-white">Xiaomi MiMo-V2.6 Pro API Gateway Router</div>
+  <p class="mt-2 text-sm text-gray-300">Xiaomi MiMo-V2.6 Pro API Gateway Router is an enterprise proxy on APIVALE that maps Xiaomi's 1.02-trillion parameter omnimodal MoE foundation model into standard OpenAI and Anthropic /v1/messages formats, providing 1M context evaluation, streaming heartbeats, and zero-KYC Waffo global billing.</p>
 </div>
 
 ### 1.1 Trillion-Parameter MoE Architecture and 1M Native Token Window
 
-Deploying a 1.02-trillion parameter model requires sophisticated sparse activation to achieve acceptable inference latency. MiMo-V2.6 Pro allocates 128 total routed experts alongside 2 shared persistent experts. On each forward pass, the top-8 routed experts are dynamically activated, yielding approximately 42 billion active parameters per token. This design preserves deep parametric reasoning while maintaining a Time-To-First-Token (TTFT) under 480 milliseconds across high-concurrency clusters.
+MiMo-V2.6 Pro allocates 128 total routed experts alongside 2 persistent shared experts. On each forward pass, the top-8 routed experts dynamically activate, yielding approximately 42 billion active parameters per token. This preserves deep parametric reasoning while maintaining a Time-To-First-Token (TTFT) under 480ms.
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
@@ -99,36 +99,34 @@ Deploying a 1.02-trillion parameter model requires sophisticated sparse activati
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
-The native 1M token window utilizes Multi-Head Latent Attention (MLA) compressed down to 512 dimensions for key-value projections. Rather than suffering quadratic memory explosion ($O(N^2)$), memory consumption scales sub-linearly, enabling whole-repository ingestion without loss of retrieval precision at the middle of the prompt. Developers can pass an entire codebase's TypeScript definitions, dependency lockfiles, and recent Git logs directly to the agent in a single session.
+The native 1M token window utilizes Multi-Head Latent Attention (MLA) compressed down to 512 dimensions for key-value projections. Memory consumption scales sub-linearly, enabling whole-repository ingestion without mid-prompt retrieval degradation.
 
 ### 1.2 Omnimodal Reasoning and Agentic Reinforcement Learning (GRPO)
 
-Unlike earlier open-source weights that bolted vision encoders onto frozen language trunks, MiMo-V2.6 was trained natively on interleaved multimodal tokens spanning text, high-resolution UI screen captures, architectural schematics, and audio waveforms. Official model checkpoints published under the [XiaomiMiMo collection on Hugging Face](https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL) validate that training employed recursive self-improvement loops with automated unit-test verifiers as reward signals.
-
-During reinforcement learning, the model was penalized for generating hallucinatory compiler flags or syntax errors. When faced with complex coding prompts, MiMo-V2.6 Pro constructs internal chain-of-thought scaffolds that proactively inspect intermediate tool outputs. This makes it an ideal drop-in replacement for expensive proprietary models when executing iterative shell scripts, lint fixes, and multi-file code transformations.
+Unlike earlier models that attached vision adapters to frozen text decoders, MiMo-V2.6 was trained natively on interleaved multimodal tokens (text, UI screenshots, schematics, audio). Checkpoints under the [XiaomiMiMo collection on Hugging Face](https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL) confirm training utilized automated unit-test verifiers as reward signals, minimizing code syntax errors during iterative terminal tool calls.
 
 ---
 
 ## 2. Protocol Translation: Bridging Anthropic /v1/messages and MiMo-V2.6 Pro
 
-Autonomous coding tools expect standardized wire protocols, requiring high-fidelity translation when routing to open-weight models.
+Autonomous coding tools expect standardized wire protocols, requiring proxy translation when routing to open-weight model endpoints.
 
 ### 2.1 Claude Code CLI Environment Configuration and Base URL Overrides
 
-Claude Code CLI expects an Anthropic-compliant `/v1/messages` endpoint with specific headers such as `anthropic-version: 2023-06-01` and streaming event deltas like `content_block_delta`. Direct upstream servers often expose raw OpenAI `/v1/chat/completions` or vLLM/SGLang dialects, causing parsing errors or silent execution hangs.
+Claude Code CLI expects an Anthropic-compliant `/v1/messages` endpoint with headers like `anthropic-version: 2023-06-01` and streaming event deltas. APIVALE rewrites outbound SSE payloads into strict Anthropic stream framing, allowing Claude Code to treat `infer/mimo-v2.6-pro` as a native drop-in engine.
 
-APIVALE bridges this gap at the gateway layer. By rewriting outbound SSE payloads into strict Anthropic stream framing, APIVALE enables Claude Code to interact with `infer/mimo-v2.6-pro` as if it were Claude Sonnet 5. Configure your environment in your shell profile (`~/.zshrc` or `~/.bashrc`):
+Add these lines to your shell profile (`~/.bashrc` or `~/.zshrc`):
 
 ```bash
 # Configure Claude Code CLI to route through APIVALE's unified protocol gateway
 export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
 export ANTHROPIC_API_KEY="sk-apivale-your-active-key"
 
-# Launch Claude Code directly targeting the 1.02T parameter MiMo-V2.6 Pro model
+# Launch Claude Code directly targeting Xiaomi MiMo-V2.6 Pro
 claude --model infer/mimo-v2.6-pro
 ```
 
-To persist these settings across development environments without polluting global environment variables, you can create a project-level configuration inside `.claude/settings.json`:
+You can also configure project-level defaults inside `.claude/settings.json`:
 
 ```json
 {
@@ -143,73 +141,70 @@ To persist these settings across development environments without polluting glob
 
 ### 2.2 Cursor IDE Custom Model Rules and Base URL Setup
 
-Cursor IDE relies on the standard OpenAI Chat Completions protocol for its custom model integrations. Connecting MiMo-V2.6 Pro provides instant context-aware completions, Composer edits, and Chat sidebar support with full 1M context leverage.
+Cursor IDE uses standard OpenAI Chat Completions for custom models. Connecting MiMo-V2.6 Pro provides instant context-aware edits and Chat sidebar support with full 1M context leverage.
 
-Follow these verification steps in Cursor:
-1. Open **Cursor Settings** (`Ctrl + ,` or `Cmd + ,`), navigate to **Models** tab.
-2. Under **OpenAI API Key**, toggle the switch to override base URL.
-3. Set **Base URL** to: `https://api.apivale.com/v1`.
-4. Enter your APIVALE API key (`sk-apivale-...`).
-5. In the model list, click **+ Add Custom Model** and enter `infer/mimo-v2.6-pro`. Turn off default models if you want to route all agent queries through MiMo.
+In **Cursor Settings** $\rightarrow$ **Models**:
+1. Override OpenAI Base URL to: `https://api.apivale.com/v1`.
+2. Enter your APIVALE API key (`sk-apivale-...`).
+3. Click **+ Add Custom Model** and enter `infer/mimo-v2.6-pro`.
 
-To ensure Cursor's code-generation engine follows MiMo's optimal prompt formatting, add this snippet to your project's `.cursorrules` file:
+Add this configuration to `.cursorrules`:
 
 ```markdown
 # Xiaomi MiMo-V2.6 Pro Coding Rules
-- Model Target: infer/mimo-v2.6-pro via APIVALE Unified Gateway
+- Model Target: infer/mimo-v2.6-pro via APIVALE Gateway
 - Always write production-grade code with complete error handling (try/catch blocks).
-- When handling streaming requests or long-horizon tasks, maintain structured logging.
-- Prioritize concise mathematical reasoning before outputting refactored code blocks.
-- Never omit boilerplate or truncate implementations with '// ... existing code ...'.
+- Maintain structured logging and concise mathematical reasoning before code generation.
+- Never truncate implementations with '// ... existing code ...'.
 ```
 
-By pairing custom rules with APIVALE's proxy gateway, developers can also seamlessly pivot to [Kimi K3](/blog/how-to-connect-kimi-k3-to-claude-code-cli) or [Qwen 3.8](/blog/how-to-connect-qwen-3-8-to-claude-code-cli) without restructuring project settings.
+You can also pivot between [Kimi K3](/blog/how-to-connect-kimi-k3-to-claude-code-cli) or [Qwen 3.8](/blog/how-to-connect-qwen-3-8-to-claude-code-cli) without modifying project structures.
 
 ---
 
 ## 3. Benchmarks, Token Economics, and Objective Architecture Comparison
 
-Balancing model intelligence against operational API spend is essential when running autonomous agents that consume tens of thousands of tokens per turn.
+Balancing model reasoning depth against operational API spend is critical when running autonomous agents that consume tens of thousands of tokens per turn.
 
 ### 3.1 Head-to-Head Latency and Cost Breakdown Across Flagship Models
 
-Evaluating MiMo-V2.6 Pro against industry benchmarks requires objective metrics and transparent disclosure of competitor strengths. The table below compares token pricing, context capacity, and engineering trade-offs.
+The table below provides an objective comparison of token pricing, context capacity, and engineering trade-offs.
 
-| Model / Gateway | Input Cost (per 1M Tokens) | Output Cost (per 1M Tokens) | Context Window | Native Modalities | Objective Positive Strength ("Best for...") |
+| Model / Gateway | Input Cost (/1M) | Output Cost (/1M) | Context Window | Native Modalities | Objective Positive Strength ("Best for...") |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Xiaomi MiMo-V2.6 Pro (APIVALE)** | **$0.80** | **$2.40** | **1,000,000** | Text, Code, Vision, Audio | **Best for 1M context repository-wide reasoning & open-weight inspection** |
-| **Anthropic Claude Sonnet 5** | $3.00 | $15.00 | 200,000 | Text, Code, Vision | **Best for official SOC2 Type II compliance & AWS Bedrock VPC direct peering** |
-| **Alibaba Qwen 3.7 Max (`infer/qwen3.7-max`)** | $1.20 | $3.60 | 128,000 | Text, Code | **Best for complex SQL generation & Chinese corporate ERP integrations** |
+| **Xiaomi MiMo-V2.6 Pro (APIVALE)** | **$0.80** | **$2.40** | **1,000,000** | Text, Code, Vision, Audio | **Best for 1M context monorepo reasoning & open weights** |
+| **Anthropic Claude Sonnet 5** | $3.00 | $15.00 | 200,000 | Text, Code, Vision | **Best for official SOC2 Type II compliance & AWS Bedrock VPC peering** |
+| **Alibaba Qwen 3.7 Max (`infer/qwen3.7-max`)** | $1.20 | $3.60 | 128,000 | Text, Code | **Best for complex SQL generation & Chinese ERP integrations** |
 | **DeepSeek V4 (APIVALE)** | $0.27 | $1.10 | 128,000 | Text, Code | **Best for budget-constrained extreme volume batch processing** |
 
 *Note: Pricing and parameters verified via official docs as of September 2026.*
 
-When analyzing mathematical token efficiency, consider an autonomous coding loop that consumes 45,000 input tokens (reading 15 source files) and generates 2,500 output tokens per interaction. Under Claude Sonnet 5, each loop costs:
+Consider an agent loop consuming 45,000 input tokens and 2,500 output tokens. Under Claude Sonnet 5, the cost is:
 
-$$\text{Cost}_{\text{Sonnet 5}} = \left(\frac{45,000}{1,000,000} \times \$3.00\right) + \left(\frac{2,500}{1,000,000} \times \$15.00\right) = \$0.135 + \$0.0375 = \$0.1725$$
+$$\text{Cost}_{\text{Sonnet 5}} = \left(\frac{45,000}{10^6} \times \$3.00\right) + \left(\frac{2,500}{10^6} \times \$15.00\right) = \$0.1725$$
 
-Performing the identical loop on Xiaomi MiMo-V2.6 Pro via APIVALE costs:
+On Xiaomi MiMo-V2.6 Pro via APIVALE:
 
-$$\text{Cost}_{\text{MiMo-V2.6 Pro}} = \left(\frac{45,000}{1,000,000} \times \$0.80\right) + \left(\frac{2,500}{1,000,000} \times \$2.40\right) = \$0.036 + \$0.006 = \$0.042$$
+$$\text{Cost}_{\text{MiMo-V2.6 Pro}} = \left(\frac{45,000}{10^6} \times \$0.80\right) + \left(\frac{2,500}{10^6} \times \$2.40\right) = \$0.0420$$
 
-This translates to an immediate **75.6% reduction in raw token expenditure**, allowing engineering teams to conduct continuous automated linting and test-driven refactoring without exceeding daily API budgets. Furthermore, global billing is handled through **Waffo Global Billing**, accepting international credit cards and digital wallets with zero requirement for mainland Chinese identity cards or local banking ties.
+This represents an immediate **75.6% savings per agent cycle**. Payments are settled via **Waffo Global Billing**, accepting international credit cards and digital wallets without Chinese bank requirements.
 
 ### 3.2 Live Interactive Token Budget & Cost Calculator
 
-Use this real-time calculator to compute your team's projected monthly token consumption, estimated costs, and cumulative net savings when routing workloads through Xiaomi MiMo-V2.6 Pro.
+Use this real-time calculator to evaluate projected monthly token spend and net savings when routing workloads through Xiaomi MiMo-V2.6 Pro.
 
 <div class="my-8 p-6 bg-gray-900 border border-indigo-500/40 rounded-xl shadow-2xl text-gray-200">
   <div class="flex items-center justify-between pb-4 border-b border-gray-800">
-    <h3 class="text-lg font-bold text-white flex items-center gap-2">
+    <div class="text-lg font-bold text-white flex items-center gap-2">
       <span class="inline-block w-3 h-3 rounded-full bg-indigo-500"></span>
       MiMo-V2.6 Pro vs. Claude Sonnet 5 Cost Arbitrage Estimator
-    </h3>
+    </div>
     <span class="text-xs px-2.5 py-1 rounded bg-indigo-950 text-indigo-300 font-mono">Real-Time Math</span>
   </div>
   
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
     <div>
-      <label for="calc-agent-turns" class="block text-xs font-semibold uppercase text-gray-400">Agent Turns Per Day (Total Requests)</label>
+      <label for="calc-agent-turns" class="block text-xs font-semibold uppercase text-gray-400">Agent Turns Per Day</label>
       <input id="calc-agent-turns" type="range" min="50" max="2500" value="300" step="50" class="w-full mt-2 accent-indigo-500 cursor-pointer" oninput="updateCostCalculator()" />
       <div class="flex justify-between text-xs text-gray-400 mt-1">
         <span>50 turns</span>
@@ -219,7 +214,7 @@ Use this real-time calculator to compute your team's projected monthly token con
     </div>
     
     <div>
-      <label for="calc-context-size" class="block text-xs font-semibold uppercase text-gray-400">Average Ingested Context (Tokens)</label>
+      <label for="calc-context-size" class="block text-xs font-semibold uppercase text-gray-400">Average Context (Tokens)</label>
       <input id="calc-context-size" type="range" min="10000" max="250000" value="50000" step="10000" class="w-full mt-2 accent-indigo-500 cursor-pointer" oninput="updateCostCalculator()" />
       <div class="flex justify-between text-xs text-gray-400 mt-1">
         <span>10K tokens</span>
@@ -249,7 +244,7 @@ Use this real-time calculator to compute your team's projected monthly token con
 function updateCostCalculator() {
   const turns = parseInt(document.getElementById('calc-agent-turns').value, 10);
   const contextTokens = parseInt(document.getElementById('calc-context-size').value, 10);
-  const outputTokens = 2000; // standard generated output per coding turn
+  const outputTokens = 2000;
   
   document.getElementById('calc-turns-val').innerText = turns.toLocaleString() + ' turns/day';
   document.getElementById('calc-context-val').innerText = contextTokens.toLocaleString() + ' tokens';
@@ -258,12 +253,8 @@ function updateCostCalculator() {
   const totalInputTokens = turns * contextTokens * days;
   const totalOutputTokens = turns * outputTokens * days;
 
-  // Sonnet 5: $3.00/M in, $15.00/M out
   const sonnetCost = (totalInputTokens / 1000000 * 3.0) + (totalOutputTokens / 1000000 * 15.0);
-  
-  // MiMo-V2.6 Pro: $0.80/M in, $2.40/M out
   const mimoCost = (totalInputTokens / 1000000 * 0.8) + (totalOutputTokens / 1000000 * 2.4);
-  
   const savings = sonnetCost - mimoCost;
   const pct = sonnetCost > 0 ? ((savings / sonnetCost) * 100).toFixed(1) : 0;
 
@@ -271,7 +262,6 @@ function updateCostCalculator() {
   document.getElementById('calc-mimo-cost').innerText = '$' + mimoCost.toFixed(2);
   document.getElementById('calc-net-savings').innerText = '$' + savings.toFixed(2) + ' (' + pct + '%)';
 }
-// Initial run
 document.addEventListener('DOMContentLoaded', updateCostCalculator);
 </script>
 
@@ -279,11 +269,11 @@ document.addEventListener('DOMContentLoaded', updateCostCalculator);
 
 ## 4. Production Resilience: Resolving 1M Token Context Timeouts and SSE Dropped Connections
 
-Operating over deep 1M token contexts introduces unique network edge cases that standard REST clients fail to handle reliably.
+Operating over deep 1M token contexts introduces network edge cases that standard REST clients fail to handle reliably.
 
 ### 4.1 Root Cause Analysis: TCP Keep-Alive and Stream Idle Timeouts in Claude Code
 
-When Claude Code CLI transmits 500,000+ tokens to an LLM, the prefill phase on the server cluster can take 8 to 15 seconds before the first output token is generated. Standard Node.js `fetch` and Axios clients maintain default socket idle timeouts of 5 to 10 seconds. When intermediate network routers see silence on the TCP socket during prompt evaluation, they emit RST packets or terminate the connection silently.
+When transmitting 500,000+ tokens to an LLM, server-side prefill compute takes 8 to 15 seconds before the first token is emitted. Standard clients enforce 5 to 10-second socket timeouts. When intermediary network proxies detect silence, they drop connections prematurely.
 
 ```
 Claude Code CLI              APIVALE Proxy Layer               MiMo-V2.6 Pro Cluster
@@ -292,17 +282,16 @@ Claude Code CLI              APIVALE Proxy Layer               MiMo-V2.6 Pro Clu
       │                              │                                  │
       │<── :keep-alive ping (3s) ────│   (Processing MoE Tokens...)     │
       │<── :keep-alive ping (6s) ────│   (Processing MoE Tokens...)     │
-      │<── :keep-alive ping (9s) ────│   (Processing MoE Tokens...)     │
       │                              │                                  │
       │<── data: {"delta": ...} ─────│<── First Token Yielded ──────────│
       │    [Stream Active]           │    [Stream Active]               │
 ```
 
-APIVALE's ingress architecture addresses this challenge by injecting periodic SSE comment heartbeats (`:keep-alive\n\n`) every 2,500 milliseconds during the prompt prefill phase. This keeps the client socket open and prevents Claude Code from aborting with the dreaded `"API Error: Stream idle timeout - partial response received"`.
+APIVALE's ingress architecture addresses this by emitting periodic SSE comment heartbeats (`:keep-alive\n\n`) every 2,500ms during prefill, preventing Claude Code from triggering `"API Error: Stream idle timeout"`.
 
 ### 4.2 Production TypeScript Agent Wrapper with Exponential Backoff and Jitter
 
-To integrate MiMo-V2.6 Pro into automated CI/CD pipelines, autonomous bots, or internal developer portals, use this battle-tested TypeScript client with jittered exponential backoff and explicit error handling for HTTP 401, 429, and 502 status codes.
+To integrate MiMo-V2.6 Pro into automated CI/CD pipelines, use this robust TypeScript client featuring jittered exponential backoff and error handling for HTTP 401, 429, and 502 status codes.
 
 ```typescript
 import axios, { AxiosError, AxiosInstance } from "axios";
@@ -333,14 +322,13 @@ export class MiMoProductionClient {
         "Content-Type": "application/json",
         "X-Agent-Protocol": "mimo-v2.6-production"
       },
-      timeout: 180000 // 3 minutes maximum timeout for massive 1M context evaluation
+      timeout: 180000 // 3 minutes timeout for massive 1M context evaluation
     });
   }
 
   public async executeCodingAgent(req: MiMoAgentRequest): Promise<MiMoAgentResponse> {
     const startTime = Date.now();
     
-    // Construct system prompt incorporating monorepo context
     const contextPayload = (req.contextFiles || [])
       .map(file => `=== FILE: ${file.path} ===\n${file.content}\n`)
       .join("\n");
@@ -378,16 +366,14 @@ export class MiMoProductionClient {
         const axiosErr = err as AxiosError;
         const status = axiosErr.response?.status;
 
-        // Permanent authentication errors: fail fast without retrying
         if (status === 401) {
           throw new Error("APIVALE Authentication Failed (401): Please verify your API key.");
         }
 
-        // Rate limit (429) or upstream Gateway Error (502/503/504): exponential backoff
         if ((status === 429 || (status && status >= 500)) && attempt < this.maxRetries) {
           const jitter = Math.random() * 400;
           const delay = Math.pow(2, attempt) * this.baseDelayMs + jitter;
-          console.warn(`[MiMo Client] HTTP ${status} encountered. Retrying attempt ${attempt}/${this.maxRetries} in ${Math.round(delay)}ms...`);
+          console.warn(`[MiMo Client] HTTP ${status} encountered. Retrying in ${Math.round(delay)}ms...`);
           await new Promise(resolve => setTimeout(resolve, delay));
           continue;
         }
@@ -401,7 +387,7 @@ export class MiMoProductionClient {
 }
 ```
 
-By leveraging this client pattern, production workloads automatically absorb transient congestion and stay resilient against network jitter. For projects exploring multi-model fallbacks, combining MiMo-V2.6 Pro with [Claude Opus 5](/blog/how-to-connect-claude-opus-5-to-claude-code-cli) ensures uninterrupted engineering velocity.
+Combining MiMo-V2.6 Pro with [Claude Opus 5](/blog/how-to-connect-claude-opus-5-to-claude-code-cli) ensures uninterrupted development velocity across high-concurrency coding pipelines.
 
 ---
 
@@ -423,7 +409,7 @@ The recommended limit for multi-turn Claude Code workflows is between 100,000 an
 
 <div class="my-10 p-8 rounded-2xl bg-gradient-to-r from-indigo-900/60 via-purple-900/40 to-gray-900 border border-indigo-500/40 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
   <div>
-    <h3 class="text-xl font-bold text-white tracking-tight">Ready to Run Xiaomi MiMo-V2.6 Pro on Claude Code & Cursor?</h3>
+    <div class="text-xl font-bold text-white tracking-tight">Ready to Run Xiaomi MiMo-V2.6 Pro on Claude Code & Cursor?</div>
     <p class="mt-2 text-sm text-gray-300 max-w-xl">
       Create your APIVALE account in seconds. Get instant access to <strong>infer/mimo-v2.6-pro</strong> with $0.20 free starter credit, global checkout via Waffo Global Billing, and unified OpenAI & Anthropic wire protocols.
     </p>
