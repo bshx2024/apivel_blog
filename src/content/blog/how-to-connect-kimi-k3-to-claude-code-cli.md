@@ -184,6 +184,10 @@ app.post('/v1/messages', async (req: Request, res: Response): Promise<void> => {
 app.listen(PORT, () => console.log(`Kimi K3 Anthropic Bridge running on http://localhost:${PORT}`));
 ```
 
+### Long-Context Omnimodal Routing: Upgrading to Xiaomi MiMo-V2.6 Pro
+
+If your autonomous coding agent requires deep monorepo context exceeding standard token boundaries or native vision/terminal reasoning, explore our guide on [How to Connect Xiaomi MiMo-V2.6 Pro to Claude Code CLI & Cursor](/blog/xiaomi-mimo-v2-6-pro-claude-code-setup) to utilize its 1,000,000 token context window and 1.02T MoE architecture.
+
 ---
 
 <div class="cta-card">

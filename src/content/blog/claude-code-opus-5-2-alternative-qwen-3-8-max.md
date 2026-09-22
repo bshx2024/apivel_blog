@@ -186,18 +186,20 @@ When evaluated with the identical prompt, Qwen 3.8 on APIVALE produced clean, se
 Unlike earlier models that emitted lazy placeholders like `// ... rest of code unchanged ...`, the 2.4T MoE model outputs exhaustive, syntactically complete code blocks. Coupled with its native 1-million-token context capacity, long terminal outputs never suffer truncation.
 
 ```mermaid
-graph LR
+graph TD
     A["Claude Code CLI Terminal"] -->|"Anthropic Protocol (/v1/messages)"| B["APIVALE Unified Proxy"]
     B -->|"High-Speed Stream (<400ms TTFT)"| C["Alibaba MoE Inference Cluster"]
+    B -->|"1M Omnimodal Reasoning"| E["Xiaomi MiMo-V2.6 Pro (infer/mimo-v2.6-pro)"]
     B -->|"Global Billing Layer"| D["Waffo Checkout (Cards, Wallets, Zero KYC)"]
     C -->|"Streamed SSE Chunks"| A
+    E -->|"Streamed SSE Chunks"| A
 ```
 
 ---
 
 ## How to Configure Claude Code CLI with Qwen 3.8 (Step-by-Step)
 
-Connecting Claude Code CLI to APIVALE requires configuring standard environment variables without editing binary files. For benchmark verification and token comparisons, inspect our [Qwen 3.8 Max benchmark preview guide](/blog/qwen-3-8-max-benchmarks-preview-guide/), or refer to our complete walkthrough on [how to connect Qwen 3.8 to Claude Code CLI](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/).
+Connecting Claude Code CLI to APIVALE requires configuring standard environment variables without editing binary files. For benchmark verification and token comparisons, inspect our [Qwen 3.8 Max benchmark preview guide](/blog/qwen-3-8-max-benchmarks-preview-guide/), or refer to our complete walkthrough on [how to connect Qwen 3.8 to Claude Code CLI](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/) as well as our new integration guide on [How to Connect Xiaomi MiMo-V2.6 Pro to Claude Code CLI & Cursor](/blog/xiaomi-mimo-v2-6-pro-claude-code-setup) for native 1M context omnimodal reasoning.
 
 ### Terminal Environment & Custom Endpoint Setup
 

@@ -465,6 +465,18 @@ app.post('/v1/messages', async (req: Request, res: Response): Promise<void> => {
 app.listen(PORT, () => console.log(`APIVALE Bridge running on http://localhost:${PORT}`));
 ```
 
+### Multi-Model Agent Failover: Xiaomi MiMo-V2.6 Pro and Long-Context Fallbacks
+
+For engineering workflows requiring entire repository ingestion beyond standard 128K context boundaries, APIVALE allows developers to dynamically route from Qwen 3.8 to Xiaomi's newly open-sourced 1.02-trillion parameter flagship model. Check our in-depth integration guide on [How to Connect Xiaomi MiMo-V2.6 Pro to Claude Code CLI & Cursor](/blog/xiaomi-mimo-v2-6-pro-claude-code-setup) to enable 1M token context reasoning with Waffo Global Billing.
+
+```mermaid
+graph TD
+    CLI["Claude Code CLI"] --> Gateway["APIVALE Unified Gateway (https://api.apivale.com/v1)"]
+    Gateway -->|"Standard Coding (2.4T MoE)"| Qwen["Qwen 3.8-Max (infer/qwen3.8-max)"]
+    Gateway -->|"1M Long-Context Ingestion"| MiMo["Xiaomi MiMo-V2.6 Pro (infer/mimo-v2.6-pro)"]
+    Gateway -->|"Reasoning Fallback"| Kimi["Kimi K3 (kimi-k3)"]
+```
+
 ---
 
 ## Frequently Asked Questions (Developer FAQ)
