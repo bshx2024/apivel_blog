@@ -396,7 +396,9 @@ const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.key
 				const postBody = document.querySelector('.post-body')?.innerText?.toLowerCase() || '';
 				const fullArticleText = postTitle + ' ' + postBody;
 
-				if (fullArticleText.includes('flashx') || fullArticleText.includes('glm-5.3-flashx') || fullArticleText.includes('glm-5-3-flashx')) {
+				if (fullArticleText.includes('mimo') || fullArticleText.includes('xiaomi') || fullArticleText.includes('小米')) {
+					topic = 'mimo';
+				} else if (fullArticleText.includes('flashx') || fullArticleText.includes('glm-5.3-flashx') || fullArticleText.includes('glm-5-3-flashx')) {
 					topic = 'glm-5.3-flashx';
 				} else if (fullArticleText.includes('ox-alpha') || fullArticleText.includes('glm-5.3-flash') || fullArticleText.includes('glm-5-3-flash')) {
 					topic = 'glm-5.3-flash';
@@ -424,6 +426,40 @@ const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.key
 			}
 
 			const TOPIC_CONFIG = {
+				'mimo': {
+					floating: {
+						en: {
+							badge: '🚀 1.02T Omnimodal',
+							title: 'Call Xiaomi MiMo-V2.6 Pro',
+							desc: 'Run 1M context MoE reasoning with Claude Code CLI & Cursor. Bypass KYC, instant $0.20 credit via PayPal & cards (+50% bonus).',
+							btnText: 'Try MiMo-V2.6 Instantly',
+							utmCampaign: 'mimo_access'
+						},
+						zh: {
+							badge: '🚀 1.02T 全模态',
+							title: '免实名体验小米 MiMo-V2.6 Pro',
+							desc: '1M 超长上下文与代码 MoE 推理！直连 Claude Code & Cursor，跳过国内验证，PayPal 全球即时结算，注册即送 $0.20 (+ 首充送 50%)。',
+							btnText: '一键体验 MiMo-V2.6 →',
+							utmCampaign: 'mimo_access'
+						}
+					},
+					inline: {
+						en: {
+							badge: '⚡ 1M Context Pipeline',
+							title: 'Connect Xiaomi MiMo-V2.6 Pro Endpoints',
+							desc: 'Ingest whole monorepos with 1,000,000 token context. High-concurrency OpenAI & Anthropic compatible endpoints with seamless PayPal billing.',
+							btnText: 'Test MiMo Playground',
+							utmCampaign: 'mimo_access'
+						},
+						zh: {
+							badge: '⚡ 1M 超长上下文',
+							title: '想免实名调用小米 MiMo-V2.6 Pro 接口？',
+							desc: '1.02 万亿 MoE 架构，单次吞吐百万级代码库。APIVALE 提供高可用 OpenAI/Anthropic 兼容网关，PayPal 即时充值，送 $0.20 免费体验金。',
+							btnText: '立即测试 MiMo 接口 →',
+							utmCampaign: 'mimo_access'
+						}
+					}
+				},
 				'glm-5.3-flashx': {
 					floating: {
 						en: {

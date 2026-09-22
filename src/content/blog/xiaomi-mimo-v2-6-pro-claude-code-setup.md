@@ -17,7 +17,7 @@ keyTakeaways:
     value: "https://api.apivale.com/v1"
     isCode: true
   - label: "Billing & Free Quota"
-    value: "Waffo Global Billing ($0.20 Trial)"
+    value: "PayPal & Global Cards ($0.20 Trial)"
     highlight: true
 ---
 
@@ -29,7 +29,7 @@ On September 22, 2026, Xiaomi officially released and open-sourced **MiMo-V2.6**
     <li><strong>SDK Compatibility Protocol</strong>: Native Anthropic and OpenAI wire protocol endpoints (<code class="text-indigo-300">https://api.apivale.com/v1</code>).</li>
     <li><strong>Flagship Invocation Model</strong>: <code class="text-indigo-300">infer/mimo-v2.6-pro</code> for 1M reasoning and <code class="text-indigo-300">infer/mimo-v2.6-flash</code> for high-throughput batch tasks.</li>
     <li><strong>Engineering Edge-Case Fix</strong>: SSE streaming heartbeat injection prevents Claude Code CLI stream idle drops during long-horizon reasoning.</li>
-    <li><strong>Global Waffo Billing</strong>: Instant activation via Waffo Global Billing with zero KYC or phone verification; includes $0.20 free starter credit.</li>
+    <li><strong>Global Payment & Free Quota</strong>: Instant activation via PayPal, Credit Cards & Alipay with zero KYC; includes $0.20 free starter credit (+50% bonus on first top-up).</li>
   </ul>
 </div>
 
@@ -277,7 +277,7 @@ On Xiaomi MiMo-V2.6 Pro via APIVALE:
 
 $$\text{Cost}_{\text{MiMo-V2.6 Pro}} = \left(\frac{45,000}{10^6} \times \$0.80\right) + \left(\frac{2,500}{10^6} \times \$2.40\right) = \$0.0420$$
 
-This represents an immediate **75.6% savings per agent cycle**. Payments are settled via **Waffo Global Billing**, accepting international credit cards and digital wallets with zero KYC.
+This represents an immediate **75.6% savings per agent cycle**. Payments are settled via **PayPal 官方即时结账** (alongside international credit cards, Apple Pay, and Alipay) with zero currency conversion fees and no KYC required.
 
 ---
 
@@ -354,8 +354,8 @@ Configure Claude Code CLI by exporting `ANTHROPIC_BASE_URL="https://api.apivale.
 ### What makes Xiaomi MiMo-V2.6 Pro different from Qwen 3.7 Max and Claude Sonnet 5?
 Xiaomi MiMo-V2.6 Pro differentiates itself by offering an expansive native 1,000,000 token context window, a 1.02-trillion parameter MoE backbone activating ~42B parameters per token, and open-weight checkpoints on Hugging Face. At $0.80 per million input tokens, it costs approximately 75% less than Claude Sonnet 5 while handling complete monorepos in a single reasoning pass.
 
-### How does Waffo billing work for international developers accessing MiMo-V2.6 Pro?
-Waffo Global Billing processes payments for international developers without requiring Chinese identity verification or domestic payment instruments. Developers can top up balances using global credit cards (Visa, Mastercard, American Express) or international digital wallets via Waffo, and every new APIVALE account receives an initial $0.20 free starter credit upon registration.
+### How do PayPal and international payments work for MiMo-V2.6 Pro?
+APIVALE natively supports PayPal official instant checkout, major international credit cards (Visa, Mastercard, Amex), Apple Pay, and Alipay with zero currency conversion fees. Developers can top up without mainland phone or identity verification, and new accounts receive an initial $0.20 free starter credit upon registration with automatic +50% extra credits on first top-up.
 
 ### What is the recommended context window limit for multi-turn Claude Code workflows?
 The recommended limit for multi-turn Claude Code workflows is between 100,000 and 400,000 tokens for optimal latency and token budgeting. While MiMo-V2.6 Pro supports up to 1,000,000 tokens natively, keeping active turn contexts pruned prevents unnecessary prefill delay and maximizes code generation speed.
@@ -394,10 +394,10 @@ The recommended limit for multi-turn Claude Code workflows is between 100,000 an
     },
     {
       "@type": "Question",
-      "name": "How does Waffo billing work for international developers accessing MiMo-V2.6 Pro?",
+      "name": "How do PayPal and international payments work for MiMo-V2.6 Pro?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Waffo Global Billing processes payments for international developers without requiring Chinese identity verification or domestic payment instruments. Developers can top up balances using global credit cards (Visa, Mastercard, American Express) or international digital wallets via Waffo, and every new APIVALE account receives an initial $0.20 free starter credit upon registration."
+        "text": "APIVALE natively supports PayPal official instant checkout, major international credit cards (Visa, Mastercard, Amex), Apple Pay, and Alipay with zero currency conversion fees. Developers can top up without mainland phone or identity verification, and new accounts receive an initial $0.20 free starter credit upon registration with automatic +50% extra credits on first top-up."
       }
     },
     {
