@@ -132,19 +132,19 @@ You can also configure project-level defaults inside `.claude/settings.json`:
 }
 ```
 
-### 2.2 Cursor IDE Custom Model Rules and Base URL Setup
+### 2.2 Cursor IDE Prompts, Custom Model Rules and Base URL Setup
 
-Cursor IDE uses standard OpenAI Chat Completions for custom models. Connecting MiMo-V2.6 Pro provides instant context-aware edits and Chat sidebar support with full 1M context leverage.
+Cursor IDE uses standard OpenAI Chat Completions for custom models. Connecting MiMo-V2.6 Pro provides instant context-aware edits, prompt optimization, and Chat sidebar support with full 1M context leverage.
 
 In **Cursor Settings** $\rightarrow$ **Models**:
 1. Override OpenAI Base URL to: `https://api.apivale.com/v1`.
 2. Enter your APIVALE API key (`sk-apivale-...`).
 3. Click **+ Add Custom Model** and enter `infer/mimo-v2.6-pro`.
 
-Add this configuration to `.cursorrules`:
+Add this system prompt configuration to `.cursorrules`:
 
 ```markdown
-# Xiaomi MiMo-V2.6 Pro Coding Rules
+# Xiaomi MiMo-V2.6 Pro System Prompt & Coding Rules
 - Model Target: infer/mimo-v2.6-pro via APIVALE Gateway
 - Always write production-grade code with complete error handling (try/catch blocks).
 - Maintain structured logging and concise mathematical reasoning before code generation.
@@ -155,7 +155,7 @@ You can also pivot between [Kimi K3](/blog/how-to-connect-kimi-k3-to-claude-code
 
 ---
 
-## 3. Interactive Testing & Head-to-Head Architecture Benchmarks
+## 3. Interactive Testing & MiMo-V2.6 Pro Comparison & Pricing Benchmarks
 
 Test your model execution and inspect comparative pricing before operationalizing agent workloads.
 
@@ -256,7 +256,7 @@ async function runMimoTestInArticle() {
 }
 </script>
 
-### 3.2 Head-to-Head Latency and Cost Breakdown
+### 3.2 Head-to-Head Latency and Cost Breakdown: MiMo-V2.6 Pro Comparison vs Sonnet 5
 
 The table below compares token pricing, context capacity, and engineering trade-offs.
 
@@ -348,17 +348,17 @@ Combining MiMo-V2.6 Pro with [Claude Opus 5](/blog/how-to-connect-claude-opus-5-
 
 ## Frequently Asked Questions (FAQ)
 
-### How do I configure Claude Code CLI to route to Xiaomi MiMo-V2.6 Pro via APIVALE?
-Configure Claude Code CLI by exporting `ANTHROPIC_BASE_URL="https://api.apivale.com/v1"` and your APIVALE key as `ANTHROPIC_API_KEY` in your terminal, then run `claude --model infer/mimo-v2.6-pro`. APIVALE translates Anthropic `/v1/messages` calls directly into MiMo's MoE execution pipeline with zero local proxy daemons required.
+### Is Xiaomi MiMo-V2.6 Pro good for coding and AI agents?
+Yes, Xiaomi MiMo-V2.6 Pro is exceptionally well-suited for autonomous coding agents, featuring a 1.02-trillion parameter MoE architecture (42B active parameters) and a native 1,000,000 token context window. In Claude Code CLI and Cursor IDE benchmarks, it delivers reasoning on par with frontier closed models while reducing token spend by 75% compared to Claude Sonnet 5.
 
-### What makes Xiaomi MiMo-V2.6 Pro different from Qwen 3.7 Max and Claude Sonnet 5?
-Xiaomi MiMo-V2.6 Pro differentiates itself by offering an expansive native 1,000,000 token context window, a 1.02-trillion parameter MoE backbone activating ~42B parameters per token, and open-weight checkpoints on Hugging Face. At $0.80 per million input tokens, it costs approximately 75% less than Claude Sonnet 5 while handling complete monorepos in a single reasoning pass.
+### Is Xiaomi MiMo free, and how much does MiMo-V2.6 Pro cost?
+Xiaomi MiMo-V2.6 open weights are 100% free to download on Hugging Face for self-hosting. For managed cloud API access via APIVALE, pricing is $0.80 per million input tokens and $2.40 per million output tokens. Every newly registered developer receives a $0.20 free trial quota with zero credit card required, and top-ups feature a +50% first-deposit privilege (e.g., $5 yields $7.50).
+
+### How do I configure prompts and system rules for MiMo-V2.6 Pro in Cursor and Claude Code?
+Configure MiMo-V2.6 Pro prompts by targeting `infer/mimo-v2.6-pro` via APIVALE's endpoint (`https://api.apivale.com/v1`) and specifying strict system instructions in your `.cursorrules` or `.claude/settings.json`. Explicitly enforce structured reasoning before code generation and handle long-horizon 1M token contexts without mid-prompt retrieval degradation.
 
 ### How do PayPal and international payments work for MiMo-V2.6 Pro?
 APIVALE natively supports PayPal official instant checkout, major international credit cards (Visa, Mastercard, Amex), Apple Pay, and Alipay with zero currency conversion fees. Developers can top up without mainland phone or identity verification, and new accounts receive an initial $0.20 free starter credit upon registration with automatic +50% extra credits on first top-up.
-
-### What is the recommended context window limit for multi-turn Claude Code workflows?
-The recommended limit for multi-turn Claude Code workflows is between 100,000 and 400,000 tokens for optimal latency and token budgeting. While MiMo-V2.6 Pro supports up to 1,000,000 tokens natively, keeping active turn contexts pruned prevents unnecessary prefill delay and maximizes code generation speed.
 
 ---
 
@@ -378,18 +378,26 @@ The recommended limit for multi-turn Claude Code workflows is between 100,000 an
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How do I configure Claude Code CLI to route to Xiaomi MiMo-V2.6 Pro via APIVALE?",
+      "name": "Is Xiaomi MiMo-V2.6 Pro good for coding and AI agents?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Configure Claude Code CLI by exporting ANTHROPIC_BASE_URL=\"https://api.apivale.com/v1\" and your APIVALE key as ANTHROPIC_API_KEY in your terminal, then run claude --model infer/mimo-v2.6-pro. APIVALE translates Anthropic /v1/messages calls directly into MiMo's MoE execution pipeline with zero local proxy daemons required."
+        "text": "Yes, Xiaomi MiMo-V2.6 Pro is exceptionally well-suited for autonomous coding agents, featuring a 1.02-trillion parameter MoE architecture (42B active parameters) and a native 1,000,000 token context window. In Claude Code CLI and Cursor IDE benchmarks, it delivers reasoning on par with frontier closed models while reducing token spend by 75% compared to Claude Sonnet 5."
       }
     },
     {
       "@type": "Question",
-      "name": "What makes Xiaomi MiMo-V2.6 Pro different from Qwen 3.7 Max and Claude Sonnet 5?",
+      "name": "Is Xiaomi MiMo free, and how much does MiMo-V2.6 Pro cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Xiaomi MiMo-V2.6 Pro differentiates itself by offering an expansive native 1,000,000 token context window, a 1.02-trillion parameter MoE backbone activating ~42B parameters per token, and open-weight checkpoints on Hugging Face. At $0.80 per million input tokens, it costs approximately 75% less than Claude Sonnet 5 while handling complete monorepos in a single reasoning pass."
+        "text": "Xiaomi MiMo-V2.6 open weights are 100% free to download on Hugging Face for self-hosting. For managed cloud API access via APIVALE, pricing is $0.80 per million input tokens and $2.40 per million output tokens. Every newly registered developer receives a $0.20 free trial quota with zero credit card required, and top-ups feature a +50% first-deposit privilege (e.g., $5 yields $7.50)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I configure prompts and system rules for MiMo-V2.6 Pro in Cursor and Claude Code?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Configure MiMo-V2.6 Pro prompts by targeting infer/mimo-v2.6-pro via APIVALE's endpoint (https://api.apivale.com/v1) and specifying strict system instructions in your .cursorrules or .claude/settings.json. Explicitly enforce structured reasoning before code generation and handle long-horizon 1M token contexts without mid-prompt retrieval degradation."
       }
     },
     {
@@ -398,14 +406,6 @@ The recommended limit for multi-turn Claude Code workflows is between 100,000 an
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "APIVALE natively supports PayPal official instant checkout, major international credit cards (Visa, Mastercard, Amex), Apple Pay, and Alipay with zero currency conversion fees. Developers can top up without mainland phone or identity verification, and new accounts receive an initial $0.20 free starter credit upon registration with automatic +50% extra credits on first top-up."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the recommended context window limit for multi-turn Claude Code workflows?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The recommended limit for multi-turn Claude Code workflows is between 100,000 and 400,000 tokens for optimal latency and token budgeting. While MiMo-V2.6 Pro supports up to 1,000,000 tokens natively, keeping active turn contexts pruned prevents unnecessary prefill delay and maximizes code generation speed."
       }
     }
   ]
