@@ -35,15 +35,17 @@ Follow this 4-step execution workflow:
 
 When executing Step 4, Reed and coding assistants **MUST execute the following 5-Gate Atomic Protocol** in a single complete transaction (never leave partial work):
 
-1. **Gate 1 (Drafting, Community Voice & CRO Tool)**:
-   - Write article in `src/content/blog/<article-slug>.md` with strict AST symmetry (1 H1, symmetrical H2 $\rightarrow$ H3, no H4 jumping).
-   - Configure frontmatter `keyTakeaways` array with 4 explicit technical parameters matching user search intent (protocol, target model ID, baseURL, free trial quota).
-   - Inject the **4 Real Engineering Gains** + embedded **Community Voice Box** + **Objective Comparison Table** + embedded **Responsive Interactive Micro-Tool Widget** (vanilla JS calculator or config generator) + **FAQ JSON-LD Schema**.
+1. **Gate 1 (Drafting, Community Voice, Live Playground & CRO Alignment)**:
+   - Write article in `src/content/blog/<article-slug>.md` with strict AST symmetry (1 H1 <= 80 chars, symmetrical H2 $\rightarrow$ H3, no H4 jumping, **widgets must use `<div>` instead of `<h1>`-`<h4>`**).
+   - Configure frontmatter `keyTakeaways` array with 4 explicit technical parameters matching user search intent (protocol, target model ID, baseURL, `PayPal & Global Cards ($0.20 Trial)`).
+   - Inject the **4 Real Engineering Gains** + embedded **Community Voice Box** + **Objective Comparison Table** + embedded **In-Article Live Playground / Interactive Micro-Tool** (with interactive `<input>`/`<select>`/`<button>` to fulfill on-page intent and eliminate 4.5 pt doorway page deduction) + **FAQ JSON-LD Schema**.
+   - Inject **Ending CTA Card (`.cta-card`) aligned with wallet**: +50% first deposit bonus ($5 $\rightarrow$ $7.50, $29 $\rightarrow$ $43.50), $29 developer pack (56% OFF, 40M tokens, never expires), $0.20 free signup trial, dual `/pricing` & `/sign-up` action buttons with `redirect=/blog/<slug>`.
+   - Register new model topics in `src/pages/[slug].astro` (`TOPIC_CONFIG`) with bilingual metadata.
    - Enforce **Contextual CTA Redirect**: ensure all CTA links carry `redirect=/blog/<slug>` to prevent context loss.
    - Enforce **Zero-Alert Rule**: code blocks rely on automated 1-Click Copy UI; NEVER hand-craft native `alert()` popups in markdown.
 2. **Gate 2 (Automated Pre-Flight SEO Health & Link Audit)**:
    - Run `audit_article_seo_health` against the new slug.
-   - Enforce: 0 blockers, 0 warnings, MetaTitle in 50–60 chars, all external URLs probe HTTP 200, Waffo Global Billing strictly enforced.
+   - Enforce: 0 blockers, 0 warnings, MetaTitle in 50–60 chars (max 600px), H1 <= 80 chars, Meta Description in 140–160 chars, visible word count 1200–1800 words, all external URLs probe HTTP 200, PayPal official instant checkout & global zero-FX billing strictly enforced.
 3. **Gate 3 (Atomic Bidirectional Mesh Weaving - MUST MODIFY OLD POSTS)**:
    - Search the repository for 2–3 existing high-authority pillar articles in the same or adjacent topic cluster.
    - **Immediately open and edit those existing articles** to inject contextual inbound anchor links and Mermaid failover nodes pointing to the new article.
@@ -61,8 +63,12 @@ When executing Step 4, Reed and coding assistants **MUST execute the following 5
 - **Master Reference**: Always refer to [BLOG_WRITING_STANDARD.md](file:///e:/kaifa/APIVALE_blog/BLOG_WRITING_STANDARD.md) for full detailed specifications (Personas, Featured Snippet components, WebP media rules, Mobile-first UX).
 - **Anti-Spam & Anti-Boilerplate**: NEVER use copy-pasted introductory templates (e.g. `Running autonomous AI coding agents... burns $40...`). NEVER invent fake branded formulas (`Matrix/Triangle`).
 - **Answer-First & Zero Pogo-Sticking**: Provide structured `keyTakeaways` in frontmatter for instant 1-second answers. NEVER trigger invasive modal popups before 25s or 35% scroll depth.
-- **Supported Payment Method**: APIVALE strictly supports **Waffo** (Waffo Global Billing / Credit Cards & Global Wallets via Waffo). NEVER reference Stripe or Crypto.
-- **Model Recency**: Reference flagship LLM versions (**Claude Sonnet 5**, **Qwen 3.7 Max**, **DeepSeek V4**). Invocation model name for Qwen 3.7 Max is `infer/qwen3.7-max`.
+- **Supported Payment Method**: APIVALE officially supports **PayPal** (PayPal Instant Checkout / Pay with PayPal) as mainstream, plus international credit cards (Visa, MasterCard, Amex), Apple Pay, and Alipay via global billing gateway (0 extra FX fees, zero KYC). NEVER reference Stripe or Crypto.
+- **In-Article Live Playground**: Always embed an interactive playground/tester with `<input>`/`<select>`/`<button>` to fulfill search intent and prevent P0 4.5 pt doorway bounce penalty.
+- **Wallet Benefits Alignment**: Ending `.cta-card` must 100% match wallet offers: +50% first deposit bonus ($5 $\rightarrow$ $7.50), $29 developer pack (56% OFF, 40M tokens), $0.20 free signup trial, dual `/pricing` and `/sign-up` links with `redirect=/blog/<slug>`.
+- **HTML Widget AST Cleanliness**: NEVER use `<h1>`-`<h4>` inside embedded HTML widgets (Definition Box, Key Takeaways, CTA, Playground). Always use `<div>` or `<span>` with CSS classes to maintain a single H1 $\rightarrow$ H2 $\rightarrow$ H3 tree.
+- **Word Count & Metrics**: Keep visible words between 1200–1800 words (prevent theme dilution); MetaTitle 50–60 chars (max 600px); H1 <= 80 chars; Meta Description 140–160 chars.
+- **Model Recency**: Reference flagship LLM versions (**Claude Sonnet 5**, **Qwen 3.7 Max**, **DeepSeek V4**, **Xiaomi MiMo-V2.6 Pro**). Invocation model name for Qwen 3.7 Max is `infer/qwen3.7-max`, MiMo-V2.6 Pro is `infer/xiaomi-mimo-v2.6-pro`.
 - **Evergreen Short Slugs**: Slugs must be concise without years/dates (e.g., `/blog/qwen-3-7-max-claude-code-setup`).
 - **Protocol Compatibility**: Emphasize native OpenAI and Anthropic endpoint support for Claude Code CLI, Cursor, Windsurf.
 - **Seamless Context Redirect**: CTA links must specify `redirect=/blog/<slug>` so readers return to their active session.

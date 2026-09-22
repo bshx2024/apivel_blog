@@ -58,6 +58,19 @@
 
 ## 📝 优化行动记录 (2026-09)
 
+### 📅 2026-09-22 - ⚙️ [规范/CRO 动作]: 博客创作标准 (BLOG_WRITING_STANDARD.md & AGENTS.md) 核心升级：确立 PayPal 官方即时结账主推标准、钱包权益 100% 对齐、On-Page 100 原地需求承接 (Playground) 与组件无 H 标签 AST 纯净度规范
+
+* **影响范围/核心规范**：
+  * **影响文件**：`BLOG_WRITING_STANDARD.md`, `AGENTS.md`
+  * **核心改动**：
+    1. **支付渠道对外口径纠偏**：正式确立主流主推 **PayPal（PayPal 官方即时结账 / Pay with PayPal）**，同时支持国际信用卡（Visa / MasterCard / Amex）、Apple Pay 与国内支付宝（通过底层聚合通道，具备 0 额外跨境手续费与免 KYC 优势）。严禁单独宣称 Stripe 或 Crypto；
+    2. **钱包转化文案 100% 对齐**：末尾 `.cta-card` 与正文引导严格绑定实际钱包权益：首充送 +50%（$5 $\rightarrow$ $7.50, $29 $\rightarrow$ $43.50, $99 $\rightarrow$ $148.50）、$29 开发者专享包（直降 56%、4000万 Token、永久有效）、新用户 $0.20 免卡测试金，提供双行动按钮（`/pricing` 与 `/sign-up`）并携带 `redirect=/blog/<slug>`；
+    3. **On-Page 100 原地承接防御 (In-Article Live Playground)**：凡涉及“体验/测试/试用”字样，正文必须内嵌带原生表单交互（`<input>`/`<select>`/`<button>`）的轻量体验区，彻底杜绝被判定为 Doorway 欺骗性纯跳转落地页（扣 4.5 分 P0 致命项）；
+    4. **组件 AST 纯净度规范**：内嵌自定义 HTML（Definition Box、Key Takeaways、Playground、CRO 卡片）中严禁使用原生 `<h1>`~`<h4>` 标签，统一采用 `<div>`/`<span>` 加类名，保证纯 Markdown 单继承语义树，根绝跳级扣 1.5 分；
+    5. **侧边栏动态浮动卡片模型注册规范**：发布新大模型技术指南时，必须在 `src/pages/[slug].astro` 的 `TOPIC_CONFIG` 中注册专属中英文转化元数据；
+    6. **度量指标精细化把控**：Title 50–60 字符，H1 <= 80 字符，Description 140–160 字符，正文可见词数 1200–1800 词最佳（防止过度冗余稀释核心主题）。
+* **预期因果假设**：消除 哥飞 SEO / Web.cafe 及 Google 算法对落地页承接、语义树语法与元数据溢出的所有扣分项，全站新旧文章稳定维持在 On-Page 98~100 分，同时通过精准对齐真实钱包优惠与 PayPal 官方结账大幅提升海外开发者的注册充值转化率（预计 CVR 提升 35%+）。
+
 ### 📅 2026-09-22 - 📝 [内容动作]: 追踪小米全新开源 MiMo-V2.6 旗舰大模型发布，上线《How to Connect Xiaomi MiMo-V2.6 Pro to Claude Code CLI & Cursor》，打通 1M 超长上下文 MoE 路由与双向内链闭环
 
 * **影响页面/关键词**：
