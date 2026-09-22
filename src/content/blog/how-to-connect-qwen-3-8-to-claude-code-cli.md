@@ -90,7 +90,7 @@ To complete your Qwen 3.8 Claude Code setup via APIVALE, export `ANTHROPIC_BASE_
 export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
 export ANTHROPIC_AUTH_TOKEN="your_apivale_api_key"
 
-# Use infer/qwen3.8-max as active model
+# Use the flagship MoE endpoint as active model
 export ANTHROPIC_MODEL="infer/qwen3.8-max"
 
 # Launch your terminal coding agent
@@ -250,7 +250,7 @@ Test your APIVALE endpoint and model execution directly inside this article:
 
 ---
 
-## Qwen 3.8 Benchmark & Cost Comparison vs. Claude Sonnet 5
+## Benchmark & Cost Comparison vs. Claude Sonnet 5 vs. Claude Sonnet 5
 
 Evaluating the 2.4T MoE architecture against Anthropic flagship models demonstrates significant cost savings and faster Time-to-First-Token (TTFT).
 
@@ -349,7 +349,7 @@ Autonomous developer tools execute iterative tool-calling loops—reading file t
 2. **Global PayPal Billing**: Bypass credit card rejections and KYC hurdles with native **PayPal global billing**.
 3. **Protocol Compatibility**: APIVALE translates Anthropic `/v1/messages` payload structures, tool call schemas, and SSE streams directly into Qwen 3.8 responses.
 
-For detailed model evaluations, check out our companion guides on [How to Connect Claude Opus 5 to Claude Code CLI](/blog/how-to-connect-claude-opus-5-to-claude-code-cli/), [How to Connect Kimi K3 to Claude Code CLI](/blog/how-to-connect-kimi-k3-to-claude-code-cli/), [How to Connect Qwen 3.8 to Cursor IDE](/blog/qwen-3-8-cursor-setup/), [Cursor Pro vs. Own API Key Cost Analysis](/blog/cursor-pro-vs-custom-api-key/), and [Qwen 3.8 vs Kimi K3 Comparison](/blog/qwen-3-8-vs-kimi-k3-coding-agent-api/).
+For detailed model evaluations, check out our companion guides on [How to Connect Claude Opus 5 to Claude Code CLI](/blog/how-to-connect-claude-opus-5-to-claude-code-cli/), [How to Connect Kimi K3 to Claude Code CLI](/blog/how-to-connect-kimi-k3-to-claude-code-cli/), [How to Connect Qwen 3.8 to Cursor IDE](/blog/qwen-3-8-cursor-setup/), [Cursor Pro vs. Own API Key Cost Analysis](/blog/cursor-pro-vs-custom-api-key/), and [Benchmark vs Kimi K3 Comparison](/blog/qwen-3-8-vs-kimi-k3-coding-agent-api/).
 
 ---
 
@@ -399,15 +399,15 @@ npx @anthropic-ai/claude-code
 <div class="my-6 border-l-4 border-amber-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-amber-400">⚡ Cost &amp; Timeout Guard: Massive Context Optimization</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
-    <li><strong>Trigger 87.5% OFF Automatic Caching (0.125x Rate):</strong> APIVALE provides native 1.25-折 prompt caching on Qwen 3.8 Max ($0.10/1M cached vs $0.80/1M uncached). Ensure your client keeps system prompts and static file orders consistent to maintain prefix cache hits across conversation turns.</li>
+    <li><strong>Trigger 87.5% OFF Automatic Caching (0.125x Rate):</strong> APIVALE provides native 1.25-折 prompt caching on this flagship endpoint ($0.10/1M cached vs $0.80/1M uncached). Ensure your client keeps system prompts and static file orders consistent to maintain prefix cache hits across conversation turns.</li>
     <li><strong>Prevent Client-Side Timeouts:</strong> When feeding 300,000+ tokens of codebase context into 2.4T MoE models, deep pre-fill compute takes 90–150 seconds. Setting <code>API_TIMEOUT_MS=600000</code> prevents local agents from abruptly disconnecting before generation completes.</li>
-    <li><strong>Dual-Model Cost Reduction Strategy:</strong> For iterative codebase grep and bulk file reading, route to ultra-low-cost streaming models like <code>glm-5.3-flash</code> ($0.04/1M) or <a href="/blog/deepseek-v4-flash-api-guide/" class="text-cyan-400 hover:underline font-semibold">DeepSeek V4.1 Flash (437 t/s throughput at $0.14/1M)</a>, reserving Qwen 3.8 Max for final architectural code synthesis.</li>
+    <li><strong>Dual-Model Cost Reduction Strategy:</strong> For iterative codebase grep and bulk file reading, route to ultra-low-cost streaming models like <code>glm-5.3-flash</code> ($0.04/1M) or <a href="/blog/deepseek-v4-flash-api-guide/" class="text-cyan-400 hover:underline font-semibold">DeepSeek V4.1 Flash (437 t/s throughput at $0.14/1M)</a>, reserving the Max model for final architectural code synthesis.</li>
   </ul>
 </div>
 
 ### 3. Looking for Cursor IDE Integration Instead?
 
-While Claude Code CLI communicates natively via Anthropic's `/v1/messages` protocol, Cursor IDE operates strictly on OpenAI-compatible `/v1/chat/completions` specifications. If you are developing inside Cursor Composer rather than the terminal CLI, connecting Qwen 3.8 requires distinct OpenAI Base URL overrides, specific APIVALE headers, and `.cursorrules` system prompt tuning.
+While Claude Code CLI communicates natively via Anthropic's `/v1/messages` protocol, Cursor IDE operates strictly on OpenAI-compatible `/v1/chat/completions` specifications. If you are developing inside Cursor Composer rather than the terminal CLI, connecting the model requires distinct OpenAI Base URL overrides, specific APIVALE headers, and `.cursorrules` system prompt tuning.
 
 <div class="my-5 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4 shadow-md">
   <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Dedicated Cursor Integration Walkthrough</span>
@@ -472,7 +472,7 @@ app.listen(PORT, () => console.log(`APIVALE Bridge running on http://localhost:$
 ### How do I connect Qwen 3.8 to Claude Code without editing source code?
 Export `ANTHROPIC_BASE_URL="https://api.apivale.com/v1"`, `ANTHROPIC_AUTH_TOKEN="your_key"`, and `ANTHROPIC_MODEL="infer/qwen3.8-max"`. Claude Code CLI automatically routes requests through APIVALE.
 
-### Is Qwen 3.8 faster and cheaper than Claude Sonnet 5 for coding?
+### Is this model faster and cheaper than Claude Sonnet 5 for coding?
 Yes. Qwen 3.8-Max via APIVALE achieves ~420ms TTFT (50% faster) and costs **80% less** ($0.60/1M input tokens vs $3.00/1M for Sonnet 5).
 
 ### Can I use this model in both Qwen Code CLI and Claude Code?
@@ -536,7 +536,7 @@ Yes. APIVALE provides full Server-Sent Events (SSE) streaming compatibility, ena
     },
     {
       "@type": "Question",
-      "name": "Does APIVALE support SSE streaming for Qwen 3.8 in terminal tools?",
+      "name": "Does APIVALE support SSE streaming for this model in terminal tools?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Yes, APIVALE supports streaming (SSE) output for terminal progress spinners in Claude Code CLI and Cursor. The gateway supports full Server-Sent Events (SSE) streaming compatibility, enabling real-time terminal progress indicators and low-latency token streaming without intermediate buffering lag."
