@@ -362,16 +362,13 @@ The recommended limit for multi-turn Claude Code workflows is between 100,000 an
 
 ---
 
-<div class="my-10 p-6 rounded-2xl bg-gray-900 border border-indigo-500/40 shadow-xl flex flex-col md:flex-row items-center justify-between gap-4">
-  <div>
-    <div class="text-base font-bold text-white tracking-tight">Active In-Page Playground & API Gateway Ready</div>
-    <div class="mt-1 text-xs text-gray-300">
-      Use the in-article playground above to test <strong>infer/mimo-v2.6-pro</strong> directly, or create an API key with $0.20 free starter credit via Waffo Global Billing.
-    </div>
+<div class="cta-card">
+  <div class="cta-card-title text-lg font-bold text-white mb-2">⚡ Connect Xiaomi MiMo-V2.6 Pro to Your CLI & IDE with APIVALE</div>
+  <p class="cta-card-text">Supercharge your terminal coding, Cursor, and Windsurf workflows with Xiaomi MiMo-V2.6 Pro via APIVALE. Enjoy 75% lower token costs compared to Claude Sonnet 5, zero rate limits, and seamless PayPal, Credit Card & Alipay billing with zero currency conversion fees. Register to claim your free $0.20 test credit, and enjoy automatic +50% extra compute credits on your first top-up ($5 gets $7.50; $29 Developer Pack gets 40M Tokens at 56% OFF with $43.50 compute balance, never expire)!</p>
+  <div class="cta-card-actions">
+    <a href="https://apivale.com/pricing?utm_source=apivale_blog&utm_medium=blog_bottom_cta&utm_campaign=xiaomi-mimo-v2-6-pro-claude-code-setup" class="cta-primary-btn">Claim 56% OFF Developer Pack ($29) &rarr;</a>
+    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=xiaomi-mimo-v2-6-pro-claude-code-setup" class="cta-secondary-btn">Get Free API Key ($0.20 Trial)</a>
   </div>
-  <a href="https://apivale.com/login?redirect=/blog/xiaomi-mimo-v2-6-pro-claude-code-setup&utm_campaign=xiaomi-mimo-v2-6-pro-claude-code-setup" class="whitespace-nowrap px-5 py-2.5 rounded-lg text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-500 transition-all shadow-md">
-    Create API Key ($0.20 Trial) →
-  </a>
 </div>
 
 <script type="application/ld+json">
