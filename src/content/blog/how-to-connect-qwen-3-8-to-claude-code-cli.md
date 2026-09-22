@@ -27,6 +27,7 @@ lang: en
     <li><strong>80% Cost Reduction:</strong> Routing Claude Code CLI to Qwen 3.8 via <a href="https://apivale.com/sign-up?redirect=/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="text-emerald-400 hover:underline font-semibold">APIVALE (Claim $0.20 Free Credit)</a> cuts input costs to $0.60/1M tokens.</li>
     <li><strong>Sub-500ms TTFT:</strong> APIVALE's proxy reduces Time-to-First-Token to ~420ms—50% faster than baseline endpoints.</li>
     <li><strong>Global PayPal Billing:</strong> Bypasses credit card rejections and KYC blocks with native PayPal support.</li>
+    <li><strong>First Top-Up Privilege (+50% Bonus):</strong> Automatically get +50% extra compute credits. Top up <strong>$5 &rarr; get $7.50</strong> (&approx; 3M Tokens, Never Expire), or grab the popular <strong>$29 Developer Pack (40M Tokens, 56% OFF)</strong>.</li>
   </ul>
 </div>
 
@@ -265,6 +266,80 @@ Evaluating Qwen 3.8 against Anthropic flagship models demonstrates significant c
 | **Payment Options** | Credit Card Only | **PayPal Global Billing** / Credit Cards |
 | **Concurrency Pool** | Strict TPM Limits | High-Concurrency Gateway Pool (500+ RPM) |
 
+<!-- Live Wallet Aligned: First Deposit Privilege & Compute Packs Grid -->
+<div class="my-8 rounded-2xl border border-amber-500/40 bg-gradient-to-b from-gray-900 via-gray-950 to-black p-6 shadow-2xl">
+  <!-- Top Event Banner -->
+  <div class="flex items-center justify-between flex-wrap gap-2 border-b border-gray-800 pb-4 mb-5">
+    <div class="flex items-center gap-2">
+      <span class="text-xs font-bold uppercase tracking-wider bg-amber-500/20 text-amber-400 border border-amber-500/30 px-3 py-1 rounded-full">
+        🎁 First Deposit Privilege
+      </span>
+      <span class="text-xs text-gray-200 font-medium">
+        Automatically Get <strong class="text-amber-400">+50% Extra Compute Credits</strong> on Your First Top-Up!
+      </span>
+    </div>
+    <span class="text-xs text-emerald-400 font-mono">⚡ 0s Instant Credit • Zero KYC</span>
+  </div>
+
+  <!-- Pricing Packs Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
+    <!-- $5 Fast Testing Pack -->
+    <div class="border border-gray-800 hover:border-gray-700 bg-gray-950/90 rounded-xl p-5 flex flex-col justify-between transition-all">
+      <div>
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-2xl font-bold text-white">$5 <span class="text-xs text-gray-400 font-normal">USD</span></span>
+          <span class="text-[11px] bg-gray-800 text-gray-300 font-mono px-2.5 py-1 rounded-md">⚡ Fast Testing</span>
+        </div>
+        <div class="text-sm font-semibold text-emerald-400 mt-1">Get $7.50 Credits <span class="text-xs text-gray-400 font-normal">(&approx; 3,000,000 Tokens)</span></div>
+        <p class="text-xs text-gray-400 mt-3 leading-relaxed">Perfect for verifying Claude Code CLI and Cursor integration with zero commitment. Tokens never expire.</p>
+        <div class="mt-3 flex items-center gap-2 text-[11px] text-gray-300">
+          <span>✓ Zero KYC required</span>
+          <span>•</span>
+          <span>✓ PayPal instant checkout</span>
+        </div>
+      </div>
+      <a href="https://apivale.com/pricing?utm_source=apivale_blog&utm_medium=pricing_pack_grid&utm_campaign=how-to-connect-qwen-3-8-to-claude-code-cli" class="mt-5 block text-center text-xs font-semibold py-2.5 px-4 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 transition-colors">
+        Top up $5 (Get $7.50 Credits) &rarr;
+      </a>
+    </div>
+
+    <!-- $29 Developer Pack (Hero / Most Popular) -->
+    <div class="border-2 border-amber-500/70 bg-gradient-to-br from-amber-950/30 via-gray-950 to-gray-950 rounded-xl p-5 relative flex flex-col justify-between shadow-xl">
+      <span class="absolute -top-3 right-4 text-[10px] font-bold uppercase tracking-wider bg-gradient-to-r from-amber-500 to-orange-500 text-black px-3 py-0.5 rounded-full shadow-md">
+        🔥 56% OFF • Most Popular
+      </span>
+      <div>
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-2xl font-bold text-white">$29 <span class="text-xs text-gray-400 font-normal">USD</span></span>
+          <span class="text-[11px] bg-amber-500/20 text-amber-300 border border-amber-500/30 font-mono px-2.5 py-1 rounded-md">Developer Pack</span>
+        </div>
+        <div class="text-sm font-bold text-amber-400 mt-1">Get $43.50 Credits <span class="text-xs text-gray-300 font-normal">(&approx; 40,000,000 Tokens)</span></div>
+        <p class="text-xs text-gray-300 mt-3 leading-relaxed">Fuel heavy Claude Code agentic loops and Cursor full-repo indexing for months. Universal access to Qwen 3.8, DeepSeek V4, GLM-5.3, and Claude.</p>
+        <div class="mt-3 flex items-center gap-2 text-[11px] text-amber-300/80">
+          <span>✓ 40,000,000 Universal Tokens</span>
+          <span>•</span>
+          <span>✓ Never Expire</span>
+        </div>
+      </div>
+      <a href="https://apivale.com/pricing?utm_source=apivale_blog&utm_medium=pricing_pack_grid&utm_campaign=how-to-connect-qwen-3-8-to-claude-code-cli" class="mt-5 block text-center text-xs font-bold py-2.5 px-4 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-black transition-all shadow-lg hover:shadow-amber-500/20">
+        Claim 56% OFF Developer Pack ($29) &rarr;
+      </a>
+    </div>
+  </div>
+
+  <!-- Trust & Payment Footer -->
+  <div class="flex items-center justify-between flex-wrap gap-2 text-[11px] text-gray-400 pt-3 border-t border-gray-800/80">
+    <div class="flex items-center gap-2 flex-wrap">
+      <span class="text-blue-400 font-medium">🅿️ Official PayPal Instant Checkout</span>
+      <span>•</span>
+      <span>No PayPal account required for card checkout</span>
+      <span>•</span>
+      <span class="text-gray-300">Zero FX markup</span>
+    </div>
+    <span class="text-emerald-400 font-medium">🛡️ Tokens Never Expire</span>
+  </div>
+</div>
+
 ---
 
 ## Why Connect Claude Code CLI to Qwen 3.8 via APIVALE?
@@ -476,9 +551,9 @@ Yes. APIVALE provides full Server-Sent Events (SSE) streaming compatibility, ena
 
 <div class="cta-card">
   <div class="cta-card-title text-lg font-bold text-white mb-2">⚡ Connect Qwen 3.8 to Your CLI & IDE with APIVALE</div>
-  <p class="cta-card-text">Supercharge your Claude Code CLI, Cursor, and Windsurf workflows with Qwen 3.8 via APIVALE. Enjoy 80% lower token costs compared to Claude Sonnet 5, zero rate limits, and seamless PayPal billing. Register now to claim $0.20 free starter credit (+ 50% bonus on 1st top-up) and get instant early access to Qwen 3.8-Max!</p>
+  <p class="cta-card-text">Supercharge your Claude Code CLI, Cursor, and Windsurf workflows with Qwen 3.8 via APIVALE. Enjoy 80% lower token costs compared to Claude Sonnet 5, zero rate limits, and seamless PayPal billing. Register to claim your free $0.20 test credit, and enjoy automatic +50% extra credits on your first top-up ($5 gets $7.50; $29 Developer Pack gets 40M Tokens at 56% OFF)!</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-connect-qwen-3-8-to-claude-code-cli" class="cta-primary-btn">Get Free API Key ($0.20 Credit (+ 50% Bonus))</a>
-    <a href="https://apivale.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-connect-qwen-3-8-to-claude-code-cli" class="cta-secondary-btn">Test Qwen Playground</a>
+    <a href="https://apivale.com/pricing?utm_source=apivale_blog&utm_medium=blog_bottom_cta&utm_campaign=how-to-connect-qwen-3-8-to-claude-code-cli" class="cta-primary-btn">Claim 56% OFF Developer Pack ($29) &rarr;</a>
+    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-connect-qwen-3-8-to-claude-code-cli" class="cta-secondary-btn">Get Free API Key ($0.20 Trial)</a>
   </div>
 </div>

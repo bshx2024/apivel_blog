@@ -6,6 +6,23 @@ interface Props {
 }
 
 const { defaultClient = 'claude-code', defaultModel = 'qwen-37' } = Astro.props;
+
+const modelMap: Record<string, string> = {
+  'glm-5.3-flashx': 'infer/glm-5.3-flashx',
+  'glm-5.3-flash': 'infer/glm-5.3-flash',
+  'glm-5.3': 'infer/glm-5.3',
+  'qwen-38-flash': 'infer/qwen-3.8-flash-next',
+  'qwen-38': 'infer/qwen3.7-max',
+  'qwen-37': 'infer/qwen3.7-max',
+  'deepseek-v4': 'deepseek-v4-flash',
+  'gemini-37': 'infer/gemini-3.7-flash',
+  'grok-45': 'infer/grok-4.5',
+  'claude-sonnet-5': 'claude-3-5-sonnet-20241022',
+  'kimi-k3': 'kimi-k3',
+  'needle-2': 'infer/needle-2',
+};
+
+const activeModelVal = modelMap[defaultModel] || 'infer/qwen3.7-max';
 ---
 
 <div class="cli-config-card" id="cliConfigGeneratorWidget">
@@ -53,12 +70,12 @@ const { defaultClient = 'claude-code', defaultModel = 'qwen-37' } = Astro.props;
           📋 Copy Config
         </button>
       </div>
-      <pre class="snippet-pre"><code id="configCodeDisplay"># Export APIVALE proxy base URL and API key
+      <pre class="snippet-pre"><code id="configCodeDisplay">{`# Export APIVALE proxy base URL and API key
 export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
 export ANTHROPIC_API_KEY="sk-apivale-your-api-key"
 
 # Launch Claude Code CLI with target model
-claude --model infer/glm-5.3-flash</code></pre>
+claude --model ${activeModelVal}`}</code></pre>
     </div>
 
     <!-- Footer Note & CTA -->
