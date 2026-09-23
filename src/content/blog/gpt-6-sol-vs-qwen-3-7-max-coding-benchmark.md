@@ -153,56 +153,6 @@ Switching your primary coding assistant to APIVALE requires no plugin forks:
 # Cursor IDE: Override OpenAI Base URL to https://api.apivale.com/v1 and model infer/qwen3.7-max
 ```
 
-<div id="interactive-tool" class="my-8 border border-indigo-500/30 bg-gray-900 rounded-xl p-6 shadow-xl">
-  <div class="flex items-center justify-between flex-wrap gap-2 mb-4">
-    <span class="text-xs font-bold uppercase tracking-wider text-cyan-400 bg-cyan-950/70 border border-cyan-800/60 px-3 py-1 rounded-full">
-      ⚡ In-Article Live Playground & Cost Calculator
-    </span>
-    <span class="text-xs text-gray-400">Real-Time Interactive Pricing Engine</span>
-  </div>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-    <div>
-      <label class="block text-xs font-semibold text-gray-300 mb-1">Target Model Architecture</label>
-      <select id="calc-model" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-indigo-500">
-        <option value="qwen">Qwen 3.7 Max ($0.80 / $2.40 per 1M)</option>
-        <option value="sol">GPT-6 Sol ($3.50 / $14.00 per 1M)</option>
-        <option value="luna">GPT-6 Luna ($0.40 / $1.60 per 1M)</option>
-        <option value="opus">Claude Opus 5.5 ($9.00 / $27.00 per 1M)</option>
-      </select>
-    </div>
-    <div>
-      <label class="block text-xs font-semibold text-gray-300 mb-1">Estimated Monthly Agent Tokens (Millions)</label>
-      <input id="calc-tokens" type="number" value="25" min="1" max="1000" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-indigo-500" />
-    </div>
-  </div>
-  <div class="flex items-center justify-between flex-wrap gap-3 bg-gray-800/60 border border-gray-700/50 p-4 rounded-lg">
-    <div>
-      <div class="text-xs text-gray-400">Estimated Monthly Compute Cost:</div>
-      <div id="calc-result" class="text-xl font-bold text-emerald-400 mt-0.5">$50.00 / month</div>
-    </div>
-    <button id="calc-run-btn" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold px-4 py-2 rounded-lg transition-colors shadow">
-      Recalculate Savings
-    </button>
-  </div>
-</div>
-
-<script>
-  function updateCost() {
-    var modelEl = document.getElementById('calc-model');
-    var tokensEl = document.getElementById('calc-tokens');
-    var resultEl = document.getElementById('calc-result');
-    if (!modelEl || !tokensEl || !resultEl) return;
-    var tokens = parseFloat(tokensEl.value) || 25;
-    var rates = { qwen: 2.00, sol: 8.75, luna: 1.00, opus: 18.00 };
-    var rate = rates[modelEl.value] || 2.00;
-    var total = (tokens * rate).toFixed(2);
-    resultEl.textContent = '$' + total + ' / month (vs GPT-6 Sol: $' + (tokens * 8.75).toFixed(2) + ')';
-  }
-  document.getElementById('calc-run-btn')?.addEventListener('click', updateCost);
-  document.getElementById('calc-model')?.addEventListener('change', updateCost);
-  document.getElementById('calc-tokens')?.addEventListener('input', updateCost);
-</script>
-
 ## Frequently Asked Questions
 
 ### Is GPT-6 Sol free to use for developers?
@@ -216,21 +166,6 @@ In our **GPT-6 Sol vs Qwen 3.7 Max** benchmark, the open flagship scores 94.2% o
 
 ### Can I connect Qwen to Claude Code CLI and Cursor without code modifications?
 Yes. APIVALE translates standard OpenAI and Anthropic format calls directly at `https://api.apivale.com/v1` using model ID `infer/qwen3.7-max`.
-
-<div class="cta-card">
-  <div class="cta-card-title text-lg font-bold text-white mb-2">⚡ Slash Coding Agent Token Costs by 80% with APIVALE</div>
-  <p class="cta-card-text">Connect Claude Code CLI, Cursor, and Windsurf via APIVALE's unified gateway. Enjoy instant PayPal checkout, global cards, and Alipay with 0 extra foreign exchange fees. Claim your free $0.20 trial credit, plus an automatic +50% extra compute bonus on your first top-up ($5 gets $7.50; $29 Pack gets 40M tokens at 56% OFF with $43.50 balance, never expires)!</p>
-  <div class="cta-badge-grid">
-    <div class="cta-badge">⚡ Instant Gateway Access</div>
-    <div class="cta-badge">🎁 +50% First Deposit Bonus ($5 → $7.50)</div>
-    <div class="cta-badge">🚀 $29 Pack: 40M Tokens (56% OFF)</div>
-    <div class="cta-badge">💳 PayPal & Global Cards (0 Extra FX)</div>
-  </div>
-  <div class="cta-actions">
-    <a href="/pricing?redirect=/blog/gpt-6-sol-vs-qwen-3-7-max-coding-benchmark" class="cta-btn primary">Claim +50% Bonus ($5 → $7.50)</a>
-    <a href="/sign-up?redirect=/blog/gpt-6-sol-vs-qwen-3-7-max-coding-benchmark" class="cta-btn secondary">Get $0.20 Free Trial (Zero Card)</a>
-  </div>
-</div>
 
 <script type="application/ld+json">
 {
