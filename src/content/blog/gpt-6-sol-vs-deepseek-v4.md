@@ -133,7 +133,7 @@ Telemetry records from LMSYS Chatbot Arena show OpenAI dividing its GPT-6 releas
 * **GPT-6 Astra:** The primary flagship model optimized for computer vision, SVG animation modeling, and complex spatial physics (explore our detailed breakdown on [GPT-6 Astra API price tiers and benchmarks](/blog/gpt-6-astra-api-pricing-guide/)).
 * **GPT-6 Sol:** An economical daily driver designed for high-concurrency tasks, lower token pricing, and standard ChatGPT subscriber pools.
 
-While Sol achieves faster generation speeds through speculative decoding, early benchmarks reveal code generation drawbacks: outputs frequently contain bloated class structures and unnecessary helper functions.
+While Sol achieves faster generation speeds through speculative decoding, early benchmarks reveal code generation drawbacks: outputs frequently contain bloated class structures and unnecessary helper functions. For a direct coding evaluation against Alibaba's dense open flagship, see our hands-on [GPT-6 Sol vs Qwen 3.7 Max Coding Benchmark](/blog/gpt-6-sol-vs-qwen-3-7-max-coding-benchmark/).
 
 ### The October 14 GPT-5.5 Retirement Deadlines & Migration Urgency
 

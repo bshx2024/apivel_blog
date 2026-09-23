@@ -146,7 +146,7 @@ if __name__ == "__main__":
 
 ### Configuring IDE Tools: Claude Code CLI & Cursor Integration
 
-Switching your primary coding assistant to APIVALE requires no plugin forks:
+Switching your primary coding assistant to APIVALE requires no plugin forks. Follow our detailed [Claude Code CLI setup guide](/blog/how-to-connect-qwen-3-7-to-claude-code-cli/) or our [Cursor IDE configuration guide](/blog/qwen-3-8-cursor-setup/) to route sessions instantly:
 
 ```bash
 # Claude Code CLI: export ANTHROPIC_BASE_URL="https://api.apivale.com/v1" ANTHROPIC_MODEL="infer/qwen3.7-max"
