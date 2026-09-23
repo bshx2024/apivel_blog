@@ -390,6 +390,7 @@ app.listen(PORT, () => console.log(`Proxy running on port ${PORT}`));
 * **Resolution:** Ensure `ANTHROPIC_BASE_URL="https://api.apivale.com/v1"` is exported. APIVALE automatically bridges Anthropic Messages headers to Ox Alpha reasoning endpoints.
 
 ### 3. Compare with Other Frontier Coding Models
+* Read our [Claude Opus 5.5 vs GPT-5.5 Coding Benchmark & 85% Cost Guide](/blog/claude-opus-vs-gpt-5-5-for-coding/) to evaluate frontier reasoning economics, SWE-bench performance, and dual-tier agent routing.
 * Read our [GLM-5.3 Cursor & Claude Code Setup Guide](/blog/connect-glm-5-3-to-claude-code-cli-cursor/) to explore native 128K output and .cursorrules configurations.
 * Read our [DeepSeek V4.1 Flash API 437 t/s Benchmark & Setup Guide](/blog/deepseek-v4-flash-api-guide/) to access 400+ t/s reasoning at $0.14/1M tokens.
 * Read our [Qwen 3.8 Claude Code & Cursor Setup Guide](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/) to cut token spend by 80% while retaining high SWE-bench accuracy.
