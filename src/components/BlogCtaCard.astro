@@ -7,49 +7,57 @@ interface Props {
 }
 
 const {
-  title = "🚀 Instant Access to DeepSeek V4 Pro, Qwen 3.7 Max & GLM-5.2",
-  subtitle = "Connect official Chinese AI APIs instantly to Cursor, Claude Code CLI, and OpenAI SDKs with zero KYC.",
+  title = "⚡ Slash Coding Agent Token Costs by 80% with APIVALE",
+  subtitle = "Connect Claude Code CLI, Cursor, and Windsurf to official Chinese flagship AI APIs with zero KYC and instant billing.",
   currentSlug = "",
   currentPath = ""
 } = Astro.props;
 
-const redirectTarget = currentPath || (currentSlug ? `/blog/${currentSlug}` : '/docs');
-const campaign = currentSlug || 'blog_cta_card';
+const redirectTarget = currentPath || (currentSlug ? `/blog/${currentSlug}` : '/pricing');
+const pricingRedirectUrl = `https://apivale.com/pricing?redirect=${encodeURIComponent(redirectTarget)}&utm_source=apivale_blog&utm_medium=blog_cta_card`;
+const signUpRedirectUrl = `https://apivale.com/sign-up?redirect=${encodeURIComponent(redirectTarget)}&utm_source=apivale_blog&utm_medium=blog_cta_card`;
 ---
 
 <div class="blog-cta-card">
   <div class="cta-gradient-glow"></div>
   <div class="cta-content">
     <div class="cta-header">
-      <span class="cta-pill">🎁 FREE DEVELOPER TRIAL</span>
+      <span class="cta-pill">🎁 OFFICIAL WALLET BENEFITS</span>
       <div class="cta-title">{title}</div>
-      <p class="cta-subtitle">{subtitle}</p>
+      <p class="cta-subtitle">
+        Enjoy instant <strong>PayPal checkout</strong>, global credit cards, Apple Pay, and Alipay with 0 extra foreign exchange fees. Claim your free $0.20 signup credit, plus an automatic <strong>+50% bonus</strong> on your first top-up!
+      </p>
     </div>
 
     <div class="cta-features">
       <div class="feature-item">
         <span class="feature-icon">🎁</span>
-        <span><strong>100,000 Free Credits</strong> ($0.20 Trial)</span>
+        <span><strong>+50% First Deposit Bonus</strong> ($5 → $7.50, $29 → $43.50)</span>
       </div>
       <div class="feature-item">
-        <span class="feature-icon">🔒</span>
-        <span><strong>Zero Prompt Logging</strong> (Strict Privacy)</span>
+        <span class="feature-icon">🚀</span>
+        <span><strong>$29 Developer Pack</strong> (56% OFF, 40M Tokens, Never Expires)</span>
       </div>
       <div class="feature-item">
         <span class="feature-icon">⚡</span>
-        <span><strong>Sub-50ms Gateway Latency</strong> (99.9% SLA)</span>
+        <span><strong>$0.20 Free Signup Trial</strong> (Zero Card Required)</span>
       </div>
       <div class="feature-item">
         <span class="feature-icon">💳</span>
-        <span><strong>Instant Test Quota</strong> (No Card Required)</span>
+        <span><strong>PayPal Instant Checkout</strong> (Global Zero-FX Cards & Alipay)</span>
       </div>
     </div>
 
     <div class="cta-action">
-      <a href={`https://apivale.com/sign-up?redirect=${encodeURIComponent(redirectTarget)}&utm_source=apivale_blog&utm_medium=blog_cta_card&utm_campaign=${campaign}`} class="cta-btn">
-        <span>⚡ 1-Click Claim Free API Key ($0.20 Trial) →</span>
-      </a>
-      <span class="cta-note">Zero KYC. No credit card required. Connect instantly via GitHub/Google.</span>
+      <div class="cta-btn-group">
+        <a href={pricingRedirectUrl} class="cta-btn primary">
+          <span>Claim +50% Bonus ($5 → $7.50) →</span>
+        </a>
+        <a href={signUpRedirectUrl} class="cta-btn secondary">
+          <span>Get $0.20 Free Trial (Zero Card)</span>
+        </a>
+      </div>
+      <span class="cta-note">Zero KYC. No contract lock-in. Credits never expire.</span>
     </div>
   </div>
 </div>
@@ -60,9 +68,9 @@ const campaign = currentSlug || 'blog_cta_card';
     margin: 3rem 0;
     padding: 2rem;
     border-radius: 1rem;
-    background: linear-gradient(135deg, rgba(30, 27, 75, 0.7) 0%, rgba(17, 24, 39, 0.9) 100%);
+    background: linear-gradient(135deg, rgba(30, 27, 75, 0.85) 0%, rgba(17, 24, 39, 0.95) 100%);
     border: 1px solid rgba(99, 102, 241, 0.35);
-    box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.2);
+    box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.25);
     overflow: hidden;
   }
 
@@ -70,9 +78,9 @@ const campaign = currentSlug || 'blog_cta_card';
     position: absolute;
     top: -50%;
     right: -20%;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, transparent 70%);
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%);
     pointer-events: none;
   }
 
@@ -106,15 +114,15 @@ const campaign = currentSlug || 'blog_cta_card';
   }
 
   .cta-subtitle {
-    color: #9ca3af;
-    font-size: 0.9rem;
+    color: #cbd5e1;
+    font-size: 0.92rem;
     margin-top: 0.4rem;
     line-height: 1.5;
   }
 
   .cta-features {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 0.75rem;
   }
 
@@ -123,49 +131,72 @@ const campaign = currentSlug || 'blog_cta_card';
     align-items: center;
     gap: 0.6rem;
     font-size: 0.85rem;
-    color: #e5e7eb;
-    background: rgba(255, 255, 255, 0.03);
-    padding: 0.6rem 0.8rem;
+    color: #e2e8f0;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 0.65rem 0.85rem;
     border-radius: 0.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .feature-icon {
-    font-size: 1rem;
+    font-size: 1.05rem;
   }
 
   .cta-action {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.5rem;
+    gap: 0.6rem;
     margin-top: 0.5rem;
+  }
+
+  .cta-btn-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    width: 100%;
   }
 
   .cta-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
-    color: #ffffff;
     font-weight: 700;
-    font-size: 0.95rem;
-    padding: 0.75rem 1.5rem;
+    font-size: 0.92rem;
+    padding: 0.75rem 1.4rem;
     border-radius: 0.65rem;
     text-decoration: none;
-    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
     transition: all 0.2s ease;
   }
 
-  .cta-btn:hover {
+  .cta-btn.primary {
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
+  }
+
+  .cta-btn.primary:hover {
     transform: translateY(-1px);
     box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
     background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
   }
 
+  .cta-btn.secondary {
+    background: rgba(255, 255, 255, 0.08);
+    color: #f1f5f9;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .cta-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+  }
+
   .cta-note {
     font-size: 0.78rem;
-    color: #6b7280;
+    color: #94a3b8;
   }
 
   @media (max-width: 640px) {
@@ -177,6 +208,9 @@ const campaign = currentSlug || 'blog_cta_card';
     }
     .cta-btn {
       width: 100%;
+    }
+    .cta-btn-group {
+      flex-direction: column;
     }
   }
 </style>
