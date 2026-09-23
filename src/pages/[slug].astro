@@ -44,7 +44,10 @@ const isCliOrSetup = /cli|cursor|windsurf|opencode|connect|setup|config|mcp|guid
 let initialModel = 'glm-5.3-flash';
 let targetTopic = 'general';
 
-if (postMeta.includes('flashx') || postMeta.includes('glm-5.3-flashx') || postMeta.includes('glm-5-3-flashx')) {
+if (slugLower.includes('opus') || postMeta.includes('claude-opus')) {
+	targetTopic = 'claude';
+	initialModel = 'claude-opus-5';
+} else if (postMeta.includes('flashx') || postMeta.includes('glm-5.3-flashx') || postMeta.includes('glm-5-3-flashx')) {
 	targetTopic = 'glm-5.3-flashx';
 	initialModel = 'glm-5.3-flashx';
 } else if (postMeta.includes('glm-5-3-flash') || postMeta.includes('glm-5.3-flash') || postMeta.includes('ox-alpha') || postMeta.includes('0xalpha')) {
