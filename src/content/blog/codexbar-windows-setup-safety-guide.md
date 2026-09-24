@@ -1,7 +1,7 @@
 ---
 title: "CodexBar Windows Setup: How to Run on Windows 11/10 (Native & WSL2)"
-metaTitle: "CodexBar on Windows 11/10: Complete Setup Guide | APIVALE"
-description: "Can CodexBar run on Windows? Complete step-by-step setup guide for Windows 11/10 via WSL2 and native Win-CodexBar. Fix security risks with APIVALE."
+metaTitle: "CodexBar for Windows: Native & WSL2 Setup Guide (+ Free Alternative) | APIVALE"
+description: "Does CodexBar run on Windows? Complete step-by-step guide for Windows 11/10 via native Win-CodexBar, WSL2, plus free zero-install quota monitoring alternatives."
 date: "2026-08-01"
 author: "Sofia Costa"
 authorTitle: "FinTech Integration & API Security Expert, APIVALE"

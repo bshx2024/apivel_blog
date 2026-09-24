@@ -20,10 +20,18 @@ export default {
       "/blog/cursor-pro-vs-own-api-key/": "/blog/cursor-pro-vs-custom-api-key/",
       "/cursor-pro-vs-own-api-key": "/blog/cursor-pro-vs-custom-api-key/",
       "/cursor-pro-vs-own-api-key/": "/blog/cursor-pro-vs-custom-api-key/",
+      "/blog/cursor-pro-vs-byok-cost-comparison": "/blog/cursor-pro-vs-custom-api-key/",
+      "/blog/cursor-pro-vs-byok-cost-comparison/": "/blog/cursor-pro-vs-custom-api-key/",
+      "/cursor-pro-vs-byok-cost-comparison": "/blog/cursor-pro-vs-custom-api-key/",
+      "/cursor-pro-vs-byok-cost-comparison/": "/blog/cursor-pro-vs-custom-api-key/",
       "/blog/connect-glm-5-3-to-claude-code-cli": "/blog/connect-glm-5-3-to-claude-code-cli-cursor/",
       "/blog/connect-glm-5-3-to-claude-code-cli/": "/blog/connect-glm-5-3-to-claude-code-cli-cursor/",
       "/blog/how-to-connect-glm-5-3-to-claude-code-cli-cursor": "/blog/connect-glm-5-3-to-claude-code-cli-cursor/",
-      "/blog/how-to-connect-glm-5-3-to-claude-code-cli-cursor/": "/blog/connect-glm-5-3-to-claude-code-cli-cursor/"
+      "/blog/how-to-connect-glm-5-3-to-claude-code-cli-cursor/": "/blog/connect-glm-5-3-to-claude-code-cli-cursor/",
+      "/blog/gpt-6-sol-vs-deepseek-v4-migration-guide": "/blog/gpt-6-sol-vs-deepseek-v4/",
+      "/blog/gpt-6-sol-vs-deepseek-v4-migration-guide/": "/blog/gpt-6-sol-vs-deepseek-v4/",
+      "/gpt-6-sol-vs-deepseek-v4-migration-guide": "/blog/gpt-6-sol-vs-deepseek-v4/",
+      "/gpt-6-sol-vs-deepseek-v4-migration-guide/": "/blog/gpt-6-sol-vs-deepseek-v4/"
     };
 
     if (PERMANENT_REDIRECTS[url.pathname]) {

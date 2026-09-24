@@ -417,6 +417,19 @@ if __name__ == "__main__":
 
 <div id="faq"></div>
 
+## Seamless Migration: Upgrading from DeepSeek-V3 & DeepSeek-R1 to Flash Architecture
+
+Most enterprise developers currently routing production workloads through **DeepSeek-V3** or reasoning agents via **DeepSeek-R1** face critical trade-offs between generation latency and compute cost. 
+
+| Metric / Feature | DeepSeek-V3 (Standard) | DeepSeek-R1 (Reasoning) | DeepSeek V4.1 Flash (APIVALE) |
+| :--- | :--- | :--- | :--- |
+| **Output Token Speed** | ~45-60 tok/s | ~20-35 tok/s (Thinking overhead) | **437 tok/s (Sub-50ms TTFT)** |
+| **KV Cache Efficiency** | Multi-Head Latent (MLA) | Multi-Head Latent (MLA) | **Engram + Dynamic KV Tiering** |
+| **Primary Use Case** | General Chat & Batch Coding | Deep Mathematical Proofs / Logic | **Real-Time Agentic Loops (Cursor/CLI)** |
+| **API Drop-In Compatibility** | OpenAI Standard | OpenAI Standard | **100% OpenAI Standard Compatible** |
+
+> **Pro Tip for DeepSeek-V3/R1 Users:** Because APIVALE normalizes all upstream endpoints under standard `/v1/chat/completions`, transitioning from `deepseek-chat` (V3) or `deepseek-reasoner` (R1) to `deepseek-v4.1-flash` requires zero SDK modifications—simply switch the `model` payload parameter in your existing client configuration.
+
 ## Frequently Asked Questions (FAQ)
 
 ### Is DeepSeek V4.1 Flash free to use?
