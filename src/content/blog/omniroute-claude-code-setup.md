@@ -6,7 +6,7 @@ date: "2026-09-25"
 author: "Sofia Costa"
 authorTitle: "FinTech Integration & API Security Expert, APIVALE"
 authorBio: "Sofia Costa specializes in API gateway security, enterprise proxy hardening, and seamless global checkout architectures."
-tags: ["OmniRoute setup claude code", "OmniRoute Claude Code", "OmniRoute setup", "OmniRoute Docker", "Claude Code install", "OmniRoute online", "AI Gateway", "APIVALE", "PayPal"]
+tags: ["OmniRoute setup claude code", "Omniroute setup with claude windows 10", "Omniroute setup with claude ubuntu", "OmniRoute Claude Code", "OmniRoute setup", "OmniRoute Docker", "Claude Code install", "OmniRoute online", "AI Gateway", "APIVALE", "PayPal"]
 image: "/blog/og-cover.png"
 lang: "en"
 keyTakeaways:
@@ -128,13 +128,27 @@ Completing an **OmniRoute setup with Claude Code** CLI requires configuring cust
 
 ### Configuring CLI Launch Flags and Environment Base URLs
 
-Claude Code natively respects the `ANTHROPIC_BASE_URL` override flag. Pass your local proxy URL directly into your active shell session:
+Claude Code natively respects the `ANTHROPIC_BASE_URL` override flag. Pass your local proxy URL directly into your active terminal shell.
+
+For **Ubuntu / Linux & macOS** environments (`OmniRoute setup with Claude Ubuntu`):
 
 ```bash
-# Direct Claude Code CLI to the local OmniRoute proxy daemon
+# Ubuntu/Linux & macOS (Bash/Zsh)
 export ANTHROPIC_BASE_URL="http://localhost:20128/v1"
 export ANTHROPIC_AUTH_TOKEN="omniroute-local-bypass-key"
 export ANTHROPIC_MODEL="claude-sonnet-5"
+
+# Launch Claude Code within your repository
+npx @anthropic-ai/claude-code
+```
+
+For **Windows 10 & Windows 11** environments (`OmniRoute setup with Claude Windows 10`):
+
+```powershell
+# Windows 10 & 11 (PowerShell)
+$env:ANTHROPIC_BASE_URL="http://localhost:20128/v1"
+$env:ANTHROPIC_AUTH_TOKEN="omniroute-local-bypass-key"
+$env:ANTHROPIC_MODEL="claude-sonnet-5"
 
 # Launch Claude Code within your repository
 npx @anthropic-ai/claude-code
