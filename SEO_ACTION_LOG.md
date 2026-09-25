@@ -58,7 +58,36 @@
 
 ## 📝 优化行动记录 (2026-09)
 
-### 📅 2026-09-25 - 📝 [内容精细化对齐]: 《Gemini 4 Pro》结合 Google 实时搜索截图（Autocomplete + PAA + 相关搜索）深度对齐商业意图与 FAQ 架构
+### 📅 2026-09-25 - 📝 [原子发布与热点承接]: 《OmniRoute + Claude Code Setup》侧翼破局上线，深度映射 SERP 真实搜索截图并完成高权重双向内链织网
+
+* **影响页面/路由**：
+  * **新发页面**：`/blog/omniroute-claude-code-setup/` (`src/content/blog/omniroute-claude-code-setup.md`)
+  * **双向织网页面**：
+    * `/blog/ox-alpha-claude-code-cursor-setup/`
+    * `/blog/how-to-connect-qwen-3-8-to-claude-code-cli/`
+    * `/blog/how-to-set-up-claude-code-cli-with-custom-base-url/`
+* **目标关键词矩阵（突破性热点与高价值意图词）**：
+  * 核心破局词：`omniroute setup claude code`, `how to connect omni route to claude code`, `omniroute claude code`
+  * 衍生与痛点词：`omniroute install`, `omniroute docker`, `omniroute online`, `self-hosted ai gateway`
+* **核心落地细节与架构对齐**：
+  1. **侧翼进攻策略（Flank Attack Strategy）**：
+     * 放弃单字 head term 竞争，锁定 `OmniRoute + Claude Code Setup` 与安全实测长尾；
+     * MetaTitle 严格执行 ABC 标题公式（`OmniRoute Claude Code Setup: Install & Security | APIVALE`，57 字符），H1 61 字符，Meta Description 156 字符，全检 0 Blockers、0 Warnings 满分通过。
+  2. **1:1 深度映射 Google SERP 真实截图信号（PAA + Related Searches + Autocomplete）**：
+     * **PAA 映射**：H2 与文末 FAQ 100% 照搬 `How do I set up OmniRoute with the Claude Code plugin or CLI?`、`How to connect OmniRoute to Claude Code?`，并同步注入 `FAQPage` JSON-LD Schema，争夺 Google SERP 折叠展位与 AI Overviews；
+     * **Related Searches 核心商业钩子**：针对 `OmniRoute online` 搜索意图，打造专属小节 *《Looking for "OmniRoute Online"? Why Cloud Routers Eliminate DevOps Overhead》*，顺理成章将流量导入免运维的 APIVALE；
+     * **Autocomplete 映射**：自然吸纳 `how to setup own router with claude code`，覆盖常青极客自建路由泛品类意图。
+  3. **落实 4 项真实工程增益与安全客观架构**：
+     * 真实采掘 GitHub `diegosouzapw/OmniRoute` 社区原声；
+     * 客观中立分析 RTK + Caveman 压缩在精细代码重构下的语义损耗，以及自建本地代理绑定 `0.0.0.0` 带来的内网 Key 泄露风险；
+     * 提供 15+ 行完整的 Node.js 本地转云端自动容灾代码；
+     * 内嵌原生交互式配置生成器 Micro-tool，支持免登录在本地网关与 APIVALE 之间一键切换并生成配置。
+  4. **Gate 3 双向内链闭环织网**：
+     * 在已具有高权重的 Ox Alpha、Qwen 3.8、Claude Code Custom Base URL 核心老文章中直接织入上下文锚文本与 Mermaid 节点，杜绝孤岛。
+  5. **商业对齐与钱包规范**：
+     * 全面贯彻 PayPal 官方即时结账、全球信用卡/支付宝免 KYC 结算，结尾注入对齐钱包的 `.cta-card`（首充+50%、$29 开发者专享包、新用户 $0.20 免卡试用）。
+* **14 天因果复盘假设**：
+  * 页面在发布 14 天内进入 Google 前 10 名，并成功触发 PAA 折叠展示；承接 8 月以来的暴涨流量，通过“不想折腾本地环境（OmniRoute Online）”和“自建保底 Fallback”场景为 APIVALE 带来可观的高质量开发者注册与充值。
 
 * **影响页面/路由**：
   * `/blog/gemini-4-pro-release-date-pricing-benchmarks/`
