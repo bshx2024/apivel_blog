@@ -1,6 +1,6 @@
 ---
 title: "GPT-6 Sol vs Qwen 3.7 Max: Coding Benchmark, Pricing & Agent Setup"
-metaTitle: "GPT-6 Sol vs Qwen 3.7 Max: Benchmark, Pricing & IDE Setup Guide | APIVALE"
+metaTitle: "GPT-6 Sol vs Qwen 3.7 Max: Pricing & Coding API | APIVALE"
 description: "Compare GPT-6 Sol vs Qwen 3.7 Max for coding agents. Benchmark pricing, latency, and context window with instant PayPal billing and $0.20 free signup trial."
 date: '2026-09-23'
 author: "Kenji Tanaka"

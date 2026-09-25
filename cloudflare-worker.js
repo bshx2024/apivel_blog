@@ -40,6 +40,23 @@ export default {
     }
     
     // ==========================================
+    // EDGE-LEVEL TRAILING SLASH 301 ENFORCEMENT
+    // Consolidate non-slash URLs to slash URLs (e.g., /blog/qwen-3-8... -> /blog/qwen-3-8.../)
+    // ==========================================
+    if (url.pathname === "/blog") {
+      const redirectTarget = new URL("/blog/" + url.search, `https://${url.hostname}`).href;
+      return Response.redirect(redirectTarget, 301);
+    }
+
+    if (url.pathname.startsWith("/blog/") && !url.pathname.endsWith("/")) {
+      // Exclude static assets with file extensions (e.g., .png, .jpg, .svg, .css, .js, .xml, .txt, .webp, .ico)
+      if (!/\.[a-zA-Z0-9]+$/.test(url.pathname)) {
+        const redirectTarget = new URL(url.pathname + "/" + url.search, `https://${url.hostname}`).href;
+        return Response.redirect(redirectTarget, 301);
+      }
+    }
+    
+    // ==========================================
     // CONFIGURATION: Replace with your hosted blog domain
     // (e.g., apivale-blog.pages.dev)
     // ==========================================

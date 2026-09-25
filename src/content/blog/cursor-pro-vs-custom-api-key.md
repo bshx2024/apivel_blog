@@ -228,7 +228,7 @@ Configure high-speed custom endpoints in Cursor in 4 simple steps:
    ```text
    https://apivale.com/v1
    ```
-4. **Add Custom Model Names**: In the model list, add `deepseek-v4-flash`, `infer/qwen3.7-max`, and `claude-sonnet-5`.
+4. **Add Custom Model Names**: In the model list, add `deepseek-v4-flash`, `infer/qwen3.8-max` (see our dedicated [Qwen 3.8 Cursor setup guide](/blog/qwen-3-8-cursor-setup/)), `stealth/ox-alpha` (see our [Ox Alpha Cursor integration](/blog/ox-alpha-claude-code-cursor-setup/)), and `claude-sonnet-5`.
 
 ---
 

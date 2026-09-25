@@ -11,7 +11,7 @@ image: "/blog/codexbar-windows-setup-safety-guide.png"
 lang: "en"
 ---
 
-Developer demand for agentic coding tools like **Claude Code CLI**, **Cursor**, and **Windsurf** has reached an all-time high. However, running multi-turn AI agents across complex codebases rapidly exhausts model quotas, triggering frustrating 5-hour cooldown timers and `429 Too Many Requests` rate limit errors.
+Developer demand for agentic coding tools like **Claude Code CLI**, **Cursor**, and **Windsurf** has reached an all-time high. However, running multi-turn AI agents across complex codebases rapidly exhausts model quotas, triggering frustrating 5-hour cooldown timers and `429 Too Many Requests` rate limit errors (learn how to bypass these in our [Cursor Pro vs custom API key cost guide](/blog/cursor-pro-vs-custom-api-key/)).
 
 To keep track of token burn rates, developers frequently turn to **CodexBar**, a popular menu bar utility maintained by open-source developer Peter Steinberger (`steipete`). While CodexBar provides a sleek visual "health bar" for AI quotas, developers routinely ask critical questions: *Is CodexBar safe to use with local Keychains? How can I run CodexBar on Windows or Linux? And what is the best way to eliminate quota bottlenecks once my limits are exhausted?*
 
@@ -24,7 +24,7 @@ In this comprehensive guide, we analyze CodexBar's architecture, audit its secur
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
     <li><strong>CodexBar on Windows</strong>: While Peter Steinberger's native CodexBar is built for macOS, Windows 10/11 and Linux developers can achieve complete quota tracking via WSL2 CLI builds, community Windows ports (like <code>Win-CodexBar</code>), or APIVALE's cross-platform web telemetry.</li>
     <li><strong>Is CodexBar Safe?</strong>: Security audits show reading local Keychain credentials and browser cookies creates credential exposure risks; isolating production API keys via custom proxy gateways eliminates raw token leakage on Windows and macOS.</li>
-    <li><strong>Rate-Limit Bypass</strong>: Overcome official session caps and 5-hour cooldown walls for flagship models like <strong>Claude Sonnet 5</strong>, <strong>Qwen 3.7 Max</strong> (<code>infer/qwen3.7-max</code>), and <strong>DeepSeek V4</strong> by combining CodexBar monitoring with APIVALE's Waffo global billing endpoints.</li>
+    <li><strong>Rate-Limit Bypass</strong>: Overcome official session caps and 5-hour cooldown walls for flagship models like <strong>Claude Sonnet 5</strong>, <strong>Qwen 3.8</strong> (see our <a href="/blog/qwen-3-8-cursor-setup/" class="text-emerald-400 hover:underline">Qwen 3.8 Cursor Setup</a> and <a href="/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="text-emerald-400 hover:underline">Claude Code Guide</a>), and <strong>Ox Alpha</strong> (<a href="/blog/ox-alpha-claude-code-cursor-setup/" class="text-emerald-400 hover:underline">Ox Alpha Setup</a>) by combining CodexBar monitoring with APIVALE's Waffo global billing endpoints.</li>
   </ul>
 </div>
 

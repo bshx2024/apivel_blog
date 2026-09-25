@@ -49,6 +49,10 @@
 - **父级主题与辅助词校验 (Parent Topic & Secondary LSI Audit)**：
   - 验证目标关键词是否挂载在搜索量最大的父级主题下（例如搜索 `qwen 3.7 max api` 时，确认父级主题是否为 `qwen 3.7 max claude code setup`）。以父级主题为 Primary Target 才能获得最大流量上限。
   - 提取 1-2 个竞争对手共享的高频次要关键词（Secondary LSI），自然融入 Title Tag 和 H2/H3 小标题。
+- **商业意图纯净度与防跑分稀释准则 (Commercial Intent vs. Benchmark Dilution Audit - P0 核心防呆)**：
+  - **定位清晰**：APIVALE 的唯一使命是转化 API 开发者与企业调用客户，**绝非开源模型硬件折腾社区**。
+  - **意图强隔离**：目标词与文章核心必须锁定在 **商业/交易类意图（Commercial / Transactional Intent）**（如 `api key`, `pricing`, `free api trial`, `cursor/claude code setup`），坚决防范 **信息类极客意图（Informational Hacker Intent）**（如 `1-bit quantization`, `vLLM/GGUF weights`, `local VRAM self-hosting`）。
+  - **惨痛教训警示**：若在文章中花费大量篇幅甚至独立小标题探讨开源模型量化与本地部署，Google 算法会直接将页面误判为“开源跑分/本地部署综合页”，导致排在前排的全是 0 转化的跑分词（GGUF, 1-bit），而真正值钱的 API 词被稀释至 50~100 名开外！
 - **实体-概念网络设计 (Entity-Relationship Network Audit)**：
   - 明确文章包含的 **3-5 个核心实体链 (Entity Chains)**（例如：`APIVALE Router` $\rightarrow$ `OpenAI SDK Protocol` $\rightarrow$ `Claude Code CLI` $\rightarrow$ `PayPal / Global Billing`）。确保正文中核心实体及其强关联概念自然共现，构建高密度实体图谱。
 
@@ -367,12 +371,18 @@ keyTakeaways:
 16. **严禁结尾 CTA 与钱包真实权益脱节**：必须严格对齐首充送 +50%（$5->$7.50 / $29->$43.50）、$29 开发者专享包（直降 56%、4000万 Token、永久有效）、新用户 $0.20 免卡体验金，且提供双行动按钮（`/pricing` 与 `/sign-up`），携带 `redirect=/blog/<slug>` 参数。
 17. **严禁正文严重超长导致核心主题稀释**：正文建议保持在 1200 ~ 1800 词最佳区间；H1 严格控制在 80 字符内，Description 严格在 140~160 字符内。
 18. **严禁上线新模型文章未注册侧边栏浮动话题**：发布新大模型博文必须在 `src/pages/[slug].astro` 的 `TOPIC_CONFIG` 中注册专属双语转化元数据。
+19. **严禁混淆开源跑分/量化自建与商业 API 服务意图 (P0 商业意图纯净铁律)**：
+    * **病因警戒**：APIVALE 的盈利模型是 API 调用与 Token 计费，绝非开源硬件自建社区。
+    * **严格禁写**：严禁在文章中使用独立 H2/H3 或大篇幅（超过 3 句话）深入讨论 1-bit / FP8 量化、GGUF/vLLM 本地部署、Ollama 私有化搭建或 GPU 显存配比指南。此类内容会直接招致 0 购买力的开源白嫖流量，同时将页面在 Google 算法眼中定性为“开源跑分/折腾页”，彻底挤死高价值商业 API 词（如 `api key`, `pricing`）。
+    * **唯一豁免**：仅允许作为痛点对比一笔带过（如：“*本地运行需 1.1TB+ VRAM，直接调用 APIVALE API 仅需 $0.14/1M Wholesale 费率，零硬件与运维门槛*”）。
+    * **标题禁令**：Title Tag 与 H1 严禁将 `Benchmark`, `Specs`, `Size` 置于前 3 个单词，必须强置 `API Key`, `Pricing`, `Free Trial`, `Setup` 等高商业价值意图词。
+    * **Tags 禁令**：严禁在 Frontmatter tags 中加入 `1 Bit`, `Size`, `GGUF`, `Ollama` 等开源硬件标签。
 
 ---
 
 ## 11. Google SpamBrain & On-Page 100 综合防御自检清单 (Pre-Publish Checklist)
 
-在撰写和发布任何博文前，必须自检以下 8 项以确保完全免疫 Google Spam 算法并达成 On-Page 100 满分：
+在撰写和发布任何博文前，必须自检以下 9 项以确保完全免疫 Google Spam 算法并达成 On-Page 100 满分：
 
 | 检查维度 | 合规标准 (Pass) | 违规红线 (Fail) |
 | :--- | :--- | :--- |
@@ -384,3 +394,4 @@ keyTakeaways:
 | **6. 页面需求承接 (On-Page Fulfillment)** | 内嵌原地免跳轻量体验区（Live Playground / Config Generator，含原生表单交互） | 全页仅有跳转外部注册按钮（被判定为 Doorway 欺骗性纯跳转落地页，扣 4.5 分） |
 | **7. HTML 组件 AST 纯净度 (AST Cleanliness)** | 内嵌自定义 HTML 全部采用 `<div>` / `<span>` 加类名，保持 H1->H2->H3 严谨单树 | 在内嵌组件中随意写 `<h1>`~`<h4>` 破坏语义树（被判定标题跳级扣 1.5 分） |
 | **8. 字符数与词数精准度 (Metrics Range Guard)** | Title 50–60 字符，H1 <= 80 字符，Description 140–160 字符，正文 1200–1800 词 | H1 超过 80 字符（扣 1 分），Description 超过 160 字符尾部截断（扣 1.5 分），正文超长稀释主题 |
+| **9. 商业意图纯净度 (Commercial Intent Guard)** | Title/H1 强置 API Key/Pricing/Setup，全篇杜绝 1-bit/GGUF/私有化本地部署长篇大论 | 正文大谈 1-bit 量化、本地搭建与硬件跑分，导致页面被 Google 误判为综合跑分页，商业词全军覆没 |

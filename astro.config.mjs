@@ -7,6 +7,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://apivale.com',
   base: '/blog',
+  trailingSlash: 'always',
   redirects: {
     '/connect-glm-5-3-to-claude-code-cli': '/blog/connect-glm-5-3-to-claude-code-cli-cursor',
     '/how-to-connect-glm-5-3-to-claude-code-cli-cursor': '/blog/connect-glm-5-3-to-claude-code-cli-cursor',
