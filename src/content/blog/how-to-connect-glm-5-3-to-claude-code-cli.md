@@ -43,7 +43,7 @@ lang: "en"
     <a id="cta-login-btn" href="https://apivale.com/sign-up?redirect=/blog/how-to-connect-glm-5-3-to-claude-code-cli/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Sign Up / Log In to Auto-Fill Your API Key
     </a>
-    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export ANTHROPIC_BASE_URL=\'https://api.apivale.com/v1\'\nexport ANTHROPIC_AUTH_TOKEN=\'your_apivale_api_key\'\nexport ANTHROPIC_MODEL=\'infer/glm-5.3\''); alert('Copied GLM-5.3 setup commands!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
+    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export ANTHROPIC_BASE_URL=\'https://api.apivale.com/v1\'\nexport ANTHROPIC_AUTH_TOKEN=\'your_apivale_api_key\'\n# 选项 A：极速高频/自动化脚本（首推极致性价比）\nexport ANTHROPIC_MODEL=\'infer/glm-5.3-flash\'\n# 选项 B：复杂逻辑/深度思考（满血 743B MoE 旗舰）\n# export ANTHROPIC_MODEL=\'infer/glm-5.3\''); alert('Copied GLM setup commands!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
       📋 Copy Setup Commands
     </button>
   </div>
@@ -82,8 +82,12 @@ To connect Claude Code CLI to the flagship model, configure `ANTHROPIC_BASE_URL=
 export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
 export ANTHROPIC_AUTH_TOKEN="your_apivale_api_key"
 
-# 2. Assign the active flagship model identifier
-export ANTHROPIC_MODEL="infer/glm-5.3"
+# 2. Assign the active model identifier
+# 选项 A：极速高频/自动化脚本（首推极致性价比）
+export ANTHROPIC_MODEL='infer/glm-5.3-flash'
+
+# 选项 B：复杂逻辑/深度思考（满血 743B MoE 旗舰）
+# export ANTHROPIC_MODEL='infer/glm-5.3'
 
 # 3. Launch Anthropic Claude Code CLI
 npx @anthropic-ai/claude-code
@@ -106,7 +110,8 @@ Test your APIVALE endpoint and model execution directly inside this article with
     <div class="flex items-center gap-2">
       <label class="text-xs font-medium text-gray-400">Select Model:</label>
       <select id="glm-model-select" class="bg-gray-900 text-emerald-300 text-xs font-mono font-semibold border border-indigo-500/40 rounded-lg px-3 py-1.5 focus:outline-none focus:border-indigo-400 transition-colors">
-        <option value="infer/glm-5.3" selected>⚡ GLM-5.3 (743B MoE) [Article Default]</option>
+        <option value="infer/glm-5.3-flash" selected>⚡ GLM-5.3 Flash (High-Speed & Ultra-Low Cost)</option>
+        <option value="infer/glm-5.3">🧠 GLM-5.3 (743B MoE Flagship)</option>
         <option value="infer/qwen3.8-max">🚀 Qwen 3.8 Max</option>
         <option value="infer/deepseek-v4-pro">🐉 DeepSeek V4 Pro</option>
       </select>
@@ -174,7 +179,7 @@ Test your APIVALE endpoint and model execution directly inside this article with
         }
         if (copyBtn) {
           copyBtn.onclick = () => {
-            const scriptStr = `export ANTHROPIC_BASE_URL='https://api.apivale.com/v1'\nexport ANTHROPIC_AUTH_TOKEN='${userApiKey}'\nexport ANTHROPIC_MODEL='infer/glm-5.3'`;
+            const scriptStr = `export ANTHROPIC_BASE_URL='https://api.apivale.com/v1'\nexport ANTHROPIC_AUTH_TOKEN='${userApiKey}'\n# 选项 A：极速高频/自动化脚本（首推极致性价比）\nexport ANTHROPIC_MODEL='infer/glm-5.3-flash'\n# 选项 B：复杂逻辑/深度思考（满血 743B MoE 旗舰）\n# export ANTHROPIC_MODEL='infer/glm-5.3'`;
             navigator.clipboard.writeText(scriptStr);
             alert('Copied setup script with your personal API key!');
           };
@@ -271,7 +276,13 @@ cat << 'EOF' >> ~/.zshrc
 # --- APIVALE Protocol Bridge Configuration ---
 export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
 export ANTHROPIC_AUTH_TOKEN="apv-live-your_actual_key_here"
-export ANTHROPIC_MODEL="infer/glm-5.3"
+
+# 选项 A：极速高频/自动化脚本（首推极致性价比）
+export ANTHROPIC_MODEL='infer/glm-5.3-flash'
+
+# 选项 B：复杂逻辑/深度思考（满血 743B MoE 旗舰）
+# export ANTHROPIC_MODEL='infer/glm-5.3'
+
 export CLAUDE_CODE_MAX_THINKING_TOKENS="8192"
 EOF
 
@@ -285,7 +296,12 @@ For Windows PowerShell users:
 # Set persistent user-level environment variables
 [System.Environment]::SetEnvironmentVariable('ANTHROPIC_BASE_URL', 'https://api.apivale.com/v1', 'User')
 [System.Environment]::SetEnvironmentVariable('ANTHROPIC_AUTH_TOKEN', 'apv-live-your_actual_key_here', 'User')
-[System.Environment]::SetEnvironmentVariable('ANTHROPIC_MODEL', 'infer/glm-5.3', 'User')
+
+# 选项 A：极速高频/自动化脚本（首推极致性价比）
+[System.Environment]::SetEnvironmentVariable('ANTHROPIC_MODEL', 'infer/glm-5.3-flash', 'User')
+
+# 选项 B：复杂逻辑/深度思考（满血 743B MoE 旗舰）
+# [System.Environment]::SetEnvironmentVariable('ANTHROPIC_MODEL', 'infer/glm-5.3', 'User')
 ```
 
 > [!TIP]

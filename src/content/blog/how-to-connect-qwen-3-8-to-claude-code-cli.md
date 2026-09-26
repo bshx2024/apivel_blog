@@ -297,8 +297,8 @@ Evaluating the 2.4T MoE architecture against Anthropic flagship models demonstra
           <span>✓ PayPal instant checkout</span>
         </div>
       </div>
-      <a href="https://apivale.com/pricing?utm_source=apivale_blog&utm_medium=pricing_pack_grid&utm_campaign=how-to-connect-qwen-3-8-to-claude-code-cli" class="mt-5 block text-center text-xs font-semibold py-2.5 px-4 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 transition-colors">
-        Top up $5 (Get $7.50 Credits) &rarr;
+      <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=pricing_pack_grid&utm_campaign=how-to-connect-qwen-3-8-to-claude-code-cli" class="mt-5 block text-center text-xs font-semibold py-2.5 px-4 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 transition-colors">
+        🎁 Claim $0.20 Free Trial (Zero Card) &rarr;
       </a>
     </div>
 
