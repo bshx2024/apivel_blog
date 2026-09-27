@@ -73,9 +73,10 @@
 * **核心落地细节与架构对齐**：
   1. **E-E-A-T 专家 Persona 轮换**：
      * 由 **Kenji Tanaka**（AI Developer Relations Engineer, APIVALE）署名，主打大模型多模态集成、海外无门槛接入与 IDE 生产级代理配置。
-  2. **1:1 响应用户与 Google 搜索意图**：
-     * **趋势曲线精准防坑**：利用 Google Trends 曲线诊断揭示 `LongCat-2.5-Preview` 的 SpikeAndDie 现象，以 `LongCat 2.5` 稳态流量为主词，兼顾 Preview 搜索长尾；
-     * **100% 覆盖 Google Autocomplete 实时搜索联想**：涵盖 `api key`、`pricing/token`、`docs`、`github` 与 `audio`；
+  2. **1:1 响应用户与 Google 搜索意图 & 实体校准**：
+     * **纠偏赛道防误判**：针对分词算法将泛词 `api key` 误判为主词的问题，全面将核心复合实体收敛并牢牢绑定为 `LongCat 2.5 API`（高频聚焦 39 次，孤立 `api key` 降为 2 次），MetaTitle 锁定为 57 字符，实现与 URL 路径 `/longcat-2-5-api...` 的 100% 满分契合；
+     * **趋势曲线精准防坑**：利用 Google Trends 曲线诊断揭示 `LongCat-2.5-Preview` 的 SpikeAndDie 现象，以 `LongCat 2.5 API` 稳态流量为主词，兼顾 Preview 搜索长尾；
+     * **100% 覆盖 Google Autocomplete 实时搜索联想**：涵盖 `pricing/token`、`docs`、`github` 与 `audio`；
      * **直击海外开发者 2 大核心死锁**：美团官方平台限制 +86 大陆手机号及境内企业 KYC 实名认证，通过 APIVALE 彻底解锁；
      * **价格降维打击**：官方 $0.30/$1.20 促销费率 vs APIVALE 代理 $0.20/1M 批发资费，配合 1M 上下文节省 93% 成本。
   3. **落实 4 项真实工程增益与安全客观架构**：
