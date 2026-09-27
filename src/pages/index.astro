@@ -31,6 +31,12 @@ const authorAvatars: Record<string, string> = {
 			<span class="hero-tag">DEVELOPER HUB</span>
 			<h1>APIVALE Engineering Blog</h1>
 			<p>Deep dives, tutorials, and benchmarking analysis for building scalable AI products using low-latency unified API routing.</p>
+			<div class="featured-badge-banner">
+				<a href="/blog/longcat-2-5-api-setup-benchmarks/" class="featured-banner-link">
+					<span class="badge-fire">🔥 BREAKING SOTA</span>
+					<span class="badge-text">Meituan LongCat 2.5 API (1.6T MoE & 1M Context) Setup & Benchmarks →</span>
+				</a>
+			</div>
 		</div>
 	</section>
 
@@ -144,6 +150,46 @@ const authorAvatars: Record<string, string> = {
 		font-size: 1.15rem;
 		color: var(--text-secondary);
 		line-height: 1.6;
+	}
+
+	.featured-badge-banner {
+		margin-top: 1.75rem;
+		display: inline-block;
+	}
+
+	.featured-banner-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.75rem;
+		padding: 0.5rem 1rem;
+		background: rgba(99, 102, 241, 0.12);
+		border: 1px solid rgba(99, 102, 241, 0.35);
+		border-radius: 9999px;
+		color: var(--text-primary);
+		text-decoration: none;
+		font-size: 0.875rem;
+		font-weight: 500;
+		transition: all 0.2s ease;
+	}
+
+	.featured-banner-link:hover {
+		background: rgba(99, 102, 241, 0.22);
+		border-color: rgba(99, 102, 241, 0.6);
+		transform: translateY(-1px);
+	}
+
+	.badge-fire {
+		font-size: 0.75rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		background: linear-gradient(135deg, #f59e0b, #ef4444);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		letter-spacing: 0.05em;
+	}
+
+	.badge-text {
+		color: #e2e8f0;
 	}
 
 	/* Posts Grid */

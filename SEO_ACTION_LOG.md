@@ -62,10 +62,13 @@
 
 * **影响页面/路由**：
   * **新发页面**：`/blog/longcat-2-5-api-setup-benchmarks/` (`src/content/blog/longcat-2-5-api-setup-benchmarks.md`)
-  * **双向织网页面**：
-    * `/blog/how-to-access-longcat-2-0-api-internationally/`（基石文章升级，引导至 LongCat 2.5 并净化 PayPal 支付术语）
-    * `/blog/kimi-k3-vs-longcat-2-0-open-weights-llm/`（万亿参数大模型对决文章植入 2.5 升级链接）
-    * `/blog/ox-alpha-claude-code-cursor-setup/`（万亿 MoE 架构路由图与正文植入 LongCat 2.5 节点）
+  * **顶级权威双向织网页面**：
+    * `/` (`src/pages/index.astro`)：首页 Hero 区注入 `🔥 BREAKING SOTA` 顶级精选横幅，直接向新博文传递全站最高权重；
+    * `/blog/cursor-pro-vs-custom-api-key/`（GSC 1,063+ 展现全站最高流量权值页，注入 1M 上下文迁移锚链及 Mermaid 路由拓扑节点）；
+    * `/blog/openrouter-alternatives.md`（核心开发者替代方案导航页，注入 Meituan LongCat 2.5 API 1M 上下文开发指南推荐）；
+    * `/blog/how-to-access-longcat-2-0-api-internationally/`（基石文章升级，引导至 LongCat 2.5 并净化 PayPal 支付术语）；
+    * `/blog/kimi-k3-vs-longcat-2-0-open-weights-llm/`（万亿参数大模型对决文章植入 2.5 升级链接）；
+    * `/blog/ox-alpha-claude-code-cursor-setup/`（万亿 MoE 架构路由图与正文植入 LongCat 2.5 节点）。
 * **目标关键词矩阵（锁定 Google 实时联想词与 72h 暴涨趋势）**：
   * **核心大盘主词**：`LongCat 2.5`, `LongCat-2.5-Preview`, `LongCat 2.5 API`
   * **高转化开发词**：`LongCat-2.5-Preview api key`, `longcat 2.5 api documentation`, `longcat 2.5 pricing`, `longcat token`
@@ -74,7 +77,8 @@
   1. **E-E-A-T 专家 Persona 轮换**：
      * 由 **Kenji Tanaka**（AI Developer Relations Engineer, APIVALE）署名，主打大模型多模态集成、海外无门槛接入与 IDE 生产级代理配置。
   2. **1:1 响应用户与 Google 搜索意图 & 实体校准**：
-     * **纠偏赛道防误判**：针对分词算法将泛词 `api key` 误判为主词的问题，全面将核心复合实体收敛并牢牢绑定为 `LongCat 2.5 API`（高频聚焦 39 次，孤立 `api key` 降为 2 次），MetaTitle 锁定为 57 字符，实现与 URL 路径 `/longcat-2-5-api...` 的 100% 满分契合；
+     * **纠偏赛道防误判**：针对分词算法将泛词 `api key` 误判为主词的问题，全面将核心复合实体收敛并牢牢绑定为 `LongCat 2.5 API`，MetaTitle 锁定为 57 字符（`LongCat 2.5 API Setup Guide: Pricing & Benchmarks | APIVALE`），实现与 URL 路径 `/longcat-2-5-api...` 的 100% 满分契合；
+     * **关键词密度黄金微调**：针对哥飞 SEO 军师体检工具提示的「多词词组密度 > 3%」过度优化扣分项，通过自然技术同义词置换，将 `LongCat 2.5 API` 从 39 次精调稀释至 17 次（黄金区间 1.1%~1.5%），既牢牢坐稳全篇 #1 绝对主导实体，又彻底清除降权风险；
      * **趋势曲线精准防坑**：利用 Google Trends 曲线诊断揭示 `LongCat-2.5-Preview` 的 SpikeAndDie 现象，以 `LongCat 2.5 API` 稳态流量为主词，兼顾 Preview 搜索长尾；
      * **100% 覆盖 Google Autocomplete 实时搜索联想**：涵盖 `pricing/token`、`docs`、`github` 与 `audio`；
      * **直击海外开发者 2 大核心死锁**：美团官方平台限制 +86 大陆手机号及境内企业 KYC 实名认证，通过 APIVALE 彻底解锁；
@@ -86,12 +90,12 @@
      * 提供 15+ 行带指数退避与重试机制的 Python 生产级异步代码；
      * 内嵌原生交互式《LongCat 2.5 Token Cost & IDE Setup Calculator》微工具，杜绝跳出率；
      * 配置符合 Google PAA 的 FAQ JSON-LD 结构化数据。
-  4. **Gate 3 三维网状集群闭环互链**：
-     * 在《How to Access LongCat 2.0 API Internationally》、《Kimi K3 vs LongCat 2.0》与《Ox Alpha Claude Code Setup》中同步植入内链与 Mermaid 拓扑节点。
+  4. **Gate 3 全站权威闭环互链（双向网状拓扑）**：
+     * 在首页、Cursor Pro 高权值指南、OpenRouter 竞品替代导航以及 3 篇大模型对决文章中全面铺设上下文深度内链，实现无死角权重输送。
   5. **商业对齐与钱包规范**：
      * 结尾注入对齐真实钱包的 `.cta-card`（首充+50%、$29 开发者专享包、新用户 $0.20 免卡试用、PayPal 官方即时结账），所有链接携带 `redirect=/blog/longcat-2-5-api-setup-benchmarks`。
 * **14 天因果复盘假设**：
-  * 在 14 天内拿下 Google 搜索 `LongCat 2.5 API key`、`LongCat 2.5 Cursor setup` 与 `LongCat-2.5-Preview pricing` 前 3 名，抢占美团大模型出海搜索的第一波高商业意图开发者，带动充值转化。
+  * 在 14 天内拿下 Google 搜索 `LongCat 2.5 API key`、`LongCat 2.5 Cursor setup` 与 `LongCat-2.5-Preview pricing` 前 3 名，借助首页与 Cursor Pro 明星文章的权威权重传递，加速 Googlebot 抓取与索引建立，抢占美团大模型出海搜索的第一波高商业意图开发者，带动充值转化。
 
 ### 📅 2026-09-27 - 📝 [原子发布与支柱集群构建]: 《Meta Model API Access & Setup Guide》重磅上线，直击“Not Available in Your Country”全网头号痛点并构筑双星集群
 

@@ -30,7 +30,7 @@ lang: "en"
 
 Comparing **Cursor Pro vs BYOK (Bring Your Own Key / Custom API Keys)** is essential for engineers building with [Cursor AI Editor](https://www.cursor.com/). Features like multi-file **Composer mode**, terminal execution, and inline tab completion have transformed coding workflows. However, as developers push agentic workflows to production, a common bottleneck appears: **the $20/month Cursor Pro quota exhausts rapidly.**
 
-Once you hit the 500 fast request limit, you face unexpected overage charges or peak-hour queue delays. In this 2026 guide, we break down the exact token math of **Cursor Pro vs BYOK & Custom API Keys**, benchmark **Cursor Pro vs Claude Pro limits**, and demonstrate how to configure high-speed custom endpoints with global [APIVALE Gateway](/blog/openrouter-alternatives/). If you are also orchestrating external autonomous agents like [Meta Muse AI and Muse Spark](/blog/meta-muse-ai-api-setup), similar token arbitrage and BYOK principles deliver up to 85% cost savings.
+Once you hit the 500 fast request limit, you face unexpected overage charges or peak-hour queue delays. In this 2026 guide, we break down the exact token math of **Cursor Pro vs BYOK & Custom API Keys**, benchmark **Cursor Pro vs Claude Pro limits**, and demonstrate how to configure high-speed custom endpoints with global [APIVALE Gateway](/blog/openrouter-alternatives/). For engineers refactoring multi-file repositories with massive context windows, you can also connect the 1M-token [LongCat 2.5 API](/blog/longcat-2-5-api-setup-benchmarks/) at a flat $0.20/million tokens. If you are also orchestrating external autonomous agents like [Meta Muse AI and Muse Spark](/blog/meta-muse-ai-api-setup), similar token arbitrage and BYOK principles deliver up to 85% cost savings.
 
 ---
 
@@ -57,6 +57,7 @@ graph TD
     E -->|DeepSeek V4 Route| F["$0.68/mo (96.6% Token Savings)"]
     E -->|Qwen 3.7 Max Route| G["$1.80/mo (High Performance Agent)"]
     E -->|Claude Sonnet 5 Route| H["$7.50/mo (Complex Architecture)"]
+    E -->|Long-Context 1M Route| J["LongCat 2.5 API ($0.20/1M Tokens)"]
     E -->|Frictionless Onboarding| I["Waffo Billing (Zero Card Declines)"]
 ```
 
