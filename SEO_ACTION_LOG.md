@@ -58,6 +58,40 @@
 
 ## 📝 优化行动记录 (2026-09)
 
+### 📅 2026-09-27 - 📝 [原子发布与突破热点承接]: 《LongCat 2.5 (Preview) API Key & Setup Guide》重磅上线，吃透 1.6T MoE 暴涨红利并直击海外 +86 手机号与实名死锁
+
+* **影响页面/路由**：
+  * **新发页面**：`/blog/longcat-2-5-api-setup-benchmarks/` (`src/content/blog/longcat-2-5-api-setup-benchmarks.md`)
+  * **双向织网页面**：
+    * `/blog/how-to-access-longcat-2-0-api-internationally/`（基石文章升级，引导至 LongCat 2.5 并净化 PayPal 支付术语）
+    * `/blog/kimi-k3-vs-longcat-2-0-open-weights-llm/`（万亿参数大模型对决文章植入 2.5 升级链接）
+    * `/blog/ox-alpha-claude-code-cursor-setup/`（万亿 MoE 架构路由图与正文植入 LongCat 2.5 节点）
+* **目标关键词矩阵（锁定 Google 实时联想词与 72h 暴涨趋势）**：
+  * **核心大盘主词**：`LongCat 2.5`, `LongCat-2.5-Preview`, `LongCat 2.5 API`
+  * **高转化开发词**：`LongCat-2.5-Preview api key`, `longcat 2.5 api documentation`, `longcat 2.5 pricing`, `longcat token`
+  * **开发工具链词**：`longcat 2.5 claude code`, `longcat 2.5 in cursor`, `longcat 2.5 proxy`
+* **核心落地细节与架构对齐**：
+  1. **E-E-A-T 专家 Persona 轮换**：
+     * 由 **Kenji Tanaka**（AI Developer Relations Engineer, APIVALE）署名，主打大模型多模态集成、海外无门槛接入与 IDE 生产级代理配置。
+  2. **1:1 响应用户与 Google 搜索意图**：
+     * **趋势曲线精准防坑**：利用 Google Trends 曲线诊断揭示 `LongCat-2.5-Preview` 的 SpikeAndDie 现象，以 `LongCat 2.5` 稳态流量为主词，兼顾 Preview 搜索长尾；
+     * **100% 覆盖 Google Autocomplete 实时搜索联想**：涵盖 `api key`、`pricing/token`、`docs`、`github` 与 `audio`；
+     * **直击海外开发者 2 大核心死锁**：美团官方平台限制 +86 大陆手机号及境内企业 KYC 实名认证，通过 APIVALE 彻底解锁；
+     * **价格降维打击**：官方 $0.30/$1.20 促销费率 vs APIVALE 代理 $0.20/1M 批发资费，配合 1M 上下文节省 93% 成本。
+  3. **落实 4 项真实工程增益与安全客观架构**：
+     * 架构层解析 LSA 稀疏注意力和 DiNA 跨模态架构；
+     * 涵盖 Claude Sonnet 5, Qwen 3.7 Max, DeepSeek V4 的 SWE-bench Lite 实测比对，保留客观 "Best For..." 列；
+     * 引用 r/LocalLLaMA 真实开发者关于 1.6T MoE 无法本地量化部署的一手原声；
+     * 提供 15+ 行带指数退避与重试机制的 Python 生产级异步代码；
+     * 内嵌原生交互式《LongCat 2.5 Token Cost & IDE Setup Calculator》微工具，杜绝跳出率；
+     * 配置符合 Google PAA 的 FAQ JSON-LD 结构化数据。
+  4. **Gate 3 三维网状集群闭环互链**：
+     * 在《How to Access LongCat 2.0 API Internationally》、《Kimi K3 vs LongCat 2.0》与《Ox Alpha Claude Code Setup》中同步植入内链与 Mermaid 拓扑节点。
+  5. **商业对齐与钱包规范**：
+     * 结尾注入对齐真实钱包的 `.cta-card`（首充+50%、$29 开发者专享包、新用户 $0.20 免卡试用、PayPal 官方即时结账），所有链接携带 `redirect=/blog/longcat-2-5-api-setup-benchmarks`。
+* **14 天因果复盘假设**：
+  * 在 14 天内拿下 Google 搜索 `LongCat 2.5 API key`、`LongCat 2.5 Cursor setup` 与 `LongCat-2.5-Preview pricing` 前 3 名，抢占美团大模型出海搜索的第一波高商业意图开发者，带动充值转化。
+
 ### 📅 2026-09-27 - 📝 [原子发布与支柱集群构建]: 《Meta Model API Access & Setup Guide》重磅上线，直击“Not Available in Your Country”全网头号痛点并构筑双星集群
 
 * **影响页面/路由**：

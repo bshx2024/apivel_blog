@@ -1,4 +1,4 @@
-﻿---
+---
 title: "How to Get Meituan LongCat-2.0 API Key Outside China (No Phone Needed)"
 metaTitle: "Access Meituan LongCat 2.0 API Internationally | APIVALE"
 description: "Access Meituan LongCat-2.0 API internationally with zero KYC card blocks. Route OpenAI-compatible requests via APIVALE with PayPal billing. Learn more."
@@ -11,11 +11,11 @@ image: "/blog/longcat-api-access-cover.png"
 lang: "en"
 ---
 
-The release of Meituan's **LongCat-2.0** has generated massive excitement across the global open-source AI community. As a 1.6-trillion-parameter MoE model trained on over 30 trillion tokens, it exhibits near-frontier coding capabilities, outperforming many proprietary models in agentic reasoning, code synthesis, and multi-step tool execution.
+The release of Meituan's **LongCat-2.0** has generated massive excitement across the global open-source AI community. As a 1.6-trillion-parameter MoE model trained on over 30 trillion tokens, it exhibits near-frontier coding capabilities, outperforming many proprietary models in agentic reasoning, code synthesis, and multi-step tool execution. *(For the latest multimodal 1M-context upgrade, see our [LongCat 2.5 (Preview) API Key & Setup Guide](/blog/longcat-2-5-api-setup-benchmarks/)).*
 
 However, global developers face a frustrating obstacle: Meituan's developer portal requires a Chinese (+86) mobile phone number to register, and its paid tiers are locked behind mainland corporate real-name identity verification (KYC).
 
-In this guide, we show you how to register and access a **fully operational LongCat-2.0 API key internationally** in under two minutes, bypass KYC limitations, and configure global Stripe billing using APIVALE.
+In this guide, we show you how to register and access a **fully operational LongCat-2.0 API key internationally** in under two minutes, bypass KYC limitations, and configure global PayPal billing using APIVALE.
 
 > **💡 Try it Live**: You can chat with the live Meituan model directly in your browser using the [APIVALE Model Playground](https://apivale.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-access-longcat-2-0-api-internationally) (select **Longcat/LongCat-2.0** from the model selection dropdown to begin testing).
 

@@ -98,6 +98,9 @@ if (slugLower.includes('opus') || postMeta.includes('claude-opus')) {
 } else if (postMeta.includes('gpt-5.6') || postMeta.includes('gpt-5-6') || postMeta.includes('gpt-6') || postMeta.includes('luna') || postMeta.includes('sol') || postMeta.includes('astra')) {
 	targetTopic = 'gpt56';
 	initialModel = 'kimi-k3';
+} else if (postMeta.includes('longcat') || postMeta.includes('meituan') || postMeta.includes('美团')) {
+	targetTopic = 'longcat';
+	initialModel = 'longcat-2.5';
 } else if (postMeta.includes('cursor') || postMeta.includes('composer') || postMeta.includes('cline') || postMeta.includes('windsurf') || postMeta.includes('opencode')) {
 	targetTopic = 'cursor';
 	initialModel = 'glm-5.3-flash';
@@ -216,6 +219,13 @@ const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.key
 				{ label: 'Developer Tooling', value: 'Claude Code CLI, Cursor .cursorrules', isCode: false },
 				{ label: 'API Gateway', value: 'https://api.apivale.com/v1', isCode: true },
 				{ label: 'Billing & Onboarding', value: 'Waffo Global Billing ($0.20 Free Trial)', highlight: true }
+			];
+		} else if (targetTopic === 'longcat') {
+			return [
+				{ label: 'Sparse MoE Scale', value: '1.6T MoE (48B Active) & 1M Window', isCode: false },
+				{ label: 'Flagship Invocation', value: 'infer/meituan/longcat-2.5', isCode: true },
+				{ label: 'Gateway Endpoint', value: 'https://api.apivale.com/v1', isCode: true },
+				{ label: 'Global Billing', value: 'PayPal & Global Cards ($0.20 Trial)', highlight: true }
 			];
 		} else if (targetTopic === 'cursor') {
 			return [
