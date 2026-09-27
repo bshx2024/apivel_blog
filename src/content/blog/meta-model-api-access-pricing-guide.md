@@ -76,7 +76,7 @@ To explore building autonomous multi-step agents on top of these models, consult
 
 A widespread source of frustration among developers is the operational divide between Meta's consumer offerings and its programmatic API:
 
-* **Muse Code Subscription ($20/mo)**: Designed exclusively for interactive IDE extensions and CLI apps. It **does not** generate programmatic API keys for external applications like Cursor, Windsurf, or custom Python agents.
+* **Muse Code Subscription ($20/mo)**: Designed exclusively for interactive IDE extensions and CLI apps. It **does not** generate programmatic API keys for external applications like [Cursor AI Editor](/blog/cursor-pro-vs-custom-api-key/), [Claude Code CLI](/blog/how-to-connect-qwen-3-8-to-claude-code-cli), or custom Python agents.
 * **Meta Model API (Pay-As-You-Go)**: Requires an enterprise billing agreement with per-token metered charging. 
 
 Developers attempting to use consumer credentials in custom software encounter invalid authentication errors. APIVALE solves this friction by providing universal, pay-as-you-go API keys that require zero enterprise commitments.
@@ -124,7 +124,7 @@ Evaluating foundation model APIs requires comparing raw per-token economics agai
 | **KYC & Identity Verification**| Strict Corporate ID & Phone | **Zero KYC / No Phone Required** | **Zero KYC / No Phone Required** |
 | **Best For... (Honesty Audit)**| Native Meta Workspace Integration| **Heavy Code Generation & Math** | **Complex Reasoning & Multilingual**|
 
-*Note: Pricing and parameters verified via official documentation as of September 2026.*
+*Note: Pricing and parameters verified via official documentation as of September 2026. For multi-model cost comparisons against traditional aggregators, see our benchmark of the [best OpenRouter alternatives with PayPal billing](/blog/openrouter-alternatives/).*
 
 ## How to Configure Your Meta Model API Integration (Step-by-Step)
 
@@ -143,7 +143,7 @@ BACKUP_REASONING_MODEL="infer/qwen3.7-max"
 REQUEST_TIMEOUT_SECONDS=60
 ```
 
-Because APIVALE uses standard OpenAI wire protocols, any library or tool supporting `baseURL` overrides—including Cursor, Windsurf, LangChain, and LlamaIndex—connects seamlessly.
+Because APIVALE uses standard OpenAI wire protocols, any library or tool supporting `baseURL` overrides—including [Cursor AI Editor](/blog/cursor-pro-vs-custom-api-key/), Windsurf, and [self-hosted OmniRoute gateways](/blog/omniroute-claude-code-setup/)—connects seamlessly.
 
 ### Step 2: Resilient Python Gateway with Exponential Backoff
 
