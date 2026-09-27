@@ -89,8 +89,11 @@ graph TD
     B -->|RTK / Caveman Compression| C{"Quota Check & Health Probe"}
     C -->|Healthy| D["Primary Free/Paid Provider"]
     C -->|Rate Limited 429| E["Cascading Fallback Provider"]
+    C -->|Agentic Loop Fallback| G["Meta Muse & DeepSeek Hub"]
     C -->|All Local Tiers Fail| F["APIVALE Enterprise Cloud Gateway"]
 ```
+
+> **Pro Tip**: For multi-step autonomous workloads like those in [Meta Muse AI and Muse Spark API setups](/blog/meta-muse-ai-api-setup), local routing loops can rapidly exhaust quotas. Integrating cloud failovers ensures uninterrupted agentic pipelines.
 
 ### Step 1: Deploying the Local Gateway via npm or Docker Container
 
