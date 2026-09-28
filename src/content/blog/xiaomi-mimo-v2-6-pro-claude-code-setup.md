@@ -342,7 +342,7 @@ export class MiMoClient {
 }
 ```
 
-Combining MiMo-V2.6 Pro with [Claude Opus 5](/blog/how-to-connect-claude-opus-5-to-claude-code-cli) ensures uninterrupted development velocity across high-concurrency coding pipelines.
+Combining MiMo-V2.6 Pro with [MiniMax M3.1-Flash (Space Bunny)](/blog/minimax-m3-1-flash-preview-api-setup) or [Claude Opus 5](/blog/how-to-connect-claude-opus-5-to-claude-code-cli) ensures uninterrupted development velocity and sub-second token latency across high-concurrency coding pipelines.
 
 ---
 

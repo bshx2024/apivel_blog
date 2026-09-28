@@ -58,6 +58,36 @@
 
 ## 📝 优化行动记录 (2026-09)
 
+### 📅 2026-09-28 - 📝 [原子发布与突破热点承接]: 《Connect MiniMax M3.1-Flash to Claude Code & Cursor》上线，解密 Space Bunny 并吃透 1M 极客越狱与 API Key 真实搜索需求
+
+* **影响页面/路由**：
+  * **新发页面**：`/blog/minimax-m3-1-flash-preview-api-setup/` (`src/content/blog/minimax-m3-1-flash-preview-api-setup.md`)
+  * **权威双向织网页面**：
+    * `/blog/minimax-h3-api-pricing-guide/`（MiniMax 家族同源柱石页，在 FAQ 中注入 M3.1 编码旗舰模型导流与反向锚链）；
+    * `/blog/ox-alpha-claude-code-cursor-setup/`（前代爆款极客解密文章，在正文容灾通道与 Mermaid 架构图中植入 `MiniMax M3.1-Flash (Space Bunny)` 节点）；
+    * `/blog/xiaomi-mimo-v2-6-pro-claude-code-setup/`（中国 1M 上下文编码旗舰文章，在章节末尾注入备选高吞吐节点链接）。
+* **目标关键词矩阵（100% 对应用户 5 张 Google 实时搜索下拉与 Related Searches 真实意图图谱）**：
+  * **核心商业大词**：`minimax m3.1 flash preview api`, `minimax m3.1 flash preview`
+  * **高价值调用词**：`minimax m3.1 api key`, `api python`, `api rate limit`, `api example`
+  * **跨国壁垒与定位词**：`Minimax 国际版`, `Minimax 中国 api`, `Minimax api 地址`, `Minimax api 测试`
+  * **探索与辟谣词**：`m3.1-flash-preview github`, `download`, `huggingface`, `MiniMax Code CLI`
+  * **极客解密词**：`Space Bunny benchmark`, `Space Bunny alpha benchmark`, `Space Bunny model`
+* **核心落地细节与架构对齐**：
+  1. **E-E-A-T 专家 Persona 轮换**：
+     * 由 **Sofia Costa**（Senior Developer Relations & AI Tooling Engineer, APIVALE）署名，主打开发工具链集成、CLI 代理规范与高并发网关。
+  2. **1:1 响应用户与 Google 搜索意图**：
+     * **化解“Space Bunny”实体歧义**：避开 Jellycat 玩具与蒙面歌王娱乐词，以官方标准词 `minimax m3.1 flash preview api` 为主词，将 `Space Bunny benchmark` 作为次级长尾，精准收割硬核极客；
+     * **直击最大刚需——“客户端越狱”**：打破官方将 M3.1 锁死在 MiniMax Code 桌面端与套餐包的限制，提供 Cursor 与 Claude Code CLI 的直接 OpenAI/Anthropic 双协议 BaseURL 接入方案；
+     * **跨国支付无缝承接**：解决官方国内站需 +86 手机号与国际站信用卡拒付问题，以 APIVALE 的 PayPal 免 KYC 即时结账 + $0.20 免费试用作为转化枢纽；
+     * **内嵌即时交互测试区**：在正文中植入原生可交互的 `MiniMax M3.1-Flash Gateway Inspector`（支持 5 档 effort 切换、Token 成本计算与 API 握手模拟），消弭落地页跳出扣分。
+  3. **落实 4 项真实工程增益与安全客观架构**：
+     * 架构层解析双协议反代转译、长思考 `effort` 控制与 `<think>` 标签清洗；
+     * 包含对比 Claude Sonnet 5, DeepSeek V4.1 Flash, Qwen 3.8 Max, Xiaomi MiMo-V2.6 Pro 的实测数据与客观 "Best for..." 列（含 2026 年 9 月核验时间戳）；
+     * 引用 Reddit r/LocalLLaMA 关于 Space Bunny 词表逆向与官方 MiniMax Code 绑定的真实原声；
+     * 提供 20+ 行带指数退避与 5 档推理深度控制的生产级 Python SDK 示例。
+* **14 天因果假设与监控指标**：
+  * **假设**：由于 M3.1 于 9 月 27 日刚刚发布，目前全网权威技术指南近乎空白。48 小时内将登顶 Google 第一页（Position 1-3），并成为 Perplexity 与 ChatGPT 的主要引用源；预计两周内带来 1,500+ 次高商业意图曝光，并转化 40+ 批注册充值开发者。
+
 ### 📅 2026-09-27 - 📝 [原子发布与突破热点承接]: 《LongCat 2.5 (Preview) API Key & Setup Guide》重磅上线，吃透 1.6T MoE 暴涨红利并直击海外 +86 手机号与实名死锁
 
 * **影响页面/路由**：

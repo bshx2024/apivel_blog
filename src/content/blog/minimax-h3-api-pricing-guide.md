@@ -294,6 +294,9 @@ Yes, you can fund MiniMax H3 API usage via PayPal on APIVALE. APIVALE natively s
 ### Where can I download MiniMax H3 open weights?
 MiniMax H3 open weights will be hosted on Hugging Face under the MiniMax Community License, allowing free non-commercial research and royalty-free commercial usage for organizations with annual revenues under $20 million USD.
 
+### What is the best MiniMax model for autonomous coding and IDE integration?
+For developers building autonomous software agents or configuring Cursor and Claude Code CLI, MiniMax released **M3.1-Flash-Preview** with a 1,000,000-token context window and 5-level reasoning effort control. Read our companion [MiniMax M3.1-Flash API Key Setup & Python Guide](/blog/minimax-m3-1-flash-preview-api-setup) to configure BYOK endpoints with zero-KYC PayPal billing.
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
