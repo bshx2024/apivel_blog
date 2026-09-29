@@ -29,7 +29,7 @@ const faqSchema = {
           "name": "Is OpenRouter pricing worth it?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "OpenRouter pricing suits developers prototyping multi-model architectures under a single interface. However, for continuous production agent loops and high-throughput pipelines, the 5.5% deposit surcharge, $0.80 minimum fee, and prompt caching variance make dedicated gateways like APIVALE more economical."
+            "text": "The platform's consumption model suits developers prototyping multi-model architectures under a single interface. However, for continuous production agent loops and high-throughput pipelines, the 5.5% deposit surcharge, $0.80 minimum fee, and prompt caching variance make dedicated gateways like APIVALE more economical."
           }
         },
         {
@@ -37,12 +37,12 @@ const faqSchema = {
           "name": "How does OpenRouter pricing work for credit refills?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "OpenRouter pricing charges a 5.5% payment processing fee plus an $0.80 minimum deposit fee on credit card payments via Stripe. Topping up $10 incurs an actual card charge of $11.35 before factoring in regional VAT."
+            "text": "Token refills incur a 5.5% payment processing fee plus an $0.80 minimum deposit fee on credit card payments via Stripe. Topping up $10 incurs an actual card charge of $11.35 before factoring in regional VAT."
           }
         },
         {
           "@type": "Question",
-          "name": "What is the cheapest model under OpenRouter pricing?",
+          "name": "What is the cheapest model on OpenRouter?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "The cheapest production-ready coding models are DeepSeek V4.1 Flash ($0.14 input / $0.28 output per million tokens) and GLM-5.3 Flash ($0.08 input / $0.25 output per million tokens), providing over 95% cost reduction compared to proprietary frontier models."
@@ -61,15 +61,15 @@ const faqSchema = {
           "name": "How does OpenRouter pricing per month compare to enterprise pricing?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "OpenRouter pricing per month is metered pay-per-token consumption, averaging $10–$30/mo for light queries and $180–$250/mo for heavy coding agents. OpenRouter enterprise pricing offers negotiated SLAs and annual volume commitments, whereas APIVALE delivers unthrottled 500+ RPM pools with zero monthly minimums."
+            "text": "Monthly expenses are determined by pay-per-token metering, averaging $10–$30/mo for light queries and $180–$250/mo for heavy coding agents. OpenRouter enterprise pricing offers negotiated SLAs and annual volume commitments, whereas APIVALE delivers unthrottled 500+ RPM pools with zero monthly minimums."
           }
         },
         {
           "@type": "Question",
-          "name": "How does OpenRouter pricing compare to ChatGPT Plus?",
+          "name": "How do OpenRouter token rates compare to ChatGPT Plus?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "ChatGPT Plus costs a flat $20 monthly subscription for consumer chat quotas. OpenRouter pricing uses pay-as-you-go token metering, designed for IDE and agent programmatic integration."
+            "text": "ChatGPT Plus costs a flat $20 monthly subscription for consumer chat quotas. OpenRouter operates on pay-as-you-go token metering, designed for IDE and agent programmatic integration."
           }
         },
         {
@@ -169,7 +169,7 @@ const faqSchema = {
             </div>
 
             <button type="button" id="calcTriggerBtn" class="calc-btn" onclick="runCostSimulation()">
-              ⚡ Recalculate with OpenRouter Pricing Calculator
+              ⚡ Calculate Token Cost & Savings
             </button>
           </div>
 
@@ -227,7 +227,7 @@ const faqSchema = {
             <tr>
               <th>Model Identifier</th>
               <th>Provider</th>
-              <th>OpenRouter Pricing (1M Tokens)</th>
+              <th>OpenRouter Rates (1M Tokens)</th>
               <th>APIVALE Gateway Price (1M Tokens)</th>
               <th>Surcharge & Billing Terms</th>
               <th>Optimal Use Case</th>
@@ -303,7 +303,7 @@ const faqSchema = {
           <div class="gotcha-icon">📊</div>
           <h3>OpenRouter Pricing per Month vs. Direct Subscriptions</h3>
           <p>
-            When projecting <strong>openrouter pricing per month</strong>, developers often weigh pay-as-you-go token consumption against fixed $20/month IDE subscriptions (such as Cursor Pro or Claude Pro). For hobbyists executing fewer than 5M tokens monthly, pay-per-token averages $4–$12/month. However, for multi-file autonomous agents like Claude Code CLI or Roo Code generating 30M–60M tokens, standard <strong>openrouter pricing per month</strong> frequently climbs to $180–$260/month once the 5.5% refill penalty and prompt re-evaluations compound. For organizations scaling past 1B tokens, evaluating <strong>openrouter enterprise pricing</strong> requires committed annual minimums, making transparent multi-channel gateways like APIVALE an agile alternative.
+            When projecting <strong>openrouter pricing per month</strong>, developers often weigh pay-as-you-go token consumption against fixed $20/month IDE subscriptions (such as Cursor Pro or Claude Pro). For hobbyists executing fewer than 5M tokens monthly, pay-per-token averages $4–$12/month. However, for multi-file autonomous agents like Claude Code CLI or Roo Code generating 30M–60M tokens, standard monthly token bills frequently climb to $180–$260/month once the 5.5% refill penalty and prompt re-evaluations compound. For organizations scaling past 1B tokens, evaluating <strong>openrouter enterprise pricing</strong> requires committed annual minimums, making transparent multi-channel gateways like APIVALE an agile alternative.
           </p>
         </div>
 
@@ -329,7 +329,7 @@ const faqSchema = {
     <section class="gotchas-section">
       <div class="section-heading">
         <span class="section-tag">TRANSPARENCY AUDIT</span>
-        <h2>3 Hidden Cost Traps in OpenRouter Pricing</h2>
+        <h2>3 Hidden Cost Traps in Credit Refills</h2>
         <p>Developer telemetry reveals where unexpected operational expenses accumulate.</p>
       </div>
 
@@ -401,7 +401,7 @@ const faqSchema = {
     <section class="faq-section">
       <div class="section-heading">
         <span class="section-tag">FREQUENTLY ASKED QUESTIONS</span>
-        <h2>OpenRouter Pricing FAQ</h2>
+        <h2>Billing & Pricing FAQ</h2>
         <p>Direct technical answers to common queries regarding model billing, credits, and alternatives.</p>
       </div>
 
@@ -409,19 +409,19 @@ const faqSchema = {
         <div class="faq-item">
           <h3>Is OpenRouter pricing worth it?</h3>
           <p>
-            OpenRouter pricing is convenient for exploratory prototyping across hundreds of models. However, for continuous production agent loops and heavy refactoring in Cursor or Claude Code, the 5.5% deposit surcharge, lack of wholesale pricing, and potential prompt caching drops make dedicated routing gateways like APIVALE more cost-effective.
+            The platform's consumption model is convenient for exploratory prototyping across hundreds of models. However, for continuous production agent loops and heavy refactoring in Cursor or Claude Code, the 5.5% deposit surcharge, lack of wholesale pricing, and potential prompt caching drops make dedicated routing gateways like APIVALE more cost-effective.
           </p>
         </div>
 
         <div class="faq-item">
           <h3>How does OpenRouter pricing work for credit deposits?</h3>
           <p>
-            OpenRouter pricing charges pass-through token fees plus a 5.5% processing fee and an $0.80 minimum deposit fee on credit card payments through Stripe. Topping up $10 incurs an actual card outlay of $11.35 before local sales tax.
+            Credit refills incur pass-through token fees plus a 5.5% processing fee and an $0.80 minimum deposit fee on credit card payments through Stripe. Topping up $10 incurs an actual card outlay of $11.35 before local sales tax.
           </p>
         </div>
 
         <div class="faq-item">
-          <h3>What is the cheapest model under OpenRouter pricing?</h3>
+          <h3>What is the cheapest model on OpenRouter?</h3>
           <p>
             The cheapest models available are DeepSeek V4.1 Flash ($0.14 input / $0.28 output per million tokens) and GLM-5.3 Flash ($0.08 input / $0.25 output per million tokens), offering over 95% cost reduction compared to proprietary frontier models like Claude Sonnet 5.
           </p>
@@ -437,14 +437,14 @@ const faqSchema = {
         <div class="faq-item">
           <h3>How does OpenRouter pricing per month compare to enterprise pricing?</h3>
           <p>
-            OpenRouter pricing per month is metered pay-per-token API consumption, typically totaling $10–$30/mo for light prompt testing and $180–$250/mo for intensive multi-file autonomous coding agents. OpenRouter enterprise pricing offers negotiated rate limits and dedicated routing pools with custom annual minimums, whereas APIVALE delivers unthrottled 500+ RPM pools with zero monthly commitments.
+            Monthly expenditure is metered pay-per-token API consumption, typically totaling $10–$30/mo for light prompt testing and $180–$250/mo for intensive multi-file autonomous coding agents. OpenRouter enterprise pricing offers negotiated rate limits and dedicated routing pools with custom annual minimums, whereas APIVALE delivers unthrottled 500+ RPM pools with zero monthly commitments.
           </p>
         </div>
 
         <div class="faq-item">
-          <h3>How does OpenRouter pricing compare to ChatGPT Plus?</h3>
+          <h3>How do OpenRouter token rates compare to ChatGPT Plus?</h3>
           <p>
-            ChatGPT Plus costs a flat $20/month fee for consumer chat limits. OpenRouter pricing is metered pay-per-token API consumption, specifically intended for programmatic integration into coding tools and autonomous agents.
+            ChatGPT Plus costs a flat $20/month fee for consumer chat limits. OpenRouter operates on pay-as-you-go token metering, specifically intended for programmatic integration into coding tools and autonomous agents.
           </p>
         </div>
 
