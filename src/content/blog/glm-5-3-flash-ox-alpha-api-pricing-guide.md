@@ -23,7 +23,7 @@ lang: "en"
 <div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
   <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Related GLM & Ox Alpha Guides</span>
   <p class="mt-1 text-sm text-gray-300">
-    Need extreme 200 tokens/s throughput and native visual coding? Read our comprehensive tutorial on <a href="/blog/glm-5-3-flashx-extreme-speed-vision-api-guide" class="text-emerald-400 hover:underline font-semibold">GLM-5.3-FlashX API Setup & 200 TPS Pricing</a>. Also check our dedicated walkthroughs for <a href="/blog/ox-alpha-claude-code-cursor-setup" class="text-cyan-400 hover:underline font-semibold">Ox Alpha Claude Code & Cursor Setup</a>, compare BYOK editor savings in our <a href="/blog/cursor-pro-vs-custom-api-key/" class="text-cyan-400 hover:underline font-semibold">Cursor Pro vs Custom API Key Cost Guide</a>, or configure real-time token tracking via our <a href="/blog/codexbar-windows-setup-safety-guide/" class="text-cyan-400 hover:underline font-semibold">CodexBar Windows Setup Guide</a>.
+    Need extreme 200 tokens/s throughput and native visual coding? Read our comprehensive tutorial on <a href="/blog/glm-5-3-flashx-extreme-speed-vision-api-guide/" class="text-emerald-400 hover:underline font-semibold">GLM-5.3-FlashX API Setup & 200 TPS Pricing</a>. Also check our dedicated walkthroughs for <a href="/blog/ox-alpha-claude-code-cursor-setup/" class="text-cyan-400 hover:underline font-semibold">Ox Alpha Claude Code & Cursor Setup</a>, compare BYOK editor savings in our <a href="/blog/cursor-pro-vs-custom-api-key/" class="text-cyan-400 hover:underline font-semibold">Cursor Pro vs Custom API Key Cost Guide</a>, or configure real-time token tracking via our <a href="/blog/codexbar-windows-setup-safety-guide/" class="text-cyan-400 hover:underline font-semibold">CodexBar Windows Setup Guide</a>.
   </p>
 </div>
 
@@ -53,7 +53,7 @@ The mystery surrounding OpenRouter's anonymous coding champion, **Ox Alpha** (`s
 
 Engineered specifically for autonomous coding loops and high-concurrency terminal execution, GLM-5.3-Flash couples a massive **320-billion parameter Mixture-of-Experts (MoE)** knowledge base with an agile **18-billion active parameter computation layer**. This sparse design delivers reasoning accuracy close to dense flagship models while operating at ~180ms Time-to-First-Token (TTFT) and an ultra-low pricing footprint.
 
-However, accessing GLM-5.3-Flash through native Chinese portals presents strict KYC barriers (mandatory mainland +86 SMS and Chinese identity verification), while intermediary hubs charge steep markups and impose restrictive rate limits. By utilizing APIVALE's OpenAI and Anthropic protocol gateway, developers can route high-speed GLM-5.3-Flash requests with 1M context support and zero-KYC <a href="/blog/openrouter-alternatives" class="text-cyan-400 hover:underline font-semibold">Waffo Global Billing</a>.
+However, accessing GLM-5.3-Flash through native Chinese portals presents strict KYC barriers (mandatory mainland +86 SMS and Chinese identity verification), while intermediary hubs charge steep markups and impose restrictive rate limits. By utilizing APIVALE's OpenAI and Anthropic protocol gateway, developers can route high-speed GLM-5.3-Flash requests with 1M context support and zero-KYC <a href="/blog/openrouter-alternatives/" class="text-cyan-400 hover:underline font-semibold">Waffo Global Billing</a>.
 
 ```mermaid
 graph LR
@@ -244,7 +244,7 @@ claude --model infer/glm-5.3-flash
 
 ## Production Integration: Node.js / TypeScript Proxy Bridge
 
-Deploy this production Express proxy featuring Bearer token validation, streaming pass-through, and automatic fallback to <a href="/blog/deepseek-v4-flash-vision-api-guide" class="text-cyan-400 hover:underline font-semibold">DeepSeek V4</a>:
+Deploy this production Express proxy featuring Bearer token validation, streaming pass-through, and automatic fallback to <a href="/blog/deepseek-v4-flash-vision-api-guide/" class="text-cyan-400 hover:underline font-semibold">DeepSeek V4</a>:
 
 ```typescript
 import express, { Request, Response } from 'express';

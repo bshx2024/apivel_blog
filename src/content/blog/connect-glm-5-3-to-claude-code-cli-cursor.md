@@ -43,15 +43,15 @@ lang: "en"
     <a id="cta-login-btn" href="https://apivale.com/sign-up?redirect=/blog/connect-glm-5-3-to-claude-code-cli-cursor/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Sign Up / Log In to Auto-Fill Your API Key
     </a>
-    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('Base URL: https://api.apivale.com/v1\nModel: infer/glm-5.3'); alert('Copied Cursor config parameters!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
+    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('Base URL: https://api.apivale.com/v1\nModel: infer/glm-5.3'); const b=this; b.innerText='✅ Copied!'; setTimeout(()=>b.innerText='📋 Copy Cursor Config', 2000);" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
       📋 Copy Cursor Config
     </button>
   </div>
 </div>
 
-Developers running intensive AI coding workflows inside **Cursor IDE** and **Windsurf** frequently hit rate limits on standard Pro subscriptions or face $0.10 surcharges per additional fast request. While Zhipu's **GLM-5.3** delivers elite coding benchmark performance (+50% uplift over GLM-5.2 on code completion and CyberGym security audits), international developers face +86 SMS verification hurdles and domestic payment restrictions on native portals (see our detailed breakdown on <a href="/blog/bypass-zhipu-ai-real-name-verification" class="text-cyan-400 hover:underline font-semibold">bypassing Zhipu real-name verification</a>).
+Developers running intensive AI coding workflows inside **Cursor IDE** and **Windsurf** frequently hit rate limits on standard Pro subscriptions or face $0.10 surcharges per additional fast request. While Zhipu's **GLM-5.3** delivers elite coding benchmark performance (+50% uplift over GLM-5.2 on code completion and CyberGym security audits), international developers face +86 SMS verification hurdles and domestic payment restrictions on native portals (see our detailed breakdown on <a href="/blog/bypass-zhipu-ai-real-name-verification/" class="text-cyan-400 hover:underline font-semibold">bypassing Zhipu real-name verification &amp; Z.ai billing fixes</a>).
 
-By leveraging APIVALE's OpenAI-compatible routing gateway, developers can Bring Your Own Key (BYOK) into Cursor, unlocking GLM-5.3's 1M context window and deep post-training reasoning for **~$0.0038 per typical edit** with frictionless <a href="/blog/openrouter-alternatives" class="text-cyan-400 hover:underline font-semibold">Waffo Global Billing</a>.
+By leveraging APIVALE's OpenAI-compatible routing gateway, developers can Bring Your Own Key (BYOK) into Cursor, unlocking GLM-5.3's 1M context window and deep post-training reasoning for **~$0.0038 per typical edit** with frictionless <a href="/blog/openrouter-alternatives/" class="text-cyan-400 hover:underline font-semibold">PayPal Global Billing</a>.
 
 ```mermaid
 graph LR
@@ -61,7 +61,7 @@ graph LR
     B -->|SWE Benchmark Routing| H["qwen-3.8-27b (Alibaba)"]
     B -->|Sparse 770B MoE Route| F["infer/hy4-preview (1M Context)"]
     B -->|Fallback Route| D["infer/deepseek-v4-pro"]
-    B -->|Billing Engine| E["Waffo Global Billing (Zero KYC)"]
+    B -->|Billing Engine| E["PayPal Global Billing (Zero KYC)"]
 ```
 
 > [!TIP]
@@ -167,7 +167,7 @@ Bringing GLM-5.3 to Cursor via APIVALE reduces daily coding costs by over 90% co
             <span class="text-[10px] uppercase font-bold text-indigo-300 tracking-wider">Estimated Monthly Arbitrage</span>
             <div class="text-2xl font-extrabold text-white mt-1" id="glm-savings-total">Save $115.44 / month</div>
             <p class="text-xs text-emerald-400 font-medium mt-0.5" id="glm-savings-pct">🔥 96.2% Reduction in Tooling Overhead</p>
-            <p class="text-xs text-gray-400 mt-2">Zero-KYC global billing via Waffo. Full 1M context in Cursor Composer without token degradation.</p>
+            <p class="text-xs text-gray-400 mt-2">Zero-KYC global billing via PayPal. Full 1M context in Cursor Composer without token degradation.</p>
           </div>
           <a href="https://apivale.com/sign-up?redirect=/blog/connect-glm-5-3-to-claude-code-cli-cursor/" class="mt-4 inline-flex justify-center items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
             ⚡ Claim $0.20 Starter Credit & Connect Cursor
@@ -272,10 +272,15 @@ function generateGlmRules() {
   }
 }
 
-function copyGlmRules() {
+function copyGlmRules(event) {
   const text = document.getElementById('glm-rules-output').innerText;
   navigator.clipboard.writeText(text);
-  alert('Copied GLM-5.3 .cursorrules configuration to clipboard!');
+  const btn = event?.target || document.querySelector('button[onclick*="copyGlmRules"]');
+  if (btn) {
+    const orig = btn.innerText;
+    btn.innerText = '✅ Copied Rules!';
+    setTimeout(() => { btn.innerText = orig; }, 2000);
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -330,7 +335,7 @@ GLM-5.3's 1,000,000 token context window enables Cursor Composer to index entire
 
 ### Dynamic Failover & Healthcheck Proxy
 
-If you require multi-model fallback in high-throughput enterprise environments, deploy this lightweight Node.js Express proxy to route traffic between GLM-5.3 and <a href="/blog/deepseek-v4-flash-vision-api-guide" class="text-cyan-400 hover:underline font-semibold">DeepSeek V4</a>:
+If you require multi-model fallback in high-throughput enterprise environments, deploy this lightweight Node.js Express proxy to route traffic between GLM-5.3 and <a href="/blog/deepseek-v4-flash-vision-api-guide/" class="text-cyan-400 hover:underline font-semibold">DeepSeek V4</a>:
 
 ```typescript
 import express, { Request, Response } from 'express';
@@ -406,7 +411,7 @@ When adding a custom model in Cursor, ensure the model identifier matches APIVAL
 If routing through a local enterprise proxy server, Cursor may reject self-signed certificates.
 
 ### Edge Case 3: Tracking Token Burn & Session Limits on Windows
-When running extensive multi-file Composer refactors, tracking session burn rates prevents surprise quota exhaustion. Windows developers can follow our guide on [how to run CodexBar on Windows 11 & 10](/blog/codexbar-windows-setup-safety-guide/) to monitor quota health bars or use APIVALE's unified web dashboard.
+When running extensive multi-file Composer refactors, tracking session burn rates prevents surprise quota exhaustion. When evaluating local AI gateway proxies versus cloud infrastructure, explore our guide on [configuring OmniRoute with Claude Code](/blog/omniroute-claude-code-setup/). Windows developers can also follow our guide on [how to run CodexBar on Windows 11 & 10](/blog/codexbar-windows-setup-safety-guide/) to monitor quota health bars or use APIVALE's unified web dashboard.
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Grok Bot API Setup & Supergrok Limit Bypass Guide (2026)"
-metaTitle: "Grok Bot API Setup & Supergrok Limit Fix | APIVALE"
+metaTitle: "Grok Bot API Setup: Bypass Supergrok Limits (2026) | APIVALE"
 description: "Fix Grok Bot API errors, bypass Supergrok+ weekly rate limits, and route Grok vs Qwen 3.8 in OpenClaw/Hermes. Get Python code and PayPal access."
 date: "2026-08-25"
 author: "Kenji Tanaka"

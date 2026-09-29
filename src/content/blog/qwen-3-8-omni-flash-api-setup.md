@@ -23,7 +23,7 @@ lang: "en"
 <div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
   <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Related Qwen Ecosystem Guides</span>
   <p class="mt-1 text-sm text-gray-300">
-    Evaluating models? Check our technical guides for <a href="/blog/qwen-image-2-1-api-setup-guide" class="text-cyan-400 hover:underline font-semibold">Qwen-Image-2.1 API for ComfyUI & Native RGBA</a>, <a href="/blog/qwen-3-8-flash-next-benchmarks-api-guide" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Flash Next for Coding</a>, <a href="/blog/qwen-3-8-cursor-setup" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 in Cursor IDE</a>, and our <a href="/blog/qwen-3-8-max-benchmarks-preview-guide" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Max Architecture Review</a>.
+    Evaluating models? Check our technical guides for <a href="/blog/qwen-image-2-1-api-setup-guide/" class="text-cyan-400 hover:underline font-semibold">Qwen-Image-2.1 API for ComfyUI & Native RGBA</a>, <a href="/blog/qwen-3-8-flash-next-benchmarks-api-guide/" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Flash Next for Coding</a>, <a href="/blog/qwen-3-8-cursor-setup/" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 in Cursor IDE</a>, and our <a href="/blog/qwen-3-8-max-benchmarks-preview-guide/" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Max Architecture Review</a>.
   </p>
 </div>
 
@@ -123,7 +123,7 @@ The new model delivers dominant scores across specialized audio comprehension an
 * **Speaker Diarization:** The AliMeeting DER drop from 88.11% down to 3.35% enables precise automated attribution for multi-speaker conferences without manual tagging.
 
 ### Where Gemini 3.8 Flash Remains Strong
-* **Video Agent Operations:** Gemini 3.8 Flash leads on AgenticVBench (45.0 vs 36.8) and OmniGAIA (78.6 vs 74.0). For visual UI workflows and frame-by-frame bounding-box tracking, Gemini remains best-in-class (compare with our [Gemini Flash vs Qwen agent cost guide](/blog/gemini-3-6-flash-vs-deepseek-v4-vs-qwen-3-7-agent-cost-guide)).
+* **Video Agent Operations:** Gemini 3.8 Flash leads on AgenticVBench (45.0 vs 36.8) and OmniGAIA (78.6 vs 74.0). For visual UI workflows and frame-by-frame bounding-box tracking, Gemini remains best-in-class (compare with our [Gemini Flash vs Qwen agent cost guide](/blog/gemini-3-6-flash-vs-deepseek-v4-vs-qwen-3-7-agent-cost-guide/)).
 
 ---
 
@@ -155,7 +155,7 @@ Supported by Qwen-MM-Plugins, it scans long video files, pinpoints exact timesta
 Legacy transcription pipelines bill per audio minute, then apply secondary token rates when feeding text transcripts to an LLM:
 
 * **Legacy Pipeline:** 1 hour Whisper transcription (~$0.36) + 9,000 transcript tokens passed to GPT-4o (~$0.05) = **~$0.41 per hour**.
-* **Omni Token Pipeline:** 1 hour of audio converts to ~50,000 input tokens. At $0.15 per 1M tokens, base cost is **$0.0075 per hour**. With context caching enabled ($0.016/1M), recurring calls cost **$0.0008 per hour**—a **98.2% cost reduction** (see our full [LLM cost optimization guide](/blog/llm-cost-optimization-guide)).
+* **Omni Token Pipeline:** 1 hour of audio converts to ~50,000 input tokens. At $0.15 per 1M tokens, base cost is **$0.0075 per hour**. With context caching enabled ($0.016/1M), recurring calls cost **$0.0008 per hour**—a **98.2% cost reduction** (see our full [LLM cost optimization guide](/blog/llm-cost-optimization-guide/)).
 
 ### Interactive Multimodal Cost Calculator
 
@@ -292,7 +292,7 @@ No. Open-source weights like Qwen2-VL frequently trigger `qwenlmheadmodel does n
 The endpoint supports up to 1,000,000 context tokens (~992,000 input tokens). Because speech compresses to roughly 50,000 tokens per audio hour, you can send **15 to 18 hours of continuous audio** in one request without chunking.
 
 ### How does Qwen3.8-Omni-Flash compare to Qwen 3.8 Flash Next?
-Qwen 3.8 Flash Next is a text-focused 125B MoE model built for code autocomplete (see our [Qwen 3.8 Flash Next guide](/blog/qwen-3-8-flash-next-benchmarks-api-guide)). In contrast, the omni model is dedicated to high-density multimodal perception (audio, video, spatial sound) with agentic tool execution.
+Qwen 3.8 Flash Next is a text-focused 125B MoE model built for code autocomplete (see our [Qwen 3.8 Flash Next guide](/blog/qwen-3-8-flash-next-benchmarks-api-guide/)). In contrast, the omni model is dedicated to high-density multimodal perception (audio, video, spatial sound) with agentic tool execution.
 
 ### How do I acquire a Qwen3.8-Omni-Flash API key without an overseas credit card?
 You can create a **Qwen3.8-Omni-Flash API key** on APIVALE instantly. Balances recharge through **Waffo Global Billing**, supporting international cards and local digital wallets with zero KYC requirements.

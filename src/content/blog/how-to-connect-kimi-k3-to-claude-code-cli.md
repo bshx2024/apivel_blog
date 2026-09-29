@@ -74,7 +74,7 @@ Before configuring your environment, here is how Kimi K3 (routed via APIVALE) co
 
 Autonomous developer tools like Claude Code CLI, Cursor Composer, and Cline execute iterative tool-calling loops—reading file trees, running bash commands, analyzing lint outputs, and resubmitting full prompt histories. In a typical 2-hour refactoring session, an agent can easily consume 20M+ tokens.
 
-If you are also evaluating other frontier models for AI coding agents, check out our companion guides on [Hy4 Preview API Setup (770B MoE)](/blog/hy4-preview-api-claude-code-cursor-setup/), [How to Connect Qwen 3.8 to Claude Code CLI](/blog/how-to-connect-qwen-3-8-to-claude-code-cli), [Kimi K3 vs. Claude Fable 5](/blog/kimi-k3-vs-claude-fable-5-coding-agent-api), and our comprehensive [LLM Agent API Cost Comparison Guide](/blog/gemini-3-6-flash-vs-deepseek-v4-vs-qwen-3-7-agent-cost-guide).
+If you are also evaluating other frontier models for AI coding agents, check out our companion guides on [Hy4 Preview API Setup (770B MoE)](/blog/hy4-preview-api-claude-code-cursor-setup/), [How to Connect Qwen 3.8 to Claude Code CLI](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/), [Kimi K3 vs. Claude Fable 5](/blog/kimi-k3-vs-claude-fable-5-coding-agent-api/), and our comprehensive [LLM Agent API Cost Comparison Guide](/blog/gemini-3-6-flash-vs-deepseek-v4-vs-qwen-3-7-agent-cost-guide/).
 
 1. **Token Cost & Latency Arbitrage**: Official Claude Sonnet 5 charges $3.00 / $15.00 per million tokens. Kimi K3 via APIVALE costs only **$2.00 / $10.00 per 1M tokens**, delivering up to 80% total agent cost reduction when paired with Kimi Delta Attention (KDA) long-context acceleration.
 2. **Global PayPal Billing Support**: Many developers outside major Western financial hubs face credit card declines on US-based AI platforms or lack mainland Chinese phone (+86) verification to access Moonshot directly. APIVALE supports **PayPal (global PayPal billing / credit cards via PayPal)**, guaranteeing hassle-free top-ups.
@@ -186,7 +186,7 @@ app.listen(PORT, () => console.log(`Kimi K3 Anthropic Bridge running on http://l
 
 ### Long-Context Omnimodal Routing: Upgrading to Xiaomi MiMo-V2.6 Pro
 
-If your autonomous coding agent requires deep monorepo context exceeding standard token boundaries or native vision/terminal reasoning, explore our guide on [How to Connect Xiaomi MiMo-V2.6 Pro to Claude Code CLI & Cursor](/blog/xiaomi-mimo-v2-6-pro-claude-code-setup) to utilize its 1,000,000 token context window and 1.02T MoE architecture.
+If your autonomous coding agent requires deep monorepo context exceeding standard token boundaries or native vision/terminal reasoning, explore our guide on [How to Connect Xiaomi MiMo-V2.6 Pro to Claude Code CLI & Cursor](/blog/xiaomi-mimo-v2-6-pro-claude-code-setup/) to utilize its 1,000,000 token context window and 1.02T MoE architecture.
 
 ---
 

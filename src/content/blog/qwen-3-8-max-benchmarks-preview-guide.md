@@ -112,7 +112,7 @@ Evaluate streaming performance across interactive developer environments to ensu
 * **Token Emission Rate**: Outputs stream at an average rate of **85 tokens per second**, allowing agents to generate large multi-file diffs in seconds.
 * **Context Ingestion Latency**: Processing an 800,000-token prompt context takes under **1.8 seconds**, drastically accelerating autonomous code reviews.
 
-For detailed head-to-head comparisons against other frontier MoE models, read our in-depth guide on [Qwen 3.8 vs Kimi K3 Coding Agent API Comparison](/blog/qwen-3-8-vs-kimi-k3-coding-agent-api).
+For detailed head-to-head comparisons against other frontier MoE models, read our in-depth guide on [Qwen 3.8 vs Kimi K3 Coding Agent API Comparison](/blog/qwen-3-8-vs-kimi-k3-coding-agent-api/).
 
 ---
 
@@ -141,7 +141,7 @@ Implement APIVALE's structured 3-phase token routing strategy to optimize engine
 2. **Architectural Reasoning Phase**: For complex refactoring across multiple files, leverage Qwen 3.8 Max's 54.8% SWE-bench Verified performance.
 3. **Verification Phase**: Running terminal commands and lint fixes requires low TTFT (~420ms) to ensure smooth developer UX.
 
-If you are setting up Claude Code CLI or Cursor for the first time, check out our step-by-step tutorial on [How to Connect Qwen 3.8 to Claude Code CLI & Cursor](/blog/how-to-connect-qwen-3-8-to-claude-code-cli).
+If you are setting up Claude Code CLI or Cursor for the first time, check out our step-by-step tutorial on [How to Connect Qwen 3.8 to Claude Code CLI & Cursor](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/).
 
 ---
 

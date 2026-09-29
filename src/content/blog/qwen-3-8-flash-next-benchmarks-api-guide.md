@@ -23,7 +23,7 @@ lang: "en"
 <div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
   <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Related Qwen Guides</span>
   <p class="mt-1 text-sm text-gray-300">
-    Evaluating different models in the Qwen ecosystem? Check out our dedicated setup guides for <a href="/blog/qwen-3-8-cursor-setup" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 in Cursor IDE</a>, <a href="/blog/how-to-connect-qwen-3-8-to-claude-code-cli" class="text-cyan-400 hover:underline font-semibold">Connecting Qwen 3.8 to Claude Code CLI</a>, the <a href="/blog/qwen-3-8-27b-gguf-benchmarks-ollama-vs-api-guide" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 27B GGUF vs Cloud API Benchmark</a>, and our guide on <a href="/blog/qwen-3-8-omni-flash-api-setup" class="text-cyan-400 hover:underline font-semibold">Qwen3.8-Omni-Flash API setup & audio benchmarks</a>.
+    Evaluating different models in the Qwen ecosystem? Check out our dedicated setup guides for <a href="/blog/qwen-3-8-cursor-setup/" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 in Cursor IDE</a>, <a href="/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="text-cyan-400 hover:underline font-semibold">Connecting Qwen 3.8 to Claude Code CLI</a>, the <a href="/blog/qwen-3-8-27b-gguf-benchmarks-ollama-vs-api-guide/" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 27B GGUF vs Cloud API Benchmark</a>, and our guide on <a href="/blog/qwen-3-8-omni-flash-api-setup/" class="text-cyan-400 hover:underline font-semibold">Qwen3.8-Omni-Flash API setup & audio benchmarks</a>.
   </p>
 </div>
 
@@ -53,7 +53,7 @@ The release of **Qwen 3.8 Flash Next** marks a structural breakthrough in sparse
 
 However, local deployment presents severe hardware barriers. Because all 125B weights must reside in GPU memory for active layer routing, even aggressive 4-bit quantization (Q4_K_M) demands **~82GB of VRAM**. For developers and engineering teams, self-hosting requires multi-GPU workstations costing over $6,000, or cloud GPU instances renting for $2.50+/hr.
 
-Using APIVALE's OpenAI-compatible routing infrastructure, developers can bypass local GPU hardware constraints, accessing Qwen 3.8 Flash Next with sub-250ms Time-to-First-Token (TTFT), 1,000,000 token context support, and frictionless <a href="/blog/openrouter-alternatives" class="text-cyan-400 hover:underline font-semibold">Waffo Global Billing</a>.
+Using APIVALE's OpenAI-compatible routing infrastructure, developers can bypass local GPU hardware constraints, accessing Qwen 3.8 Flash Next with sub-250ms Time-to-First-Token (TTFT), 1,000,000 token context support, and frictionless <a href="/blog/openrouter-alternatives/" class="text-cyan-400 hover:underline font-semibold">Waffo Global Billing</a>.
 
 ```mermaid
 graph LR
@@ -247,7 +247,7 @@ claude --model infer/qwen-3.8-flash-next
 
 ## Production Integration: Node.js / TypeScript Gateway with Failover
 
-Deploy this production-grade Express proxy bridge featuring automatic exponential backoff, rate limit handling, and dynamic fallback to <a href="/blog/deepseek-v4-flash-vision-api-guide" class="text-cyan-400 hover:underline font-semibold">DeepSeek V4</a>:
+Deploy this production-grade Express proxy bridge featuring automatic exponential backoff, rate limit handling, and dynamic fallback to <a href="/blog/deepseek-v4-flash-vision-api-guide/" class="text-cyan-400 hover:underline font-semibold">DeepSeek V4</a>:
 
 ```typescript
 import express, { Request, Response } from 'express';

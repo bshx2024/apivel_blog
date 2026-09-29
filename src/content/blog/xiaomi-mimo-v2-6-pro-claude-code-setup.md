@@ -21,7 +21,7 @@ keyTakeaways:
     highlight: true
 ---
 
-On September 22, 2026, Xiaomi officially released and open-sourced **MiMo-V2.6**, its next-generation foundation model family. Built on recursive self-improvement (RSI) and asynchronous Group Relative Policy Optimization (GRPO), the flagship **MiMo-V2.6-Pro** features a 1.02-trillion parameter MoE architecture (activating ~42B parameters per token) paired with a native **1,000,000 token (1M) context window**. For developers running [Claude Code CLI](/blog/how-to-connect-qwen-3-8-to-claude-code-cli) and Cursor IDE, MiMo-V2.6 Pro delivers repository-wide comprehension at 75% lower cost than closed-source frontier APIs.
+On September 22, 2026, Xiaomi officially released and open-sourced **MiMo-V2.6**, its next-generation foundation model family. Built on recursive self-improvement (RSI) and asynchronous Group Relative Policy Optimization (GRPO), the flagship **MiMo-V2.6-Pro** features a 1.02-trillion parameter MoE architecture (activating ~42B parameters per token) paired with a native **1,000,000 token (1M) context window**. For developers running [Claude Code CLI](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/) and Cursor IDE, MiMo-V2.6 Pro delivers repository-wide comprehension at 75% lower cost than closed-source frontier APIs.
 
 <div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
@@ -151,7 +151,7 @@ Add this system prompt configuration to `.cursorrules`:
 - Never truncate implementations with '// ... existing code ...'.
 ```
 
-You can also pivot between [Kimi K3](/blog/how-to-connect-kimi-k3-to-claude-code-cli) or [Qwen 3.8](/blog/how-to-connect-qwen-3-8-to-claude-code-cli) without modifying project structures.
+You can also pivot between [Kimi K3](/blog/how-to-connect-kimi-k3-to-claude-code-cli/) or [Qwen 3.8](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/) without modifying project structures.
 
 ---
 
@@ -342,7 +342,7 @@ export class MiMoClient {
 }
 ```
 
-Combining MiMo-V2.6 Pro with [MiniMax M3.1-Flash (Space Bunny)](/blog/minimax-m3-1-flash-preview-api-setup) or [Claude Opus 5](/blog/how-to-connect-claude-opus-5-to-claude-code-cli) ensures uninterrupted development velocity and sub-second token latency across high-concurrency coding pipelines.
+Combining MiMo-V2.6 Pro with [MiniMax M3.1-Flash (Space Bunny)](/blog/minimax-m3-1-flash-preview-api-setup/) or [Claude Opus 5](/blog/how-to-connect-claude-opus-5-to-claude-code-cli/) ensures uninterrupted development velocity and sub-second token latency across high-concurrency coding pipelines.
 
 ---
 

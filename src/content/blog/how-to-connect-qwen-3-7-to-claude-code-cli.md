@@ -23,7 +23,7 @@ tags:
 image: /blog/og-cover.png
 lang: en
 ---
-With the official release of **Qwen 3.7** and its flagship successor **Qwen 3.8** (see our guide on [how to connect Qwen 3.8 to Claude Code CLI](/blog/how-to-connect-qwen-3-8-to-claude-code-cli)), Alibaba Cloud has ushered in what developers across Reddit, Hacker News, and X are calling the "Agent Era." Demonstrating SOTA performance on benchmarks like SWE-bench Pro and Terminal Bench 2.0, Qwen 3.7 excels at long-horizon autonomous coding—running multi-hour terminal loops, automated debugging, and multi-file project refactoring without human intervention.
+With the official release of **Qwen 3.7** and its flagship successor **Qwen 3.8** (see our guide on [how to connect Qwen 3.8 to Claude Code CLI](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/)), Alibaba Cloud has ushered in what developers across Reddit, Hacker News, and X are calling the "Agent Era." Demonstrating SOTA performance on benchmarks like SWE-bench Pro and Terminal Bench 2.0, Qwen 3.7 excels at long-horizon autonomous coding—running multi-hour terminal loops, automated debugging, and multi-file project refactoring without human intervention.
 
 While Anthropic's flagship **Claude Sonnet 5** and OpenAI's newly unveiled **GPT-6 Astra & Sol** (see our [GPT-6 Astra Price Guide](/blog/gpt-6-astra-api-pricing-guide/) and [GPT-6 Sol vs Qwen 3.7 Max Benchmark](/blog/gpt-6-sol-vs-qwen-3-7-max-coding-benchmark/)) push frontier reasoning boundaries, Qwen 3.7 has captured global developer attention as an ultra-efficient, cost-effective coding engine with **native Anthropic API protocol compatibility**.
 
@@ -210,7 +210,7 @@ npx @anthropic-ai/claude-code
 **Q: Do I need a Chinese phone number (+86) or identity verification to use Qwen 3.7 on APIVALE?**  
 **A:** No. APIVALE bypasses domestic phone binding and real-name verification walls. You can sign in using GitHub, credit cards, or PayPal, and start making API calls immediately.
 
-**Q: How does Qwen 3.7 Max compare to Claude Sonnet 5 in multi-step [tool calling](/blog/needle-2-tool-calling-model-edge-cloud-guide)?**  
+**Q: How does Qwen 3.7 Max compare to Claude Sonnet 5 in multi-step [tool calling](/blog/needle-2-tool-calling-model-edge-cloud-guide/)?**  
 **A:** Qwen 3.7 Max was pre-trained specifically for agentic workflows ("Agent Era"), achieving state-of-the-art results on SWE-bench Pro. While Claude Sonnet 5 offers refined interactive reasoning, Qwen 3.7 Max matches it on multi-tool invocations and long-horizon bash executions at 80% lower token cost.
 
 **Q: Will streaming responses and terminal progress spinners work correctly?**  

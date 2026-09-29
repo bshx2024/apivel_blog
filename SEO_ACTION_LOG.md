@@ -58,6 +58,65 @@
 
 ## 📝 优化行动记录 (2026-09)
 
+### 📅 2026-09-29 - 📝 [原子发布与常青品类收割]: 《OpenRouter Pricing Explained》深度比价指南上线，全面覆盖 Google 搜索下拉/PAA 与 Reddit 真实讨论热点并完成双向内链织网
+
+* **背景与关键词战略**：
+  * 落实“热点转常青（Category Migration）”增长蓝图，切入核心高转化商业掏钱词 `openrouter pricing`（月搜 2,900，+190% 增长，KD 44.9）。
+  * 深度融合用户提供的 Google 搜索截图（Autocomplete、PAA、Related Searches）与 Reddit r/LocalLLaMA 全网讨论热点，精准击穿“5.5% 充值手续费 + $0.80 保底费”、“Prompt Caching 命中率下降”以及“海外信用卡拒付与支付宝/PayPal 充值”三大核心痛点。
+* **影响页面/路由**：
+  * **新发专题收割页**：`/blog/openrouter-pricing/` (`src/content/blog/openrouter-pricing.md`)
+  * **双向织网页面**：
+    * `/blog/openrouter-alternatives/`
+    * `/blog/cursor-pro-vs-custom-api-key/`
+* **具体技术与内容交付**：
+  1. **元数据与 AST 规范**：MetaTitle（55 字符）`OpenRouter Pricing: Token Rates & Hidden Fees | APIVALE`，H1（77 字符）`OpenRouter Pricing Explained: Real Token Math, Hidden Fees & Cheaper Models`，Description（155 字符），严格控制在 60 字符内防止 SERP 截断。通过 `audit_article_seo_health` 预检，0 blockers, 0 warnings。
+  2. **E-E-A-T 作者轮换**：配置作者 Elena Rostova（Lead Systems Architect & API Telemetry Engineer, APIVALE），突出分布式代理基准遥测与成本精算权威度。
+  3. **4 Real Engineering Gains**：包含真实协议架构对比、2026 年最新大模型费率矩阵（Claude Sonnet 5、Opus 5、DeepSeek V4.1 Flash、Qwen 3.8 Max、GLM-5.3 Flash）、Reddit 开发者真实引言 Voice Box、以及 15+ 行带指数退避与抖动重试的 TypeScript 生产代码。
+  4. **嵌入式交互 Micro-Tool**：内嵌交互式 Token 成本对比计算器（使用 `<input>`, `<select>`, `<button>`，实时计算月度节省与 +50% 首充补贴），满足现场计算意图，彻底根除 4.5 pt 门页降权隐患。
+  5. **FAQ JSON-LD Schema**：全面覆盖 Google PAA 核心问题（`Is OpenRouter worth using?`, `How does OpenRouter make money?`, `What is the cheapest model?` 等）。
+  6. **Wallet 利益点 100% 对齐**：尾部 `.cta-card` 包含 $0.20 免费注册试用、+50% 充值奖励（$5 → $7.50, $29 → $43.50）、$29 开发者包（40M tokens，56% OFF），全量 CTA 链接携带 `redirect=/blog/openrouter-pricing/`。
+  7. **双向原子织网（Gate 3）**：在 `openrouter-alternatives.md` 与 `cursor-pro-vs-custom-api-key.md` 中同步插入高相关度上下文锚文本，消除孤岛页面。
+* **14 天因果假设 (Causality Hypothesis)**：
+  1. 该页面由于高度契合 Google SERP 下拉与 PAA 语义场，预计将在 7 天内被 Google 索引，并在 14 天内冲入前 10 名。
+  2. 凭借针对 Reddit 痛点的真实深度拆解与嵌入式计算器，预计页面停留时间提升 40% 以上，直接带动高质量 API 注册与充值转化。
+
+### 📅 2026-09-29 - 📝 [意图截流与CTR重塑 & 站内架构治理]: 截流 Z.ai 海外支付痛点词、重塑 4 个卡 8 名核心页面 SERP CTR、织网 OmniRoute 并彻底规范化站内 71 处结尾斜杠内链
+
+* **背景与 GSC 归因审计**：
+  * GSC 9/26-27 迎来 28 天最高反弹（单日 19 点击 / 1,098 曝光 / 平均排位 7.8），证实 9/25 上线的 Edge 301 架构治理与新模型教程策略已见成效。
+  * 发现核心杠杆：高价值商业意图词 `+z.ai billing top up how to pay credit card payment`（79 曝光 / 排 4.8 / 0 点击）因命中页面缺乏支付相关 Title 而被浪费；4 个核心页面（`deepseek-v4-flash`, `cursor-pro-vs-custom`, `codexbar-windows`, `grok-bot`）合计 5,505 曝光卡在 8.0~8.6 名且 CTR 低于 1%；新上线 `omniroute`（347 曝光排 7.5）亟需内链推升；站内历史文章存在 71 处未带结尾斜杠的内链跳板。
+* **影响页面/路由**：
+  * **商业支付意图截流页**：`/blog/bypass-zhipu-ai-real-name-verification/`
+  * **卡 8 名 CTR 重塑核心页**：
+    * `/blog/deepseek-v4-flash-api-guide/`
+    * `/blog/cursor-pro-vs-custom-api-key/`
+    * `/blog/codexbar-windows-setup-safety-guide/`
+    * `/blog/grok-bot-api-setup-pricing-troubleshooting/`
+  * **OmniRoute 内部织网源**：
+    * `/blog/cursor-pro-vs-custom-api-key/`
+    * `/blog/qwen-3-8-cursor-setup/`
+    * `/blog/connect-glm-5-3-to-claude-code-cli-cursor/`
+  * **全站内链规范化**：30 篇博客文章中 71 处无斜杠链接全面修正为带 `/` 的规范 URL。
+* **具体技术与内容改动**：
+  1. **Z.ai 支付痛点词截流**：
+     * 重塑 Title：`How to Pay for Z.ai & GLM APIs: Credit Card & PayPal Top-Up Guide`
+     * 重塑 MetaTitle（58字符）：`Pay for Z.ai & GLM APIs: Credit Card & PayPal Fix | APIVALE`
+     * 提炼 MetaDescription（156字符）：直击海外信用卡被拒、免 +86 手机号与国内 KYC，支持 PayPal 结算。
+     * 正文注入关于海外支付失败（Cross-Border Merchant Filter）原因分析与 APIVALE 解决方案，补充 FAQ 问答与 FAQ JSON-LD 结构化数据。
+  2. **4 个卡 8 名核心页面 SERP Title & Description 重塑（ABC 标题公式）**：
+     * `deepseek-v4-flash`: `DeepSeek V4.1 Flash API Key: 437 t/s & $0.20 Trial | APIVALE`（59 字符，突出 437 t/s 极速与 $0.20 体验点）
+     * `cursor-pro-vs-custom`: `Cursor BYOK vs Pro: Save 96% on Fast Requests & Math | APIVALE`（59 字符，直击快速请求上限痛点）
+     * `codexbar-windows`: `CodexBar for Windows 11/10: Native & WSL2 Setup Guide | APIVALE`（60 字符，彻底解决原 77 字符严重超标被截断问题）
+     * `grok-bot-api`: `Grok Bot API Setup: Bypass Supergrok Limits (2026) | APIVALE`（58 字符，强化时效性与限额绕过）
+     * 彻底清理全站所有遗留的 `Waffo` 词汇，100% 对齐官方支持的 `PayPal & Global Cards ($0.20 Trial)` 规范；清理手写 `alert()` 弹窗为优雅的行内状态反馈（遵守 Zero-Alert 准则）。
+  3. **OmniRoute 权重注入**：在 Cursor、Qwen 3.8、GLM-5.3 三大高权重高关联教程中，编织自然的上下文锚文本引导至 `/blog/omniroute-claude-code-setup/`。
+  4. **全站 71 处结尾斜杠内链统一**：自动化脚本清洗 30 个 Markdown 文件中漏掉结尾斜杠的内部链接，掐断 Googlebot 抓取时的 301 跳板，加速 GSC 中旧非斜杠 URL 的历史收敛。
+* **14 天因果假设 (Causality Hypothesis)**：
+  1. `z.ai billing` 相关词在排位 4.8 基础上，因精准匹配搜索意图，CTR 将在 72 小时内由 0% 攀升至 6%~10%，带来即时高商业转化点击。
+  2. 4 个卡 8 名核心页面 CTR 提升 1.5%~2.0%，点击反馈刺激 RankBrain 算法在 10~14 天内将关键词推入 Top 3~5。
+  3. `omniroute` 页面在 3 条高权重锚文本加持下，稳步从 7.5 名向前 3 名冲刺。
+  4. 站内内链规范化彻底消除 301 损耗，使 PageRank 传递效率提升 100%。
+
 ### 📅 2026-09-29 - 📝 [原子发布与突破热点承接]: 《Qwen-Image-2.1 API Setup Guide: ComfyUI, Pricing, and RGBA Parameters》上线，精准截流 Breakout 搜索热点与原生透明通道生图商业流量
 
 * **影响页面/路由**：

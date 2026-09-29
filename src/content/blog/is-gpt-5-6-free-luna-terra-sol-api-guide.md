@@ -121,7 +121,7 @@ To maximize budget efficiency, implement a complexity-aware routing policy in yo
 2. **Tier 2 (Terra)**: Assign for standard multi-file edits, documentation generation, and unit test generation.
 3. **Tier 3 (Sol)**: Reserve strictly for root-cause debugging, multi-repository refactoring, and architectural design.
 
-If you are exploring cost-effective routing alternatives across multiple model providers, read our benchmark on [OpenRouter alternatives](/blog/openrouter-alternatives/) and our analysis on [whether GPT-5.6 really saves 67% on API costs](/blog/does-gpt-5-6-really-save-67-on-api-costs).
+If you are exploring cost-effective routing alternatives across multiple model providers, read our benchmark on [OpenRouter alternatives](/blog/openrouter-alternatives/) and our analysis on [whether GPT-5.6 really saves 67% on API costs](/blog/does-gpt-5-6-really-save-67-on-api-costs/).
 
 ---
 
@@ -214,7 +214,7 @@ By using [APIVALE](https://apivale.com/api/?utm_source=apivale_blog&utm_medium=b
 
 * **Zero Regional Lockouts**: Top up from anywhere in the world without regional payment blocks.
 * **Unified OpenAI & Anthropic Endpoint**: Access GPT-5.6, **Claude Sonnet 5**, **Qwen 3.7 Max**, and **DeepSeek V4** using a single API key.
-* **Seamless Terminal Integration**: Drop `https://apivale.com/v1` directly into your `.env` for tools like Claude Code CLI, Cursor, or CodeX. For setup details, check our step-by-step guide on [how to connect Qwen 3.7 to Claude Code CLI](/blog/how-to-connect-qwen-3-7-to-claude-code-cli).
+* **Seamless Terminal Integration**: Drop `https://apivale.com/v1` directly into your `.env` for tools like Claude Code CLI, Cursor, or CodeX. For setup details, check our step-by-step guide on [how to connect Qwen 3.7 to Claude Code CLI](/blog/how-to-connect-qwen-3-7-to-claude-code-cli/).
 
 By leveraging APIVALE's built-in failover gateway, developers ensure high-concurrency availability while avoiding credit card declines.
 

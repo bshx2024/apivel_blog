@@ -155,7 +155,7 @@ graph TD
 * **Zero KYC Requirements**: No phone verification or passport uploads required.
 * **Instant API Key Creation**: Generate unified API keys in under 30 seconds.
 
-If you are exploring other high-performance models for terminal coding agents, check out our dedicated setup guides on [How to Connect Qwen 3.8 to Claude Code CLI](/blog/how-to-connect-qwen-3-8-to-claude-code-cli), [How to Connect Kimi K3 to Claude Code CLI](/blog/how-to-connect-kimi-k3-to-claude-code-cli), and our comprehensive [LLM Agent Cost Reduction Guide](/blog/how-to-reduce-opencode-token-costs).
+If you are exploring other high-performance models for terminal coding agents, check out our dedicated setup guides on [How to Connect Qwen 3.8 to Claude Code CLI](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/), [How to Connect Kimi K3 to Claude Code CLI](/blog/how-to-connect-kimi-k3-to-claude-code-cli/), and our comprehensive [LLM Agent Cost Reduction Guide](/blog/how-to-reduce-opencode-token-costs/).
 
 ### 3.2 Setting Up OpenAI Protocol Abstraction for Instant Agent Switching
 

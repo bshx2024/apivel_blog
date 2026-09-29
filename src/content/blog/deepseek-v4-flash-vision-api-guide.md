@@ -290,8 +290,8 @@ Yes. Configure your IDE or CLI base URL to `https://apivale.com/v1` and point yo
 
 To optimize your AI developer workflows and benchmark token budgets across coding tools:
 
-* **Token Cost Calculator**: Test multi-model price comparisons with our [LLM cost optimization guide](/blog/llm-cost-optimization-guide).
-* **IDE & Agent Configs**: Learn how to bridge external models in Cursor via our [Kimi K3 vs. Claude Code setup](/blog/how-to-connect-kimi-k3-to-claude-code-cli).
+* **Token Cost Calculator**: Test multi-model price comparisons with our [LLM cost optimization guide](/blog/llm-cost-optimization-guide/).
+* **IDE & Agent Configs**: Learn how to bridge external models in Cursor via our [Kimi K3 vs. Claude Code setup](/blog/how-to-connect-kimi-k3-to-claude-code-cli/).
 * **Official Model Hub**: Check out the complete list of 40+ supported models on [APIVALE Pricing Page](https://apivale.com).
 
 ---

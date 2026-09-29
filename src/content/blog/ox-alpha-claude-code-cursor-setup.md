@@ -63,7 +63,7 @@ graph LR
   </div>
 </div>
 
-Ox Alpha is an anonymous frontier AI reasoning model engineered specifically for long-horizon agentic software development, repository-wide refactoring, and multimodal debugging. Technical disclosures and infrastructure benchmarks confirm that Ox Alpha is Zhipu AI's unannounced **GLM-5.3-Flash (320B MoE)** architecture (see our full <a href="/blog/glm-5-3-flash-ox-alpha-api-pricing-guide" class="text-cyan-400 hover:underline font-semibold">GLM-5.3 Flash (Ox Alpha) Benchmarks & Pricing Guide</a> and our companion <a href="/blog/how-to-connect-glm-5-3-to-claude-code-cli" class="text-cyan-400 hover:underline font-semibold">GLM-5.3 Claude Code CLI setup guide</a>).
+Ox Alpha is an anonymous frontier AI reasoning model engineered specifically for long-horizon agentic software development, repository-wide refactoring, and multimodal debugging. Technical disclosures and infrastructure benchmarks confirm that Ox Alpha is Zhipu AI's unannounced **GLM-5.3-Flash (320B MoE)** architecture (see our full <a href="/blog/glm-5-3-flash-ox-alpha-api-pricing-guide/" class="text-cyan-400 hover:underline font-semibold">GLM-5.3 Flash (Ox Alpha) Benchmarks & Pricing Guide</a> and our companion <a href="/blog/how-to-connect-glm-5-3-to-claude-code-cli/" class="text-cyan-400 hover:underline font-semibold">GLM-5.3 Claude Code CLI setup guide</a>).
 
 ### Key Technical Specifications & Parameters
 * **Ox Alpha Parameters & Architecture**: 320 Billion total parameters structured in a Mixture-of-Experts (MoE) configuration, activating approximately 32B parameters per token to balance extreme reasoning depth with sub-250ms time-to-first-token (TTFT).

@@ -227,7 +227,7 @@ How much does Gemini 3.7 Flash cost per 1M tokens? Official API pricing makes Ge
 
 By routing requests via **APIVALE's Global API Hub**, developers access Gemini 3.7 Flash using standard OpenAI or Anthropic SDK formats while paying via **PayPal Global Billing**.
 
-For related model setup guides, check out our articles on [How to Connect Connect GLM-5.3 to Claude Code CLI](/blog/connect-glm-5-3-to-claude-code-cli-cursor), [How to Connect Qwen 3.8 to Claude Code CLI](/blog/how-to-connect-qwen-3-8-to-claude-code-cli), [Claude Code Base URL Setup](/blog/how-to-set-up-claude-code-cli-with-custom-base-url), and [Reducing OpenCode Token Costs](/blog/how-to-reduce-opencode-token-costs).
+For related model setup guides, check out our articles on [How to Connect Connect GLM-5.3 to Claude Code CLI](/blog/connect-glm-5-3-to-claude-code-cli-cursor/), [How to Connect Qwen 3.8 to Claude Code CLI](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/), [Claude Code Base URL Setup](/blog/how-to-set-up-claude-code-cli-with-custom-base-url/), and [Reducing OpenCode Token Costs](/blog/how-to-reduce-opencode-token-costs/).
 
 ---
 

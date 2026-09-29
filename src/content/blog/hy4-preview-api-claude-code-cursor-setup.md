@@ -32,7 +32,7 @@ lang: en
     <li><strong>770B MoE Flagship Architecture:</strong> Tencent's newly released <strong>Hy4 preview</strong> (Hunyuan 4) features 770 billion total parameters with 49B active parameters per token across 78 layers and 256 routed experts, licensed under Apache 2.0.</li>
     <li><strong>1,000,000+ Token Native Context:</strong> Full 1M token context window support designed specifically for complex agentic workflows, long-horizon repository refactoring, and multi-file debugging.</li>
     <li><strong>Verified Engineering Benchmark (2.99 / 4.00):</strong> In internal blind evaluations across 203 complex engineering tasks, the engine scored 2.99/4.00, outperforming Kimi K3 (2.94) and GLM-5.3 (2.92).</li>
-    <li><strong>Zero-KYC Waffo Global Billing:</strong> Bypass regional phone verification (+86 SMS) and credit card decline barriers via APIVALE's unified gateway with seamless Waffo checkout (Credit Cards, PayPal, and Global Wallets) plus a $0.20 free starter credit upon registration.</li>
+    <li><strong>Zero-KYC PayPal Global Billing:</strong> Bypass regional phone verification (+86 SMS) and credit card decline barriers via APIVALE's unified gateway with seamless PayPal checkout (Credit Cards, PayPal, and Global Wallets) plus a $0.20 free starter credit upon registration.</li>
   </ul>
 </div>
 
@@ -40,7 +40,7 @@ On **August 28, 2026**, Tencent officially open-sourced **Hy4 preview** (Hunyuan
 
 However, developers trying to connect the model to CLI agents like [Claude Code](/blog/how-to-connect-kimi-k3-to-claude-code-cli/) or IDEs like [Cursor](/blog/qwen-3-8-cursor-setup/) face steep infrastructure roadblocks: stringent rate limits on experimental endpoints, regional card decline walls on domestic cloud consoles, and schema incompatibilities between OpenAI chat payloads and raw MoE endpoints.
 
-Through [APIVALE's Unified API Gateway](/blog/openrouter-alternatives/), developers can claim an instant **$0.20 free starter credit** and immediately invoke `infer/hy4-preview` with native OpenAI and Anthropic endpoint compatibility, high-concurrency routing, and zero-KYC **Waffo Global Billing** (Credit Cards, PayPal, and international wallets).
+Through [APIVALE's Unified API Gateway](/blog/openrouter-alternatives/), developers can claim an instant **$0.20 free starter credit** and immediately invoke `infer/hy4-preview` with native OpenAI and Anthropic endpoint compatibility, high-concurrency routing, and zero-KYC **PayPal Global Billing** (Credit Cards, PayPal, and international wallets).
 
 ---
 

@@ -74,7 +74,7 @@ Before configuring your environment, here is how Kimi K3 (routed via APIVALE) co
 
 Autonomous developer harnesses like OpenAI Codex CLI execute repetitive tool-calling loops—crawling workspace files, executing terminal tests, analyzing linters, and resubmitting extended history buffers. In a typical 2-hour refactoring session, a single agent loop can easily consume 20M+ tokens.
 
-If you are evaluating other frontier models for terminal coding agents, check out our companion guides on [How to Connect Kimi K3 to Claude Code CLI](/blog/how-to-connect-kimi-k3-to-claude-code-cli), [Kimi K3 vs. Claude Fable 5](/blog/kimi-k3-vs-claude-fable-5-coding-agent-api), and our comprehensive [OpenRouter Alternatives Guide](/blog/openrouter-alternatives).
+If you are evaluating other frontier models for terminal coding agents, check out our companion guides on [How to Connect Kimi K3 to Claude Code CLI](/blog/how-to-connect-kimi-k3-to-claude-code-cli/), [Kimi K3 vs. Claude Fable 5](/blog/kimi-k3-vs-claude-fable-5-coding-agent-api/), and our comprehensive [OpenRouter Alternatives Guide](/blog/openrouter-alternatives/).
 
 1. **Token Arbitrage & 1M Context Window**: Official frontier endpoints charge premium rates per million tokens. Kimi K3 via APIVALE costs only **$2.00 / $10.00 per 1M tokens**, giving you a 1,048,576-token context window that retains complete project context without truncation errors.
 2. **Global PayPal Billing Support**: Developers outside Western banking regions frequently encounter credit card rejections on US-based AI platforms or lack mainland Chinese phone (+86) verification to register on Moonshot directly. APIVALE supports **PayPal (global PayPal billing / credit cards via PayPal)** for instant top-ups.

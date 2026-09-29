@@ -110,7 +110,7 @@ While MiniMax H3 delivers native 2K rendering with synchronized audio, high-thro
 
 ### Multimodal & Text Token Pricing vs Frontier Models
 
-When executing vision-language reasoning, prompt comprehension, or high-throughput batch agent workloads alongside coding models like [DeepSeek V4 vs GLM-5.3](/blog/connect-glm-5-3-to-claude-code-cli-cursor/) and [Qwen 3.8 Max](/blog/how-to-connect-qwen-3-8-to-claude-code-cli), token pricing determines operational sustainability:
+When executing vision-language reasoning, prompt comprehension, or high-throughput batch agent workloads alongside coding models like [DeepSeek V4 vs GLM-5.3](/blog/connect-glm-5-3-to-claude-code-cli-cursor/) and [Qwen 3.8 Max](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/), token pricing determines operational sustainability:
 
 | Model | Input Cost (per 1M Tokens) | Output Cost (per 1M Tokens) | Context Window | Best Suited For |
 | :--- | :--- | :--- | :--- | :--- |
@@ -285,7 +285,7 @@ if __name__ == "__main__":
 ### How much does MiniMax H3 (Hailuo 3.0) API cost per second and token?
 MiniMax H3 API pricing starts at ~$0.13 per second for 2K video rendering with native stereo audio, and $0.15 per 1M context tokens for multimodal text reasoning. This represents an approximate 70% cost reduction compared to closed proprietary video generation endpoints ($0.40–$0.50/s).
 
-### How does MiniMax H3 pricing compare to DeepSeek V4 and [Qwen 3.8](/blog/qwen-3-8-27b-gguf-benchmarks-ollama-vs-api-guide)?
+### How does MiniMax H3 pricing compare to DeepSeek V4 and [Qwen 3.8](/blog/qwen-3-8-27b-gguf-benchmarks-ollama-vs-api-guide/)?
 MiniMax H3 text and multimodal tokens ($0.15 input / $0.35 output per 1M tokens) are competitively priced against DeepSeek V4 ($0.14 input / $0.28 output) and Qwen 3.8 Max ($0.20 input / $0.60 output), while adding native omni-modal audio-visual rendering capabilities not present in standard LLMs.
 
 ### Can I pay for MiniMax H3 API using PayPal?

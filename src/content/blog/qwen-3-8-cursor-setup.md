@@ -23,7 +23,7 @@ lang: "en"
 <div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
   <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Related Agent &amp; Model Setup Guides</span>
   <p class="mt-1 text-sm text-gray-300">
-    Configuring different agent workflows? Check out our <a href="/blog/gpt-6-sol-vs-qwen-3-7-max-coding-benchmark/" class="text-cyan-400 hover:underline font-semibold">GPT-6 Sol vs Qwen 3.7 Max Benchmark</a>, follow our companion guide on <a href="/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="text-cyan-400 hover:underline font-semibold">How to Connect Qwen 3.8 to Claude Code CLI</a>, compare BYOK plans in our <a href="/blog/cursor-pro-vs-custom-api-key/" class="text-cyan-400 hover:underline font-semibold">Cursor Pro vs Custom API Key Cost Analysis</a>, or explore <a href="/blog/deepseek-v4-flash-api-guide/" class="text-cyan-400 hover:underline font-semibold">DeepSeek V4.1 Flash API 437 t/s Benchmark Guide</a>.
+    Configuring different agent workflows? Check out our <a href="/blog/gpt-6-sol-vs-qwen-3-7-max-coding-benchmark/" class="text-cyan-400 hover:underline font-semibold">GPT-6 Sol vs Qwen 3.7 Max Benchmark</a>, follow our companion guide on <a href="/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="text-cyan-400 hover:underline font-semibold">How to Connect Qwen 3.8 to Claude Code CLI</a>, learn how to configure an <a href="/blog/omniroute-claude-code-setup/" class="text-cyan-400 hover:underline font-semibold">OmniRoute Claude Code Gateway</a>, compare BYOK plans in our <a href="/blog/cursor-pro-vs-custom-api-key/" class="text-cyan-400 hover:underline font-semibold">Cursor Pro vs Custom API Key Cost Analysis</a>, or explore <a href="/blog/deepseek-v4-flash-api-guide/" class="text-cyan-400 hover:underline font-semibold">DeepSeek V4.1 Flash API 437 t/s Benchmark Guide</a>.
   </p>
 </div>
 
@@ -43,7 +43,7 @@ lang: "en"
     <a id="cta-login-btn" href="https://apivale.com/sign-up?redirect=/blog/qwen-3-8-cursor-setup/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Sign Up / Log In to Auto-Fill Your API Key
     </a>
-    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('Base URL: https://api.apivale.com/v1\nModel Name: infer/qwen3.8-max'); alert('Copied Cursor configuration settings!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
+    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('Base URL: https://api.apivale.com/v1\nModel Name: infer/qwen3.8-max'); const b=this; b.innerText='✅ Copied!'; setTimeout(()=>b.innerText='📋 Copy Cursor Settings', 2000);" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
       📋 Copy Cursor Settings
     </button>
   </div>
@@ -53,7 +53,7 @@ For software engineers utilizing **Cursor IDE** and **Cursor Composer** for full
 
 Deploying Alibaba Cloud's flagship 2.4-trillion parameter **Qwen 3.8-Max** locally requires an enterprise cluster of 18x NVIDIA H200 GPUs (over 2.4TB VRAM). (For developers seeking lightning-fast 140+ tps token generation, explore our <a href="/blog/qwen-3-8-flash-next-benchmarks-api-guide/" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Flash Next Benchmarks & API Guide</a>, or see our practical setup for <a href="/blog/qwen-image-2-1-api-setup-guide" class="text-cyan-400 hover:underline font-semibold">Qwen-Image-2.1 API for ComfyUI & Native RGBA</a>). Attempting to bridge local Ollama instances into Cursor fails due to Cursor's cloud routing architecture (`api2.cursor.sh`), which cannot resolve `localhost:11434` without complex tunnel daemons.
 
-By configuring Cursor's native OpenAI Base URL override to point to APIVALE (`https://api.apivale.com/v1`), developers unlock unthrottled Qwen 3.8-Max inference with zero hardware overhead, 80% token cost reduction, and seamless **Waffo global billing**.
+By configuring Cursor's native OpenAI Base URL override to point to APIVALE (`https://api.apivale.com/v1`), developers unlock unthrottled Qwen 3.8-Max inference with zero hardware overhead, 80% token cost reduction, and seamless **PayPal global billing**.
 
 ```mermaid
 graph LR
