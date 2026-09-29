@@ -58,6 +58,33 @@
 
 ## 📝 优化行动记录 (2026-09)
 
+### 📅 2026-09-29 - 📝 [原子发布与突破热点承接]: 《Qwen-Image-2.1 API Setup Guide: ComfyUI, Pricing, and RGBA Parameters》上线，精准截流 Breakout 搜索热点与原生透明通道生图商业流量
+
+* **影响页面/路由**：
+  * **新发页面**：`/blog/qwen-image-2-1-api-setup-guide/` (`src/content/blog/qwen-image-2-1-api-setup-guide.md`)
+  * **权威双向织网页面**：
+    * `/blog/qwen-3-8-omni-flash-api-setup/`（在生态指南模块中植入 Qwen-Image-2.1 ComfyUI 与原生 RGBA 锚链）；
+    * `/blog/qwen-3-8-cursor-setup/`（在算力与模型衍生章节中织入 Qwen-Image-2.1 图像生成调用锚链）；
+    * `/blog/visual-prompt-compression-pxpipe/`（在多模态视觉网关对比表中织入 Qwen-Image-2.1 原生 RGBA 支持）；
+* **目标关键词矩阵（100% 对应 Google Trends 与 SERP 下拉 Breakout 真实搜索图谱）**：
+  * **核心主词与 API 词**：`qwen image 2.1 api`, `qwen image 2.1 api documentation`, `qwen-image-2.1 api pricing`, `qwen image 2.1 api 参数`
+  * **ComfyUI 与部署词**：`comfyui qwen image 2.1`, `qwen image 2.1 gguf`, `qwen image 2.1 本地部署`, `qwen image 2.1 工作流`
+  * **特性与 PAA 问答词**：`qwen image native rgba transparency`, `is qwen image 2.1 free for commercial use`, `how much does qwen image cost per image`
+* **核心落地细节与架构对齐**：
+  1. **E-E-A-T 专家 Persona 轮换**：
+     * 由 **Kenji Tanaka**（AI Developer Relations Engineer, APIVALE）署名，主打多模态 API 工具链、前端集成、ComfyUI 远程节点与按量计费成本优化。
+  2. **1:1 响应 Google Trends 与 SERP 下拉意图**：
+     * **架构解析**：深入拆解 32-layer Single-Stream DiT 原生 4 通道 RGBA 潜在空间，对比传统双阶段抠图（RMBG/SAM）；
+     * **协议与防坑指南**：引用 GitHub Issues 真实痛点（Qwen Research License 非商用协议合规痛点、多卡 Tensor Parallelism 噪点故障及 Apple Silicon MPS VAE 报错）；
+     * **生产级代码**：提供 15+ 行完整 Python 代码，集成原生 RGBA PNG 解码、参数控制与指数退避重试（Exponential Backoff）；
+     * **内嵌交互微工具**：植入 `Qwen-Image-2.1 Cost & VRAM Estimator` 原生交互组件，计算本地 A10G 显卡闲置损耗 vs API 按张计费对比，并提供一键复制与 CRO 引导。
+  3. **落实 4 项真实工程增益与安全商业闭环**：
+     * 架构证明：单流 DiT 与统一 8B 多模态编码器多图（10张）保 ID 参考拓扑；
+     * 对比矩阵：本地 GGUF vs 云端 A10G 实例 vs APIVALE Serverless API，包含客观竞品正向优势列（Best for...）与核验时间戳；
+     * 钱包与支付对齐：突出免 KYC、免 +86 手机号限制，支持 PayPal 官方即时结账、$0.20 免费注册额度与 $29 开发者大礼包。
+* **14 天因果假设与监控指标**：
+  * **假设**：由于 Qwen-Image-2.1 处于 9 月底开源爆火的极客与开发者探索窗口，竞争对手在 API 与商业合规指南上严重缺失，本篇将在 48-72 小时内截流 `qwen image 2.1 api` 与 `comfyui qwen image 2.1` 前 3 位排名；预计 14 天内带来 3,500+ 次高价值商业开发者曝光，沉淀 80+ 批注册充值用户。
+
 ### 📅 2026-09-29 - 📝 [原子发布与突破热点承接]: 《Space Bunny Alpha: 1M-Token Model Benchmark, OpenRouter API & Cline Setup》上线，精准承接 Breakout 搜索热词与 1M Stealth 极客流量
 
 * **影响页面/路由**：

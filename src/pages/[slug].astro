@@ -57,6 +57,9 @@ if (slugLower.includes('opus') || postMeta.includes('claude-opus')) {
 } else if (postMeta.includes('glm-5-3') || postMeta.includes('glm-5.3') || postMeta.includes('glm-5') || postMeta.includes('glm-4') || postMeta.includes('zhipu') || postMeta.includes('z-ai') || postMeta.includes('智谱')) {
 	targetTopic = 'zhipu';
 	initialModel = 'glm-5.3';
+} else if (postMeta.includes('qwen-image') || postMeta.includes('qwen image')) {
+	targetTopic = 'qwen-image';
+	initialModel = 'qwen-image-2.1';
 } else if (postMeta.includes('qwen-3-8-omni') || postMeta.includes('qwen-3.8-omni') || postMeta.includes('omni-flash')) {
 	targetTopic = 'qwen-3.8-omni';
 	initialModel = 'qwen-38-flash';
@@ -573,6 +576,40 @@ const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.key
 							desc: '通过 APIVALE 绕过复杂的实名墙与 +86 手机绑定。绑定 GitHub 即可获得 $0.20 免费额度 (首充加赠 50%)，支持在浏览器中即开即用进行测试！',
 							btnText: '立即免登录体验 Playground →',
 							utmCampaign: 'zhipu_bypass'
+						}
+					}
+				},
+				'qwen-image': {
+					floating: {
+						en: {
+							badge: '🎨 Native RGBA 7B DiT',
+							title: 'Call Qwen-Image-2.1 API',
+							desc: 'Unified text-to-image & editing with native alpha transparency. Direct ComfyUI & REST API, zero KYC, PayPal checkout (+50% bonus).',
+							btnText: 'Try Qwen-Image Instantly',
+							utmCampaign: 'qwen_image'
+						},
+						zh: {
+							badge: '🎨 原生透明通道 7B DiT',
+							title: '免实名调用 Qwen-Image-2.1',
+							desc: '生图与编辑合一，原生 RGBA 免抠图输出！直连 ComfyUI 与 REST API，跳过国内验证，PayPal 即时结算，送 $0.20 (+ 首充送 50%)。',
+							btnText: '一键体验 Qwen-Image →',
+							utmCampaign: 'qwen_image'
+						}
+					},
+					inline: {
+						en: {
+							badge: '🎨 RGBA & Multi-Ref Pipeline',
+							title: 'Connect Qwen-Image-2.1 Endpoints Without KYC',
+							desc: 'Generate 2K transparent PNG assets and 10-reference image edits without local VRAM bottlenecks. Pay-as-you-go via PayPal with zero maintenance.',
+							btnText: 'Test Qwen-Image Playground',
+							utmCampaign: 'qwen_image'
+						},
+						zh: {
+							badge: '🎨 原生 RGBA & 多图编辑',
+							title: '想免实名调用 Qwen-Image-2.1 图像接口？',
+							desc: '单模型整合文生图与局部编辑，原生输出透明 PNG。APIVALE 提供高并发生图 API，彻底告别本地爆显存，PayPal 充值即送 $0.20 体验额度。',
+							btnText: '立即体验 Qwen-Image 接口 →',
+							utmCampaign: 'qwen_image'
 						}
 					}
 				},

@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Beyond LLMLingua: Shrinking Claude 3.5 Sonnet Context by 90% via Visual Prompt Compression"
 metaTitle: "Visual Prompt Compression vs LLMLingua Guide | APIVALE"
 description: "Compare text prompt compression tools like LLMLingua against visual prompt compression (pxpipe). Render 48K chars into 1.6K tokens on APIVALE."
@@ -54,7 +54,7 @@ Here is how semantic text-based compressors (like LLMLingua) stack up against vi
 | **Processing Overhead** | High (Requires running a local small LM like LLaMA-3-8B) | Low (Simple text-to-image rasterization) |
 | **Accuracy Preservation** | ~92% (Key facts can sometimes be truncated) | ~95% (Model OCR reads code directly; layout preserved) |
 | **Ideal Use Cases** | Conversational logs, raw text RAG inputs | **Codebase dumps, long API schemas, system prompts** |
-| **Routing Support** | Standard text endpoints | Multi-modal Vision API (APIVALE Vision Gateway) |
+| **Routing Support** | Standard text endpoints | Multi-modal Vision API (APIVALE Vision Gateway, including [Qwen-Image-2.1 Native RGBA](/blog/qwen-image-2-1-api-setup-guide)) |
 
 ---
 
