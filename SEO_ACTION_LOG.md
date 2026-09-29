@@ -58,6 +58,36 @@
 
 ## 📝 优化行动记录 (2026-09)
 
+### 📅 2026-09-30 - 🏛️ [品类枢纽页上线 & Hub-and-Spoke 拓扑确立]: 《LLM Gateway》一级独立品类枢纽页上线，全站 Header/Footer 物理授权，激活存量长尾形成权重集散中心
+
+* **战略意图与关键词矩阵对齐**：
+  * **锁定高商业/低难度蓝海**：基于 SEMrush 真实数据，主词 `llm gateway` 拥有 720/月搜索量、KD 仅 23（浅绿超低难度）、CPC 高达 $6.76（极高转化价值），且排第 1 名的 `llmgateway.io` 仅 16 个月域龄；
+  * **通盘收割真实搜索热词**：100% 覆盖 Google Autocomplete、PAA 与 Related Searches 热点：`best llm gateway` (KD 19, $6.05)、`open source llm gateway` (KD 29)、`claude code llm gateway`、`mcp gateway vs llm gateway`、`llm gateway vs openrouter`；
+  * **架构升格（Hub-and-Spoke 拓扑）**：将页面设立在顶层 `/llm-gateway/`（而非博客子目录），作为全站架构中心。全站所有长尾博文向枢纽页汇聚权重，枢纽页再向各个模型教程分发，形成闭环。
+* **影响页面/路由**：
+  * **新建独立品类枢纽页**：`/llm-gateway/` (`src/pages/llm-gateway.astro`)
+  * **全站骨干接入**：
+    * `src/layouts/Layout.astro`（主导航 Header 增加 `LLM Gateway`，全站 Footer Platform 增加 `LLM Gateway Guide`）
+    * `cloudflare-worker.js` & `public/_redirects`（注册边缘路由代理、尾部斜杠规范化与 301 承接）
+  * **存量核心页面双向网状互联**：
+    * `/openrouter-pricing/`
+    * `/blog/openrouter-alternatives/`
+    * `/blog/is-openrouter-free-tier-limits/`
+* **具体技术与内容交付**：
+  * **TDK 与语义树**：MetaTitle（59 字符）`LLM Gateway: Architecture, Routing & Top Solutions | APIVALE`，H1（58 字符）`LLM Gateway: The Complete Architecture, Comparison & Guide`，Description（157 字符）。
+  * **复合结构化数据**：包含 `WebApplication` + `BreadcrumbList` + `FAQPage` 复合 JSON-LD Schema。
+  * **4 项硬核工程增益**：
+    1. 什么是 LLM Gateway：首屏直出 1 秒定义框（Position Zero 精选摘要利器）+ ASCII 拓扑流程图；
+    2. 解决四大底层工程痛点：多 Key 混乱、429 弃包雪崩、Prompt Cache 命中失效、MCP 数据合规；
+    3. 自建开源（LiteLLM / Rust / Go）vs 托管聚合（OpenRouter / APIVALE）客观四维对比表（含 2026-09-30 校验时间戳与 Best for 列）；
+    4. 15+ 行生产级高可用 TypeScript 弹性双网关重试与自动故障转移代码 (`ResilientGatewayDispatcher`)；
+    5. Claude Code CLI 与 Cursor 专属配置示例。
+  * **原生交互微工具（Micro-Tool）**：内置原生“LLM Gateway 故障转移与成本模拟器”，消除 Doorway Page 扣分。
+  * **转化闭环卡片**：尾部 CTA 对齐新用户免卡 $0.20（100,000 Token）起步金、首充 +50% 赠送、PayPal 0% FX 快速结账。
+* **14 天因果假设 (Causality Hypothesis)**：
+  1. 依托 KD 23 浅绿低难度与全站 Header/Footer 强权重注入，预计 14~21 天内排入 Google Page 1（前 5~8 名），与 `llmgateway.io` 展开正面对决；
+  2. 作为全站 Topical Authority 核心太阳，将全面带动挂载在其下的 20+ 篇模型长尾文章排名提升 3~5 位。
+
 ### 📅 2026-09-30 - ⚙️ [意图纠偏与三位一体重构]: 《OpenRouter Free Tier》击碎 3D 模型错位误判，Title/H1/URL 100% 锚定「openrouter free tier」，打扫密度榜杂音冲刺 98~100 满分
 
 * **问题诊断（源自 哥飞 SEO 军师 / On Page 体检诊断）**：

@@ -33,7 +33,9 @@ export default {
       "/gpt-6-sol-vs-deepseek-v4-migration-guide": "/blog/gpt-6-sol-vs-deepseek-v4/",
       "/gpt-6-sol-vs-deepseek-v4-migration-guide/": "/blog/gpt-6-sol-vs-deepseek-v4/",
       "/blog/openrouter-pricing": "/openrouter-pricing/",
-      "/blog/openrouter-pricing/": "/openrouter-pricing/"
+      "/blog/openrouter-pricing/": "/openrouter-pricing/",
+      "/blog/llm-gateway": "/llm-gateway/",
+      "/blog/llm-gateway/": "/llm-gateway/"
     };
 
     if (PERMANENT_REDIRECTS[url.pathname]) {
@@ -54,6 +56,11 @@ export default {
       return Response.redirect(redirectTarget, 301);
     }
 
+    if (url.pathname === "/llm-gateway") {
+      const redirectTarget = new URL("/llm-gateway/" + url.search, `https://${url.hostname}`).href;
+      return Response.redirect(redirectTarget, 301);
+    }
+
     if (url.pathname.startsWith("/blog/") && !url.pathname.endsWith("/")) {
       // Exclude static assets with file extensions (e.g., .png, .jpg, .svg, .css, .js, .xml, .txt, .webp, .ico)
       if (!/\.[a-zA-Z0-9]+$/.test(url.pathname)) {
@@ -69,7 +76,7 @@ export default {
     const BLOG_HOST = "apivale-blog.pages.dev"; 
 
     // Route /blog, /blog/* and standalone tool pages to the Astro host
-    const isStandaloneRoute = url.pathname === "/openrouter-pricing" || url.pathname.startsWith("/openrouter-pricing/");
+    const isStandaloneRoute = url.pathname === "/openrouter-pricing" || url.pathname.startsWith("/openrouter-pricing/") || url.pathname === "/llm-gateway" || url.pathname.startsWith("/llm-gateway/");
     const isBlogRoute = url.pathname === "/blog" || url.pathname.startsWith("/blog/");
 
     if (isBlogRoute || isStandaloneRoute) {

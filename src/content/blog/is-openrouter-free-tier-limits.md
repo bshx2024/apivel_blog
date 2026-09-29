@@ -41,7 +41,7 @@ keyTakeaways:
 
 Developers building autonomous coding agents or terminal workflows frequently ask: **is OpenRouter free?** Browsing the catalog reveals popular architectures like Llama and Qwen tagged with `:free`. 
 
-However, integrating these endpoints into Cursor IDE or Cline often leads to immediate `HTTP 429 Too Many Requests` errors and daily quota lockouts. As examined in our benchmark of [OpenRouter alternatives and multi-gateway architectures](/blog/openrouter-alternatives/), understanding free tier quotas is essential for continuous execution. Teams implementing [LLM cost optimization strategies](/blog/llm-cost-optimization-guide/) must look beyond the "$0" tag to evaluate real-world developer friction.
+However, integrating these endpoints into Cursor IDE or Cline often leads to immediate `HTTP 429 Too Many Requests` errors and daily quota lockouts. As examined in our architectural guide on <a href="/llm-gateway/" class="text-emerald-400 hover:underline font-semibold">LLM Gateway Architecture & Routing</a> and our benchmark of [OpenRouter alternatives](/blog/openrouter-alternatives/), understanding free tier quotas is essential for continuous execution. Teams implementing [LLM cost optimization strategies](/blog/llm-cost-optimization-guide/) must look beyond the "$0" tag to evaluate real-world developer friction.
 
 This technical audit breaks down the **OpenRouter free tier**, its 50 RPD quota gate, upstream throttling dynamics, privacy policies, and how to transition to a reliable developer gateway.
 
