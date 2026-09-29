@@ -102,19 +102,23 @@ export default {
       try {
         const response = await fetch(modifiedRequest);
 
-        // Rewrite Location header in 301/308 redirects to always preserve /blog/ prefix
+        // Rewrite Location header in 301/308 redirects to always preserve appropriate prefix
         if (response.status >= 300 && response.status < 400 && response.headers.has("Location")) {
           let location = response.headers.get("Location") || "";
           
-          if (!location.startsWith("http://") && !location.startsWith("https://")) {
-            if (!location.startsWith("/")) location = "/" + location;
-            if (!location.startsWith("/blog/")) {
-              location = "/blog" + location;
-            }
-          } else {
+          if (isStandaloneRoute) {
             location = location.replace(`https://${BLOG_HOST}`, `https://${url.hostname}`);
-            if (!location.includes("/blog/")) {
-              location = location.replace(`${url.hostname}/`, `${url.hostname}/blog/`);
+          } else {
+            if (!location.startsWith("http://") && !location.startsWith("https://")) {
+              if (!location.startsWith("/")) location = "/" + location;
+              if (!location.startsWith("/blog/")) {
+                location = "/blog" + location;
+              }
+            } else {
+              location = location.replace(`https://${BLOG_HOST}`, `https://${url.hostname}`);
+              if (!location.includes("/blog/")) {
+                location = location.replace(`${url.hostname}/`, `${url.hostname}/blog/`);
+              }
             }
           }
 
