@@ -67,13 +67,13 @@
 * **影响页面/路由**：
   * `/openrouter-pricing/` (`src/pages/openrouter-pricing.astro`)
 * **具体技术与文案交付**：
-  1. **Title 字符数精准收敛**：优化为 `OpenRouter Pricing Calculator & Token Rates | APIVALE`（精确 53 字符，彻底解决截断，+2 分）。
-  2. **高意图技术板块注入（正文增至 1580 词）**：依据 Google SERP 真实“还在搜”长尾数据，新增《OpenRouter Pricing Architecture: Monthly Quotas, Limits & Keys》深度板块与 2 组 FAQ Schema，全页可见词数达到 1580 词（精准落入 1200~1800 黄金区间，+1.5 分）。
+  1. **Title 纯常青化与断句重构（主词锁定 + URL 100% 覆盖）**：优化为 `OpenRouter Pricing: Live Token Rates & Calculator | APIVALE`（精确 59 字符，去年前化，永久常青无维护债务；前端独立断开 `OpenRouter Pricing` 确保主推断词与 URL 达到 100% 覆盖，挽回最后 0.7 分）。
+  2. **高意图技术板块注入（正文增至 1581 词）**：依据 Google SERP 真实“还在搜”长尾数据，新增《OpenRouter Pricing Architecture: Monthly Quotas, Limits & Keys》深度板块与 2 组 FAQ Schema，全页可见词数达到 1581 词（精准落入 1200~1800 黄金区间，+1.5 分）。
   3. **3~5 词密度榜重构与杂音消除**：
      * 打散表格重复文案，将第 5 列改造为差异化的《Surcharge & Billing Terms》，彻底消除 `5 0 80 apivale` 与 `80 apivale 0 fee`。
-     * 全面埋设 Google US 真实关联搜索词：`openrouter pricing calculator` (4次)、`openrouter pricing per month` (5次)、`openrouter free models limit` (4次)、`openrouter pricing vs direct` (3次)、`openrouter enterprise pricing` (2次)、`openrouter credits price` (1次)、`openrouter pricing api key` (1次)，一举挽回 4.7 分。
+     * 全面埋设 Google US 真实关联搜索词：`openrouter pricing` (28次)、`openrouter pricing calculator` (3次)、`openrouter pricing per month` (5次)、`openrouter free models limit` (4次)、`openrouter pricing vs direct` (3次)、`openrouter enterprise pricing` (2次)、`openrouter credits price` (1次)、`openrouter pricing api key` (1次)，一举挽回 4.7 分。
 * **14 天因果假设 (Causality Hypothesis)**：
-  * On-Page 质量分由 92 分预计跃升至 98~100 分；随着 3~5 词密度榜与 Google 真实下拉词完全对齐，页面将同时收割 `openrouter pricing calculator`、`openrouter pricing per month` 与 `openrouter free models limit` 等核心决策词流量。
+  * On-Page 质量分预计稳拿 99~100 满分；去年前化确立永久长青资产属性，随着 3~5 词密度榜与 Google 真实下拉词完全对齐，页面将同时收割 `openrouter pricing` 大词与 `calculator`、`per month`、`free models limit` 等核心长尾流量。
 
 ### 📅 2026-09-29 - ⚙️ [意图升格与架构重构]: 《OpenRouter Pricing》由博客文章升格为一级独立工具页（/openrouter-pricing/），构建 301 边缘重定向闭环并获全站 Footer 权重倾斜
 
