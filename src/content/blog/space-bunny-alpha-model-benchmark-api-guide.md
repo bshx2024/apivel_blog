@@ -32,16 +32,16 @@ keyTakeaways:
 <div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
   <div class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</div>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
-    <li><strong>Breakout 1M-Token Stealth Engine</strong>: Space Bunny Alpha launched as an anonymous stealth model on OpenRouter, logging over 19.5T tokens in under a week with native 1,000,000-token context and multimodal processing.</li>
+    <li><strong>Breakout 1M-Token Stealth Engine</strong>: Space Bunny Alpha launched anonymously on OpenRouter, logging over 19.5T tokens in under a week with a native 1,000,000-token context buffer and multimodal processing.</li>
     <li><strong>High-Speed CoT Reasoning</strong>: Delivers adjustable chain-of-thought effort levels, achieving 82.0% on GPQA Diamond and 75.0% on MMLU-Pro while maintaining rapid token throughput.</li>
-    <li><strong>Native Cline & OpenCode Compatibility</strong>: Easily route Space Bunny Alpha into VS Code coding agents and terminal harnesses via OpenAI-compatible endpoints (<code class="text-indigo-300">https://api.apivale.com/v1</code>).</li>
-    <li><strong>Zero-KYC PayPal Access</strong>: Bypass overseas credit card decline issues and regional telephone verification locks with APIVALE's instant PayPal billing and developer credits.</li>
+    <li><strong>Native Cline & OpenCode Compatibility</strong>: Route the stealth engine directly into VS Code coding agents and terminal harnesses via OpenAI-compatible endpoints (<code class="text-indigo-300">https://api.apivale.com/v1</code>).</li>
+    <li><strong>Zero-KYC PayPal Access</strong>: Bypass overseas credit card declines and regional SMS verification locks with APIVALE's instant PayPal billing and free developer trial.</li>
   </ul>
 </div>
 
-Autonomous coding agents in **Cline**, **OpenCode**, and **Cursor** require high context buffers, rapid reasoning throughput, and reliable API gateways. In late September 2026, a mystery model named **Space Bunny Alpha** surfaced on OpenRouter and developer leaderboards, demonstrating breakout performance in repository-scale bug resolution and UI generation from wireframe sketches.
+Autonomous coding agents in **Cline**, **OpenCode**, and **Cursor** require high context buffers, rapid reasoning throughput, and reliable API gateways. In late September 2026, a mystery engine named **Space Bunny Alpha** surfaced on OpenRouter and developer leaderboards, demonstrating breakout performance in repository-scale bug resolution and UI generation from wireframe sketches.
 
-However, developer teams integrating raw stealth models encounter variable upstream rate limits, sporadic language drift, and complex billing gates on overseas platforms. Through [APIVALE's Unified API Gateway](/blog/openrouter-alternatives/), software engineers connect directly to Space Bunny Alpha via standard OpenAI and Anthropic SDK protocols, control reasoning depth dynamically, and fund requests effortlessly using **PayPal and international credit cards**.
+However, developer teams integrating raw stealth models encounter variable upstream rate limits, sporadic language drift, and complex billing gates on overseas platforms. Through [APIVALE's Unified API Gateway](/blog/openrouter-alternatives/), software engineers connect directly to the model via standard OpenAI and Anthropic SDK protocols, control reasoning depth dynamically, and fund requests effortlessly using **PayPal and international credit cards**.
 
 <div class="my-6 border-l-4 border-amber-500 bg-gray-900 rounded-r-lg p-5">
   <div class="flex items-center justify-between">
@@ -57,7 +57,7 @@ However, developer teams integrating raw stealth models encounter variable upstr
 </div>
 
 ```bash
-# Verify Space Bunny Alpha connectivity via APIVALE Unified Gateway
+# Verify connectivity via APIVALE Unified Gateway
 curl -X POST https://api.apivale.com/v1/chat/completions \
   -H "Authorization: Bearer sk-apivale-test-key" \
   -H "Content-Type: application/json" \
@@ -85,12 +85,12 @@ curl -X POST https://api.apivale.com/v1/chat/completions \
 Understanding the architectural foundations and deployment characteristics of Space Bunny Alpha helps developers maximize its agentic reasoning capabilities.
 
 ### 1.1 Space Bunny Alpha API Gateway & MiniMax M3.1 Heritage
-Space Bunny Alpha debuted anonymously in late September 2026 across OpenRouter and testing leaderboards under the provider moniker "stealth." Within days of release, extensive tokenizer fingerprinting and AST parsing evaluations conducted by AI researchers revealed tight structural similarities with **MiniMax M3.1** ([MiniMax M3.1-Flash API](/blog/minimax-m3-1-flash-preview-api-setup/)).
+The model debuted anonymously in late September 2026 across OpenRouter and testing leaderboards under the provider moniker "stealth." Within days of release, extensive tokenizer fingerprinting and AST parsing evaluations conducted by AI researchers revealed tight structural similarities with **MiniMax M3.1** ([MiniMax M3.1-Flash API](/blog/minimax-m3-1-flash-preview-api-setup/)).
 
 While provider anonymity allows frontier labs to benchmark unreleased checkpoints without marketing bias, developers can immediately leverage its high-throughput inference for real-world development tasks. APIVALE routes requests to this evaluation checkpoint under the stable identifier `infer/space-bunny-alpha`, shielding production pipelines from upstream identifier renames.
 
 ### 1.2 1,000,000-Token Native Context & Multimodal Ingestion
-Space Bunny Alpha incorporates a native **1,000,000-token context buffer** paired with multimodal ingestion for text, high-resolution UI images, and video feeds. Unlike sparse context models that degrade past 64K tokens, Space Bunny maintains linear needle-in-a-haystack retrieval accuracy across 900K+ token payloads.
+The engine incorporates a native **1,000,000-token context buffer** paired with multimodal ingestion for text, high-resolution UI images, and video feeds. Unlike sparse context models that degrade past 64K tokens, it maintains linear needle-in-a-haystack retrieval accuracy across 900K+ token payloads.
 
 This expansive context window allows developers to ingest entire GitHub repositories, multi-package monorepos, and complete API specifications into [Claude Code CLI](/blog/how-to-set-up-claude-code-cli-with-custom-base-url) or [Cursor IDE](/blog/cursor-pro-vs-custom-api-key) sessions without aggressive file pruning.
 
@@ -98,14 +98,14 @@ This expansive context window allows developers to ingest entire GitHub reposito
 
 ## 2. Space Bunny Alpha Benchmark: GPQA, MMLU-Pro & Coding Speed
 
-Rigorous quantitative benchmarking against frontier coding and reasoning engines clarifies where Space Bunny Alpha excels.
+Rigorous quantitative benchmarking against frontier coding and reasoning engines clarifies where the 1M stealth engine excels.
 
 ### 2.1 Benchmark Comparison vs. Frontier Coding Models
-The benchmark matrix below compares Space Bunny Alpha against top-tier managed coding models across context limits, benchmark scores, generation velocity, and cost:
+The benchmark matrix below compares the preview model against top-tier managed coding models across context limits, benchmark scores, generation velocity, and cost:
 
 | Model Candidate | Context Window | GPQA Diamond (%) | MMLU-Pro (%) | Output Speed (tok/s) | Pricing (Input / Output per 1M) | Best for... (Honest Assessment) |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Space Bunny Alpha** | **1,000,000** | **82.0%** | **75.0%** | **118 tok/s** | **$0.25 / $1.00** | **High-speed 1M monorepo refactoring & agent coding** |
+| **Space Bunny Alpha (Stealth)** | **1,000,000** | **82.0%** | **75.0%** | **118 tok/s** | **$0.25 / $1.00** | **High-speed 1M monorepo refactoring & agent coding** |
 | [**Pixel Canary (Stealth)**](/blog/unbiased-pareto-ai-api-stealth-union-alpha-setup/) | 512,000 | 79.4% | 72.8% | 145 tok/s | $0.20 / $0.80 | Lightweight syntax verification & rapid test generation |
 | [**DeepSeek V4.1 Flash**](/blog/deepseek-v4-flash-api-guide/) | 1,000,000 | 83.2% | 77.4% | 420 tok/s | $0.14 / $0.28 | Massive throughput batch data scraping & log parsing |
 | [**Qwen 3.8 Max**](/blog/qwen-3-8-max-benchmarks-preview-guide/) | 1,000,000 | 86.8% | 81.2% | 92 tok/s | $0.60 / $2.40 | Complex mathematical modeling & polyglot logic |
@@ -127,19 +127,19 @@ The benchmark matrix below compares Space Bunny Alpha against top-tier managed c
     └─────────────────────────────────────────────────────────────┘
 ```
 
-### 2.2 Stealth Model Showdown: Space Bunny Alpha vs. Pixel Canary
+### 2.2 Stealth Model Showdown: Space Bunny vs. Pixel Canary
 During late 2026, two anonymous models dominated OpenRouter leaderboards: **Space Bunny Alpha** and **Pixel Canary**. 
 
-While Pixel Canary focuses on ultra-lightweight text token generation (reaching 145 tok/s with a 512K window), Space Bunny Alpha provides significantly stronger architectural reasoning (82.0% vs. 79.4% GPQA Diamond) and true 1M context retention. For autonomous coding harnesses like Cline and OpenCode, Space Bunny delivers superior multi-file dependency graph resolution.
+While Pixel Canary focuses on ultra-lightweight text token generation (reaching 145 tok/s with a 512K window), the Space Bunny architecture provides significantly stronger architectural reasoning (82.0% vs. 79.4% GPQA Diamond) and true 1M context retention. For autonomous coding harnesses like Cline and OpenCode, it delivers superior multi-file dependency graph resolution.
 
 ---
 
 ## 3. How to Connect Space Bunny Alpha to Cline, OpenCode & Cursor
 
-Integrating Space Bunny Alpha into your primary development environment requires configuring OpenAI-compatible endpoints with custom reasoning parameters.
+Integrating the model into your primary development environment requires configuring OpenAI-compatible endpoints with custom reasoning parameters.
 
 ### 3.1 Space Bunny Alpha API Python SDK Integration & Dynamic Reasoning Effort
-The Python implementation below connects to Space Bunny Alpha via APIVALE, managing dynamic reasoning levels (`low`, `medium`, `high`) and handling exponential backoff for high-concurrency pipelines:
+The Python implementation below connects via APIVALE, managing dynamic reasoning levels (`low`, `medium`, `high`) and handling exponential backoff for high-concurrency pipelines:
 
 ```python
 import os
@@ -154,9 +154,9 @@ client = OpenAI(
     http_client=httpx.Client(timeout=120.0, limits=httpx.Limits(max_keepalive_connections=20))
 )
 
-def query_space_bunny_model(prompt: str, context_code: str, reasoning_level: str = "medium", max_retries: int = 3):
+def query_stealth_agent(prompt: str, context_code: str, reasoning_level: str = "medium", max_retries: int = 3):
     """
-    Executes an agent query against Space Bunny Alpha with automated failover retry.
+    Executes an agent query against the stealth endpoint with automated retry.
     """
     for attempt in range(1, max_retries + 1):
         try:
@@ -172,21 +172,21 @@ def query_space_bunny_model(prompt: str, context_code: str, reasoning_level: str
             return response.choices[0].message.content
         except RateLimitError as e:
             wait_time = 2 ** attempt
-            print(f"[Warning] Rate limit encounter on Space Bunny Alpha: {e}. Retrying in {wait_time}s...")
+            print(f"[Warning] Rate limit encountered: {e}. Retrying in {wait_time}s...")
             time.sleep(wait_time)
         except APIError as e:
             print(f"[Error] APIVALE Gateway Error: {e.message}")
             raise
-    raise TimeoutError("Maximum retry limit exceeded for Space Bunny Alpha query.")
+    raise TimeoutError("Maximum retry limit exceeded for query.")
 
 if __name__ == "__main__":
     sample_code = "def parse_tokens(stream): return [t.strip() for t in stream if t]"
-    result = query_space_bunny_model("Add typing and error boundary for malformed tokens", sample_code)
-    print("Space Bunny Output:\n", result)
+    result = query_stealth_agent("Add typing and error boundary for malformed tokens", sample_code)
+    print("Model Output:\n", result)
 ```
 
 ### 3.2 Cline & OpenCode VS Code Configuration (.cursorrules / settings.json)
-To wire Space Bunny Alpha into **Cline** or **OpenCode** in VS Code, open your extension settings or `settings.json` and configure custom OpenAI provider settings:
+To wire the endpoint into **Cline** or **OpenCode** in VS Code, open your extension settings or `settings.json` and configure custom OpenAI provider settings:
 
 ```json
 {
@@ -205,10 +205,10 @@ To wire Space Bunny Alpha into **Cline** or **OpenCode** in VS Code, open your e
 }
 ```
 
-For Cursor IDE users, add the following directive to `.cursorrules` to instruct the agent to leverage Space Bunny's reasoning capabilities:
+For Cursor IDE users, add the following directive to `.cursorrules` to instruct the agent to leverage the model's reasoning capabilities:
 
 ```markdown
-# .cursorrules for Space Bunny Alpha Integration
+# .cursorrules for Space Bunny Integration
 - Target Model: infer/space-bunny-alpha via APIVALE Proxy (https://api.apivale.com/v1)
 - Context Limit: Utilize up to 1,000,000 tokens for multi-package monorepo analysis.
 - Coding Style: Output production TypeScript / Python with explicit return types and exhaustive error handling.
@@ -221,12 +221,12 @@ For Cursor IDE users, add the following directive to `.cursorrules` to instruct 
 Real-world community feedback on Reddit (`r/opencode` and `r/LocalLLaMA`) reveals specific behavioral edge cases that require engineering mitigation.
 
 ### 4.1 Troubleshooting Language Drift & Excessive Chain-of-Thought
-Developers testing early checkpoints of Space Bunny Alpha noted two distinct phenomena during heavy multi-turn agent sessions:
-1. **Chain-of-Thought Overthinking**: On trivial syntactic tasks (e.g., simple CSS formatting), the model may spend excessive tokens formulating deep architectural proofs. Setting `reasoning_effort: "low"` solves this latency penalty.
-2. **Language Drift in System Scratchpads**: In rare instances under long multiline prompts, internal reasoning logs may output Chinese or Russian reasoning tokens. Injecting an explicit system instruction (`"Always reason and respond strictly in English"`) maintains consistent output formatting.
+Developers testing early checkpoints noted two distinct phenomena during heavy multi-turn agent sessions:
+1. **Chain-of-Thought Overthinking**: On trivial syntactic tasks (e.g., simple CSS formatting), the engine may spend excessive tokens formulating deep architectural proofs. Setting `reasoning_effort: "low"` solves this latency penalty.
+2. **Language Drift in System Scratchpads**: In rare instances under long multiline prompts, internal reasoning logs may output foreign reasoning tokens. Injecting an explicit system instruction (`"Always reason and respond strictly in English"`) maintains consistent output formatting.
 
 ### 4.2 Multi-Model Gateway Failover Architecture
-To ensure uninterrupted continuous integration and agent runs during high-traffic surges on stealth models, APIVALE's gateway implements dynamic multi-cluster failover:
+To ensure uninterrupted continuous integration and agent runs during high-traffic surges, APIVALE's gateway implements dynamic multi-cluster failover:
 
 ```mermaid
 flowchart TD
@@ -248,11 +248,7 @@ flowchart TD
 <div class="my-8 rounded-xl border border-indigo-500/30 bg-gray-900/90 p-6 shadow-2xl backdrop-blur-sm">
   <div class="flex items-center justify-between border-b border-gray-800 pb-4">
     <div class="flex items-center gap-3">
-      <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-600/20 text-indigo-400">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-        </svg>
-      </div>
+      <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-600/20 text-indigo-400 font-bold text-lg">⚡</div>
       <div>
         <div class="text-base font-bold text-white">Space Bunny Alpha Live Reasoning & Cost Tester</div>
         <div class="text-xs text-gray-400">Test token throughput, context sizing, and API pricing in real time</div>
@@ -304,10 +300,8 @@ flowchart TD
 
   <div class="mt-4 flex justify-end">
     <a href="/sign-up?redirect=/blog/space-bunny-alpha-model-benchmark-api-guide" class="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-500 shadow-lg shadow-indigo-600/30">
-      <span>Claim $0.20 Free Trial for Space Bunny Alpha</span>
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-      </svg>
+      <span>Claim $0.20 Free Trial API Key</span>
+      <span>→</span>
     </a>
   </div>
 </div>
@@ -321,14 +315,14 @@ Answering frequent developer questions regarding Space Bunny Alpha deployment, b
 ### 5.1 What is Space Bunny Alpha and who developed it?
 Space Bunny Alpha is a 2026 anonymous high-speed stealth large language model hosted on OpenRouter and developer testbeds. Technical analysis and tokenizer comparisons link it to the evaluation checkpoints of MiniMax M3.1. It is engineered for complex code refactoring, full repo analysis, and agentic workflows with a 1,000,000-token context window.
 
-### 5.2 How does Space Bunny Alpha perform in coding benchmarks?
-Space Bunny Alpha scores 82.0% on GPQA Diamond and 75.0% on MMLU-Pro while sustaining generation speeds of approximately 118 tokens/second. While Claude Sonnet 5 retains a higher score on complex formal verification, Space Bunny offers 5x context capacity and a 90% cost reduction ($0.25 input / $1.00 output per 1M tokens).
+### 5.2 How does the stealth model perform in coding benchmarks?
+The model scores 82.0% on GPQA Diamond and 75.0% on MMLU-Pro while sustaining generation speeds of approximately 118 tokens/second. While Claude Sonnet 5 retains a higher score on complex formal verification, the stealth engine offers 5x context capacity and a 90% cost reduction ($0.25 input / $1.00 output per 1M tokens).
 
-### 5.3 How do I integrate Space Bunny Alpha into Cline and OpenCode?
+### 5.3 How do I integrate the endpoint into Cline and OpenCode?
 Configure your extension's custom OpenAI provider setting to point to `https://api.apivale.com/v1`, set your API Key to your APIVALE authentication token, and specify the model identifier as `infer/space-bunny-alpha`. Set the context window parameter to 1,000,000 tokens in `settings.json`.
 
 ### 5.4 Is there a free AI API available for Space Bunny Alpha?
-Yes. Developers can test Space Bunny Alpha during its preview phase, and register an account on [APIVALE](/pricing?redirect=/blog/space-bunny-alpha-model-benchmark-api-guide) to claim an instant **$0.20 free signup trial API key** without credit card verification or identity locks. Additional usage can be funded seamlessly via **PayPal, international cards, Apple Pay, or Alipay** with zero foreign exchange fees.
+Yes. Developers can test the preview checkpoint, and register an account on [APIVALE](/pricing?redirect=/blog/space-bunny-alpha-model-benchmark-api-guide) to claim an instant **$0.20 free signup trial API key** without credit card verification or identity locks. Additional usage can be funded seamlessly via **PayPal, international cards, Apple Pay, or Alipay** with zero foreign exchange fees.
 
 ---
 
@@ -383,7 +377,7 @@ Yes. Developers can test Space Bunny Alpha during its preview phase, and registe
     Unlock Space Bunny Alpha with Zero Billing Friction
   </div>
   <p class="mx-auto mt-3 max-w-2xl text-sm text-gray-300 sm:text-base">
-    Stop worrying about overseas credit card declines or rate limits. Connect Space Bunny Alpha, Claude Sonnet 5, and DeepSeek V4 to your Cline and Cursor workflows with instant PayPal checkout.
+    Stop worrying about overseas credit card declines or rate limits. Connect the 1M stealth model, Claude Sonnet 5, and DeepSeek V4 to your Cline and Cursor workflows with instant PayPal checkout.
   </p>
   
   <div class="my-6 grid grid-cols-1 gap-4 sm:grid-cols-3 text-left">
@@ -407,9 +401,7 @@ Yes. Developers can test Space Bunny Alpha during its preview phase, and registe
   <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
     <a href="/sign-up?redirect=/blog/space-bunny-alpha-model-benchmark-api-guide" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-indigo-600 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-indigo-600/40 transition hover:bg-indigo-500 hover:scale-105">
       <span>Get Free $0.20 API Key</span>
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-      </svg>
+      <span>→</span>
     </a>
     <a href="/pricing?redirect=/blog/space-bunny-alpha-model-benchmark-api-guide" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-gray-700 bg-gray-800/80 px-6 py-3.5 text-sm font-semibold text-gray-200 transition hover:bg-gray-700 hover:text-white">
       <span>View Pricing & $29 Pack</span>
