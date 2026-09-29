@@ -58,6 +58,31 @@
 
 ## 📝 优化行动记录 (2026-09)
 
+### 📅 2026-09-30 - 📝 [卫星博文上线 & 意图互补矩阵]: 《Is OpenRouter Free to Use?》深度评测上线，精准收割 1,600+ 搜索量疑问词群（is openrouter free / openrouter free model limit / best free models），构建双向反哺闭环
+
+* **战略意图与关键词矩阵对齐**：
+  * **击穿真实搜索词群**：基于 SEMrush 真实数据（总搜 1,600+/月）与 Google 搜索框实测（Autocomplete、PAA、Related Searches），精选 `is openrouter free` (390/月)、`openrouter free` (320/月)、`best free model on openrouter` (210/月, KD 20 浅绿低难度)、`openrouter free model limit` (170/月, KD 24 浅绿低难度) 为目标词群，彻底放弃无搜索量虚词 `is openrouter expensive`。
+  * **互补防蚕食定位**：独立落地页 `/openrouter-pricing/` 专攻商业比价与算力模拟意图；博文 `/blog/is-openrouter-free-tier-limits/` 专攻疑问、测评与避坑意图，并通过正文高频锚文本将流量导流至独立计算器工具页与主站 `/pricing`。
+* **影响页面/路由**：
+  * **新建卫星博文**：`/blog/is-openrouter-free-tier-limits/` (`src/content/blog/is-openrouter-free-tier-limits.md`)
+  * **双向织网页面**：
+    * `/blog/openrouter-alternatives/`
+    * `/blog/llm-cost-optimization-guide/`
+    * `/openrouter-pricing/` (`src/pages/openrouter-pricing.astro`)
+* **具体技术与内容交付**：
+  * **TDK 与 AST 规范**：MetaTitle（56 字符）`Is OpenRouter Free? Tier Limits & Hidden Costs | APIVALE`，H1（70 字符）`Is OpenRouter Free to Use? Real Limits, Best Free Models & Hidden Costs`，Description（153 字符），通过 `audit_article_seo_health` 预检，0 blockers, 0 warnings。
+  * **E-E-A-T 作者轮换**：配置作者 **Sofia Costa**（Senior Cloud Infrastructure Engineer, APIVALE），深耕多网关限流与高可用路由。
+  * **4 项真实工程增益**：
+    1. 拆解官方未宣传的硬核门槛：历史充值小于 $10 账户被锁死在 50 次/天（50 RPD）与 20 RPM，并全局多 Key 共享；
+    2. 深度挖掘上游机房在高峰期优先保障付费客户导致的 429 随机弃包与断连逻辑；
+    3. 植入 Reddit r/LocalLLaMA 真实开发者吐槽 Voice Box，揭秘免费端点在 Cursor/Cline 中的断流惨状；
+    4. 提供 50+ 行高可用 TypeScript 弹性双网关重试与自动故障转移代码 (`HybridModelDispatcher`)。
+  * **交互式微工具注入**：在正文中内嵌原生 Free Tier 额度耗尽计算器（基于工作流类型与工时实时演算打满 50 RPD 上限的分钟数），提供即时反馈，消除 Doorway Page 降权隐患。
+  * **转化卡片对齐**：尾部 `.cta-card` 严格对齐钱包特权（新用户免卡 $0.20 / 100,000 Token 体验金、首充 +50% 赠送、PayPal 0% 额外手续费快速结账），按钮全部携带 `redirect=/blog/is-openrouter-free-tier-limits/` 参数。
+* **14 天因果假设 (Causality Hypothesis)**：
+  1. 依靠两颗绿色低难度词（KD 20 与 KD 24）的 H2 权重，预计将在 7~10 天内率先排入 Google Page 1 并获得首批自然长尾点击；
+  2. 博文作为高质量前哨节点，将持续向 `/openrouter-pricing/` 输送精准反哺权重，提升整站关于 OpenRouter 生态的 Topical Authority。
+
 ### 📅 2026-09-30 - ⚙️ [On-Page 满分调优与密度榜重构]: 《OpenRouter Pricing》精准击穿 3 项体检扣分点（Title 长度、正文词数达标、3~5 词密度榜清洗与 Google 真实长尾词注入），预期评分冲刺 100 分
 
 * **问题诊断（源自 哥飞 SEO 军师 / On Page 体检诊断）**：
