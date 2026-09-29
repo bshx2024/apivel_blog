@@ -21,19 +21,19 @@ keyTakeaways:
     highlight: true
 ---
 
-On September 20, 2026, Alibaba's Qwen team released **Qwen-Image-2.1**, a unified 7-billion parameter foundation model merging text-to-image synthesis and iterative image editing into a single 32-layer Single-Stream Diffusion Transformer (DiT). Building on the multimodal breakthroughs of [Qwen 3.8 Omni](/blog/qwen-3-8-omni-flash-api-setup) and [Claude Code CLI developer pipelines](/blog/how-to-connect-qwen-3-8-to-claude-code-cli), Qwen-Image-2.1 delivers high-fidelity 2K generation and multi-reference identity preservation across up to 10 images. Its breakout capability is **native 4-channel RGBA transparency**, eliminating the need for downstream background removal models like RMBG-1.4 or SAM. While open weights enable local testing, running sustained 2048x2048 pipelines under its research-only non-commercial license creates immediate operational and legal hurdles for commercial teams.
+On September 20, 2026, Alibaba's Qwen team released **Qwen-Image-2.1**, a unified 7-billion parameter foundation model merging text-to-image synthesis and iterative image editing into a single 32-layer Single-Stream Diffusion Transformer (DiT). Building on the multimodal breakthroughs of [Qwen 3.8 Omni](/blog/qwen-3-8-omni-flash-api-setup) and [Claude Code CLI developer pipelines](/blog/how-to-connect-qwen-3-8-to-claude-code-cli), Qwen-Image-2.1 delivers native 2K generation and identity preservation across up to 10 images. Its breakout capability is **native 4-channel RGBA transparency**, eliminating secondary background removal tools like RMBG or SAM. However, deploying self-hosted instances under its research-only license creates immediate legal and compute bottlenecks for commercial software teams.
 
 <div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
-    <li><strong>Unified 7B DiT Engine</strong>: Combines text-to-image synthesis, inpainting, outpainting, and multi-reference editing into a single architecture (<code class="text-indigo-300">infer/qwen-image-2.1</code>).</li>
-    <li><strong>Native RGBA Alpha Transparency</strong>: Generates cutout assets and UI graphics directly with alpha channels, eliminating secondary background removal steps.</li>
-    <li><strong>Commercial Compliance & Zero-KYC</strong>: Bypasses the restrictive Qwen Research License and mainland +86 phone requirements via APIVALE's managed commercial endpoints.</li>
-    <li><strong>Global Instant Billing</strong>: Frictionless onboarding through PayPal, global credit cards, and Alipay with zero FX fees; includes $0.20 free signup trial credit (+50% first-deposit bonus).</li>
+    <li><strong>Unified 7B DiT Engine</strong>: Integrates text-to-image, inpainting, and multi-reference identity editing into <code class="text-indigo-300">infer/qwen-image-2.1</code>.</li>
+    <li><strong>Native RGBA Transparency</strong>: Directly outputs cutouts with real alpha channels, skipping extrinsic background removal models.</li>
+    <li><strong>Commercial Compliance & Zero-KYC</strong>: Bypasses the restrictive Qwen Research License and mainland +86 phone requirements via APIVALE's commercial API.</li>
+    <li><strong>Global Instant Billing</strong>: Frictionless checkout via PayPal, international cards, and Alipay with zero FX fees; includes $0.20 free signup trial credit (+50% first-deposit bonus).</li>
   </ul>
 </div>
 
-For production teams building web apps, e-commerce catalog pipelines, and automated graphic generation workflows, managing local VRAM spikes and navigating licensing ambiguities drains engineering focus. Below, we examine the unified DiT architecture, provide production-ready Python API code with automatic retry mechanisms, contrast self-hosting economics against APIVALE's serverless endpoints, and show how to route ComfyUI nodes over managed cloud infrastructure.
+For production teams building web applications, e-commerce graphics, and autonomous creative pipelines, managing local VRAM spikes and licensing ambiguities consumes engineering bandwidth. Below, we examine the unified DiT architecture, provide production Python API integration code with automatic retry logic, compare self-hosting economics against serverless endpoints, and provide an interactive in-page playground to test generations directly.
 
 <div class="my-6 border-l-4 border-amber-500 bg-gray-900 rounded-r-lg p-5">
   <div class="flex items-center justify-between">
@@ -76,13 +76,13 @@ Understanding the single-stream Diffusion Transformer design explains why Qwen-I
 
 ### 1.1 Native 4-Channel RGBA Transparency vs. Post-Processing Masking
 
-Conventional image generation workflows treat background removal as an extrinsic two-pass process. A model generates an RGB bitmap on a solid or complex background, after which a secondary segmentation model (such as BiRefNet, RMBG, or SAM) attempts to estimate foreground boundaries. This extrinsic approach regularly leaves halos around fine hair, clips translucent shadows, and corrupts reflective surfaces.
+Conventional image generation workflows treat background removal as an extrinsic two-pass process. A model generates an RGB bitmap on a solid background, after which a secondary segmentation model (such as BiRefNet or SAM) estimates foreground boundaries. This approach frequently clips translucent shadows, damages fine hair, and corrupts reflective surfaces.
 
-Qwen-Image-2.1 natively integrates an alpha channel into its Variational Autoencoder (VAE) latent space. By training directly on RGBA representations, the DiT predicts opacity values concurrently with color channels. As a result, semi-transparent volumes—such as smoky vapors, tinted glass, soft drop shadows, and delicate fabric fringes—render with true physical transparency, ready for direct composition over arbitrary UI backgrounds or canvas layers. For high-throughput vision agent pipelines that combine language context with generated graphics, pairing RGBA generation with [visual prompt compression techniques](/blog/visual-prompt-compression-pxpipe) avoids blowing context token budgets in multimodal chat wrappers.
+Qwen-Image-2.1 natively integrates an alpha channel into its Variational Autoencoder (VAE) latent space. By training directly on RGBA representations, the DiT predicts opacity values concurrently with color channels. As a result, semi-transparent volumes—such as tinted glass, soft drop shadows, and delicate fabric fringes—render with true physical transparency, ready for direct UI composition. For high-throughput vision agent pipelines, pairing RGBA generation with [visual prompt compression techniques](/blog/visual-prompt-compression-pxpipe) avoids blowing context token budgets in multimodal chat wrappers.
 
 ### 1.2 Unified Text-to-Image and Multi-Reference Identity Editing
 
-Previous generation systems required deploying distinct checkpoints: one for text-to-image generation, another for inpainting (mask-conditioned), and a separate adapter for character identity consistency. Qwen-Image-2.1 replaces this fragmented pipeline with a unified 32-layer Single-Stream DiT operating over mixed-granularity visual tokens.
+Previous generation systems required deploying distinct checkpoints: one for text-to-image synthesis, another for inpainting, and an adapter for identity consistency. Qwen-Image-2.1 unifies these workflows within a 32-layer Single-Stream DiT operating over mixed-granularity visual tokens.
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
@@ -100,7 +100,7 @@ Previous generation systems required deploying distinct checkpoints: one for tex
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
-The model accepts up to 10 reference images within the conditioning context. By projecting reference image embeddings into the shared transformer stream, it preserves key facial landmarks, product packaging geometry, and brand color palettes across complex scene transitions without fine-tuning LoRA adapters.
+The model accepts up to 10 reference images within the conditioning context, projecting reference embeddings directly into the shared transformer stream to preserve product geometry and facial features without custom LoRAs.
 
 ---
 
@@ -110,7 +110,7 @@ Selecting between on-premise GPU infrastructure, public cloud compute instances,
 
 ### 2.1 The Hidden Costs of Self-Hosting 7B Diffusion Transformers
 
-While 7B parameter DiT models look manageable on paper, production deployment involves several hidden expense drivers. Generating 2048x2048 high-resolution outputs with 10 reference images requires at least 24GB to 32GB of unquantized VRAM to prevent Out-Of-Memory (OOM) failures under burst traffic. Deploying dedicated cloud instances (such as AWS `g5.2xlarge` or `g6e.2xlarge` with NVIDIA L4/A10G GPUs) incurs a baseline cost of $1.20 to $2.20 per hour.
+While 7B parameter DiT models seem lightweight, production deployment involves substantial hidden costs. Generating 2048x2048 high-resolution outputs with 10 reference images requires 24GB to 32GB of unquantized VRAM to prevent Out-Of-Memory (OOM) failures under burst traffic. Deploying dedicated cloud instances (such as AWS `g5.2xlarge` with NVIDIA A10G) incurs a baseline cost of $1.25 per hour.
 
 ```
 Dedicated Cloud GPU Cost (AWS A10G at $1.25/hr):
@@ -124,7 +124,7 @@ Cost for 5,000 images = 5,000 * $0.022 = $110.00 / month
 Net Monthly Savings: $802.50 (87.9% Cost Reduction)
 ```
 
-For teams with intermittent or variable generation schedules, dedicated compute guarantees paying for idle silicon. APIVALE's serverless endpoints eliminate cold-start lag while billing strictly per generated image.
+For teams with variable generation schedules, dedicated compute guarantees paying for idle silicon. APIVALE's serverless endpoints eliminate cold-start lag while billing strictly per generated image.
 
 ### 2.2 Objective Comparison Table: Infrastructure & Licensing Matrix
 
@@ -155,9 +155,9 @@ Integrating Qwen-Image-2.1 into backend applications requires proper parameter f
 APIVALE exposes Qwen-Image-2.1 through an intuitive image generation interface. The primary parameters include:
 
 * `prompt` (*string, required*): Detailed text prompt describing subject, composition, and lighting.
-* `size` (*string, optional*): Output dimensions. Supported formats include `1024x1024`, `1280x720`, `720x1280`, and native `2048x2048`.
-* `transparent_background` (*boolean, optional*): When set to `true`, the model activates its native alpha channel VAE branch and returns a transparent PNG.
-* `reference_images` (*array of strings, optional*): Up to 10 image URLs or base64 data URIs used for identity, style, or product composition guidance.
+* `size` (*string, optional*): Output dimensions (`1024x1024`, `1280x720`, `720x1280`, `2048x2048`).
+* `transparent_background` (*boolean, optional*): Activates the native alpha channel VAE branch to return a transparent PNG.
+* `reference_images` (*array of strings, optional*): Up to 10 image URLs or base64 data URIs used for identity guidance.
 * `seed` (*integer, optional*): Deterministic seed for reproducible generations across iterations.
 
 ### 3.2 Complete Python Production Script with Exponential Backoff Retry
@@ -205,8 +205,7 @@ def generate_qwen_image(
         try:
             response = requests.post(endpoint, json=payload, headers=headers, timeout=60)
             if response.status_code == 200:
-                data = response.json()
-                return data
+                return response.json()
             elif response.status_code in [429, 502, 503]:
                 wait_time = 2 ** attempt
                 print(f"[Warning] Rate limited or gateway busy ({response.status_code}). Retrying in {wait_time}s...")
@@ -220,162 +219,136 @@ def generate_qwen_image(
             
     raise RuntimeError("Generation failed: Maximum retry quota exceeded.")
 
-# Example execution: Generate a transparent isometric cyber-drone icon
 if __name__ == "__main__":
     prompt_query = "Isometric high-tech autonomous quadcopter drone, glowing cyan accents, pure transparent background"
     result = generate_qwen_image(prompt_query, size="1024x1024", transparent=True)
-    
-    image_url = result["data"][0].get("url")
     b64_json = result["data"][0].get("b64_json")
-    
     if b64_json:
         with open("drone_transparent.png", "wb") as f:
             f.write(base64.b64decode(b64_json))
         print("Asset saved successfully as drone_transparent.png")
-    elif image_url:
-        print(f"Generated transparent asset available at: {image_url}")
 ```
 
 ---
 
-## 4. ComfyUI Integration: Replacing Heavy Local Weights with Cloud API Nodes
+## 4. ComfyUI Integration and In-Page Playground
 
-ComfyUI has become the standard canvas for procedural generation. However, loading Qwen-Image-2.1 locally often pushes consumer workstations past their VRAM thresholds, leading to swapping and operating system freezes.
+ComfyUI is the standard canvas for generative design, but running local 7B DiT weights frequently triggers VRAM swapping.
 
 ### 4.1 Connecting APIVALE Custom Node to ComfyUI Workflow
 
-By using a lightweight custom cloud node in ComfyUI, you offload the 32-layer DiT compute to APIVALE while retaining full canvas control over prompts, seed variations, and image-to-image chains:
+Using APIVALE's custom cloud node offloads heavy transformer compute while retaining complete node-graph flexibility:
+1. Clone the node to `ComfyUI/custom_nodes/` and set Base URL to `https://api.apivale.com/v1`.
+2. Select `infer/qwen-image-2.1` in the model selector.
+3. Pipe the **IMAGE (RGBA)** output directly into composition nodes without external mask extractors.
 
-1. Clone or add the custom APIVALE node to your `ComfyUI/custom_nodes/` directory.
-2. In the node settings, specify your Base URL (`https://api.apivale.com/v1`) and paste your API key.
-3. Select `infer/qwen-image-2.1` in the model selector dropdown.
-4. Route the node's **IMAGE (RGBA)** output directly into preview nodes or composition composites without intermediate mask extractors.
+### 4.2 In-Page Interactive Playground: Test Qwen-Image-2.1 Parameters
 
-This configuration allows designers on standard laptops or MacBooks to run high-throughput 2048x2048 generation loops without worrying about MPS backend VAE degradations or noisy tensor-parallel artifacts.
+Test prompts, toggle native RGBA transparency, and inspect generated payloads directly in your browser without leaving this page:
 
-### 4.2 Commercial License Compliance: Navigating the Research-Only Boundary
-
-The official GitHub release of Qwen-Image-2.1 contains an explicit **Qwen Research License Agreement**. Deploying the weights directly on self-hosted instances to power commercial SaaS products, paid client assets, or monetized mobile applications introduces substantial copyright exposure.
-
-Using APIVALE's commercial API endpoints decouples your application from open-weights licensing liabilities. APIVALE partners directly with upstream commercial infrastructure providers, ensuring that every generation token and image output is fully licensed for commercial exploitation, distribution, and client deliverables.
-
----
-
-## 5. Interactive Qwen-Image-2.1 Cost & VRAM Estimator
-
-Estimate your monthly infrastructure expenditure and discover the break-even threshold between self-hosting dedicated GPU instances versus leveraging APIVALE's serverless pay-as-you-go model:
-
-<div class="my-8 rounded-xl border border-gray-700 bg-gray-900/90 p-6 shadow-2xl backdrop-blur-md">
+<div id="live-playground" class="my-8 rounded-xl border border-indigo-500/40 bg-gray-900/95 p-6 shadow-2xl backdrop-blur-md">
   <div class="flex items-center justify-between border-b border-gray-800 pb-4">
     <div class="flex items-center space-x-3">
       <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-600/30 text-indigo-400">
         <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       </div>
       <div>
-        <div class="text-base font-semibold text-white">Qwen-Image-2.1 Cost & Infrastructure Estimator</div>
-        <div class="text-xs text-gray-400">Calculate self-hosted GPU idle spend vs. pay-per-image serverless API</div>
+        <div class="text-base font-semibold text-white">Qwen-Image-2.1 In-Page Live Sandbox</div>
+        <div class="text-xs text-gray-400">Test native RGBA prompts and generate production API payload in-place</div>
       </div>
     </div>
-    <span class="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-400">Live Calculator</span>
+    <span class="rounded-full bg-emerald-500/20 px-3 py-1 text-xs font-medium text-emerald-400">Interactive</span>
   </div>
 
-  <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
-    <div>
-      <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300">Daily Generation Volume</label>
-      <input type="number" id="daily-images" min="10" max="100000" value="250" class="mt-2 w-full rounded-lg border border-gray-700 bg-gray-800 px-4 py-2.5 text-sm text-white focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500" />
-      <span class="mt-1 block text-xs text-gray-400">Expected images produced per day across your app</span>
+  <div class="mt-6 grid grid-cols-1 gap-5 lg:grid-cols-2">
+    <div class="space-y-4">
+      <div>
+        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300">Prompt Query</label>
+        <textarea id="pg-prompt" rows="3" class="mt-2 w-full rounded-lg border border-gray-700 bg-gray-800 p-3 text-sm text-white focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500">Isometric 3D frosted glass cube with cyan neon edge glow, isolated floating artifact, pure transparency</textarea>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300">Dimensions</label>
+          <select id="pg-size" class="mt-2 w-full rounded-lg border border-gray-700 bg-gray-800 px-3 py-2 text-sm text-white focus:border-indigo-500 focus:outline-none">
+            <option value="1024x1024" selected>1024x1024 (Standard)</option>
+            <option value="1280x720">1280x720 (Landscape)</option>
+            <option value="2048x2048">2048x2048 (Native 2K)</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300">Seed</label>
+          <input type="number" id="pg-seed" value="42" class="mt-2 w-full rounded-lg border border-gray-700 bg-gray-800 px-3 py-2 text-sm text-white focus:border-indigo-500 focus:outline-none" />
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-2 pt-1">
+        <input type="checkbox" id="pg-rgba" checked class="h-4 w-4 rounded border-gray-700 bg-gray-800 text-indigo-600 focus:ring-indigo-500" />
+        <label for="pg-rgba" class="text-xs font-medium text-gray-300">Activate Native 4-Channel RGBA Transparency</label>
+      </div>
+
+      <button id="pg-run-btn" class="w-full rounded-lg bg-indigo-600 py-2.5 text-xs font-bold text-white shadow-lg hover:bg-indigo-500 transition-all flex items-center justify-center space-x-2">
+        <span>🚀 Simulate Generation & Compile Payload</span>
+      </button>
     </div>
 
-    <div>
-      <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300">Target Output Resolution</label>
-      <select id="image-resolution" class="mt-2 w-full rounded-lg border border-gray-700 bg-gray-800 px-4 py-2.5 text-sm text-white focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500">
-        <option value="standard" selected>1024x1024 RGBA ($0.022 / image)</option>
-        <option value="hd">2048x2048 Native 2K RGBA ($0.045 / image)</option>
-      </select>
-      <span class="mt-1 block text-xs text-gray-400">Native 2K requires double DiT step allocation</span>
-    </div>
-  </div>
+    <div class="flex flex-col rounded-lg border border-gray-800 bg-gray-950 p-4">
+      <div class="flex items-center justify-between border-b border-gray-800 pb-2 text-xs font-semibold text-gray-400">
+        <span>Canvas Preview & Output Payload</span>
+        <span id="pg-status" class="text-emerald-400">● Ready</span>
+      </div>
+      
+      <div id="pg-preview-box" class="relative my-3 flex h-40 w-full items-center justify-center rounded-lg border border-dashed border-gray-700 overflow-hidden" style="background-image: repeating-conic-gradient(#1f2937 0% 25%, #111827 0% 50%); background-size: 16px 16px;">
+        <div id="pg-preview-artifact" class="text-center p-4">
+          <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-cyan-500/20 text-cyan-300 shadow-[0_0_25px_rgba(6,182,212,0.4)] border border-cyan-400/40">
+            🧊
+          </div>
+          <div class="mt-2 text-[11px] font-semibold text-cyan-200">Native Alpha PNG (Rendered)</div>
+        </div>
+      </div>
 
-  <div class="mt-6 rounded-lg bg-gray-800/60 p-4 border border-gray-700/50">
-    <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 text-center">
-      <div class="p-3">
-        <div class="text-xs text-gray-400">Cloud GPU (Dedicated A10G)</div>
-        <div class="mt-1 text-lg font-bold text-rose-400" id="dedicated-cost">$912.50 / mo</div>
-        <div class="text-[11px] text-gray-400">$1.25/hr fixed 24/7 idle</div>
-      </div>
-      <div class="p-3 border-t sm:border-t-0 sm:border-l border-gray-700">
-        <div class="text-xs text-gray-400">APIVALE Serverless API</div>
-        <div class="mt-1 text-lg font-bold text-emerald-400" id="apivale-cost">$165.00 / mo</div>
-        <div class="text-[11px] text-gray-400">7,500 images @ $0.022</div>
-      </div>
-      <div class="p-3 border-t sm:border-t-0 sm:border-l border-gray-700">
-        <div class="text-xs text-gray-400">Monthly Net Savings</div>
-        <div class="mt-1 text-lg font-bold text-indigo-400" id="savings-amount">$747.50 / mo</div>
-        <div class="text-[11px] text-emerald-400" id="savings-percent">81.9% Reduction</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-    <div class="text-xs text-gray-400">
-      Need dedicated throughput SLAs or private VPC peering? Explore developer packs.
-    </div>
-    <div class="flex items-center space-x-3 w-full sm:w-auto">
-      <a href="/pricing?redirect=/blog/qwen-image-2-1-api-setup-guide" class="w-full sm:w-auto text-center rounded-lg bg-indigo-600 px-4 py-2 text-xs font-semibold text-white shadow-md hover:bg-indigo-500 transition-colors">
-        Claim +50% Bonus ($5 → $7.50)
-      </a>
-      <a href="/sign-up?redirect=/blog/qwen-image-2-1-api-setup-guide" class="w-full sm:w-auto text-center rounded-lg border border-gray-600 px-4 py-2 text-xs font-semibold text-gray-200 hover:bg-gray-800 transition-colors">
-        Get $0.20 Free Trial
-      </a>
+      <pre class="flex-1 overflow-x-auto rounded bg-gray-900 p-2.5 text-[11px] font-mono text-gray-300"><code id="pg-payload-code"># Click "Simulate Generation" above to generate cURL & Python code</code></pre>
     </div>
   </div>
 </div>
 
 <script is:inline>
-  function updateCostEstimates() {
-    const dailyInput = document.getElementById('daily-images');
-    const resSelect = document.getElementById('image-resolution');
-    const dedicatedEl = document.getElementById('dedicated-cost');
-    const apivaleEl = document.getElementById('apivale-cost');
-    const savingsEl = document.getElementById('savings-amount');
-    const percentEl = document.getElementById('savings-percent');
+  function runPlaygroundSimulation() {
+    const prompt = document.getElementById('pg-prompt').value;
+    const size = document.getElementById('pg-size').value;
+    const seed = document.getElementById('pg-seed').value || 42;
+    const rgba = document.getElementById('pg-rgba').checked;
+    const statusEl = document.getElementById('pg-status');
+    const codeEl = document.getElementById('pg-payload-code');
 
-    if (!dailyInput || !resSelect) return;
+    statusEl.textContent = '⚡ Compiling Payload...';
+    statusEl.className = 'text-amber-400';
 
-    const daily = Math.max(1, parseInt(dailyInput.value) || 250);
-    const monthlyImages = daily * 30;
-    const unitPrice = resSelect.value === 'hd' ? 0.045 : 0.022;
+    setTimeout(() => {
+      statusEl.textContent = '✓ Ready (Payload Synced)';
+      statusEl.className = 'text-emerald-400';
 
-    const dedicatedBase = 912.50; // AWS A10G $1.25/hr
-    const apivaleTotal = monthlyImages * unitPrice;
-    const savings = dedicatedBase - apivaleTotal;
-    const savingsPct = Math.round((savings / dedicatedBase) * 100);
+      const payload = {
+        model: "infer/qwen-image-2.1",
+        prompt: prompt,
+        size: size,
+        output_format: "png",
+        transparent_background: rgba,
+        seed: parseInt(seed)
+      };
 
-    dedicatedEl.textContent = `$${dedicatedBase.toFixed(2)} / mo`;
-    apivaleEl.textContent = `$${apivaleTotal.toFixed(2)} / mo`;
-
-    if (savings > 0) {
-      savingsEl.textContent = `$${savings.toFixed(2)} / mo`;
-      savingsEl.className = 'mt-1 text-lg font-bold text-indigo-400';
-      percentEl.textContent = `${savingsPct}% Reduction`;
-      percentEl.className = 'text-[11px] text-emerald-400';
-    } else {
-      savingsEl.textContent = `-$${Math.abs(savings).toFixed(2)} / mo`;
-      savingsEl.className = 'mt-1 text-lg font-bold text-amber-400';
-      percentEl.textContent = `High Volume Threshold`;
-      percentEl.className = 'text-[11px] text-gray-400';
-    }
+      codeEl.textContent = `# cURL Execution:\ncurl -X POST https://api.apivale.com/v1/images/generations \\\n  -H "Authorization: Bearer YOUR_API_KEY" \\\n  -H "Content-Type: application/json" \\\n  -d '${JSON.stringify(payload, null, 2)}'`;
+    }, 200);
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    const dailyInput = document.getElementById('daily-images');
-    const resSelect = document.getElementById('image-resolution');
-    if (dailyInput && resSelect) {
-      dailyInput.addEventListener('input', updateCostEstimates);
-      resSelect.addEventListener('change', updateCostEstimates);
-      updateCostEstimates();
+    const btn = document.getElementById('pg-run-btn');
+    if (btn) {
+      btn.addEventListener('click', runPlaygroundSimulation);
+      runPlaygroundSimulation();
     }
   });
 </script>
