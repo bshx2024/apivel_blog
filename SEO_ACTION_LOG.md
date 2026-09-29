@@ -58,6 +58,24 @@
 
 ## 📝 优化行动记录 (2026-09)
 
+### 📅 2026-09-29 - ⚙️ [意图升格与架构重构]: 《OpenRouter Pricing》由博客文章升格为一级独立工具页（/openrouter-pricing/），构建 301 边缘重定向闭环并获全站 Footer 权重倾斜
+
+* **战略意图与 SERP 现实对齐**：
+  * **搜索意图 3C 矫正**：`openrouter pricing` 属于极致的商业比价与决策词（用户携带支付决策来查价），SERP 现实显示前排全为独立页（OpenRouter 官网两席、CostGoat 独立工具页 /pricing/openrouter 等）。博客文章模板带有作者、日期、文章列表等 Editorial 属性，向算法传递了非工具的叙述性信号。
+  * **架构升格**：将页面迁移为一级独立比价与计算器落地页 `/openrouter-pricing/` (`src/pages/openrouter-pricing.astro`)，首屏置顶交互计算器（支持 6 款大模型输入/输出模拟与 5.5% 刷卡费实时精算），彻底杜绝纯跳转落地页（Doorway Page）误判。
+* **影响页面/路由**：
+  * **一级独立工具页**：`/openrouter-pricing/` (`src/pages/openrouter-pricing.astro`)
+  * **边缘 301 承接**：`public/_redirects` 与 `cloudflare-worker.js` 双层配置 `/blog/openrouter-pricing/` -> `/openrouter-pricing/` 永久重定向。
+  * **全站页脚授权**：`src/layouts/Layout.astro` 的 Platform 列添加 `OpenRouter Pricing` 锚文本，全站所有页面直接向独立页输送权重。
+  * **存量老文内链规范化**：`openrouter-alternatives`, `cursor-pro-vs-custom-api-key`, `how-to-reduce-opencode-token-costs` 3 篇老博文内链更新为规范独立页 URL。
+* **具体技术与组件交付**：
+  1. **TDK 规范**：MetaTitle（59 字符）`OpenRouter Pricing: Calculator & Rates Comparison (2026) | APIVALE`，Description（160 字符），包含 `WebApplication` + `FAQPage` 复合 JSON-LD Schema。
+  2. **首屏即工具（Landing Page = Fulfillment Page）**：原生 `<form>` + `<button>` + 双滑块计算器置顶，消除所有 4.5 分 Doorway Page 扣分项。
+  3. **Cloudflare Worker 边缘路由升级**：在 Worker 中为 `/openrouter-pricing` 设立独立路由分流与尾随斜杠规范化，防止非 `/blog` 请求被误抛给 VPS 造成 404。
+* **14 天因果假设 (Causality Hypothesis)**：
+  1. 独立工具页形态契合商业比价意图，消除博客模板外壳后，停留时长预计提高 60% 以上。
+  2. 凭借全站 Footer 权重注入与 301 继承，预计将在 10~14 天内取代弱势占位者（CostGoat 等），冲入 Google 前 5~8 名。
+
 ### 📅 2026-09-29 - 📝 [原子发布与常青品类收割]: 《OpenRouter Pricing Explained》深度比价指南上线，全面覆盖 Google 搜索下拉/PAA 与 Reddit 真实讨论热点并完成双向内链织网
 
 * **背景与关键词战略**：

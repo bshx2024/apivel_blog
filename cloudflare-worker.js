@@ -31,7 +31,9 @@ export default {
       "/blog/gpt-6-sol-vs-deepseek-v4-migration-guide": "/blog/gpt-6-sol-vs-deepseek-v4/",
       "/blog/gpt-6-sol-vs-deepseek-v4-migration-guide/": "/blog/gpt-6-sol-vs-deepseek-v4/",
       "/gpt-6-sol-vs-deepseek-v4-migration-guide": "/blog/gpt-6-sol-vs-deepseek-v4/",
-      "/gpt-6-sol-vs-deepseek-v4-migration-guide/": "/blog/gpt-6-sol-vs-deepseek-v4/"
+      "/gpt-6-sol-vs-deepseek-v4-migration-guide/": "/blog/gpt-6-sol-vs-deepseek-v4/",
+      "/blog/openrouter-pricing": "/openrouter-pricing/",
+      "/blog/openrouter-pricing/": "/openrouter-pricing/"
     };
 
     if (PERMANENT_REDIRECTS[url.pathname]) {
@@ -41,10 +43,14 @@ export default {
     
     // ==========================================
     // EDGE-LEVEL TRAILING SLASH 301 ENFORCEMENT
-    // Consolidate non-slash URLs to slash URLs (e.g., /blog/qwen-3-8... -> /blog/qwen-3-8.../)
     // ==========================================
     if (url.pathname === "/blog") {
       const redirectTarget = new URL("/blog/" + url.search, `https://${url.hostname}`).href;
+      return Response.redirect(redirectTarget, 301);
+    }
+
+    if (url.pathname === "/openrouter-pricing") {
+      const redirectTarget = new URL("/openrouter-pricing/" + url.search, `https://${url.hostname}`).href;
       return Response.redirect(redirectTarget, 301);
     }
 
@@ -62,15 +68,20 @@ export default {
     // ==========================================
     const BLOG_HOST = "apivale-blog.pages.dev"; 
 
-    // Route /blog and /blog/* to the Astro blog host
-    if (url.pathname === "/blog" || url.pathname.startsWith("/blog/")) {
+    // Route /blog, /blog/* and standalone tool pages to the Astro host
+    const isStandaloneRoute = url.pathname === "/openrouter-pricing" || url.pathname.startsWith("/openrouter-pricing/");
+    const isBlogRoute = url.pathname === "/blog" || url.pathname.startsWith("/blog/");
+
+    if (isBlogRoute || isStandaloneRoute) {
       
       const newUrl = new URL(request.url);
       newUrl.hostname = BLOG_HOST;
       newUrl.protocol = "https:";
       
       // Strip /blog prefix for Pages target host (dist is deployed at root /)
-      newUrl.pathname = newUrl.pathname.replace(/^\/blog/, "") || "/";
+      if (isBlogRoute) {
+        newUrl.pathname = newUrl.pathname.replace(/^\/blog/, "") || "/";
+      }
       
       // Ensure directory routes have a trailing slash for Astro index route matching
       if (!newUrl.pathname.endsWith("/") && !/\.[a-zA-Z0-9]+$/.test(newUrl.pathname)) {
