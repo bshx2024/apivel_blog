@@ -81,6 +81,7 @@ In independent developer evaluations on SWE-bench Lite and repository bug fixing
 | Model | Context Window | SWE-bench Lite (%) | TTFT (ms) | Output Speed (tok/s) | Input / Output Price (1M Tokens) | Rate Limit SLA |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Ox Alpha (`stealth/ox-alpha`)** | **1,048,576** | **88.2%** | **220ms** | 68 tok/s | Preview Free / $0.45 & $1.80 | High (via APIVALE) |
+| [**Space Bunny Alpha (1M Stealth)**](/blog/space-bunny-alpha-model-benchmark-api-guide) | **1,000,000** | **82.0%** | **210ms** | **118 tok/s** | **$0.25 / $1.00** | **High Concurrency (via APIVALE)** |
 | **GLM-5.3 (Official)** | 1,048,576 | 87.6% | 240ms | 64 tok/s | $0.50 / $2.00 | Enterprise (No KYC) |
 | **Claude Sonnet 5** | 200,000 | 92.4% | 310ms | 82 tok/s | $3.00 / $15.00 | Standard Tier |
 | **Qwen 3.7 Max (`infer/qwen3.7-max`)** | 1,000,000 | 86.8% | 185ms | 94 tok/s | $0.60 / $2.40 | Ultra-High |

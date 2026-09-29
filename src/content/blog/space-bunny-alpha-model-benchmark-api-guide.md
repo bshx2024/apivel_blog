@@ -115,8 +115,8 @@ The benchmark matrix below compares the Space Bunny Alpha model against top-tier
   *Note: Pricing and parameters verified via OpenRouter telemetry and official provider documentation as of September 2026. Benchmark sampling performed on standardized 500-line Python/TypeScript bug-fixing suites.*
 </div>
 
-### 2.2 Stealth Model Showdown: Space Bunny vs. Pixel Canary
-During late 2026, two anonymous models dominated OpenRouter leaderboards: **Space Bunny Alpha** and **Pixel Canary**. 
+### 2.2 Stealth Model Showdown: Space Bunny vs. Pixel Canary & Ox Alpha
+During late 2026, two anonymous models dominated OpenRouter leaderboards: **Space Bunny Alpha** and **Pixel Canary**, building on earlier stealth breakthroughs like [**Ox Alpha (0xAlpha)**](/blog/ox-alpha-claude-code-cursor-setup).
 
 While Pixel Canary focuses on ultra-lightweight text token generation (reaching 145 tok/s with a 512K window), the Space Bunny Alpha model provides significantly stronger architectural reasoning (82.0% vs. 79.4% GPQA Diamond) and true 1M context retention. For autonomous coding harnesses like Cline and OpenCode, it delivers superior multi-file dependency graph resolution.
 
