@@ -58,6 +58,23 @@
 
 ## 📝 优化行动记录 (2026-09)
 
+### 📅 2026-09-30 - ⚙️ [On-Page 满分调优与密度榜重构]: 《OpenRouter Pricing》精准击穿 3 项体检扣分点（Title 长度、正文词数达标、3~5 词密度榜清洗与 Google 真实长尾词注入），预期评分冲刺 100 分
+
+* **问题诊断（源自 哥飞 SEO 军师 / On Page 体检诊断）**：
+  * **Title 长度略超（扣 2 分）**：原 Title 66 字符（超 60 字符），存在 SERP 截断风险。
+  * **正文词数偏低（扣 1.5 分）**：原页面 1146 词，低于 1200~1800 最佳权重区间。
+  * **密度榜位置加权覆盖缺陷（扣 4.7 分）**：对比表格中重复出现 `OR: 5.5% + $0.80` 与 `APIVALE: 0% Fee`，被分词引擎提炼出 `5 0 80 apivale` 和 `80 apivale 0 fee` 伪意图杂音；同时 3~5 词密度榜未命中目标词群。
+* **影响页面/路由**：
+  * `/openrouter-pricing/` (`src/pages/openrouter-pricing.astro`)
+* **具体技术与文案交付**：
+  1. **Title 字符数精准收敛**：优化为 `OpenRouter Pricing Calculator & Token Rates | APIVALE`（精确 53 字符，彻底解决截断，+2 分）。
+  2. **高意图技术板块注入（正文增至 1580 词）**：依据 Google SERP 真实“还在搜”长尾数据，新增《OpenRouter Pricing Architecture: Monthly Quotas, Limits & Keys》深度板块与 2 组 FAQ Schema，全页可见词数达到 1580 词（精准落入 1200~1800 黄金区间，+1.5 分）。
+  3. **3~5 词密度榜重构与杂音消除**：
+     * 打散表格重复文案，将第 5 列改造为差异化的《Surcharge & Billing Terms》，彻底消除 `5 0 80 apivale` 与 `80 apivale 0 fee`。
+     * 全面埋设 Google US 真实关联搜索词：`openrouter pricing calculator` (4次)、`openrouter pricing per month` (5次)、`openrouter free models limit` (4次)、`openrouter pricing vs direct` (3次)、`openrouter enterprise pricing` (2次)、`openrouter credits price` (1次)、`openrouter pricing api key` (1次)，一举挽回 4.7 分。
+* **14 天因果假设 (Causality Hypothesis)**：
+  * On-Page 质量分由 92 分预计跃升至 98~100 分；随着 3~5 词密度榜与 Google 真实下拉词完全对齐，页面将同时收割 `openrouter pricing calculator`、`openrouter pricing per month` 与 `openrouter free models limit` 等核心决策词流量。
+
 ### 📅 2026-09-29 - ⚙️ [意图升格与架构重构]: 《OpenRouter Pricing》由博客文章升格为一级独立工具页（/openrouter-pricing/），构建 301 边缘重定向闭环并获全站 Footer 权重倾斜
 
 * **战略意图与 SERP 现实对齐**：
