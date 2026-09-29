@@ -85,7 +85,7 @@ curl -X POST https://api.apivale.com/v1/chat/completions \
 Deploying code models requires distinguishing between downloadable open weights and managed cloud inference endpoints.
 
 ### 1.1 Proprietary Architecture and the Space Bunny Benchmark Origin
-MiniMax M3.1-Flash is a proprietary cloud model rather than an open-weights release on HuggingFace or GitHub. In mid-September 2026, developers identified an unannounced, top-performing coding engine named **Space Bunny** across OpenCode leaderboards. Tokenizer fingerprinting confirmed Space Bunny was the evaluation checkpoint of MiniMax M3.1-Flash. 
+MiniMax M3.1-Flash is a proprietary cloud model rather than an open-weights release on HuggingFace or GitHub. In mid-September 2026, developers identified an unannounced, top-performing coding engine named **Space Bunny** across OpenCode leaderboards (see our in-depth [Space Bunny Alpha Model Benchmark & Setup Guide](/blog/space-bunny-alpha-model-benchmark-api-guide)). Tokenizer fingerprinting confirmed Space Bunny was the evaluation checkpoint of MiniMax M3.1-Flash. 
 
 M3.1-Flash features a native **1,000,000-token context buffer** and a **512,000-token maximum completion limit**. Because base weights are not distributed for local GGUF or vLLM hosting, engineers seeking high iteration speeds integrate managed cloud endpoints rather than downloading massive weights.
 
