@@ -23,18 +23,18 @@ const { initialModel = 'kimi-k3' } = Astro.props;
       <label class="calc-label" for="calcModelSelect">Select LLM Model:</label>
       <div class="calc-select-wrapper">
         <select id="calcModelSelect" class="calc-select">
-          <option value="glm-5.3-flash" selected={initialModel === 'glm-5.3-flash'}>GLM-5.3 Flash (Ox Alpha) ($0.08/1M In · Save 60%)</option>
-          <option value="glm-5.3" selected={initialModel === 'glm-5.3'}>Zhipu GLM-5.3 743B ($0.50/1M In · Save 64%)</option>
-          <option value="qwen-38-flash" selected={initialModel === 'qwen-38-flash'}>Qwen 3.8 Flash Next ($0.05/1M In · Save 75%)</option>
-          <option value="qwen-38" selected={initialModel === 'qwen-38' || initialModel === 'qwen-37'}>Alibaba Qwen 3.8 Max ($0.48/1M In · Save 60%)</option>
-          <option value="deepseek-v4" selected={initialModel === 'deepseek-v4'}>DeepSeek V4 Flash ($0.14/1M In · Save 48%)</option>
-          <option value="gemini-37" selected={initialModel === 'gemini-37'}>Gemini 3.7 Flash ($0.08/1M In · Save 47%)</option>
-          <option value="grok-45" selected={initialModel === 'grok-45'}>xAI Grok 4.5 ($0.90/1M In · Save 55%)</option>
-          <option value="claude-sonnet-5" selected={initialModel === 'claude-sonnet-5'}>Claude Sonnet 5 ($1.50/1M In · Save 50%)</option>
-          <option value="claude-opus-5" selected={initialModel === 'claude-opus-5'}>Claude Opus 5 ($6.90/1M In · Save 54%)</option>
-          <option value="kimi-k3" selected={initialModel === 'kimi-k3'}>Moonshot Kimi K3 2.8T ($1.20/1M In · Save 60%)</option>
-          <option value="needle-2" selected={initialModel === 'needle-2'}>Needle 2 AI Tool Calling ($0.03/1M In · Save 70%)</option>
-          <option value="minimax-h3" selected={initialModel === 'minimax-h3'}>MiniMax H3 ($0.06/sec 2K Video · Save 54%)</option>
+          <option value="glm-5.3-flash" selected={initialModel === 'glm-5.3-flash'}>GLM-5.3 Flash (Ox Alpha) — $0.08 / 1M tokens</option>
+          <option value="glm-5.3" selected={initialModel === 'glm-5.3'}>Zhipu GLM-5.3 743B — $0.50 / 1M tokens</option>
+          <option value="qwen-38-flash" selected={initialModel === 'qwen-38-flash'}>Qwen 3.8 Flash Next — $0.05 / 1M tokens</option>
+          <option value="qwen-38" selected={initialModel === 'qwen-38' || initialModel === 'qwen-37'}>Alibaba Qwen 3.8 Max — $0.48 / 1M tokens</option>
+          <option value="deepseek-v4" selected={initialModel === 'deepseek-v4'}>DeepSeek V4 Flash — $0.14 / 1M tokens</option>
+          <option value="gemini-37" selected={initialModel === 'gemini-37'}>Gemini 3.7 Flash — $0.08 / 1M tokens</option>
+          <option value="grok-45" selected={initialModel === 'grok-45'}>xAI Grok 4.5 — $0.90 / 1M tokens</option>
+          <option value="claude-sonnet-5" selected={initialModel === 'claude-sonnet-5'}>Claude Sonnet 5 — $1.50 / 1M tokens</option>
+          <option value="claude-opus-5" selected={initialModel === 'claude-opus-5'}>Claude Opus 5 — $6.90 / 1M tokens</option>
+          <option value="kimi-k3" selected={initialModel === 'kimi-k3'}>Moonshot Kimi K3 2.8T — $1.20 / 1M tokens</option>
+          <option value="needle-2" selected={initialModel === 'needle-2'}>Needle 2 AI Tool Calling — $0.03 / 1M tokens</option>
+          <option value="minimax-h3" selected={initialModel === 'minimax-h3'}>MiniMax H3 — $0.06 / sec 2K Video</option>
         </select>
       </div>
     </div>
