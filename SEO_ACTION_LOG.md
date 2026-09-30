@@ -89,6 +89,25 @@
   1. 依托 KD 23 浅绿低难度与全站 Header/Footer 强权重注入，预计 14~21 天内排入 Google Page 1（前 5~8 名），与 `llmgateway.io` 展开正面对决；
   2. 作为全站 Topical Authority 核心太阳，将全面带动挂载在其下的 20+ 篇模型长尾文章排名提升 3~5 位。
 
+### 📅 2026-09-30 - ⚙️ [On-Page 满分调优与密度榜重构]: 《LLM Gateway》击穿密度过高扣分项（3.4% 降至 1.9% 黄金区），清洗 credit card 副词杂音，集成 Google 真实相关搜索词簇（LangChain/Azure/AWS/GitHub），冲刺 100 满分
+
+* **问题诊断（源自 哥飞 SEO 军师 / On Page 体检诊断）**：
+  * **体检唯一扣分项（丢 1.5 分）**：关键词密度 3.4% 明显偏高（多词词组 >3% 即被判过度优化/堆砌）；
+  * **副词竞争杂音**：正文中出现 5 次 `credit card` 和 7 次 `claude code cli`，被算法自动推断引擎列为潜在副意图，有稀释风险；
+  * **未充分利用的真实相关搜索**：SERP 挖掘出真实开发者常搜词：`LLM gateway github`、`LLM Gateway AWS`、`LLM gateway self-hosted`、`LLM Gateway LangChain`、`LLM Gateway Azure`。
+* **具体技术与文案交付**：
+  1. **密度消肿（消灭 1.5 分扣分）**：
+     * 将正文过密重复的 `llm gateway` 自然重构为 `intelligent routing layer`、`unified proxy router`、`managed API proxy` 等专业行业同义词；
+     * 正文可见频次从 34 次精准收敛至 25 次，多词密度平滑降至 1.85%~2.1% 黄金安全区，彻底消除堆砌惩罚，拿回全部得分。
+  2. **清洗副候选词杂音**：
+     * 将重复的 `credit card` 替换为 `payment processing overhead`、`deposit surcharges` 等，仅在底部权益卡保留 1 处，消除副意图干扰。
+  3. **融入 Google 真实相关搜索词簇**：
+     * 在架构、代码示例与 FAQ 中自然融入 `LangChain (ChatOpenAI base_url)`、`LlamaIndex`、`AWS Bedrock & Azure OpenAI 跨云路由` 以及 `GitHub open-source LiteLLM/Bifrost self-hosted`，实现相关搜索词 100% 覆盖。
+* **14 天因果假设 (Causality Hypothesis)**：
+  1. On Page 体检评分由 98 分（A 级）跃升至 99.5~100 满分；
+  2. 消除多词堆砌误判，在 Google SERP 中建立最清爽自然的语义分布，稳固冲击 Page 1 头部。
+
+
 ### 📅 2026-09-30 - ⚙️ [意图纠偏与三位一体重构]: 《OpenRouter Free Tier》击碎 3D 模型错位误判，Title/H1/URL 100% 锚定「openrouter free tier」，打扫密度榜杂音冲刺 98~100 满分
 
 * **问题诊断（源自 哥飞 SEO 军师 / On Page 体检诊断）**：
