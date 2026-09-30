@@ -83,7 +83,7 @@
     4. 15+ 行生产级高可用 TypeScript 弹性双网关重试与自动故障转移代码 (`ResilientGatewayDispatcher`)；
     5. Claude Code CLI 与 Cursor 专属配置示例。
   * **原生交互微工具（Micro-Tool）**：内置原生“LLM Gateway 故障转移与成本模拟器”，消除 Doorway Page 扣分。
-  * **转化闭环卡片**：尾部 CTA 对齐新用户免卡 $0.20（100,000 Token）起步金、首充 +50% 赠送、PayPal 0% FX 快速结账。
+  * **编译与边缘交付**：修复 Astro 编译器将客户端代码块花括号 `{}` 识别为 JSX 模板语法的报错（配置 `is:raw` 属性），顺利通过 `astro build` 本地静态编译验证（78 pages cleanly generated），生成静态 html 并推送到 Cloudflare Pages。
 * **14 天因果假设 (Causality Hypothesis)**：
   1. 依托 KD 23 浅绿低难度与全站 Header/Footer 强权重注入，预计 14~21 天内排入 Google Page 1（前 5~8 名），与 `llmgateway.io` 展开正面对决；
   2. 作为全站 Topical Authority 核心太阳，将全面带动挂载在其下的 20+ 篇模型长尾文章排名提升 3~5 位。
