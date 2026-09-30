@@ -84,6 +84,7 @@
     5. Claude Code CLI 与 Cursor 专属配置示例。
   * **原生交互微工具（Micro-Tool）**：内置原生“LLM Gateway 故障转移与成本模拟器”，消除 Doorway Page 扣分。
   * **编译与边缘交付**：修复 Astro 编译器将客户端代码块花括号 `{}` 识别为 JSX 模板语法的报错（配置 `is:raw` 属性），顺利通过 `astro build` 本地静态编译验证（78 pages cleanly generated），生成静态 html 并推送到 Cloudflare Pages。
+  * **主站级视觉规范打磨**：对独立落地页 (`isHub=true`：`/llm-gateway/` 与 `/openrouter-pricing/`) 剥离 `[BLOG]` 徽标，统一呈现纯正主站官方 Logo `✦ APIVALE`（直通主站 `/`），主导航完整对齐 `Home | Pricing | LLM Gateway | Pricing Matrix | Blog | About`，使之完全具备主站顶级产品品类页的权威感知。
 * **14 天因果假设 (Causality Hypothesis)**：
   1. 依托 KD 23 浅绿低难度与全站 Header/Footer 强权重注入，预计 14~21 天内排入 Google Page 1（前 5~8 名），与 `llmgateway.io` 展开正面对决；
   2. 作为全站 Topical Authority 核心太阳，将全面带动挂载在其下的 20+ 篇模型长尾文章排名提升 3~5 位。

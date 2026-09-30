@@ -5,6 +5,7 @@ interface Props {
 	image?: string;
 	canonicalUrl?: string;
 	schema?: Record<string, any> | Record<string, any>[] | null;
+	isHub?: boolean;
 }
 
 const { 
@@ -12,11 +13,14 @@ const {
 	description = "APIVALE - High-performance unified API routing gateway for developers. Low-latency, zero-friction access to DeepSeek, GLM, and multimodal models.",
 	image = "/blog/og-cover.png",
 	canonicalUrl,
-	schema
+	schema,
+	isHub = false
 } = Astro.props;
 
 const siteTitle = title.includes('APIVALE') ? title : `${title} | APIVALE`;
 const resolvedCanonical = canonicalUrl || new URL(Astro.url.pathname, Astro.site || Astro.url.origin).href;
+
+const isStandalone = isHub || Astro.url.pathname.includes('llm-gateway') || Astro.url.pathname.includes('openrouter-pricing');
 ---
 
 <!doctype html>
@@ -81,16 +85,20 @@ const resolvedCanonical = canonicalUrl || new URL(Astro.url.pathname, Astro.site
 		<!-- Header -->
 		<header class="site-header">
 			<div class="nav-container">
-				<a href="/blog/" class="logo-link">
+				<a href={isStandalone ? "/" : "/blog/"} class="logo-link">
 					<span class="logo-icon">✦</span>
 					<span class="logo-text">APIVALE</span>
-					<span class="logo-badge">BLOG</span>
+					{!isStandalone && <span class="logo-badge">BLOG</span>}
 				</a>
 				
 				<nav class="main-nav">
 					<a href="/" class="nav-link">Home</a>
 					<a href="/pricing" class="nav-link">Pricing</a>
-					<a href="/llm-gateway/" class="nav-link">LLM Gateway</a>
+					<a href="/llm-gateway/" class={`nav-link ${Astro.url.pathname.includes('llm-gateway') ? 'active' : ''}`}>LLM Gateway</a>
+					{isStandalone && (
+						<a href="/openrouter-pricing/" class={`nav-link ${Astro.url.pathname.includes('openrouter-pricing') ? 'active' : ''}`}>Pricing Matrix</a>
+					)}
+					<a href="/blog/" class={`nav-link ${(!isStandalone && (Astro.url.pathname === '/blog' || Astro.url.pathname === '/blog/')) ? 'active' : ''}`}>Blog</a>
 					<a href="/about" class="nav-link">About</a>
 				</nav>
 				
@@ -110,7 +118,7 @@ const resolvedCanonical = canonicalUrl || new URL(Astro.url.pathname, Astro.site
 		<footer class="site-footer">
 			<div class="footer-container">
 				<div class="footer-brand">
-					<a href="/blog/" class="logo-link">
+					<a href={isStandalone ? "/" : "/blog/"} class="logo-link">
 						<span class="logo-icon">✦</span>
 						<span class="logo-text">APIVALE</span>
 					</a>
@@ -252,6 +260,13 @@ const resolvedCanonical = canonicalUrl || new URL(Astro.url.pathname, Astro.site
 
 	.nav-link:hover {
 		color: var(--text-primary);
+	}
+
+	.nav-link.active {
+		color: var(--text-primary);
+		font-weight: 600;
+		border-bottom: 2px solid var(--primary-color);
+		padding-bottom: 2px;
 	}
 
 	.nav-actions {
