@@ -1,6 +1,6 @@
 ---
 title: "DeepSeek V4.1 Flash API Key: Free Trial, Pricing & Cursor Setup"
-metaTitle: "DeepSeek V4.1 Flash API Key: 437 t/s & $0.20 Trial | APIVALE"
+metaTitle: "DeepSeek V4.1 Flash API Key: Pricing & Cursor Setup | APIVALE"
 description: "Get DeepSeek V4.1 Flash API key with $0.20 free trial. Experience 437 t/s throughput, 97% lower costs, zero-KYC PayPal billing, and instant Cursor/CLI setup."
 date: "2026-09-10"
 author: "Kenji Tanaka"

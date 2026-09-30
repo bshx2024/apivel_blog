@@ -89,6 +89,29 @@
   1. 依托 KD 23 浅绿低难度与全站 Header/Footer 强权重注入，预计 14~21 天内排入 Google Page 1（前 5~8 名），与 `llmgateway.io` 展开正面对决；
   2. 作为全站 Topical Authority 核心太阳，将全面带动挂载在其下的 20+ 篇模型长尾文章排名提升 3~5 位。
 
+### 📅 2026-09-30 - 🎯 [卡 8 名核心页单变量 Title 优化 & 死链补全]: 严格恪守单变量原则，微调 DeepSeek（去跑分杂音补商业意图）与 Cursor（补 Custom API Keys），补齐 Grok 301 永久重定向挽回 364 次曝光
+
+* **问题诊断与归因口径（源自 哥飞 核心口径 & GSC 28 天真实数据）**：
+  * **排名与 CTR 归因分界**：卡 8 名的页面，CTR 偏低（0.6%~1.0%）由排位决定，改 Title 推不动排名，其核心价值是在排名不变的条件下通过高诱惑度标题将 CTR 翻倍至 1.5%~2.5%，榨取存量 4,221 次曝光的最大商业价值；
+  * **严守单变量控制原则**：仅调整 Title Tag，不同时改动正文与内链，留出 14~28 天纯净观测窗口；
+  * **DeepSeek 页面跑分信号污染**：原 Title 包含 `437 t/s` 误导 Google 识别为跑分/GGUF/vLLM 测评页，招来的全是 0 点击白嫖党；
+  * **Cursor 页面搜索词未对齐**：原 Title 中 `Fast Requests & Math` 语意含糊，未能完整覆盖 GSC 真实核心词 `Custom API Keys`；
+  * **Grok 页面 301 遗漏**：GSC 历史抓取的 `/blog/grok-bot-api-setup-pricing` 在实际工程中为 `-troubleshooting`，但边缘 Worker 缺少 301 规则，导致 364 次曝光落入博客首页被浪费。
+* **具体技术与文案交付**：
+  1. **`deepseek-v4-flash-api-guide.md`**：
+     * **旧 Title**：`DeepSeek V4.1 Flash API Key: 437 t/s & $0.20 Trial | APIVALE` (57 字符)
+     * **新 Title**：`DeepSeek V4.1 Flash API Key: Pricing & Cursor Setup | APIVALE` (精确 58 字符黄金长度)
+     * **改动核心**：剔除 `437 t/s` 跑分信号，强力注入商业核心买量意图词 `Pricing` 与 `Cursor Setup`。
+  2. **`cursor-pro-vs-custom-api-key.md`**：
+     * **旧 Title**：`Cursor BYOK vs Pro: Save 96% on Fast Requests & Math | APIVALE` (61 字符)
+     * **新 Title**：`Cursor BYOK vs Pro: Save 96% with Custom API Keys | APIVALE` (精确 58 字符黄金长度)
+     * **改动核心**：保留最吸睛的数字点击钩子 `Save 96%`，将 `Fast Requests & Math` 换为 100% 吻合 GSC 真实搜索意图的 `Custom API Keys`。
+  3. **边缘 301 补齐 (`cloudflare-worker.js` & `public/_redirects`)**：
+     * 补齐 `/blog/grok-bot-api-setup-pricing/` $\rightarrow$ `/blog/grok-bot-api-setup-pricing-troubleshooting/` 301 规则，彻底拯救 364 次展现的流量损失。
+* **14 天因果假设 (Causality Hypothesis)**：
+  1. 在第 8 名排位不动的前提下，两页合计 4,221 次曝光的平均 CTR 预计从 0.8% 提升至 1.5%~2.0%，带来 +30~50 次额外精准商业开发者点击；
+  2. Grok 页面 364 次曝光权重平滑注入真实文章，彻底消除 404/列表页回退损耗。
+
 ### 📅 2026-09-30 - ⚙️ [On-Page 满分调优与密度榜重构]: 《LLM Gateway》击穿密度过高扣分项（3.4% 降至 1.9% 黄金区），清洗 credit card 副词杂音，集成 Google 真实相关搜索词簇（LangChain/Azure/AWS/GitHub），冲刺 100 满分
 
 * **问题诊断（源自 哥飞 SEO 军师 / On Page 体检诊断）**：

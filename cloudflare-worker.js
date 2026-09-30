@@ -35,7 +35,11 @@ export default {
       "/blog/openrouter-pricing": "/openrouter-pricing/",
       "/blog/openrouter-pricing/": "/openrouter-pricing/",
       "/blog/llm-gateway": "/llm-gateway/",
-      "/blog/llm-gateway/": "/llm-gateway/"
+      "/blog/llm-gateway/": "/llm-gateway/",
+      "/blog/grok-bot-api-setup-pricing": "/blog/grok-bot-api-setup-pricing-troubleshooting/",
+      "/blog/grok-bot-api-setup-pricing/": "/blog/grok-bot-api-setup-pricing-troubleshooting/",
+      "/grok-bot-api-setup-pricing": "/blog/grok-bot-api-setup-pricing-troubleshooting/",
+      "/grok-bot-api-setup-pricing/": "/blog/grok-bot-api-setup-pricing-troubleshooting/"
     };
 
     if (PERMANENT_REDIRECTS[url.pathname]) {
