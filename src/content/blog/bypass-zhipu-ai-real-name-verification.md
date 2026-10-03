@@ -27,20 +27,28 @@ keyTakeaways:
 <div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
   <div class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways: Z.ai Billing & Top-Up Solutions</div>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
-    <li><strong>Fix Z.ai Billing Declines:</strong> International credit cards (Visa, MasterCard, Amex) repeatedly fail on Zhipu and Z.ai due to mainland cross-border payment merchant restrictions.</li>
+    <li><strong>Fix Z.ai Billing Declines:</strong> International credit cards (Visa, MasterCard, Amex) fail on Zhipu and Z.ai due to mainland cross-border merchant settlement limits.</li>
     <li><strong>PayPal Instant Checkout:</strong> Fund GLM-5.2, GLM-5.3 Flash, and DeepSeek workloads via <a href="https://apivale.com/sign-up?redirect=/blog/bypass-zhipu-ai-real-name-verification/" class="text-emerald-400 hover:underline font-semibold">APIVALE ($0.20 Free Trial)</a> using PayPal and global debit/credit cards with zero foreign exchange (FX) surcharges.</li>
-    <li><strong>Zero KYC & No Mainland Phone:</strong> Bypass the mandatory Chinese (+86) SMS verification and domestic national ID (KYC) requirements entirely.</li>
-    <li><strong>Wholesale Token Economics:</strong> Access flagship GLM models at wholesale rates ($0.50/1M input, $2.50/1M output)—saving up to 64% compared to official consumer tiers.</li>
+    <li><strong>Zero KYC & No Mainland Phone:</strong> Bypass mandatory Chinese (+86) SMS verification and domestic national ID (KYC) requirements entirely.</li>
+    <li><strong>Wholesale Token Economics:</strong> Access flagship GLM models at wholesale rates ($0.50/1M input, $2.50/1M output)—saving up to 64% over official retail pricing.</li>
   </ul>
 </div>
 
-International software engineers attempting to top up balances on Zhipu AI's global portal (**Z.ai**) or the domestic console (`open.bigmodel.cn`) frequently encounter severe billing obstacles: foreign Visa and Mastercard credit cards are systematically declined, corporate billing requires Chinese banking rails, and account activation is blocked by mandatory mainland (+86) phone SMS and resident identity verification (KYC).
+International software engineers attempting to top up balances on Zhipu AI's global portal (**Z.ai**) or domestic console (`open.bigmodel.cn`) frequently encounter severe billing obstacles: foreign Visa and Mastercard credit cards are systematically declined, corporate billing requires Chinese banking rails, and account activation is blocked by mandatory mainland (+86) phone SMS and resident identity verification (KYC).
 
-If you are an international developer asking **"how to pay for Z.ai"** or struggling to complete a **Z.ai billing top-up**, you do not need to hunt for third-party virtual credit cards or risk compliance violations. In this guide, we break down why direct Z.ai payment channels fail and how to use the APIVALE unified gateway to fund GLM models seamlessly via **PayPal and international credit cards** (see our companion guides on [How to Access Z.AI GLM 5.2 Internationally](/blog/how-to-access-z-ai-glm-5-2/), [How to Use Z.AI API in Cursor Editor](/blog/how-to-use-z-ai-api-in-cursor-editor/), and our [Cursor Pro vs. Custom API Keys Cost Math](/blog/cursor-pro-vs-custom-api-key/)).
+If you are an international developer asking **"how to pay for Z.ai"** or struggling to complete a **Z.ai billing top-up**, you do not need third-party virtual cards or compliance risks. In this guide, we break down why direct Z.ai payment channels fail and how to use the APIVALE unified gateway to fund GLM models seamlessly via **PayPal and international credit cards** (see our companion guides on [How to Access Z.AI GLM 5.2 Internationally](/blog/how-to-access-z-ai-glm-5-2/), [How to Use Z.AI API in Cursor Editor](/blog/how-to-use-z-ai-api-in-cursor-editor/), and our [Cursor Pro vs. Custom API Keys Cost Math](/blog/cursor-pro-vs-custom-api-key/)).
 
-### Quick Start: Call Zhipu & Z.ai APIs Internationally
+## Quick Start: How to Complete Z.ai Billing Top-Up in 3 Steps
 
-Use your APIVALE key to bypass verification and call the GLM-5.2 model directly with a standard, OpenAI-compatible JSON payload:
+If your international credit card was declined on Z.ai or you received the console error *"Insufficient balance or no resource package please top up"*, follow this 3-step fast-track:
+
+1. **Create Free Account**: Register at [APIVALE](https://apivale.com/sign-up?redirect=/blog/bypass-zhipu-ai-real-name-verification/) using your standard Google or GitHub account to claim your **$0.20 free signup trial** (no credit card or +86 phone required).
+2. **Top Up via PayPal or Cards**: Navigate to Billing and fund your account using **PayPal Instant Checkout** or any global Visa, MasterCard, or Amex card with zero FX surcharges.
+3. **Connect Your Client**: Point your SDK, CLI, or IDE (Claude Code, Cursor, Windsurf) to `https://apivale.com/v1` with your APIVALE bearer key.
+
+### Instant cURL Verification
+
+Verify your connection and bypass Zhipu identity verification in under 5 seconds:
 
 ```bash
 curl https://apivale.com/v1/chat/completions \
@@ -51,7 +59,7 @@ curl https://apivale.com/v1/chat/completions \
 
 ---
 
-## Direct Console Registration vs. APIVALE Proxy
+## Direct Z.ai Console vs. APIVALE Billing Top-Up
 
 The differences in onboarding complexity, payment methods, and billing ease between direct Zhipu / Z.ai consoles and the APIVALE gateway are detailed below:
 
@@ -180,7 +188,7 @@ The differences in onboarding complexity, payment methods, and billing ease betw
 .zhipu-calc-widget .calc-input-group {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 .zhipu-calc-widget .calc-input-group label {
   font-size: 0.85rem;
@@ -189,33 +197,21 @@ The differences in onboarding complexity, payment methods, and billing ease betw
 }
 .zhipu-calc-widget .select-wrapper {
   position: relative;
-  width: 100%;
 }
 .zhipu-calc-widget .select-wrapper select {
   width: 100%;
   background: #1e293b;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid #334155;
   border-radius: 8px;
-  padding: 9px 32px 9px 14px;
-  color: #ffffff;
-  font-size: 0.85rem;
-  appearance: none;
-  cursor: pointer;
+  padding: 10px 14px;
+  color: #f8fafc;
+  font-size: 0.9rem;
   outline: none;
+  cursor: pointer;
   transition: border-color 0.2s;
 }
 .zhipu-calc-widget .select-wrapper select:focus {
   border-color: #a855f7;
-}
-.zhipu-calc-widget .select-wrapper::after {
-  content: '▼';
-  font-size: 0.65rem;
-  color: #94a3b8;
-  position: absolute;
-  right: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
 }
 .zhipu-calc-widget .slider-label-row {
   display: flex;
@@ -225,36 +221,36 @@ The differences in onboarding complexity, payment methods, and billing ease betw
 .zhipu-calc-widget .input-with-unit {
   display: flex;
   align-items: center;
-  background: #1e293b;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 6px;
-  padding: 2px 8px;
+  gap: 6px;
 }
 .zhipu-calc-widget .custom-number-input {
-  background: transparent;
-  border: none;
-  color: #a855f7;
-  font-family: inherit;
-  font-size: 0.85rem;
+  width: 68px;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  padding: 4px 8px;
+  color: #38bdf8;
   font-weight: 700;
-  width: 36px;
+  font-size: 0.95rem;
   text-align: right;
   outline: none;
-  margin-right: 4px;
+}
+.zhipu-calc-widget .custom-number-input:focus {
+  border-color: #38bdf8;
 }
 .zhipu-calc-widget .unit-text {
   font-size: 0.8rem;
-  color: #a855f7;
-  font-weight: 700;
+  color: #94a3b8;
 }
 .zhipu-calc-widget .custom-slider {
-  -webkit-appearance: none;
   width: 100%;
   height: 6px;
-  border-radius: 3px;
-  background: #1e293b;
+  background: #334155;
+  border-radius: 4px;
   outline: none;
-  margin: 6px 0;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
 }
 .zhipu-calc-widget .custom-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -262,218 +258,207 @@ The differences in onboarding complexity, payment methods, and billing ease betw
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: #a855f7;
+  background: #38bdf8;
   cursor: pointer;
-  border: 2px solid #ffffff;
-  box-shadow: 0 0 8px rgba(168, 85, 247, 0.4);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
   transition: transform 0.1s, background-color 0.2s;
 }
 .zhipu-calc-widget .custom-slider::-webkit-slider-thumb:hover {
-  transform: scale(1.2);
-  background: #9333ea;
+  transform: scale(1.15);
+  background: #7dd3fc;
 }
 .zhipu-calc-widget .calculator-results {
-  background: rgba(15, 23, 42, 0.5);
+  background: rgba(30, 41, 59, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
-  padding: 18px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  justify-content: space-between;
+  gap: 12px;
 }
 .zhipu-calc-widget .cost-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
   padding-bottom: 8px;
+  border-bottom: 1px dashed #334155;
 }
 .zhipu-calc-widget .cost-label {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: #94a3b8;
 }
 .zhipu-calc-widget .cost-value {
+  font-family: 'Fira Code', monospace;
+  font-weight: 700;
   font-size: 1.05rem;
-  font-weight: 600;
 }
 .zhipu-calc-widget .direct-cost {
   color: #f43f5e;
+  text-decoration: line-through;
+  opacity: 0.85;
 }
 .zhipu-calc-widget .apivale-cost {
-  color: #c084fc;
-  font-weight: 700;
+  color: #10b981;
 }
 .zhipu-calc-widget .savings-card {
-  background: linear-gradient(135deg, rgba(168, 85, 247, 0.15) 0%, rgba(99, 102, 241, 0.05) 100%);
-  border: 1px solid rgba(168, 85, 247, 0.35);
+  background: linear-gradient(145deg, rgba(168, 85, 247, 0.15) 0%, rgba(99, 102, 241, 0.15) 100%);
+  border: 1px solid rgba(168, 85, 247, 0.3);
   border-radius: 10px;
   padding: 14px;
   text-align: center;
+  margin-top: 4px;
 }
 .zhipu-calc-widget .savings-percentage-row {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   margin-bottom: 4px;
 }
 .zhipu-calc-widget .savings-badge {
-  background: #a855f7;
-  color: #ffffff;
-  font-size: 0.65rem;
-  font-weight: 800;
+  font-size: 0.7rem;
   text-transform: uppercase;
+  background: #a855f7;
+  color: #fff;
   padding: 2px 6px;
   border-radius: 4px;
+  font-weight: 700;
 }
 .zhipu-calc-widget .savings-percentage {
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   font-weight: 800;
-  color: #e9d5ff;
+  color: #c084fc;
 }
 .zhipu-calc-widget .savings-amount {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 6px;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #38bdf8;
+  font-family: 'Fira Code', monospace;
+  line-height: 1.2;
 }
 .zhipu-calc-widget .savings-note {
   font-size: 0.75rem;
-  color: #94a3b8;
-  margin: 0 0 12px 0;
-  line-height: 1.3;
+  color: #cbd5e1;
+  margin: 6px 0 12px 0;
 }
 .zhipu-calc-widget .calc-cta-btn {
   display: block;
-  background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
-  color: #ffffff;
-  font-size: 0.85rem;
+  background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+  color: #ffffff !important;
   font-weight: 700;
-  text-decoration: none;
+  font-size: 0.85rem;
   padding: 10px 14px;
   border-radius: 8px;
-  transition: all 0.2s;
-  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
+  text-decoration: none !important;
+  transition: opacity 0.2s, transform 0.2s;
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.4);
 }
 .zhipu-calc-widget .calc-cta-btn:hover {
+  opacity: 0.95;
   transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(168, 85, 247, 0.4);
-  color: #ffffff;
 }
 </style>
 
 <script>
 (function() {
-  function initZhipuCalc() {
+  const rates = {
+    'glm-5.2': { directIn: 1.40, directOut: 4.40, apivaleIn: 0.50, apivaleOut: 2.50 },
+    'glm-4-plus': { directIn: 0.70, directOut: 2.10, apivaleIn: 0.35, apivaleOut: 1.75 },
+    'glm-4-flash': { directIn: 0.10, directOut: 0.10, apivaleIn: 0.08, apivaleOut: 0.08 }
+  };
+
+  function updateZhipuCalc() {
     const modelSelect = document.getElementById('zhipu-calc-model');
     const inSlider = document.getElementById('zhipu-input-slider');
-    const inNum = document.getElementById('zhipu-input-num');
     const outSlider = document.getElementById('zhipu-output-slider');
+    const inNum = document.getElementById('zhipu-input-num');
     const outNum = document.getElementById('zhipu-output-num');
-    const directCostEl = document.getElementById('zhipu-direct-cost-val');
-    const apivaleCostEl = document.getElementById('zhipu-apivale-cost-val');
-    const savingsPctEl = document.getElementById('zhipu-savings-pct');
-    const savingsAmtEl = document.getElementById('zhipu-savings-amt');
+    const directVal = document.getElementById('zhipu-direct-cost-val');
+    const apivaleVal = document.getElementById('zhipu-apivale-cost-val');
+    const savingsPct = document.getElementById('zhipu-savings-pct');
+    const savingsAmt = document.getElementById('zhipu-savings-amt');
 
-    if (!modelSelect || !inSlider || !inNum || !outSlider || !outNum) return;
+    if (!modelSelect || !inSlider || !outSlider || !inNum || !outNum || !directVal || !apivaleVal || !savingsPct || !savingsAmt) return;
 
-    // Pricing per 1M tokens (Direct vs APIVALE)
-    const pricing = {
-      'glm-5.2': { directIn: 1.40, directOut: 4.40, apiIn: 0.50, apiOut: 2.50 },
-      'glm-4-plus': { directIn: 0.70, directOut: 2.80, apiIn: 0.35, apiOut: 1.75 },
-      'glm-4-flash': { directIn: 0.15, directOut: 0.15, apiIn: 0.10, apiOut: 0.10 }
-    };
+    const modelKey = modelSelect.value;
+    const r = rates[modelKey] || rates['glm-5.2'];
 
-    function recalculate() {
-      const inVal = parseFloat(inSlider.value) || 10;
-      const outVal = parseFloat(outSlider.value) || 4;
-      const modelKey = modelSelect.value || 'glm-5.2';
-      const rates = pricing[modelKey] || pricing['glm-5.2'];
+    const inM = parseFloat(inNum.value) || 0;
+    const outM = parseFloat(outNum.value) || 0;
 
-      const totalDirect = (inVal * rates.directIn) + (outVal * rates.directOut);
-      const totalApivale = (inVal * rates.apiIn) + (outVal * rates.apiOut);
+    const directCost = (inM * r.directIn) + (outM * r.directOut);
+    const apivaleCost = (inM * r.apivaleIn) + (outM * r.apivaleOut);
 
-      const netSavings = Math.max(0, totalDirect - totalApivale);
-      const savingsPct = totalDirect > 0 ? ((netSavings / totalDirect) * 100).toFixed(1) : '0';
+    const saved = directCost - apivaleCost;
+    const pct = directCost > 0 ? (saved / directCost * 100) : 0;
 
-      directCostEl.textContent = '$' + totalDirect.toFixed(2);
-      apivaleCostEl.textContent = '$' + totalApivale.toFixed(2);
-      savingsPctEl.textContent = savingsPct + '%';
-      savingsAmtEl.textContent = '$' + netSavings.toFixed(2) + ' / mo';
-    }
+    directVal.textContent = '$' + directCost.toFixed(2);
+    apivaleVal.textContent = '$' + apivaleCost.toFixed(2);
+    savingsPct.textContent = (pct > 0 ? pct.toFixed(1) : '0') + '%';
+    savingsAmt.textContent = '$' + (saved > 0 ? saved.toFixed(2) : '0.00') + ' / mo';
+  }
 
-    inSlider.addEventListener('input', function() {
-      inNum.value = inSlider.value;
-      recalculate();
-    });
+  function initListeners() {
+    const inSlider = document.getElementById('zhipu-input-slider');
+    const outSlider = document.getElementById('zhipu-output-slider');
+    const inNum = document.getElementById('zhipu-input-num');
+    const outNum = document.getElementById('zhipu-output-num');
+    const modelSelect = document.getElementById('zhipu-calc-model');
 
-    inNum.addEventListener('input', function() {
-      inSlider.value = inNum.value;
-      recalculate();
-    });
+    if (!inSlider || !outSlider || !inNum || !outNum || !modelSelect) return;
 
-    outSlider.addEventListener('input', function() {
-      outNum.value = outSlider.value;
-      recalculate();
-    });
+    inSlider.addEventListener('input', function() { inNum.value = inSlider.value; updateZhipuCalc(); });
+    inNum.addEventListener('input', function() { inSlider.value = inNum.value; updateZhipuCalc(); });
+    outSlider.addEventListener('input', function() { outNum.value = outSlider.value; updateZhipuCalc(); });
+    outNum.addEventListener('input', function() { outSlider.value = outNum.value; updateZhipuCalc(); });
+    modelSelect.addEventListener('change', updateZhipuCalc);
 
-    outNum.addEventListener('input', function() {
-      outSlider.value = outNum.value;
-      recalculate();
-    });
-
-    modelSelect.addEventListener('change', recalculate);
-    recalculate();
+    updateZhipuCalc();
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initZhipuCalc);
+    document.addEventListener('DOMContentLoaded', initListeners);
   } else {
-    initZhipuCalc();
+    initListeners();
   }
 })();
 </script>
 
----
+## Why Direct Z.ai Billing Top-Up Fails for Overseas Developers
 
-<div class="my-6 border-l-4 border-indigo-500 bg-gray-900 rounded-r-lg p-5">
-  <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Definition</span>
-  <div class="mt-1 text-md font-semibold text-white">Zhipu AI KYC Bypass & zhipu_api_key Setup</div>
-  <p class="mt-2 text-sm text-gray-300">A Zhipu AI KYC Bypass (and GLM model proxy) refers to routing API requests through a pre-authenticated enterprise proxy gateway. This allows international developers to generate a functional API key without providing mainland Chinese identity verification (+86 phone numbers or resident IDs).</p>
-</div>
+Zhipu AI operates under domestic payment processing regulations. Their billing and registration infrastructure enforces three strict barriers:
 
----
-
-## Why Direct Registration Fails for Global Developers
-
-Zhipu AI is governed by strict local regulatory structures. Their platform enforces:
-1. **SMS Verification**: Virtual phone numbers and international prefixes (+1, +44, +33, etc.) are filtered and blocked on their registration screens.
-2. **Mandatory KYC**: Accessing high-concurrency API keys or recharging account balances triggers a mandatory real-name audit screen requiring biometric confirmation or corporate registrations.
+1. **SMS Verification**: Virtual phone numbers and international mobile prefixes (+1, +44, +33, etc.) are filtered and blocked on registration screens.
+2. **Mandatory KYC**: Accessing high-concurrency API keys or recharging account balances triggers a mandatory identity verification screen requiring Chinese national ID cards or local business licenses.
 3. **Billing Blockers**: There is zero native integration with global merchant gateways like PayPal. International developer cards (Visa, Mastercard, Amex) are rejected by Zhipu's domestic payment processor.
 
-### The Solution: APIVALE Enterprise Router
-APIVALE bridges this gap for developers around the world—whether you are connecting from the United States, France, Spain, or Asia-Pacific. We manage enterprise developer accounts with pre-verified backend connections. When you create an APIVALE account, you gain access to pooled enterprise developer credits. APIVALE handles currency conversion, verification compliances, and localized routing internally, giving you a clean, standard OpenAI-compatible endpoint.
+### The Solution: APIVALE Zero-KYC Gateway Router
 
-> "Mandatory local KYC and domestic billing filters are common hurdles for international developers using specialized Chinese AI models. By wrapping Zhipu and GLM endpoints behind an internationally compliant PayPal billing layer, APIVALE acts as a seamless zero-KYC gateway."
+APIVALE bridges this gap for developers around the world—whether connecting from the United States, France (`je suis en france`), Spain (`soy de españa`), or Latin America. We manage enterprise developer accounts with pre-verified backend connections. When you create an APIVALE account, you gain access to pooled enterprise developer credits. APIVALE handles currency conversion, verification compliance, and localized routing internally, giving you a clean, standard OpenAI-compatible endpoint.
+
+> "Mandatory local KYC and domestic billing filters are common hurdles for international developers using specialized Chinese AI models. By wrapping Zhipu and GLM endpoints behind an internationally compliant PayPal billing layer, APIVALE acts as a seamless zero-KYC gateway."  
 > — Sofia Costa, FinTech Integration & Security Expert, APIVALE
 
 ---
 
-## Troubleshooting Z.ai Billing Errors & GLM Bypass
+## Troubleshooting Z.ai Billing Errors: Quota, Verification & Packages
 
 When making API calls directly to Zhipu's endpoints or third-party IDE plugins (such as Cursor or Windsurf), developers frequently encounter specific console error messages:
 
 ### 1. Error: "Insufficient balance or no resource package please top up"
-This standard Z.ai error code occurs when your account balance falls below the required threshold or when your domestic resource package expires. Direct top-ups fail for international users because Z.ai's console requires mainland Chinese payment methods. By routing through APIVALE, you can top up your account balance instantly using **PayPal or global credit/debit cards** without hitting payment rejections.
+
+This standard Z.ai error occurs when your account balance falls below the required threshold or when your domestic resource package expires. Direct top-ups fail for international users because Z.ai's console requires mainland Chinese payment methods. By routing through APIVALE, you can complete a **Z.ai billing top-up** instantly using **PayPal or global credit/debit cards** without transaction rejections.
 
 ### 2. Error: "Verification steps required (401 Unauthorized / KYC Required)"
-What are the verification steps on Z.ai? The official console requires uploading identity cards and linking a mainland (+86) mobile phone number. Bypassing GLM verification is achieved by pointing your client's `base_url` to `https://apivale.com/v1` and using an APIVALE bearer token (`zhipu_api_key` proxy).
+
+What are the verification steps on Z.ai? The official console requires uploading domestic ID cards and linking a mainland (+86) phone number. Bypassing GLM verification is achieved by pointing your client's `base_url` to `https://apivale.com/v1` and using an APIVALE bearer token (`zhipu_api_key` proxy).
 
 ---
 
-## Integration Guides for Global Deployments
+## How to Pay for Z.ai & Call APIs: Code Integration Guide
 
-Integrating Zhipu models into your code after setting up APIVALE requires no special libraries—you can use the official OpenAI SDK.
+Integrating Zhipu models into your code after setting up APIVALE requires no special libraries—you can use the standard OpenAI SDK.
 
 ### Python SDK Guide
 
@@ -545,22 +530,22 @@ main();
   </div>
 </div>
 
-## Developer FAQ
+## Frequently Asked Questions: Z.ai Billing Top-Up & Limits
 
-**Q: Why does my international credit card fail on Z.ai and open.bigmodel.cn?**
-**A:** Zhipu and Z.ai developer portals process payments primarily through mainland Chinese financial settlement networks (Alipay, WeChat Pay, UnionPay). Foreign cards (Visa, MasterCard, Amex) are frequently rejected by merchant fraud filters or cross-border payment limits. Using APIVALE allows you to pay instantly via PayPal or international cards with 0 extra foreign exchange (FX) fees.
+**Q: Why does my international credit card fail on Z.ai and open.bigmodel.cn?**  
+**A:** Zhipu and Z.ai developer portals process payments primarily through mainland Chinese financial settlement networks (Alipay, WeChat Pay, UnionPay). Foreign credit cards (Visa, MasterCard, Amex) are rejected by merchant fraud filters or cross-border payment limits. Using APIVALE allows you to pay instantly via PayPal or international cards with 0 extra foreign exchange (FX) fees.
 
-**Q: What is a Zhipu API Key (zhipu_api_key) and how do I get one without KYC?**
-**A:** A Zhipu API Key (`zhipu_api_key`) is the authorization Bearer token used to authenticate requests to GLM-5.2 and GLM-5.3 models. Obtaining an official key from `open.bigmodel.cn` requires Chinese identity verification and a +86 phone number. With APIVALE, you can generate an OpenAI-compatible API key instantly using an email address, with zero KYC required.
+**Q: How do I fix the Z.ai error "Insufficient balance or no resource package please top up"?**  
+**A:** This error occurs when your Z.ai or GLM resource pack runs out or balance reaches zero. Because international cards cannot directly recharge mainland accounts, developers can route their calls through APIVALE's unified gateway (`https://apivale.com/v1`) using a pre-funded balance via PayPal.
 
-**Q: What are the verification steps required on the official Z.ai console?**
-**A:** The official Z.ai verification steps require linking a mainland Chinese (+86) mobile phone number via SMS code and completing biometric identity verification or submit a mainland business license.
+**Q: What are the verification steps required on Z.ai and how do I bypass them?**  
+**A:** Official Z.ai verification steps require linking a mainland Chinese (+86) mobile phone number via SMS code and completing biometric identity verification or submitting a mainland business license. You can bypass GLM verification by creating a free APIVALE account with your email, claiming $0.20 instant credit, and using an OpenAI-compatible proxy key.
 
-**Q: What is the daily usage limit for Z.ai models?**
-**A:** Direct Z.ai accounts enforce daily tier limits based on your KYC verification tier. With APIVALE, enterprise pooled bandwidth provides high-concurrency access to `glm-5.2` and `glm-5.3-flash` without daily tier throttling.
+**Q: What is a Zhipu API Key (zhipu_api_key) and how can international developers obtain one?**  
+**A:** A Zhipu API Key (`zhipu_api_key`) is the authentication Bearer token for accessing GLM-5.2 and GLM-5.3 models. Developers in Europe (France, Spain, Germany) or the Americas can access these models via APIVALE without local phone numbers or Chinese banking credentials.
 
-**Q: Can I pay for Z.ai top-ups with PayPal?**
-**A:** Direct Z.ai consoles do not support PayPal checkout. However, APIVALE fully supports PayPal instant checkout and major international debit/credit cards for all GLM model top-ups.
+**Q: What is the daily usage limit and monthly subscription cost for Z.ai models?**  
+**A:** Direct Z.ai accounts enforce daily tier limits and require monthly subscription commitments or domestic recharge minimums. APIVALE provides pay-as-you-go billing with zero monthly subscription lock-in, higher enterprise concurrency pools, and wholesale token pricing ($0.50/1M input for GLM-5.2).
 
 <script type="application/ld+json">
 {
@@ -577,34 +562,34 @@ main();
     },
     {
       "@type": "Question",
-      "name": "What is a Zhipu API Key (zhipu_api_key) and how do I get one without KYC?",
+      "name": "How do I fix the Z.ai error 'Insufficient balance or no resource package please top up'?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A Zhipu API Key (zhipu_api_key) is the Bearer token used to authenticate requests to GLM models. Obtaining an official key from Zhipu requires Chinese identity verification and a +86 phone number. With APIVALE, you generate an OpenAI-compatible API key instantly with zero KYC."
+        "text": "This error occurs when your Z.ai or GLM resource pack runs out or balance reaches zero. Because international cards cannot directly recharge mainland accounts, developers can route their calls through APIVALE's unified gateway using a pre-funded balance via PayPal."
       }
     },
     {
       "@type": "Question",
-      "name": "What are the verification steps required on the official Z.ai console?",
+      "name": "What are the verification steps required on Z.ai and how do I bypass them?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The official Z.ai verification steps require linking a mainland Chinese (+86) mobile phone number via SMS code and completing identity verification or submitting a business license."
+        "text": "Official Z.ai verification steps require linking a mainland Chinese (+86) mobile phone number via SMS code and completing identity verification or submitting a business license. You can bypass GLM verification by creating a free APIVALE account with your email."
       }
     },
     {
       "@type": "Question",
-      "name": "What is the daily usage limit for Z.ai models?",
+      "name": "What is a Zhipu API Key (zhipu_api_key) and how can international developers obtain one?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Direct Z.ai accounts enforce daily tier limits based on your verification tier. With APIVALE, enterprise pooled bandwidth provides high-concurrency access to glm-5.2 and glm-5.3-flash without daily tier throttling."
+        "text": "A Zhipu API Key (zhipu_api_key) is the authentication Bearer token for accessing GLM models. Developers in Europe or the Americas can access these models via APIVALE without local phone numbers or Chinese banking credentials."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I pay for Z.ai top-ups with PayPal?",
+      "name": "What is the daily usage limit and monthly subscription cost for Z.ai models?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Direct Z.ai consoles do not support PayPal checkout. However, APIVALE fully supports PayPal instant checkout and major international debit/credit cards for all GLM model top-ups."
+        "text": "Direct Z.ai accounts enforce daily tier limits and require monthly subscription commitments. APIVALE provides pay-as-you-go billing with zero monthly subscription lock-in and higher enterprise concurrency pools."
       }
     }
   ]

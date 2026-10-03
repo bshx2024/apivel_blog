@@ -74,16 +74,18 @@
      * H1：`How to Pay for Z.ai: Billing Top-Up & Credit Card Fix`（53 字符）；
      * Meta Description：149 字符，全面覆盖 `top-up failures`, `declined credit cards`, `PayPal`, `zero KYC`；
      * Frontmatter：补全 `keyTakeaways` 4 参数结构化卡片；
-  2. **Widget AST 干净度修复**：
-     * 将计算器 Widget 与 Definition 盒子内的 `<h3/h4>` 干净替换为带有 CSS 样式类的 `<div/>`，彻底打通 1 H1 -> H2 -> H3 的干净 DOM AST 树。
-  3. **内容扩充与 FAQ Schema 强化**：
-     * 补充故障排查小节 `Troubleshooting Z.ai Billing Errors & GLM Bypass`，覆盖 `Insufficient balance or no resource package` 报错；
-     * 补充 5 组针对性 FAQ 与 JSON-LD Schema（`zhipu_api_key`, `verification steps`, `daily limit`, `PayPal payment`）；
-     * 正文字数达 1343 prose words，通过 `audit.ps1` 获得 **0 Blockers, 0 Warnings** 满分通关。
+  2. **Widget AST 干净度与标题跳级修复**：
+     * 解决 H1 -> H3 跳级硬伤：将开篇快速启动升级为 `## Quick Start: How to Complete Z.ai Billing Top-Up in 3 Steps`，严格保证 1 H1 -> 6 H2 -> 6 H3 的无跳级完整 AST 树结构；
+     * 将计算器 Widget 与 Definition 盒子内的 `<h3/h4>` 干净替换为带有 CSS 样式类的 `<div/>`。
+  3. **内容扩充、词数压缩与 FAQ Schema 强化**：
+     * 5 个 H2 全面深度嵌入 GSC 截图词（`Z.ai Billing Top-Up`, `Pay for Z.ai`, `Troubleshooting Z.ai Billing Errors`）；
+     * 补充故障排查小节拦截报错 `Insufficient balance or no resource package please top up` 及 `verification steps`；
+     * FAQ 与 JSON-LD Schema 100% 对应 GSC 截图 PAA（`daily usage limit`, `monthly subscription cost`）与 PASF（`Z AI PayPal`, `what is zhipu_api_key`）；
+     * 正文精简压缩至最佳黄金区间，消灭主题稀释。
   4. **双向网格互连 (Mesh Weaving)**：
      * 在 `/blog/how-to-access-z-ai-glm-5-2/` 与 `/blog/connect-glm-5-3-to-claude-code-cli-cursor/` 锚点中全面刷新指向本页的强契合锚文本。
 * **14 天因果验证假设 (Hypothesis)**：
-  * 在补齐 `Top-Up` 与 `Credit Card` 强相关高亮词后，预期 3-7 天内被谷歌快照重抓取，消灭 `缺少字词: top` 提示，使 136+ 展示量在 Position 2.0~4.6 的顶峰位置获得 8%~15% 以上的真实 CTR 突破，并直接带动海外开发者通过 PayPal 充值 APIVALE。
+  * 在补齐 `Top-Up` 与 `Credit Card` 强相关高亮词并消除 H1->H3 标题跳级后，预期 3-7 天内被谷歌快照重抓取，消灭 `缺少字词: top` 提示，使 136+ 展示量在 Position 2.0~4.6 的顶峰位置获得 8%~15% 以上的真实 CTR 突破，并直接带动海外开发者通过 PayPal 充值 APIVALE。
 
 
 ### 📅 2026-10-01 - 📝 [突发旗舰爆发词拦截与双引擎降本]: 《Claude Opus 5.5 API: Pricing & Claude Code Guide》全网上线，拦截 Breakout 搜索并引流 Qwen 3.8 Max / DeepSeek V4
