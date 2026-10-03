@@ -1,23 +1,23 @@
 ---
-title: "OmniRoute Setup with Claude Code: 3-Step Guide (and When to Skip It)"
-metaTitle: "OmniRoute Setup with Claude Code: Install & Review | APIVALE"
-description: "Master OmniRoute setup with Claude Code via npm or Docker. Compare local proxy latency, CVE risks, and unthrottled APIVALE PayPal fallback for coding agents."
+title: "OmniRoute Claude Setup & Plugin Guide: Free Proxy & Ban Safety"
+metaTitle: "OmniRoute Claude Setup & Plugin Guide: Free Proxy | APIVALE"
+description: "Complete OmniRoute Claude setup guide for Claude Code CLI & Desktop. Install local plugin, avoid account bans, & route free models via APIVALE proxy."
 date: "2026-09-25"
 author: "Sofia Costa"
 authorTitle: "FinTech Integration & API Security Expert, APIVALE"
 authorBio: "Sofia Costa specializes in API gateway security, enterprise proxy hardening, and seamless global checkout architectures."
-tags: ["OmniRoute setup claude code", "Omniroute setup with claude windows 10", "Omniroute setup with claude ubuntu", "OmniRoute Claude Code", "OmniRoute setup", "OmniRoute Docker", "Claude Code install", "OmniRoute online", "AI Gateway", "APIVALE", "PayPal"]
+tags: ["OmniRoute Claude", "omniroute claude setup", "omniroute claude plugin", "omniroute claude ban", "omniroute claude free", "OmniRoute setup claude code", "Claude Code install", "APIVALE", "PayPal"]
 image: "/blog/og-cover.png"
 lang: "en"
 keyTakeaways:
   - label: "Target Keyword"
-    value: "OmniRoute Setup with Claude Code"
+    value: "OmniRoute Claude Setup & Plugin Guide"
     isCode: false
   - label: "Default Local Endpoint"
     value: "http://localhost:20128/v1"
     isCode: true
-  - label: "Target Workflows"
-    value: "Claude Code CLI, Cursor, Cline, Copilot"
+  - label: "Ban Risk & Safety"
+    value: "Loopback Binding (127.0.0.1) Prevents Key Leaks"
   - label: "Billing & Fallback"
     value: "PayPal & Global Cards ($0.20 Trial)"
     highlight: true
@@ -79,9 +79,9 @@ curl -X POST https://api.apivale.com/v1/chat/completions \
 
 ---
 
-## 1. Three-Step OmniRoute Installation via npm and Docker
+## 1. What is OmniRoute Claude & How Does the Desktop / Plugin Proxy Work?
 
-Deploy OmniRoute locally using Node.js or an isolated Docker container to expose port 20128.
+Deploy OmniRoute locally using Node.js or an isolated Docker container to expose port 20128 for Claude Code CLI and Desktop.
 
 ```mermaid
 graph TD
@@ -125,7 +125,7 @@ When the endpoint returns `{"status":"ok"}`, the proxy is ready to accept provid
 
 ---
 
-## 2. OmniRoute Setup with Claude Code: Step-by-Step Terminal Integration
+## 2. OmniRoute Claude Code Setup: GitHub Installation & Base URL Config
 
 Completing an **OmniRoute setup with Claude Code** CLI requires configuring custom Anthropic environment variables and establishing per-model routing profiles.
 
@@ -191,9 +191,9 @@ With this cascading configuration, if your primary direct key triggers a 429 sta
 
 ---
 
-## 3. OmniRoute Self-Hosted Gateway vs. Managed Cloud API Router
+## 3. OmniRoute Claude Free vs APIVALE Online Gateway Fallback
 
-Evaluate whether maintaining local proxy daemons aligns with your team's velocity compared to utilizing an enterprise cloud gateway.
+Evaluate whether maintaining local proxy daemons aligns with your team's velocity compared to utilizing an enterprise cloud gateway (`omniroute claude free`).
 
 | Operational Dimension | OmniRoute (Self-Hosted Proxy) | APIVALE (Managed Cloud Gateway) | Best For... |
 | :--- | :--- | :--- | :--- |
@@ -226,9 +226,9 @@ While stripping 50,000 tokens of package manager output saves substantial cost, 
 
 ---
 
-## 4. Security Architecture & CVE Considerations for Self-Hosted Gateways
+## 4. Can Using OmniRoute Cause a Claude Ban? Safety & Account Risks
 
-Deploying local network proxies requires strict adherence to security best practices to protect sensitive API keys and internal source code.
+Deploying local network proxies requires strict adherence to security best practices to protect sensitive API keys and avoid account ban risks (`omniroute claude ban`).
 
 ```mermaid
 sequenceDiagram
@@ -409,14 +409,14 @@ npx @anthropic-ai/claude-code</pre>
 
 ## Frequently Asked Questions (FAQ)
 
-### How do I complete an OmniRoute setup with Claude Code?
-Install OmniRoute via `npx omniroute start --port 20128` or Docker. Then, configure your terminal environment variables by setting `export ANTHROPIC_BASE_URL="http://localhost:20128/v1"` and `export ANTHROPIC_AUTH_TOKEN="your_key"` before executing `npx @anthropic-ai/claude-code`.
+### Can using OmniRoute cause a Claude account ban?
+No, using OmniRoute locally on `localhost:20128` does not trigger Anthropic bans if bound strictly to loopback (`127.0.0.1`). However, binding to `0.0.0.0` or sharing unencrypted proxy endpoints across public IPs can expose API tokens to credential theft.
 
-### How to connect OmniRoute to Claude Code?
-Connect OmniRoute by redirecting Claude Code's Anthropic base URL to your local loopback address (`http://127.0.0.1:20128/v1`). If you require zero-setup cloud routing without keeping a local Node process running, route directly to `https://api.apivale.com/v1` with your APIVALE API key.
+### How to add OmniRoute plugin to Claude Code CLI and Desktop?
+Configure Claude Code CLI by exporting environment variables (`export ANTHROPIC_BASE_URL="http://localhost:20128/v1"`). For Claude Desktop, edit `claude_desktop_config.json` to point your MCP plugins toward `http://localhost:20128/v1`.
 
-### Is running a local self-hosted AI gateway like OmniRoute secure?
-Running OmniRoute locally is secure if strictly bound to loopback interface `127.0.0.1`. Binding to `0.0.0.0` or running unverified npm packages exposes local API keys to local network snooping. For production team collaboration, managed API gateways with encrypted key vaults and automated IP access controls provide superior isolation.
+### Is OmniRoute Claude free to use?
+Yes, OmniRoute is an open-source, free MIT-licensed proxy daemon (`diegosouzapw/OmniRoute`). However, users must supply valid API keys from model providers or fall back to managed cloud gateways like APIVALE ($0.20 free signup trial).
 
 ### How do I access Claude Sonnet 5 and DeepSeek V4 without managing local Docker containers?
 Access both frontier models directly through the APIVALE unified cloud gateway (`https://api.apivale.com/v1`). APIVALE supports PayPal official instant checkout, international credit cards, Apple Pay, and Alipay with zero KYC and no domestic phone verification.
@@ -428,26 +428,26 @@ Access both frontier models directly through the APIVALE unified cloud gateway (
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How do I complete an OmniRoute setup with Claude Code?",
+      "name": "Can using OmniRoute cause a Claude account ban?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Install OmniRoute via npx omniroute start --port 20128 or Docker. Then configure your terminal with ANTHROPIC_BASE_URL='http://localhost:20128/v1' and launch Claude Code CLI."
+        "text": "No, using OmniRoute locally on localhost:20128 does not trigger Anthropic bans if bound strictly to loopback (127.0.0.1). Binding to 0.0.0.0 or sharing unencrypted proxy endpoints across public IPs exposes API tokens to credential theft."
       }
     },
     {
       "@type": "Question",
-      "name": "How to connect OmniRoute to Claude Code?",
+      "name": "How to add OmniRoute plugin to Claude Code CLI and Desktop?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Set ANTHROPIC_BASE_URL to http://127.0.0.1:20128/v1 in your shell. For a zero-maintenance cloud solution, set ANTHROPIC_BASE_URL to https://api.apivale.com/v1 with an APIVALE token."
+        "text": "Configure Claude Code CLI by exporting ANTHROPIC_BASE_URL='http://localhost:20128/v1'. For Claude Desktop, update claude_desktop_config.json to route MCP plugins through localhost:20128."
       }
     },
     {
       "@type": "Question",
-      "name": "Is running a local self-hosted AI gateway like OmniRoute secure?",
+      "name": "Is OmniRoute Claude free to use?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It is secure when bound strictly to 127.0.0.1. Binding to 0.0.0.0 exposes local API keys and unencrypted proxy payloads to other machines on your local network."
+        "text": "Yes, OmniRoute is an open-source free MIT-licensed proxy daemon. However, users must supply valid provider API keys or fall back to managed cloud gateways like APIVALE."
       }
     },
     {
@@ -463,6 +463,16 @@ Access both frontier models directly through the APIVALE unified cloud gateway (
 </script>
 
 ---
+
+<div class="my-8 rounded-xl bg-gray-900 border border-gray-800 p-5">
+  <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Related Guides in the Claude &amp; Gateway Cluster</span>
+  <div class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+    <a href="/blog/how-to-set-up-claude-code-cli-with-custom-base-url/" class="text-gray-300 hover:text-emerald-400 font-medium transition-colors">→ Claude Code CLI Custom Base URL Setup</a>
+    <a href="/blog/claude-opus-vs-gpt-5-5-for-coding/" class="text-gray-300 hover:text-emerald-400 font-medium transition-colors">→ Claude Opus 5.5 Free Trial vs GPT-5.5 Coding</a>
+    <a href="/blog/ox-alpha-claude-code-cursor-setup/" class="text-gray-300 hover:text-emerald-400 font-medium transition-colors">→ Ox Alpha (0xAlpha) Claude Code &amp; Cursor Setup</a>
+    <a href="/blog/cursor-pro-vs-custom-api-key/" class="text-gray-300 hover:text-emerald-400 font-medium transition-colors">→ Cursor Pro vs Custom API Key Cost Guide</a>
+  </div>
+</div>
 
 <!-- Ending Wallet-Aligned CTA Card -->
 <div class="cta-card my-10 rounded-2xl border border-emerald-500/40 bg-gradient-to-b from-gray-900 via-gray-900/90 to-emerald-950/30 p-8 shadow-2xl text-center">

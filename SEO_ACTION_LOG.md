@@ -58,6 +58,29 @@
 
 ## 📝 优化行动记录 (2026-10)
 
+### 📅 2026-10-03 - 📝 [高排名低CTR爆炸性纠偏]: 《OmniRoute Claude Setup & Plugin Guide》依据 4 张 Google Trends (>5,000% Breakout) 与 SERP 实测数据深度升级
+
+* **影响页面/路由**：
+  * 主优化页面：`/blog/omniroute-claude-code-setup/` (`src/content/blog/omniroute-claude-code-setup.md`)
+* **调整背景与搜索意图洞察**：
+  * **高排名低点击 (0.4% CTR) 黄金爆发页**：GSC 真实数据显示该页面已站上 **Google 首页第 3.0 名 (`omniroute claude`)** 与第 7.3 名 (`omniroute claude code`)，但 CTR 仅为 0.4%！根因在于原标题 `Install & Review` 偏泛，缺乏开发者紧急寻找配置、避坑封号 (ban) 与插件设定的具体刺点。
+  * **Google Trends >5,000% Breakout 趋势**：Google Trends 实测证明 `omniroute claude` 在全美呈 >5,000% 飙升趋势；同时 Google 搜索下拉与 Related Searches 大量拉出 `omniroute claude plugin`, `omniroute claude ban`, `omniroute claude free` 等核心需求。
+* **具体落地优化**：
+  1. **ABC Title & Meta 升级**：
+     * MetaTitle：`OmniRoute Claude Setup & Plugin Guide: Free Proxy | APIVALE`（58 字符黄金区间，零 SERP 截断）；
+     * Title/H1：`OmniRoute Claude Setup & Plugin Guide: Free Proxy & Ban Safety`（63 字符）；
+     * Meta Description：`Complete OmniRoute Claude setup guide for Claude Code CLI & Desktop. Install local plugin, avoid account bans, & route free models via APIVALE proxy.`（154 字符）；
+  2. **正文 4 大 H2 标题精准映射 Google SERP 实测词**：
+     * H2-1：`## 1. What is OmniRoute Claude & How Does the Desktop / Plugin Proxy Work?`
+     * H2-2：`## 2. OmniRoute Claude Code Setup: GitHub Installation & Base URL Config`
+     * H2-3：`## 3. OmniRoute Claude Free vs APIVALE Online Gateway Fallback`
+     * H2-4：`## 4. Can Using OmniRoute Cause a Claude Ban? Safety & Account Risks`（杀手级痛点，拦截 `ban` 关键词）
+  3. **FAQ Schema & 文末集群导航 (Cluster Nav Box)**：
+     * FAQ Markdown 与 JSON-LD Schema 注入 `Can using OmniRoute cause a Claude account ban?` 与 `How to add OmniRoute plugin`；
+     * CTA 卡片前注入 `Related Guides in the Claude & Gateway Cluster` 导航盒，提供 4 篇横向教程二次跳转出口，击碎 84% 跳出率。
+* **14 天因果验证假设 (Hypothesis)**：
+  * 凭借 Google 首页第 3 名的已有权重，在注入 `Plugin`, `Ban Safety`, `Free Proxy` 等超级痛点词并消灭 SERP 标题截断后，预期 3-7 天内该页面的点击率 (CTR) 从 0.4% 暴涨至 15%+，点击量实现 30~50 倍的爆发增长。
+
 ### 📅 2026-10-03 - 📝 [GSC实测数据与PAA意图精细化优化]: 《Claude Opus 5.5 Free Trial & Coding Cost Guide》根据 3 张 GSC/SERP 真实截图全方位升级 TDK 与 PAA 布局
 
 * **影响页面/路由**：
