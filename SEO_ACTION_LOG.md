@@ -82,10 +82,13 @@
      * 补充故障排查小节拦截报错 `Insufficient balance or no resource package please top up` 及 `verification steps`；
      * FAQ 与 JSON-LD Schema 100% 对应 GSC 截图 PAA（`daily usage limit`, `monthly subscription cost`）与 PASF（`Z AI PayPal`, `what is zhipu_api_key`）；
      * 正文精简压缩至最佳黄金区间，消灭主题稀释。
-  4. **双向网格互连 (Mesh Weaving)**：
-     * 在 `/blog/how-to-access-z-ai-glm-5-2/` 与 `/blog/connect-glm-5-3-to-claude-code-cli-cursor/` 锚点中全面刷新指向本页的强契合锚文本。
+  4. **顶级 SEO 双向网格互连 (Atomic Bidirectional Mesh Weaving)**：
+     * **去堆叠与情境化**：消除开篇括号内 3 个内链连续堆砌的惩罚，将 `How to Access Z.ai GLM-5.2` 保留在首屏，`Cursor Pro vs Custom API Key` 分流至算力成本对比区，`How to Use Z.ai in Cursor` 分流至代码终端集成区；
+     * **实体锚文本升级**：将对比表格内的弱锚文本 `See Flash Guide` 全面替换为高权重关键词锚文本 `GLM-5.3 Flash API Pricing Guide`；
+     * **文末集群承接模块**：在 CTA 卡片前嵌入 `Related Guides in the GLM & Z.ai Cluster` 导航盒子，提供 5 篇核心进阶技术路径，直接打通站内二次跳转，强力击碎 84% 高跳出率与人均 1 页问题；
+     * **反向进站织网打通**：同步修改并提交 `how-to-use-z-ai-api-in-cursor-editor.md`、`how-to-connect-glm-5-3-to-claude-code-cli.md`、`glm-5-3-flash-ox-alpha-api-pricing-guide.md` 3 篇既有文章，全面注入指向本页的高权重上下文锚链，将进站内链从 3 篇扩充至 6 篇，形成无断头路的完整 Topic Cluster Mesh。
 * **14 天因果验证假设 (Hypothesis)**：
-  * 在补齐 `Top-Up` 与 `Credit Card` 强相关高亮词并消除 H1->H3 标题跳级后，预期 3-7 天内被谷歌快照重抓取，消灭 `缺少字词: top` 提示，使 136+ 展示量在 Position 2.0~4.6 的顶峰位置获得 8%~15% 以上的真实 CTR 突破，并直接带动海外开发者通过 PayPal 充值 APIVALE。
+  * 在消除首段堆砌、升级实体锚文本、注入 6 篇强相关进站链接并新增文末集群推荐盒子后，预期 3-7 天内打通站内权重流动（PageRank Flow），消灭单向死链，并将当前 84% 跳出率显著降低至 55% 以下，人均浏览页数从 1 页提升至 2.2 页以上。
 
 
 ### 📅 2026-10-01 - 📝 [突发旗舰爆发词拦截与双引擎降本]: 《Claude Opus 5.5 API: Pricing & Claude Code Guide》全网上线，拦截 Breakout 搜索并引流 Qwen 3.8 Max / DeepSeek V4

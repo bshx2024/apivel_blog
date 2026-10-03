@@ -51,7 +51,7 @@ lang: "en"
 
 Zhipu AI's flagship **GLM-5.3** introduces a 743-billion parameter Mixture-of-Experts (MoE) model with native 128K output generation and hybrid Thinking modes, delivering a +50% coding uplift over previous iterations. While Anthropic's Claude Code CLI expects Anthropic-formatted `/v1/messages` payloads, APIVALE translates Anthropic messages into GLM-5.3 reasoning endpoints while passing Thinking stream deltas seamlessly back to the terminal.
 
-By routing terminal requests through APIVALE's protocol bridge, developers access GLM-5.3's 1M-context window at **$0.45/1M** input tokens (an 85% cost arbitrage) with zero +86 SMS barriers and instant PayPal checkout.
+By routing terminal requests through APIVALE's protocol bridge, developers access GLM-5.3's 1M-context window at **$0.45/1M** input tokens (an 85% cost arbitrage) with zero +86 SMS barriers and instant PayPal checkout (see our troubleshooting walkthrough on [Z.ai billing top-up and credit card payment fix](/blog/bypass-zhipu-ai-real-name-verification/)).
 
 ```mermaid
 graph LR

@@ -1,4 +1,4 @@
-﻿---
+---
 title: "How to Use Z.ai (Zhipu) API in Cursor Editor: Setup Custom Endpoint"
 metaTitle: "Use Z.ai API in Cursor Editor [30-Sec Setup] | APIVALE"
 description: "Configure Cursor Editor with Z.ai (Zhipu AI) GLM-5.2 using custom OpenAI base URL. Bypass real-name KYC hurdles with APIVALE PayPal gateway."
@@ -37,7 +37,7 @@ Attempting to connect Cursor directly to Zhipu's official endpoint vs. using API
 | **Cursor Base URL** | `https://open.bigmodel.cn/api/paas/v4/` (Incompatible format) | `https://apivale.com/v1` (100% OpenAI compatible) |
 | **Authentication Header** | Custom JWT Token (Requires SDK generation) | Standard `Bearer` API Key |
 | **Ideal Model For Cursor** | Manual JSON translation required | `glm-5.2`, `glm-4-plus` mapped automatically |
-| **Payment & Billing** | Chinese Bank Cards / Alipay only | **PayPal Global Billing** / Credit Cards via PayPal |
+| **Payment & Billing** | Chinese Bank Cards / Alipay (declines foreign cards) | **PayPal & Global Credit Cards** (see our [Z.ai Billing Top-Up & Credit Card Guide](/blog/bypass-zhipu-ai-real-name-verification/)) |
 | **Latency / Edge Routing** | Unoptimized routing from US/EU | Global CDN edge optimization (~150ms TTFT) |
 
 ---
@@ -45,7 +45,7 @@ Attempting to connect Cursor directly to Zhipu's official endpoint vs. using API
 <div class="my-6 border-l-4 border-indigo-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Definition</span>
   <h4 class="mt-1 text-md font-semibold text-white">Cursor Custom Endpoint</h4>
-  <p class="mt-2 text-sm text-gray-300">A Cursor Custom Endpoint is an override configuration within the Cursor IDE settings that redirects LLM API calls from the default OpenAI server to a third-party reverse proxy or custom gateway while maintaining the standard OpenAI SDK schema.</p>
+  <p class="mt-2 text-sm text-gray-300">A Cursor Custom Endpoint is an override configuration within the Cursor IDE settings that redirects LLM API calls from the default OpenAI server to a third-party reverse proxy or custom gateway while maintaining the standard OpenAI SDK schema. Because official Zhipu developer accounts reject foreign payment cards and enforce domestic identity verification, developers configure APIVALE as a custom endpoint to bypass KYC and recharge balances seamlessly via PayPal (see our step-by-step <a href="/blog/bypass-zhipu-ai-real-name-verification/" class="text-indigo-400 hover:underline font-medium">Z.ai Billing Top-Up &amp; Credit Card Fix Guide</a>).</p>
 </div>
 
 ---
