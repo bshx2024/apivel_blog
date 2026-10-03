@@ -252,7 +252,7 @@ Test your APIVALE endpoint and model execution directly inside this article:
 
 ## Qwen 3.8 vs. Claude Sonnet 5 Benchmark & Cost Comparison
 
-Evaluating the 2.4T MoE architecture against Anthropic flagship models demonstrates significant cost savings and faster Time-to-First-Token (TTFT). Furthermore, for autonomous agent architectures and multi-step execution loops, explore our [Meta Muse AI and Muse Spark API Guide](/blog/meta-muse-ai-api-setup) for agentic cost arbitrage and model fallback strategies.
+Evaluating the 2.4T MoE architecture against Anthropic flagship models demonstrates significant cost savings and faster Time-to-First-Token (TTFT). Furthermore, for autonomous agent architectures and multi-step execution loops, explore our [Meta Muse AI and Muse Spark API Guide](/blog/meta-muse-ai-api-setup/) for agentic cost arbitrage and model fallback strategies.
 
 | Metric / Specification | Official Claude Sonnet 5 | Qwen 3.8-Max (via APIVALE) |
 | :--- | :--- | :--- |

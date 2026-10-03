@@ -70,7 +70,7 @@ The platform centralizes multiple model families under a single invocation names
 2. **Muse Code**: A high-efficiency coding specialist fine-tuned for automated diff resolution, repository linting, and syntax generation.
 3. **Multimodal Media Engines**: Dedicated endpoints including Muse Image and Muse Voice Transcribe for cross-modal pipelines.
 
-To explore building autonomous multi-step agents on top of these models, consult our dedicated [Muse AI API Setup & Cost Guide](/blog/meta-muse-ai-api-setup).
+To explore building autonomous multi-step agents on top of these models, consult our dedicated [Muse AI API Setup & Cost Guide](/blog/meta-muse-ai-api-setup/).
 
 ### The Subscription vs. API Key Trap
 
