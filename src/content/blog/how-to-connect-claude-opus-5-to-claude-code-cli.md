@@ -44,15 +44,16 @@ lang: "en"
 
 Anthropic's flagship **Claude Opus 5** model delivers industry-leading reasoning for complex system refactoring, multi-file code synthesis, and deep architectural debugging. However, invoking Opus 5 directly in continuous agent loops can create operational challenges: steep token consumption costs during multi-turn exploration, hourly rate-limit throttles (429 exceptions), and payment verification failures on corporate or international payment cards.
 
-By connecting Claude Code CLI and Cursor to APIVALE's high-concurrency gateway, developers gain unified access to Opus 5 with dedicated throughput pools, automated failover routes, and flexible global Waffo billing. Exploring newer releases? Compare benchmarks in our [Claude Opus 5.5 vs GPT-5.5 Coding & 85% Cost Guide](/blog/claude-opus-vs-gpt-5-5-for-coding/) or read our deep-dive analysis on the [Claude Opus 5.2 grayscale and Qwen 3.8 Max alternative in Claude Code](/blog/claude-code-opus-5-2-alternative-qwen-3-8-max/).
+By connecting Claude Code CLI and Cursor to APIVALE's high-concurrency gateway, developers gain unified access to Opus 5 with dedicated throughput pools, automated failover routes, and flexible global PayPal billing. Migrating to the latest release? Read our new [Claude Opus 5.5 API: Pricing, Claude Code CLI Setup & Cost Guide](/blog/claude-opus-5-5-api-pricing-claude-code-guide) for adaptive thinking optimization, or compare benchmarks in our [Claude Opus 5.5 vs GPT-5.5 Coding Guide](/blog/claude-opus-vs-gpt-5-5-for-coding/).
 
 ```mermaid
 graph LR
     A["Claude Code CLI / Cursor"] -->|Anthropic /v1/messages| B["APIVALE Global Gateway"]
     B -->|Dedicated Upstream Pool| C["Claude Opus 5 (claude-opus-5)"]
-    B -->|Flagship 5.5 Comparison| F["Claude Opus 5.5 vs GPT-5.5"]
+    B -->|Latest Flagship Setup & Pricing| G["Claude Opus 5.5 API Guide"]
+    B -->|Flagship Comparison| F["Claude Opus 5.5 vs GPT-5.5"]
     B -->|Grayscale & Cost Alternative| D["Qwen 3.8 Max (Opus 5.2 Drop-in)"]
-    B -->|Billing Engine| E["Waffo Global Billing"]
+    B -->|Billing Engine| E["PayPal Global Billing"]
 ```
 
 ---
@@ -354,7 +355,7 @@ npx @anthropic-ai/claude-code
 ```
 
 > [!TIP]
-> **Windows Token Quota Monitoring:** Want a native status bar on Windows 11/10 to monitor your token burn rates while running Claude Code CLI? Check out our [CodexBar Windows Setup Guide](/blog/codexbar-windows-setup-safety-guide/) to prevent sudden rate limit pauses.
+> **Windows Token Quota Monitoring:** Want a native status bar on Windows 11/10 to monitor your token burn rates while running Claude Code CLI? Check out our [CodexBar Windows Setup Guide](/blog/how-to-connect-claude-opus-5-to-claude-code-cli/) to prevent sudden rate limit pauses.
 
 ### 3. Connecting Cursor IDE & Windsurf to Claude Opus 5
 

@@ -1,12 +1,12 @@
 ---
-title: "Space Bunny Alpha: 1M-Token Model Benchmark, OpenRouter API & Cline Setup"
-metaTitle: "Space Bunny Alpha: OpenRouter Benchmark & API | APIVALE"
-description: "Space Bunny Alpha model benchmark, OpenRouter API access, Cline & OpenCode setup guide. Connect the 1M-token stealth LLM with custom base URL & PayPal."
+title: "Space Bunny Alpha API Key: Free Trial Access, Benchmarks & Coding Setup"
+metaTitle: "Space Bunny Alpha API Key: Free Access & Setup | APIVALE"
+description: "Get your Space Bunny Alpha API key with $0.20 instant free trial credits. Explore benchmarks, Python API examples, and seamless Cline & OpenCode setup with PayPal."
 date: "2026-09-29"
 author: "Elena Rostova"
 authorTitle: "Senior AI Systems Architect & LLM Optimization Lead, APIVALE"
 authorBio: "Elena Rostova is a distributed systems architect specializing in high-throughput LLM gateway proxies, agent protocol orchestration, and low-latency API inference."
-tags: ["Space Bunny Alpha", "Space Bunny API", "OpenRouter", "Cline", "OpenCode", "Pixel Canary", "APIVALE", "LLM Benchmark"]
+tags: ["Space Bunny Alpha", "Space Bunny Alpha API Key", "Space Bunny API Free", "OpenCode", "Cline", "OpenRouter", "LLM Benchmark", "APIVALE"]
 image: "/blog/og-cover.png"
 lang: "en"
 keyTakeaways:
@@ -32,16 +32,34 @@ keyTakeaways:
 <div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
   <div class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</div>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
-    <li><strong>Breakout 1M Stealth Engine</strong>: The Space Bunny Alpha model launched anonymously on OpenRouter, logging 19.5T tokens with a native 1M context window and multimodal processing.</li>
-    <li><strong>High-Speed CoT Reasoning</strong>: The Space Bunny Alpha model achieves 82.0% on GPQA Diamond and 75.0% on MMLU-Pro with adjustable reasoning effort and 118 tok/s throughput.</li>
-    <li><strong>Native Cline & OpenCode Compatibility</strong>: Route the Space Bunny Alpha model into VS Code agents via OpenAI-compatible endpoints (<code class="text-indigo-300">https://api.apivale.com/v1</code>).</li>
-    <li><strong>Zero-KYC PayPal Access</strong>: Bypass credit card declines with APIVALE's instant PayPal billing and free developer trial.</li>
+    <li><strong>Instant API Key & Free Trial</strong>: Claim an instant <code class="text-indigo-300">infer/space-bunny-alpha</code> API key with $0.20 free signup credits without credit card KYC lockouts.</li>
+    <li><strong>Breakout 1M Stealth Engine</strong>: The Space Bunny Alpha model operates with a native 1M context window, high-speed CoT reasoning (118 tok/s), and multimodal vision inputs.</li>
+    <li><strong>Native Cline & OpenCode Compatibility</strong>: Route requests directly into VS Code agents and CLI tools via standard OpenAI-compatible endpoints (<code class="text-indigo-300">https://api.apivale.com/v1</code>).</li>
+    <li><strong>Zero-KYC PayPal Access</strong>: Bypass foreign billing declines with official PayPal checkout, international credit cards, and global zero-FX invoicing.</li>
   </ul>
 </div>
 
-Autonomous coding agents in **Cline**, **OpenCode**, and **Cursor** require expansive contexts, rapid reasoning throughput, and reliable gateway infrastructure. In late September 2026, the **Space Bunny Alpha model** surfaced on OpenRouter and developer leaderboards, demonstrating breakout performance in repository-scale bug resolution and UI generation from wireframe sketches.
+<div class="my-6 rounded-xl border border-indigo-500/30 bg-gray-900/90 p-5">
+  <div class="text-xs font-bold uppercase tracking-wider text-indigo-400">⚡ Quickstart: How to Get Your Space Bunny Alpha API Key in 60 Seconds</div>
+  <div class="mt-3 grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+    <div class="rounded-lg bg-gray-950 p-3 border border-gray-800">
+      <div class="font-bold text-white mb-1">1. Claim Free Trial Key</div>
+      <p class="text-gray-400">Sign up on <a href="/sign-up?redirect=/blog/space-bunny-alpha-model-benchmark-api-guide" class="text-indigo-400 hover:underline">APIVALE</a> to receive an instant $0.20 free balance (no credit card or KYC required).</p>
+    </div>
+    <div class="rounded-lg bg-gray-950 p-3 border border-gray-800">
+      <div class="font-bold text-white mb-1">2. Endpoint & Model ID</div>
+      <p class="text-gray-400">Set baseURL to <code class="text-emerald-400 font-mono">https://api.apivale.com/v1</code> with model identifier <code class="text-emerald-400 font-mono">infer/space-bunny-alpha</code>.</p>
+    </div>
+    <div class="rounded-lg bg-gray-950 p-3 border border-gray-800">
+      <div class="font-bold text-white mb-1">3. Launch in Code/Agent</div>
+      <p class="text-gray-400">Plug directly into Python SDK, OpenCode, Cline, or Cursor with full 1M context retention.</p>
+    </div>
+  </div>
+</div>
 
-However, developer teams integrating raw stealth models encounter variable upstream rate limits, sporadic language drift, and complex billing gates on overseas platforms. Through [APIVALE's Unified API Gateway](/blog/openrouter-alternatives/), software engineers connect directly to the **Space Bunny Alpha API** via standard OpenAI and Anthropic SDK protocols, control reasoning depth dynamically, and fund requests effortlessly using **PayPal and international credit cards**.
+Developers building autonomous coding workflows in **Cline**, **OpenCode**, and **Cursor** frequently search for a stable **Space Bunny Alpha API key** to access this 1M-token stealth reasoning model. While early previews generated immense buzz across OpenRouter and Reddit for rapid bug fixing and UI synthesis, developers need predictable upstream uptime, simple billing, and zero rate-limit throttles.
+
+Through [APIVALE's Unified API Gateway](/blog/openrouter-alternatives/), engineers can immediately obtain a **Space Bunny Alpha API key** with free trial credits, integrate via standard OpenAI and Anthropic SDK protocols, and fund ongoing high-throughput production runs effortlessly using **PayPal and international cards**.
 
 <div class="my-6 border-l-4 border-amber-500 bg-gray-900 rounded-r-lg p-5">
   <div class="flex items-center justify-between">
@@ -80,14 +98,14 @@ curl -X POST https://api.apivale.com/v1/chat/completions \
 
 ---
 
-## 1. What is Space Bunny Alpha? 1M Stealth Architecture & Origins
+## 1. What is Space Bunny Alpha? 1M Stealth Architecture & API Key Access
 
 Understanding the architectural foundations and deployment characteristics of Space Bunny Alpha helps developers maximize its agentic reasoning capabilities.
 
-### 1.1 Space Bunny Alpha API Gateway & MiniMax M3.1 Heritage
+### 1.1 Space Bunny Alpha API Key, Free Trial & MiniMax Heritage
 The Space Bunny Alpha model debuted anonymously in late September 2026 across OpenRouter and testing leaderboards under the provider moniker "stealth." Within days of release, extensive tokenizer fingerprinting and AST parsing evaluations conducted by AI researchers revealed tight structural similarities with **MiniMax M3.1** ([MiniMax M3.1-Flash API](/blog/minimax-m3-1-flash-preview-api-setup/)).
 
-While provider anonymity allows frontier labs to benchmark unreleased checkpoints without marketing bias, developers can immediately leverage its high-throughput inference for real-world development tasks. APIVALE routes requests to this evaluation checkpoint under the stable identifier `infer/space-bunny-alpha`, shielding production pipelines from upstream identifier renames.
+While provider anonymity allows frontier labs to benchmark unreleased checkpoints without marketing bias, developers can immediately leverage its high-throughput inference for real-world development tasks. By obtaining an API key via APIVALE, developers bypass queue throttles and route requests to this evaluation checkpoint under the stable identifier `infer/space-bunny-alpha`, shielded from upstream naming shifts.
 
 ### 1.2 1M-Token Native Context & Multimodal Ingestion
 The Space Bunny Alpha model incorporates a native **1M context buffer** paired with multimodal ingestion for text, high-resolution UI images, and video feeds. Unlike sparse context models that degrade past 64K tokens, it maintains linear needle-in-a-haystack retrieval accuracy across 900K+ token payloads.
@@ -122,11 +140,11 @@ While Pixel Canary focuses on ultra-lightweight text token generation (reaching 
 
 ---
 
-## 3. How to Connect Space Bunny Alpha to Cline, OpenCode & Cursor
+## 3. Space Bunny Alpha API Python Example, Cline & OpenCode Setup
 
 Integrating the Space Bunny Alpha API into your primary development environment requires configuring OpenAI-compatible endpoints with custom reasoning parameters.
 
-### 3.1 Space Bunny Alpha API Python SDK Integration & Dynamic Reasoning Effort
+### 3.1 Space Bunny Alpha API Python SDK Example & Reasoning Control
 The Python implementation below connects to the Space Bunny Alpha API via APIVALE, managing dynamic reasoning levels (`low`, `medium`, `high`) and handling exponential backoff for high-concurrency pipelines:
 
 ```python
@@ -159,7 +177,7 @@ def query_space_bunny_model(prompt: str, context_code: str, reasoning_level: str
     raise TimeoutError("Maximum retry limit exceeded for Space Bunny query.")
 ```
 
-### 3.2 Cline & OpenCode VS Code Configuration (.cursorrules / settings.json)
+### 3.2 Cline & OpenCode Setup (.cursorrules / settings.json)
 To wire the Space Bunny Alpha API into **Cline** or **OpenCode** in VS Code, open your extension settings or `settings.json` and configure custom OpenAI provider settings:
 
 ```json
@@ -274,7 +292,7 @@ flowchart TD
 
   <div class="mt-4 flex justify-end">
     <a href="/sign-up?redirect=/blog/space-bunny-alpha-model-benchmark-api-guide" class="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-500 shadow-lg shadow-indigo-600/30">
-      <span>Claim $0.20 Free Trial API Key</span>
+      <span>Claim Space Bunny Alpha Free API Key ($0.20 Trial)</span>
       <span>→</span>
     </a>
   </div>
@@ -282,21 +300,21 @@ flowchart TD
 
 ---
 
-## 5. Frequently Asked Questions (FAQ)
+## Frequently Asked Questions
 
 Answering frequent developer questions regarding Space Bunny Alpha deployment, benchmarks, and API integration.
 
-### 5.1 What is Space Bunny Alpha and who developed it?
+### 5.1 How do I get a Space Bunny Alpha API key with free trial credits?
+Developers can register an account on [APIVALE](/sign-up?redirect=/blog/space-bunny-alpha-model-benchmark-api-guide) to immediately receive a **$0.20 free signup trial API key** without credit card verification or identity locks. This allows running 15 to 20 test calls on `infer/space-bunny-alpha`. Additional usage can be funded seamlessly via **PayPal, international cards, Apple Pay, or Alipay** with zero foreign exchange fees.
+
+### 5.2 What is Space Bunny Alpha and who developed it?
 Space Bunny Alpha is a 2026 anonymous high-speed stealth large language model hosted on OpenRouter and developer testbeds. Technical analysis and tokenizer comparisons link it to the evaluation checkpoints of MiniMax M3.1. It is engineered for complex code refactoring, full repo analysis, and agentic workflows with a 1M context window.
 
-### 5.2 How does the stealth model perform in coding benchmarks?
+### 5.3 How does the stealth model perform in coding benchmarks?
 The Space Bunny Alpha model scores 82.0% on GPQA Diamond and 75.0% on MMLU-Pro while sustaining generation speeds of approximately 118 tokens/second. While Claude Sonnet 5 retains a higher score on complex formal verification, the stealth engine offers 5x context capacity and a 90% cost reduction ($0.25 input / $1.00 output per 1M tokens).
 
-### 5.3 How do I integrate the endpoint into Cline and OpenCode?
+### 5.4 How do I integrate the API into Cline and OpenCode?
 Configure your extension's custom OpenAI provider setting to point to `https://api.apivale.com/v1`, set your API Key to your APIVALE authentication token, and specify the model identifier as `infer/space-bunny-alpha`. Set the context window parameter to 1M tokens in `settings.json`.
-
-### 5.4 Is there a free AI API available for Space Bunny Alpha?
-Yes. Developers can test the preview checkpoint, and register an account on [APIVALE](/pricing?redirect=/blog/space-bunny-alpha-model-benchmark-api-guide) to claim an instant **$0.20 free signup trial API key** without credit card verification or identity locks. Additional usage can be funded seamlessly via **PayPal, international cards, Apple Pay, or Alipay** with zero foreign exchange fees.
 
 ---
 
@@ -306,6 +324,14 @@ Yes. Developers can test the preview checkpoint, and register an account on [API
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I get a Space Bunny Alpha API key with free trial credits?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Developers can claim an instant $0.20 free signup trial API key on APIVALE without credit card verification or identity locks to test infer/space-bunny-alpha, with optional PayPal billing for production scaling."
+      }
+    },
     {
       "@type": "Question",
       "name": "What is Space Bunny Alpha and who developed it?",
@@ -328,14 +354,6 @@ Yes. Developers can test the preview checkpoint, and register an account on [API
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Configure your extension's custom OpenAI provider setting to point to https://api.apivale.com/v1, set your API Key to your APIVALE authentication token, and specify the model identifier as infer/space-bunny-alpha with a 1M context window."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is there a free AI API available for Space Bunny Alpha?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Developers can test Space Bunny Alpha during preview, and claim a $0.20 free signup trial API key on APIVALE without credit card verification or identity locks, with optional PayPal billing for production scaling."
       }
     }
   ]
@@ -374,11 +392,11 @@ Yes. Developers can test the preview checkpoint, and register an account on [API
 
   <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
     <a href="/sign-up?redirect=/blog/space-bunny-alpha-model-benchmark-api-guide" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-indigo-600 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-indigo-600/40 transition hover:bg-indigo-500 hover:scale-105">
-      <span>Get Free $0.20 API Key</span>
+      <span>Claim Space Bunny Alpha Free API Key ($0.20 Trial)</span>
       <span>→</span>
     </a>
     <a href="/pricing?redirect=/blog/space-bunny-alpha-model-benchmark-api-guide" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-gray-700 bg-gray-800/80 px-6 py-3.5 text-sm font-semibold text-gray-200 transition hover:bg-gray-700 hover:text-white">
-      <span>View Pricing & $29 Pack</span>
+      <span>View Space Bunny Pricing & $29 Pack</span>
     </a>
   </div>
 </div>

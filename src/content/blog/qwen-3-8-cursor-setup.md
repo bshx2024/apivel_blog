@@ -51,7 +51,7 @@ lang: "en"
 
 For software engineers utilizing **Cursor IDE** and **Cursor Composer** for full-stack refactoring, the default 500 fast request monthly allocation on Cursor Pro burns out within the first week of intensive sprint cycles. Once exhausted, additional fast requests incur $0.10 per call or revert to slow queue throttles. Concurrently, proprietary frontier models like Claude Sonnet 5 command $3.00/$15.00 per million tokens, causing multi-turn agent sessions to rack up substantial cloud bills. As detailed in our comprehensive [Cursor Pro vs custom API key (BYOK) cost analysis](/blog/cursor-pro-vs-custom-api-key/), configuring a pay-as-you-go endpoint bypasses artificial fast-request quotas and reduces monthly editor expenses by over 80%.
 
-Deploying Alibaba Cloud's flagship 2.4-trillion parameter **Qwen 3.8-Max** locally requires an enterprise cluster of 18x NVIDIA H200 GPUs (over 2.4TB VRAM). (For developers seeking lightning-fast 140+ tps token generation, explore our <a href="/blog/qwen-3-8-flash-next-benchmarks-api-guide/" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Flash Next Benchmarks & API Guide</a>, or see our practical setup for <a href="/blog/qwen-image-2-1-api-setup-guide" class="text-cyan-400 hover:underline font-semibold">Qwen-Image-2.1 API for ComfyUI & Native RGBA</a>). Attempting to bridge local Ollama instances into Cursor fails due to Cursor's cloud routing architecture (`api2.cursor.sh`), which cannot resolve `localhost:11434` without complex tunnel daemons.
+Deploying Alibaba Cloud's flagship 2.4-trillion parameter **Qwen 3.8-Max** locally requires an enterprise cluster of 18x NVIDIA H200 GPUs (over 2.4TB VRAM). (For developers seeking lightning-fast 140+ tps token generation, explore our <a href="/blog/qwen-3-8-flash-next-benchmarks-api-guide/" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Flash Next Benchmarks & API Guide</a>, or see our practical setup for <a href="/blog/qwen-3-8-cursor-setup" class="text-cyan-400 hover:underline font-semibold">Qwen-Image-2.1 API for ComfyUI & Native RGBA</a>). Attempting to bridge local Ollama instances into Cursor fails due to Cursor's cloud routing architecture (`api2.cursor.sh`), which cannot resolve `localhost:11434` without complex tunnel daemons.
 
 By configuring Cursor's native OpenAI Base URL override to point to APIVALE (`https://api.apivale.com/v1`), developers unlock unthrottled Qwen 3.8-Max inference with zero hardware overhead, 80% token cost reduction, and seamless **PayPal global billing**.
 
@@ -94,7 +94,7 @@ Follow these three steps to integrate Qwen 3.8 into your Cursor workflow:
 ```
 
 > [!TIP]
-> **Monitoring Token Quotas on Windows:** If you are running long-running Composer sessions on PC, pair your custom API key with our [CodexBar Windows setup guide](/blog/codexbar-windows-setup-safety-guide/) to monitor live token spend and latency right from your system tray.
+> **Monitoring Token Quotas on Windows:** If you are running long-running Composer sessions on PC, pair your custom API key with our [CodexBar Windows setup guide](/blog/how-to-connect-claude-opus-5-to-claude-code-cli/) to monitor live token spend and latency right from your system tray.
 
 ### Interactive Qwen 3.8 API Playground & Test Terminal
 
@@ -431,7 +431,7 @@ app.post('/v1/chat/completions', async (req: Request, res: Response): Promise<vo
 app.listen(PORT, () => console.log(`Cursor Gateway Proxy active on http://localhost:${PORT}`));
 ```
 
-For more details on multi-model routing and alternatives, see our step-by-step tutorial on [how to use Ox Alpha in Claude Code & Cursor](/blog/ox-alpha-claude-code-cursor-setup/), our setup guide for [CodexBar on Windows 11](/blog/codexbar-windows-setup-safety-guide/) to monitor token quotas visually, our comparison of [OpenRouter Alternatives with PayPal](/blog/openrouter-alternatives/), and [DeepSeek Harness Custom API Key Guide](/blog/deepseek-harness-custom-api-key-rate-limit-fix/).
+For more details on multi-model routing and alternatives, see our step-by-step tutorial on [how to use Ox Alpha in Claude Code & Cursor](/blog/ox-alpha-claude-code-cursor-setup/), our setup guide for [CodexBar on Windows 11](/blog/how-to-connect-claude-opus-5-to-claude-code-cli/) to monitor token quotas visually, our comparison of [OpenRouter Alternatives with PayPal](/blog/openrouter-alternatives/), and [DeepSeek Harness Custom API Key Guide](/blog/deepseek-harness-custom-api-key-rate-limit-fix/).
 
 ---
 

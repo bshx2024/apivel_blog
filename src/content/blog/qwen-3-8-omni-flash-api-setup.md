@@ -23,7 +23,7 @@ lang: "en"
 <div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
   <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Related Qwen Ecosystem Guides</span>
   <p class="mt-1 text-sm text-gray-300">
-    Evaluating models? Check our technical guides for <a href="/blog/qwen-image-2-1-api-setup-guide/" class="text-cyan-400 hover:underline font-semibold">Qwen-Image-2.1 API for ComfyUI & Native RGBA</a>, <a href="/blog/qwen-3-8-flash-next-benchmarks-api-guide/" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Flash Next for Coding</a>, <a href="/blog/qwen-3-8-cursor-setup/" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 in Cursor IDE</a>, and our <a href="/blog/qwen-3-8-max-benchmarks-preview-guide/" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Max Architecture Review</a>.
+    Evaluating models? Check our technical guides for <a href="/blog/qwen-3-8-cursor-setup/" class="text-cyan-400 hover:underline font-semibold">Qwen-Image-2.1 API for ComfyUI & Native RGBA</a>, <a href="/blog/qwen-3-8-flash-next-benchmarks-api-guide/" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Flash Next for Coding</a>, <a href="/blog/qwen-3-8-cursor-setup/" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 in Cursor IDE</a>, and our <a href="/blog/qwen-3-8-max-benchmarks-preview-guide/" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Max Architecture Review</a>.
   </p>
 </div>
 

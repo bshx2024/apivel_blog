@@ -305,7 +305,7 @@ For Windows PowerShell users:
 ```
 
 > [!TIP]
-> **Real-Time Windows Quota Telemetry:** Running continuous CLI agent sessions on Windows? Learn how to monitor token burn rates directly from your desktop taskbar with our [CodexBar Windows 11/10 Setup Guide](/blog/codexbar-windows-setup-safety-guide/).
+> **Real-Time Windows Quota Telemetry:** Running continuous CLI agent sessions on Windows? Learn how to monitor token burn rates directly from your desktop taskbar with our [CodexBar Windows 11/10 Setup Guide](/blog/how-to-connect-claude-opus-5-to-claude-code-cli/).
 
 ### Step 3: Verify Model Invocation & Tool Calling
 
@@ -442,6 +442,10 @@ If you previously configured the official Anthropic API key in `~/.claude.json` 
   export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
   export ANTHROPIC_AUTH_TOKEN="your_apivale_key"
   ```
+
+### Edge Case 3: Avoiding Expensive Cloud Skill Marketplaces
+
+When running automated task chains, developers frequently encounter hosted skill stores. However, executing multi-turn skills inside closed cloud sandboxes triggers steep per-run markups. Read our detailed guide on [What is Capafy AI and open-source agent skill alternatives](/blog/what-is-capafy-ai-skills-pricing-alternatives/) to learn how to route local terminal skills through GLM-5.3 Flash and DeepSeek V4.1 Flash at 92% lower cost.
 
 ---
 

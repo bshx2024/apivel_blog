@@ -33,7 +33,7 @@ lang: en
 <div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
   <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Related Model & Terminal Guides</span>
   <p class="mt-1 text-sm text-gray-300">
-    Exploring alternative high-speed models? Read our viral benchmark guide on <a href="/blog/ox-alpha-claude-code-cursor-setup/" class="text-cyan-400 hover:underline font-semibold">Ox Alpha in Claude Code & Cursor Setup (0xAlpha vs Sonnet)</a>, learn how to configure a <a href="/blog/omniroute-claude-code-setup/" class="text-cyan-400 hover:underline font-semibold">self-hosted AI gateway with OmniRoute and Claude Code</a>, compare BYOK editor savings in our <a href="/blog/cursor-pro-vs-custom-api-key/" class="text-cyan-400 hover:underline font-semibold">Cursor Pro vs Custom API Key Cost Analysis</a>, compare against stealth frontier models in our <a href="/blog/claude-code-opus-5-2-alternative-qwen-3-8-max/" class="text-cyan-400 hover:underline font-semibold">Claude Opus 5.2 vs Qwen 3.8 Max in Claude Code</a> guide, benchmark speed with our <a href="/blog/deepseek-v4-flash-api-guide/" class="text-cyan-400 hover:underline font-semibold">DeepSeek V4.1 Flash API benchmark</a>, or check our <a href="/blog/connect-glm-5-3-to-claude-code-cli-cursor/" class="text-cyan-400 hover:underline font-semibold">GLM-5.3 Cursor & Claude Code Guide</a>.
+    Exploring dual-engine setups? Read our breakdown on combining Qwen with Anthropic's flagship in the <a href="/blog/claude-opus-5-5-api-pricing-claude-code-guide" class="text-cyan-400 hover:underline font-semibold">Claude Opus 5.5 API Pricing & Claude Code Guide</a>, read our viral benchmark guide on <a href="/blog/ox-alpha-claude-code-cursor-setup/" class="text-cyan-400 hover:underline font-semibold">Ox Alpha in Claude Code & Cursor Setup (0xAlpha vs Sonnet)</a>, learn how to configure a <a href="/blog/omniroute-claude-code-setup/" class="text-cyan-400 hover:underline font-semibold">self-hosted AI gateway with OmniRoute and Claude Code</a>, compare BYOK editor savings in our <a href="/blog/cursor-pro-vs-custom-api-key/" class="text-cyan-400 hover:underline font-semibold">Cursor Pro vs Custom API Key Cost Analysis</a>, benchmark speed with our <a href="/blog/deepseek-v4-flash-api-guide/" class="text-cyan-400 hover:underline font-semibold">DeepSeek V4.1 Flash API benchmark</a>, or check our <a href="/blog/connect-glm-5-3-to-claude-code-cli-cursor/" class="text-cyan-400 hover:underline font-semibold">GLM-5.3 Cursor & Claude Code Guide</a>.
   </p>
 </div>
 
@@ -98,7 +98,7 @@ npx @anthropic-ai/claude-code
 ```
 
 > [!TIP]
-> **Windows Token Quota Tracking:** Running autonomous multi-turn loops in Claude Code CLI can quickly deplete session quotas without visual feedback. If you are developing on PC, follow our [CodexBar Windows setup guide](/blog/codexbar-windows-setup-safety-guide/) to monitor your terminal token burn rate in real time via WSL2 or native telemetry.
+> **Windows Token Quota Tracking:** Running autonomous multi-turn loops in Claude Code CLI can quickly deplete session quotas without visual feedback. If you are developing on PC, follow our [CodexBar Windows setup guide](/blog/how-to-connect-claude-opus-5-to-claude-code-cli/) to monitor your terminal token burn rate in real time via WSL2 or native telemetry.
 
 ### Interactive Qwen 3.8 API Playground & Test Terminal
 
@@ -416,7 +416,7 @@ While Claude Code CLI communicates natively via Anthropic's `/v1/messages` proto
   </p>
 </div>
 
-For web search integration, see our guide on [Best API Search for Company Homepages](/blog/best-api-search-company-homepage-guide/). If your agentic terminal loops generate excessive stdout chatter, check out our guide on [How to Reduce LLM API Costs by Eliminating Terminal Noise](/blog/reduce-llm-api-costs-terminal-noise/) to eliminate bloated context windows and slash token spend by up to 40%.
+For web search integration, see our guide on [Best API Search for Company Homepages](/blog/openrouter-alternatives/). If your agentic terminal loops generate excessive stdout chatter, check out our guide on [How to Reduce LLM API Costs by Eliminating Terminal Noise](/blog/llm-cost-optimization-guide/) to eliminate bloated context windows and slash token spend by up to 40%.
 
 ---
 

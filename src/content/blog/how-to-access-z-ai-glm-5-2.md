@@ -1,4 +1,4 @@
-﻿---
+---
 title: "How to Get Zhipu AI (Z.ai) GLM-5.2 API Key Internationally (Free Credits & No +86)"
 metaTitle: "Access Z.ai GLM-5.2 API Globally Without KYC | APIVALE"
 description: "Access Z.ai (Zhipu) GLM-5.2 API globally without real-name KYC barriers. Route OpenAI-compatible requests via APIVALE using PayPal billing. Learn more."
@@ -19,7 +19,7 @@ In this guide, we show you how to bypass these registration hurdles and access t
 
 ### Quick Start: Call Zhipu GLM-5.2 via APIVALE
 
-You do not need a +86 phone number. Simply sign up for a free APIVALE account and call the GLM-5.2 model using our unified endpoint:
+You do not need a +86 phone number or Chinese ID. Simply sign up for a free APIVALE account (see our step-by-step [Z.ai Billing Top-Up & Credit Card Fix Guide](/blog/bypass-zhipu-ai-real-name-verification/)) and call the GLM-5.2 model using our unified endpoint:
 
 ```bash
 curl https://apivale.com/v1/chat/completions \

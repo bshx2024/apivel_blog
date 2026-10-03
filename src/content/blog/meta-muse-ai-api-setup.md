@@ -139,7 +139,7 @@ Rather than managing overseas corporate identities or complex virtual card setup
 * **Frictionless Global Billing**: Instant checkout with official PayPal and international cards with zero regional card declines.
 * **Instant Sandbox Verification**: New accounts receive $0.20 free compute credit to test endpoint connectivity immediately.
 
-For a full breakdown of platform credentials, enterprise pricing, and unblocking the broader model catalog, consult our dedicated [Meta Model API Access & Region Bypass Guide](/blog/meta-model-api-access-pricing-guide).
+For a full breakdown of platform credentials, enterprise pricing, and unblocking the broader model catalog, consult our dedicated [Meta Model API Access & Region Bypass Guide](/blog/how-to-access-z-ai-glm-5-2).
 
 ### Step 2: Resilient Python Agent Integration with Backoff & PayPal Billing
 

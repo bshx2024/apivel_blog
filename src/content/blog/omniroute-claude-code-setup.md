@@ -220,7 +220,7 @@ Using **APIVALE** provides a fully managed, high-concurrency cloud endpoint (`ht
 
 ### Token Compression: Trade-Offs of RTK and Caveman on Code Refactoring Accuracy
 
-OmniRoute features two notable compression pipelines: **RTK (Rust Token Killer)**, which prunes terminal build logs and stack traces, and **Caveman**, which applies linguistic reduction to natural language system prompts. Developers interested in minimizing context bloat without lossy prose degradation should also review our benchmarks on [reducing LLM API terminal noise and tool output expenses](/blog/reduce-llm-api-costs-terminal-noise/).
+OmniRoute features two notable compression pipelines: **RTK (Rust Token Killer)**, which prunes terminal build logs and stack traces, and **Caveman**, which applies linguistic reduction to natural language system prompts. Developers interested in minimizing context bloat without lossy prose degradation should also review our benchmarks on [reducing LLM API terminal noise and tool output expenses](/blog/llm-cost-optimization-guide/).
 
 While stripping 50,000 tokens of package manager output saves substantial cost, aggressive prose compression can strip nuanced architectural constraints from coding agent instructions. For production repositories, use lossless prompt caching at the gateway layer rather than lossy semantic pruning.
 

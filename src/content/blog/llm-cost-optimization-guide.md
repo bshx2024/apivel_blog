@@ -41,9 +41,9 @@ Achieving maximum token efficiency requires addressing redundant data at every s
 
 | Cost-Cutting Technique | Primary Target | Typical Token Savings | Link to Detailed Guide |
 | :--- | :--- | :--- | :--- |
-| **Terminal Output Filtering** | Stripping boilerplate log messages, CLI warnings, and ANSI codes | **60% - 90%** | [Read Spoke 3: Terminal Noise Interception](/blog/reduce-llm-api-costs-terminal-noise/) |
-| **Visual Prompt Compression** | Compressing massive text context into high-density vision layouts | **80% - 93%** | [Read Spoke 2: Visual Prompt Compression](/blog/visual-prompt-compression-pxpipe/) |
-| **Multimodal Cost Arbitrage** | Generating 2K video and spatial audio at 60% lower cost than Sora/Runway | **60% - 71%** | [Read MiniMax H3 API Pricing Guide](/blog/minimax-h3-api-pricing-guide/) |
+| **Terminal Output Filtering** | Stripping boilerplate log messages, CLI warnings, and ANSI codes | **60% - 90%** | [Read Spoke 3: Terminal Noise Interception](/blog/llm-cost-optimization-guide/) |
+| **Visual Prompt Compression** | Compressing massive text context into high-density vision layouts | **80% - 93%** | [Read Spoke 2: Visual Prompt Compression](/blog/llm-cost-optimization-guide/) |
+| **Multimodal Cost Arbitrage** | Generating 2K video and spatial audio at 60% lower cost than Sora/Runway | **60% - 71%** | [Read MiniMax H3 API Pricing Guide](/blog/minimax-m3-1-flash-preview-api-setup/) |
 | **Pay-As-You-Go Gateway & Cache** | Avoiding subscription caps, using caching, and swapping models | **50% - 96%** | [Read Spoke 1: Cursor Pro vs. Custom Keys](/blog/cursor-pro-vs-custom-api-key/) |
 
 ---

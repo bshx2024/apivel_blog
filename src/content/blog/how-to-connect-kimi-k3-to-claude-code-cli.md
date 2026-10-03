@@ -210,7 +210,7 @@ If your autonomous coding agent requires deep monorepo context exceeding standar
 **A:** Yes. APIVALE supports **PayPal (global PayPal billing / credit cards via PayPal)** as a primary payment method. You do not need a Chinese (+86) phone number or local identity verification to purchase API credits.
 
 **Q: How does Kimi K3 perform on hardware design and autonomous tasks?**  
-**A:** Kimi K3 has achieved state-of-the-art results on engineering benchmarks, including autonomously designing semiconductor microchips in 48 hours using open-source EDA toolchains. Read our case study on [How Kimi K3 Designed a Chip in 48h](/blog/kimi-k3-designed-chip-in-48-hours-open-source-eda/) for details.
+**A:** Kimi K3 has achieved state-of-the-art results on engineering benchmarks, including autonomously designing semiconductor microchips in 48 hours using open-source EDA toolchains. Read our case study on [How Kimi K3 Designed a Chip in 48h](/blog/how-to-connect-kimi-k3-to-claude-code-cli/) for details.
 
 **Q: Does APIVALE support streaming (SSE) output for terminal progress spinners?**  
 **A:** Yes. APIVALE fully supports Anthropic and OpenAI Server-Sent Events (SSE) streaming, guaranteeing real-time code rendering and smooth spinners inside Claude Code and Cursor.

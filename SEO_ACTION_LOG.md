@@ -56,6 +56,132 @@
 
 
 
+## 📝 优化行动记录 (2026-10)
+
+### 📅 2026-10-03 - 📝 [GSC数据回归与精准纠偏]: 《Z.ai Billing Top-Up & Credit Card Fix》依据 GSC 真实搜索词与 4 张 SERP 截图精细化升级
+
+* **影响页面/路由**：
+  * 主优化页面：`/blog/bypass-zhipu-ai-real-name-verification/` (`src/content/blog/bypass-zhipu-ai-real-name-verification.md`)
+  * 网格互连内链页面：
+    * `/blog/how-to-access-z-ai-glm-5-2/`
+    * `/blog/connect-glm-5-3-to-claude-code-cli-cursor/`
+* **调整背景与搜索意图洞察**：
+  * **高展示低点击（0% CTR）根因剖析**：GSC 第一手数据表明，该页面已取得 **136+ 展示量，平均排名 2.0 ~ 4.6 位**（搜索词如 `+z.ai billing top up how to pay credit card payment`），且隐藏词 `glm bypass` 拿下 Google 第 1.0 名！但过去标题偏向通用词，致使搜索 `top up` 的用户在 SERP 看到 `缺少字词: top` 提示并产生意图错位。
+  * **SERP 实测与 PAA 挖掘**：结合 SERP 截图，吸收谷歌建议的 `Top-Up` 完全匹配词、拦截官方报错信息 `Insufficient balance or no resource package please top up`、融入长尾词 `what is zhipu_api_key` 与 `what are the verification steps`，并针对法国/西班牙等国际开发者提供零 KYC 说明。
+* **具体落地优化**：
+  1. **ABC Title & Meta 升级**：
+     * MetaTitle：`Z.ai Billing Top-Up: How to Pay with Credit Card | APIVALE`（58 字符黄金区间）；
+     * H1：`How to Pay for Z.ai: Billing Top-Up & Credit Card Fix`（53 字符）；
+     * Meta Description：149 字符，全面覆盖 `top-up failures`, `declined credit cards`, `PayPal`, `zero KYC`；
+     * Frontmatter：补全 `keyTakeaways` 4 参数结构化卡片；
+  2. **Widget AST 干净度修复**：
+     * 将计算器 Widget 与 Definition 盒子内的 `<h3/h4>` 干净替换为带有 CSS 样式类的 `<div/>`，彻底打通 1 H1 -> H2 -> H3 的干净 DOM AST 树。
+  3. **内容扩充与 FAQ Schema 强化**：
+     * 补充故障排查小节 `Troubleshooting Z.ai Billing Errors & GLM Bypass`，覆盖 `Insufficient balance or no resource package` 报错；
+     * 补充 5 组针对性 FAQ 与 JSON-LD Schema（`zhipu_api_key`, `verification steps`, `daily limit`, `PayPal payment`）；
+     * 正文字数达 1343 prose words，通过 `audit.ps1` 获得 **0 Blockers, 0 Warnings** 满分通关。
+  4. **双向网格互连 (Mesh Weaving)**：
+     * 在 `/blog/how-to-access-z-ai-glm-5-2/` 与 `/blog/connect-glm-5-3-to-claude-code-cli-cursor/` 锚点中全面刷新指向本页的强契合锚文本。
+* **14 天因果验证假设 (Hypothesis)**：
+  * 在补齐 `Top-Up` 与 `Credit Card` 强相关高亮词后，预期 3-7 天内被谷歌快照重抓取，消灭 `缺少字词: top` 提示，使 136+ 展示量在 Position 2.0~4.6 的顶峰位置获得 8%~15% 以上的真实 CTR 突破，并直接带动海外开发者通过 PayPal 充值 APIVALE。
+
+
+### 📅 2026-10-01 - 📝 [突发旗舰爆发词拦截与双引擎降本]: 《Claude Opus 5.5 API: Pricing & Claude Code Guide》全网上线，拦截 Breakout 搜索并引流 Qwen 3.8 Max / DeepSeek V4
+
+* **影响页面/路由**：
+  * 新发页面：`/blog/claude-opus-5-5-api-pricing-claude-code-guide/` (`src/content/blog/claude-opus-5-5-api-pricing-claude-code-guide.md`)
+  * 双向内链织网关联页面：
+    * `/blog/how-to-connect-claude-opus-5-to-claude-code-cli/`
+    * `/blog/claude-code-opus-5-2-alternative-qwen-3-8-max/`
+    * `/blog/how-to-connect-qwen-3-8-to-claude-code-cli/`
+    * `/blog/deepseek-v4-flash-api-guide/`
+* **调整背景与搜索意图洞察**：
+  * **突发破峰热词（Google Trends Breakout >5,000%）**：Anthropic 刚刚于 2026年9月22日发布旗舰 Claude Opus 5.5，Google 搜索中 `claude code` 与 `claude opus 5.5 pricing` 呈直线上升态势；Google Autocomplete 显现 `api key`、`api 免费`，PAA 显现 `Is Opus 5.5 free?`、`How much does it cost...` 等高意向买家与试用词；
+  * **硬核技术痛点**：Opus 5.5 强制开启 Adaptive Thinking 且禁止手动关闭（尝试传参关闭报 400 invalid_request_error），在 Claude Code CLI 与 Cursor 多轮 Agent 交互中造成 Token 消耗成倍膨胀，开发团队面临账单失控；此外 Anthropic 官方境外信用卡与手机号风控导致大量海外跨区开发者受阻；
+  * **双引擎降维打法（Dual-Engine Pattern）**：文章以 Opus 5.5 API 价格与 Claude Code 配置为主入口切入，客观肯定其在复杂系统架构上的统治力，但通过实测数据力证：对于 80% 的日常代码实现与单测，结合 APIVALE 的中国顶级大模型（Qwen 3.8 Max / DeepSeek V4.1 Flash）可节省 85% 费用。同时宣导 APIVALE 的 PayPal 全球即时结算、免海外手机号与 $0.20 免费测试起步金。
+* **具体落地优化**：
+  1. **ABC Title & MetaTitle 架构（主词 100% 锁定 Claude Opus 5.5 API）**：
+     * MetaTitle：`Claude Opus 5.5 API: Pricing, Key & Cost Guide | APIVALE`（55 字符黄金最适区间）；
+     * H1：`Claude Opus 5.5 API: Pricing, Setup & Cost-Saving Guide`（55 字符）；
+     * Meta Description：159 字符，主动语态包含 custom base URL、Claude Code CLI、fix 400 thinking errors 与 PayPal 充值。
+     * 全局以 `Claude Opus 5.5 API` 统一声明，彻底清除旧词干扰，词数与密度控制在黄金区间。
+  2. **4 项真实工程增益落实**：
+     * 架构证明：详解 Anthropic 原生协议代理转译与 Adaptive Thinking effort 参数适配，剖析双引擎 Planner vs Worker 职责隔离机制；
+     * 对比矩阵：包含客观 `Best for...` 竞品优势披露（承认 Opus 5.5 在复杂架构设计与企业 SOC2 合规的无可争议统治力）与 2026 年 10 月当日核验时间戳；
+     * 社区原声：引用 Anthropic 开发者社区与 APIVALE 生产网关真实脱敏工单 #9824 关于 Thinking mode 无法关闭导致 4 小时燃烧 $340 的报错与排查修复；
+     * 生产代码：提供带指数退避、重试与复杂度分类调度的 15+ 行 Python 双引擎智能路由分流脚本。
+  3. **CRO 交互式微工具与钱包权益对齐**：
+     * 内嵌 In-Article Live Dual-Engine Cost Calculator 原地交互计算器，支持输入 Agent 步骤数与单步上下文，实时对比 Pure Opus 5.5 vs Dual-Engine 成本节省数据，彻底消除纯跳转落地页扣分风险；
+     * 结尾 `.cta-card` 严格对齐钱包：首充送 +50%（$5 -> $7.50 / $29 -> $43.50）、$29 开发者专享大礼包（直降 56% 得 4000万 Token）、新用户 $0.20 体验金，且动态携带 `redirect=/blog/claude-opus-5-5-api-pricing-claude-code-guide`。
+  4. **S+ 级双向内链四方网格与极速 CLI 别名编织**：
+     * 编织 `Opus 5.5 <--> Qwen 3.8 <--> DeepSeek V4` 铁三角内链网格，同步在 `how-to-connect-claude-opus-5-to-claude-code-cli.md`、`claude-code-opus-5-2-alternative-qwen-3-8-max.md`、`how-to-connect-qwen-3-8-to-claude-code-cli.md`、`deepseek-v4-flash-api-guide.md` 4 篇高权重文章中注入互导链接；
+     * 补充终端一键无痛切换别名脚本（`alias code-opus`, `alias code-qwen`, `alias code-deepseek`），彻底打通开发者在终端把国产模型设为主力的最后一米阻碍。
+  5. **侧边栏模型话题动态注册**：
+     * 在 `src/pages/[slug].astro` 的 `TOPIC_CONFIG` 中注册 `'claude'` 话题的浮动卡片与正文内嵌双语转化文案。
+  6. **Pre-flight SEO 体检通过**：
+     * 运行 `audit_article_seo_health`，取得 **0 Blockers、0 Warnings** 满分通过。
+* **14 天因果验证假设 (Hypothesis)**：
+  * 借助 Google Trends Breakout >5,000% 突发流量红利，预计 5–10 天内进入 `claude opus 5.5 pricing` 与 `opus 5.5 claude code` 检索前排，吸引因 Thinking 模式账单膨胀和海外绑卡风控困扰的重度开发者，将其通过双引擎架构引导至 APIVALE 的 Qwen 3.8 Max 与 DeepSeek 接口，带动高客单 API 充值。
+
+### 📅 2026-10-01 - 📝 [新词爆发截流与 Claude Code 算力降维]: 《What is Capafy AI》上线，打通 Agent Skills 闭源沙箱痛点与 DeepSeek V4.1 / GLM-5.3 Flash 92% 成本套利
+
+* **影响页面/路由**：
+  * 新发页面：`/blog/what-is-capafy-ai-skills-pricing-alternatives/` (`src/content/blog/what-is-capafy-ai-skills-pricing-alternatives.md`)
+  * 双向内链织网关联页面：
+    * `/blog/how-to-reduce-opencode-token-costs/`
+    * `/blog/how-to-connect-glm-5-3-to-claude-code-cli/`
+    * `/blog/how-to-connect-qwen-3-7-to-claude-code-cli/`
+    * `/blog/claude-code-opus-5-2-alternative-qwen-3-8-max/`
+* **调整背景与搜索意图洞察**：
+  * **新词萌芽爆发期**：Capafy (`capafy.ai`) 8/30 出现热度，9 月中下旬爆发，SERP 结构中大量位置空置；Google Autocomplete 和 PASF 已出现 `what is capafy`, `capafy ai`, `capafy pricing`, `capafy reddit`, `what is capify ai`；
+  * **工程闭环锚点**：Capafy 官方定位为 Claude Code、Codex 的 AI Agent Skills 商店，但其采用云端闭源沙箱执行，按次加价叠加 ReAct 多轮 Token 消耗（单次 50k-100k tokens），运行成本极高（$0.25-$0.50/次）；
+  * **降维截流打法**：通过母题合并，以 `What is Capafy AI` 承接认知，通过 Reddit 社区对沙箱安全与闭源透明度的真实疑虑切入，进而引导开发者使用 Claude Code CLI + APIVALE 的 `infer/deepseek-v4.1-flash` 与 `infer/glm-5.3-flash` 自建开源技能，实现 92% 成本节省并支持 PayPal 即时直充。
+* **具体落地优化**：
+  1. **ABC Title & MetaTitle 架构**：
+     * MetaTitle：`What is Capafy AI? Skills, Pricing & Alternatives | APIVALE`（59 字符黄金区间）；
+     * H1：`What is Capafy AI? Agent Skills, Token Pricing & Alternatives Guide`（73 字符）；
+     * Meta Description：155 字符，包含 Claude Code、Token pricing trap、DeepSeek V4.1 & GLM-5.3 Flash 替代模型与 PayPal 充值。
+  2. **4 项真实工程增益落实**：
+     * 架构证明：分析 Capafy 远端沙箱与本地 Claude Code 终端执行机制，给出 ReAct 迭代成本公式与 Mermaid 容灾架构；
+     * 对比矩阵：包含客观 `Best for...` 竞品优势披露与 2026 年 10 月当日核验时间戳（DeepSeek V4.1 Flash $1.05–$2.10/100 runs, GLM-5.3 Flash $0.75–$1.40/100 runs）；
+     * 社区原声：引用 Reddit r/ScamChecker 关于域名年限、沙箱安全与私有代码隐私的真实疑虑；
+     * 生产代码：提供带指数退避（Exponential Backoff）与结构化 JSON 解析的 15+ 行 Python Agent 执行脚本（默认 `infer/deepseek-v4.1-flash`）。
+  3. **CRO 交互式微工具注入**：
+     * 内嵌实时 Token 成本计算器（Playground），支持选择运行频次与单次复杂度，原地对比 Capafy vs Claude Sonnet vs APIVALE DeepSeek V4.1 Flash 成本（节省高达 96.9%），彻底消除纯跳转落地页惩罚。
+  4. **双向内链网格编织**：
+     * 在 `how-to-connect-glm-5-3-to-claude-code-cli.md`、`how-to-reduce-opencode-token-costs.md`、`how-to-connect-qwen-3-7-to-claude-code-cli.md`、`claude-code-opus-5-2-alternative-qwen-3-8-max.md` 4 篇高权重文章中同步植入上下文精准锚文本。
+  5. **核心词校准至 Capafy AI 与真实搜索截图长尾词覆盖（避免 Claude Code 识别串词，密度 2.2% 黄金区间）**：
+     * 针对 Google Trends 真实数据（`capafy ai` 达 Peak 100 爆发值，而 `what is capafy` 热度极低）进行核心词再校准，将推断词和核心靶心锁定为 `Capafy AI`；
+     * 解决前序版本中 `claude code` 频次过高（16次）导致 SEO 引擎推断词错位（掉至 90 分）的串词问题，将 `claude code` 压制在 8 次以内；
+     * 深度吸纳 Google Autocomplete / PASF 截图核心长尾意图：覆盖 `Capafy AI Serenity stock tracker`、`Capafy AI CloneCut`、`Is Capafy AI free or paid?`、`Capafy AI price`、`Capafy AI Reddit` 等高频真实查询；
+     * 控制 `Capafy AI` 出现频次至 2.21% 黄金密度，正文词数保持在 1350–1500 词，消除关键词堆砌（>3%）扣分，SEO 体检达成 0 Blockers、0 Warnings、Title/H1 双 100% 满分匹配。
+* **14 天因果验证假设 (Hypothesis)**：
+  * 依托 `Capafy AI` 核心词与 `Serenity stock tracker`、`CloneCut`、`free or paid` 等精准截图长尾词布局，避开与 Claude Code 泛词竞争，预计 7–14 天内直达 Google `capafy ai` 第一页，并拦截寻找免费开源替代方案的技术开发者，通过 PayPal 即时充值与 $0.20 免费试用转化为 APIVALE 长期调用用户。
+
+### 📅 2026-10-01 - 📝 [转化意图重构与高价值买家词拦截]: 《Space Bunny Alpha》搜索意图全面转向 API Key / Free Trial / Code Example
+
+* **影响页面/路由**：
+  * `/blog/space-bunny-alpha-model-benchmark-api-guide/` (`src/content/blog/space-bunny-alpha-model-benchmark-api-guide.md`)
+* **调整背景与数据洞察**：
+  * GSC 表现：全站点击量第 1 名（展现 160，点击 8 次，CTR 5.0%，均排 8.2）；
+  * 站内转化漏斗：8 次访问中 2 位深度点击内嵌 CTA 访问 `/pricing`（纽约与美东开发者），1 位点击顶部 Banner 触发 `/sign-in`，站内二跳率高达 37.5%，但最终付费转化为 0；
+  * 搜索意图诊断：原标题聚焦 “Benchmark / OpenRouter Guide”，捕获的是泛信息调研（Informational Query）用户，存在意图与付费期望断层；
+  * Google SERP 真实下拉建议与 “People also search for” 暴露极强商业交易词：`space bunny alpha api key`, `space bunny alpha api free`, `space bunny alpha api example`, `space bunny opencode`。
+* **具体落地优化**：
+  1. **ABC Title & MetaTitle 重构**：
+     * MetaTitle 精简至 56 字符黄金区间：`Space Bunny Alpha API Key: Free Access & Setup | APIVALE`（突出 API Key 与 Free Access，剥离带偏意图的 OpenRouter 品牌词）；
+     * H1 升级为 `Space Bunny Alpha API Key: Free Trial Access, Benchmarks & Coding Setup`（<= 80 字符）；
+     * Meta Description 优化为 160 字符，强调 $0.20 免费试用额度与 Cline/OpenCode 接入。
+  2. **首屏增加“60 秒获取 API Key 快速指南”**：
+     * 3-Step 快速上手卡片直击找 Key 意图，消除落地页认知摩擦。
+  3. **H2/H3 锚点与 FAQ 意图重排**：
+     * 将 “How do I get a Space Bunny Alpha API key with free trial credits?” 提至 FAQ 首位并同步至 JSON-LD；
+     * H2 调整为 API Key Access 与 Python Example / OpenCode Setup。
+  4. **CRO CTA 按钮微文案升级**：
+     * 将主按钮升级为 `Claim Space Bunny Alpha Free API Key ($0.20 Trial)`，明确利益与目标模型，承接高意图流量。
+* **14 天因果验证假设 (Hypothesis)**：
+  * 转化意图重构后，新标题与正文将激活 `space bunny alpha api key` 和 `space bunny alpha api free` 关键词排名，预计 14 天内使该页面的免费注册转化率实现从 0 到 1 的突破，且将进 `/pricing` 用户的转化期望完全对齐。
+
 ## 📝 优化行动记录 (2026-09)
 
 ### 📅 2026-09-30 - 🏛️ [品类枢纽页上线 & Hub-and-Spoke 拓扑确立]: 《LLM Gateway》一级独立品类枢纽页上线，全站 Header/Footer 物理授权，激活存量长尾形成权重集散中心
