@@ -30,7 +30,7 @@ lang: "en"
 
 Configuring **Cursor BYOK (Bring Your Own Key)** allows developers to connect external LLM endpoints directly into [Cursor AI Editor](https://www.cursor.com/). Features like multi-file **Composer mode**, terminal command execution, and inline diff generation have revolutionized full-stack engineering. However, as developers push autonomous coding loops to production, the $20/month Pro quota evaporates rapidly.
 
-Once you exhaust the 500 fast request allotment, queries fall back to slow queue throttling or billable request overages. In this comprehensive technical guide, we break down **Cursor BYOK setup**, evaluate **Cursor Free vs. Pro limits**, audit the viral **`leookun/cursor-byok` GitHub proxy**, and calculate exact token break-even pricing across Claude Sonnet 5 and DeepSeek V4 using [APIVALE Gateway](/blog/openrouter-alternatives/).
+Once you exhaust the 500 fast request allotment, queries fall back to slow queue throttling or billable request overages. In this comprehensive technical guide, we break down **Cursor BYOK setup**, evaluate **Cursor Free vs. Pro limits**, audit the viral **`leookun/cursor-byok` GitHub proxy**, and calculate exact token break-even pricing across Claude Sonnet 5 and DeepSeek V4 using [APIVALE Gateway](https://apivale.com/) alongside [high-speed OpenRouter alternatives](/blog/openrouter-alternatives/). For macro-level architectural token savings, review our [enterprise LLM cost optimization guide](/blog/llm-cost-optimization-guide/).
 
 ---
 
@@ -196,7 +196,7 @@ $$\text{Total Monthly Spend} = 500 \times \$0.00112 = \mathbf{\$0.56}$$
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
-For teams exploring terminal agent workflows and local gateways, see our dedicated tutorials on [Configuring Claude Code CLI with Custom Base URLs](/blog/how-to-set-up-claude-code-cli-with-custom-base-url), [OmniRoute Claude Code Gateway Setup](/blog/omniroute-claude-code-setup/), [Connecting Qwen 3.8 to Cursor IDE](/blog/qwen-3-8-cursor-setup/), and [OpenRouter Pricing vs Wholesale API Gateways](/openrouter-pricing/).
+For teams exploring terminal agent workflows and local gateways, see our dedicated tutorials on [Configuring Claude Code CLI with Custom Base URLs](/blog/how-to-set-up-claude-code-cli-with-custom-base-url/), [OmniRoute Claude Code Gateway Setup](/blog/omniroute-claude-code-setup/), [Connecting Qwen 3.8 to Cursor IDE](/blog/qwen-3-8-cursor-setup/), [DeepSeek V4.1 Flash API 437 t/s Benchmark Guide](/blog/deepseek-v4-flash-api-guide/), and [OpenRouter Pricing vs Wholesale API Gateways](/openrouter-pricing/).
 
 ---
 
@@ -222,10 +222,11 @@ Connecting your custom API key to Cursor takes four straightforward steps:
 
 ### Step 4: Add Custom Model Identifiers
 Click **"Add model"** and register your desired models:
-* `deepseek-v4-flash`
-* `infer/qwen3.7-max`
-* `claude-sonnet-5`
-* `infer/meituan/longcat-2.5` (for 1M long-context codebases)
+* `deepseek-v4-flash` (see our [DeepSeek V4 Flash API guide](/blog/deepseek-v4-flash-api-guide/))
+* `infer/qwen3.7-max` (check our dedicated [Qwen 3.8 Cursor IDE setup](/blog/qwen-3-8-cursor-setup/))
+* `stealth/ox-alpha` (read our [Ox Alpha Claude Code & Cursor guide](/blog/ox-alpha-claude-code-cursor-setup/))
+* `claude-sonnet-5` (see our [Claude Opus 5.5 CLI & IDE guide](/blog/claude-opus-5-5-api-pricing-claude-code-guide/))
+* `infer/meituan/longcat-2.5` (for 1M context codebases, explore our [LongCat 2.5 API guide](/blog/longcat-2-5-api-setup-benchmarks/))
 
 ---
 
