@@ -1,18 +1,18 @@
 ---
-title: "Muse AI API Key & Pricing Guide: Muse Spark 1.1, Muse Code & Setup"
-metaTitle: "Muse AI API Key: Pricing, Muse Spark 1.1 & Setup | APIVALE"
-description: "How to get a Muse AI API key. Explore Meta Model API pricing for Muse Spark 1.1 & Muse Code, free trial tokens, and step-by-step MCP setup on APIVALE."
+title: "Muse AI API Key & Setup Guide: Pricing, Access & Free Sandbox"
+metaTitle: "Muse AI API Key: Setup Guide, Pricing & Access | APIVALE"
+description: "How to get a Muse AI API key. Complete guide to Meta Model API setup, token pricing, free developer sandbox credits, and low-cost gateway routing."
 date: "2026-09-27"
 author: "Sofia Costa"
 authorTitle: "FinTech Integration & API Security Expert, APIVALE"
 authorBio: "Sofia Costa specializes in global developer payment orchestration, API security gateways, and enterprise LLM inference cost optimization at APIVALE."
-tags: ["Muse AI", "Muse AI API Key", "Muse Spark 1.1", "Muse Code", "Meta Model API", "DeepSeek V4", "Qwen 3.7 Max", "LLM API", "APIVALE", "PayPal"]
+tags: ["Muse AI", "Muse AI API Key", "Muse AI API", "Meta Model API", "DeepSeek V4", "Qwen 3.7 Max", "LLM API", "APIVALE", "PayPal"]
 keyTakeaways:
   - label: "Primary Target"
-    value: "Muse AI API Key & Muse Spark 1.1"
+    value: "Muse AI API Key & Meta Model API"
     isCode: false
-  - label: "Coding Suite"
-    value: "Muse Code CLI & MCP Sandboxes"
+  - label: "Model Architecture"
+    value: "Meta Muse Spark & MCP Sandboxes"
     isCode: false
   - label: "Gateway Base URL"
     value: "https://api.apivale.com/v1"
