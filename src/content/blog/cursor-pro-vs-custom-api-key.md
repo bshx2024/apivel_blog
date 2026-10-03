@@ -1,7 +1,7 @@
 ---
 title: "Cursor BYOK (Bring Your Own Key) vs Pro: Setup, Limits & Real Cost"
 metaTitle: "Cursor BYOK Guide: Setup, Free Limits & Real Cost | APIVALE"
-description: "Master Cursor BYOK (Bring Your Own Key). Step-by-step setup guide for Claude & DeepSeek, Cursor Free limits, GitHub proxy vs cloud gateway, and pricing breakdown."
+description: "Master Cursor BYOK (Bring Your Own Key). Setup guide for Claude & DeepSeek, Cursor Free limits, GitHub proxy vs gateway, and real monthly cost vs Pro."
 date: "2026-08-31"
 author: "Sofia Costa"
 authorTitle: "FinTech Integration & API Security Expert, APIVALE"
@@ -26,6 +26,14 @@ lang: "en"
   <p class="text-sm text-gray-200 leading-relaxed">
     <strong>Is Cursor Pro ($20/mo) worth it or should you use Cursor BYOK?</strong> If your daily workflow relies heavily on Cursor's proprietary multi-line Copilot autocomplete, stay on <strong>Cursor Pro</strong>. However, if your primary bottleneck is burning through the 500 fast request quota inside Composer and agentic debugging, switching to <strong>Cursor BYOK</strong> on Cursor Free saves up to <strong>97.2%</strong> on model tokens while providing unthrottled peak-hour concurrency.
   </p>
+</div>
+
+<div class="my-4 p-3 bg-gray-800/60 border border-gray-700 rounded-xl flex flex-wrap items-center gap-2 text-xs">
+  <span class="text-gray-400 font-bold uppercase">⚡ Quick Navigation:</span>
+  <a href="#5-step-by-step-setup-configuring-cursor-byok-in-60-seconds" class="px-2.5 py-1 bg-emerald-950/80 text-emerald-300 rounded border border-emerald-500/40 hover:bg-emerald-900 transition">🚀 60s Setup Guide</a>
+  <a href="#2-unlocking-full-agent--tool-calling-native-byok-vs-leookuncursor-byok-github" class="px-2.5 py-1 bg-slate-800 text-cyan-300 rounded border border-cyan-500/40 hover:bg-slate-700 transition">🛠️ Fix Agent & Tool Calling (leookun)</a>
+  <a href="#3-interactive-cursor-byok-vs-pro-cost-calculator" class="px-2.5 py-1 bg-purple-950/80 text-purple-300 rounded border border-purple-500/40 hover:bg-purple-900 transition">🧮 Savings Calculator</a>
+  <a href="#does-cursor-tab-autocomplete-work-with-custom-api-keys" class="px-2.5 py-1 bg-gray-800 text-amber-300 rounded border border-amber-500/40 hover:bg-gray-700 transition">⚠️ Cursor Tab Limits</a>
 </div>
 
 Configuring **Cursor BYOK (Bring Your Own Key)** allows developers to connect external LLM endpoints directly into [Cursor AI Editor](https://www.cursor.com/). Features like multi-file **Composer mode**, terminal command execution, and inline diff generation have revolutionized full-stack engineering. However, as developers push autonomous coding loops to production, the $20/month Pro quota evaporates rapidly.
