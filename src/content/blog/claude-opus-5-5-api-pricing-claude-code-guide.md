@@ -34,7 +34,7 @@ keyTakeaways:
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
     <li><strong>Gateway Protocol:</strong> Access the <strong>Claude Opus 5.5 API</strong> via APIVALE proxy (<code>https://api.apivale.com/v1</code>) with automatic thinking translation.</li>
-    <li><strong>Dual-Engine Routing:</strong> Route architecture design to the flagship engine and delegate routine code to <a href="/blog/how-to-connect-qwen-3-8-to-claude-code-cli" class="text-emerald-400 underline">Qwen 3.8 Max</a> or <a href="/blog/deepseek-v4-flash-api-guide" class="text-emerald-400 underline">DeepSeek V4.1 Flash</a>.</li>
+    <li><strong>Dual-Engine Routing:</strong> Route architecture design to the flagship engine and delegate routine code to <a href="/blog/how-to-connect-qwen-3-8-to-claude-code-cli" class="text-emerald-400 underline">Qwen 3.8 Max</a> or <a href="/blog/deepseek-v4-flash-api-guide" class="text-emerald-400 underline">DeepSeek V4.1 Flash</a>. Read our detailed <a href="/blog/claude-opus-vs-gpt-5-5-for-coding/" class="text-emerald-400 underline font-semibold">Claude Opus 5.5 Free Trial vs GPT-5.5 Coding Guide</a>.</li>
     <li><strong>Error Prevention:</strong> Mandatory adaptive thinking throws HTTP 400 if disabled; adjust effort parameters instead.</li>
     <li><strong>Zero-KYC Access:</strong> Instant global PayPal billing with <a href="/sign-up?redirect=/blog/claude-opus-5-5-api-pricing-claude-code-guide" class="text-emerald-400 underline font-medium">$0.20 free signup trial credit</a>.</li>
   </ul>
