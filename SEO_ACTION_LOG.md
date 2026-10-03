@@ -76,8 +76,9 @@
   2. **PAA 标题与 FAQ Schema 深度融合**：
      * 重构 Section 3 标题为 `## 3. Is Claude Opus 5.5 Free to Use? Official Pricing vs Free Trial Reality`；
      * 将 PAA 问题写入 FAQ Markdown 区域与 JSON-LD Schema，争夺 Google SERP 下拉问答卡片（Rich Snippets）；
-  3. **双向内链织网 (Atomic Bidirectional Mesh Weaving)**：
-     * 从旗舰柱体文章 `claude-opus-5-5-api-pricing-claude-code-guide.md` 注入高权重关键词锚文本链接，指向本页面。
+  3. **双向内链织网与文末集群导航 (Atomic Bidirectional Mesh Weaving & Cluster Nav Box)**：
+     * 从旗舰柱体文章 `claude-opus-5-5-api-pricing-claude-code-guide.md` 注入高权重关键词锚文本链接指向本页面；
+     * 在 CTA 卡片前注入 `Related Guides in the Claude & Coding Cluster` 导航盒，提供 4 篇横向算力与 CLI 教程跳转出口，强力击碎 84% 高跳出率与人均 1 页硬伤。
 * **14 天因果验证假设 (Hypothesis)**：
   * 在精准拦截 `opus 5.5 free` / `free trial` 意图、消灭 SERP 标题截断并注入 PAA 问答卡片后，预期 7-14 天内搜索点击率 (CTR) 从 1.7% 提升至 5%+，Google 搜索排名由第 33.2/17.4 位推入 Top 10（第 1 页），跳出率显著降低。
 
