@@ -58,6 +58,32 @@
 
 ## 📝 优化行动记录 (2026-10)
 
+### 📅 2026-10-04 - 📝 [高排名0点击CTR急救]: 《Cursor Pro vs Custom API Key (BYOK)》依据 GSC 24h 74 展现 (Pos 6.6) 与 Google Autocomplete/Related Searches 深度精细化升级
+
+* **影响页面/路由**：
+  * 主优化页面：`/blog/cursor-pro-vs-custom-api-key/` (`src/content/blog/cursor-pro-vs-custom-api-key.md`)
+* **调整背景与搜索意图洞察**：
+  * **P0 级高展现 0 点击急救页**：GSC 24 小时实时数据显示该页面在 **Google 排名第 6.6 位**，累计获得 **74 次展现**，但 **点击为 0（CTR 0%）**。
+  * **Google 搜索图谱比对**：
+    1. 用户在 Google 输入 `cursor byok` 密集拉出：`cursor byok github`, `cursor byok claude`, `cursor byok free`, `cursor byok pricing`, `cursor byok windows amd64`, `Generate Cursor API key`, `cursor byok deepseek`；
+    2. 原 MetaTitle（`Cursor BYOK Guide: Setup, Free Limits & Real Cost | APIVALE`）丢掉了当前 URL 与 GSC 正在拿排名的原生大词 **`Custom API Key`**，导致 SERP 列表无法高亮加粗；
+    3. 缺乏首屏极限价格反差（$20/mo vs $0.56/mo）刺激。
+* **具体落地优化**：
+  1. **落地 SERP MetaTitle 与 H1 双轨兼顾策略**：
+     * **SERP MetaTitle**：`Cursor Pro vs Custom API Key (BYOK): Real Cost | APIVALE`（56 字符，完美兼顾 URL 原生词 `Custom API Key` 100% 加粗与极客热搜词 `(BYOK)`，严守 ABC 公式与像素安全线）；
+     * **H1 Content Title**：`Cursor Pro vs Custom API Key (BYOK): Real Monthly Cost, Limits & Setup Guide`（77 字符，权威承接进站读者）；
+     * **Meta Description**：`Cursor Pro ($20/mo) vs Custom API Key ($0.56/mo): Compare real token costs across Claude & DeepSeek, free tier limits, and fix disabled Agent tool-calling.`（158 字符，首句抛出 $20 vs $0.56 极限对比，并打出修复 Agent 杀手级钩子）；
+  2. **正文增强代理部署与模型覆盖**：
+     * Section 2 扩充 `leookun/cursor-byok` 本地守护进程在 Windows `cursor-byok-windows-amd64.exe` 与 macOS 上的运行步骤，明确本地域名与端点转发；
+     * 明确 DeepSeek V4 与 Claude Sonnet 5 在 Cursor Free 上的具体算账模型；
+  3. **FAQ 拦截核心盲区词**：
+     * 增加 `How do I generate an API key for Cursor? (Cursor API Key vs Gateway Key)` 扫盲解答，直击 Position Zero 问答摘要；
+  4. **门禁体检通过**：
+     * `audit_article_seo_health` 验证通过：0 Blockers、0 Warnings，MetaTitle 56 字符，结构严格对称。
+* **14 天因果假设**：
+  * 该页面在 Google 第 6~7 位的 CTR 预计在 48–72 小时内由 0% 提升至 5%~10%，日均带来 6~12 个高意向付费转化开发者；
+  * 抢占 `cursor byok windows amd64`、`cursor byok github` 及 `generate cursor api key` 长尾词。
+
 ### 📅 2026-10-04 - 📝 [高排名0点击CTR急救]: 《OpenRouter Free Tier》依据 GSC 24h 92 展现 (Pos 3.7) 与 Google Autocomplete/PAA 实测数据深度精细化升级
 
 * **影响页面/路由**：
