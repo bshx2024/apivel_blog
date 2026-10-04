@@ -58,6 +58,32 @@
 
 ## 📝 优化行动记录 (2026-10)
 
+### 📅 2026-10-04 - 📝 [高排名0点击CTR急救]: 《OpenRouter Free Tier》依据 GSC 24h 92 展现 (Pos 3.7) 与 Google Autocomplete/PAA 实测数据深度精细化升级
+
+* **影响页面/路由**：
+  * 主优化页面：`/blog/is-openrouter-free-tier-limits/` (`src/content/blog/is-openrouter-free-tier-limits.md`)
+* **调整背景与搜索意图洞察**：
+  * **P0 级高排名低点击急救页**：GSC 24 小时实时数据显示该页面已冲上 **Google 搜索结果第 3.7 位**，获得 **92 次高频展现**，但 **点击为 0（CTR 0%）**。
+  * **Google 实测搜索意图诊断**：
+    1. Google Autocomplete 下拉联想词密集指向：`openrouter free tier limit`, `openrouter free tier models`, `openrouter free tier token limit`, `openrouter free tier daily`;
+    2. Google PAA（People Also Ask）权威问题为：`What is the cheapest OpenRouter model?`, `What are the features of the OpenRouter 10 dollar free tier?`, `Do I need to pay for an OpenRouter?`, `Is OpenRouter worth it?`；
+    3. 原 Title 偏抽象（`Real Limits & Hidden Costs`），既没有具体限额数字（50 RPD），也没有覆盖搜索量最大的 `models` 清单和 `token limit`，导致用户在 SERP 列表快速滑过。
+* **具体落地优化**：
+  1. **落地 SERP MetaTitle 与 H1 双轨分工策略**：
+     * **SERP MetaTitle**：`OpenRouter Free Tier Limits: 50 RPD & Models | APIVALE`（54 字符，严格遵循 ABC 公式 `[主词] + [关键参数/利益点] | [品牌]`，物理像素约 510px，全端永不截断）；
+     * **H1 Content Title**：`OpenRouter Free Tier: 50 RPD Daily Limits, Models List & Upstream 429 Fix`（74 字符，全面覆盖 `daily limit`, `models list`, `429 fix`，提升进站停留）；
+     * **Meta Description**：`Is OpenRouter free? Discover true 50 daily request limits, token context caps on :free models, upstream 429 errors, and how to get free API testing credits.`（157 字符，覆盖 `token limit` 与 `daily limit` 痛点）；
+  2. **正文填补两大核心信息缺口 (Information Gain)**：
+     * 新增小节 `### OpenRouter Free Tier Token Limits & Context Caps`，硬核解析 `:free` 模型被上游提供商截断至 8K/16K 上下文及 2,048 输出 token 的暗坑；
+     * 新增表格 `### Active OpenRouter Free Tier Models List`，清晰整理 Meta Llama 3.3、Qwen 2.5、Mistral、Gemma 的 `:free` 官方 Model ID 与 Context 上限；
+  3. **FAQ 与 JSON-LD Schema 100% 对齐 Google PAA**：
+     * 重构 5 大技术问答与结构化标记，精准拦截 `cheapest model`, `10 dollar tier`, `token limit`, `need to pay`, `worth it`；
+  4. **门禁体检通过**：
+     * `audit_article_seo_health` 自动化验证：0 Blockers、0 Warnings，AST H2->H3 严格对称，Widget 0 原生 H 标签。
+* **14 天因果假设**：
+  * 该页面在 Google 第 3~4 位的 CTR 预计在 48–72 小时内由 0% 跃升至 6%~12%，日均带来 8~15 个精准开发者点击；
+  * 抢占 Google PAA 展开折叠位与 `openrouter free tier models` 长尾关键词排名。
+
 ### 📅 2026-10-03 - 📝 [高排名低CTR爆炸性纠偏]: 《OmniRoute Claude Setup & Plugin Guide》依据 4 张 Google Trends (>5,000% Breakout) 与 SERP 实测数据深度升级
 
 * **影响页面/路由**：
