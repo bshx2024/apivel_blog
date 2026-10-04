@@ -60,13 +60,13 @@
 
 ### 📅 2026-10-04 - 📝 [内链拓扑网络与集群导航强化]: 《OpenRouter Free Tier》与《Cursor BYOK》全站双向内链网格织入与集群导航卡片闭环部署
 
-* **影响页面/路由**：
-  * 主页面 1：`/blog/is-openrouter-free-tier-limits/` (`src/content/blog/is-openrouter-free-tier-limits.md`)
-  * 主页面 2：`/blog/cursor-pro-vs-custom-api-key/` (`src/content/blog/cursor-pro-vs-custom-api-key.md`)
+* **影响页面/路由与线上链接**：
+  * 主页面 1：`/blog/is-openrouter-free-tier-limits/` (`src/content/blog/is-openrouter-free-tier-limits.md`) → `https://apivale.com/blog/is-openrouter-free-tier-limits/`
+  * 主页面 2：`/blog/cursor-pro-vs-custom-api-key/` (`src/content/blog/cursor-pro-vs-custom-api-key.md`) → `https://apivale.com/blog/cursor-pro-vs-custom-api-key/`
   * 协同注入内链页面：
-    * `/blog/opencode-paypal-billing-api-proxy-guide/` (`src/content/blog/opencode-paypal-billing-api-proxy-guide.md`)
-    * `/blog/how-to-reduce-opencode-token-costs/` (`src/content/blog/how-to-reduce-opencode-token-costs.md`)
-    * `/blog/openrouter-alternatives/` (`src/content/blog/openrouter-alternatives.md`)
+    * `/blog/opencode-paypal-billing-api-proxy-guide/` → `https://apivale.com/blog/opencode-paypal-billing-api-proxy-guide/`
+    * `/blog/how-to-reduce-opencode-token-costs/` → `https://apivale.com/blog/how-to-reduce-opencode-token-costs/`
+    * `/blog/openrouter-alternatives/` → `https://apivale.com/blog/openrouter-alternatives/`
 * **调整背景与内链孤岛排查**：
   * **内链审计诊断**：针对今日完成 TDK 与内容精细化优化的两篇急救博文进行内部链接拓扑复核：
     1. 《Cursor BYOK》在全站已有超过 15 篇高质量博文及核心落地页（如 `qwen-3-8-cursor-setup`, `ox-alpha-claude-code-cursor-setup`, `llm-gateway.astro` 等）的强锚文本入链，网络权重充足；但文末缺少主题集群推荐卡片。
@@ -88,9 +88,11 @@
   * 彻底打破新文章权重孤岛，加速 Google 蜘蛛的深度重抓取（Re-crawl）；
   * 访客单次访问的阅读深度提升 30%~50%，降低跳出率（Bounce Rate），有效带动全站 Topical Authority 集群权重协同上升。
 
+### 📅 2026-10-04 - 📝 [高排名0点击CTR急救与核心词绝对锚定]: 《Cursor BYOK》核心主词绝对锁定为「cursor byok」（依据 GSC 24h 74 展现与哥飞 SEO 军师体检结果，彻底拔除 api key 干扰与 Cursor Pro 赛道错位）
 
 * **影响页面/路由**：
   * 主优化页面：`/blog/cursor-pro-vs-custom-api-key/` (`src/content/blog/cursor-pro-vs-custom-api-key.md`)
+  * 线上链接：`https://apivale.com/blog/cursor-pro-vs-custom-api-key/`
 * **调整背景与搜索意图深度纠偏**：
   * **P0 级高展现 0 点击急救页**：GSC 24 小时实时数据显示该页面在 **Google 排名第 6.6 位**，累计获得 **74 次展现**，但 **点击为 0（CTR 0%）**。
   * **核心主词绝对锁定为 `cursor byok`**：
@@ -117,8 +119,9 @@
 
 ### 📅 2026-10-04 - 📝 [高排名0点击CTR急救]: 《OpenRouter Free Tier》依据 GSC 24h 92 展现 (Pos 3.7) 与 Google Autocomplete/PAA 实测数据深度精细化升级
 
-* **影响页面/路由**：
+* **影响页面/路由与线上链接**：
   * 主优化页面：`/blog/is-openrouter-free-tier-limits/` (`src/content/blog/is-openrouter-free-tier-limits.md`)
+  * 线上链接：`https://apivale.com/blog/is-openrouter-free-tier-limits/`
 * **调整背景与搜索意图洞察**：
   * **P0 级高排名低点击急救页**：GSC 24 小时实时数据显示该页面已冲上 **Google 搜索结果第 3.7 位**，获得 **92 次高频展现**，但 **点击为 0（CTR 0%）**。
   * **Google 实测搜索意图诊断**：
