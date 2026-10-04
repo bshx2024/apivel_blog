@@ -41,7 +41,9 @@ keyTakeaways:
 
 Developers building autonomous coding agents or terminal workflows frequently ask: **is OpenRouter free?** Browsing the catalog reveals popular architectures like Llama and Qwen tagged with `:free`. 
 
-However, integrating these endpoints into Cursor IDE or Cline often leads to immediate `HTTP 429 Too Many Requests` errors and daily quota lockouts. As examined in our architectural guide on <a href="/llm-gateway/" class="text-emerald-400 hover:underline font-semibold">LLM Gateway Architecture & Routing</a> and our benchmark of [OpenRouter alternatives](/blog/openrouter-alternatives/), understanding free tier quotas is essential for continuous execution. Teams implementing [LLM cost optimization strategies](/blog/llm-cost-optimization-guide/) must look beyond the "$0" tag to evaluate real-world developer friction.
+However, integrating these endpoints into Cursor IDE or Cline often leads to immediate `HTTP 429 Too Many Requests` errors and daily quota lockouts. For developers configuring IDE workflows, see our comparative breakdown on [Cursor BYOK vs Pro Real Cost](/blog/cursor-pro-vs-custom-api-key/) to evaluate pay-as-you-go keys against flat subscriptions.
+
+Evaluating free tier quotas is essential for continuous agent execution. Teams implementing [LLM cost optimization strategies](/blog/llm-cost-optimization-guide/) must look beyond the "$0" tag to evaluate real-world developer friction and consider high-throughput [OpenRouter alternatives](/blog/openrouter-alternatives/).
 
 This technical audit breaks down the **OpenRouter free tier**, its 50 RPD quota gate, upstream throttling dynamics, privacy policies, and how to transition to a reliable developer gateway.
 
@@ -332,6 +334,16 @@ OpenRouter is worth it for developers prototyping simple prompts across varied o
   ]
 }
 </script>
+
+<div class="my-8 rounded-xl bg-gray-900 border border-gray-800 p-5">
+  <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Related Guides in the OpenRouter &amp; Gateway Cluster</span>
+  <div class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+    <a href="/blog/openrouter-alternatives/" class="text-gray-300 hover:text-emerald-400 font-medium transition-colors">→ OpenRouter Alternatives: Wholesale Pricing &amp; No-Card Gateways</a>
+    <a href="/blog/cursor-pro-vs-custom-api-key/" class="text-gray-300 hover:text-emerald-400 font-medium transition-colors">→ Cursor BYOK vs Pro: Real Cost &amp; Setup Guide</a>
+    <a href="/blog/opencode-paypal-billing-api-proxy-guide/" class="text-gray-300 hover:text-emerald-400 font-medium transition-colors">→ OpenCode PayPal Billing &amp; Proxy Setup Guide</a>
+    <a href="/blog/llm-cost-optimization-guide/" class="text-gray-300 hover:text-emerald-400 font-medium transition-colors">→ Enterprise LLM Cost Optimization Strategies</a>
+  </div>
+</div>
 
 <div class="my-8 rounded-2xl bg-gradient-to-br from-gray-900 via-indigo-950/40 to-gray-900 border border-indigo-500/30 p-8 shadow-2xl relative overflow-hidden">
   <div class="absolute -top-12 -right-12 w-48 h-48 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>

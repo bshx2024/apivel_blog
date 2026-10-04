@@ -24,7 +24,7 @@ lang: "en"
 <div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
   <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Related OpenCode & Agent Setup Guides</span>
   <p class="mt-1 text-sm text-gray-300">
-    Looking to optimize your agent stack? Read our guide on <a href="/blog/how-to-reduce-opencode-token-costs/" class="text-cyan-400 hover:underline font-semibold">slashing OpenCode token costs by 85%</a>, explore <a href="/blog/openrouter-alternatives/" class="text-cyan-400 hover:underline font-semibold">top OpenRouter alternatives with PayPal support</a>, or follow our walkthrough for <a href="/blog/ox-alpha-claude-code-cursor-setup/" class="text-cyan-400 hover:underline font-semibold">Ox Alpha in Claude Code & Cursor</a>.
+    Looking to optimize your agent stack? Read our guide on <a href="/blog/how-to-reduce-opencode-token-costs/" class="text-cyan-400 hover:underline font-semibold">slashing OpenCode token costs by 85%</a>, audit daily quotas in our <a href="/blog/is-openrouter-free-tier-limits/" class="text-cyan-400 hover:underline font-semibold">OpenRouter free tier limits &amp; 429 fix guide</a>, explore <a href="/blog/openrouter-alternatives/" class="text-cyan-400 hover:underline font-semibold">top OpenRouter alternatives with PayPal support</a>, or follow our walkthrough for <a href="/blog/ox-alpha-claude-code-cursor-setup/" class="text-cyan-400 hover:underline font-semibold">Ox Alpha in Claude Code &amp; Cursor</a>.
   </p>
 </div>
 

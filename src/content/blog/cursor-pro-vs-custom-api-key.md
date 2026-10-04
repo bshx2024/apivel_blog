@@ -332,6 +332,16 @@ Subscribing to US-based AI developer platforms frequently leads to sudden card d
 
 ---
 
+<div class="my-8 rounded-xl bg-gray-900 border border-gray-800 p-5">
+  <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Related Guides in the Cursor &amp; Developer Tools Cluster</span>
+  <div class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+    <a href="/blog/qwen-3-8-cursor-setup/" class="text-gray-300 hover:text-emerald-400 font-medium transition-colors">→ How to Connect Qwen 3.8 to Cursor IDE (.cursorrules)</a>
+    <a href="/blog/deepseek-v4-flash-api-guide/" class="text-gray-300 hover:text-emerald-400 font-medium transition-colors">→ DeepSeek V4.1 Flash API 437 t/s Benchmark Guide</a>
+    <a href="/blog/omniroute-claude-code-setup/" class="text-gray-300 hover:text-emerald-400 font-medium transition-colors">→ OmniRoute Claude &amp; Cursor Gateway Setup</a>
+    <a href="/blog/is-openrouter-free-tier-limits/" class="text-gray-300 hover:text-emerald-400 font-medium transition-colors">→ OpenRouter Free Tier Limits: 50 RPD &amp; Upstream 429 Fix</a>
+  </div>
+</div>
+
 <div class="cta-card">
   <div class="cta-card-title font-bold text-lg text-emerald-400">⚡ Upgrade Your Cursor BYOK Workflow with APIVALE</div>
   <p class="cta-card-text text-gray-300 text-sm mt-2 mb-4">Eliminate 500-request quotas and slow peak-hour queues. Route Cursor IDE directly to APIVALE for wholesale token pricing, zero rate-limit drops, and instant PayPal global checkout.</p>
