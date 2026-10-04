@@ -58,31 +58,34 @@
 
 ## 📝 优化行动记录 (2026-10)
 
-### 📅 2026-10-04 - 📝 [高排名0点击CTR急救]: 《Cursor Pro vs Custom API Key (BYOK)》依据 GSC 24h 74 展现 (Pos 6.6) 与 Google Autocomplete/Related Searches 深度精细化升级
+### 📅 2026-10-04 - 📝 [高排名0点击CTR急救与赛道归位]: 《Cursor BYOK vs Pro》依据 GSC 24h 74 展现 (Pos 6.6) 与哥飞 SEO 军师/page_coach 体检结果深度纠偏（赛道脱离 Cursor Pro 官方红海死局，全面锚定 Cursor BYOK 蓝海主词）
 
 * **影响页面/路由**：
   * 主优化页面：`/blog/cursor-pro-vs-custom-api-key/` (`src/content/blog/cursor-pro-vs-custom-api-key.md`)
-* **调整背景与搜索意图洞察**：
+* **调整背景与搜索意图深度纠偏**：
   * **P0 级高展现 0 点击急救页**：GSC 24 小时实时数据显示该页面在 **Google 排名第 6.6 位**，累计获得 **74 次展现**，但 **点击为 0（CTR 0%）**。
-  * **Google 搜索图谱比对**：
-    1. 用户在 Google 输入 `cursor byok` 密集拉出：`cursor byok github`, `cursor byok claude`, `cursor byok free`, `cursor byok pricing`, `cursor byok windows amd64`, `Generate Cursor API key`, `cursor byok deepseek`；
-    2. 原 MetaTitle（`Cursor BYOK Guide: Setup, Free Limits & Real Cost | APIVALE`）丢掉了当前 URL 与 GSC 正在拿排名的原生大词 **`Custom API Key`**，导致 SERP 列表无法高亮加粗；
-    3. 缺乏首屏极限价格反差（$20/mo vs $0.56/mo）刺激。
-* **具体落地优化**：
-  1. **落地 SERP MetaTitle 与 H1 双轨兼顾策略**：
-     * **SERP MetaTitle**：`Cursor Pro vs Custom API Key (BYOK): Real Cost | APIVALE`（56 字符，完美兼顾 URL 原生词 `Custom API Key` 100% 加粗与极客热搜词 `(BYOK)`，严守 ABC 公式与像素安全线）；
-     * **H1 Content Title**：`Cursor Pro vs Custom API Key (BYOK): Real Monthly Cost, Limits & Setup Guide`（77 字符，权威承接进站读者）；
-     * **Meta Description**：`Cursor Pro ($20/mo) vs Custom API Key ($0.56/mo): Compare real token costs across Claude & DeepSeek, free tier limits, and fix disabled Agent tool-calling.`（158 字符，首句抛出 $20 vs $0.56 极限对比，并打出修复 Agent 杀手级钩子）；
-  2. **正文增强代理部署与模型覆盖**：
-     * Section 2 扩充 `leookun/cursor-byok` 本地守护进程在 Windows `cursor-byok-windows-amd64.exe` 与 macOS 上的运行步骤，明确本地域名与端点转发；
-     * 明确 DeepSeek V4 与 Claude Sonnet 5 在 Cursor Free 上的具体算账模型；
-  3. **FAQ 拦截核心盲区词**：
-     * 增加 `How do I generate an API key for Cursor? (Cursor API Key vs Gateway Key)` 扫盲解答，直击 Position Zero 问答摘要；
+  * **哥飞 SEO 军师 / page_coach 核心诊断预警**：
+    1. 页面因之前将 `Cursor Pro` 放在标题和 H1 最前（如 `Cursor Pro vs Custom API Key...`），被搜索引擎 NLP 分词算法误判为主要竞争 `Cursor Pro` 这个官方大词！
+    2. 而 Google `cursor pro` 前十被 Cursor 官网定价、学生包、Docs 和 Reddit 绝对垄断，导致小站发生“赛道错位”，且因多意图混杂导致密度榜位置加权覆盖丢 4.1 分；
+    3. 真实搜索图谱显示，本页真正的杀手级蓝海主赛道是 **`Cursor BYOK`**（海外极客高频词，Google 下拉密集指向 `cursor byok github`, `cursor byok windows amd64`, `cursor byok deepseek`）。
+* **具体落地纠偏动作**：
+  1. **主词前置归位，打死锚定 `Cursor BYOK` 赛道**：
+     * **SERP MetaTitle**：`Cursor BYOK vs Pro: Real Cost & Custom API Key | APIVALE`（54 字符，将 `Cursor BYOK` 绝对置于最前位，彻底扭转搜索引擎核心词推断，同时保留 `vs Pro` 与 `Custom API Key` 供 SERP 搜索高亮加粗）；
+     * **H1 Content Title**：`Cursor BYOK vs Pro: Real Monthly Cost, Limits & Setup Guide`（66 字符，高度统一聚焦）；
+     * **Meta Description**：`Cursor BYOK vs Cursor Pro ($20/mo): Compare real token costs ($0.56/mo with DeepSeek), free tier limits, and fix disabled Agent tool-calling via GitHub proxy.`（160 字符黄金长度）；
+  2. **正文各核心 H2 全量以 `Cursor BYOK` 规范统一**：
+     * H2-1：`## 1. Cursor BYOK vs. Cursor Pro vs. Claude Pro: Multi-Dimensional Breakdown`
+     * H2-2：`## 2. Cursor BYOK Agent Tool Calling: Native Limits vs. leookun/cursor-byok (GitHub)`
+     * H2-4：`## 4. Cursor BYOK Token Economics: Break-Even Formula vs Cursor Pro`
+     * 全面收敛正文散落的单独 `Cursor Pro` 泛词指代，彻底消除词意稀释，提升 `Cursor BYOK` 在 1~5 词密度榜前排加权分；
+  3. **增强开源本地代理与盲区问答**：
+     * 明确 Windows `cursor-byok-windows-amd64.exe` 本地代理（端口 8080）与 APIVALE 端点映射，解决原生 Agent 阉割痛点；
+     * FAQ 新增 `How do I generate an API key for Cursor? (Cursor API Key vs Gateway Key)` 拦截 Position Zero；
   4. **门禁体检通过**：
-     * `audit_article_seo_health` 验证通过：0 Blockers、0 Warnings，MetaTitle 56 字符，结构严格对称。
+     * `audit_article_seo_health` 自动化验证：0 Blockers、0 Warnings，MetaTitle 56 字符，结构严格对称。
 * **14 天因果假设**：
-  * 该页面在 Google 第 6~7 位的 CTR 预计在 48–72 小时内由 0% 提升至 5%~10%，日均带来 6~12 个高意向付费转化开发者；
-  * 抢占 `cursor byok windows amd64`、`cursor byok github` 及 `generate cursor api key` 长尾词。
+  * 赛道归位后，Google 将停止在 `cursor pro` 官网垄断词中空耗权重，全面锁定 `cursor byok` 与 `cursor byok vs pro`；
+  * 该页面在 Google 第 6~7 位的 CTR 预计在 48–72 小时内由 0% 提升至 6%~12%，日均捕获 8~16 个精准开发者点击。
 
 ### 📅 2026-10-04 - 📝 [高排名0点击CTR急救]: 《OpenRouter Free Tier》依据 GSC 24h 92 展现 (Pos 3.7) 与 Google Autocomplete/PAA 实测数据深度精细化升级
 
