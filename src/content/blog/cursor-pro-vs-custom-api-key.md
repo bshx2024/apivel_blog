@@ -1,17 +1,17 @@
 ---
-title: "Cursor BYOK vs Pro: Real Monthly Cost, Limits & Setup Guide"
-metaTitle: "Cursor BYOK vs Pro: Real Cost & Custom API Key | APIVALE"
-description: "Cursor BYOK vs Cursor Pro ($20/mo): Compare real token costs ($0.56/mo with DeepSeek), free tier limits, and fix disabled Agent tool-calling via GitHub proxy."
+title: "Cursor BYOK: Real Cost vs Pro, Free Limits & Setup Guide"
+metaTitle: "Cursor BYOK: Real Cost vs Pro & Setup Guide | APIVALE"
+description: "Cursor BYOK guide: Compare real monthly token costs vs Pro ($0.56/mo), Cursor Free limits, custom endpoint setup, and fix disabled Agent tool-calling via proxy."
 date: "2026-08-31"
 author: "Sofia Costa"
 authorTitle: "FinTech Integration & API Security Expert, APIVALE"
 authorBio: "Sofia Costa is a financial technology engineer specializing in API payment integration, consumption analytics, and LLM billing architectures."
-tags: ["Cursor BYOK", "Cursor BYOK vs Pro", "cursor-byok", "Bring Your Own Key", "Cursor Custom API Key", "leookun/cursor-byok", "Cursor BYOK GitHub", "Generate Cursor API Key", "Cursor BYOK DeepSeek", "Cursor Free Limits", "API Pricing", "LLM Costs", "PayPal", "APIVALE"]
+tags: ["Cursor BYOK", "cursor-byok", "Cursor BYOK Guide", "Cursor BYOK vs Pro", "Cursor BYOK GitHub", "Cursor BYOK Free", "Cursor BYOK DeepSeek", "Bring Your Own Key", "API Pricing", "LLM Costs", "PayPal", "APIVALE"]
 image: "/blog/cursor-pro-vs-custom-api-cover.png"
 lang: "en"
 keyTakeaways:
-  - label: "Primary Workflow"
-    value: "Cursor BYOK (Bring Your Own Key) vs Pro"
+  - label: "Core Workflow"
+    value: "Cursor BYOK (Bring Your Own Key)"
     highlight: true
   - label: "Agent Tool-Calling"
     value: "Restored via leookun/cursor-byok GitHub Proxy"
