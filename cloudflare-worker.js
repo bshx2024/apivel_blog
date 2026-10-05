@@ -166,7 +166,8 @@ Disallow: /dashboard
 Disallow: /playground?*
 Allow: /
 
-Sitemap: https://apivale.com/sitemap-index.xml
+Sitemap: https://apivale.com/blog/sitemap-index.xml
+Sitemap: https://apivale.com/sitemap.xml
 `;
       return new Response(robotsContent, {
         status: 200,
