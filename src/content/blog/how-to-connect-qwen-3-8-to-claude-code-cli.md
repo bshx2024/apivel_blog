@@ -1,7 +1,7 @@
 ---
-title: "Qwen 3.8 in Claude Code: Connect & Save 80% Token Costs"
-metaTitle: "Qwen 3.8 in Claude Code Setup: Connect & Save 80% | APIVALE"
-description: "Connect Qwen 3.8 to Claude Code. Slash API token costs by 80% ($0.60/1M) via APIVALE gateway with sub-500ms TTFT, prompt caching, and PayPal billing."
+title: "Qwen 3.8 in Claude Code CLI: Connect, Slash 80% Costs & Free Trial"
+metaTitle: "Qwen 3.8 in Claude Code CLI: Setup & $0.20 Trial | APIVALE"
+description: "Connect Qwen 3.8 to Claude Code CLI. Slash API token costs by 80% ($0.60/1M) via APIVALE gateway with sub-500ms TTFT, $0.20 free trial, and PayPal billing."
 date: '2026-07-30'
 author: Alex Rivera
 authorTitle: 'Senior Cloud Architect & API Integrations, APIVALE'
@@ -16,14 +16,26 @@ tags:
   - Claude Code CLI
   - Anthropic API
   - APIVALE
-  - Waffo
+  - PayPal
 image: /blog/og-cover.png
 lang: en
+keyTakeaways:
+  - label: "Cost Arbitrage"
+    value: "Slash 80% ($0.60/1M vs $3.00/1M)"
+    highlight: true
+  - label: "Sub-500ms TTFT"
+    value: "~420ms Time-to-First-Token"
+  - label: "Integration Base URL"
+    value: "https://api.apivale.com/v1"
+    isCode: true
+  - label: "Billing & Free Trial"
+    value: "PayPal & Global Cards ($0.20 Trial)"
+    highlight: true
 ---
 <div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
-  <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
+  <div class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</div>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
-    <li><strong>80% Cost Reduction:</strong> Running Qwen 3.8 in Claude Code via <a href="https://apivale.com/sign-up?redirect=/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="text-emerald-400 hover:underline font-semibold">APIVALE (Claim $0.20 Free Credit)</a> cuts input costs to $0.60/1M tokens.</li>
+    <li><strong>80% Cost Reduction:</strong> Running Qwen 3.8 in Claude Code via <a href="https://apivale.com/sign-up?redirect=/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="text-emerald-400 hover:underline font-semibold" rel="nofollow">APIVALE (Claim $0.20 Free Credit)</a> cuts input costs to $0.60/1M tokens.</li>
     <li><strong>Sub-500ms TTFT:</strong> APIVALE's proxy reduces Time-to-First-Token to ~420ms—50% faster than baseline endpoints.</li>
     <li><strong>Global PayPal Billing:</strong> Bypasses credit card rejections and KYC blocks with native PayPal support.</li>
     <li><strong>First Top-Up Privilege (+50% Bonus):</strong> Automatically get +50% extra compute credits. Top up <strong>$5 &rarr; get $7.50</strong> (&approx; 3M Tokens, Never Expire), or grab the popular <strong>$29 Developer Pack (40M Tokens, 56% OFF)</strong>.</li>

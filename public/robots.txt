@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /*?redirect=*
+Disallow: /*?utm_*
+Disallow: /pricing?*
+Disallow: /sign-in?*
+Disallow: /sign-up?*
+Disallow: /dashboard
+Disallow: /playground?*
+Allow: /
+
+Sitemap: https://apivale.com/sitemap-index.xml

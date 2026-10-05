@@ -152,7 +152,53 @@ export default {
       }
     }
 
+    // ==========================================
+    // ROBOTS.TXT EDGE INTERCEPTION & SANITIZATION
+    // ==========================================
+    if (url.pathname === "/robots.txt") {
+      const robotsContent = `User-agent: *
+Disallow: /*?redirect=*
+Disallow: /*?utm_*
+Disallow: /pricing?*
+Disallow: /sign-in?*
+Disallow: /sign-up?*
+Disallow: /dashboard
+Disallow: /playground?*
+Allow: /
+
+Sitemap: https://apivale.com/sitemap-index.xml
+`;
+      return new Response(robotsContent, {
+        status: 200,
+        headers: {
+          "Content-Type": "text/plain; charset=UTF-8",
+          "Cache-Control": "public, max-age=86400"
+        }
+      });
+    }
+
     // Default: Forward request to the origin server (your VPS)
-    return fetch(request);
+    const originResponse = await fetch(request);
+
+    // If request contains redirect/utm parameters or is a query-bearing system action route,
+    // inject X-Robots-Tag: noindex, nofollow to prevent indexation bloat on Google SERP.
+    const isParameterBloat = url.searchParams.has("redirect") || 
+      url.searchParams.has("utm_source") || 
+      url.searchParams.has("utm_medium") || 
+      (url.pathname === "/pricing" && url.search.length > 0) ||
+      (url.pathname === "/sign-in" && url.search.length > 0) ||
+      (url.pathname === "/sign-up" && url.search.length > 0);
+
+    if (isParameterBloat) {
+      const sanitizedHeaders = new Headers(originResponse.headers);
+      sanitizedHeaders.set("X-Robots-Tag", "noindex, nofollow");
+      return new Response(originResponse.body, {
+        status: originResponse.status,
+        statusText: originResponse.statusText,
+        headers: sanitizedHeaders
+      });
+    }
+
+    return originResponse;
   }
 }
