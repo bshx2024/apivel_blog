@@ -63,12 +63,12 @@ keyTakeaways:
   </div>
 </div>
 
-Running 100B+ parameter open-weights models on consumer developer workstations has historically hit an insurmountable memory wall. Traditional unquantized checkpoints for 125B architectures demand upwards of 250GB of VRAM, while standard 4-bit GGUF quantization still requires roughly 82GB of VRAM across quad-GPU rigs (as calculated in our [Qwen 3.8 Flash Next VRAM math guide](/blog/qwen-3-8-flash-next-benchmarks-api-guide/)). Developers attempting CPU/RAM offloading via standard `llama.cpp` builds routinely endure crawl speeds of 2 to 4 tokens per second, making interactive coding agents unusable.
+Running 100B+ parameter open-weights models locally has historically hit a severe VRAM wall. Traditional unquantized checkpoints demand 250GB+ VRAM, while standard 4-bit GGUFs require ~82GB across multi-GPU rigs (as calculated in our [Qwen 3.8 Flash Next VRAM math guide](/blog/qwen-3-8-flash-next-benchmarks-api-guide/)). Offloading via standard `llama.cpp` builds yields 2–4 tokens per second, making interactive coding agents unusable.
 
-The open-source **Strata Qwen** inference engine completely alters this equation. By exploiting the sparse routing of **Qwen 3.8 Flash Next** (125B total parameters with only 6B parameters activated per token), Strata Qwen splits model layers across a three-tier hardware hierarchy: GPU VRAM, DDR5 host system memory, and NVMe flash storage.
+The open-source **Strata Qwen** inference runtime changes this equation. By leveraging sparse routing in **Qwen 3.8 Flash Next** (125B total parameters with 6B active per token), the engine distributes weights across three hardware tiers: GPU VRAM, host DDR5 RAM, and NVMe flash storage.
 
 ```bash
-# Verify API connectivity to compare local Strata Qwen vs APIVALE cloud endpoint
+# Compare local throughput against APIVALE cloud endpoint
 curl -X POST https://api.apivale.com/v1/chat/completions \
   -H "Authorization: Bearer $APIVALE_API_KEY" \
   -H "Content-Type: application/json" \
@@ -82,7 +82,7 @@ curl -X POST https://api.apivale.com/v1/chat/completions \
 <div class="my-6 border-l-4 border-amber-500 bg-gray-900 rounded-r-lg p-4">
   <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Verified Community Voice & Troubleshooting</span>
   <p class="mt-1 text-sm text-gray-300 italic">
-    "When firing up Strata on Windows 11 with 64GB DDR5 and an RTX 4070 12GB, the automated installer stopped with <code>Address already in use: port 8080</code> because Docker Desktop had claimed the socket. Passing <code>--port 8085</code> immediately exposed the OpenAI API at <code>http://localhost:8085/v1</code>, delivering 88 t/s on IQ3_S."
+    "When firing up Strata on Windows 11 with 64GB DDR5 and an RTX 4070 12GB, the automated installer stopped with <code>Address already in use: port 8080</code> because Docker Desktop claimed the socket. Passing <code>--port 8085</code> immediately exposed the OpenAI API at <code>http://localhost:8085/v1</code>, delivering 88 t/s on IQ3_S."
   </p>
   <span class="mt-2 block text-xs text-gray-400">
     — Primary source verified via <a href="https://github.com/Niko1221/Strata/issues" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:underline">Strata Community Issues (GitHub #8080)</a>
@@ -93,98 +93,91 @@ curl -X POST https://api.apivale.com/v1/chat/completions \
   <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Definition</span>
   <div class="mt-1 text-md font-semibold text-white">Strata Qwen Inference Engine</div>
   <p class="mt-2 text-sm text-gray-300">
-    Strata Qwen is an open-source, specialized local inference runtime built specifically for the Qwen 3.8 Flash Next Mixture-of-Experts architecture. It coordinates zero-copy DMA transfers between GPU VRAM, system RAM, and NVMe SSDs to serve 125B MoE models at 50–100+ tokens per second on consumer hardware with 12GB of VRAM.
+    Strata Qwen is a specialized local inference runtime built for Qwen 3.8 Flash Next MoE. It uses zero-copy DMA transfers across GPU VRAM, system RAM, and NVMe SSDs to serve 125B models at 50–100+ tokens per second on consumer hardware with 12GB of VRAM.
   </p>
 </div>
 
 ## Strata Qwen Architecture: How Tiered Memory Bypasses VRAM Walls
 
-Understand how the Strata Qwen engine decouples parameter weights across physical memory boundaries to execute sparse MoE kernels on consumer GPUs.
+Understand how memory tiering decouples parameter weights across physical memory boundaries to execute sparse MoE kernels on consumer GPUs.
 
-Unlike dense models where every weight must be evaluated for every forward pass, Qwen 3.8 Flash Next routes tokens through dynamically selected subsets of experts. Strata Qwen partitions the workload into three distinct computational planes:
+Unlike dense models where every weight is evaluated each pass, Qwen 3.8 Flash Next routes tokens through dynamically selected subsets of experts. The runtime coordinates three computational planes:
 
 ```mermaid
 graph TD
-    subgraph "Tier 1: GPU VRAM (12GB Required)"
+    subgraph "Tier 1: GPU VRAM (12GB)"
         A["Attention Kernels & RoPE"]
-        B["Gating / Router Matrices"]
-        C["Hot MoE Experts (Top 2-4 Active)"]
+        B["Router Matrices & Hot Experts"]
     end
-    subgraph "Tier 2: System DDR4/DDR5 RAM (32GB-64GB)"
-        D["Cold MoE Expert Bank (IQ2_XS / IQ3_S)"]
-        E["Zero-Copy DMA Asynchronous Buffer"]
+    subgraph "Tier 2: System DDR5 RAM (32GB-64GB)"
+        C["Cold MoE Expert Bank (IQ3_S)"]
+        D["Zero-Copy DMA Buffer"]
     end
-    subgraph "Tier 3: PCIe NVMe SSD (~80GB)"
-        F["51B N-Gram Speculative Prediction Cache"]
-        G["Static Weight Paging Backstore"]
+    subgraph "Tier 3: PCIe NVMe SSD"
+        E["51B N-Gram Speculative Prediction Cache"]
     end
-    A --> D
+    A --> C
     B --> C
-    D -->|PCIe Gen4/Gen5 DMA| C
-    F -->|Prefetch Pipe| A
+    C -->|PCIe DMA| A
+    E -->|Prefetch Pipe| A
 ```
 
 ## Strata Qwen Benchmarks: 12GB VRAM vs Cloud Gateway
 
-Evaluate how local Strata Qwen stacks up against standard CPU offloading and managed cloud endpoints across latency, memory footprint, and operational overhead.
+Evaluate how local execution stacks up against standard CPU offloading and managed cloud endpoints across latency, memory footprint, and operational overhead.
 
-| Engine / Deployment Mode | Active VRAM Footprint | System RAM Required | Typical Decode Speed | Max Usable Context | Best For... (Honesty Column) |
+| Deployment Mode | Active VRAM | System RAM | Decode Speed | Max Usable Context | Best For... (Honesty Column) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Local llama.cpp (Q4_K_M)** | 82GB+ (Multi-GPU) | 32GB | 2–5 t/s (Offloaded) | 8,192 tokens | Offline multi-GPU workstation clusters with unified memory |
-| **Local Strata Qwen (IQ3_S)** | **11.4GB** (Single 12GB GPU) | **48GB–64GB** | **78–96 t/s** | 16,384 tokens | Offline solo experimentation & prompt testing on gaming PCs |
-| **APIVALE Cloud Gateway** | **0 MB Local VRAM** | **0 MB Local RAM** | **145+ t/s (Sub-250ms)** | **1,000,000 tokens** | Production coding agents, team concurrency & zero-KYC billing |
+| **Local llama.cpp (Q4_K_M)** | 82GB+ | 32GB | 2–5 t/s | 8,192 tokens | Multi-GPU workstation clusters with unified memory |
+| **Local Strata Qwen (IQ3_S)** | **11.4GB** | **48GB–64GB** | **78–96 t/s** | 16,384 tokens | Offline experimentation & prompt testing on gaming PCs |
+| **APIVALE Cloud Gateway** | **0 MB** | **0 MB** | **145+ t/s** | **1,000,000 tokens** | Production coding agents, team concurrency & zero-KYC billing |
 
 *Note: Pricing and architectural parameters verified via official documentation and benchmarks as of October 2026.*
 
 ### Hardware Allocation and Quantization Profiles
 
-Select the correct hardware configuration and quantization pack to prevent unexpected Out-Of-Memory (OOM) terminations during Strata Qwen deployment:
-* **IQ2_XS (Ultra-Lightweight)**: Requires 12GB VRAM and a minimum of 32GB system RAM. It maximizes decode speed (up to 105 t/s) but may exhibit minor precision trade-offs in multi-file refactoring tasks.
-* **IQ3_S / Coder Pack (Recommended)**: Requires 12GB VRAM and 64GB DDR5 RAM. The Coder Pack prunes unused non-programming experts, maintaining near-FP16 benchmark accuracy across coding tasks.
-* **NVMe Storage Provisioning**: Ensure at least 80GB of uncompressed free space on an NVMe drive capable of 3,500+ MB/s sequential reads to prevent IO bottlenecks during layer prefetching.
+Select the correct hardware configuration to prevent unexpected Out-Of-Memory (OOM) terminations:
+* **IQ2_XS Profile**: Requires 12GB VRAM and minimum 32GB RAM. Yields up to 105 t/s with slight precision trade-offs in multi-file refactoring.
+* **IQ3_S / Coder Pack (Recommended)**: Requires 12GB VRAM and 64GB DDR5 RAM. Prunes non-programming experts, maintaining benchmark accuracy across coding tasks.
+* **NVMe Storage**: Allocate 80GB of free space on an NVMe SSD with 3,500+ MB/s reads to eliminate IO bottlenecks during layer prefetching.
 
 ## Step-by-Step Strata Qwen Setup on Windows & Linux
 
-Deploy the local Strata Qwen runtime and expose an OpenAI-compatible HTTP interface to integrate with developer tooling.
+Deploy the local runtime and expose an OpenAI-compatible HTTP interface to integrate with developer tooling.
 
-### Automated Strata Qwen Installation and Launch
+### Installation and Launch
 
-Execute the official bootstrap script to inspect hardware capabilities, pull runtime binaries, and fetch model weights.
+Execute the official bootstrap script to inspect hardware capabilities, pull binaries, and fetch weights.
 
-On Linux (Ubuntu 22.04 / 24.04 LTS):
+On Linux:
 ```bash
 git clone https://github.com/Niko1221/Strata.git
-cd Strata
-./setup.sh --model Qwen3.8-Flash-Next --quant IQ3_S --port 8085
+cd Strata && ./setup.sh --model Qwen3.8-Flash-Next --quant IQ3_S --port 8085
 ```
 
 On Windows 11 (PowerShell Administrator):
 ```powershell
 git clone https://github.com/Niko1221/Strata.git
-cd Strata
-.\setup.ps1 -Model "Qwen3.8-Flash-Next" -Quant "IQ3_S" -Port 8085
+cd Strata; .\setup.ps1 -Model "Qwen3.8-Flash-Next" -Quant "IQ3_S" -Port 8085
 ```
 
-### Strata Qwen Diagnostic Probes and Log Inspection
+### Diagnostics and Verification
 
-Inspect runtime logs and resolve port collisions and virtual memory allocation errors:
+Verify the local daemon and resolve port collisions:
 ```bash
-# Probe local Strata Qwen daemon health
 curl -s http://localhost:8085/health | jq .
-
-# Check output logs if Strata Qwen halts
-tail -n 50 strata-qwen3.8-flash-next.log
+tail -n 30 strata-qwen3.8-flash-next.log
 ```
 
-If the engine terminates with `Status: Killed (OOM)`, check Windows Virtual Memory or Linux swap settings. When running on 32GB physical RAM, assign at least 32GB of paging file on an NVMe SSD to buffer cold weights reliably.
+If the engine terminates with `Status: Killed (OOM)`, check Windows Virtual Memory or Linux swap. On 32GB physical RAM, assign a 32GB NVMe swap file to buffer cold weights reliably.
 
 ## Connecting Strata Qwen to Claude Code CLI and Cursor IDE
 
-Configure environment variables and custom base URLs to route coding agents through local Strata Qwen or cloud Qwen endpoints.
+Configure environment variables to route coding agents through local or cloud Qwen endpoints.
 
 ### Claude Code CLI Configuration
 
-Export OpenAI protocol environment variables to direct Claude Code CLI queries through the local Strata Qwen port (compare with our native [Claude Code CLI Qwen 3.8 setup guide](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/)):
+Export OpenAI protocol variables to direct queries to the local port (compare with our native [Claude Code CLI Qwen 3.8 setup guide](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/)):
 
 ```bash
 export OPENAI_BASE_URL="http://localhost:8085/v1"
@@ -195,25 +188,25 @@ claude
 
 ### Cursor IDE Configuration
 
-Navigate to **Cursor Settings > Models > OpenAI API Key** (as detailed in our [Qwen 3.8 Cursor IDE configuration guide](/blog/qwen-3-8-cursor-setup/)):
+In **Cursor Settings > Models > OpenAI API Key** (detailed in our [Qwen 3.8 Cursor IDE configuration guide](/blog/qwen-3-8-cursor-setup/)):
 1. Check **Override OpenAI Base URL**.
-2. Input `http://localhost:8085/v1` for local Strata Qwen, or `https://api.apivale.com/v1` for APIVALE cloud.
+2. Input `http://localhost:8085/v1` for local execution, or `https://api.apivale.com/v1` for APIVALE cloud.
 3. Add `infer/qwen-3.8-flash-next` and enable the toggle.
 
 ## Why Strata Qwen Local Inference Pairs with Cloud Gateway
 
-Weigh the physical trade-offs between local Strata Qwen hardware execution and enterprise cloud gateway deployment.
+Weigh the physical trade-offs between local hardware execution and enterprise cloud gateway deployment.
 
-While Strata Qwen provides an outstanding engineering breakthrough for zero-marginal-cost local inference, production developers often encounter physical limitations during heavy workloads:
-1. **Memory & Thermal Saturation**: Running 125B MoE weights pins 48GB–64GB of RAM continuously. Running background builds and Docker containers concurrently can lead to system lag.
-2. **Context Window Prefill Latency**: Processing long prompts (16K–32K tokens) requires sequential n-gram lookups across the PCIe bus, dropping prefill speeds compared to dedicated cloud tensor parallel clusters.
-3. **Multi-Model Availability**: Local workstations are locked to a single active quant. Switching between Qwen 3.8, Claude Sonnet 5, and DeepSeek V4 requires reloading tens of gigabytes off disk.
+While the engine provides an impressive zero-marginal-cost breakthrough, developers encounter physical limitations during heavy workloads:
+1. **Memory & Thermal Saturation**: Running 125B weights pins 48GB–64GB RAM continuously. Background builds and Docker containers can cause system lag.
+2. **Prefill Latency at 32K Context**: Long prompts require sequential lookups across the PCIe bus, reducing prefill throughput compared to cloud tensor-parallel clusters.
+3. **Multi-Model Availability**: Local rigs are locked to one active quant. Switching between Qwen 3.8, Claude Sonnet 5, and DeepSeek V4 requires reloading tens of gigabytes.
 
-APIVALE bridges this gap by providing an always-on, high-throughput unified gateway (see our [OpenRouter alternatives & API gateway analysis](/blog/openrouter-alternatives/)). Route casual experiments locally via Strata Qwen, and point mission-critical agent loops to APIVALE for sub-250ms responses, 100% SLA, and friction-free PayPal billing.
+APIVALE bridges this gap with an always-on unified gateway (see our [OpenRouter alternatives & API gateway analysis](/blog/openrouter-alternatives/)). Route casual tasks locally, and point mission-critical agent loops to APIVALE for sub-250ms responses, 100% SLA, and PayPal billing.
 
 ## Production Dual-Mode Script: Local Strata Qwen with Cloud Fallback
 
-Integrate your local Strata Qwen instance with automatic failover to the APIVALE cloud gateway when local hardware encounters resource saturation or timeout limits:
+Integrate local inference with automatic failover to the APIVALE cloud gateway when local hardware encounters resource saturation:
 
 ```python
 import os, sys, time, requests
@@ -224,12 +217,11 @@ APIVALE_KEY = os.getenv("APIVALE_API_KEY", "")
 
 payload = {
     "model": "infer/qwen-3.8-flash-next",
-    "messages": [{"role": "user", "content": "Explain Strata Qwen memory routing."}],
+    "messages": [{"role": "user", "content": "Explain tiered memory routing."}],
     "temperature": 0.2
 }
 
 def dispatch_completion():
-    print("[1/2] Attempting local Strata Qwen inference...")
     try:
         t0 = time.time()
         res = requests.post(LOCAL_ENDPOINT, json=payload, timeout=8.0)
@@ -237,9 +229,8 @@ def dispatch_completion():
         print(f"✓ Local Strata Qwen responded in {(time.time() - t0)*1000:.1f}ms")
         return res.json()
     except Exception as err:
-        print(f"! Local Strata Qwen failed: {err}")
+        print(f"! Local failed ({err}), failing over to APIVALE Cloud...")
     
-    print("[2/2] Failing over to APIVALE Cloud Gateway...")
     headers = {"Authorization": f"Bearer {APIVALE_KEY}", "Content-Type": "application/json"}
     try:
         t0 = time.time()
@@ -257,11 +248,11 @@ if __name__ == "__main__":
 
 ## Interactive In-Article Playground & Cost Comparison
 
-Test and estimate token generation throughput and monthly costs across local gaming hardware versus APIVALE cloud routing.
+Estimate token generation throughput and monthly costs across local gaming hardware versus APIVALE cloud routing.
 
 <div class="my-6 p-6 bg-gray-900 border border-gray-800 rounded-xl shadow-lg">
   <div class="text-md font-semibold text-white mb-2">⚡ Interactive Hardware vs. Cloud Estimator</div>
-  <p class="text-xs text-gray-400 mb-4">Select your local workstation specs and estimated monthly token volume to evaluate throughput bottlenecks and cost trade-offs.</p>
+  <p class="text-xs text-gray-400 mb-4">Select local workstation specs and monthly token volume to evaluate throughput bottlenecks and cost trade-offs.</p>
   
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
     <div>
@@ -285,9 +276,9 @@ Test and estimate token generation throughput and monthly costs across local gam
   <div class="mb-4">
     <label class="block text-xs font-semibold text-gray-300 mb-1">Monthly Coding Token Volume</label>
     <select id="est-vol" class="w-full bg-gray-800 border border-gray-700 rounded p-2 text-xs text-white">
-      <option value="5m">5 Million Tokens (~Lite Solo Dev)</option>
-      <option value="20m" selected>20 Million Tokens (~Heavy Agent / Cursor User)</option>
-      <option value="50m">50 Million Tokens (~Full-Time Engineering Workflow)</option>
+      <option value="5m">5 Million Tokens (~Solo Dev)</option>
+      <option value="20m" selected>20 Million Tokens (~Heavy Agent User)</option>
+      <option value="50m">50 Million Tokens (~Full-Time Engineering)</option>
     </select>
   </div>
 
@@ -327,16 +318,16 @@ Test and estimate token generation throughput and monthly costs across local gam
 ## Frequently Asked Questions
 
 ### Does Strata Qwen support older models like Qwen 2 or Qwen 7B?
-No. Strata Qwen is intentionally architected around the sparse MoE structure and specialized n-gram speculative caching of the Qwen 3.8 Flash Next family. Dense models such as Qwen 2 7B or Qwen 2.5 7B do not benefit from expert-routing offloading and should be run directly through standard Ollama deployments (check out our [Qwen 3.8 27B GGUF vs Ollama benchmark](/blog/qwen-3-8-27b-gguf-benchmarks-ollama-vs-api-guide/)).
+No. Strata Qwen is engineered specifically for the sparse MoE structure and n-gram speculative caching of the Qwen 3.8 Flash Next family. Dense models such as Qwen 2 7B do not benefit from expert-routing offloading and should be run directly through standard Ollama deployments (check out our [Qwen 3.8 27B GGUF vs Ollama benchmark](/blog/qwen-3-8-27b-gguf-benchmarks-ollama-vs-api-guide/)).
 
 ### Why does Strata Qwen fail with "port 8080 is already in use"?
-Port 8080 is commonly claimed by Docker Desktop, web proxies, or local development services. You can rebind Strata Qwen to any open port by appending `--port 8085` to your startup command, and updating your client configuration to `http://localhost:8085/v1`.
+Port 8080 is commonly claimed by Docker Desktop or web services. Launch with `--port 8085` to avoid conflicts, and update your client configuration to `http://localhost:8085/v1`.
 
 ### What should I do if Strata Qwen crashes with an Out-of-Memory error?
-Ensure your host machine has at least 32GB of physical RAM. If running on 32GB, use the lighter `--quant IQ2_XS` preset and configure a 32GB Windows pagefile or Linux swap space on an NVMe drive. Alternatively, offload high-concurrency requests to the APIVALE cloud gateway.
+Ensure your host machine has at least 32GB of physical RAM. On 32GB, use the lighter `--quant IQ2_XS` preset and configure a 32GB NVMe swap file. Alternatively, offload high-concurrency requests to the APIVALE cloud gateway.
 
 ### Can I run Strata Qwen on an AMD Radeon GPU?
-Yes. Strata Qwen supports AMD GPUs via ROCm (such as RX 6800, RX 7900 XT/XTX, and RX 9000 series) on Linux systems with ROCm 6.1+ installed.
+Yes. AMD Radeon GPUs are supported on Linux systems via ROCm 6.1+ (including RX 6800, RX 7900 XT/XTX, and RX 9000 series).
 
 <script type="application/ld+json">
 {
