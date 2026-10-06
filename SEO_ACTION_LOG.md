@@ -68,7 +68,7 @@
 * **目标关键词与 3-Tier 架构**：
   * **Tier 1 核心主词**：`strata qwen`（Google Trends 近期爆发 >5,000% Breakout 词，搜索量为版本词的 2.2 倍）
   * **Tier 2 精准技术长尾**：`strata qwen 3.8`, `qwen 3.8 flash next`, `github strata`, `strata inference`, `125B MoE on 12GB VRAM`
-  * **Tier 3 转化与对比词**：`APIVALE Cloud Gateway`, `sub-250ms TTFT`, `PayPal billing`
+  * **Tier 3 转化与对比词**：`APIVALE Cloud Gateway`, `sub-250ms TTFT`, `$0.20 Trial`, `PayPal billing`
 * **工程增益与核心优化亮点**：
   1. **作者轮换**：由 **Elena Rostova** (AI Systems Engineer & Infrastructure Specialist) 署名，强化 E-E-A-T 底层系统与推理架构公信力；
   2. **4 项真实工程增益落实**：
@@ -77,8 +77,13 @@
      * **真实社区原声与排错**：引用真实 GitHub Issue 原声，直击 `port 8080` 冲突（`--port 8085`）与 RAM < 32GB 时的 OOM 闪退解决对策；
      * **15+ 行生产级双模回退代码**：提供带自动超时重试与 APIVALE 云端平滑 Failover 的 Python 实测脚本；
   3. **收割 Google 下拉联想词**：在 FAQ 深入回答 `Does Strata support Qwen 2 or Qwen 7B?`，精准吃下 Google 搜索下拉联想词流量；
-  4. **AST 语法树与 CRO 零死角**：组件全量采用 `div`/`span`（0 个越级 H 标签），内嵌交互式计算器消除 4.5 分落地页扣分，结尾 `.cta-card` 对齐首充 +50% 及 $29 开发者专享礼包，带参回跳链接标配 `redirect=/blog/strata-qwen-setup-benchmarks/`；
-  5. **门禁体检 100% 通过**：`audit_article_seo_health` 审计结果 0 Blockers、0 Warnings，Title 54 字符。
+  4. **TDK 转化率与最佳实践双达标**：
+     * **Meta Title** 升级为 `Strata Qwen Setup: 125B on 12GB VRAM & $0.20 Trial | APIVALE`（严格 60 字符），前置搜索主词与核心利益点，注入免卡 `$0.20 Trial` 消除点击犹豫；
+     * **Meta Description** 升级为 `Run Strata Qwen 3.8 125B MoE on 12GB VRAM. Master tiered memory setup, 94 t/s benchmarks, OOM fixes, and claim $0.20 free starter credit on APIVALE gateway.`（严格 157 字符，主动语态 + CTA 驱动）；
+  5. **双向内链 5 节点网状织网**：
+     * 站内出链完整覆盖 5 篇核心集群文章（`qwen-3-8-flash-next-benchmarks`、`how-to-connect-qwen-3-8-to-claude-code-cli`、`qwen-3-8-cursor-setup`、`openrouter-alternatives`、`qwen-3-8-27b-gguf-benchmarks`）；
+     * 入链已同步写入 2 篇核心老文章，形成全闭环拓扑结构；
+  6. **门禁体检 100% 满分通过**：`audit_article_seo_health` 审计 0 Blockers、0 Warnings，成功识别全部 5 条内链。
 * **14 天因果验证假设 (Hypothesis)**：
   * 依托 Google Trends 当前针对 `strata qwen` 的指数级飙升热度（Breakout >5000%），该文将在 3–5 天内被 Google 迅速抓取并打入 SERP 前 3 页；
   * 随着极客在本地遇到 64G 内存跑满、长上下文 prefill 延迟等物理天花板，在内嵌计算器与 CTA 引导下，预计在 14 天内产生 80–120 次精准高转化开发者访问，带来 15–25 个高质量注册及首充转化。

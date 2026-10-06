@@ -1,7 +1,7 @@
 ---
 title: "Strata Qwen Setup: Run 125B MoE on 12GB VRAM (Benchmarks & Guide)"
-metaTitle: "Strata Qwen Setup: Run 125B MoE on 12GB VRAM | APIVALE"
-description: "Set up Strata Qwen to run Qwen 3.8 Flash Next 125B MoE on 12GB VRAM. Explore tiered memory architecture, 94 t/s benchmarks, OOM fixes, and APIVALE API routing."
+metaTitle: "Strata Qwen Setup: 125B on 12GB VRAM & $0.20 Trial | APIVALE"
+description: "Run Strata Qwen 3.8 125B MoE on 12GB VRAM. Master tiered memory setup, 94 t/s benchmarks, OOM fixes, and claim $0.20 free starter credit on APIVALE gateway."
 date: "2026-10-06"
 author: "Elena Rostova"
 authorTitle: "AI Systems Engineer & Infrastructure Specialist, APIVALE"
@@ -63,7 +63,7 @@ keyTakeaways:
   </div>
 </div>
 
-Running 100B+ parameter open-weights models on consumer developer workstations has historically hit an insurmountable memory wall. Traditional unquantized checkpoints for 125B architectures demand upwards of 250GB of VRAM, while standard 4-bit GGUF quantization still requires roughly 82GB of VRAM across quad-GPU rigs. Developers attempting CPU/RAM offloading via standard `llama.cpp` builds routinely endure crawl speeds of 2 to 4 tokens per second, making interactive coding agents unusable.
+Running 100B+ parameter open-weights models on consumer developer workstations has historically hit an insurmountable memory wall. Traditional unquantized checkpoints for 125B architectures demand upwards of 250GB of VRAM, while standard 4-bit GGUF quantization still requires roughly 82GB of VRAM across quad-GPU rigs (as calculated in our [Qwen 3.8 Flash Next VRAM math guide](/blog/qwen-3-8-flash-next-benchmarks-api-guide/)). Developers attempting CPU/RAM offloading via standard `llama.cpp` builds routinely endure crawl speeds of 2 to 4 tokens per second, making interactive coding agents unusable.
 
 The open-source **Strata** inference engine completely alters this equation. By exploiting the sparse routing of **Qwen 3.8 Flash Next** (125B total parameters with only 6B parameters activated per token), Strata splits model layers across a three-tier hardware hierarchy: GPU VRAM, DDR5 host system memory, and NVMe flash storage.
 
@@ -248,7 +248,7 @@ Configure environment variables and custom base URLs to substitute costly commer
 
 ### Claude Code CLI Configuration
 
-Export OpenAI protocol environment variables to direct Claude Code CLI queries through the local Strata port:
+Export OpenAI protocol environment variables to direct Claude Code CLI queries through the local Strata port (compare with our native [Claude Code CLI Qwen 3.8 setup guide](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/)):
 
 ```bash
 # Direct Claude Code CLI to local Strata engine
@@ -262,7 +262,7 @@ claude
 
 ### Cursor IDE Configuration
 
-Navigate to **Cursor Settings > Models > OpenAI API Key**:
+Navigate to **Cursor Settings > Models > OpenAI API Key** (as detailed in our [Qwen 3.8 Cursor IDE configuration guide](/blog/qwen-3-8-cursor-setup/)):
 1. Check **Override OpenAI Base URL**.
 2. Input `http://localhost:8085/v1` for local Strata, or `https://api.apivale.com/v1` for APIVALE cloud.
 3. Under model names, add `infer/qwen-3.8-flash-next` and enable the toggle.
@@ -276,7 +276,7 @@ While Strata provides an outstanding engineering breakthrough for zero-marginal-
 2. **Context Window Prefill Latency**: Processing long prompts (16K–32K tokens) requires sequential n-gram lookups across the PCIe bus, dropping prefill speeds compared to dedicated cloud tensor parallel clusters.
 3. **Multi-Model Availability**: Local workstations are locked to a single active quant. Switching between Qwen 3.8, Claude Sonnet 5, and DeepSeek V4 requires reloading tens of gigabytes off disk.
 
-APIVALE bridges this gap by providing an always-on, high-throughput unified gateway. Route casual experiments locally via Strata, and point mission-critical agent loops to APIVALE for sub-250ms responses, 100% SLA, and friction-free PayPal billing.
+APIVALE bridges this gap by providing an always-on, high-throughput unified gateway (see our [OpenRouter alternatives & API gateway analysis](/blog/openrouter-alternatives/)). Route casual experiments locally via Strata, and point mission-critical agent loops to APIVALE for sub-250ms responses, 100% SLA, and friction-free PayPal billing.
 
 ## Interactive In-Article Playground & Cost Comparison
 
@@ -350,7 +350,7 @@ Test and estimate token generation throughput and monthly costs across local gam
 ## Frequently Asked Questions
 
 ### Does Strata support older models like Qwen 2 or Qwen 7B?
-No. Strata is intentionally architected around the sparse MoE structure and specialized n-gram speculative caching of the Qwen 3.8 Flash Next family. Dense models such as Qwen 2 7B or Qwen 2.5 7B do not benefit from expert-routing offloading and should be run directly through standard Ollama or vLLM deployments.
+No. Strata is intentionally architected around the sparse MoE structure and specialized n-gram speculative caching of the Qwen 3.8 Flash Next family. Dense models such as Qwen 2 7B or Qwen 2.5 7B do not benefit from expert-routing offloading and should be run directly through standard Ollama deployments (check out our [Qwen 3.8 27B GGUF vs Ollama benchmark](/blog/qwen-3-8-27b-gguf-benchmarks-ollama-vs-api-guide/)).
 
 ### Why does Strata fail with "port 8080 is already in use"?
 Port 8080 is commonly claimed by Docker Desktop, web proxies, or local development services. You can rebind Strata to any open port by appending `--port 8085` to your startup command, and updating your client configuration to `http://localhost:8085/v1`.
