@@ -77,9 +77,13 @@
      * **真实社区原声与排错**：引用真实 GitHub Issue 原声，直击 `port 8080` 冲突（`--port 8085`）与 RAM < 32GB 时的 OOM 闪退解决对策；
      * **15+ 行生产级双模回退代码**：提供带自动超时重试与 APIVALE 云端平滑 Failover 的 Python 实测脚本；
   3. **收割 Google 下拉联想词**：在 FAQ 深入回答 `Does Strata support Qwen 2 or Qwen 7B?`，精准吃下 Google 搜索下拉联想词流量；
-  4. **TDK 转化率与最佳实践双达标**：
-     * **Meta Title** 升级为 `Strata Qwen Setup: 125B on 12GB VRAM & $0.20 Trial | APIVALE`（严格 60 字符），前置搜索主词与核心利益点，注入免卡 `$0.20 Trial` 消除点击犹豫；
-     * **Meta Description** 升级为 `Run Strata Qwen 3.8 125B MoE on 12GB VRAM. Master tiered memory setup, 94 t/s benchmarks, OOM fixes, and claim $0.20 free starter credit on APIVALE gateway.`（严格 157 字符，主动语态 + CTA 驱动）；
+  4. **彻底消除 SEO 军师推断词错位（矫正「0 20」机油赛道扣分）**：
+     * **病灶根因**：原 Title 末尾携带的 `$0.20 Trial` 在经由分词器剔除符号后裂变为 `0 20`，导致 SEO 引擎误判本页在竞争机油词（Castrol 0W-20），引发 H1/H2/URL 全面误扣分（丢 19.5 分）；
+     * **外科手术式矫正**：
+       - **Title 归位**：改为 `Strata Qwen Setup: Run 125B MoE on 12GB VRAM | APIVALE`（54 字符），纯净锁定 `Strata Qwen Setup`；
+       - **H2 强锁定**：将所有主要 H2 统一前置注入 `Strata Qwen`（如 `Strata Qwen Architecture...`、`Strata Qwen Benchmarks...`、`Step-by-Step Strata Qwen Setup...`）；
+       - **正文实体强共现**：将文中单写 Strata 的地方全面规范为双词实体 **`Strata Qwen`**，登顶 2-gram 词频密度榜首；
+       - **全面挽回 19.5 分**：H1 命中 (+8)、H2 命中 (+3)、URL 命中 (+2)、密度榜覆盖 (+6.5) 全部满分归位。
   5. **双向内链 5 节点网状织网**：
      * 站内出链完整覆盖 5 篇核心集群文章（`qwen-3-8-flash-next-benchmarks`、`how-to-connect-qwen-3-8-to-claude-code-cli`、`qwen-3-8-cursor-setup`、`openrouter-alternatives`、`qwen-3-8-27b-gguf-benchmarks`）；
      * 入链已同步写入 2 篇核心老文章，形成全闭环拓扑结构；
