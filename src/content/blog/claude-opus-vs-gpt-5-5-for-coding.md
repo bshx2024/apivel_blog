@@ -124,7 +124,7 @@ The flagship excels in architectural planning and understanding interconnected f
 
 In autonomous CLI environments, tool-calling precision is critical:
 
-*   **Anthropic Primitives:** Employs native computer-use primitives, reliably interpreting terminal errors, executing grep searches, and recovering from compilation failures without infinite loops.
+*   **Anthropic Primitives:** Employs native computer-use primitives, reliably interpreting terminal errors, executing grep searches, and recovering from compilation failures without infinite loops. For everyday interactive terminal runs where Opus 5.5 exceeds per-turn budgets, explore our [Claude Sonnet 5.5 API Pricing & Claude Code Guide](/blog/claude-sonnet-5-5-api-pricing-claude-code-guide/) for Terminal-Bench 4.0 benchmarks and dual-engine savings.
 *   **Codex Integration:** Competitors like GPT-5.5 optimize for OpenAI Codex CLI and VS Code Copilot protocols, providing solid integration with Microsoft developer tooling.
 
 ---
