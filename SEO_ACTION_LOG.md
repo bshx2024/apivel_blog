@@ -58,6 +58,34 @@
 
 ## 📝 优化行动记录 (2026-10)
 
+### 📅 2026-10-07 - 📝 [高曝光低点击CTR急救 & GEO大模型全维度赋能]: 《OmniRoute Claude Code & API Setup》依据 GSC 180 展现、Google Trends、PAA 与“用户还搜索了”实测数据深度重构
+
+* **影响页面/路由与线上链接**：
+  * 主优化页面：`/blog/omniroute-claude-code-setup/` (`src/content/blog/omniroute-claude-code-setup.md`)
+  * 线上链接：`https://apivale.com/blog/omniroute-claude-code-setup/`
+* **调整背景与 GSC 24h 痛点诊断**：
+  * **P0 级高展现低 CTR 急救**：GSC 24 小时报表揭示，该博文累计斩获 **180 次高频展现（全站第二高，排名第 7.1 位）**，但仅产生 **1 次点击（CTR 0.6%）**，流量严重浪费。
+  * **搜索意图与 GEO 诊断**：
+    1. Google Trends 验证 `omniroute claude`（15）为真实主需求底座，而 `omniroute claude api` 为细分长尾；
+    2. Google 下拉联想词密集指向 `api not work`、`api key` 与 `api doc` 痛点；
+    3. Google 官方 PAA（相关问题）直接抛出 `Can I use Claude Code with OmniRoute?` 与 `Which is better, 9Router or OmniRoute?`；
+    4. “用户还搜索了”明确印证核心长尾为 `OmniRoute Claude Code setup`、`How to add OmniRoute plugin to Claude`、`OmniRoute GitHub`。
+* **具体落地优化动作**：
+  1. **SERP MetaTitle 手术刀式升级（57 字符黄金长度）**：
+     * 由原平淡说明书标题 `OmniRoute Claude Setup & Plugin Guide: Free Proxy & Ban Safety | APIVALE` 升级为 `OmniRoute Claude Code & API Setup: Fix Not Work | APIVALE`（57 字符），兼顾母词、Claude API、Claude Code 与最核心点击钩子 `Fix Not Work`；
+     * H1 升级为 `OmniRoute Claude Code & API Setup: Fix Not Work, Install & Config Guide`（71 字符，<= 80 字符）；
+     * Description 精炼为 143 字符（140-160 字符黄金区间）。
+  2. **GEO 大模型爬虫友好与 Query Fan-Out 闭环构建**：
+     * **BLUF 首句答案直出**：全篇每个 H2/H3 小标题首句均采用高密度陈述句，直接包含【动作 + 核心实体 + 参数命令】，消除 LLM 注意力机制稀释；
+     * **H2 布局升级**：精准匹配“用户还搜索了”与下拉意图（包含 `GitHub Install`、`Add Plugin to Claude`、`API Key Config`、`Fix Not Work`、`9Router vs OmniRoute 对比`）；
+     * **新增 9Router vs. OmniRoute vs. APIVALE 客观多维对比表**：包含当日时间戳与“Best for...”列，为 RAG 提取提供确定性事实基石；
+     * **FAQ 结构化升级 (FAQPage Schema)**：直接收割 Google 官方 PAA 5 大问题（包含 Claude Code 兼容性、9Router 选型、API 连不上修复、封号风险与云端免维护替代方案）。
+  3. **门禁体检 100% 满分通过**：
+     * `audit_article_seo_health` 自动化验证：0 Blockers、0 Warnings，MetaTitle 57 字符，成功识别 7 条站内高权重双向内链。
+* **14 天因果验证假设 (Hypothesis)**：
+  * 在精准击中 `Fix Not Work`、`API Key` 与 `Claude Code` 搜索核心痛点后，该页面在 Google 首页第 7 位的 CTR 预计在 48–72 小时内由 0.6% 跃升至 3.5%~6.0%，单日点击量从 1 次提升至 6~11 次；
+  * 全面满足大模型 Query Fan-Out 结构后，预计在 Perplexity 和 ChatGPT Search 针对 `OmniRoute Claude setup` 与 `OmniRoute Claude error` 的相关技术回答中获得首选引用。
+
 ### 📅 2026-10-06 - 📝 [新博文发布 & 前沿借势降维引流]: 上线《Claude Sonnet 5.5 API Pricing, Benchmarks & Dual-Engine Cost Guide》，借势 9.28 爆发热点精准引流中国大模型矩阵
 
 * **影响页面/路由与线上链接**：
