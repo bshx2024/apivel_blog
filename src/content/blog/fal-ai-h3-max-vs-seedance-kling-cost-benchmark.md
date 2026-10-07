@@ -85,7 +85,7 @@ graph TD
 
 Select fal.ai H3 Max for fast prototyping and high-throughput social media creation, while escalating to native MiniMax H3 or Kling for 4K deliverables.
 
-While fal.ai H3 Max generates video up to 3× faster than base diffusion architectures, fal.ai strictly caps output resolution at **768p**. For YouTube widescreen reels, TikTok ads, or web players, 768p upscaled via bilinear shaders delivers crisp visual fidelity. However, if your production requires broadcast-grade **2K native or 4K master outputs**, fal.ai H3 Max cannot fulfill the requirement. In contrast, Kling 3.0 renders native 4K frames, and native [MiniMax H3 endpoints](/blog/minimax-h3-api-pricing-guide/) provide 2K outputs at $0.13/s.
+While fal.ai H3 Max generates video up to 3× faster than base diffusion architectures, fal.ai strictly caps output resolution at **768p**. For YouTube widescreen reels, TikTok ads, or web players, 768p upscaled via bilinear shaders delivers crisp visual fidelity. However, if your production requires broadcast-grade **2K native or 4K master outputs**, fal.ai H3 Max cannot fulfill the requirement. In contrast, Kling 3.0 renders native 4K frames, and native [MiniMax H3 endpoints](/blog/minimax-h3-api-pricing-guide/) provide 2K outputs at $0.13/s. *(Looking for real-time interactive avatars and sub-second spatial video streaming rather than batch queues? Explore our [Vidu S2 architecture, ArXiv & API access guide](/blog/vidu-s2-architecture-api-guide/) to evaluate 25–42 FPS live generation pipelines).*
 
 ### Single-Pass Narrative Duration vs Multi-Shot Consistency
 
