@@ -58,6 +58,26 @@
 
 ## 📝 优化行动记录 (2026-10)
 
+### 📅 2026-10-08 - 📝 [哥飞体检93➔100冲刺 & 词组密度榜统治]: 《Vidu S2 Architecture, ArXiv & API Access Guide》消灭双H1丢分(-2.5)、正文超长丢分(-1)并夺回3~5词密度榜(-5)
+
+* **影响页面/路由与线上链接**：
+  * 主优化页面：`/blog/vidu-s2-architecture-api-guide/` (`src/content/blog/vidu-s2-architecture-api-guide.md`)
+  * 线上链接：`https://apivale.com/blog/vidu-s2-architecture-api-guide/`
+* **调整背景与实测数据驱动（页面军师/哥飞体检二次体检）**：
+  * 哥飞 SEO 体检初测打出 **On Page 93 分 (A)**，但暴露三大扣分项（丢 8.5 分）：
+    1. **△ H1 主标题（丢 2.5 分）**：Astro 模板自带 `<h1 class="post-title">`，Markdown 顶部多余 `#` 导致整页出现 2 个 H1，主题信号分散；
+    2. **△ 正文词数超标（丢 1 分）**：全页抓取 2352 词，超过 1800 最佳推荐上限；
+    3. **△ 密度榜位置加权覆盖（丢 5 分，最重失分点）**：3 词/4 词/5 词未上榜 (0/8, 0/3, 0/3)，缺乏对核心长尾短语的高密度聚焦。
+* **具体落地优化动作**：
+  1. **彻底拔除正文多余 H1（追回 +2.5 分）**：删除 Markdown 内的 `#` 顶级标题，由 Astro 模板统领唯一的全局 H1，实现 100% 纯净 AST 树；
+  2. **提炼精简正文文本（追回 +1 分）**：将 Markdown 正文字数由 1,372 词精准压缩至 1,230 词，整页 SSR 单词量回归 1,600–1,750 词黄金区间；
+  3. **3~5 词组密度矩阵重构（追回 +5 分）**：
+     * 3 词榜：`the vidu s2` (13次)、`vidu s2 api` (12次，霸榜第一)、`spatial video generation` (10次)、`vidu s2 avatar` (6次)；
+     * 4 词榜：`the vidu s2 model` (5次)、`vidu s2 api access` (5次)、`vidu s2 avatar pipeline` (4次)；
+     * 5 词榜：`the vidu s2 avatar pipeline` (4次)、`vidu s2 spatial video generation` (2次)；
+  4. **全网“还在搜”实体覆盖**：自然融入 `Vidu Studio`、`Vidu online`、`Vidu s2 avatar`、`Vidu s2 github` 作为 FAQ 与正文对比展开。
+* **预期效果**：全页消除全部 3 项扣分，On Page 评分直冲 98–100 分。
+
 ### 📅 2026-10-08 - 📝 [突发趋势+5000%捕捉 & 多模态Agent生态引流]: 发布《Vidu S2 Architecture, ArXiv & API Access Guide》抢占清华生数实时空间视频大模型搜索热潮并引流APIVALE中国模型生态
 
 * **影响页面/路由与线上链接**：
