@@ -58,7 +58,22 @@
 
 ## 📝 优化行动记录 (2026-10)
 
-### 📅 2026-10-08 - 📝 [哥飞体检93➔100冲刺 & 词组密度榜统治]: 《Vidu S2 Architecture, ArXiv & API Access Guide》消灭双H1丢分(-2.5)、正文超长丢分(-1)并夺回3~5词密度榜(-5)
+### 📅 2026-10-08 - 📝 [哥飞体检98➔100决胜 & 密度防堆砌压降]: 《Vidu S2 Architecture, ArXiv & API Access Guide》将词组密度由 3.93% 压降至 2.3% 黄金安全线，总词数精准归位 1,650–1,750 词最佳区间
+
+* **影响页面/路由与线上链接**：
+  * 主优化页面：`/blog/vidu-s2-architecture-api-guide/` (`src/content/blog/vidu-s2-architecture-api-guide.md`)
+  * 线上链接：`https://apivale.com/blog/vidu-s2-architecture-api-guide/`
+* **调整背景与实测数据驱动（页面军师/哥飞体检最新诊断）**：
+  * 页面军师复测升至 **On Page 98 分 (A)**，但剩余两处微调扣分（丢 2.5 分）：
+    1. **△ 关键词密度 3.93% 偏高（丢 1.5 分）**：多词词组 `vidu s2` 超过 3% 红线，触发 SpamBrain 过度优化警告；
+    2. **△ 全页总词数 2089（丢 1 分）**：全页抓取总单词数轻微超过 1800 最佳推荐上限。
+* **具体落地优化动作**：
+  1. **多词密度自然代词替换（3.93% ➔ 2.3%）**：将正文中 52 次高频 `Vidu S2` 精准替换 25 次为 `the architecture`、`the model`、`Shengshu's streaming pipeline` 等代词，将频次锁定在 27 次，密度降至 2.3% 黄金安全区间，消灭 1.5 分扣分；
+  2. **正文文本与代码精简（全页词数回归 1,650–1,750）**：精简次要段落铺垫与注释，将整页单词量压入 1,650–1,750 词，消灭 1 分扣分；
+  3. **TDK 与 Description 甜点锁定**：Meta Description 精准调整为 156 字符（黄金甜点 153–158 字符），兼顾实体声明与 PayPal 转化钩子。
+* **预期效果**：扣分项全部清零，On Page 评分直冲 100 分满分（A+）。
+
+### 📅 2026-10-08 - 📝 [哥飞体检93➔98跃升 & 词组密度榜统治]: 《Vidu S2 Architecture, ArXiv & API Access Guide》消灭双H1丢分(-2.5)并重构1~5词密度榜覆盖
 
 * **影响页面/路由与线上链接**：
   * 主优化页面：`/blog/vidu-s2-architecture-api-guide/` (`src/content/blog/vidu-s2-architecture-api-guide.md`)
