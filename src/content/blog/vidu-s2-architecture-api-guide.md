@@ -1,7 +1,7 @@
 ---
-title: "Vidu S2 API Access, Pricing & Real-Time Setup | APIVALE"
-metaTitle: "Vidu S2 API Access, Pricing & Real-Time Setup | APIVALE"
-description: "Get instant Vidu S2 API access for real-time spatial video generation. Explore pricing, Python setup, and China AI model routing with PayPal on APIVALE."
+title: "Vidu S2: Spatial Video, API Access & Pricing | APIVALE"
+metaTitle: "Vidu S2: Spatial Video, API Access & Pricing | APIVALE"
+description: "Explore Vidu S2 real-time spatial video generation, ArXiv paper metrics, and API pricing. Deploy China AI models with PayPal instant billing on APIVALE."
 date: "2026-10-08"
 author: "Sofia Costa"
 authorTitle: "Multimodal AI & Video Infrastructure Specialist, APIVALE"
@@ -324,8 +324,8 @@ The Vidu S2 architecture is published on arXiv under identifier **arXiv:2609.116
   "@graph": [
     {
       "@type": "TechArticle",
-      "headline": "Vidu S2 API Access, Pricing & Real-Time Setup",
-      "description": "Get instant Vidu S2 API access for real-time spatial video generation. Explore pricing, Python setup, and China AI model routing with PayPal on APIVALE.",
+      "headline": "Vidu S2: Spatial Video, API Access & Pricing",
+      "description": "Explore Vidu S2 real-time spatial video generation, ArXiv paper metrics, and API pricing. Deploy China AI models with PayPal instant billing on APIVALE.",
       "author": {
         "@type": "Person",
         "name": "Sofia Costa",

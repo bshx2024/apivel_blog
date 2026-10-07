@@ -58,6 +58,23 @@
 
 ## 📝 优化行动记录 (2026-10)
 
+### 📅 2026-10-08 - 📝 [母子词架构升级 & Trends 100爆发流量锁定]: 《Vidu S2: Spatial Video, API Access & Pricing》实现“大词吃流量(Vidu S2)+长尾定转化(API Access & Pricing)”完美双核驱动
+
+* **影响页面/路由与线上链接**：
+  * 主优化页面：`/blog/vidu-s2-architecture-api-guide/` (`src/content/blog/vidu-s2-architecture-api-guide.md`)
+  * 线上链接：`https://apivale.com/blog/vidu-s2-architecture-api-guide/`
+* **调整背景与 Google Trends 数据驱动验证**：
+  * **搜索量级天差地别 (100 vs 0)**：Google Trends 监控证实 `vidu s2` 指数高达 100（Breakout 暴涨），而孤立的 `vidu s2 api` 当前热度为 0。若强行将主词孤立限制在 `vidu s2 api`，天花板被严重锁死；
+  * **用户还搜索了 (Related Searches)**：深度检索证实，用户搜索母词 `Vidu S2` 后，长尾痛点高度聚焦在 `Vidu api 价格`、`Vidu api 文档`、`Vidu Stream`；
+* **具体落地优化动作**：
+  1. **母子词合体 TDK 架构（双核驱动）**：
+     * MetaTitle (54 字符): `Vidu S2: Spatial Video, API Access & Pricing | APIVALE`（前 7 字符直击 Trends 100 大词 `Vidu S2`，后半段无缝拼接 `Spatial Video` 与商业转化词 `API Access & Pricing`）；
+     * H1: 保持高度对称；
+     * Meta Description (152 字符): `Explore Vidu S2 real-time spatial video generation, ArXiv paper metrics, and API pricing. Deploy China AI models with PayPal instant billing on APIVALE.`；
+     * **效果**：无论用户搜母词 `vidu s2` 还是搜长尾 `vidu s2 api` / `vidu s2 pricing`，页面均能完美召回并排位。
+  2. **JSON-LD Schema 知识图谱对齐**：headline 同步更新为 `Vidu S2: Spatial Video, API Access & Pricing`，实体关系精准绑定。
+* **预期效果**：吞吐加州与全球 `vidu s2` 突发大盘流量，同时截流 API 与模型调用付费开发者。
+
 ### 📅 2026-10-08 - 📝 [赛道纠偏与商业意图锁死 & 冲刺100分]: 拔除“architecture”学术信息类错位，将核心推断词锁定为高转化商业词《Vidu S2 API》，Description命中率拉满100%
 
 * **影响页面/路由与线上链接**：
