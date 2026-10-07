@@ -58,6 +58,27 @@
 
 ## 📝 优化行动记录 (2026-10)
 
+### 📅 2026-10-08 - 📝 [主力阵地流量引流 & 3词密度霸榜收官]: 《Vidu S2 Architecture, ArXiv & API Access Guide》通过站内第一流量页(Ox Alpha)打通单向壁垒并夺回3词榜首(14次)
+
+* **影响页面/路由与线上链接**：
+  * 主优化页面：`/blog/vidu-s2-architecture-api-guide/` (`src/content/blog/vidu-s2-architecture-api-guide.md`)
+  * 协同主力流量页：`/blog/ox-alpha-claude-code-cursor-setup/` (`src/content/blog/ox-alpha-claude-code-cursor-setup.md`)
+  * 线上链接：`https://apivale.com/blog/vidu-s2-architecture-api-guide/`
+* **调整背景与实测数据驱动（页面军师/哥飞体检关键洞察）**：
+  * **域名侧阵地割裂诊断**：页面军师指出全站主力自然流量来自 `ox-alpha-claude-code-cursor-setup`（月搜数百），与多模态模型不同族且“现有阵地辐射不到本页”；
+  * **3 词榜致命丢分 (0/8，丢 4.9 分)**：此前因表格非目标短语（`Asynchronous Queue`）重复占据前列，导致目标核心 3 词未进 Top 10；
+* **具体落地优化动作**：
+  1. **站内第一主力流量页内链辐射**：在全站流量冠军页面 `ox-alpha-claude-code-cursor-setup.md` 末尾植入指向 Vidu S2 的精准锚文本链接，实现权威度权重（Link Juice）与高意向开发者直接输送；
+  2. **同族多模态集群双向内链闭环**：在 Vidu S2 正文中主动挂出指向 `fal-ai-h3-max-vs-seedance-kling-cost-benchmark` 与 `minimax-h3-api-pricing-guide` 的双向互联，彻底告别单向孤岛；
+  3. **3 词短语矩阵重构霸榜**：
+     * 去除表格单元格连续重复噪音，强化关键 3 词组合：
+     * `vidu s2 api` (14次，独占全页 3 词榜第 1 名)；
+     * `spatial video generation` (9次，高居第 2 名)；
+     * `the vidu s2` (9次，高居第 3 名)；
+     * `vidu s2 avatar` (6次，高居第 4 名)；
+     * 3 词榜前 5 名实现 100% 目标词统治，彻底拔除 4.9 分扣分。
+* **预期效果**：内链网络达到最佳拓扑，On Page 与意图聚合全面拉满。
+
 ### 📅 2026-10-08 - 📝 [哥飞体检98➔100决胜 & 密度防堆砌压降]: 《Vidu S2 Architecture, ArXiv & API Access Guide》将词组密度由 3.93% 压降至 2.3% 黄金安全线，总词数精准归位 1,650–1,750 词最佳区间
 
 * **影响页面/路由与线上链接**：
