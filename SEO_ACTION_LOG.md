@@ -58,6 +58,22 @@
 
 ## 📝 优化行动记录 (2026-10)
 
+### 📅 2026-10-08 - 📝 [彻底拔除学术前缀 & 斩断4词错位]: 将Title开头纯净化为《Vidu S2 API: Pricing, Setup & Global Access Guide》，消灭spatial video拼接误判
+
+* **影响页面/路由与线上链接**：
+  * 主优化页面：`/blog/vidu-s2-architecture-api-guide/` (`src/content/blog/vidu-s2-architecture-api-guide.md`)
+  * 线上链接：`https://apivale.com/blog/vidu-s2-architecture-api-guide/`
+* **调整背景与算法切词机制深入诊断**：
+  * **4 词拼接误判**：由于原 Title 为 `Vidu S2: Spatial Video...`，哥飞与 Google 语法树将冒号前后合并切分出了 `vidu s2 spatial video` 这个偏门学术短语，再次判定与该词的 SERP（全是 ArXiv 论文与官方发布稿）“赛道错位”；
+* **具体落地优化动作**：
+  1. **标题开头纯进化（直击商业核心）**：
+     * MetaTitle (59 字符): `Vidu S2 API: Pricing, Setup & Global Access Guide | APIVALE`（前 11 字符直接就是 `Vidu S2 API`，杜绝任何学术副词前置）；
+     * H1 保持对称；
+     * Meta Description (156 字符): `Get instant Vidu S2 API access, official pricing breakdown, and Python setup. Deploy real-time China AI video models with PayPal instant billing on APIVALE.`；
+     * **效果**：算法推断词将只能在 `Vidu S2 API` 或 `Vidu S2` 中二选一，彻底消灭 `vidu s2 spatial video` 的 4 词拼接错位！
+  2. **JSON-LD Schema 同步更新**。
+* **预期效果**：赛道错位警报 100% 彻底解除，主词直接锁定高净值 API 商业赛道。
+
 ### 📅 2026-10-08 - 📝 [母子词架构升级 & Trends 100爆发流量锁定]: 《Vidu S2: Spatial Video, API Access & Pricing》实现“大词吃流量(Vidu S2)+长尾定转化(API Access & Pricing)”完美双核驱动
 
 * **影响页面/路由与线上链接**：
