@@ -58,7 +58,7 @@
 
 ## 📝 优化行动记录 (2026-10)
 
-### 📅 2026-10-07 - 📝 [爆款新词捕获 & GEO大模型全要素构建]: 《GPT 6.1 Codex (Sol 6.1) API Pricing & Benchmarks》依据 Google 下拉联想、PAA、Related Searches 与 Trends 亚太峰值数据全新上线
+### 📅 2026-10-07 - 📝 [核心关键词强力纠偏 & GEO蓝海极客赛道锁定]: 《GPT 6.1 Codex API Pricing & Coding Benchmarks》依据 On Page 军师诊断拔除 Sol 6 1 权重混淆，100% 锚定核心蓝海词 GPT 6.1 Codex
 
 * **影响页面/路由与线上链接**：
   * 新增发布页面：`/blog/gpt-6-1-codex-sol-api-pricing-benchmarks/` (`src/content/blog/gpt-6-1-codex-sol-api-pricing-benchmarks.md`)
@@ -67,21 +67,23 @@
     * `/blog/gpt-6-sol-vs-deepseek-v4/` (`src/content/blog/gpt-6-sol-vs-deepseek-v4.md`)
     * `/blog/gpt-6-astra-api-pricing-guide/` (`src/content/blog/gpt-6-astra-api-pricing-guide.md`)
     * `/blog/deepseek-v4-flash-api-guide/` (`src/content/blog/deepseek-v4-flash-api-guide.md`)
-* **调整背景与实测数据驱动**：
-  * **Google Trends 暴涨词捕获**：Google Trends 揭示 `gpt 6.1 codex` / `sol 6.1` 呈现 **Breakout (>5,000%)** 态势；且地域热度由亚太领跑（中国 #1、韩国 #2、新加坡 #3、香港 #5），亚太开发者对海外绑卡受限与直连延迟痛点极其敏锐。
-  * **Google 实测意图全闭环映射**：
-    1. **搜索框下拉联想 (Autocomplete)**：精准捕获 `codex download`、`codex 使用`、`codex 官网`、`codex 怎么用`，转化为正文 H2 实战环境配置与 15+ 行 TypeScript 生产级路由代码；
-    2. **PAA (相关问题 - 4 大核心疑问)**：`Is GPT-6.1 Sol available?`、`Is GPT-6 Astra better than 6.1 Sol?`、`Is GPT Codex any good?`、`Is GPT-6.1 Sol cheaper than 6 Sol?` 全部一字不差对齐正文 FAQ 与 FAQPage JSON-LD 结构化数据，直抢 Position Zero 精选摘要；
+* **调整背景与实测数据驱动（页面军师/哥飞诊断）**：
+  * **错位诊断与纠偏**：哥飞 SEO 工具箱（page_coach）诊断揭示本页推断词被识别为红海泛大词 `sol 6 1`（前十被 OpenAI、TechCrunch、Reddit 垄断，本站 DR 0.2 处于劣势），真正蓝海开发者词 `gpt 6.1 codex` 被误降级为候选意图，造成“双意图互相拉扯稀释”；且正文词数达 2918 词，触发“超过 1800 词稀释主题”的扣分项。
+  * **Google 真实用户意图精准锚定**：
+    1. **搜索框下拉联想 (Autocomplete)**：围绕真正目标词 `gpt 6.1 codex`，深度覆盖 `codex download`、`codex 使用`、`codex 官网`、`codex 怎么用`，转化为正文 H2 实战环境配置与 15+ 行 TypeScript 生产级路由代码；
+    2. **PAA (相关问题 - 4 大核心疑问)**：`Is GPT 6.1 Codex available?`、`Is GPT-6 Astra better than GPT 6.1 Codex?`、`Is GPT 6.1 Codex worth $10/M?`、`Is GPT 6.1 Codex cheaper than GPT-6 Sol?` 全部一字不差对齐正文 FAQ 与 FAQPage JSON-LD 结构化数据；
     3. **用户还搜索了 (Related Searches)**：深度覆盖 `Gpt 6.1 sol benchmark`、`Gpt 6.1 sol pricing`、`Gpt 6.1 vs opus 5.5`、`Gpt 6.1 sol reddit`，嵌入客观多维矩阵对比表与 Reddit r/LocalLLaMA 真实 20 TPS 社区吐槽。
 * **具体落地成果与门禁核验**：
-  1. **作者轮换与 AST 纯净排版**：轮换指定 `Elena Rostova`（Lead AI Performance Engineer, APIVALE）；所有内嵌组件统一采用 `<div>`，杜绝任何 `<h1>`-`<h4>` 破坏大纲层级；
-  2. **GEO 顶级规范落地**：全篇落实 BLUF 声明式首句，嵌入高密度 Markdown 对比矩阵（含 2026年10月核验时间戳与客观 "Best for..." 列），内嵌带 `<input>`/`<select>`/`<button>` 的实时计算交互微工具（消灭 Doorway Page 扣分）；
-  3. **钱包利益对齐与 CRO**：底部卡片对齐首充 +50%、$29 开发者礼包（56% OFF）、$0.20 免费注册起步金，严格落实 PayPal / Alipay 0% 额外外汇手续费与免 KYC；
-  4. **门禁体检 100% 满分通过**：`audit_article_seo_health` 验证通过：0 Blockers、0 Warnings、MetaTitle 58 字符黄金长度（`< 60`）、内链拓扑健康；
-  5. **双向织网闭环**：同步在 `gpt-6-sol-vs-deepseek-v4`、`gpt-6-astra-api-pricing-guide`、`deepseek-v4-flash-api-guide` 注入精准上下文内链，杜绝孤岛。
+  1. **标题与 H1 手术刀式矫正**：
+     * MetaTitle 剔除括号分散权重的 `(Sol 6.1)`，升级为 `GPT 6.1 Codex API Pricing & Coding Benchmarks | APIVALE`（55 字符黄金中值，<= 60 字符）；
+     * H1 升级为 `GPT 6.1 Codex API Pricing, Benchmarks & Setup Guide`（53 字符，聚焦度 100%）；
+     * Meta Description 保持 144 字符（140-160 区间）。
+  2. **正文实体消歧与词数精简**：将正文泛指的 Sol 6.1 纠偏为主体 `GPT 6.1 Codex`，精炼冗余废话，使密度榜第一名稳居 `gpt 6.1 codex`；
+  3. **门禁体检 100% 满分通过**：`audit_article_seo_health` 验证通过：0 Blockers、0 Warnings、MetaTitle 55 字符最佳、内链拓扑健康；
+  4. **双向织网闭环**：同步在 3 篇老文章中注入精准上下文内链，彻底消除孤岛。
 * **14 天因果验证假设 (Hypothesis)**：
-  * 在当前 Google SERP 对 `gpt 6.1 codex` / `sol 6.1` 深度技术博客几乎真空的时间窗口下，该博文预计在 48–96 小时内直接登顶 Google Top 3，并抢占 PAA 精选摘要；
-  * 依托亚太地区极高的搜索份额与 PayPal/Alipay 免风控通道，预计在 14 天内带来 80+ 次高质量开发者注册与 API Key 试用转化。
+  * 在拔除 `sol 6 1` 的意图稀释并全力单点突破 `gpt 6.1 codex` 后，该博文预计在 48–96 小时内直接登顶 Google Top 3，避开 TechCrunch 等媒体在 Sol 词上的正面碾压；
+  * 依托亚太地区（中/韩/新/港）对 Codex 落地与 PayPal/Alipay 结算的刚需，预计在 14 天内带来 80+ 次高质量开发者注册与 API Key 试用转化。
 
 ### 📅 2026-10-07 - 📝 [高排名0点击CTR急救 & GEO免费生态全要素重构]: 《OpenRouter Free Tier Limits》依据 GSC 66 展现 (Pos 4.6)、Google Trends (+2600%) 与“用户还搜索了”实测数据深度重构
 
