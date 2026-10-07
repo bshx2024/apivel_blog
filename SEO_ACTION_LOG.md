@@ -58,6 +58,31 @@
 
 ## 📝 优化行动记录 (2026-10)
 
+### 📅 2026-10-07 - 📝 [爆款新词捕获 & GEO大模型全要素构建]: 《GPT 6.1 Codex (Sol 6.1) API Pricing & Benchmarks》依据 Google 下拉联想、PAA、Related Searches 与 Trends 亚太峰值数据全新上线
+
+* **影响页面/路由与线上链接**：
+  * 新增发布页面：`/blog/gpt-6-1-codex-sol-api-pricing-benchmarks/` (`src/content/blog/gpt-6-1-codex-sol-api-pricing-benchmarks.md`)
+  * 线上链接：`https://apivale.com/blog/gpt-6-1-codex-sol-api-pricing-benchmarks/`
+  * 双向织网关联修改老页面：
+    * `/blog/gpt-6-sol-vs-deepseek-v4/` (`src/content/blog/gpt-6-sol-vs-deepseek-v4.md`)
+    * `/blog/gpt-6-astra-api-pricing-guide/` (`src/content/blog/gpt-6-astra-api-pricing-guide.md`)
+    * `/blog/deepseek-v4-flash-api-guide/` (`src/content/blog/deepseek-v4-flash-api-guide.md`)
+* **调整背景与实测数据驱动**：
+  * **Google Trends 暴涨词捕获**：Google Trends 揭示 `gpt 6.1 codex` / `sol 6.1` 呈现 **Breakout (>5,000%)** 态势；且地域热度由亚太领跑（中国 #1、韩国 #2、新加坡 #3、香港 #5），亚太开发者对海外绑卡受限与直连延迟痛点极其敏锐。
+  * **Google 实测意图全闭环映射**：
+    1. **搜索框下拉联想 (Autocomplete)**：精准捕获 `codex download`、`codex 使用`、`codex 官网`、`codex 怎么用`，转化为正文 H2 实战环境配置与 15+ 行 TypeScript 生产级路由代码；
+    2. **PAA (相关问题 - 4 大核心疑问)**：`Is GPT-6.1 Sol available?`、`Is GPT-6 Astra better than 6.1 Sol?`、`Is GPT Codex any good?`、`Is GPT-6.1 Sol cheaper than 6 Sol?` 全部一字不差对齐正文 FAQ 与 FAQPage JSON-LD 结构化数据，直抢 Position Zero 精选摘要；
+    3. **用户还搜索了 (Related Searches)**：深度覆盖 `Gpt 6.1 sol benchmark`、`Gpt 6.1 sol pricing`、`Gpt 6.1 vs opus 5.5`、`Gpt 6.1 sol reddit`，嵌入客观多维矩阵对比表与 Reddit r/LocalLLaMA 真实 20 TPS 社区吐槽。
+* **具体落地成果与门禁核验**：
+  1. **作者轮换与 AST 纯净排版**：轮换指定 `Elena Rostova`（Lead AI Performance Engineer, APIVALE）；所有内嵌组件统一采用 `<div>`，杜绝任何 `<h1>`-`<h4>` 破坏大纲层级；
+  2. **GEO 顶级规范落地**：全篇落实 BLUF 声明式首句，嵌入高密度 Markdown 对比矩阵（含 2026年10月核验时间戳与客观 "Best for..." 列），内嵌带 `<input>`/`<select>`/`<button>` 的实时计算交互微工具（消灭 Doorway Page 扣分）；
+  3. **钱包利益对齐与 CRO**：底部卡片对齐首充 +50%、$29 开发者礼包（56% OFF）、$0.20 免费注册起步金，严格落实 PayPal / Alipay 0% 额外外汇手续费与免 KYC；
+  4. **门禁体检 100% 满分通过**：`audit_article_seo_health` 验证通过：0 Blockers、0 Warnings、MetaTitle 58 字符黄金长度（`< 60`）、内链拓扑健康；
+  5. **双向织网闭环**：同步在 `gpt-6-sol-vs-deepseek-v4`、`gpt-6-astra-api-pricing-guide`、`deepseek-v4-flash-api-guide` 注入精准上下文内链，杜绝孤岛。
+* **14 天因果验证假设 (Hypothesis)**：
+  * 在当前 Google SERP 对 `gpt 6.1 codex` / `sol 6.1` 深度技术博客几乎真空的时间窗口下，该博文预计在 48–96 小时内直接登顶 Google Top 3，并抢占 PAA 精选摘要；
+  * 依托亚太地区极高的搜索份额与 PayPal/Alipay 免风控通道，预计在 14 天内带来 80+ 次高质量开发者注册与 API Key 试用转化。
+
 ### 📅 2026-10-07 - 📝 [高排名0点击CTR急救 & GEO免费生态全要素重构]: 《OpenRouter Free Tier Limits》依据 GSC 66 展现 (Pos 4.6)、Google Trends (+2600%) 与“用户还搜索了”实测数据深度重构
 
 * **影响页面/路由与线上链接**：

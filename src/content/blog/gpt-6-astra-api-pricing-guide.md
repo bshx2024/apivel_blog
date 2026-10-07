@@ -37,7 +37,7 @@ curl -X POST https://api.apivale.com/v1/chat/completions \
 
 When an agent enters autonomous debugging mode—inspecting directories, running build scripts, and analyzing compiler logs—it generates 50 to 200 sequential calls. Paying $50/M tokens for repetitive syntax parsing turns a routine feature branch into a $40 invoice.
 
-This guide analyzes verified **GPT-6 Astra benchmarks**, details official **GPT-6 Astra API price** tiers, provides an automated failover proxy script, and outlines how to reduce token expenditures by 89.4% using APIVALE's unified Chinese LLM routing gateway. If you are comparing against lower-cost OpenAI tiers or preparing for the GPT-5.5 sunset, read our [GPT-6 Sol vs DeepSeek V4 benchmark & migration guide](/blog/gpt-6-sol-vs-deepseek-v4/).
+This guide analyzes verified **GPT-6 Astra benchmarks**, details official **GPT-6 Astra API price** tiers, provides an automated failover proxy script, and outlines how to reduce token expenditures by 89.4% using APIVALE's unified Chinese LLM routing gateway. If you are comparing against lower-cost OpenAI reasoning tiers, read our [GPT 6.1 Codex (Sol 6.1) API Pricing & Benchmarks Guide](/blog/gpt-6-1-codex-sol-api-pricing-benchmarks/) or review our [GPT-6 Sol vs DeepSeek V4 migration guide](/blog/gpt-6-sol-vs-deepseek-v4/).
 
 ---
 
