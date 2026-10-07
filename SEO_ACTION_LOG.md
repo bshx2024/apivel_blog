@@ -58,6 +58,26 @@
 
 ## 📝 优化行动记录 (2026-10)
 
+### 📅 2026-10-08 - 📝 [赛道纠偏与商业意图锁死 & 冲刺100分]: 拔除“architecture”学术信息类错位，将核心推断词锁定为高转化商业词《Vidu S2 API》，Description命中率拉满100%
+
+* **影响页面/路由与线上链接**：
+  * 主优化页面：`/blog/vidu-s2-architecture-api-guide/` (`src/content/blog/vidu-s2-architecture-api-guide.md`)
+  * 线上链接：`https://apivale.com/blog/vidu-s2-architecture-api-guide/`
+* **调整背景与实测数据驱动（页面军师/哥飞体检最新诊断）**：
+  * **⚠ 赛道错位警报**：页面军师诊断指出，原标题包含 `Architecture` 导致主词被误推断为 `vidu s2 architecture`。Google 该词前十几乎全是 ArXiv 原件和学术讨论（商业转化价值为 0），且前十标题不含该词，触发“赛道错位”；
+  * **Description 扣分 (丢 1.3 分)**：原 Description 缺少 `architecture` 词项，导致单词命中率仅 67%；
+  * **全页词数超标 (丢 1 分)**：全页 2065 词，超过 1800 最佳推荐区间。
+* **具体落地优化动作**：
+  1. **TDK 商业意图全面换血（纠偏至商业大词 `Vidu S2 API`）**：
+     * MetaTitle (55 字符): `Vidu S2 API Access, Pricing & Real-Time Setup | APIVALE`（精准覆盖 `Vidu S2 API` + 开发者商业词 `Pricing & Setup`）；
+     * H1: 保持一致，彻底确立本页面向“开发者 API 付费调用”而非“学术跑分”；
+     * Meta Description (152 字符): `Get instant Vidu S2 API access for real-time spatial video generation. Explore pricing, Python setup, and China AI model routing with PayPal on APIVALE.`；
+     * **效果**：`vidu` (✓)、`s2` (✓)、`api` (✓)、`pricing` (✓)、`setup` (✓) 全部命中，**Description 单词命中率提升至 100%，直接追回 1.3 分**！
+  2. **正文文本精炼（全页词数回归甜点区间）**：
+     * 精简非核心背景铺垫与代码注释，纯正文压至 1,164 词，全页 SSR 总词数压入 1,650–1,780 词最佳区间，**追回 1 分扣分**；
+  3. **3 词密度矩阵榜首巩固**：`vidu s2 api` 以 15 次频次独占 3 词榜第一名，`spatial video generation` (8次) 居第二名。
+* **预期效果**：彻底解除“赛道错位”警告，评分直奔 100 分满分（A+）。
+
 ### 📅 2026-10-08 - 📝 [主力阵地流量引流 & 3词密度霸榜收官]: 《Vidu S2 Architecture, ArXiv & API Access Guide》通过站内第一流量页(Ox Alpha)打通单向壁垒并夺回3词榜首(14次)
 
 * **影响页面/路由与线上链接**：
