@@ -58,6 +58,19 @@
 
 ## 📝 优化行动记录 (2026-10)
 
+### 📅 2026-10-08 - 📝 [消除赛道错位 & 锁定满分]: 《Haiku 5.5 vs GPT-6 Luna》主词TDK归一化，攻克密度榜加权与词数超额扣分
+
+* **影响页面/路由与线上链接**：
+  * 主优化页面：`/blog/haiku-5-5-vs-luna-6-pricing-agent-guide/` (`src/content/blog/haiku-5-5-vs-luna-6-pricing-agent-guide.md`)
+  * 线上链接：`https://apivale.com/blog/haiku-5-5-vs-luna-6-pricing-agent-guide/`
+* **调整背景与实测数据驱动（页面军师/哥飞体检引擎诊断）**：
+  * **体检总分 90 分 (A) 扣分诊断**：算法推断主词撕裂（Title 未包含 `GPT-6`，H1 包含，算法误将主词降级推断为单模大词 `gpt-6 luna`，判定赛道错位）；
+  * **主要扣分点消除**：
+    1. Title 关键词单词命中 50%（丢 4 分）-> Title 升级为 `Haiku 5.5 vs GPT-6 Luna: Real Costs & Guide | APIVALE`（54 字符），TDK 完整认领；
+    2. Description 单词命中 50%（丢 2 分）-> 补齐 `Haiku 5.5 vs GPT-6 Luna` 完整词条；
+    3. 密度榜加权覆盖（丢 5.2 分）-> 正文将离散单模词替换为复合对比词组 `Haiku 5.5 vs GPT-6 Luna`（出现 13 次），霸榜 1~4 词榜 Top 1；
+    4. 正文词数超额（丢 1 分）-> 精炼瘦身 340 词，消除冗余，回归聚焦区间。
+
 ### 📅 2026-10-08 - 📝 [突发流量截流 & 5-Gate原子发布]: 上线《Claude Haiku 5.5 vs GPT-6 Luna》预算模型成本对比与双向原子织网
 
 * **影响页面/路由与线上链接**：
