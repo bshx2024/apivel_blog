@@ -214,7 +214,7 @@ npx @anthropic-ai/claude-code
 **A:** No. APIVALE bypasses domestic phone binding and real-name verification walls. You can sign in using GitHub, credit cards, or PayPal, and start making API calls immediately.
 
 **Q: How does Qwen 3.7 Max compare to Claude Sonnet 5 in multi-step [tool calling](/blog/openrouter-alternatives/)?**  
-**A:** Qwen 3.7 Max was pre-trained specifically for agentic workflows ("Agent Era"), achieving state-of-the-art results on SWE-bench Pro. While Claude Sonnet 5 offers refined interactive reasoning, Qwen 3.7 Max matches it on multi-tool invocations and long-horizon bash executions at 80% lower token cost.
+**A:** Qwen 3.7 Max was pre-trained specifically for agentic workflows ("Agent Era"), achieving state-of-the-art results on SWE-bench Pro. While Claude Sonnet 5 offers refined interactive reasoning, Qwen 3.7 Max matches it on multi-tool invocations and long-horizon bash executions at 80% lower token cost. For teams evaluating how Qwen 3.7 Max compares to low-cost volume options like Haiku 5.5 and Luna 6, read our [Haiku 5.5 vs GPT-6 Luna pricing and benchmark guide](/blog/haiku-5-5-vs-luna-6-pricing-agent-guide/).
 
 **Q: Will streaming responses and terminal progress spinners work correctly?**  
 **A:** Yes. APIVALE provides full Server-Sent Events (SSE) streaming compatibility, guaranteeing real-time token rendering and smooth interactive output inside Claude Code.

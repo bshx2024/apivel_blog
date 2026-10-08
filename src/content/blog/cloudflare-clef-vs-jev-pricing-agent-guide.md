@@ -108,7 +108,7 @@ Despite fast routing speed, developers face two practical constraints:
 ### The Two-Tier Solution
 Engineering teams resolve this bottleneck with a **Two-Tier Agent Pipeline**:
 * **Tier 1 (Decision):** The **Cloudflare Clef decision model** evaluates intent in 39ms for $0.09 per million.
-* **Tier 2 (Execution):** If the classification requires coding, the payload dispatches to **DeepSeek-V4** ($0.14 input / $0.28 output) on APIVALE with unconstrained context windows.
+* **Tier 2 (Execution):** If the classification requires coding, the payload dispatches to **DeepSeek-V4** ($0.14 input / $0.28 output) on APIVALE with unconstrained context windows. (To compare how general-purpose sub-agents perform on Tier 2 execution without 100K pricing penalties, review our [Haiku 5.5 vs Luna 6 agent benchmark guide](/blog/haiku-5-5-vs-luna-6-pricing-agent-guide/)).
 
 ---
 

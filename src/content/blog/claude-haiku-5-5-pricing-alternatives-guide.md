@@ -79,7 +79,7 @@ Anthropic structured Claude Haiku 5.5 around a dual-tier rate card:
 * **Above 100K Tokens:** $0.50 per 1M input tokens and $2.50 per 1M output tokens (**a 500% surge**).
 * **Prompt Caching:** Reads cost $0.01 per 1M tokens below 100K, escalating to $0.05 per 1M tokens above 100K.
 
-While single-turn bots benefit from sub-100K rates, Claude Code CLI sessions concatenate git diffs, AST maps, and logs. A 140K prompt billed at Haiku's higher tier costs more than routing to a full-sized frontier MoE model.
+While single-turn bots benefit from sub-100K rates, Claude Code CLI sessions concatenate git diffs, AST maps, and logs. A 140K prompt billed at Haiku's higher tier costs more than routing to a full-sized frontier MoE model. For a detailed breakdown of subagent volume pricing, tokenizer inflation, and retry penalties against OpenAI's volume tier, explore our comprehensive [Haiku 5.5 vs Luna 6 pricing and agent benchmark guide](/blog/haiku-5-5-vs-luna-6-pricing-agent-guide/).
 
 ---
 
