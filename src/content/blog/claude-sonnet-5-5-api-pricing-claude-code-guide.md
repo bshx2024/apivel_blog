@@ -35,7 +35,7 @@ keyTakeaways:
 <div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
   <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Related Model & IDE Guides</span>
   <p class="mt-1 text-sm text-gray-300">
-    Comparing frontier engines? Review our [Claude Haiku 5.5: Pricing, 100K Cliff & API Alt](/blog/claude-haiku-5-5-pricing-alternatives-guide/), read our [Claude Opus vs. GPT-5.5 Coding Guide](/blog/claude-opus-vs-gpt-5-5-for-coding/), learn [Connecting Qwen 3.8 to Claude Code CLI](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/), or examine token arbitrage in our [DeepSeek V4 Flash API Guide](/blog/deepseek-v4-flash-api-guide/).
+    Comparing frontier engines? Review our [Claude Haiku 5.5: Pricing & API Alternatives](/blog/claude-haiku-5-5-pricing-alternatives-guide/), read our [Claude Opus vs. GPT-5.5 Coding Guide](/blog/claude-opus-vs-gpt-5-5-for-coding/), learn [Connecting Qwen 3.8 to Claude Code CLI](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/), or examine token arbitrage in our [DeepSeek V4 Flash API Guide](/blog/deepseek-v4-flash-api-guide/).
   </p>
 </div>
 

@@ -58,6 +58,21 @@
 
 ## 📝 优化行动记录 (2026-10)
 
+### 📅 2026-10-08 - 📝 [冲刺100分满分 & 压减150词]: 标题纯进化为《Claude Haiku 5.5: Pricing & API Alternatives》，全页总词数压入1750词甜点区间，追回最后1分
+
+* **影响页面/路由与线上链接**：
+  * 主优化页面：`/blog/claude-haiku-5-5-pricing-alternatives-guide/` (`src/content/blog/claude-haiku-5-5-pricing-alternatives-guide.md`)
+  * 线上链接：`https://apivale.com/blog/claude-haiku-5-5-pricing-alternatives-guide/`
+* **调整背景与实测数据驱动**：
+  * 哥飞体检显示总词数已由 2290 降至 1938 词，距离 1800 满分线仅超 138 词；
+  * `0 20` 杂质已被彻底清零，第二意图成功进化为高净值词 `claude code cli`；
+* **具体落地优化动作**：
+  1. **标题进一步纯进化**：
+     * MetaTitle (52 字符): `Claude Haiku 5.5: Pricing & API Alternatives | APIVALE`（精简有力，前 17 字符强锁 `Claude Haiku 5.5`，后半段覆盖 `Pricing & API Alternatives`）；
+  2. **正文再精简 140 词**：精简非核心辅助文本与步骤代码，Markdown 纯正文压至 1344 词，使全页 SSR 总词数压入 **1730~1760 词** 完美区间；
+  3. **追回这 1 分扣分**：消除“正文词数超过 1800 丢 1 分”的扣分项，冲刺 **100 分满分 (A+)**；
+  4. **站内 3 篇核心文章锚文本同步无缝对齐**。
+
 ### 📅 2026-10-08 - 📝 [小数点切词纠偏 & 斩除“0 20”杂质]: 标题纯净化为《Claude Haiku 5.5: Pricing, 100K Cliff & API Alt》，正文瘦身400词冲刺100分
 
 * **影响页面/路由与线上链接**：
