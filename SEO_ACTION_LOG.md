@@ -58,6 +58,24 @@
 
 ## 📝 优化行动记录 (2026-10)
 
+### 📅 2026-10-08 - 📝 [商业高意图拦截 & GEO全维重构]: 《Claude Haiku 5.5 API Pricing》对齐PAA疑问与购买词，轮换Kenji Tanaka并注入Verdict Box
+
+* **影响页面/路由与线上链接**：
+  * 主重构页面：`/blog/claude-haiku-5-5-pricing-alternatives-guide/` (`src/content/blog/claude-haiku-5-5-pricing-alternatives-guide.md`)
+  * 线上链接：`https://apivale.com/blog/claude-haiku-5-5-pricing-alternatives-guide/`
+  * 织网双向协同页面：
+    * `/blog/haiku-5-5-vs-luna-6-pricing-agent-guide/`
+    * `/blog/cloudflare-clef-vs-jev-pricing-agent-guide/`
+    * `/blog/how-to-connect-qwen-3-7-to-claude-code-cli/`
+* **调整背景与实测数据驱动（搜索意图 3 张截图深度剖析）**：
+  * **搜索意图洞察**：截图 2 揭示 4 大高频 PAA（`How much does Claude Haiku cost?`, `Is haiku a cheaper model?`），截图 3 爆发高转化采购词 `Claude code api key 购买`，截图 1 显示大量中英双语检索；
+  * **GEO 与 On-Page 落地优化**：
+    1. **TDK 锐化升级**：Title 升级为 `Claude Haiku 5.5 API Pricing: 100K Costs & Guide | APIVALE`（58 字符），Description 强化 `5x 100K cliff` 与 `DeepSeek-V4 API keys with PayPal`；
+    2. **作者轮换**：由 AI DevRel 工程师 **Kenji Tanaka** 署名，深度呼应 Claude Code CLI 与 SDK 集成主题；
+    3. **GEO 引用磁铁**：注入 `The Engineering Verdict` 模块与真实 Tokenizer 膨胀换算公式；
+    4. **双语 Schema 拓展**：注入 Service 与 FAQPage JSON-LD，覆盖中文别名 `Claude Haiku 价格` 与 `Claude Code API Key 购买`；
+    5. **承接购买意图**：提供 30 秒环境变量直配与生产级 Failover 代码，强调 PayPal 即时免 KYC 结账与 $0.20 免费测试金。
+
 ### 📅 2026-10-08 - 📝 [冲刺100分满分]: 《Haiku 5.5 vs GPT-6 Luna》多词密度微调至2.8%解除堆砌警告，精炼300词追回最后2.5分
 
 * **影响页面/路由与线上链接**：
