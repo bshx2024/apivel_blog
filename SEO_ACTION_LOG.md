@@ -58,6 +58,24 @@
 
 ## 📝 优化行动记录 (2026-10)
 
+### 📅 2026-10-08 - 📝 [小数点切词纠偏 & 斩除“0 20”杂质]: 标题纯净化为《Claude Haiku 5.5: Pricing, 100K Cliff & API Alt》，正文瘦身400词冲刺100分
+
+* **影响页面/路由与线上链接**：
+  * 主优化页面：`/blog/claude-haiku-5-5-pricing-alternatives-guide/` (`src/content/blog/claude-haiku-5-5-pricing-alternatives-guide.md`)
+  * 线上链接：`https://apivale.com/blog/claude-haiku-5-5-pricing-alternatives-guide/`
+* **调整背景与实测数据驱动（页面军师最新体检诊断）**：
+  * **⚠ 赛道错位警报**：哥飞分词引擎误将 `5.5` 中的小数点作为截断符，导致推断词变成了民间猜测旧词 `claude haiku 5`（缺失 `.5`），而 Google US 该词前十多为旧帖（Haiku 4.5 与 Sonnet 5 对比），从而误触发“赛道错位”；
+  * **杂质候选意图污染**：正文与 CTA 频繁出现 `$0.20`，被分词引擎剥离后拼成高频词 `0 20`，污染了模型核心主题；
+  * **全页词数超标扣分 (丢 1 分)**：全页 SSR 渲染抓取 2290 词，超出 1800 词上限；
+* **具体落地优化动作**：
+  1. **TDK 黄金母词强绑定（消灭小数点截断）**：
+     * MetaTitle (59 字符): `Claude Haiku 5.5: Pricing, 100K Cliff & API Alt | APIVALE`（前 17 字符直接锁定 Trends 暴涨词 `Claude Haiku 5.5`，杜绝切词漏掉 `.5`）；
+     * Meta Description (158 字符): `Analyze Claude Haiku 5.5 pricing, the 100K token cliff, and agent benchmarks. Cut API costs by 88% with DeepSeek-V4 and instant PayPal checkout on APIVALE.`；
+  2. **全面斩除 `0 20` 杂质**：将 CTA 及正文多余的 `$0.20` 替换为语义化的 `Free Starter Credit` / `Starter Trial`，彻底从高频词榜抹除 `0 20` 噪音；
+  3. **正文文本精简 400 词（冲刺 100 分）**：精简冗余代码注释与过渡段落，全页 SSR 词数稳稳压入 1650–1750 最佳区间，追回 1 分扣分；
+  4. **强化 `Claude Haiku 5.5` 频次**：整篇正文完整短语频次达到 26 次，绝对霸榜 3 词频首位。
+* **预期效果**：彻底解除“赛道错位”，推断词纠偏为 `claude haiku 5.5`，On Page 评分冲上 100 分满分（A+）。
+
 ### 📅 2026-10-08 - 📝 [突发热点捕获 & 100K阶梯计费悬崖击穿]: 撰写并发布《Claude Haiku 5.5 API: 100K Cliff & Cheaper Alt》，作者轮换为 Elena Rostova，为中国大模型 (DeepSeek-V4/Qwen) 精准引流
 
 * **影响页面/路由与线上链接**：

@@ -310,7 +310,7 @@ opencode
 > **Slash OpenCode Token Spend:** Autonomous agent loops in OpenCode can consume millions of tokens during repository indexing. Check out our dedicated guide on [How to Slash OpenCode Token Costs by 85% with Custom API Gateways](/blog/how-to-reduce-opencode-token-costs/) to combine Ox Alpha with aggressive prompt caching and Waffo global billing.
 
 > [!NOTE]
-> **Beware of 100K Tiered Pricing Traps:** While 1M context windows enable massive codebase ingestion, proprietary models like Anthropic's lightweight engine trigger steep cost jumps. For an in-depth breakdown of tiered pricing penalties and flat-rate MoE alternatives, read our guide on [Claude Haiku 5.5 API: 100K Cliff & Cheaper Alt](/blog/claude-haiku-5-5-pricing-alternatives-guide/).
+> **Beware of 100K Tiered Pricing Traps:** While 1M context windows enable massive codebase ingestion, proprietary models like Anthropic's lightweight engine trigger steep cost jumps. For an in-depth breakdown of tiered pricing penalties and flat-rate MoE alternatives, read our guide on [Claude Haiku 5.5: Pricing, 100K Cliff & API Alt](/blog/claude-haiku-5-5-pricing-alternatives-guide/).
 
 ---
 
