@@ -192,6 +192,8 @@ export ANTHROPIC_AUTH_TOKEN="apivale-key-xxxxxxxx"
 npx @anthropic-ai/claude-code
 ```
 
+For developers looking to extend terminal workflows with in-process TypeScript plugins or build custom tool interception hooks, explore our comprehensive [Claude Code mods getting started and examples guide](/blog/claude-code-mods-examples-guide/).
+
 ---
 
 <div class="cta-card">

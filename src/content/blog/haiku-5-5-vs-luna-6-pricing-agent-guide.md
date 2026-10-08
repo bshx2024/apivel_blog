@@ -198,7 +198,7 @@ class ResilientAgentGateway:
         raise RuntimeError("Exceeded maximum retry threshold across endpoints.")
 ```
 
-For architectures utilizing classification primitives like [Cloudflare Clef or TypeSafe Jev](/blog/cloudflare-clef-vs-jev-pricing-agent-guide/), pair zero-output routing models with APIVALE generation endpoints to minimize infrastructure overhead.
+For architectures utilizing classification primitives like [Cloudflare Clef or TypeSafe Jev](/blog/cloudflare-clef-vs-jev-pricing-agent-guide/), pair zero-output routing models with APIVALE generation endpoints to minimize infrastructure overhead. To build programmable in-process hooks that intercept subagent commands inside your CLI, explore our [Claude Code mods getting started guide](/blog/claude-code-mods-examples-guide/).
 
 ---
 

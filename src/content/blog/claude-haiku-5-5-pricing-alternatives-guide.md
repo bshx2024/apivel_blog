@@ -209,7 +209,7 @@ if __name__ == "__main__":
     print(f"Executed Model: {result.get('model')}")
 ```
 
-For teams configuring Qwen models in terminal coding agents, explore our [Qwen 3.7 Max Claude Code setup guide](/blog/how-to-connect-qwen-3-7-to-claude-code-cli/).
+For teams configuring Qwen models in terminal coding agents, explore our [Qwen 3.7 Max Claude Code setup guide](/blog/how-to-connect-qwen-3-7-to-claude-code-cli/). To intercept terminal tool calls programmatically and automate cost-saving fallbacks with plugins, review our [Claude Code mods getting started and examples guide](/blog/claude-code-mods-examples-guide/).
 
 ---
 
