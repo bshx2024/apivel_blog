@@ -81,6 +81,9 @@ Anthropic's Claude Code CLI powered by Claude Sonnet 5 is arguably the most prod
 > [!TIP]
 > **Monitoring Agent Token Burn on Windows:** While routing Claude Code CLI to Qwen 3.7 Max dramatically lowers your per-token cost, running continuous agent debugging loops still burns millions of tokens in the background. Windows developers can track real-time terminal consumption using our [CodexBar Windows Setup Guide](/blog/how-to-connect-claude-opus-5-to-claude-code-cli/) to monitor quota health and avoid rate limit pauses.
 
+> [!NOTE]
+> **Looking for Lightweight Subagent Routing?** If you are considering Anthropic's new compact model, beware of the 500% tiered billing penalty beyond 100K tokens. Check our breakdown on [Claude Haiku 5.5 API: 100K Cliff & Cheaper Alt](/blog/claude-haiku-5-5-pricing-alternatives-guide/) to see how Qwen 3.7 Max and DeepSeek-V4 deliver flat-rate stability.
+
 By setting `ANTHROPIC_BASE_URL` to point to **APIVALE**, you can route Claude Code directly to **Qwen 3.7-Max**. You gain **80% token cost savings** ($0.60 Input / $2.40 Output), near-zero throttling, and unhindered long-horizon reasoning.
 
 For developers who also run coding sessions inside Cursor IDE, replacing the default $20 subscription with pay-as-you-go Qwen 3.7 access provides identical cost savings. Explore our [Cursor Pro vs custom API key analysis](/blog/cursor-pro-vs-custom-api-key/) to see how custom endpoints optimize monthly editor budgets.
