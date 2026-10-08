@@ -7,6 +7,13 @@ Disallow: /sign-up?*
 Disallow: /dashboard
 Disallow: /playground?*
 Allow: /
+Allow: /pricing
+Allow: /pricing/
+Allow: /sign-up
+Allow: /sign-up/
+Allow: /sign-in
+Allow: /sign-in/
 
 Sitemap: https://apivale.com/blog/sitemap-index.xml
 Sitemap: https://apivale.com/sitemap.xml
+

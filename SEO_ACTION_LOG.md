@@ -58,6 +58,22 @@
 
 ## 📝 优化行动记录 (2026-10)
 
+### 📅 2026-10-09 - ⚙️ [技术SEO紧急止血 & 爬虫去噪]: 全站封堵带参CTA页面索引，注入Rehype Nofollow与动态Noindex防护网
+
+* **影响页面/路由与全站范围**：
+  * 全站根域爬虫规则：`https://apivale.com/robots.txt`（主站 `web/default/public/robots.txt` 与经典版）
+  * 博客端爬虫规则：`public/robots.txt`
+  * 全站基础布局：`src/layouts/Layout.astro`
+  * 博客编译构建链路：`astro.config.mjs`
+  * 核心落地页与工具：`src/pages/[slug].astro`, `src/pages/openrouter-pricing.astro`, `src/pages/llm-gateway.astro`, `src/pages/tools/deepseek-pricing-calculator.astro`
+* **调整背景与实测数据驱动（GSC 24小时穿透诊断）**：
+  * **技术事故暴露**：在 GSC 24 小时展现中，多达 18 个包含 `?redirect=...` 与 `&utm_source=...` 的内部带参链接（如 `/pricing?redirect=...`、`/sign-up?redirect=...`）被 Google 爬虫深度抓取并参与 SERP 竞争，甚至排名高居第 2~5 位，造成极度严重的关键词同室操戈（Cannibalization）与抓取配额浪费；
+  * **硬核四重止血工程方案落地**：
+    1. **主站根域 Robots 屏蔽**：在根域 `robots.txt` 明确配置 `Disallow: /*?redirect=*`, `Disallow: /*?utm_*`, `Disallow: /pricing?*`, `Disallow: /sign-up?*`, `Disallow: /sign-in?*`，同时白名单保留纯净路径 `Allow: /pricing`, `Allow: /sign-up`, `Allow: /sign-in`；
+    2. **Astro 编译期 Rehype 插件拦截**：在 `astro.config.mjs` 新增 `rehypeNofollowTrackingLinks` 抽象语法树遍历处理器，构建时自动扫描所有 Markdown 链接，对所有指向 `redirect=`、`/pricing?`、`/sign-up?`、`/sign-in?`、`utm_` 的超链接强制注入 `rel="nofollow"`，断绝爬虫权重传递；
+    3. **SSR 动态 Noindex 防护**：在 `Layout.astro` 中注入动态探针，当检测到 URL 携带 QueryString（如动态参数）时，自动将 `<meta name="robots">` 升级为 `noindex, follow`，确保即使被爬虫探测也绝不入库；
+    4. **DOM 客户端动态补丁**：在 `[slug].astro`、`openrouter-pricing.astro`、`llm-gateway.astro` 针对所有动态浮窗、Banner 与 CTA 按钮补全 `rel="nofollow"`，双重阻断爬虫追踪。
+
 ### 📅 2026-10-09 - 📝 [突发流量截流 & 5-Gate原子发布]: 上线《Claude Code Mods: Getting Started, Examples & Cost-Saving Fallbacks》与多模型分流架构
 
 * **影响页面/路由与线上链接**：

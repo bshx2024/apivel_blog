@@ -21,6 +21,11 @@ const siteTitle = title.includes('APIVALE') ? title : `${title} | APIVALE`;
 const resolvedCanonical = canonicalUrl || new URL(Astro.url.pathname, Astro.site || Astro.url.origin).href;
 
 const isStandalone = isHub || Astro.url.pathname.includes('llm-gateway') || Astro.url.pathname.includes('openrouter-pricing');
+
+// Technical SEO Hemostasis: Block search engines from indexing parameterized duplicate URLs
+const hasQueryString = Astro.url.search.length > 0;
+const robotsDirective = hasQueryString ? 'noindex, follow' : 'index, follow';
+const googlebotDirective = hasQueryString ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
 ---
 
 <!doctype html>
@@ -44,8 +49,8 @@ const isStandalone = isHub || Astro.url.pathname.includes('llm-gateway') || Astr
 		<!-- SEO Meta Tags -->
 		<title>{siteTitle}</title>
 		<meta name="description" content={description} />
-		<meta name="robots" content="index, follow" />
-		<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+		<meta name="robots" content={robotsDirective} />
+		<meta name="googlebot" content={googlebotDirective} />
 		<link rel="canonical" href={resolvedCanonical} />
 		
 		<!-- Open Graph / Facebook -->
@@ -78,7 +83,7 @@ const isStandalone = isHub || Astro.url.pathname.includes('llm-gateway') || Astr
 			<div class="top-announcement-content">
 				<span class="banner-badge">🎁 FREE TRIAL</span>
 				<span class="banner-text">Claim <strong>$0.20 Free Quota</strong> (100,000 Tokens) for DeepSeek V4 & Qwen 3.7 — No Credit Card Needed</span>
-				<a href="/sign-up?redirect=/pricing" class="banner-btn">Get API Key →</a>
+				<a href="/sign-up?redirect=/pricing" class="banner-btn" rel="nofollow">Get API Key →</a>
 			</div>
 		</div>
 

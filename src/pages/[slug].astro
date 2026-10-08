@@ -378,7 +378,7 @@ const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.key
 		</div>
 		<div class="cta-title" id="ctaTitle">Get Free API Key</div>
 		<p class="cta-desc" id="ctaDesc">Sign up via GitHub for instant $0.20 credit (+ 50% bonus). No KYC required.</p>
-		<a href="https://apivale.com/sign-in?redirect=%2Fplayground&utm_source=apivale_blog&utm_medium=blog_floating_card" class="cta-action-btn" id="ctaActionBtn">
+		<a href="https://apivale.com/sign-in?redirect=%2Fplayground&utm_source=apivale_blog&utm_medium=blog_floating_card" class="cta-action-btn" id="ctaActionBtn" rel="nofollow">
 			Try Playground Instantly
 		</a>
 	</div>
@@ -399,6 +399,23 @@ const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.key
 			const closeBtn = document.getElementById('closeCtaBtn');
 			const inlineBanner = document.getElementById('dynamicInlineBanner');
 			
+			// Technical SEO Hemostasis: Sanitize and enforce rel="nofollow" on all parameterized/tracking CTA links
+			document.querySelectorAll('a[href]').forEach(a => {
+				const href = a.getAttribute('href') || '';
+				if (
+					href.includes('redirect=') ||
+					href.includes('/pricing?') ||
+					href.includes('/sign-up?') ||
+					href.includes('/sign-in?') ||
+					href.includes('utm_source=')
+				) {
+					const rel = a.getAttribute('rel') || '';
+					if (!rel.includes('nofollow')) {
+						a.setAttribute('rel', (rel + ' nofollow').trim());
+					}
+				}
+			});
+
 			const isClosed = sessionStorage.getItem('apivale_blog_cta_closed') === 'true';
 
 			// Detect Browser Language
@@ -939,6 +956,7 @@ const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.key
 				if (actionBtn) {
 					actionBtn.innerText = floatingData.btnText;
 					actionBtn.href = `https://apivale.com/sign-up?redirect=${encodeURIComponent(window.location.pathname)}&utm_source=apivale_blog&utm_medium=blog_floating_card&utm_campaign=${floatingData.utmCampaign}`;
+					actionBtn.rel = 'nofollow';
 				}
 
 				let ctaShown = false;
