@@ -37,7 +37,7 @@ keyTakeaways:
 <div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
   <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Related Qwen Cluster Guides</span>
   <p class="mt-1 text-sm text-gray-300">
-    Exploring Qwen 3.8 deployment options? Check out our deep dives on <a href="/blog/qwen-3-8-flash-next-benchmarks-api-guide/" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Flash Next Architecture & VRAM Math</a>, <a href="/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="text-cyan-400 hover:underline font-semibold">Connecting Qwen 3.8 to Claude Code CLI</a>, and <a href="/blog/qwen-3-8-cursor-setup/" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Cursor IDE Setup & Rules</a>.
+    Exploring Qwen 3.8 deployment options? Check out our deep dives on <a href="/blog/qwen-3-8-flash-next-benchmarks-api-guide/" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Flash Next Architecture & VRAM Math</a>, <a href="/blog/cloudflare-clef-vs-jev-pricing-agent-guide/" class="text-cyan-400 hover:underline font-semibold">Cloudflare Clef vs Jev (Qwen 3.8 27B Decision Model)</a>, <a href="/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="text-cyan-400 hover:underline font-semibold">Connecting Qwen 3.8 to Claude Code CLI</a>, and <a href="/blog/qwen-3-8-cursor-setup/" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Cursor IDE Setup & Rules</a>.
   </p>
 </div>
 

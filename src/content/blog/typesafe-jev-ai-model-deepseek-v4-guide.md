@@ -116,6 +116,8 @@ TypeSafe Jev is intentionally non-generative: it cannot synthesize codebases or 
 
 The optimal engineering pattern is a **Two-Tier Fast-Slow Topology**: deploy the TypeSafe Jev AI model at the front for sub-second intent classification, and route computationally heavy generation tasks to cost-effective models on APIVALE such as [DeepSeek V4](/blog/local-hosting-vs-cloud-api-glm-5-2-deepseek-v4/) or [Qwen 3.7 Max](/blog/how-to-connect-qwen-3-7-to-claude-code-cli/).
 
+If you are exploring open-weight alternatives that can run locally on Ollama or via serverless edge workers, read our comprehensive [Cloudflare Clef vs Jev Pricing & Model Guide](/blog/cloudflare-clef-vs-jev-pricing-agent-guide/) to compare non-autoregressive decision models with 39ms latency.
+
 ---
 
 ## Production Architecture: Pairing Jev with DeepSeek V4 & Qwen 3.7 Max

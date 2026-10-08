@@ -97,7 +97,7 @@ While single-turn bots benefit from sub-100K rates, Claude Code CLI sessions con
 | **Pricing Cliff Penalty**| **Yes (At 100K tokens)** | **None (Flat Rate)** | **None (Flat Rate)** |
 | **Best Suited For** | Shallow classification | **Full-repo coding refactors**| Tool use & complex agents|
 
-On SWE-bench Verified coding capability, Claude Haiku 5.5 scores 41.2% due to its compact parameter footprint. DeepSeek-V4 scores 58.6% while costing significantly less on extended contexts.
+On SWE-bench Verified coding capability, Claude Haiku 5.5 scores 41.2% due to its compact parameter footprint. DeepSeek-V4 scores 58.6% while costing significantly less on extended contexts. For shallow classification and triage tasks where you don't need text generation at all, specialized decision engines like [Cloudflare Clef or TypeSafe Jev](/blog/cloudflare-clef-vs-jev-pricing-agent-guide/) offer sub-50ms latency at $0 output cost, freeing frontier models for heavy synthesis.
 
 ---
 
