@@ -58,6 +58,25 @@
 
 ## 📝 优化行动记录 (2026-10)
 
+### 📅 2026-10-08 - 📝 [冲刺100分满分 & 密度榜加权覆盖]: 《Cloudflare Clef vs Jev》全页词数压入1500词甜点区，彻底清洗“1m tokens”假性意图，1~5词密度榜全面上榜
+
+* **影响页面/路由与线上链接**：
+  * 主优化页面：`/blog/cloudflare-clef-vs-jev-pricing-agent-guide/` (`src/content/blog/cloudflare-clef-vs-jev-pricing-agent-guide.md`)
+  * 线上链接：`https://apivale.com/blog/cloudflare-clef-vs-jev-pricing-agent-guide/`
+* **调整背景与实测数据驱动（页面军师/哥飞体检引擎诊断）**：
+  * **原总分 96 分 (A 级)**：聚焦度 100%，Title/H1 双认领，当页直出 405ms；
+  * **体检扣分点 1（正文词数超过 1800 丢 1 分）**：原全页 SSR 渲染抓取 2168 词，超出 1800 词最佳上限；
+  * **体检扣分点 2（密度榜位置加权覆盖丢 3.8 分）**：正文多次裸露 `1M tokens`，被引擎推断为第 3 候选意图；且 4 词与 5 词榜单未命中连续核心词；
+* **具体落地优化动作**：
+  1. **全页词数瘦身 600 词**：精炼冗长叙述与脚本代码，纯正文词数压降至 1164 词，估算 SSR 全页词数降至 **1480~1520 词**，稳居 1200~1800 满分区间，追回丢失的 1 分；
+  2. **清洗 `1m tokens` 杂质**：将正文中裸露重复的 `1M tokens` 彻底重构为 `per million input`、`M-token rates` 等工程表达，清零假性杂质意图；
+  3. **1~5 词密度榜全面打满加权**：
+     * 1-2 词：`cloudflare clef`（高频 23 次，牢牢统治第 1 名）；
+     * 3 词：`clef decision model`（12 次）、`cloudflare clef vs`（9 次）；
+     * 4 词：`cloudflare clef decision model`（12 次，直接空降 4 词榜前列）；
+     * 5 词：`cloudflare clef vs jev pricing`（8 次，直接空降 5 词榜前列）；
+     * 追回丢失的 3.8 分，页面总分冲刺 **100 分满分 (A+)**。
+
 ### 📅 2026-10-08 - 📝 [突发流量截流 & 5-Gate原子发布]: 上线《Cloudflare Clef vs Jev: Models, Pricing & API》决策模型指南与双向原子织网
 
 * **影响页面/路由与线上链接**：
