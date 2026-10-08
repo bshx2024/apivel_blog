@@ -117,29 +117,26 @@ Engineering teams resolve this bottleneck with a **Two-Tier Agent Pipeline**:
 The following script implements this two-tier routing architecture:
 
 ```python
-import os, httpx, asyncio
+import os, httpx
 
-CLOUDFLARE_ACCOUNT_ID = os.getenv("CF_ACCOUNT_ID", "your-account-id")
-CLOUDFLARE_API_TOKEN = os.getenv("CF_API_TOKEN", "your-cf-token")
-APIVALE_API_KEY = os.getenv("APIVALE_API_KEY", "your-apivale-token")
+CF_ID, CF_KEY = os.getenv("CF_ACCOUNT_ID"), os.getenv("CF_API_TOKEN")
+APIVALE_KEY = os.getenv("APIVALE_API_KEY")
 
-async def route_and_execute(task_prompt: str):
+async def route_and_execute(prompt: str):
     # Step 1: Clef-flash Hot-Path Decision (<40ms)
-    clef_url = f"https://api.cloudflare.com/client/v4/accounts/{CLOUDFLARE_ACCOUNT_ID}/ai/run/@cf/cloudflare/clef-flash-9b"
-    clef_payload = {
-        "state": task_prompt,
-        "questions": [{"id": "requires_coding", "question": "Does this task require code synthesis?", "options": ["yes", "no"]}]
-    }
+    url = f"https://api.cloudflare.com/client/v4/accounts/{CF_ID}/ai/run/@cf/cloudflare/clef-flash-9b"
+    body = {"state": prompt, "questions": [{"id": "code", "question": "Needs coding?", "options": ["yes", "no"]}]}
     async with httpx.AsyncClient(timeout=10.0) as client:
-        resp = await client.post(clef_url, json=clef_payload, headers={"Authorization": f"Bearer {CLOUDFLARE_API_TOKEN}"})
-        decision = resp.json().get("result", {}).get("answers", {}).get("requires_coding", "yes")
+        r = await client.post(url, json=body, headers={"Authorization": f"Bearer {CF_KEY}"})
+        needs_code = r.json().get("result", {}).get("answers", {}).get("code", "yes") == "yes"
 
     # Step 2: MoE Code Synthesis on APIVALE Gateway
-    if decision == "yes":
-        exec_payload = {"model": "infer/deepseek-v4", "messages": [{"role": "user", "content": task_prompt}]}
+    if needs_code:
         async with httpx.AsyncClient(timeout=45.0) as client:
-            final_resp = await client.post("https://api.apivale.com/v1/chat/completions", json=exec_payload, headers={"Authorization": f"Bearer {APIVALE_API_KEY}"})
-            return final_resp.json()["choices"][0]["message"]["content"]
+            res = await client.post("https://api.apivale.com/v1/chat/completions",
+                json={"model": "infer/deepseek-v4", "messages": [{"role": "user", "content": prompt}]},
+                headers={"Authorization": f"Bearer {APIVALE_KEY}"})
+            return res.json()["choices"][0]["message"]["content"]
 ```
 
 ---
@@ -158,14 +155,14 @@ Estimate monthly savings from pairing the **Cloudflare Clef decision model** wit
       <input type="number" id="calcClefCalls" value="20000" min="500" max="1000000" class="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white text-sm" />
     </div>
     <div>
-      <label class="block text-xs font-semibold text-gray-300 mb-2">Average Decision Context (Tokens)</label>
+      <label class="block text-xs font-semibold text-gray-300 mb-2">Decision Context (Tokens)</label>
       <input type="number" id="calcClefTokens" value="800" min="100" max="2000" class="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white text-sm" />
     </div>
     <div>
-      <label class="block text-xs font-semibold text-gray-300 mb-2">Downstream Generation Share</label>
+      <label class="block text-xs font-semibold text-gray-300 mb-2">Code Generation Share</label>
       <select id="calcClefRatio" class="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white text-sm">
-        <option value="0.20" selected>20% Require Full Code Refactor</option>
-        <option value="0.40">40% Require Full Code Refactor</option>
+        <option value="0.20" selected>20% Require Code Refactor</option>
+        <option value="0.40">40% Require Code Refactor</option>
       </select>
     </div>
   </div>
@@ -196,13 +193,10 @@ Estimate monthly savings from pairing the **Cloudflare Clef decision model** wit
     const r = parseFloat(document.getElementById('calcClefRatio').value) || 0.20;
     const mT = c * 30 * t;
     const lC = (mT / 1e6) * 3.0;
-    const cC = (mT / 1e6) * 0.09;
-    const dC = ((mT * r) / 1e6) * 0.14 + ((mT * r * 0.3) / 1e6) * 0.28;
-    const tC = cC + dC;
-    const s = Math.max(0, ((lC - tC) / lC) * 100);
+    const tC = (mT / 1e6) * 0.09 + ((mT * r) / 1e6) * 0.14 + ((mT * r * 0.3) / 1e6) * 0.28;
     document.getElementById('outLegacyCost').textContent = '$' + lC.toFixed(2);
     document.getElementById('outTwoTierCost').textContent = '$' + tC.toFixed(2);
-    document.getElementById('outClefSavings').textContent = s.toFixed(1) + '%';
+    document.getElementById('outClefSavings').textContent = Math.max(0, ((lC - tC) / lC) * 100).toFixed(1) + '%';
   }
   document.getElementById('btnRecalcClef')?.addEventListener('click', updateClefCost);
   document.getElementById('calcClefCalls')?.addEventListener('input', updateClefCost);
@@ -214,12 +208,12 @@ Estimate monthly savings from pairing the **Cloudflare Clef decision model** wit
 
 ## 6. Enterprise Integration: Zero-KYC PayPal Gateway for Frontier Models
 
-Deploying high-concurrency frontier models through APIVALE takes four steps:
+Integrating frontier models with APIVALE takes four rapid steps:
 
-1. **Create Account:** Register via GitHub in seconds without domestic SMS requirements.
-2. **Deposit via PayPal or Global Cards:** Fund balances with official **PayPal**, Visa, MasterCard, or Alipay with **0% foreign transaction fees**.
-3. **Claim First-Deposit Bonus:** Enjoy a **+50% bonus balance** ($5 becomes $7.50; $29 becomes $43.50; $99 becomes $148.50).
-4. **Deploy Universal Endpoints:** Plug unified OpenAI or Anthropic endpoints directly into your dispatch workers or Cursor IDE.
+1. **Sign Up:** Register via GitHub in seconds without domestic phone verification.
+2. **Instant Billing:** Fund balances with official **PayPal**, Visa, MasterCard, or Alipay with 0% extra FX fees.
+3. **First Deposit Gift:** Enjoy a **+50% bonus balance** ($5 becomes $7.50; $29 becomes $43.50).
+4. **Universal Endpoints:** Use standard OpenAI or Anthropic endpoints in dispatch workers and Cursor IDE.
 
 ---
 
