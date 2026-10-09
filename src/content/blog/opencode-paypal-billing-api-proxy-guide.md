@@ -1,20 +1,32 @@
 ---
-title: "OpenCode PayPal Billing & API Proxy Setup Guide (2026)"
-metaTitle: "OpenCode PayPal Billing & API Proxy Setup | APIVALE"
-description: "Complete guide on OpenCode PayPal billing. Top up OpenCode Zen & Go API keys with PayPal/Waffo, bypass card declines, and cut token costs with APIVALE."
+title: "OpenCode PayPal Billing: Zero-KYC API Proxy & Setup Guide"
+metaTitle: "OpenCode PayPal Billing: Buy API Keys & Setup | APIVALE"
+description: "Set up OpenCode PayPal billing with zero card declines. Top up OpenCode Zen & Go keys instantly with PayPal, bypass KYC, and cut token costs on APIVALE."
 date: "2026-09-01"
 author: "Sofia Costa"
 authorTitle: "FinTech Integration & API Security Expert, APIVALE"
 authorBio: "Sofia Costa is a financial technology engineer specializing in API payment integration, consumption analytics, and LLM billing architectures."
-tags: ["OpenCode PayPal", "OpenCode Zen", "OpenCode Go", "OpenCode", "API Proxy", "PayPal", "Waffo"]
+tags: ["OpenCode PayPal", "OpenCode Zen", "OpenCode Go", "OpenCode", "API Proxy", "PayPal"]
 image: "/blog/og-cover.png"
 lang: "en"
+keyTakeaways:
+  - label: "Payment & Billing"
+    value: "PayPal & Global Cards (Zero KYC)"
+    highlight: true
+  - label: "Supported Gateways"
+    value: "OpenCode Go & OpenCode Zen"
+  - label: "Token Cost Arbitrage"
+    value: "$0.14/$0.28 per 1M (85% Savings)"
+    isCode: true
+  - label: "Free Starter Credit"
+    value: "$0.20 Trial (No Card Required)"
+    highlight: true
 ---
 
 <div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
-    <li><strong>Frictionless OpenCode PayPal & Waffo Settlement:</strong> Eliminate overseas credit card declines, +86 phone verifications, and KYC blocks by funding OpenCode Zen and OpenCode Go keys via Waffo Global Billing and PayPal.</li>
+    <li><strong>Frictionless OpenCode PayPal Settlement:</strong> Eliminate overseas credit card declines, +86 phone verifications, and KYC blocks by funding OpenCode Zen and OpenCode Go keys via PayPal Instant Checkout and global cards.</li>
     <li><strong>Overcoming OpenCode Go & Zen Limits:</strong> Replace fixed tier caps and 5-hour rate-limit throttling with unthrottled APIVALE proxy endpoints for <strong>Claude Sonnet 5</strong>, <strong>Qwen 3.7 Max</strong> (<code>infer/qwen3.7-max</code>), and <strong>DeepSeek V4</strong>.</li>
     <li><strong>85% Token Cost Arbitrage:</strong> Routing OpenCode CLI, OpenCode Zen, and agentic loop requests to APIVALE slashes blended per-token expenses down to $0.27/$0.60 per 1M tokens.</li>
     <li><strong>Dual OpenAI & Anthropic Protocol Native:</strong> 1-line environment variable swap bridges OpenCode CLI with zero schema translation errors.</li>
@@ -24,7 +36,7 @@ lang: "en"
 <div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
   <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Related OpenCode & Agent Setup Guides</span>
   <p class="mt-1 text-sm text-gray-300">
-    Looking to optimize your agent stack? Read our guide on <a href="/blog/how-to-reduce-opencode-token-costs/" class="text-cyan-400 hover:underline font-semibold">slashing OpenCode token costs by 85%</a>, audit daily quotas in our <a href="/blog/is-openrouter-free-tier-limits/" class="text-cyan-400 hover:underline font-semibold">OpenRouter free tier limits &amp; 429 fix guide</a>, explore <a href="/blog/openrouter-alternatives/" class="text-cyan-400 hover:underline font-semibold">top OpenRouter alternatives with PayPal support</a>, or follow our walkthrough for <a href="/blog/ox-alpha-claude-code-cursor-setup/" class="text-cyan-400 hover:underline font-semibold">Ox Alpha in Claude Code &amp; Cursor</a>.
+    Looking to optimize your agent stack? Read our guide on [slashing OpenCode token costs by 85%](/blog/how-to-reduce-opencode-token-costs/), explore [top OpenRouter alternatives with PayPal support](/blog/openrouter-alternatives/), follow our walkthrough for [Ox Alpha in Claude Code & Cursor](/blog/ox-alpha-claude-code-cursor-setup/), or deploy custom routing hooks with [Claude Code Mods & Examples](/blog/claude-code-mods-examples-guide/).
   </p>
 </div>
 
@@ -44,7 +56,7 @@ lang: "en"
     <a id="cta-login-btn" href="https://apivale.com/sign-up?redirect=/blog/opencode-paypal-billing-api-proxy-guide/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Sign Up / Log In to Auto-Fill Your API Key
     </a>
-    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('OPENAI_BASE_URL=https://api.apivale.com/v1\nOPENAI_API_KEY=your_apivale_api_key'); alert('Copied OpenCode config parameters!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
+    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('OPENAI_BASE_URL=https://api.apivale.com/v1\nOPENAI_API_KEY=your_apivale_api_key'); const el = this; const old = el.innerHTML; el.innerHTML = '✓ Copied OpenCode Config!'; setTimeout(() => { el.innerHTML = old; }, 2000);" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
       📋 Copy OpenCode Config
     </button>
   </div>

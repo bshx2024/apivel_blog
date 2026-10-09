@@ -1,7 +1,7 @@
 ---
-title: "Ox Alpha in Claude Code & Cursor: 1M Context & $0.20 Free Trial Setup"
-metaTitle: "Ox Alpha Claude Code & Cursor: $0.20 Trial & Setup | APIVALE"
-description: "How to use Ox Alpha (0xAlpha) in Claude Code CLI & Cursor. Connect 1M context stealth model via APIVALE proxy with $0.20 free trial and PayPal billing."
+title: "Ox Alpha (0xAlpha) in Claude Code & Cursor: 1M Context & Setup Guide"
+metaTitle: "Ox Alpha (0xAlpha) API: Claude Code & Cursor Setup | APIVALE"
+description: "Connect Ox Alpha (0xAlpha) in Claude Code CLI & Cursor. Fix 429 timeouts with 1M context routing, verified model ID, and instant PayPal API keys on APIVALE."
 date: "2026-08-23"
 author: "Alex Rivera"
 authorTitle: "Senior Cloud Architect & API Integrations, APIVALE"

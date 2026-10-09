@@ -1,9 +1,7 @@
 ---
-title: 'Hy4 Preview API Guide: 770B MoE Specs, Benchmarks & Claude Code Setup (2026)'
-metaTitle: 'Hy4 Preview Guide: Specs, Benchmarks & Setup | APIVALE'
-description: >-
-  Complete Hy4 Preview (770B MoE) API guide. Benchmark 1M context vs Kimi K3,
-  fix Claude Code and Cursor rate limits with APIVALE, and top up via Waffo.
+title: "Hy4 Preview API: 770B MoE Specs, Benchmarks & Claude Code Setup"
+metaTitle: "Hy4 Preview API: Claude Code & Cursor Setup Guide | APIVALE"
+description: "Deploy Hy4 Preview 770B MoE API in Claude Code CLI & Cursor. Benchmark 1M context vs Kimi K3, bypass rate limits, and access instant PayPal setup on APIVALE."
 date: '2026-08-28'
 author: Kenji Tanaka
 authorTitle: 'AI Developer Relations Engineer & Distributed Inference Architect, APIVALE'
@@ -16,9 +14,21 @@ tags:
   - Cursor IDE
   - 770B MoE
   - API Pricing
-  - Waffo
+  - PayPal
 image: /blog/hy4-preview-cover.png
 lang: en
+keyTakeaways:
+  - label: "Architecture & Context"
+    value: "770B MoE (49B Active) / 1M Context"
+    highlight: true
+  - label: "Target Model ID"
+    value: "infer/hy4-preview"
+    isCode: true
+  - label: "Benchmark Score"
+    value: "2.99/4.00 Engineering Evaluation"
+  - label: "Billing & Free Trial"
+    value: "PayPal & Global Cards ($0.20 Trial)"
+    highlight: true
 ---
 
 <div class="mb-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-emerald-950/80 text-emerald-400 border border-emerald-500/30">

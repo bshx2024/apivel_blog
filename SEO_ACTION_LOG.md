@@ -58,6 +58,20 @@
 
 ## 📝 优化行动记录 (2026-10)
 
+### 📅 2026-10-09 - 📝 [首屏排位保卫战 & CTR翻盘]: 重构《Hy4 Preview》、《Ox Alpha》与《OpenCode PayPal》三大Top 1~5高潜页TDK
+
+* **影响页面/路由与线上链接**：
+  * 页面 1：`/blog/hy4-preview-api-claude-code-cursor-setup/`（GSC 24h 排名 1.0）
+  * 页面 2：`/blog/ox-alpha-claude-code-cursor-setup/`（GSC 24h 排名 3.8）
+  * 页面 3：`/blog/opencode-paypal-billing-api-proxy-guide/`（GSC 24h 排名 4.6）
+* **调整背景与实测数据驱动（GSC 24小时穿透诊断）**：
+  * **痛点根因**：三大页面已获得 Google 顶级信任（排位 1.0~4.6），但 24 小时遭遇 0 点击。排查发现 Meta Title 存在“$0.20 Trial”营销疲劳感、缺少核心长尾意图词（如 Buy API Keys、1M MoE Specs），且部分页面包含违规 native alert 与老旧支付术语；
+  * **精确手术刀落地**：
+    1. **Hy4 Preview（排位 1.0）**：MetaTitle 升级为 `Hy4 Preview API: Claude Code & Cursor Setup Guide | APIVALE`（58 字符），Description（158 字符）直击 770B MoE、1M 上下文与 PayPal 即时配置，补齐 frontmatter 响应式 `keyTakeaways`；
+    2. **Ox Alpha（排位 3.8）**：剔除 SERP 标题中的硬广感，升级为高工程权威度 `Ox Alpha (0xAlpha) API: Claude Code & Cursor Setup | APIVALE`（60 字符），Description（157 字符）锁定 429 超时修复与 1M 上下文路由；
+    3. **OpenCode PayPal（排位 4.6）**：针对强商业意图词重构为 `OpenCode PayPal Billing: Buy API Keys & Setup | APIVALE`（55 字符），修复原生 `alert()` 弹窗为优雅的行内反馈，更新双向内链织网覆盖新上线的 Claude Code Mods 博文；
+  * **14 天因果复盘假设**：3 篇页面 CTR 预计由 0% 提升至 8%~15%，彻底杜绝因无点击被 Google Navboost 降权的风险。
+
 ### 📅 2026-10-09 - ⚙️ [技术SEO紧急止血 & 爬虫去噪]: 全站封堵带参CTA页面索引，注入Rehype Nofollow与动态Noindex防护网
 
 * **影响页面/路由与全站范围**：
