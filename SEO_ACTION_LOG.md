@@ -58,6 +58,20 @@
 
 ## 📝 优化行动记录 (2026-10)
 
+### 📅 2026-10-09 - 📝 [高曝光大户爆破 & CTR翻倍攻坚]: 重构《Strata Qwen》、《Meta Muse AI》与《OmniRoute》三大支柱页TDK
+
+* **影响页面/路由与线上链接**：
+  * 页面 1：`/blog/strata-qwen-setup-benchmarks/`（GSC 24h 展现 309，点击 7，CTR 2.3%，排名 7.6）
+  * 页面 2：`/blog/meta-muse-ai-api-setup/`（GSC 24h 展现 139，点击 6，CTR 4.3%，排名 6.9）
+  * 页面 3：`/blog/omniroute-claude-code-setup/`（GSC 24h 展现 103，点击 4，CTR 3.9%，排名 7.4）
+* **调整背景与实测数据驱动（GSC 24小时穿透诊断）**：
+  * **核心痛点**：三大页面贡献了全站 70%+ 的搜索曝光（合计 >550 次/天），但点击率全部停留在 2%~4% 的首屏低位，未充分转化为高意图流量；
+  * **量化提权与点击钩子落地**：
+    1. **Strata Qwen（309 展现）**：MetaTitle 注入实测硬指标 `Strata Qwen Setup: Run 125B on 12GB VRAM (94 t/s) | APIVALE`（58 字符），Description 强化 `RTX 4070/5070` 与分层内存架构，清理旧版 Waffo 标签；
+    2. **Meta Muse AI（139 展现）**：前置补充顶级前缀词 `Meta`，优化为 `Meta Muse AI API Setup: Key, Pricing & Sandbox | APIVALE`（55 字符），精准命中主流长尾检索词并直击免费沙箱；
+    3. **OmniRoute Claude Code（103 展现）**：替换语法生硬文案为精准痛点钩子 `OmniRoute Claude Code Setup: Fix 429 & Config | APIVALE`（55 字符），Description 覆盖端口 20128 与 429 熔断规避；
+  * **14 天因果复盘假设**：三大页面平均 CTR 由 2.3%~4.3% 提升至 6%~9%，预计全站单日新增 20~35 个高净值开发者点击。
+
 ### 📅 2026-10-09 - 📝 [首屏排位保卫战 & CTR翻盘]: 重构《Hy4 Preview》、《Ox Alpha》与《OpenCode PayPal》三大Top 1~5高潜页TDK
 
 * **影响页面/路由与线上链接**：

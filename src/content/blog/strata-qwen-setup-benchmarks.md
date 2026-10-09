@@ -1,12 +1,12 @@
 ---
-title: "Strata Qwen Setup: Run 125B MoE on 12GB VRAM (Benchmarks & Guide)"
-metaTitle: "Strata Qwen Setup: Run 125B MoE on 12GB VRAM | APIVALE"
-description: "Master Strata Qwen setup to run Qwen 3.8 Flash Next 125B MoE on 12GB VRAM. Explore tiered memory architecture, 94 t/s benchmarks, and cloud failover routing."
+title: "Strata Qwen Setup: Run 125B on 12GB VRAM (94 t/s Benchmarks)"
+metaTitle: "Strata Qwen Setup: Run 125B on 12GB VRAM (94 t/s) | APIVALE"
+description: "Step-by-step Strata Qwen setup to run 125B MoE on 12GB VRAM at 94 t/s. Configure tiered memory, benchmark RTX 4070/5070, and test cloud API fallback on APIVALE."
 date: "2026-10-06"
 author: "Elena Rostova"
 authorTitle: "AI Systems Engineer & Infrastructure Specialist, APIVALE"
 authorBio: "Elena Rostova specializes in high-throughput inference pipelines, local model quantization runtime optimization, and distributed LLM API gateways."
-tags: ["Strata Qwen", "Qwen 3.8", "Qwen 3.8 Flash Next", "Local LLM", "MoE Inference", "Claude Code", "Cursor", "APIVALE", "Waffo"]
+tags: ["Strata Qwen", "Qwen 3.8", "Qwen 3.8 Flash Next", "Local LLM", "MoE Inference", "Claude Code", "Cursor", "APIVALE", "PayPal"]
 image: "/blog/og-cover.png"
 lang: "en"
 keyTakeaways:

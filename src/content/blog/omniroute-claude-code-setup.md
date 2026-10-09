@@ -1,7 +1,7 @@
 ---
-title: "OmniRoute Claude Code & API Setup: Fix Not Work, Install & Config Guide"
-metaTitle: "OmniRoute Claude Code & API Setup: Fix Not Work | APIVALE"
-description: "Connect OmniRoute Claude API & Claude Code CLI. Fix port 20128 & api not work errors, install GitHub proxy, and route free models via APIVALE."
+title: "OmniRoute Claude Code Setup: Fix 429 Errors, Port 20128 & Config Guide"
+metaTitle: "OmniRoute Claude Code Setup: Fix 429 & Config | APIVALE"
+description: "Connect OmniRoute Claude API & Claude Code CLI. Fix port 20128 conflicts, bypass 429 throttle errors, and route unthrottled AI models on APIVALE."
 date: "2026-09-25"
 author: "Sofia Costa"
 authorTitle: "FinTech Integration & API Security Expert, APIVALE"

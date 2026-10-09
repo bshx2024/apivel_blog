@@ -1,7 +1,7 @@
 ---
-title: "Muse AI API Key & Setup Guide: Pricing, Access & Free Sandbox"
-metaTitle: "Muse AI API Key: Setup Guide, Pricing & Access | APIVALE"
-description: "How to get a Muse AI API key. Complete guide to Meta Model API setup, token pricing, free developer sandbox credits, and low-cost gateway routing."
+title: "Meta Muse AI API Setup: Key Access, Pricing & Free Sandbox"
+metaTitle: "Meta Muse AI API Setup: Key, Pricing & Sandbox | APIVALE"
+description: "Get a Meta Muse AI API key. Complete guide to Meta Model API setup, Muse Spark 1.1 token pricing, free sandbox credits, and fast gateway access on APIVALE."
 date: "2026-09-27"
 author: "Sofia Costa"
 authorTitle: "FinTech Integration & API Security Expert, APIVALE"
