@@ -1,8 +1,9 @@
 ---
-title: "Strata Qwen Setup: Run 125B on 12GB VRAM (94 t/s Benchmarks)"
-metaTitle: "Strata Qwen Setup: Run 125B on 12GB VRAM (94 t/s) | APIVALE"
-description: "Step-by-step Strata Qwen setup to run 125B MoE on 12GB VRAM at 94 t/s. Configure tiered memory, benchmark RTX 4070/5070, and test cloud API fallback on APIVALE."
+title: "Strata Qwen MoE Setup: Run 125B on 12GB VRAM (94 t/s Benchmarks)"
+metaTitle: "Strata Qwen MoE Setup: Run 125B on 12GB VRAM at 94 t/s | APIVALE"
+description: "Complete Strata Qwen setup guide: offload 125B MoE (6B active) to 12GB VRAM + RAM/SSD tiering at 94 t/s. Includes RTX 4070 benchmarks, config, & OOM fixes."
 date: "2026-10-06"
+dateModified: "2026-10-10"
 author: "Elena Rostova"
 authorTitle: "AI Systems Engineer & Infrastructure Specialist, APIVALE"
 authorBio: "Elena Rostova specializes in high-throughput inference pipelines, local model quantization runtime optimization, and distributed LLM API gateways."

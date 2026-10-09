@@ -58,6 +58,11 @@
 
 ## 📝 优化行动记录 (2026-10)
 
+### 📅 2026-10-10 - ⚙️ [技术/UX 动作]: 针对 GSC 点击率低（0.9% CTR, Pos 8.1）进行深度技术与意图重构：1) 将 metaTitle 升级为 58 字符 ABC 架构，突出 MoE 消除非专业标题党误解；2) 重写 Description（155 字符），剔除商业 API 推销词汇，直击 125B MoE(6B active) 分层与 OOM 故障排查极客痛点。
+* **影响页面/关键词**：`/blog/strata-qwen-setup-benchmarks/` (`strata qwen`, `qwen strata`, `strata qwen 3.8`)
+* **动作详情**：针对 GSC 揭示的 `strata qwen` 主力词展现 195、仅 2 点击（1.0% CTR）的技术常识防备心理，将 MetaTitle 升级为 `Strata Qwen MoE Setup: Run 125B on 12GB VRAM at 94 t/s | APIVALE`（58 字符），Description 压至 155 字符黄金长度（剔除商业 API 导流词汇，强化 125B MoE 6B active 分层与 OOM fixes），全面提升极客搜索信任度。
+* **预期因果假设**：消除开发者搜索 'strata qwen' 时的虚假宣传防备心理与商业软文抗拒，契合本地极客开源与架构意图。预期 14 天内主力关键词 'strata qwen' 的 SERP CTR 从 1.0% 回升至 2.5%~4.0%，推动综合排名进入 Top 5。
+
 ### 📅 2026-10-09 - 📝 [高曝光大户爆破 & CTR翻倍攻坚]: 重构《Strata Qwen》、《Meta Muse AI》与《OmniRoute》三大支柱页TDK
 
 * **影响页面/路由与线上链接**：
