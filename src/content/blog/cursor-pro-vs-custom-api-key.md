@@ -1,8 +1,9 @@
 ---
-title: "Cursor BYOK: Real Cost vs Pro, Free Limits & Setup Guide"
-metaTitle: "Cursor BYOK: Real Cost vs Pro & Setup Guide | APIVALE"
-description: "Cursor BYOK guide: Compare real monthly token costs vs Pro ($0.56/mo), Cursor Free limits, custom endpoint setup, and fix disabled Agent tool-calling via proxy."
+title: "Cursor BYOK: GitHub Proxy Setup, Fix Disabled Agent & Free Limits"
+metaTitle: "Cursor BYOK: GitHub Proxy Setup & Fix Disabled Agent | APIVALE"
+description: "Complete Cursor BYOK guide: setup leookun/cursor-byok GitHub proxy on Windows/macOS to restore disabled Agent tool-calling, bypass Free limits, & cut token costs."
 date: "2026-08-31"
+dateModified: "2026-10-10"
 author: "Sofia Costa"
 authorTitle: "FinTech Integration & API Security Expert, APIVALE"
 authorBio: "Sofia Costa is a financial technology engineer specializing in API payment integration, consumption analytics, and LLM billing architectures."

@@ -58,6 +58,11 @@
 
 ## 📝 优化行动记录 (2026-10)
 
+### 📅 2026-10-10 - ⚙️ [技术/UX 动作]: 针对 Cursor BYOK 高排位 0 点击（0.6% CTR, Pos 6.8）意图错位重构：将比价型 TDK 切换为 GitHub Proxy 与 Agent 解锁指南，精准截流第 2~3 位开源工具词
+* **影响页面/关键词**：`/blog/cursor-pro-vs-custom-api-key/` (`cursor byok`, `cursor-byok`, `cursor-byok github`, `cursor-byok-windows-amd64`, `byok cursor`)
+* **动作详情**：GSC 深度穿透发现 `cursor-byok-windows-amd64` 排名第 2.0、`cursor-byok github` 排名第 3.0、`cursor byok` 排名第 6.4，合计 55+ 展现但点击为 0。根因在于开发者寻找 leookun/cursor-byok 代理工具和解决 Agent Tool-calling 锁死，而原标题偏向营销比价。执行重构：1) MetaTitle 升级为 `Cursor BYOK: GitHub Proxy Setup & Fix Disabled Agent | APIVALE`（56 字符）；2) Description（154 字符）前置 `setup leookun/cursor-byok GitHub proxy on Windows/macOS to restore disabled Agent tool-calling`；3) 注入 `dateModified: "2026-10-10"`。
+* **预期因果假设**：消除意图错位，建立开源工具与技术排坑的权威信任背书。预期 14 天内第 2~3 位开源长尾词 CTR 突破 15%~25%，主词 `cursor byok` CTR 从 0% 提升至 4%~8%，单日新增 5~10 个极客自然点击。
+
 ### 📅 2026-10-10 - ⚙️ [技术/UX 动作]: 针对 GSC 点击率低（0.9% CTR, Pos 8.1）进行深度技术与意图重构：1) 将 metaTitle 升级为 58 字符 ABC 架构，突出 MoE 消除非专业标题党误解；2) 重写 Description（155 字符），剔除商业 API 推销词汇，直击 125B MoE(6B active) 分层与 OOM 故障排查极客痛点。
 * **影响页面/关键词**：`/blog/strata-qwen-setup-benchmarks/` (`strata qwen`, `qwen strata`, `strata qwen 3.8`)
 * **动作详情**：针对 GSC 揭示的 `strata qwen` 主力词展现 195、仅 2 点击（1.0% CTR）的技术常识防备心理，将 MetaTitle 升级为 `Strata Qwen MoE Setup: Run 125B on 12GB VRAM at 94 t/s | APIVALE`（58 字符），Description 压至 155 字符黄金长度（剔除商业 API 导流词汇，强化 125B MoE 6B active 分层与 OOM fixes），全面提升极客搜索信任度。
