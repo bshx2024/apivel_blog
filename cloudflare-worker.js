@@ -5,7 +5,7 @@
  * 
  * Functions:
  * 1. 100% 覆盖全站（主站 + Blog 博客所有文章 + 工具落地页）的爬虫与真人访客边缘统计
- * 2. 挂载 /__stats 和 /api/stats 实时免登录监控大盘与 API
+ * 2. 挂载 /__stats 和 /api/stats 实时免登录监控大盘与 API (单路由即可自闭环，自带内嵌初始数据)
  * 3. 边缘代理：/blog/*, /openrouter-pricing, /llm-gateway -> apivale-blog.pages.dev (Cloudflare Pages)
  * 4. 边缘重定向：301 跳转规范化与尾随斜杠规范化
  * 5. 边缘拦截 /robots.txt，注入 X-Robots-Tag: noindex, nofollow 防参数收录
@@ -37,9 +37,9 @@ function getBeijingTime(date = new Date()) {
   const h = pad(beijingTime.getHours());
   const min = pad(beijingTime.getMinutes());
   return {
-    full: `${m}-${d} ${h}:${min}`,
-    day: `${m}-${d}`,
-    dateStr: `${beijingTime.getFullYear()}-${m}-${d} ${h}:${min}`
+    full: m + '-' + d + ' ' + h + ':' + min,
+    day: m + '-' + d,
+    dateStr: beijingTime.getFullYear() + '-' + m + '-' + d + ' ' + h + ':' + min
   };
 }
 
@@ -282,8 +282,9 @@ async function trackEdgeRequest(request, env) {
   }
 }
 
-// 渲染前端监控大盘页面 HTML
-function renderStatsHtml() {
+// 渲染前端监控大盘页面 HTML（直接内嵌服务端初始数据，零延迟立即呈现）
+function renderStatsHtml(initialStats) {
+  const embeddedData = JSON.stringify(initialStats || BASELINE_DATA);
   return `<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -473,9 +474,17 @@ function renderStatsHtml() {
   </div>
 
   <script>
+    window.__INITIAL_STATS__ = ${embeddedData};
+
     async function fetchData() {
       try {
-        const res = await fetch('/api/stats');
+        let res;
+        try {
+          res = await fetch('/__stats?api=1');
+          if (!res.ok) throw new Error();
+        } catch(e) {
+          res = await fetch('/api/stats');
+        }
         const data = await res.json();
         render(data);
       } catch (err) {
@@ -484,6 +493,7 @@ function renderStatsHtml() {
     }
 
     function render(data) {
+      if (!data) return;
       const badge = document.getElementById('conn-badge');
       if (data.isConfigured) {
         badge.className = 'badge badge-ok';
@@ -547,19 +557,35 @@ function renderStatsHtml() {
 
     async function testMock(type) {
       try {
-        await fetch('/api/stats', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(type === 'googlebot' 
-            ? { action: 'mock_bot', botId: 'googlebot' }
-            : { action: 'mock_visitor', source: 'Google', country: '海外' })
-        });
+        const payload = type === 'googlebot' 
+          ? { action: 'mock_bot', botId: 'googlebot' }
+          : { action: 'mock_visitor', source: 'Google', country: '海外' };
+        
+        let res;
+        try {
+          res = await fetch('/__stats?api=1', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+        } catch(e) {
+          res = await fetch('/api/stats', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+        }
         await fetchData();
       } catch (e) {
         alert('测试请求失败: ' + e.message);
       }
     }
 
+    // 优先渲染服务端内嵌的真实数据，无需等待任何异步请求
+    if (window.__INITIAL_STATS__) {
+      render(window.__INITIAL_STATS__);
+    }
+    // 异步校验更新
     fetchData();
   </script>
 </body>
@@ -571,19 +597,12 @@ export default {
     const url = new URL(request.url);
 
     // ==========================================
-    // 0. 监控大盘与 API 路由（由边缘直接响应，零延迟）
+    // 0. 监控大盘与 API 路由（自闭环自包含，单路由即可全搞定）
     // ==========================================
-    if (url.pathname === '/__stats' || url.pathname === '/_stats') {
-      return new Response(renderStatsHtml(), {
-        status: 200,
-        headers: {
-          'Content-Type': 'text/html; charset=UTF-8',
-          'Cache-Control': 'no-cache, no-store, must-revalidate'
-        }
-      });
-    }
+    const isStatsPage = url.pathname === '/__stats' || url.pathname === '/_stats';
+    const isStatsApi = url.pathname === '/api/stats' || url.pathname === '/api/__stats' || (isStatsPage && url.searchParams.has('api'));
 
-    if (url.pathname === '/api/stats' || url.pathname === '/api/__stats') {
+    if (isStatsApi) {
       if (request.method === 'OPTIONS') {
         return new Response(null, {
           status: 200,
@@ -648,6 +667,17 @@ export default {
         headers: {
           'Content-Type': 'application/json; charset=UTF-8',
           'Access-Control-Allow-Origin': '*',
+          'Cache-Control': 'no-cache, no-store, must-revalidate'
+        }
+      });
+    }
+
+    if (isStatsPage) {
+      const stats = await loadStats(env);
+      return new Response(renderStatsHtml(stats), {
+        status: 200,
+        headers: {
+          'Content-Type': 'text/html; charset=UTF-8',
           'Cache-Control': 'no-cache, no-store, must-revalidate'
         }
       });
