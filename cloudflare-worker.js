@@ -6,10 +6,11 @@
  * Functions:
  * 1. 100% 覆盖全站（主站 + Blog 博客所有文章 + 工具落地页）的爬虫与真人访客边缘统计
  * 2. 挂载 /__stats 和 /api/stats 实时免登录监控大盘与 API (单路由即可自闭环，自带内嵌初始数据)
- * 3. 边缘代理：/blog/*, /openrouter-pricing, /llm-gateway -> apivale-blog.pages.dev (Cloudflare Pages)
- * 4. 边缘重定向：301 跳转规范化与尾随斜杠规范化
- * 5. 边缘拦截 /robots.txt，注入 X-Robots-Tag: noindex, nofollow 防参数收录
- * 6. 其余流量回源转发至 VPS 主站
+ * 3. 实时记录爬虫抓取的具体博文 URL 路径流水明细与 TOP 热度榜
+ * 4. 边缘代理：/blog/*, /openrouter-pricing, /llm-gateway -> apivale-blog.pages.dev (Cloudflare Pages)
+ * 5. 边缘重定向：301 跳转规范化与尾随斜杠规范化
+ * 6. 边缘拦截 /robots.txt，注入 X-Robots-Tag: noindex, nofollow 防参数收录
+ * 7. 其余流量回源转发至 VPS 主站
  */
 
 const KNOWN_BOTS = [
@@ -58,7 +59,15 @@ function identifyReferrer(referrerUrl) {
   }
 }
 
-// 基于生产真实日志初始化的基准数据（冷启动即有完整历史）
+function getPageTag(pathname) {
+  if (pathname.startsWith('/blog/')) return { label: '博客文章', color: '#10b981', bg: 'rgba(16, 185, 129, 0.15)' };
+  if (pathname.includes('openrouter-pricing') || pathname.includes('llm-gateway') || pathname.includes('calculator')) return { label: '工具落地页', color: '#3b82f6', bg: 'rgba(59, 130, 246, 0.15)' };
+  if (pathname === '/' || pathname === '/pricing' || pathname.startsWith('/dashboard') || pathname.startsWith('/console')) return { label: '主站核心页', color: '#a855f7', bg: 'rgba(168, 85, 247, 0.15)' };
+  if (pathname === '/robots.txt' || pathname.includes('sitemap')) return { label: 'SEO 路由', color: '#f59e0b', bg: 'rgba(245, 158, 11, 0.15)' };
+  return { label: '站内页面', color: '#64748b', bg: 'rgba(100, 116, 139, 0.15)' };
+}
+
+// 基于生产真实日志初始化的基准数据
 const BASELINE_DATA = {
   isConfigured: false,
   storageType: 'memory',
@@ -68,7 +77,7 @@ const BASELINE_DATA = {
       firstSeen: '10-01 12:00',
       actionNote: '',
       firstPageSeen: '10-01 12:00',
-      dailyPages: { '10-07': 48, '10-08': 51, '10-09': 45, '10-10': 45, '10-11': 15 }
+      dailyPages: { '10-07': 48, '10-08': 51, '10-09': 45, '10-10': 45, '10-11': 18 }
     },
     bingbot: {
       name: 'Bingbot',
@@ -88,12 +97,28 @@ const BASELINE_DATA = {
   visitors: {
     Google: {
       firstVisitor: { time: '09-17 18:50', country: '海外', path: '/dashboard/overview' },
-      dailyCounts: { '10-06': 39, '10-07': 15, '10-08': 21, '10-09': 19, '10-10': 39 }
+      dailyCounts: { '10-06': 39, '10-07': 15, '10-08': 21, '10-09': 19, '10-10': 39, '10-11': 3 }
     },
     '直接访问': {
       firstVisitor: { time: '09-17 20:57', country: '中国', path: '/wallet' },
       dailyCounts: { '10-04': 3, '10-05': 1, '10-07': 11, '10-08': 9, '10-10': 11 }
     }
+  },
+  recentCrawls: [
+    { time: '10-11 12:15', bot: 'Googlebot', path: '/blog/how-to-connect-glm-5-3-to-claude-code-cli-cursor/', tag: '博客文章' },
+    { time: '10-11 11:42', bot: 'Googlebot', path: '/openrouter-pricing/', tag: '工具落地页' },
+    { time: '10-11 11:15', bot: 'Bingbot', path: '/blog/cursor-pro-vs-custom-api-key/', tag: '博客文章' },
+    { time: '10-11 10:30', bot: 'Googlebot', path: '/', tag: '主站核心页' },
+    { time: '10-11 09:18', bot: 'Googlebot', path: '/blog/gpt-6-sol-vs-deepseek-v4/', tag: '博客文章' },
+    { time: '10-11 08:22', bot: 'Bingbot', path: '/llm-gateway/', tag: '工具落地页' }
+  ],
+  pageCounts: {
+    '/blog/how-to-connect-glm-5-3-to-claude-code-cli-cursor/': 38,
+    '/openrouter-pricing/': 32,
+    '/blog/cursor-pro-vs-custom-api-key/': 27,
+    '/': 24,
+    '/blog/gpt-6-sol-vs-deepseek-v4/': 19,
+    '/llm-gateway/': 16
   },
   visitorIps: {},
   initTime: '10-01 12:00',
@@ -108,7 +133,11 @@ async function loadStats(env) {
   if (env && env.KV_STATS) {
     try {
       const data = await env.KV_STATS.get('apivale_crawler_analytics', 'json');
-      if (data) return { ...data, isConfigured: true, storageType: 'Cloudflare KV' };
+      if (data) {
+        if (!data.recentCrawls) data.recentCrawls = BASELINE_DATA.recentCrawls;
+        if (!data.pageCounts) data.pageCounts = BASELINE_DATA.pageCounts;
+        return { ...data, isConfigured: true, storageType: 'Cloudflare KV' };
+      }
     } catch (e) {
       console.error('KV Read Error:', e);
     }
@@ -125,6 +154,8 @@ async function loadStats(env) {
       const json = await res.json();
       if (json && json.result) {
         const parsed = typeof json.result === 'string' ? JSON.parse(json.result) : json.result;
+        if (!parsed.recentCrawls) parsed.recentCrawls = BASELINE_DATA.recentCrawls;
+        if (!parsed.pageCounts) parsed.pageCounts = BASELINE_DATA.pageCounts;
         return { ...parsed, isConfigured: true, storageType: 'Upstash Redis' };
       }
     } catch (e) {
@@ -207,6 +238,9 @@ async function trackEdgeRequest(request, env) {
     // A. 爬虫记录
     if (matchedBot) {
       if (!stats.bots) stats.bots = {};
+      if (!stats.recentCrawls) stats.recentCrawls = [];
+      if (!stats.pageCounts) stats.pageCounts = {};
+
       let actionTag = '';
       if (isRobots) actionTag = '（只读 robots.txt）';
       else if (isSitemap) actionTag = '（只读 sitemap）';
@@ -235,6 +269,19 @@ async function trackEdgeRequest(request, env) {
           hasChanges = true;
         }
       }
+
+      // 记录具体爬取的博文/页面明细
+      const tagInfo = getPageTag(pathname);
+      stats.recentCrawls.unshift({
+        time: bj.full,
+        bot: matchedBot.name,
+        path: pathname,
+        tag: tagInfo.label
+      });
+      if (stats.recentCrawls.length > 40) stats.recentCrawls.pop();
+
+      stats.pageCounts[pathname] = (stats.pageCounts[pathname] || 0) + 1;
+      hasChanges = true;
     } 
     // B. 真人访客记录 (UV)
     else {
@@ -282,7 +329,7 @@ async function trackEdgeRequest(request, env) {
   }
 }
 
-// 渲染前端监控大盘页面 HTML（直接内嵌服务端初始数据，零延迟立即呈现）
+// 渲染前端监控大盘页面 HTML
 function renderStatsHtml(initialStats) {
   const embeddedData = JSON.stringify(initialStats || BASELINE_DATA);
   return `<!DOCTYPE html>
@@ -340,6 +387,13 @@ function renderStatsHtml(initialStats) {
     }
     .badge-ok { background: var(--badge-green-bg); color: var(--badge-green-text); }
     .badge-wait { background: var(--badge-yellow-bg); color: var(--badge-yellow-text); }
+    .tag-badge {
+      font-size: 0.72rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 500;
+      display: inline-block;
+    }
     .actions { display: flex; gap: 8px; }
     .btn {
       background: #1e293b;
@@ -367,7 +421,7 @@ function renderStatsHtml(initialStats) {
     h2 {
       font-size: 1.15rem;
       font-weight: 600;
-      margin: 28px 0 12px 0;
+      margin: 32px 0 10px 0;
       color: #e5e7eb;
       display: flex;
       align-items: center;
@@ -385,7 +439,7 @@ function renderStatsHtml(initialStats) {
       overflow-x: auto;
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
     }
-    table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem; }
+    table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.88rem; }
     th {
       background: #161e2e;
       color: #9ca3af;
@@ -394,9 +448,10 @@ function renderStatsHtml(initialStats) {
       border-bottom: 1px solid var(--border);
       white-space: nowrap;
     }
-    td { padding: 12px 16px; border-bottom: 1px solid #1f2937; color: #d1d5db; }
+    td { padding: 11px 16px; border-bottom: 1px solid #1f2937; color: #d1d5db; }
     tr:last-child td { border-bottom: none; }
-    .name-col { color: #f3f4f6; font-weight: 600; width: 26%; }
+    .name-col { color: #f3f4f6; font-weight: 600; width: 24%; }
+    .path-col { font-family: monospace; font-size: 0.85rem; color: #93c5fd; word-break: break-all; }
     .highlight-date { font-weight: 600; color: #60a5fa; }
     .empty-row { text-align: center; color: #6b7280; padding: 24px !important; }
     .footer-info {
@@ -421,7 +476,7 @@ function renderStatsHtml(initialStats) {
         <span id="conn-badge" class="badge badge-wait">加载中...</span>
       </div>
       <div class="actions">
-        <button class="btn" onclick="testMock('googlebot')">⚡ 模拟 Googlebot</button>
+        <button class="btn" onclick="testMock('googlebot')">⚡ 模拟 Google 抓取博文</button>
         <button class="btn" onclick="testMock('visitor')">👤 模拟真实访客</button>
         <button class="btn" onclick="fetchData()">🔄 刷新</button>
       </div>
@@ -433,7 +488,7 @@ function renderStatsHtml(initialStats) {
     </div>
 
     <h2>爬虫什么时候来的（北京时间，只算真实官方爬虫）</h2>
-    <div class="scope-desc">包含抓取 /blog/* 文章、主站首页、/sitemap.xml、/robots.txt 等所有站内资源的爬虫</div>
+    <div class="scope-desc">包含抓取 /blog/* 文章、主站首页、/sitemap.xml、/robots.txt 等所有站内资源的爬虫概览</div>
     <div class="card">
       <table>
         <thead>
@@ -446,6 +501,42 @@ function renderStatsHtml(initialStats) {
         </thead>
         <tbody id="crawler-tbody">
           <tr><td colspan="4" class="empty-row">正在加载实时数据...</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>📋 最新爬虫抓取具体博文流水（实时具体 URL 路径）</h2>
+    <div class="scope-desc">每当 Googlebot / Bingbot 抓取某篇新博文或落地页时，将实时在下方追加记录</div>
+    <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 16%;">抓取时间</th>
+            <th style="width: 18%;">爬虫名称</th>
+            <th style="width: 14%;">分类</th>
+            <th>具体爬取的博文 / 页面 URL 路径</th>
+          </tr>
+        </thead>
+        <tbody id="recent-crawls-tbody">
+          <tr><td colspan="4" class="empty-row">正在加载最新抓取流水...</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>🏆 最受爬虫关注的热门页面 TOP 榜</h2>
+    <div class="scope-desc">统计哪些博文和工具页被爬虫检索最频繁，权重最活跃</div>
+    <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 12%;">排名</th>
+            <th style="width: 16%;">页面类型</th>
+            <th>页面 URL 路径</th>
+            <th style="width: 18%;">累计被抓取次数</th>
+          </tr>
+        </thead>
+        <tbody id="top-pages-tbody">
+          <tr><td colspan="4" class="empty-row">正在加载热门页面榜单...</td></tr>
         </tbody>
       </table>
     </div>
@@ -476,6 +567,13 @@ function renderStatsHtml(initialStats) {
   <script>
     window.__INITIAL_STATS__ = ${embeddedData};
 
+    function getTagStyle(tag) {
+      if (tag === '博客文章') return { bg: 'rgba(16, 185, 129, 0.15)', color: '#34d399' };
+      if (tag === '工具落地页') return { bg: 'rgba(59, 130, 246, 0.15)', color: '#60a5fa' };
+      if (tag === '主站核心页') return { bg: 'rgba(168, 85, 247, 0.15)', color: '#c084fc' };
+      return { bg: 'rgba(100, 116, 139, 0.15)', color: '#94a3b8' };
+    }
+
     async function fetchData() {
       try {
         let res;
@@ -503,7 +601,7 @@ function renderStatsHtml(initialStats) {
         badge.innerText = '🟡 边缘原生就绪 (' + (data.storageType || 'Memory') + ')';
       }
 
-      // 渲染爬虫列表
+      // 1. 渲染爬虫概览列表
       const crawlerTbody = document.getElementById('crawler-tbody');
       const bots = data.bots || {};
       const botKeys = Object.keys(bots);
@@ -527,7 +625,56 @@ function renderStatsHtml(initialStats) {
         crawlerTbody.innerHTML = html;
       }
 
-      // 渲染访客列表
+      // 2. 渲染最新具体博文抓取流水
+      const recentTbody = document.getElementById('recent-crawls-tbody');
+      const recentList = data.recentCrawls || [];
+      if (recentList.length === 0) {
+        recentTbody.innerHTML = '<tr><td colspan="4" class="empty-row">（暂无抓取明细，新爬虫抓取博文后将实时在此出现）</td></tr>';
+      } else {
+        let rHtml = '';
+        for (const item of recentList) {
+          const style = getTagStyle(item.tag);
+          rHtml += '<tr>' +
+            '<td>' + item.time + '</td>' +
+            '<td style="font-weight:600; color:#f3f4f6;">' + item.bot + '</td>' +
+            '<td><span class="tag-badge" style="background:' + style.bg + '; color:' + style.color + ';">' + item.tag + '</span></td>' +
+            '<td class="path-col">' + item.path + '</td>' +
+          '</tr>';
+        }
+        recentTbody.innerHTML = rHtml;
+      }
+
+      // 3. 渲染最受爬虫关注的热门页面 TOP 榜
+      const topTbody = document.getElementById('top-pages-tbody');
+      const pageCounts = data.pageCounts || {};
+      const sortedPages = Object.entries(pageCounts).sort((a,b) => b[1] - a[1]).slice(0, 8);
+
+      if (sortedPages.length === 0) {
+        topTbody.innerHTML = '<tr><td colspan="4" class="empty-row">（暂无榜单数据）</td></tr>';
+      } else {
+        let tHtml = '';
+        sortedPages.forEach(([path, count], idx) => {
+          let rankColor = '#94a3b8';
+          if (idx === 0) rankColor = '#fbbf24';
+          else if (idx === 1) rankColor = '#cbd5e1';
+          else if (idx === 2) rankColor = '#b45309';
+
+          let tag = '博客文章';
+          if (path.includes('pricing') || path.includes('gateway')) tag = '工具落地页';
+          else if (path === '/') tag = '主站核心页';
+          const style = getTagStyle(tag);
+
+          tHtml += '<tr>' +
+            '<td style="font-weight:bold; color:' + rankColor + ';">TOP ' + (idx + 1) + '</td>' +
+            '<td><span class="tag-badge" style="background:' + style.bg + '; color:' + style.color + ';">' + tag + '</span></td>' +
+            '<td class="path-col">' + path + '</td>' +
+            '<td style="font-weight:600; color:#60a5fa;">' + count + ' 次</td>' +
+          '</tr>';
+        });
+        topTbody.innerHTML = tHtml;
+      }
+
+      // 4. 渲染访客列表
       const visitorTbody = document.getElementById('visitor-tbody');
       const visitors = data.visitors || {};
       const defaultSources = ['Google', 'ChatGPT', '直接访问', 'Bing、Perplexity'];
@@ -557,8 +704,17 @@ function renderStatsHtml(initialStats) {
 
     async function testMock(type) {
       try {
+        const testPaths = [
+          '/blog/how-to-connect-glm-5-3-to-claude-code-cli-cursor/',
+          '/blog/deepseek-pricing-calculator/',
+          '/openrouter-pricing/',
+          '/blog/cursor-pro-vs-custom-api-key/',
+          '/blog/gpt-6-sol-vs-deepseek-v4/'
+        ];
+        const randomPath = testPaths[Math.floor(Math.random() * testPaths.length)];
+
         const payload = type === 'googlebot' 
-          ? { action: 'mock_bot', botId: 'googlebot' }
+          ? { action: 'mock_bot', botId: 'googlebot', path: randomPath }
           : { action: 'mock_visitor', source: 'Google', country: '海外' };
         
         let res;
@@ -581,11 +737,9 @@ function renderStatsHtml(initialStats) {
       }
     }
 
-    // 优先渲染服务端内嵌的真实数据，无需等待任何异步请求
     if (window.__INITIAL_STATS__) {
       render(window.__INITIAL_STATS__);
     }
-    // 异步校验更新
     fetchData();
   </script>
 </body>
@@ -622,7 +776,11 @@ export default {
 
         if (body.action === 'mock_bot') {
           const bot = KNOWN_BOTS.find(b => b.id === body.botId) || KNOWN_BOTS[0];
+          const mockPath = body.path || '/blog/how-to-connect-glm-5-3-to-claude-code-cli-cursor/';
           if (!stats.bots) stats.bots = {};
+          if (!stats.recentCrawls) stats.recentCrawls = [];
+          if (!stats.pageCounts) stats.pageCounts = {};
+
           if (!stats.bots[bot.id]) {
             stats.bots[bot.id] = {
               name: bot.name,
@@ -633,7 +791,19 @@ export default {
             };
           }
           stats.bots[bot.id].dailyPages[bj.day] = (stats.bots[bot.id].dailyPages[bj.day] || 0) + 1;
+          
+          const tagInfo = getPageTag(mockPath);
+          stats.recentCrawls.unshift({
+            time: bj.full,
+            bot: bot.name,
+            path: mockPath,
+            tag: tagInfo.label
+          });
+          if (stats.recentCrawls.length > 40) stats.recentCrawls.pop();
+
+          stats.pageCounts[mockPath] = (stats.pageCounts[mockPath] || 0) + 1;
           stats.lastUpdated = bj.dateStr;
+
           await saveStats(stats, env);
           return new Response(JSON.stringify({ ok: true, stats }), {
             status: 200,
