@@ -58,6 +58,12 @@
 
 ## 📝 优化行动记录 (2026-10)
 
+### 📅 2026-10-15 - 📝 [内容动作]: 基于 Google Trends 全网突发爆词 (Breakout) 发布《Sol 6.1 vs Astra: Pricing, Latency Benchmarks & Low-Cost Agent Alternatives》，截流对比选型流量并引流至 APIVALE 国产大模型
+* **影响页面/关键词**：`/blog/sol-6-1-vs-astra-pricing-benchmarks-guide/` (`sol 6.1 vs astra`, `astra vs sol 6.1`, `6.1 sol vs astra`, `gpt 6.1 sol`, `sol 6.1 vs opus 5.5`)
+* **动作详情**：基于 2026 年 10 月 13~15 日 Google Trends 监测到的 `sol 6.1 vs astra` 等全网 Breakout 突发关键词（增长率 100%+），严格遵循 Master Blog Standard 撰写发布深度长文：1) 标题采用双轨 ABC 规范（MetaTitle 59 字符，H1 75 字符）；2) 聚焦 6.1 Sol 真实生产痛点（20 TPS 延迟屏障、## 📝 优化行动记录 (2026-10)
+0/1M 输出价格、强制 reasoning 导致的 HTTP 400 报错与 /v1/responses 协议绑定）；3) 客观构建 7 模型横评矩阵（包含 Astra、Opus 5.5、DeepSeek-V4、GLM-5.3、Qwen 3.8 Max）；4) 提出 Dual-Engine Fallback 架构，引流至 APIVALE 原生 `/v1/chat/completions` 接口与 $0.20 免费额度；5) 内嵌交互式月度 Token 成本计算器（破除 Doorway 扣分）；6) 轮换署名作者为 Sofia Costa，并完成 FAQPage JSON-LD 结构化数据嵌入。
+* **预期因果假设**：趁 Google Trends 流量洪峰期抢占首批索引与 GEO 引用源地位，预计 7~14 天内进入 Google 前 5 位及 Perplexity/ChatGPT Search 核心引用源，单日为 APIVALE 带来 30~80 个高质量海外开发者技术访问与新注册转化。
+
 ### 📅 2026-10-10 - ⚙️ [技术/UX 动作]: 针对 Cursor BYOK 高排位 0 点击（0.6% CTR, Pos 6.8）意图错位重构：将比价型 TDK 切换为 GitHub Proxy 与 Agent 解锁指南，精准截流第 2~3 位开源工具词
 * **影响页面/关键词**：`/blog/cursor-pro-vs-custom-api-key/` (`cursor byok`, `cursor-byok`, `cursor-byok github`, `cursor-byok-windows-amd64`, `byok cursor`)
 * **动作详情**：GSC 深度穿透发现 `cursor-byok-windows-amd64` 排名第 2.0、`cursor-byok github` 排名第 3.0、`cursor byok` 排名第 6.4，合计 55+ 展现但点击为 0。根因在于开发者寻找 leookun/cursor-byok 代理工具和解决 Agent Tool-calling 锁死，而原标题偏向营销比价。执行重构：1) MetaTitle 升级为 `Cursor BYOK: GitHub Proxy Setup & Fix Disabled Agent | APIVALE`（56 字符）；2) Description（154 字符）前置 `setup leookun/cursor-byok GitHub proxy on Windows/macOS to restore disabled Agent tool-calling`；3) 注入 `dateModified: "2026-10-10"`。
