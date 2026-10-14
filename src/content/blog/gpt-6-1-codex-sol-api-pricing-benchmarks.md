@@ -42,7 +42,7 @@ keyTakeaways:
 <div class="my-4 border-l-4 border-cyan-500 bg-gray-900/90 rounded-r-lg p-4">
   <div class="text-xs font-bold uppercase tracking-wider text-cyan-400">Related Agent & Model Setup Guides</div>
   <p class="mt-1 text-sm text-gray-300">
-    Compare adjacent models: review our <a href="/blog/gpt-6-sol-vs-deepseek-v4/" class="text-cyan-400 hover:underline font-semibold">GPT-6 Sol vs DeepSeek V4 comparison</a>, inspect the <a href="/blog/gpt-6-astra-api-pricing-guide/" class="text-cyan-400 hover:underline font-semibold">GPT-6 Astra Pricing Guide</a>, or read our <a href="/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Claude Code Setup Guide</a>.
+    Compare adjacent models: review our <a href="/blog/gpt-6-sol-vs-deepseek-v4/" class="text-cyan-400 hover:underline font-semibold">GPT-6 Sol vs DeepSeek V4 comparison</a>, inspect the <a href="/blog/sol-6-1-vs-astra-pricing-benchmarks-guide/" class="text-cyan-400 hover:underline font-semibold">Sol 6.1 vs Astra Comparison</a>, the <a href="/blog/gpt-6-astra-api-pricing-guide/" class="text-cyan-400 hover:underline font-semibold">GPT-6 Astra Pricing Guide</a>, or read our <a href="/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Claude Code Setup Guide</a>.
   </p>
 </div>
 
