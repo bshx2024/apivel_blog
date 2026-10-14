@@ -28,7 +28,7 @@ keyTakeaways:
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
     <li><strong>Official API Pricing:</strong> Sonnet 5.5 costs $2.00 per 1M input tokens and $10.00 per 1M output tokens, with a 1M context window and 128K max output.</li>
     <li><strong>Terminal-Bench 4.0 Leader:</strong> Achieves a 70.6% coding score, outperforming Claude Opus 5.5 (66.4%) with 30% faster inference throughput.</li>
-    <li><strong>Dual-Engine 85% Cost Reduction:</strong> Routing high-frequency background subtasks to DeepSeek V4 ($0.14/$0.28) and Qwen 3.8 Max ($0.80/$2.40) via <a href="https://apivale.com/sign-up?redirect=/blog/claude-sonnet-5-5-api-pricing-claude-code-guide/" class="text-emerald-400 hover:underline font-semibold">APIVALE ($0.20 Free Starter Credit)</a> eliminates runaway spend with instant PayPal checkout.</li>
+    <li><strong>Dual-Engine 85% Cost Reduction:</strong> Routing high-frequency background subtasks to DeepSeek V4 ($0.14/$0.28) and Qwen 3.8 Max ($0.80/$2.40) via <a href="https://apivel.com/sign-up?redirect=/blog/claude-sonnet-5-5-api-pricing-claude-code-guide/" class="text-emerald-400 hover:underline font-semibold">APIVALE ($0.20 Free Starter Credit)</a> eliminates runaway spend with instant PayPal checkout.</li>
   </ul>
 </div>
 
@@ -52,10 +52,10 @@ keyTakeaways:
     Register on APIVALE to receive your personal API key and claim your <strong>$0.20 free starter credit</strong>. Access Sonnet 5.5, DeepSeek V4, and Qwen 3.8 Max with zero overseas credit card restrictions.
   </p>
   <div class="flex items-center gap-3 flex-wrap">
-    <a href="https://apivale.com/sign-up?redirect=/blog/claude-sonnet-5-5-api-pricing-claude-code-guide/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
+    <a href="https://apivel.com/sign-up?redirect=/blog/claude-sonnet-5-5-api-pricing-claude-code-guide/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Get API Key ($0.20 Free Trial)
     </a>
-    <a href="https://apivale.com/pricing?redirect=/blog/claude-sonnet-5-5-api-pricing-claude-code-guide/" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
+    <a href="https://apivel.com/pricing?redirect=/blog/claude-sonnet-5-5-api-pricing-claude-code-guide/" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
       💳 View PayPal Pricing Plans
     </a>
   </div>
@@ -346,7 +346,7 @@ Calculate your expected monthly expenses with the 5.5 release and simulate real 
 
   <div class="flex items-center justify-between flex-wrap gap-3">
     <p class="text-xs text-gray-400">Assumes 75% subtask offload to DeepSeek V4 ($0.14/$0.28) with 25% architecture on the 5.5 model.</p>
-    <a href="https://apivale.com/sign-up?redirect=/blog/claude-sonnet-5-5-api-pricing-claude-code-guide/" class="text-xs font-semibold text-indigo-400 hover:text-indigo-300 underline underline-offset-4">
+    <a href="https://apivel.com/sign-up?redirect=/blog/claude-sonnet-5-5-api-pricing-claude-code-guide/" class="text-xs font-semibold text-indigo-400 hover:text-indigo-300 underline underline-offset-4">
       Claim $0.20 Starter Credit to Test Dual-Engine →
     </a>
   </div>
@@ -458,10 +458,10 @@ To prevent runaway billing from repetitive context re-reads and subtask retries,
     Eliminate overseas card declines and proxy rate limits. Access Sonnet 5.5 alongside DeepSeek V4 and Qwen 3.8 Max through a single pre-funded balance. Claim your <strong>$0.20 free signup trial</strong> and unlock a <strong>+50% bonus on your first top-up</strong> ($5 → $7.50, $29 → $43.50, $99 → $148.50). Or choose the <strong>$29 Developer Pack</strong> for 40M non-expiring tokens (56% OFF).
   </p>
   <div class="flex items-center gap-3 flex-wrap">
-    <a href="https://apivale.com/sign-up?redirect=/blog/claude-sonnet-5-5-api-pricing-claude-code-guide/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-lg transition-all shadow-md">
+    <a href="https://apivel.com/sign-up?redirect=/blog/claude-sonnet-5-5-api-pricing-claude-code-guide/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Sign Up & Claim $0.20 Free Trial
     </a>
-    <a href="https://apivale.com/pricing?redirect=/blog/claude-sonnet-5-5-api-pricing-claude-code-guide/" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-5 py-2.5 rounded-lg transition-all">
+    <a href="https://apivel.com/pricing?redirect=/blog/claude-sonnet-5-5-api-pricing-claude-code-guide/" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-5 py-2.5 rounded-lg transition-all">
       💳 View Pricing & +50% Bonus Plans
     </a>
   </div>

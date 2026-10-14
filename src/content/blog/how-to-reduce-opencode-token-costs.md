@@ -60,7 +60,7 @@ Configure APIVALE's OpenAI-compatible or Anthropic-compatible API base URL in yo
 
 ```bash
 # Point OpenCode to APIVALE's unified API gateway
-export OPENAI_BASE_URL="https://apivale.com/v1"
+export OPENAI_BASE_URL="https://apivel.com/v1"
 export OPENAI_API_KEY="apivale-key-xxxxxxxxxxxxxxxx"
 
 # Set default primary coding model to DeepSeek V4 or Qwen 3.7 Max
@@ -134,7 +134,7 @@ Configure OpenCode to natively point to APIVALE's OpenAI-compatible API endpoint
     "name": "apivale",
     "type": "openai",
     "options": {
-      "baseURL": "https://apivale.com/v1",
+      "baseURL": "https://apivel.com/v1",
       "apiKey": "apivale-key-xxxxxxxxxxxxxxxx"
     }
   },
@@ -151,7 +151,7 @@ If you are using **OpenCodeX** (`lidge-jun/opencodex`) to proxy requests between
 
 ```bash
 # Configure OpenCodeX upstream gateway to APIVALE
-export OPENCODEX_UPSTREAM_BASE_URL="https://apivale.com/v1"
+export OPENCODEX_UPSTREAM_BASE_URL="https://apivel.com/v1"
 export OPENCODEX_UPSTREAM_API_KEY="apivale-key-xxxxxxxxxxxxxxxx"
 
 # Enable automatic model re-mapping for OpenCode CLI
@@ -173,7 +173,7 @@ import axios, { AxiosError } from 'axios';
 
 const app = express();
 const PORT = 3010;
-const APIVALE_GATEWAY = 'https://apivale.com/v1';
+const APIVALE_GATEWAY = 'https://apivel.com/v1';
 const APIVALE_KEY = process.env.APIVALE_API_KEY || 'apivale-key-xxxxxxxxxxxxxxxx';
 
 app.use(express.json({ limit: '10mb' }));
@@ -241,8 +241,8 @@ app.listen(PORT, () => {
   <div class="cta-card-title">⚡ Slash Your OpenCode API Costs by 85% with APIVALE</div>
   <p class="cta-card-text">Connect OpenCode, OpenCodeX, and Claude Code CLI to APIVALE’s high-speed API gateway. Access DeepSeek V4 and Qwen 3.7 Max with global PayPal billing, zero rate-limit throttles, and no credit card lockouts. Register now to claim your $0.20 starter trial (+50% bonus on first top-up: $5 &rarr; $7.50, $29 Developer Pack)!</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?redirect=/blog/how-to-reduce-opencode-token-costs/" class="cta-primary-btn" rel="nofollow">Claim Free $0.20 Trial</a>
-    <a href="https://apivale.com/pricing?redirect=/blog/how-to-reduce-opencode-token-costs/" class="cta-secondary-btn" rel="nofollow">View Token Pricing ($29 Pack)</a>
+    <a href="https://apivel.com/sign-up?redirect=/blog/how-to-reduce-opencode-token-costs/" class="cta-primary-btn" rel="nofollow">Claim Free $0.20 Trial</a>
+    <a href="https://apivel.com/pricing?redirect=/blog/how-to-reduce-opencode-token-costs/" class="cta-secondary-btn" rel="nofollow">View Token Pricing ($29 Pack)</a>
   </div>
 </div>
 
@@ -251,7 +251,7 @@ app.listen(PORT, () => {
 ## Developer FAQ
 
 **Q: Can I use OpenCode with APIVALE without installing OpenCodeX?**  
-**A:** Yes. OpenCode natively supports custom OpenAI-compatible API base URLs. You can point OpenCode directly to `https://apivale.com/v1` by setting `OPENAI_BASE_URL` and `OPENAI_API_KEY` in your environment or `~/.config/opencode/config.json`.
+**A:** Yes. OpenCode natively supports custom OpenAI-compatible API base URLs. You can point OpenCode directly to `https://apivel.com/v1` by setting `OPENAI_BASE_URL` and `OPENAI_API_KEY` in your environment or `~/.config/opencode/config.json`.
 
 **Q: Does APIVALE support PayPal for OpenCode API token purchases?**  
 **A:** Yes. APIVALE natively supports **PayPal (global PayPal billing / credit cards via PayPal)**. Developers worldwide can top up account balance without international credit card lockouts or KYC restrictions.
@@ -272,7 +272,7 @@ app.listen(PORT, () => {
       "name": "Can I use OpenCode with APIVALE without installing OpenCodeX?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Set OPENAI_BASE_URL to https://apivale.com/v1 and OPENAI_API_KEY to your APIVALE key in your environment or OpenCode config file."
+        "text": "Yes. Set OPENAI_BASE_URL to https://apivel.com/v1 and OPENAI_API_KEY to your APIVALE key in your environment or OpenCode config file."
       }
     },
     {

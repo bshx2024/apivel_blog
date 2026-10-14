@@ -15,7 +15,7 @@ lang: "en"
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
     <li><strong>Breakout Coding Performance:</strong> Google's flagship Gemini 3.7 Flash delivers 3x faster TTFT (Time-to-First-Token) and matches frontier coding intelligence on SWE-bench, making it an ideal engine for autonomous coding agents.</li>
-    <li><strong>Zero-Credit-Card & Global PayPal Billing:</strong> Route Gemini 3.7 Flash via <a href="https://apivale.com/sign-up?redirect=/blog/gemini-3-7-flash-claude-code-setup/" class="text-emerald-400 hover:underline font-semibold">APIVALE ($0.20 Free Starter Credit)</a> to bypass regional KYC blocks and credit card payment rejections.</li>
+    <li><strong>Zero-Credit-Card & Global PayPal Billing:</strong> Route Gemini 3.7 Flash via <a href="https://apivel.com/sign-up?redirect=/blog/gemini-3-7-flash-claude-code-setup/" class="text-emerald-400 hover:underline font-semibold">APIVALE ($0.20 Free Starter Credit)</a> to bypass regional KYC blocks and credit card payment rejections.</li>
     <li><strong>Drop-in OpenAI & Anthropic Protocol Compatibility:</strong> Connect Gemini 3.7 Flash directly to Cursor, Claude Code CLI, and Windsurf by setting your API endpoint to `https://api.apivale.com/v1`.</li>
   </ul>
 </div>
@@ -29,7 +29,7 @@ lang: "en"
     Sign up for a free APIVALE account to claim <strong>$0.20 free credit</strong> and auto-fill your API key below!
   </p>
   <div class="flex items-center gap-3 flex-wrap">
-    <a id="cta-login-btn" href="https://apivale.com/sign-up?redirect=/blog/gemini-3-7-flash-claude-code-setup/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg">⚡ Sign Up / Log In</a>
+    <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/gemini-3-7-flash-claude-code-setup/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg">⚡ Sign Up / Log In</a>
     <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export ANTHROPIC_BASE_URL=\'https://api.apivale.com/v1\'\nexport ANTHROPIC_AUTH_TOKEN=\'your_apivale_api_key\'\nexport ANTHROPIC_MODEL=\'gemini-3.7-flash\''); alert('Copied setup script!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg">📋 Copy Commands</button>
   </div>
 </div>
@@ -410,7 +410,7 @@ Yes. APIVALE fully supports Server-Sent Events (SSE) streaming for real-time out
   <div class="cta-card-title">⚡ Connect Gemini 3.7 Flash to Your CLI & IDE with APIVALE</div>
   <p class="cta-card-text">Connect Gemini 3.7 Flash to Claude Code CLI, Cursor, and Windsurf via APIVALE. Enjoy 96% token savings compared to Sonnet 5, zero credit card restrictions, and seamless PayPal billing. Register now to claim $0.20 free starter credit (+ 50% bonus on 1st top-up)!</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=gemini-3-7-flash-claude-code-setup" class="cta-primary-btn">Get Free API Key ($0.20 Credit (+ 50% Bonus))</a>
-    <a href="https://apivale.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=gemini-3-7-flash-claude-code-setup" class="cta-secondary-btn">Test Gemini 3.7 Flash Playground</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=gemini-3-7-flash-claude-code-setup" class="cta-primary-btn">Get Free API Key ($0.20 Credit (+ 50% Bonus))</a>
+    <a href="https://apivel.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=gemini-3-7-flash-claude-code-setup" class="cta-secondary-btn">Test Gemini 3.7 Flash Playground</a>
   </div>
 </div>

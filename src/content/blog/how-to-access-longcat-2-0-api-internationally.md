@@ -17,7 +17,7 @@ However, global developers face a frustrating obstacle: Meituan's developer port
 
 In this guide, we show you how to register and access a **fully operational LongCat-2.0 API key internationally** in under two minutes, bypass KYC limitations, and configure global PayPal billing using APIVALE.
 
-> **💡 Try it Live**: You can chat with the live Meituan model directly in your browser using the [APIVALE Model Playground](https://apivale.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-access-longcat-2-0-api-internationally) (select **Longcat/LongCat-2.0** from the model selection dropdown to begin testing).
+> **💡 Try it Live**: You can chat with the live Meituan model directly in your browser using the [APIVALE Model Playground](https://apivel.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-access-longcat-2-0-api-internationally) (select **Longcat/LongCat-2.0** from the model selection dropdown to begin testing).
 
 ### Quick Start: Call LongCat-2.0 via APIVALE
 APIVALE acts as a secure, high-speed bridge to Meituan's infrastructure. You can call the model instantly without any regional restrictions:
@@ -129,8 +129,8 @@ analyze_codebase()
   <h4 class="cta-card-title">🚀 Access Meituan LongCat-2.0 API Instantly</h4>
   <p class="cta-card-text">Bypass mainland corporate KYC and +86 phone restrictions. Deploy GPT-5.5, Claude 4 Sonnet, DeepSeek V4, GLM-5.2, and LongCat-2.0 into your coding agents (such as Cline, Cursor, or Claude Code) in minutes using APIVALE. Context caching is fully supported (hits are free!).</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-access-longcat-2-0-api-internationally" class="cta-primary-btn">Start Free Trial ($0.20 Credit (+ 50% Bonus))</a>
-    <a href="https://apivale.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-access-longcat-2-0-api-internationally" class="cta-secondary-btn">Try LongCat-2.0 in Playground</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-access-longcat-2-0-api-internationally" class="cta-primary-btn">Start Free Trial ($0.20 Credit (+ 50% Bonus))</a>
+    <a href="https://apivel.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-access-longcat-2-0-api-internationally" class="cta-secondary-btn">Try LongCat-2.0 in Playground</a>
   </div>
 </div>
 

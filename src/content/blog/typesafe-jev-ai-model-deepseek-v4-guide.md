@@ -281,7 +281,7 @@ Estimate monthly budget and latency savings achieved by integrating the TypeSafe
   
   <div class="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-gray-800">
     <span class="text-xs text-gray-400">Ready to test APIVALE's DeepSeek V4 and Qwen 3.7 Max endpoints?</span>
-    <a href="https://apivale.com" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center rounded-lg bg-indigo-600 px-5 py-2.5 text-xs font-bold text-white hover:bg-indigo-500 transition-colors shadow-lg">Claim $0.20 Free Credit & Top Up via Waffo &rarr;</a>
+    <a href="https://apivel.com" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center rounded-lg bg-indigo-600 px-5 py-2.5 text-xs font-bold text-white hover:bg-indigo-500 transition-colors shadow-lg">Claim $0.20 Free Credit & Top Up via Waffo &rarr;</a>
   </div>
 </div>
 
@@ -372,4 +372,4 @@ APIVALE supports Waffo Global Billing, enabling developers globally to pay with 
 
 The emergence of the TypeSafe Jev AI model represents a pivotal step in agentic infrastructure. Autonomous workflows no longer need to spend premium generative tokens on intermediate decision steps. By deploying TypeSafe Jev as a high-speed System 1 router and pairing it with APIVALE's DeepSeek V4 and Qwen 3.7 Max endpoints, engineering teams can build sub-second agents that scale reliably at minimal cost.
 
-Ready to optimize your production agent pipeline? [Register for your APIVALE API key](https://apivale.com), claim your $0.20 free starter credit, and top up via seamless Waffo Global Billing to run high-throughput LLM workloads with enterprise reliability.
+Ready to optimize your production agent pipeline? [Register for your APIVALE API key](https://apivel.com), claim your $0.20 free starter credit, and top up via seamless Waffo Global Billing to run high-throughput LLM workloads with enterprise reliability.

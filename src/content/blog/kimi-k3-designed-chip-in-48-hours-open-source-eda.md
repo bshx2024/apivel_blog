@@ -23,7 +23,7 @@ This guide dives into the architecture that enabled Kimi K3's chip design demo, 
 Skip the geoblocks, domestic KYC verification, and mainland +86 phone requirements. Get your APIVALE API key and query Kimi K3 instantly using standard OpenAI SDK formats:
 
 ```bash
-curl https://apivale.com/v1/chat/completions \
+curl https://apivel.com/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_APIVALE_KEY" \
   -d '{"model": "kimi-k3", "messages": [{"role": "user", "content": "Explain how to set up Yosys for open-source Verilog synthesis."}]}'
@@ -106,7 +106,7 @@ import urllib.error
 
 # Retrieve your APIVALE key from your environment
 APIVALE_KEY = os.environ.get("APIVALE_API_KEY")
-APIVALE_URL = "https://apivale.com/v1/chat/completions"
+APIVALE_URL = "https://apivel.com/v1/chat/completions"
 
 def call_kimi_k3(messages):
     payload = {
@@ -197,7 +197,7 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 const APIVALE_KEY = process.env.APIVALE_API_KEY;
-const APIVALE_URL = "https://apivale.com/v1/chat/completions";
+const APIVALE_URL = "https://apivel.com/v1/chat/completions";
 
 interface ChatMessage {
   role: "system" | "user" | "assistant";
@@ -338,6 +338,6 @@ executeAgent("Write a 4-bit ALU in Verilog supporting ADD, SUB, AND, and OR oper
   <h4 class="cta-card-title">⚡ Unleash Long-Horizon AI Agents on APIVALE</h4>
   <p class="cta-card-text">Avoid mainland cell verification and payment restrictions. Get instant, high-concurrency access to Kimi K3, Claude Fable 5, and DeepSeek V4 via a single API key. Receive a free $0.20 Credit (+ 50% Bonus) on registration and pay easily using PayPal or standard credit cards.</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=kimi-chip-design" class="cta-primary-btn">Claim Free $0.20 Credit (+ 50% Bonus)</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=kimi-chip-design" class="cta-primary-btn">Claim Free $0.20 Credit (+ 50% Bonus)</a>
   </div>
 </div>

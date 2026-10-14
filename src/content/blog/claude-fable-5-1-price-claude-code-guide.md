@@ -17,7 +17,7 @@ lang: "en"
     <li><strong>75% Prompt Caching Economics:</strong> Anthropic's Claude Fable 5.1 cuts cached input token reads by 75% (down to <code>$1.25 / 1M</code> vs. <code>$10.00 / 1M</code> base), explicitly engineered for long-horizon autonomous software refactoring.</li>
     <li><strong>Autonomous CLI Token Burn Trap:</strong> Running multi-day autonomous loops in Claude Code CLI across large repositories still generates massive uncached dynamic tokens, escalating monthly bills to $300–$500 and triggering restrictive HTTP 429 tier ceilings.</li>
     <li><strong>85% Hybrid Cost Arbitrage with APIVALE:</strong> Routing 80% of routine terminal actions (Bash output parsing, syntax checks, unit tests) to China's leading open-weight models (<strong>Qwen 3.8 Max</strong> at <code>$0.60 / 1M</code> and <strong>Kimi K3</strong> at <code>$0.30 / 1M</code> cached) slashes developer operational costs by 85% while reserving Fable 5.1 for core architectural planning.</li>
-    <li><strong>Zero-KYC Waffo Global Billing:</strong> Access Claude Fable 5.1, Qwen 3.8, and Kimi K3 with instant API key creation on <a href="https://apivale.com/sign-up?redirect=/blog/claude-fable-5-1-price-claude-code-guide/" class="text-emerald-400 hover:underline font-semibold">APIVALE (Claim $0.20 Free Starter Credit)</a> using Waffo Global Billing (international credit cards, PayPal, and digital wallets) with zero phone verification barriers.</li>
+    <li><strong>Zero-KYC Waffo Global Billing:</strong> Access Claude Fable 5.1, Qwen 3.8, and Kimi K3 with instant API key creation on <a href="https://apivel.com/sign-up?redirect=/blog/claude-fable-5-1-price-claude-code-guide/" class="text-emerald-400 hover:underline font-semibold">APIVALE (Claim $0.20 Free Starter Credit)</a> using Waffo Global Billing (international credit cards, PayPal, and digital wallets) with zero phone verification barriers.</li>
   </ul>
 </div>
 
@@ -299,7 +299,7 @@ Calculate your monthly API token expenditure and discover how much you save by s
     <div class="p-4 bg-emerald-950/40 rounded-lg border border-emerald-500/50 flex flex-col justify-center">
       <div class="text-xs text-emerald-300 font-semibold mb-1">Monthly Cost Savings</div>
       <div id="cost-savings" class="text-2xl font-black text-white">85.0% ($318.75)</div>
-      <a href="https://apivale.com/sign-up?redirect=/blog/claude-fable-5-1-price-claude-code-guide/" class="mt-2 text-xs font-bold text-emerald-400 hover:text-emerald-300 underline">Claim $0.20 Free Credit &rarr;</a>
+      <a href="https://apivel.com/sign-up?redirect=/blog/claude-fable-5-1-price-claude-code-guide/" class="mt-2 text-xs font-bold text-emerald-400 hover:text-emerald-300 underline">Claim $0.20 Free Credit &rarr;</a>
     </div>
   </div>
 </div>
@@ -349,7 +349,7 @@ Resolve common protocol integration bugs, rate limit drops, and payload serializ
 Inspect your gateway payload structure if your proxy throws `400 invalid_request_error: unrecognized field 'cache_control'`. This error occurs when a client transmits Anthropic-specific caching tags to an endpoint that expects the standard OpenAI Chat Completions schema, or when caching tags are improperly nested inside an array of message strings.
 
 To resolve this issue:
-* **Verify Protocol Transpilation:** When routing through [APIVALE's OpenAI Protocol Hub](https://apivale.com/docs), ensure your SDK points to `/v1/chat/completions` if using standard OpenAI libraries, which automatically optimizes prompt prefixes server-side.
+* **Verify Protocol Transpilation:** When routing through [APIVALE's OpenAI Protocol Hub](https://apivel.com/docs), ensure your SDK points to `/v1/chat/completions` if using standard OpenAI libraries, which automatically optimizes prompt prefixes server-side.
 * **Format Native Anthropic Payloads:** If calling `/v1/messages` natively, ensure `cache_control` is placed as a child object within a content block dictionary rather than at the top-level message element:
 
 ```json
@@ -439,10 +439,10 @@ Developers can fund Fable 5.1 and high-efficiency Chinese companion models (such
     Connect Claude Code CLI and Cursor to APIVALE's high-speed unified gateway. Seamlessly balance Fable 5.1, Qwen 3.8 Max, and Kimi K3 with zero KYC, instant Waffo checkout, and 99.99% multi-region uptime.
   </p>
   <div class="flex flex-col sm:flex-row gap-4 justify-center">
-    <a href="https://apivale.com/sign-up?redirect=/blog/claude-fable-5-1-price-claude-code-guide/" class="px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-gray-950 font-bold rounded-lg transition-all transform hover:-translate-y-0.5 shadow-lg shadow-emerald-500/20">
+    <a href="https://apivel.com/sign-up?redirect=/blog/claude-fable-5-1-price-claude-code-guide/" class="px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-gray-950 font-bold rounded-lg transition-all transform hover:-translate-y-0.5 shadow-lg shadow-emerald-500/20">
       Claim $0.20 Free Starter Credit
     </a>
-    <a href="https://apivale.com/docs" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white font-semibold rounded-lg border border-gray-700 transition-all">
+    <a href="https://apivel.com/docs" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white font-semibold rounded-lg border border-gray-700 transition-all">
       Read Gateway API Docs
     </a>
   </div>

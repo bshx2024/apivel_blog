@@ -90,13 +90,13 @@ When executing complex software engineering tasks, not every prompt requires a $
 
 ### 1. Connecting Claude Code CLI to Qwen 3.8 / Kimi K3
 
-Claude Code CLI uses Anthropic environment variables. APIVALE exposes an Anthropic-compatible protocol bridge at `https://apivale.com/v1`.
+Claude Code CLI uses Anthropic environment variables. APIVALE exposes an Anthropic-compatible protocol bridge at `https://apivel.com/v1`.
 
 Add the following to your `~/.zshrc` or `~/.bashrc`:
 
 ```bash
 # Point Claude Code CLI to APIVALE Gateway
-export ANTHROPIC_BASE_URL="https://apivale.com/v1"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
 export ANTHROPIC_AUTH_TOKEN="apivale-key-xxxxxxxxxxxxxxxx"
 
 # Route to Qwen 3.7/3.8-Max for maximum cost savings
@@ -108,7 +108,7 @@ npx @anthropic-ai/claude-code
 
 > [!TIP]
 > **Windows PowerShell Users & Full Setup Guide**:  
-> Execute `$env:ANTHROPIC_BASE_URL="https://apivale.com/v1"`, `$env:ANTHROPIC_AUTH_TOKEN="apivale-key-xxxx"`, and `$env:ANTHROPIC_MODEL="infer/qwen3.7-max"` before running `npx @anthropic-ai/claude-code`. For complete step-by-step CLI instructions, read our full guide on [how to connect Qwen 3.8 to Claude Code CLI](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/).
+> Execute `$env:ANTHROPIC_BASE_URL="https://apivel.com/v1"`, `$env:ANTHROPIC_AUTH_TOKEN="apivale-key-xxxx"`, and `$env:ANTHROPIC_MODEL="infer/qwen3.7-max"` before running `npx @anthropic-ai/claude-code`. For complete step-by-step CLI instructions, read our full guide on [how to connect Qwen 3.8 to Claude Code CLI](/blog/how-to-connect-qwen-3-8-to-claude-code-cli/).
 
 ---
 
@@ -119,7 +119,7 @@ Cursor IDE allows setting custom OpenAI-compatible API endpoints. Configure Curs
 1. Open **Cursor Settings** (`Ctrl + ,` / `Cmd + ,`) -> **Models**.
 2. Enable **Override OpenAI Base URL** and set it to:
    ```text
-   https://apivale.com/v1
+   https://apivel.com/v1
    ```
 3. Input your APIVALE API Key funded via **PayPal**. Under **Custom Models**, add `infer/qwen3.7-max` and `kimi-k3`. You can now switch between both models directly in Cursor Composer!
 
@@ -135,7 +135,7 @@ import axios from 'axios';
 
 const app = express();
 const PORT = 3009;
-const APIVALE_GATEWAY = 'https://apivale.com/v1';
+const APIVALE_GATEWAY = 'https://apivel.com/v1';
 const APIVALE_KEY = process.env.APIVALE_API_KEY || 'apivale-key-xxxxxxxxxxxxxxxx';
 
 app.use(express.json({ limit: '10mb' }));
@@ -184,8 +184,8 @@ app.listen(PORT, () => console.log(`[APIVALE Proxy] MoE Arbitrage Router running
   <h4 class="cta-card-title">⚡ Route Qwen 3.8 & Kimi K3 via APIVALE Today</h4>
   <p class="cta-card-text">Stop overpaying on default frontier endpoints. Connect Claude Code CLI, Cursor, and OpenCode to APIVALE’s high-speed API gateway. Access Qwen 3.8-Max and Kimi K3 with 80% token savings, ultra-fast 420ms TTFT, and hassle-free global PayPal billing. Claim your $0.20 free starter credit (+ 50% bonus on 1st top-up) today!</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=qwen-3-8-vs-kimi-k3-coding-agent-api" class="cta-primary-btn">Get Free API Key ($0.20 Credit (+ 50% Bonus))</a>
-    <a href="https://apivale.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=qwen-3-8-vs-kimi-k3-coding-agent-api" class="cta-secondary-btn">Test MoE Playground</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=qwen-3-8-vs-kimi-k3-coding-agent-api" class="cta-primary-btn">Get Free API Key ($0.20 Credit (+ 50% Bonus))</a>
+    <a href="https://apivel.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=qwen-3-8-vs-kimi-k3-coding-agent-api" class="cta-secondary-btn">Test MoE Playground</a>
   </div>
 </div>
 

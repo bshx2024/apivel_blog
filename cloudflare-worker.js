@@ -7,7 +7,7 @@
  * 1. 100% 覆盖全站（主站 + Blog 博客所有文章 + 工具落地页）的爬虫与真人访客边缘统计
  * 2. 挂载 /__stats 和 /api/stats 实时免登录监控大盘与 API (单路由即可自闭环，自带内嵌初始数据)
  * 3. 实时记录爬虫抓取的具体博文 URL 路径流水明细与 TOP 热度榜
- * 4. 边缘代理：/blog/*, /openrouter-pricing, /llm-gateway -> apivale-blog.pages.dev (Cloudflare Pages)
+ * 4. 边缘代理：/blog/*, /openrouter-pricing, /llm-gateway -> apivel-blog.pages.dev (Cloudflare Pages)
  * 5. 边缘重定向：301 跳转规范化与尾随斜杠规范化
  * 6. 边缘拦截 /robots.txt，注入 X-Robots-Tag: noindex, nofollow 防参数收录
  * 7. 其余流量回源转发至 VPS 主站
@@ -923,7 +923,7 @@ export default {
     // ==========================================
     // 3. BLOG & STANDALONE ROUTE PROXY (Cloudflare Pages)
     // ==========================================
-    const BLOG_HOST = "apivale-blog.pages.dev"; 
+    const BLOG_HOST = "apivel-blog.pages.dev"; 
 
     const isStandaloneRoute = url.pathname === "/openrouter-pricing" || url.pathname.startsWith("/openrouter-pricing/") || url.pathname === "/llm-gateway" || url.pathname.startsWith("/llm-gateway/");
     const isBlogRoute = url.pathname === "/blog" || url.pathname.startsWith("/blog/");
@@ -1005,8 +1005,8 @@ Disallow: /dashboard
 Disallow: /playground?*
 Allow: /
 
-Sitemap: https://apivale.com/blog/sitemap-index.xml
-Sitemap: https://apivale.com/sitemap.xml
+Sitemap: https://apivel.com/blog/sitemap-index.xml
+Sitemap: https://apivel.com/sitemap.xml
 `;
       return new Response(robotsContent, {
         status: 200,

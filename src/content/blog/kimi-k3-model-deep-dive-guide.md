@@ -35,14 +35,14 @@ Override your Anthropic API environment variables in your terminal to route auto
 
 ```bash
 # 1. Point Anthropic SDK / CLI to APIVALE's unified API Gateway
-export ANTHROPIC_BASE_URL="https://apivale.com/v1"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
 export ANTHROPIC_AUTH_TOKEN="sk-apivale-your-api-key-here"
 
 # 2. Globally set the model target to Kimi K3
 export ANTHROPIC_MODEL="kimi-k3"
 
 # 3. Permanently save to shell profile (~/.zshrc or ~/.bashrc)
-echo 'export ANTHROPIC_BASE_URL="https://apivale.com/v1"' >> ~/.zshrc
+echo 'export ANTHROPIC_BASE_URL="https://apivel.com/v1"' >> ~/.zshrc
 echo 'export ANTHROPIC_AUTH_TOKEN="sk-apivale-your-api-key-here"' >> ~/.zshrc
 source ~/.zshrc
 
@@ -57,7 +57,7 @@ npx @anthropic-ai/claude-code "Analyze current repo structure and refactor perfo
 
 Connecting Kimi K3 to Cursor Composer takes 3 simple steps:
 1. Open **Cursor Settings** (`Ctrl + Shift + J` or `Cmd + Shift + J`) -> Navigate to **Models**.
-2. Enable **OpenAI API Key**, check **Override OpenAI Base URL**, and enter: `https://apivale.com/v1`.
+2. Enable **OpenAI API Key**, check **Override OpenAI Base URL**, and enter: `https://apivel.com/v1`.
 3. Paste your APIVALE API key, add `kimi-k3` under *Add Custom Model*, and toggle it on as your primary reasoning engine!
 
 ---
@@ -107,8 +107,8 @@ Developer communities across Reddit (r/LocalLLaMA) and Hacker News have noted Ki
   <h3 class="cta-card-title">⚡ Access Kimi K3 & Qwen 3.7 Max via APIVALE Today</h3>
   <p class="cta-card-text">No mainland Chinese phone numbers or complex credit card verifications required! APIVALE offers ultra-low latency OpenAI & Anthropic protocol endpoints, supported by hassle-free <strong>PayPal (PayPal Global Billing)</strong> top-ups. Reduce your AI Agent token spend by up to 80% today.</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=kimi-k3-model-deep-dive-guide" class="cta-primary-btn">Claim Free $1.00 API Credit</a>
-    <a href="https://apivale.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=kimi-k3-model-deep-dive-guide" class="cta-secondary-btn">Test in APIVALE Playground</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=kimi-k3-model-deep-dive-guide" class="cta-primary-btn">Claim Free $1.00 API Credit</a>
+    <a href="https://apivel.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=kimi-k3-model-deep-dive-guide" class="cta-secondary-btn">Test in APIVALE Playground</a>
   </div>
 </div>
 
@@ -117,7 +117,7 @@ Developer communities across Reddit (r/LocalLLaMA) and Hacker News have noted Ki
 ## 6. Developer FAQ
 
 **Q: Do I need to modify my codebase to call Kimi K3 via APIVALE?**  
-**A:** No. APIVALE provides native OpenAI and Anthropic protocol compatibility. Simply replace your `baseURL` with `https://apivale.com/v1` and supply your APIVALE API key.
+**A:** No. APIVALE provides native OpenAI and Anthropic protocol compatibility. Simply replace your `baseURL` with `https://apivel.com/v1` and supply your APIVALE API key.
 
 **Q: What payment methods does APIVALE accept for international developers?**  
 **A:** APIVALE accepts **PayPal** and global credit/debit card checkouts via PayPal billing, allowing developers worldwide to top up usage credits instantly without local card decline issues.
@@ -135,7 +135,7 @@ Developer communities across Reddit (r/LocalLLaMA) and Hacker News have noted Ki
       "name": "Do I need to modify my codebase to call Kimi K3 via APIVALE?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. APIVALE provides native OpenAI and Anthropic protocol compatibility. Simply change your baseURL to https://apivale.com/v1 and enter your APIVALE key."
+        "text": "No. APIVALE provides native OpenAI and Anthropic protocol compatibility. Simply change your baseURL to https://apivel.com/v1 and enter your APIVALE key."
       }
     },
     {

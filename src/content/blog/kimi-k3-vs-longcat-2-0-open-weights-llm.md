@@ -24,13 +24,13 @@ Bypass geographical restrictions, mainland +86 phone verifications, and corporat
 
 ```bash
 # Call Meituan LongCat-2.0
-curl https://apivale.com/v1/chat/completions \
+curl https://apivel.com/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_APIVALE_KEY" \
   -d '{"model": "longcat-2.0", "messages": [{"role": "user", "content": "Write a regex to match email addresses."}]}'
 
 # Call Moonshot Kimi K3
-curl https://apivale.com/v1/chat/completions \
+curl https://apivel.com/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_APIVALE_KEY" \
   -d '{"model": "kimi-k3", "messages": [{"role": "user", "content": "Write a regex to match email addresses."}]}'
@@ -60,7 +60,7 @@ Here is how these two giant open models stack up against each other:
   <h4 class="cta-card-title">⚡ Access China's Top Trillion-Parameter Models Instantly</h4>
   <p class="cta-card-text">Bypass local registration gatekeeps and payment blocks. Deploy Kimi K3, LongCat-2.0, DeepSeek V4, and GLM-5.2 into your development stack (Cursor, Cline, Aider) in minutes via APIVALE. Pay securely with global credit cards or PayPal.</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=kimi-vs-longcat" class="cta-primary-btn">Get Free $0.20 Credit (+ 50% Bonus)</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=kimi-vs-longcat" class="cta-primary-btn">Get Free $0.20 Credit (+ 50% Bonus)</a>
   </div>
 </div>
 
@@ -112,8 +112,8 @@ Because APIVALE holds bulk volume agreements for Meituan's infrastructure, we pa
   <h4 class="cta-card-title">🎁 Ready to Build Resilient Multi-Model Workflows?</h4>
   <p class="cta-card-text">Access Kimi K3, LongCat-2.0, DeepSeek V4, and GLM-5.2 through a single OpenAI-compatible API key. Sign up today, pay via standard global card methods or PayPal, and get $0.20 free test credits (+ 50% bonus on 1st top-up) instantly.</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=kimi-vs-longcat" class="cta-primary-btn">Create Free Account</a>
-    <a href="https://apivale.com/docs?utm_source=apivale_blog&utm_medium=blog&utm_campaign=kimi-vs-longcat" class="cta-secondary-btn">Integration Docs</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=kimi-vs-longcat" class="cta-primary-btn">Create Free Account</a>
+    <a href="https://apivel.com/docs?utm_source=apivale_blog&utm_medium=blog&utm_campaign=kimi-vs-longcat" class="cta-secondary-btn">Integration Docs</a>
   </div>
 </div>
 

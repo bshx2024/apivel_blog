@@ -15,7 +15,7 @@ lang: "en"
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
     <li><strong>Top-Tier Coding Performance:</strong> Qwen 3.8 Max achieves a 54.8% SWE-bench Verified score and 92.4% HumanEval pass rate, rivaling frontier reasoning models like Claude Sonnet 5 and DeepSeek V4.</li>
-    <li><strong>80% API Cost Reduction:</strong> Routing agentic workflows to <code>infer/qwen3.7-max</code> and <code>infer/qwen3.8-max</code> via <a href="https://apivale.com/sign-up?redirect=/blog/qwen-3-8-max-benchmarks-preview-guide/" class="text-emerald-400 hover:underline font-semibold">APIVALE (Claim $0.20 Free Credit)</a> slashes input token costs to $0.60/1M tokens with ~420ms TTFT latency.</li>
+    <li><strong>80% API Cost Reduction:</strong> Routing agentic workflows to <code>infer/qwen3.7-max</code> and <code>infer/qwen3.8-max</code> via <a href="https://apivel.com/sign-up?redirect=/blog/qwen-3-8-max-benchmarks-preview-guide/" class="text-emerald-400 hover:underline font-semibold">APIVALE (Claim $0.20 Free Credit)</a> slashes input token costs to $0.60/1M tokens with ~420ms TTFT latency.</li>
     <li><strong>Zero Credit Card Friction:</strong> APIVALE provides instant access to preview capacity via standard OpenAI and Anthropic protocol wrappers using global PayPal billing.</li>
   </ul>
 </div>
@@ -47,7 +47,7 @@ lang: "en"
     Sign up for a free APIVALE account (or log in) to claim <strong>$0.20 free starter credit</strong>. Your personal API key will be automatically generated and auto-filled into the benchmark scripts below!
   </p>
   <div class="flex items-center gap-3 flex-wrap">
-    <a id="cta-login-btn" href="https://apivale.com/sign-up?redirect=/blog/qwen-3-8-max-benchmarks-preview-guide/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
+    <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/qwen-3-8-max-benchmarks-preview-guide/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Sign Up / Log In to Auto-Fill Your API Key
     </a>
     <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export ANTHROPIC_BASE_URL=\'https://api.apivale.com/v1\'\nexport ANTHROPIC_AUTH_TOKEN=\'your_apivale_api_key\'\nexport ANTHROPIC_MODEL=\'infer/qwen3.8-max\''); alert('Copied Qwen 3.8 Max setup script!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
@@ -329,7 +329,7 @@ Yes, APIVALE natively supports PayPal (global PayPal billing / credit cards via 
   <h4 class="cta-card-title">⚡ Test Qwen 3.8 Max Preview on APIVALE Today</h4>
   <p class="cta-card-text">Stop overpaying on proprietary frontier endpoints. Connect Claude Code CLI, Cursor, and OpenCode to APIVALE’s high-speed API gateway. Access Qwen 3.8 Max preview and Qwen 3.7 Max with 80% token savings, ultra-fast 420ms TTFT, and hassle-free global PayPal billing. Claim your $0.20 free starter credit (+ 50% bonus on 1st top-up) today!</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=qwen-3-8-max-benchmarks-preview-guide" class="cta-primary-btn">Get Free API Key ($0.20 Credit (+ 50% Bonus))</a>
-    <a href="https://apivale.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=qwen-3-8-max-benchmarks-preview-guide" class="cta-secondary-btn">Test Qwen Playground</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=qwen-3-8-max-benchmarks-preview-guide" class="cta-primary-btn">Get Free API Key ($0.20 Credit (+ 50% Bonus))</a>
+    <a href="https://apivel.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=qwen-3-8-max-benchmarks-preview-guide" class="cta-secondary-btn">Test Qwen Playground</a>
   </div>
 </div>

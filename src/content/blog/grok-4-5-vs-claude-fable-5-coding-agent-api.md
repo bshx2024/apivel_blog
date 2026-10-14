@@ -246,7 +246,7 @@ Yes, APIVALE supports real-time token streaming (SSE) for Grok 4.5, ensuring low
   <h4 class="cta-card-title">⚡ Route Grok 4.5 & Claude Fable 5 via APIVALE</h4>
   <p class="cta-card-text">Connect Cursor, Claude Code, and terminal agents to APIVALE's high-speed API gateway. Access Grok 4.5 and Claude Fable 5 with massive token savings, ultra-fast TTFT, and global PayPal billing. Claim your $0.20 free signup bonus and get started instantly!</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=grok-4-5-vs-claude-fable-5-coding-agent-api" class="cta-primary-btn">Get Free API Key ($0.20 Credit)</a>
-    <a href="https://apivale.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=grok-4-5-vs-claude-fable-5-coding-agent-api" class="cta-secondary-btn">Test MoE Playground</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=grok-4-5-vs-claude-fable-5-coding-agent-api" class="cta-primary-btn">Get Free API Key ($0.20 Credit)</a>
+    <a href="https://apivel.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=grok-4-5-vs-claude-fable-5-coding-agent-api" class="cta-secondary-btn">Test MoE Playground</a>
   </div>
 </div>

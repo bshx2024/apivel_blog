@@ -105,7 +105,7 @@ On SWE-bench Verified evaluations, Claude Haiku 5.5 achieves a 41.2% score. Whil
 
 ## 3. Cost Comparison: Haiku 5.5 vs DeepSeek-V4 vs Qwen 3.7 Max
 
-To escape tiered pricing penalties, developers route agent workloads through [APIVALE's unified gateway](https://apivale.com/pricing), connecting to DeepSeek-V4 (`infer/deepseek-v4`) and Alibaba Qwen 3.7 Max (`infer/qwen3.7-max`).
+To escape tiered pricing penalties, developers route agent workloads through [APIVALE's unified gateway](https://apivel.com/pricing), connecting to DeepSeek-V4 (`infer/deepseek-v4`) and Alibaba Qwen 3.7 Max (`infer/qwen3.7-max`).
 
 | Evaluation Metric | Claude Haiku 5.5 | DeepSeek-V4 Pro | Alibaba Qwen 3.7 Max |
 | :--- | :--- | :--- | :--- |
@@ -331,7 +331,7 @@ Anthropic does not offer a free tier for Claude API integration and requires a v
       "publisher": {
         "@type": "Organization",
         "name": "APIVALE",
-        "url": "https://apivale.com"
+        "url": "https://apivel.com"
       },
       "about": [
         {

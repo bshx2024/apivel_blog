@@ -14,7 +14,7 @@ lang: "en"
 <div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
-    <li><strong>85% Token Arbitrage:</strong> Routing Claude Code CLI requests to GLM-5.3 via <a href="https://apivale.com/sign-up?redirect=/blog/how-to-connect-glm-5-3-to-claude-code-cli/" class="text-emerald-400 hover:underline font-semibold">APIVALE (Claim $0.20 Free Starter Credit)</a> cuts agent execution costs to $0.45/1M input tokens.</li>
+    <li><strong>85% Token Arbitrage:</strong> Routing Claude Code CLI requests to GLM-5.3 via <a href="https://apivel.com/sign-up?redirect=/blog/how-to-connect-glm-5-3-to-claude-code-cli/" class="text-emerald-400 hover:underline font-semibold">APIVALE (Claim $0.20 Free Starter Credit)</a> cuts agent execution costs to $0.45/1M input tokens.</li>
     <li><strong>1M Context & 128K Output:</strong> Supports multi-file repository audits and automated whitebox vulnerability scanning without context drift.</li>
     <li><strong>Zero-KYC PayPal Global Billing:</strong> Bypasses mainland +86 phone verification and foreign credit card restrictions with instant PayPal billing.</li>
   </ul>
@@ -40,7 +40,7 @@ lang: "en"
     Sign up for a free APIVALE account to claim <strong>$0.20 free starter credit</strong>. Your personal API key will automatically populate in the setup commands below!
   </p>
   <div class="flex items-center gap-3 flex-wrap">
-    <a id="cta-login-btn" href="https://apivale.com/sign-up?redirect=/blog/how-to-connect-glm-5-3-to-claude-code-cli/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
+    <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/how-to-connect-glm-5-3-to-claude-code-cli/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Sign Up / Log In to Auto-Fill Your API Key
     </a>
     <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export ANTHROPIC_BASE_URL=\'https://api.apivale.com/v1\'\nexport ANTHROPIC_AUTH_TOKEN=\'your_apivale_api_key\'\n# 选项 A：极速高频/自动化脚本（首推极致性价比）\nexport ANTHROPIC_MODEL=\'infer/glm-5.3-flash\'\n# 选项 B：复杂逻辑/深度思考（满血 743B MoE 旗舰）\n# export ANTHROPIC_MODEL=\'infer/glm-5.3\''); alert('Copied GLM setup commands!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
@@ -259,7 +259,7 @@ Execute a verified 3-step setup to route Claude Code CLI terminal tasks, Git dif
 
 ### Step 1: Obtain Your APIVALE Access Token
 
-Sign in to your [APIVALE Dashboard](https://apivale.com/sign-up?redirect=/blog/how-to-connect-glm-5-3-to-claude-code-cli/) and generate an API key with zero personal identity verification requirements.
+Sign in to your [APIVALE Dashboard](https://apivel.com/sign-up?redirect=/blog/how-to-connect-glm-5-3-to-claude-code-cli/) and generate an API key with zero personal identity verification requirements.
 
 1. Navigate to **API Keys** in the APIVALE Console.
 2. Click **Create Secret Key** and copy your token prefixed with `apv-`.
@@ -474,7 +474,7 @@ Supercharge your terminal workflow with 1M context, state-of-the-art whitebox se
   <p class="text-gray-300 max-w-xl mx-auto mb-6 text-sm">
     Experience frontier 743B coding performance inside Claude Code CLI. Zero KYC, instant activation, and PayPal global billing.
   </p>
-  <a href="https://apivale.com/sign-up?redirect=/blog/how-to-connect-glm-5-3-to-claude-code-cli/" class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-xl transition-all shadow-lg hover:shadow-indigo-500/25">
+  <a href="https://apivel.com/sign-up?redirect=/blog/how-to-connect-glm-5-3-to-claude-code-cli/" class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-xl transition-all shadow-lg hover:shadow-indigo-500/25">
     🚀 Create Free APIVALE Account
   </a>
 </div>

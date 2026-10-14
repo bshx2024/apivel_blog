@@ -14,7 +14,7 @@ lang: "en"
 <div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
-    <li><strong>80% Token Cost Arbitrage:</strong> Routing Cursor Composer and Chat to Qwen 3.8 via <a href="https://apivale.com/sign-up?redirect=/blog/qwen-3-8-cursor-setup/" class="text-emerald-400 hover:underline font-semibold">APIVALE (Claim $0.20 Free Credit)</a> cuts input token expenses to $0.60/1M tokens ($2.40/1M output).</li>
+    <li><strong>80% Token Cost Arbitrage:</strong> Routing Cursor Composer and Chat to Qwen 3.8 via <a href="https://apivel.com/sign-up?redirect=/blog/qwen-3-8-cursor-setup/" class="text-emerald-400 hover:underline font-semibold">APIVALE (Claim $0.20 Free Credit)</a> cuts input token expenses to $0.60/1M tokens ($2.40/1M output).</li>
     <li><strong>Instant OpenAI Protocol Override:</strong> Enter <code>https://api.apivale.com/v1</code> into Cursor's OpenAI Base URL override to run <code>infer/qwen3.8-max</code> without custom local bridge tunnels.</li>
     <li><strong>Global PayPal Billing:</strong> Avoid international credit card declines and mandatory identity checks with instant PayPal top-ups.</li>
   </ul>
@@ -40,7 +40,7 @@ lang: "en"
     Sign up for a free APIVALE account to claim <strong>$0.20 free starter credit</strong>. Your personal API key will automatically populate into setup guides and configuration files below!
   </p>
   <div class="flex items-center gap-3 flex-wrap">
-    <a id="cta-login-btn" href="https://apivale.com/sign-up?redirect=/blog/qwen-3-8-cursor-setup/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
+    <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/qwen-3-8-cursor-setup/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Sign Up / Log In to Auto-Fill Your API Key
     </a>
     <button id="copy-script-btn" onclick="navigator.clipboard.writeText('Base URL: https://api.apivale.com/v1\nModel Name: infer/qwen3.8-max'); const b=this; b.innerText='✅ Copied!'; setTimeout(()=>b.innerText='📋 Copy Cursor Settings', 2000);" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
@@ -501,7 +501,7 @@ Qwen 3.8 on APIVALE costs **$0.60 per 1M input tokens** and **$2.40 per 1M outpu
   <p class="text-sm text-gray-300 max-w-xl mx-auto mb-4">
     Claim your $0.20 free credit on APIVALE, bypass credit card restrictions with PayPal, and slash your AI coding expenses by 80%.
   </p>
-  <a href="https://apivale.com/sign-up?redirect=/blog/qwen-3-8-cursor-setup/" class="inline-flex items-center text-sm font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-3 rounded-lg transition-all shadow-md">
+  <a href="https://apivel.com/sign-up?redirect=/blog/qwen-3-8-cursor-setup/" class="inline-flex items-center text-sm font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-3 rounded-lg transition-all shadow-md">
     🚀 Get Started on APIVALE (Free Starter Credit)
   </a>
 </div>

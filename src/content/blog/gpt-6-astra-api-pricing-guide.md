@@ -17,7 +17,7 @@ lang: "en"
     <li><strong>Unprecedented $50.00 / 1M Output Shock:</strong> OpenAI's official <code>gpt-6-astra</code> sets baseline <strong>GPT-6 Astra API price</strong> at <code>$10.00 / 1M</code> input and <code>$50.00 / 1M</code> output ($20/$100 in Fast Mode), compounding costs in autonomous coding loops.</li>
     <li><strong>SOTA ARC-AGI-3 & Coding Benchmarks:</strong> In official <strong>GPT-6 Astra benchmarks</strong>, Astra scores 88.4% on ARC-AGI-3 and 64.2% on SWE-bench Verified, outperforming Claude Fable 5.1 in computer use while charging 66.7% more per million output tokens.</li>
     <li><strong>89.4% Hybrid Gateway Arbitrage:</strong> Routing system planning to Astra while delegating routine syntax, unit tests, and terminal parsing to China's flagship LLMs (<a href="/blog/how-to-connect-qwen-3-7-to-claude-code-cli/" class="text-emerald-400 hover:underline font-semibold">Qwen 3.7 Max</a> and <a href="/blog/gemini-3-6-flash-vs-deepseek-v4-vs-qwen-3-7-agent-cost-guide/" class="text-emerald-400 hover:underline font-semibold">DeepSeek V4</a>) slashes net <strong>GPT-6 Astra API cost</strong> from $46.50 to $4.92 per 100 loops.</li>
-    <li><strong>Zero-KYC Access via Waffo Global Billing:</strong> Complete your <strong>GPT-6 Astra API setup</strong> with instant key provisioning on <a href="https://apivale.com/sign-up?redirect=/blog/gpt-6-astra-api-pricing-guide/" class="text-emerald-400 hover:underline font-semibold">APIVALE</a> using Waffo global billing (credit cards and global digital wallets) with zero phone verification.</li>
+    <li><strong>Zero-KYC Access via Waffo Global Billing:</strong> Complete your <strong>GPT-6 Astra API setup</strong> with instant key provisioning on <a href="https://apivel.com/sign-up?redirect=/blog/gpt-6-astra-api-pricing-guide/" class="text-emerald-400 hover:underline font-semibold">APIVALE</a> using Waffo global billing (credit cards and global digital wallets) with zero phone verification.</li>
   </ul>
 </div>
 
@@ -265,7 +265,7 @@ Estimate daily and monthly software engineering agent spend comparing pure Astra
   </div>
 
   <div class="text-center">
-    <a href="https://apivale.com/sign-up?redirect=/blog/gpt-6-astra-api-pricing-guide/" class="inline-block px-6 py-3 bg-gradient-to-r from-indigo-500 to-emerald-500 hover:from-indigo-600 hover:to-emerald-600 text-white font-bold text-sm rounded-lg shadow-lg transition duration-200">
+    <a href="https://apivel.com/sign-up?redirect=/blog/gpt-6-astra-api-pricing-guide/" class="inline-block px-6 py-3 bg-gradient-to-r from-indigo-500 to-emerald-500 hover:from-indigo-600 hover:to-emerald-600 text-white font-bold text-sm rounded-lg shadow-lg transition duration-200">
       Create Free APIVALE Gateway Key (Top Up via Waffo)
     </a>
   </div>

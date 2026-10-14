@@ -226,7 +226,7 @@ function calculateHy4Cost() {
 Anthropic's [Claude Code CLI](/blog/how-to-set-up-claude-code-cli-with-custom-base-url/) enables autonomous command-line agent execution. APIVALE provides an Anthropic Messages protocol translation layer, allowing you to run `infer/hy4-preview` directly without altering codebase workflows.
 
 ### Step 1: Obtain Your APIVALE Key
-1. Sign up on the [APIVALE Console](https://apivale.com).
+1. Sign up on the [APIVALE Console](https://apivel.com).
 2. Top up balance instantly using **Waffo Global Billing** (Credit Cards, PayPal, Apple Pay, Google Pay).
 3. Generate a production API Key.
 

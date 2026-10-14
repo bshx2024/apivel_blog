@@ -53,7 +53,7 @@ keyTakeaways:
     Sign up for a free APIVALE account to claim <strong>$0.20 free starter credit</strong>. Your personal API key will automatically fill into setup commands below!
   </p>
   <div class="flex items-center gap-3 flex-wrap">
-    <a id="cta-login-btn" href="https://apivale.com/sign-up?redirect=/blog/opencode-paypal-billing-api-proxy-guide/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
+    <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/opencode-paypal-billing-api-proxy-guide/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Sign Up / Log In to Auto-Fill Your API Key
     </a>
     <button id="copy-script-btn" onclick="navigator.clipboard.writeText('OPENAI_BASE_URL=https://api.apivale.com/v1\nOPENAI_API_KEY=your_apivale_api_key'); const el = this; const old = el.innerHTML; el.innerHTML = '✓ Copied OpenCode Config!'; setTimeout(() => { el.innerHTML = old; }, 2000);" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
@@ -178,7 +178,7 @@ Use this interactive simulator to calculate your monthly token usage, estimate o
           </div>
           <div class="savings-amount" id="opencode-savings-amt">$72.85 / mo</div>
           <p class="savings-note">⚡ 0 Rate-Limit Locks. Instant Waffo & PayPal checkout with zero card decline barriers.</p>
-          <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=opencode-paypal-calc" class="calc-cta-btn">Claim Free $0.20 Starter Credit (+ 50% Bonus)</a>
+          <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=opencode-paypal-calc" class="calc-cta-btn">Claim Free $0.20 Starter Credit (+ 50% Bonus)</a>
         </div>
       </div>
     </div>
@@ -625,8 +625,8 @@ app.listen(PORT, () => {
   <h4 class="cta-card-title">⚡ Power Up OpenCode with APIVALE PayPal Billing</h4>
   <p class="cta-card-text">Bypass overseas credit card declines, 5-hour rate limits, and KYC verification blocks. Connect OpenCode CLI, OpenCodeX, and OpenCode Zen workflows to APIVALE's high-concurrency gateway. Access Claude Sonnet 5, Qwen 3.7 Max (<code>infer/qwen3.7-max</code>), and DeepSeek V4 with OpenCode PayPal and Waffo Global Billing (Credit Cards, Wallets & PayPal).</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=opencode-paypal-billing-api-proxy-guide" class="cta-primary-btn">Create Free API Key ($0.20 Credit)</a>
-    <a href="https://apivale.com/pricing?utm_source=apivale_blog&utm_medium=blog&utm_campaign=opencode-paypal-billing-api-proxy-guide" class="cta-secondary-btn">View OpenCode PayPal Pricing</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=opencode-paypal-billing-api-proxy-guide" class="cta-primary-btn">Create Free API Key ($0.20 Credit)</a>
+    <a href="https://apivel.com/pricing?utm_source=apivale_blog&utm_medium=blog&utm_campaign=opencode-paypal-billing-api-proxy-guide" class="cta-secondary-btn">View OpenCode PayPal Pricing</a>
   </div>
 </div>
 

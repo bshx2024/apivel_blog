@@ -390,10 +390,10 @@ if __name__ == "__main__":
     </div>
   </div>
   <div class="flex items-center gap-3 flex-wrap">
-    <a href="https://apivale.com/pricing?redirect=/blog/qwen-3-8-27b-gguf-benchmarks-ollama-vs-api-guide/" class="inline-flex items-center text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2.5 rounded-lg transition-all shadow-lg">
+    <a href="https://apivel.com/pricing?redirect=/blog/qwen-3-8-27b-gguf-benchmarks-ollama-vs-api-guide/" class="inline-flex items-center text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2.5 rounded-lg transition-all shadow-lg">
       🚀 View Pricing &amp; PayPal Options
     </a>
-    <a href="https://apivale.com/sign-up?redirect=/blog/qwen-3-8-27b-gguf-benchmarks-ollama-vs-api-guide/" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-5 py-2.5 rounded-lg transition-all">
+    <a href="https://apivel.com/sign-up?redirect=/blog/qwen-3-8-27b-gguf-benchmarks-ollama-vs-api-guide/" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-5 py-2.5 rounded-lg transition-all">
       ⚡ Claim $0.20 Free Sandbox Trial
     </a>
   </div>

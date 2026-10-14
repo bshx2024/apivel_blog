@@ -22,7 +22,7 @@ In this guide, we compare LLMLingua against visual prompt compression tools like
 Test the vision endpoint with a compressed prompt layout using a simple cURL execution. Replace `YOUR_APIVALE_KEY` with your actual token:
 
 ```bash
-curl https://apivale.com/v1/chat/completions \
+curl https://apivel.com/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_APIVALE_KEY" \
   -d '{
@@ -126,7 +126,7 @@ codebase_context = "def bubble_sort(arr):\n    n = len(arr)\n" * 400  # 400 repe
 base64_image = text_to_base64_png(codebase_context)
 
 client = openai.OpenAI(
-    base_url="https://apivale.com/v1",
+    base_url="https://apivel.com/v1",
     api_key=os.environ.get("APIVALE_API_KEY")
 )
 
@@ -161,7 +161,7 @@ npm install openai
 import { OpenAI } from 'openai';
 
 const client = new OpenAI({
-  baseURL: 'https://apivale.com/v1',
+  baseURL: 'https://apivel.com/v1',
   apiKey: process.env.APIVALE_API_KEY,
 });
 
@@ -198,7 +198,7 @@ callVisualPrompt();
   <h4 class="cta-card-title">🎁 Cut Multi-Modal Integration Costs with APIVALE</h4>
   <p class="cta-card-text">Bypass rigid token pricing limits. Route your visual prompts, high-density diagrams, and OCR payloads through APIVALE's edge-routing nodes. Enjoy stable Claude 3.5 Sonnet and GPT-4o vision pipelines, Stripe global billing, and $0.20 free starting credit (+ 50% bonus on 1st top-up).</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=visual-prompt-compression-pxpipe" class="cta-primary-btn">Create Free Account</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=visual-prompt-compression-pxpipe" class="cta-primary-btn">Create Free Account</a>
     <a href="/blog/openrouter-alternatives/" class="cta-secondary-btn">Explore Alternatives</a>
   </div>
 </div>

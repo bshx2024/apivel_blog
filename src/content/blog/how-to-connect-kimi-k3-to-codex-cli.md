@@ -17,7 +17,7 @@ In this guide, you will configure OpenAI Codex CLI and VS Code to communicate wi
 
 > [!NOTE]
 > **Kimi K3 OpenAI Protocol Bridge Notice**  
-> APIVALE maintains dedicated high-concurrency API pools for Kimi K3 (`kimi-k3`). You can route both OpenAI `/v1/chat/completions` and Anthropic `/v1/messages` API protocols directly via `https://apivale.com/v1` without encountering upstream capacity drops or identity verification barriers.
+> APIVALE maintains dedicated high-concurrency API pools for Kimi K3 (`kimi-k3`). You can route both OpenAI `/v1/chat/completions` and Anthropic `/v1/messages` API protocols directly via `https://apivel.com/v1` without encountering upstream capacity drops or identity verification barriers.
 
 ```mermaid
 graph LR
@@ -33,13 +33,13 @@ graph LR
 
 > [!TIP]
 > **Featured Snippet: How to point OpenAI Codex CLI to Kimi K3 via APIVALE**  
-> To connect OpenAI Codex CLI to Kimi K3 via APIVALE, set `OPENAI_API_BASE="https://apivale.com/v1"`, `OPENAI_API_KEY="your_apivale_key"`, and set the model target to `kimi-k3`. Codex CLI will instantly route all OpenAI API completions to Kimi K3 without modifying CLI source code.
+> To connect OpenAI Codex CLI to Kimi K3 via APIVALE, set `OPENAI_API_BASE="https://apivel.com/v1"`, `OPENAI_API_KEY="your_apivale_key"`, and set the model target to `kimi-k3`. Codex CLI will instantly route all OpenAI API completions to Kimi K3 without modifying CLI source code.
 
 Run the following terminal commands to override OpenAI's default endpoint:
 
 ```bash
 # Point OpenAI Codex CLI to APIVALE's OpenAI-compatible protocol bridge
-export OPENAI_API_BASE="https://apivale.com/v1"
+export OPENAI_API_BASE="https://apivel.com/v1"
 export OPENAI_API_KEY="your_apivale_api_key"
 export CODEX_MODEL="kimi-k3"
 
@@ -66,7 +66,7 @@ Before configuring your environment, here is how Kimi K3 (routed via APIVALE) co
 
 > [!NOTE]
 > **Why Use an API Gateway Instead of Self-Hosting?**  
-> Self-hosting Kimi K3's 2.8T MoE parameters requires multi-node GPU clusters costing over $100,000. Using **APIVALE’s API Gateway** allows you to leverage Kimi K3's full 1M-context intelligence over HTTP via `https://apivale.com/v1` without hardware capital expenditure or rate-limiting bottlenecks.
+> Self-hosting Kimi K3's 2.8T MoE parameters requires multi-node GPU clusters costing over $100,000. Using **APIVALE’s API Gateway** allows you to leverage Kimi K3's full 1M-context intelligence over HTTP via `https://apivel.com/v1` without hardware capital expenditure or rate-limiting bottlenecks.
 
 ---
 
@@ -91,11 +91,11 @@ A SERP audit of developer discussions across GitHub and Reddit highlights three 
 | **Local Proxy Tools (`opencodex`)** | Requires installing third-party NPM packages (`@bitkyc08/opencodex`), binding local ports (`localhost:10100`), and keeping local proxy daemons alive. | Dependent on local daemon stability; potential port conflicts and security risks when handling local API keys. | Requires direct Moonshot account (+86 phone verification required). |
 | **Community Routing (`CC Switch`)** | Requires installing community CLI switches, editing complex JSON provider matrices. | Manual configuration updates needed when upstream API parameters change. | Requires local Chinese payment or direct provider registration. |
 | **Native Kimi Code CLI (`kimi`)** | Official CLI provided by Moonshot AI for terminal interaction. | Limited strictly to Moonshot's native interface; cannot leverage existing OpenAI Codex CLI custom workflows. | Mainland phone (+86) & local KYC verification barriers. |
-| **APIVALE Cloud Gateway (`apivale.com`)** | **Zero installation required.** Simply export `OPENAI_API_BASE="https://apivale.com/v1"`. | **Enterprise Dedicated Pools.** Automatic SSE stream buffering, high concurrency, zero port binding. | **PayPal Global Billing** / Credit Cards (Zero KYC / Phone barriers). |
+| **APIVALE Cloud Gateway (`apivale.com`)** | **Zero installation required.** Simply export `OPENAI_API_BASE="https://apivel.com/v1"`. | **Enterprise Dedicated Pools.** Automatic SSE stream buffering, high concurrency, zero port binding. | **PayPal Global Billing** / Credit Cards (Zero KYC / Phone barriers). |
 
 > [!TIP]
 > **Why Choose Direct Cloud Gateway over Local Proxy Daemons?**  
-> While tools like `opencodex` or `CC Switch` require running local proxy servers on your developer machine, APIVALE handles protocol translation, header sanitization, and high-concurrency connection pooling in the cloud via `https://apivale.com/v1`. You get instant compatibility with standard Codex CLI environment variables without running local daemon processes.
+> While tools like `opencodex` or `CC Switch` require running local proxy servers on your developer machine, APIVALE handles protocol translation, header sanitization, and high-concurrency connection pooling in the cloud via `https://apivel.com/v1`. You get instant compatibility with standard Codex CLI environment variables without running local daemon processes.
 
 ---
 
@@ -110,7 +110,7 @@ To configure your shell so that OpenAI Codex CLI automatically routes to Kimi K3
 nano ~/.zshrc
 
 # Add APIVALE Kimi K3 environment variables for Codex CLI
-export OPENAI_API_BASE="https://apivale.com/v1"
+export OPENAI_API_BASE="https://apivel.com/v1"
 export OPENAI_API_KEY="apivale-key-xxxxxxxxxxxxxxxx"
 export CODEX_MODEL="kimi-k3"
 
@@ -132,7 +132,7 @@ name = "kimi-k3"
 provider = "openai-compatible"
 
 [provider.openai-compatible]
-api_base = "https://apivale.com/v1"
+api_base = "https://apivel.com/v1"
 api_key = "apivale-key-xxxxxxxxxxxxxxxx"
 context_window = 1048576
 max_tokens = 8192
@@ -145,7 +145,7 @@ For Windows developers operating in PowerShell:
 
 ```powershell
 # Set environment variables for current session
-$env:OPENAI_API_BASE="https://apivale.com/v1"
+$env:OPENAI_API_BASE="https://apivel.com/v1"
 $env:OPENAI_API_KEY="apivale-key-xxxxxxxxxxxxxxxx"
 $env:CODEX_MODEL="kimi-k3"
 
@@ -216,7 +216,7 @@ import axios from 'axios';
 
 const app = express();
 const PORT = 3010;
-const APIVALE_GATEWAY = 'https://apivale.com/v1';
+const APIVALE_GATEWAY = 'https://apivel.com/v1';
 
 app.use(express.json());
 
@@ -270,8 +270,8 @@ app.listen(PORT, () => {
   <h4 class="cta-card-title">⚡ Connect Kimi K3 to OpenAI Codex CLI with APIVALE</h4>
   <p class="cta-card-text">Supercharge your Codex CLI and VS Code workflows with Moonshot AI's 2.8T Kimi K3 model. Enjoy 80% lower token spend, zero rate limits, 1M context window, and seamless PayPal billing. Register now and claim $0.20 free starter credit (+ 50% bonus on 1st top-up)!</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-connect-kimi-k3-to-codex-cli" class="cta-primary-btn">Get Free API Key ($0.20 Credit (+ 50% Bonus))</a>
-    <a href="https://apivale.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-connect-kimi-k3-to-codex-cli" class="cta-secondary-btn">Test Kimi K3 Playground</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-connect-kimi-k3-to-codex-cli" class="cta-primary-btn">Get Free API Key ($0.20 Credit (+ 50% Bonus))</a>
+    <a href="https://apivel.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-connect-kimi-k3-to-codex-cli" class="cta-secondary-btn">Test Kimi K3 Playground</a>
   </div>
 </div>
 
@@ -286,7 +286,7 @@ app.listen(PORT, () => {
 **A:** Yes. Kimi K3 natively supports OpenAI-compatible function calling schemas. APIVALE’s cloud gateway automatically performs protocol sanitization on `tool_calls` payloads to prevent CLI parser stalls during terminal execution.
 
 **Q: Do I need CC Switch or local proxy tools to connect Kimi K3 to Codex CLI via APIVALE?**  
-**A:** No, CC Switch is not required. Tools like CC Switch or opencodex run local proxy daemons to bridge API format differences. Because APIVALE's cloud gateway (`https://apivale.com/v1`) natively translates OpenAI chat completion protocols to Kimi K3, Codex CLI connects directly via standard environment variables without local proxy tools or daemon processes.
+**A:** No, CC Switch is not required. Tools like CC Switch or opencodex run local proxy daemons to bridge API format differences. Because APIVALE's cloud gateway (`https://apivel.com/v1`) natively translates OpenAI chat completion protocols to Kimi K3, Codex CLI connects directly via standard environment variables without local proxy tools or daemon processes.
 
 **Q: Can I use PayPal to pay for Kimi K3 API tokens on APIVALE?**  
 **A:** Yes. APIVALE supports **PayPal (global PayPal billing / credit cards via PayPal)** as a primary payment method. You do not need a mainland (+86) phone number or identity verification to purchase API credits.
@@ -307,7 +307,7 @@ app.listen(PORT, () => {
       "name": "How do I connect OpenAI Codex CLI to Kimi K3 without modifying CLI source code?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Export OPENAI_API_BASE as https://apivale.com/v1, OPENAI_API_KEY as your APIVALE API key, and CODEX_MODEL as kimi-k3."
+        "text": "Export OPENAI_API_BASE as https://apivel.com/v1, OPENAI_API_KEY as your APIVALE API key, and CODEX_MODEL as kimi-k3."
       }
     },
     {

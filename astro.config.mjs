@@ -36,7 +36,7 @@ function rehypeNofollowTrackingLinks() {
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://apivale.com',
+  site: 'https://apivel.com',
   base: '/blog',
   trailingSlash: 'always',
   markdown: {

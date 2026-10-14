@@ -30,7 +30,7 @@ keyTakeaways:
     <li><strong>OmniRoute Claude Code Setup:</strong> Point your CLI agent to <code>http://localhost:20128/v1</code> via <code>ANTHROPIC_BASE_URL</code> to bypass 5-hour Anthropic rate limits.</li>
     <li><strong>Fixing API Not Work Errors:</strong> Resolve port 20128 conflicts and 429 upstream throttle errors using local loopback binding and automatic cloud failover.</li>
     <li><strong>9Router vs. OmniRoute:</strong> Both local proxies pool free quotas, but OmniRoute features native token pruning (RTK/Caveman), while 9Router focuses on multi-account rotation.</li>
-    <li><strong>Zero-DevOps Cloud Alternative:</strong> Skip background daemon crashes and expired keys by using <a href="https://apivale.com/sign-up?redirect=/blog/omniroute-claude-code-setup/" class="text-emerald-400 hover:underline font-semibold">APIVALE ($0.20 Free Credit)</a> with instant PayPal billing and 99.99% uptime.</li>
+    <li><strong>Zero-DevOps Cloud Alternative:</strong> Skip background daemon crashes and expired keys by using <a href="https://apivel.com/sign-up?redirect=/blog/omniroute-claude-code-setup/" class="text-emerald-400 hover:underline font-semibold">APIVALE ($0.20 Free Credit)</a> with instant PayPal billing and 99.99% uptime.</li>
   </ul>
 </div>
 
@@ -515,10 +515,10 @@ The leading managed cloud alternative is APIVALE (`https://api.apivale.com/v1`),
   </div>
 
   <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-    <a href="https://apivale.com/sign-up?redirect=/blog/omniroute-claude-code-setup/" rel="nofollow" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-gray-950 font-bold text-sm transition-all shadow-lg hover:shadow-emerald-500/25">
+    <a href="https://apivel.com/sign-up?redirect=/blog/omniroute-claude-code-setup/" rel="nofollow" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-gray-950 font-bold text-sm transition-all shadow-lg hover:shadow-emerald-500/25">
       Claim $0.20 Free Credit &amp; Get API Key &rarr;
     </a>
-    <a href="https://apivale.com/pricing?redirect=/blog/omniroute-claude-code-setup/" rel="nofollow" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-gray-800 hover:bg-gray-700 text-white font-semibold text-sm border border-gray-700 transition-all">
+    <a href="https://apivel.com/pricing?redirect=/blog/omniroute-claude-code-setup/" rel="nofollow" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-gray-800 hover:bg-gray-700 text-white font-semibold text-sm border border-gray-700 transition-all">
       View Pricing &amp; Token Rates
     </a>
   </div>

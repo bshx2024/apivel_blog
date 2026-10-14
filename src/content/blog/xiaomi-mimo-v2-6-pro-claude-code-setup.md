@@ -366,8 +366,8 @@ APIVALE natively supports PayPal official instant checkout, major international 
   <div class="cta-card-title text-lg font-bold text-white mb-2">⚡ Connect Xiaomi MiMo-V2.6 Pro to Your CLI & IDE with APIVALE</div>
   <p class="cta-card-text">Supercharge your terminal coding, Cursor, and Windsurf workflows with Xiaomi MiMo-V2.6 Pro via APIVALE. Enjoy 75% lower token costs compared to Claude Sonnet 5, zero rate limits, and seamless PayPal, Credit Card & Alipay billing with zero currency conversion fees. Register to claim your free $0.20 test credit, and enjoy automatic +50% extra compute credits on your first top-up ($5 gets $7.50; $29 Developer Pack gets 40M Tokens at 56% OFF with $43.50 compute balance, never expire)!</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/pricing?utm_source=apivale_blog&utm_medium=blog_bottom_cta&utm_campaign=xiaomi-mimo-v2-6-pro-claude-code-setup" class="cta-primary-btn">Claim 56% OFF Developer Pack ($29) &rarr;</a>
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=xiaomi-mimo-v2-6-pro-claude-code-setup" class="cta-secondary-btn">Get Free API Key ($0.20 Trial)</a>
+    <a href="https://apivel.com/pricing?utm_source=apivale_blog&utm_medium=blog_bottom_cta&utm_campaign=xiaomi-mimo-v2-6-pro-claude-code-setup" class="cta-primary-btn">Claim 56% OFF Developer Pack ($29) &rarr;</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=xiaomi-mimo-v2-6-pro-claude-code-setup" class="cta-secondary-btn">Get Free API Key ($0.20 Trial)</a>
   </div>
 </div>
 

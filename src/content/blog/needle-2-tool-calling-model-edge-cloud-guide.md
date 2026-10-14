@@ -25,7 +25,7 @@ lang: en
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
     <li><strong>14MB Edge Tool-Calling Powerhouse:</strong> Cactus Compute’s open-source <strong>Needle 2 AI model</strong> (45M parameters) executes 100% grammar-constrained JSON tool calls in a 14MB binary requiring just 28MB RAM at 6,000 tok/s prefill.</li>
-    <li><strong>Hybrid Edge-Cloud Architecture (Save 90% Costs):</strong> Filter 90% of routine client tools locally on CPU, and automatically escalate complex coding/reasoning loops to <a href="https://apivale.com/sign-up?redirect=/blog/needle-2-tool-calling-model-edge-cloud-guide/" class="text-emerald-400 hover:underline font-semibold">APIVALE Cloud Gateways (Claim $0.20 Free Credit)</a>.</li>
+    <li><strong>Hybrid Edge-Cloud Architecture (Save 90% Costs):</strong> Filter 90% of routine client tools locally on CPU, and automatically escalate complex coding/reasoning loops to <a href="https://apivel.com/sign-up?redirect=/blog/needle-2-tool-calling-model-edge-cloud-guide/" class="text-emerald-400 hover:underline font-semibold">APIVALE Cloud Gateways (Claim $0.20 Free Credit)</a>.</li>
     <li><strong>Global PayPal Settlement & Zero KYC:</strong> Fund cloud escalation quotas with instant PayPal billing, bypassing credit card declines and domestic phone requirements.</li>
   </ul>
 </div>
@@ -371,7 +371,7 @@ Yes, Needle 2 is fully open-source under the Apache 2.0 license by Cactus Comput
 Needle 2 requires approximately 28MB of RAM for a full operational session. It runs on consumer CPUs without requiring discrete NVIDIA or Apple GPU hardware.
 
 ### How do I purchase APIVALE cloud escalation credits using PayPal?
-APIVALE provides native global PayPal billing with zero KYC identity verification requirements and no international credit card blocks. Sign up at [apivale.com/pricing](https://apivale.com/pricing), select your quota, and check out instantly via PayPal. All new accounts automatically receive **$0.20 free starter credit**.
+APIVALE provides native global PayPal billing with zero KYC identity verification requirements and no international credit card blocks. Sign up at [apivale.com/pricing](https://apivel.com/pricing), select your quota, and check out instantly via PayPal. All new accounts automatically receive **$0.20 free starter credit**.
 
 ### Why pair a 14MB local model with a cloud API gateway?
 Running 100% of tasks in the cloud burns expensive API tokens on trivial device interactions. Conversely, running 100% of tasks locally on a 45M model fails at complex reasoning. The hybrid pattern achieves sub-15ms local latency for simple tools while preserving top-tier coding accuracy via APIVALE’s cloud proxy.

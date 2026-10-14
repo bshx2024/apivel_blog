@@ -165,7 +165,7 @@ Because mods inject substantial state on every turn, modded sessions breach the 
 
 ## 4. Example 3: The Cost-Saver Multi-Model Router Mod
 
-To eliminate token cliff penalties, engineering teams build an intelligent router mod that delegates high-token operations to [APIVALE's flat-rate models](https://apivale.com/pricing).
+To eliminate token cliff penalties, engineering teams build an intelligent router mod that delegates high-token operations to [APIVALE's flat-rate models](https://apivel.com/pricing).
 
 ### Intercepting Extended Tool Calls with APIVALE
 
@@ -379,7 +379,7 @@ Developers can write a router mod using the `beforeToolCall` hook or export `ANT
       "publisher": {
         "@type": "Organization",
         "name": "APIVALE",
-        "url": "https://apivale.com"
+        "url": "https://apivel.com"
       },
       "about": [
         {

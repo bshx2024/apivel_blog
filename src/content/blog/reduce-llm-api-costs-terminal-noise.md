@@ -24,7 +24,7 @@ You can implement basic terminal noise interception by stripping ANSI escape cod
 ```bash
 # Run tests, strip ANSI colors, deduplicate repetitive lines, and send to APIVALE
 npm test 2>&1 | sed -r "s/\x1B\[[0-9;]*[a-zA-Z]//g" | uniq -c | \
-  curl https://apivale.com/v1/chat/completions -H "Authorization: Bearer YOUR_APIVALE_KEY" \
+  curl https://apivel.com/v1/chat/completions -H "Authorization: Bearer YOUR_APIVALE_KEY" \
   -H "Content-Type: application/json" -d '{"model": "deepseek-v4", "messages": [{"role": "user", "content": "Analyze: ..."}]}'
 ```
 
@@ -109,7 +109,7 @@ except FileNotFoundError:
 clean_output = clean_terminal_output(command_output)
 
 client = openai.OpenAI(
-    base_url="https://apivale.com/v1",
+    base_url="https://apivel.com/v1",
     api_key=os.environ.get("APIVALE_API_KEY")
 )
 
@@ -141,7 +141,7 @@ import { exec } from 'child_process';
 import { OpenAI } from 'openai';
 
 const client = new OpenAI({
-  baseURL: 'https://apivale.com/v1',
+  baseURL: 'https://apivel.com/v1',
   apiKey: process.env.APIVALE_API_KEY,
 });
 
@@ -176,8 +176,8 @@ exec('git status --porcelain', (error, stdout, stderr) => {
   <h4 class="cta-card-title">⚡ Route Clean Logs Through APIVALE Gateway</h4>
   <p class="cta-card-text">Stop paying for terminal warnings and ANSI color tokens. Combine CLI filtering tools with APIVALE's edge-routed DeepSeek V4 and Claude 3.5 Sonnet endpoints. Save up to 90% on agent loop operations. Get $1.00 free signup credits.</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=reduce-llm-api-costs-terminal-noise" class="cta-primary-btn">Create Free Account</a>
-    <a href="https://apivale.com/docs?utm_source=apivale_blog&utm_medium=blog&utm_campaign=reduce-llm-api-costs-terminal-noise" class="cta-secondary-btn">Integration Docs</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=reduce-llm-api-costs-terminal-noise" class="cta-primary-btn">Create Free Account</a>
+    <a href="https://apivel.com/docs?utm_source=apivale_blog&utm_medium=blog&utm_campaign=reduce-llm-api-costs-terminal-noise" class="cta-secondary-btn">Integration Docs</a>
   </div>
 </div>
 

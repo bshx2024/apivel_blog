@@ -63,7 +63,7 @@ To generate a native API key for Muse AI directly from Meta:
 
 ### Generating Instant API Keys via APIVALE Gateway ($0.20 Free Trial)
 For engineering teams needing immediate deployment without corporate paperwork or waitlists:
-1. **Instant Account Creation**: Sign up on [APIVALE Gateway](https://apivale.com/sign-up?redirect=/blog/meta-muse-ai-api-setup) via GitHub OAuth or email.
+1. **Instant Account Creation**: Sign up on [APIVALE Gateway](https://apivel.com/sign-up?redirect=/blog/meta-muse-ai-api-setup) via GitHub OAuth or email.
 2. **Generate API Key**: Navigate to your dashboard and create a universal API key (`sk-apivale-...`).
 3. **Collect Free Sandbox Credits**: Every new account receives an instant **$0.20 free developer trial** (no credit card or phone verification required) to test endpoint connectivity.
 4. **Universal Wire Format**: Point any agent framework or MCP client directly to `https://api.apivale.com/v1`.

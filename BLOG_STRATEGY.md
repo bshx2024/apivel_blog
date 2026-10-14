@@ -98,7 +98,7 @@ graph TD
 *   **第一步：搜索引擎检索**
     用户通过 Google 检索关键词 `openrouter alternative` 或 `openrouter alternatives`，您的博客文章 `/blog/openrouter-alternatives` 成功展现在搜索结果前列并获得点击。
 *   **第二步：阅读与点击转化 (CTA)**
-    用户阅读博客对比文章后，点击底部的 Call to Action 链接：`[Create Free Account →](https://apivale.com/sign-up)`。
+    用户阅读博客对比文章后，点击底部的 Call to Action 链接：`[Create Free Account →](https://apivel.com/sign-up)`。
 *   **第三步：注册与激活（VPS 后端日志与数据库证实）**
     用户在 `apivale.com` 控制面板通过 Cloudflare Turnstile 验证，并使用邮箱成功激活注册：
     *   **用户名**：`ziadalaa21`

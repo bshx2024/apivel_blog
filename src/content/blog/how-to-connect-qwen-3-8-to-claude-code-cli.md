@@ -35,7 +35,7 @@ keyTakeaways:
 <div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
   <div class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</div>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
-    <li><strong>80% Cost Reduction:</strong> Running Qwen 3.8 in Claude Code via <a href="https://apivale.com/sign-up?redirect=/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="text-emerald-400 hover:underline font-semibold" rel="nofollow">APIVALE (Claim $0.20 Free Credit)</a> cuts input costs to $0.60/1M tokens.</li>
+    <li><strong>80% Cost Reduction:</strong> Running Qwen 3.8 in Claude Code via <a href="https://apivel.com/sign-up?redirect=/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="text-emerald-400 hover:underline font-semibold" rel="nofollow">APIVALE (Claim $0.20 Free Credit)</a> cuts input costs to $0.60/1M tokens.</li>
     <li><strong>Sub-500ms TTFT:</strong> APIVALE's proxy reduces Time-to-First-Token to ~420ms—50% faster than baseline endpoints.</li>
     <li><strong>Global PayPal Billing:</strong> Bypasses credit card rejections and KYC blocks with native PayPal support.</li>
     <li><strong>First Top-Up Privilege (+50% Bonus):</strong> Automatically get +50% extra compute credits. Top up <strong>$5 &rarr; get $7.50</strong> (&approx; 3M Tokens, Never Expire), or grab the popular <strong>$29 Developer Pack (40M Tokens, 56% OFF)</strong>.</li>
@@ -62,7 +62,7 @@ keyTakeaways:
     Sign up for a free APIVALE account to claim <strong>$0.20 free starter credit</strong>. Your personal API key will automatically fill into setup commands below!
   </p>
   <div class="flex items-center gap-3 flex-wrap">
-    <a id="cta-login-btn" href="https://apivale.com/sign-up?redirect=/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
+    <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Sign Up / Log In to Auto-Fill Your API Key
     </a>
     <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export ANTHROPIC_BASE_URL=\'https://api.apivale.com/v1\'\nexport ANTHROPIC_AUTH_TOKEN=\'your_apivale_api_key\'\nexport ANTHROPIC_MODEL=\'infer/qwen3.8-max\''); alert('Copied setup script!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
@@ -309,7 +309,7 @@ Evaluating the 2.4T MoE architecture against Anthropic flagship models demonstra
           <span>✓ PayPal instant checkout</span>
         </div>
       </div>
-      <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=pricing_pack_grid&utm_campaign=how-to-connect-qwen-3-8-to-claude-code-cli" class="mt-5 block text-center text-xs font-semibold py-2.5 px-4 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 transition-colors">
+      <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=pricing_pack_grid&utm_campaign=how-to-connect-qwen-3-8-to-claude-code-cli" class="mt-5 block text-center text-xs font-semibold py-2.5 px-4 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 transition-colors">
         🎁 Claim $0.20 Free Trial (Zero Card) &rarr;
       </a>
     </div>
@@ -332,7 +332,7 @@ Evaluating the 2.4T MoE architecture against Anthropic flagship models demonstra
           <span>✓ Never Expire</span>
         </div>
       </div>
-      <a href="https://apivale.com/pricing?utm_source=apivale_blog&utm_medium=pricing_pack_grid&utm_campaign=how-to-connect-qwen-3-8-to-claude-code-cli" class="mt-5 block text-center text-xs font-bold py-2.5 px-4 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-black transition-all shadow-lg hover:shadow-amber-500/20">
+      <a href="https://apivel.com/pricing?utm_source=apivale_blog&utm_medium=pricing_pack_grid&utm_campaign=how-to-connect-qwen-3-8-to-claude-code-cli" class="mt-5 block text-center text-xs font-bold py-2.5 px-4 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-black transition-all shadow-lg hover:shadow-amber-500/20">
         Claim 56% OFF Developer Pack ($29) &rarr;
       </a>
     </div>
@@ -576,7 +576,7 @@ Yes. APIVALE provides full Server-Sent Events (SSE) streaming compatibility, ena
   <div class="cta-card-title text-lg font-bold text-white mb-2">⚡ Connect Qwen 3.8 to Your CLI & IDE with APIVALE</div>
   <p class="cta-card-text">Supercharge your terminal coding, Cursor, and Windsurf workflows with Qwen 3.8 via APIVALE. Enjoy 80% lower token costs compared to Claude Sonnet 5, zero rate limits, and seamless PayPal billing. Register to claim your free $0.20 test credit, and enjoy automatic +50% extra credits on your first top-up ($5 gets $7.50; $29 Developer Pack gets 40M Tokens at 56% OFF)!</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/pricing?utm_source=apivale_blog&utm_medium=blog_bottom_cta&utm_campaign=how-to-connect-qwen-3-8-to-claude-code-cli" class="cta-primary-btn">Claim 56% OFF Developer Pack ($29) &rarr;</a>
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-connect-qwen-3-8-to-claude-code-cli" class="cta-secondary-btn">Get Free API Key ($0.20 Trial)</a>
+    <a href="https://apivel.com/pricing?utm_source=apivale_blog&utm_medium=blog_bottom_cta&utm_campaign=how-to-connect-qwen-3-8-to-claude-code-cli" class="cta-primary-btn">Claim 56% OFF Developer Pack ($29) &rarr;</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-connect-qwen-3-8-to-claude-code-cli" class="cta-secondary-btn">Get Free API Key ($0.20 Trial)</a>
   </div>
 </div>

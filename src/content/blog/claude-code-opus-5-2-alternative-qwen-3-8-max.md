@@ -23,7 +23,7 @@ lang: en
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
     <li><strong>The Opus 5.2 Grayscale Reality:</strong> Anthropic is stealth-testing Claude Opus 5.2 exclusively inside Claude Code CLI via silent packet routing, skipping 5.1 to counter OpenAI's GPT-6 Astra.</li>
-    <li><strong>92% Cost Reduction with Alternative Models:</strong> Routing Claude Code to Alibaba's <a href="https://apivale.com/sign-up?redirect=/blog/claude-code-opus-5-2-alternative-qwen-3-8-max/" class="text-emerald-400 hover:underline font-semibold">Qwen 3.8 Max via APIVALE (Claim $0.20 Free Credit)</a> slashes input costs from $15.00/1M to just $0.80/1M while matching frontier SVG and UI code generation.</li>
+    <li><strong>92% Cost Reduction with Alternative Models:</strong> Routing Claude Code to Alibaba's <a href="https://apivel.com/sign-up?redirect=/blog/claude-code-opus-5-2-alternative-qwen-3-8-max/" class="text-emerald-400 hover:underline font-semibold">Qwen 3.8 Max via APIVALE (Claim $0.20 Free Credit)</a> slashes input costs from $15.00/1M to just $0.80/1M while matching frontier SVG and UI code generation.</li>
     <li><strong>Native Waffo Global Billing:</strong> Bypass regional phone verification, strict KYC hurdles, and international card declines with APIVALE's global Waffo checkout.</li>
   </ul>
 </div>
@@ -48,7 +48,7 @@ lang: en
     Sign up for a free APIVALE account to claim <strong>$0.20 free starter credit</strong>. Your personal API key will automatically fill into setup commands below!
   </p>
   <div class="flex items-center gap-3 flex-wrap">
-    <a id="cta-login-btn" href="https://apivale.com/sign-up?redirect=/blog/claude-code-opus-5-2-alternative-qwen-3-8-max/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
+    <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/claude-code-opus-5-2-alternative-qwen-3-8-max/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Sign Up / Log In to Auto-Fill Your API Key
     </a>
     <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export ANTHROPIC_BASE_URL=\'https://api.apivale.com/v1\'\nexport ANTHROPIC_AUTH_TOKEN=\'your_apivale_api_key\'\nexport ANTHROPIC_MODEL=\'infer/qwen3.8-max\''); alert('Copied setup script!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
@@ -409,7 +409,7 @@ Estimate your monthly developer token savings by shifting high-frequency Claude 
   </div>
 
   <div class="mt-6 text-center">
-    <a href="https://apivale.com/sign-up?redirect=/blog/claude-code-opus-5-2-alternative-qwen-3-8-max/" class="inline-flex items-center justify-center px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold rounded-lg shadow-lg transition-all">
+    <a href="https://apivel.com/sign-up?redirect=/blog/claude-code-opus-5-2-alternative-qwen-3-8-max/" class="inline-flex items-center justify-center px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold rounded-lg shadow-lg transition-all">
       🚀 Slashing CLI Token Costs on APIVALE ($0.20 Free Credit)
     </a>
   </div>
@@ -525,4 +525,4 @@ The silent rollout of Claude Opus 5.2 highlights where AI software engineering i
 
 By setting `ANTHROPIC_BASE_URL` to APIVALE, your CLI gains immediate production access to Qwen 3.8 with a 1-million-token context window and 90%+ cost reduction through frictionless Waffo billing.
 
-Ready to optimize your terminal workflows? **[Create your free APIVALE developer account](https://apivale.com/sign-up?redirect=/blog/claude-code-opus-5-2-alternative-qwen-3-8-max/)** today to claim your $0.20 starter test credit and connect Claude Code CLI in under 60 seconds.
+Ready to optimize your terminal workflows? **[Create your free APIVALE developer account](https://apivel.com/sign-up?redirect=/blog/claude-code-opus-5-2-alternative-qwen-3-8-max/)** today to claim your $0.20 starter test credit and connect Claude Code CLI in under 60 seconds.

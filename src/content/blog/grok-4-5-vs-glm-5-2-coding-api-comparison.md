@@ -35,7 +35,7 @@ Configure APIVALE's OpenAI-compatible proxy gateway to route GLM-5.2 and Grok 4.
 Bypass +86 phone verification and Chinese identity checks. Sign up for APIVALE and access GLM-5.2 using the standard OpenAI SDK:
 
 ```bash
-curl https://apivale.com/v1/chat/completions \
+curl https://apivel.com/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_APIVALE_KEY" \
   -d '{"model": "glm-5.2", "messages": [{"role": "user", "content": "Write a python script to parse markdown links."}]}'
@@ -93,7 +93,7 @@ Connecting Cursor IDE to Grok 4.5 or GLM-5.2 via APIVALE allows developers to by
 1. Open Cursor Settings (**`Ctrl + Shift + J`** or **`Cmd + Shift + J`** on macOS).
 2. Navigate to **Models** > **OpenAI API**.
 3. Toggle the OpenAI API switch to **ON**.
-4. Set the Base URL field to: `https://apivale.com/v1` (do not append `/chat/completions`).
+4. Set the Base URL field to: `https://apivel.com/v1` (do not append `/chat/completions`).
 5. Enter your APIVALE API key (`sk-apivale-...`).
 6. Under custom model names, add `glm-5.2` or `infer/grok-4.5` and enable them.
 7. Click Save. Your editor is now connected to a 1M-context coding engine.
@@ -139,7 +139,7 @@ class CodingModelRouter:
     Production-ready router for Grok 4.5 and GLM-5.2 via APIVALE.
     Includes exponential backoff, jitter, timeout handling, and automatic fallback.
     """
-    def __init__(self, api_key: str = None, base_url: str = "https://apivale.com/v1"):
+    def __init__(self, api_key: str = None, base_url: str = "https://apivel.com/v1"):
         self.api_key = api_key or os.getenv("APIVALE_API_KEY")
         if not self.api_key:
             raise ValueError("APIVALE_API_KEY environment variable is required.")
@@ -213,8 +213,8 @@ if __name__ == "__main__":
   <h4 class="cta-card-title">⚡ Call Z.ai GLM-5.2 & Grok 4.5 Globally Today</h4>
   <p class="cta-card-text">Want to test Opus-class coding models without credit card blocks or Chinese phone numbers? Access GLM-5.2 ($0.50/1M) and Grok 4.5 on APIVALE. Pay easily via global PayPal, and get $0.20 free credit (+ 50% bonus on 1st top-up) instantly to start testing.</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=grok-vs-glm" class="cta-primary-btn">Start Coding (Free $0.20 Credit (+ 50% Bonus))</a>
-    <a href="https://apivale.com/docs?utm_source=apivale_blog&utm_medium=blog&utm_campaign=grok-vs-glm" class="cta-secondary-btn">Read Integration Docs</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=grok-vs-glm" class="cta-primary-btn">Start Coding (Free $0.20 Credit (+ 50% Bonus))</a>
+    <a href="https://apivel.com/docs?utm_source=apivale_blog&utm_medium=blog&utm_campaign=grok-vs-glm" class="cta-secondary-btn">Read Integration Docs</a>
   </div>
 </div>
 

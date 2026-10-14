@@ -32,7 +32,7 @@ lang: en
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
     <li><strong>Granular Resolution Cost Arbitrage:</strong> fal.ai H3 Max ($0.08/s at 768p) undercuts Kling 3.0 ($0.168/s) and Seedance 2.5 ($0.20–$0.74/s) for rapid drafting, but caps strictly at 768p and 10 seconds.</li>
     <li><strong>Multi-Tier Pipeline Routing Saves 74%:</strong> Routing draft shots to LTX 2.3 ($0.02/s) or fal.ai H3 Max (768p) and reserving Kling 3.0 / MiniMax H3 for final 4K hero assets slashes monthly studio budgets from $1,680 down to $435.</li>
-    <li><strong>Zero-KYC Waffo & PayPal Global Settlement:</strong> Bypass strict Stripe regional billing blocks, over-aggressive moderation false positives, and domestic +86 SMS walls by orchestrating all endpoints through <a href="https://apivale.com" class="text-emerald-400 hover:underline font-semibold">APIVALE's Unified Video Gateway</a> via Waffo and PayPal global billing.</li>
+    <li><strong>Zero-KYC Waffo & PayPal Global Settlement:</strong> Bypass strict Stripe regional billing blocks, over-aggressive moderation false positives, and domestic +86 SMS walls by orchestrating all endpoints through <a href="https://apivel.com" class="text-emerald-400 hover:underline font-semibold">APIVALE's Unified Video Gateway</a> via Waffo and PayPal global billing.</li>
   </ul>
 </div>
 
@@ -190,7 +190,7 @@ Calculate your monthly infrastructure spend across single-model setups versus an
 
       <div class="mt-4 pt-3 border-t border-gray-800/80">
         <div class="text-xs text-gray-400 mb-2">Estimated Monthly Savings: <span id="val-savings" class="font-bold text-emerald-400">73.0%</span></div>
-        <a href="https://apivale.com/sign-up" class="block text-center w-full py-2.5 px-4 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-gray-950 font-bold text-sm transition-colors shadow-lg shadow-emerald-500/20">
+        <a href="https://apivel.com/sign-up" class="block text-center w-full py-2.5 px-4 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-gray-950 font-bold text-sm transition-colors shadow-lg shadow-emerald-500/20">
           Deploy Video Router on APIVALE ($0.20 Free Credit)
         </a>
       </div>
@@ -291,7 +291,7 @@ from typing import Dict, Any, Optional
 class APIVALEVideoClient:
     """Production client for dispatching asynchronous AI video jobs with exponential backoff."""
     
-    def __init__(self, api_key: Optional[str] = None, base_url: str = "https://apivale.com/v1"):
+    def __init__(self, api_key: Optional[str] = None, base_url: str = "https://apivel.com/v1"):
         self.api_key = api_key or os.getenv("APIVALE_API_KEY")
         if not self.api_key:
             raise ValueError("Missing APIVALE_API_KEY environment variable.")
@@ -504,7 +504,7 @@ Waffo provides localized merchant processing and global PayPal billing across in
     Stop juggling overseas payment declines and platform rate limits. Route fal.ai H3 Max, Seedance 2.5, Kling 3.0, and LTX 2.3 through APIVALE's unified gateway with seamless Waffo global billing.
   </p>
   <div class="mt-6 flex flex-wrap justify-center gap-4">
-    <a href="https://apivale.com/sign-up" class="px-6 py-3 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-gray-950 font-bold text-sm transition-all shadow-lg shadow-emerald-500/30">
+    <a href="https://apivel.com/sign-up" class="px-6 py-3 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-gray-950 font-bold text-sm transition-all shadow-lg shadow-emerald-500/30">
       Claim $0.20 Free Credit & API Key
     </a>
     <a href="/blog/minimax-h3-api-pricing-guide/" class="px-6 py-3 rounded-lg bg-gray-800 hover:bg-gray-700 text-white font-semibold text-sm border border-gray-700 transition-all">

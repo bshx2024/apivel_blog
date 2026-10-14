@@ -68,7 +68,7 @@ This document tracks all researched high-potential keyword clusters, proposed ar
   * Primary: `best practices integrating apis with llm agents langchain llamaindex`
   * Secondary: `best python libraries for calling llm apis 2025 2026`, `llm api integration best practices`
 * **Content Strategy**:
-  * Step-by-step guide for configuring custom `openai_api_base="https://apivale.com/v1"` in LangChain / LlamaIndex / CrewAI.
+  * Step-by-step guide for configuring custom `openai_api_base="https://apivel.com/v1"` in LangChain / LlamaIndex / CrewAI.
   * Error handling, retry logic, and high-concurrency connection pooling.
 
 ---

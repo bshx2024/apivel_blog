@@ -28,7 +28,7 @@ If you face billing blocks, high coding agent token usage (such as in [OpenCode 
 APIVALE provides a unified, OpenAI-compatible endpoint. Switch to this **openrouter alternative** by changing your `baseURL` and `apiKey`:
 
 ```bash
-curl https://apivale.com/v1/chat/completions \
+curl https://apivel.com/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_APIVALE_KEY" \
   -d '{"model": "deepseek-v4-flash", "messages": [{"role": "user", "content": "Hello!"}]}'
@@ -124,7 +124,7 @@ When evaluating the **5 best OpenRouter alternatives in 2026**, comparing cost p
 </div>
 <div class="savings-amount" id="savings-amt-val">$14.35 / mo</div>
 <p class="savings-note">⚡ Fully compatible with OpenRouter SDKs! PayPal & credit card payment supported.</p>
-<a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=openrouter-alternatives-calc" class="calc-cta-btn">Claim Free $0.20 Credit (+ 50% Bonus)</a>
+<a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=openrouter-alternatives-calc" class="calc-cta-btn">Claim Free $0.20 Credit (+ 50% Bonus)</a>
 </div>
 </div>
 </div>
@@ -452,7 +452,7 @@ box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
   <div class="cta-card-title font-bold text-lg text-white">⚡ Switch to APIVALE in 30 Seconds</div>
   <p class="cta-card-text">Facing high latencies or credit card declines on OpenRouter? APIVALE offers low-latency globally distributed nodes, hassle-free global PayPal & credit card billing, and free context caching. Get $0.20 free credit (+ 50% bonus on 1st top-up) instantly to test (no credit card required).</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=openrouter-alternatives" class="cta-primary-btn">Get Free API Key ($0.20 Credit (+ 50% Bonus))</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=openrouter-alternatives" class="cta-primary-btn">Get Free API Key ($0.20 Credit (+ 50% Bonus))</a>
   </div>
 </div>
 
@@ -551,7 +551,7 @@ import openai
 
 # Point OpenAI SDK to APIVALE's OpenRouter alternative endpoint
 client = openai.OpenAI(
-    base_url="https://apivale.com/v1",
+    base_url="https://apivel.com/v1",
     api_key=os.environ.get("APIVALE_API_KEY")
 )
 
@@ -572,7 +572,7 @@ except Exception as e:
 import { OpenAI } from 'openai';
 
 const openai = new OpenAI({
-  baseURL: 'https://apivale.com/v1',
+  baseURL: 'https://apivel.com/v1',
   apiKey: process.env.APIVALE_API_KEY,
 });
 
@@ -597,8 +597,8 @@ runAI();
   <div class="cta-card-title font-bold text-lg text-white">🎁 Try APIVALE — The #1 OpenRouter Alternative</div>
   <p class="cta-card-text">Stop dealing with strict rate limits and Stripe card declines. Get instant, high-concurrency access to Claude Sonnet 5, DeepSeek V4, Qwen 3.7 Max, and Kimi K3 via a single OpenAI-compatible API key. Plus, get $0.20 free credit (+ 50% bonus on 1st top-up) upon registration!</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=openrouter-alternatives" class="cta-primary-btn">Create Free Account</a>
-    <a href="https://apivale.com/docs?utm_source=apivale_blog&utm_medium=blog&utm_campaign=openrouter-alternatives" class="cta-secondary-btn">Read Integration Docs</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=openrouter-alternatives" class="cta-primary-btn">Create Free Account</a>
+    <a href="https://apivel.com/docs?utm_source=apivale_blog&utm_medium=blog&utm_campaign=openrouter-alternatives" class="cta-secondary-btn">Read Integration Docs</a>
   </div>
 </div>
 
@@ -607,7 +607,7 @@ runAI();
 ## Frequently Asked Questions About the 5 Best OpenRouter Alternatives in 2026
 
 **Q: Is APIVALE fully compatible with official OpenAI and Anthropic SDKs?**
-**A:** Yes. APIVALE is a drop-in **openrouter alternative** following standard OpenAI API specifications. Simply change `baseURL` to `https://apivale.com/v1` and replace your API key.
+**A:** Yes. APIVALE is a drop-in **openrouter alternative** following standard OpenAI API specifications. Simply change `baseURL` to `https://apivel.com/v1` and replace your API key.
 
 **Q: How does this OpenRouter alternative resolve Stripe card declines?**
 **A:** APIVALE supports global **PayPal billing**, allowing developers to pay using PayPal, international credit cards, and localized bank accounts without false Stripe fraud locks.
@@ -625,7 +625,7 @@ runAI();
       "name": "Is APIVALE fully compatible with official OpenAI and Anthropic SDKs?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. APIVALE is a drop-in OpenRouter alternative following standard OpenAI API specifications. Simply change baseURL to https://apivale.com/v1 and replace your API key."
+        "text": "Yes. APIVALE is a drop-in OpenRouter alternative following standard OpenAI API specifications. Simply change baseURL to https://apivel.com/v1 and replace your API key."
       }
     },
     {

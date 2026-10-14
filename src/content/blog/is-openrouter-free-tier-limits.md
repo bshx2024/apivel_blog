@@ -29,7 +29,7 @@ keyTakeaways:
     <li><strong>The 50 RPD Quota Gate:</strong> Accounts with under $10 in lifetime purchases are capped at <strong>50 requests per day (RPD)</strong> and <strong>20 requests per minute (RPM)</strong> across all API keys.</li>
     <li><strong>Token Context &amp; Output Caps:</strong> Free models suffer from unadvertised context truncation (often 8K–16K tokens) and 2,048-token generation limits imposed by upstream community hosts.</li>
     <li><strong>Upstream Throttling:</strong> Free AI endpoints rely on third-party crowd-sourced servers that frequently return <code>HTTP 429 Too Many Requests</code> during peak US coding agent hours.</li>
-    <li><strong>Zero-Card Testing Alternative:</strong> Test production-grade models immediately without deposit locks by claiming <a href="https://apivale.com/sign-up?redirect=/blog/is-openrouter-free-tier-limits/" class="text-emerald-400 hover:underline font-semibold">APIVALE's $0.20 Free Starter Credit (100,000 Tokens)</a> with instant PayPal and Alipay zero-FX billing.</li>
+    <li><strong>Zero-Card Testing Alternative:</strong> Test production-grade models immediately without deposit locks by claiming <a href="https://apivel.com/sign-up?redirect=/blog/is-openrouter-free-tier-limits/" class="text-emerald-400 hover:underline font-semibold">APIVALE's $0.20 Free Starter Credit (100,000 Tokens)</a> with instant PayPal and Alipay zero-FX billing.</li>
   </ul>
 </div>
 
@@ -385,10 +385,10 @@ OpenRouter is worth it for casual experimentation, but persistent 429 timeouts, 
   </div>
 
   <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-    <a href="https://apivale.com/sign-up?redirect=/blog/is-openrouter-free-tier-limits/" rel="nofollow" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-gray-950 font-bold text-sm transition-all shadow-lg hover:shadow-emerald-500/25">
+    <a href="https://apivel.com/sign-up?redirect=/blog/is-openrouter-free-tier-limits/" rel="nofollow" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-gray-950 font-bold text-sm transition-all shadow-lg hover:shadow-emerald-500/25">
       Claim $0.20 Free Credit (Instant Activation) &rarr;
     </a>
-    <a href="https://apivale.com/pricing?redirect=/blog/is-openrouter-free-tier-limits/" rel="nofollow" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-gray-800 hover:bg-gray-700 text-white font-semibold text-sm border border-gray-700 transition-all">
+    <a href="https://apivel.com/pricing?redirect=/blog/is-openrouter-free-tier-limits/" rel="nofollow" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-gray-800 hover:bg-gray-700 text-white font-semibold text-sm border border-gray-700 transition-all">
       View Live Pricing &amp; Deposit Tiers
     </a>
   </div>

@@ -113,7 +113,7 @@ Telemetry highlights a core friction point in production pipelines:
 
 ## 3. Comparative Matrix: Haiku 5.5 vs GPT-6 Luna vs Frontier Models
 
-To balance the **Haiku 5.5 vs GPT-6 Luna** trade-offs, engineering teams route extended-context workloads to [APIVALE's unified gateway](https://apivale.com/pricing), accessing flagship models like Alibaba Qwen 3.7 Max (`infer/qwen3.7-max`) and DeepSeek-V4 (`infer/deepseek-v4`).
+To balance the **Haiku 5.5 vs GPT-6 Luna** trade-offs, engineering teams route extended-context workloads to [APIVALE's unified gateway](https://apivel.com/pricing), accessing flagship models like Alibaba Qwen 3.7 Max (`infer/qwen3.7-max`) and DeepSeek-V4 (`infer/deepseek-v4`).
 
 | Benchmark Metric | Claude Haiku 5.5 | GPT-6 Luna | Alibaba Qwen 3.7 Max | DeepSeek-V4 Pro |
 | :--- | :--- | :--- | :--- | :--- |

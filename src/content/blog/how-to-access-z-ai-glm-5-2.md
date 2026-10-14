@@ -22,7 +22,7 @@ In this guide, we show you how to bypass these registration hurdles and access t
 You do not need a +86 phone number or Chinese ID. Simply sign up for a free APIVALE account (see our step-by-step [Z.ai Billing Top-Up & Credit Card Fix Guide](/blog/bypass-zhipu-ai-real-name-verification/)) and call the GLM-5.2 model using our unified endpoint:
 
 ```bash
-curl https://apivale.com/v1/chat/completions \
+curl https://apivel.com/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_APIVALE_KEY" \
   -d '{"model": "glm-5.2", "messages": [{"role": "user", "content": "Explain GLM-5.2 features."}]}'
@@ -94,7 +94,7 @@ from openai import OpenAIError
 
 # Initialise OpenAI client pointing to APIVALE gateway
 client = openai.OpenAI(
-    base_url="https://apivale.com/v1",
+    base_url="https://apivel.com/v1",
     api_key=os.environ.get("APIVALE_API_KEY")
 )
 
@@ -120,7 +120,7 @@ except OpenAIError as e:
 import { OpenAI } from 'openai';
 
 const openai = new OpenAI({
-  baseURL: 'https://apivale.com/v1',
+  baseURL: 'https://apivel.com/v1',
   apiKey: process.env.APIVALE_API_KEY,
 });
 
@@ -146,8 +146,8 @@ translateText();
   <h4 class="cta-card-title">⚡ Call Z.ai GLM-5.2 API Globally</h4>
   <p class="cta-card-text">No +86 phone number or Chinese ID required. Access GLM-5.2 at a massive discount (just $0.50/1M input and $2.50/1M output—saving up to 64% over official rates), GPT-5.5, Claude 4 Sonnet, and DeepSeek V4 via APIVALE. Stripe and cryptocurrency billing fully integrated with low-latency edge routing. Sign up now and get $0.20 starting credits (+ 50% bonus on 1st top-up).</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-access-z-ai-glm-5-2" class="cta-primary-btn">Get Free API Key ($0.20 Credit (+ 50% Bonus))</a>
-    <a href="https://apivale.com/docs?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-access-z-ai-glm-5-2" class="cta-secondary-btn">Integration Sheet</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-access-z-ai-glm-5-2" class="cta-primary-btn">Get Free API Key ($0.20 Credit (+ 50% Bonus))</a>
+    <a href="https://apivel.com/docs?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-access-z-ai-glm-5-2" class="cta-secondary-btn">Integration Sheet</a>
   </div>
 </div>
 

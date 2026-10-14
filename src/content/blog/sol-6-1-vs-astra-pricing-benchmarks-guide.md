@@ -400,10 +400,10 @@ Yes. All frontier Chinese models hosted on APIVALE (including `deepseek-v4-flash
     </div>
   </div>
   <div class="cta-actions">
-    <a href="https://apivale.com/pricing?redirect=/blog/sol-6-1-vs-astra-pricing-benchmarks-guide" class="cta-btn secondary">
+    <a href="https://apivel.com/pricing?redirect=/blog/sol-6-1-vs-astra-pricing-benchmarks-guide" class="cta-btn secondary">
       View Volume Pricing
     </a>
-    <a href="https://apivale.com/sign-up?redirect=/blog/sol-6-1-vs-astra-pricing-benchmarks-guide" class="cta-btn primary">
+    <a href="https://apivel.com/sign-up?redirect=/blog/sol-6-1-vs-astra-pricing-benchmarks-guide" class="cta-btn primary">
       Get Free API Trial ($0.20 Credit)
     </a>
   </div>

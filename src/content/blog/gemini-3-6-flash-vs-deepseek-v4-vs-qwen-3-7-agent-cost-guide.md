@@ -27,7 +27,7 @@ Switch your terminal agents or custom scripts to APIVALE’s high-concurrency ga
 
 ```bash
 # Point your Anthropic or OpenAI compatible SDK to APIVALE
-export ANTHROPIC_BASE_URL="https://apivale.com/v1"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
 export ANTHROPIC_AUTH_TOKEN="your_apivale_api_key"
 export ANTHROPIC_MODEL="infer/qwen3.7-max"
 
@@ -107,7 +107,7 @@ For developers outside supported Google or Anthropic billing regions, accessing 
 
 * **No Regional Verification Blocks**: APIVALE bypasses domestic phone number (+86) verification and strict identity checks. Sign in using GitHub and test models in our online playground within 60 seconds.
 * **Global PayPal Billing**: Avoid credit card declines on US-focused providers. APIVALE fully supports **global PayPal billing** alongside standard credit cards, ensuring your production agent keys never face unexpected downtime.
-* **Protocol Interoperability**: Route both OpenAI and Anthropic SDK payloads through a single API key (`https://apivale.com/v1`).
+* **Protocol Interoperability**: Route both OpenAI and Anthropic SDK payloads through a single API key (`https://apivel.com/v1`).
 
 ---
 
@@ -115,8 +115,8 @@ For developers outside supported Google or Anthropic billing regions, accessing 
   <h4 class="cta-card-title">⚡ Cut Your Agent Token Bills by 90% with APIVALE</h4>
   <p class="cta-card-text">Stop getting hit by steep monthly subscription caps and high per-token rates. Use APIVALE to route your Cursor, Claude Code CLI, and custom agent harnesses to DeepSeek V4, Qwen 3.7-Max, and Claude Sonnet 5. Enjoy seamless global PayPal billing, high concurrency, and $0.20 free starter credit (+ 50% bonus on 1st top-up) upon GitHub registration!</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=gemini-3-6-flash-vs-deepseek-v4-vs-qwen-3-7-agent-cost-guide" class="cta-primary-btn">Claim Free $0.20 Credit (+ 50% Bonus)</a>
-    <a href="https://apivale.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=gemini-3-6-flash-vs-deepseek-v4-vs-qwen-3-7-agent-cost-guide" class="cta-secondary-btn">Test Playground Live</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=gemini-3-6-flash-vs-deepseek-v4-vs-qwen-3-7-agent-cost-guide" class="cta-primary-btn">Claim Free $0.20 Credit (+ 50% Bonus)</a>
+    <a href="https://apivel.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=gemini-3-6-flash-vs-deepseek-v4-vs-qwen-3-7-agent-cost-guide" class="cta-secondary-btn">Test Playground Live</a>
   </div>
 </div>
 
@@ -135,7 +135,7 @@ For developers outside supported Google or Anthropic billing regions, accessing 
 **A:** Yes. Google's pre-training and output formatting in Gemini 3.6 Flash generate more concise response tokens automatically, reducing total output payload size.
 
 **Q: Can I use APIVALE to route requests to Qwen 3.7-Max and DeepSeek V4?**  
-**A:** Yes. APIVALE provides unified OpenAI and Anthropic compatible base URLs (`https://apivale.com/v1`). You can invoke `infer/qwen3.7-max` or `deepseek-v4` using a single API key.
+**A:** Yes. APIVALE provides unified OpenAI and Anthropic compatible base URLs (`https://apivel.com/v1`). You can invoke `infer/qwen3.7-max` or `deepseek-v4` using a single API key.
 
 **Q: What payment methods does APIVALE support for API top-ups?**  
 **A:** APIVALE supports **global PayPal billing** (including international credit/debit cards processed securely via PayPal), avoiding automated Stripe fraud declines that frequently interrupt developer API keys.

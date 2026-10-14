@@ -26,9 +26,9 @@ keyTakeaways:
 <div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
-    <li><strong>What is Capafy AI:</strong> Capafy AI (<code>capafy.ai</code>, frequently searched as <em>capify ai agent skills</em>) is an agent skills marketplace for sandboxed workflows targeting <a href="https://apivale.com/sign-up?redirect=/blog/what-is-capafy-ai-skills-pricing-alternatives/" class="text-emerald-400 hover:underline font-semibold">Claude Code CLI, Codex, and OpenCode</a>.</li>
+    <li><strong>What is Capafy AI:</strong> Capafy AI (<code>capafy.ai</code>, frequently searched as <em>capify ai agent skills</em>) is an agent skills marketplace for sandboxed workflows targeting <a href="https://apivel.com/sign-up?redirect=/blog/what-is-capafy-ai-skills-pricing-alternatives/" class="text-emerald-400 hover:underline font-semibold">Claude Code CLI, Codex, and OpenCode</a>.</li>
     <li><strong>Token Cost Traps:</strong> Running a multi-turn agent skill consumes 50,000 to 100,000 tokens per task across 10–25 ReAct iterations, pushing execution costs to $0.25–$0.50 per run.</li>
-    <li><strong>Open-Source Alternative:</strong> Self-hosting skills with open frameworks and routing through APIVALE's <a href="https://apivale.com/pricing?redirect=/blog/what-is-capafy-ai-skills-pricing-alternatives/" class="text-emerald-400 hover:underline font-semibold">infer/deepseek-v4.1-flash</a> or <code>infer/glm-5.3-flash</code> cuts token expenditure by 92% ($0.015 per run) with zero KYC and PayPal billing.</li>
+    <li><strong>Open-Source Alternative:</strong> Self-hosting skills with open frameworks and routing through APIVALE's <a href="https://apivel.com/pricing?redirect=/blog/what-is-capafy-ai-skills-pricing-alternatives/" class="text-emerald-400 hover:underline font-semibold">infer/deepseek-v4.1-flash</a> or <code>infer/glm-5.3-flash</code> cuts token expenditure by 92% ($0.015 per run) with zero KYC and PayPal billing.</li>
   </ul>
 </div>
 

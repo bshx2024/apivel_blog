@@ -136,7 +136,7 @@ Before diving into setup details, compare how native provider subscriptions, Cod
           </div>
           <div class="savings-amount" id="codex-savings-amt">$64.88 / mo</div>
           <p class="savings-note">⚡ 0 Rate-Limit Downtime. Waffo instant billing with zero regional card blocks.</p>
-          <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=codexbar-calc" class="calc-cta-btn">Claim Free $0.20 Starter Credit (+ 50% Bonus)</a>
+          <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=codexbar-calc" class="calc-cta-btn">Claim Free $0.20 Starter Credit (+ 50% Bonus)</a>
         </div>
       </div>
     </div>
@@ -709,8 +709,8 @@ app.listen(PORT, () => {
   <h4 class="cta-card-title">⚡ Eliminate AI Quota Bottlenecks with APIVALE</h4>
   <p class="cta-card-text">Stop waiting for 5-hour session reset timers. Connect your Claude Code CLI, Cursor, or Windsurf workflows to APIVALE's high-concurrency API gateway. Access flagship models including Claude Sonnet 5, Qwen 3.7 Max (<code>infer/qwen3.7-max</code>), and DeepSeek V4 with 90% prompt caching discounts and global Waffo billing support.</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=codexbar-windows-setup-safety-guide" class="cta-primary-btn">Create Free API Key</a>
-    <a href="https://apivale.com/api/?utm_source=apivale_blog&utm_medium=blog&utm_campaign=codexbar-windows-setup-safety-guide" class="cta-secondary-btn">View Waffo Pricing Plans</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=codexbar-windows-setup-safety-guide" class="cta-primary-btn">Create Free API Key</a>
+    <a href="https://apivel.com/api/?utm_source=apivale_blog&utm_medium=blog&utm_campaign=codexbar-windows-setup-safety-guide" class="cta-secondary-btn">View Waffo Pricing Plans</a>
   </div>
 </div>
 

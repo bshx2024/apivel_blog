@@ -28,7 +28,7 @@ keyTakeaways:
   <div class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</div>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
     <li><strong>1.6T MoE Architecture:</strong> The <strong>LongCat 2.5 API</strong> unlocks Meituan's flagship 1.6-trillion-parameter model, activating ~48B parameters per token with LongCat Sparse Attention (LSA) across a 1,000,000-token window.</li>
-    <li><strong>Zero-KYC Global Deployment:</strong> Bypass domestic +86 mobile verification and corporate identity locks by activating your <a href="https://apivale.com/sign-up?redirect=/blog/longcat-2-5-api-setup-benchmarks" class="text-emerald-400 hover:underline font-semibold">LongCat 2.5 API on APIVALE</a> with PayPal billing.</li>
+    <li><strong>Zero-KYC Global Deployment:</strong> Bypass domestic +86 mobile verification and corporate identity locks by activating your <a href="https://apivel.com/sign-up?redirect=/blog/longcat-2-5-api-setup-benchmarks" class="text-emerald-400 hover:underline font-semibold">LongCat 2.5 API on APIVALE</a> with PayPal billing.</li>
     <li><strong>Dual-Protocol Agent Compatibility:</strong> Integrate LongCat 2.5 requests natively into <strong>Claude Code CLI</strong>, <strong>Cursor IDE</strong>, and <strong>Windsurf</strong> with sub-300ms TTFT.</li>
   </ul>
 </div>
@@ -348,10 +348,10 @@ if __name__ == "__main__":
     Claim your <strong>$0.20 free signup trial</strong> today. Experience 1M-token context coding loops on Claude Code CLI and Cursor with no mainland phone number required. Enjoy a <strong>+50% first deposit bonus</strong> ($5 $\rightarrow$ $7.50, $29 $\rightarrow$ $43.50) or unlock the <strong>$29 Developer Pack</strong> (56% OFF, 40M tokens, never expires).
   </p>
   <div class="cta-actions">
-    <a href="https://apivale.com/pricing?redirect=/blog/longcat-2-5-api-setup-benchmarks" class="cta-btn secondary">
+    <a href="https://apivel.com/pricing?redirect=/blog/longcat-2-5-api-setup-benchmarks" class="cta-btn secondary">
       View Volume Pricing
     </a>
-    <a href="https://apivale.com/sign-up?redirect=/blog/longcat-2-5-api-setup-benchmarks" class="cta-btn primary">
+    <a href="https://apivel.com/sign-up?redirect=/blog/longcat-2-5-api-setup-benchmarks" class="cta-btn primary">
       Get Free API Trial ($0.20 Credit)
     </a>
   </div>

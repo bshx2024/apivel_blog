@@ -14,7 +14,7 @@ lang: "en"
 <div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
-    <li><strong>Unmatched Reasoning & Coding Power:</strong> Connect Anthropic's flagship <strong>Claude Opus 5</strong> model directly to your terminal and IDE workflows via <a href="https://apivale.com/sign-up?redirect=/blog/how-to-connect-claude-opus-5-to-claude-code-cli/" class="text-emerald-400 hover:underline font-semibold">APIVALE (Claim $0.20 Free Credit)</a> with zero credit card lockouts.</li>
+    <li><strong>Unmatched Reasoning & Coding Power:</strong> Connect Anthropic's flagship <strong>Claude Opus 5</strong> model directly to your terminal and IDE workflows via <a href="https://apivel.com/sign-up?redirect=/blog/how-to-connect-claude-opus-5-to-claude-code-cli/" class="text-emerald-400 hover:underline font-semibold">APIVALE (Claim $0.20 Free Credit)</a> with zero credit card lockouts.</li>
     <li><strong>Global PayPal Billing:</strong> Bypass rigid international credit card verification and regional blocks by refueling your API balance instantly with global <strong>PayPal billing</strong>.</li>
     <li><strong>Zero Code Modification:</strong> Route Claude Code CLI, Cursor, and Windsurf to APIVALE's unified protocol proxy using environment variables for seamless Anthropic <code>/v1/messages</code> payload translation.</li>
   </ul>
@@ -33,7 +33,7 @@ lang: "en"
     Sign up for a free APIVALE account (or log in) to claim <strong>$0.20 free starter credit</strong>. Your personal API key will be automatically generated and auto-filled into the terminal commands below!
   </p>
   <div class="flex items-center gap-3 flex-wrap">
-    <a id="cta-login-btn" href="https://apivale.com/sign-up?redirect=/blog/how-to-connect-claude-opus-5-to-claude-code-cli/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
+    <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/how-to-connect-claude-opus-5-to-claude-code-cli/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Sign Up / Log In to Auto-Fill Your API Key
     </a>
     <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export ANTHROPIC_BASE_URL=\'https://api.apivale.com/v1\'\nexport ANTHROPIC_AUTH_TOKEN=\'your_apivale_api_key\'\nexport ANTHROPIC_MODEL=\'claude-opus-5\''); alert('Copied setup script!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
@@ -556,7 +556,7 @@ Yes, APIVALE supports real-time streaming (SSE) output for terminal progress ind
   <h4 class="cta-card-title">⚡ Connect Claude Opus 5 to Your CLI & IDE with APIVALE</h4>
   <p class="cta-card-text">Supercharge your Claude Code CLI, Cursor, and Windsurf workflows with Claude Opus 5 via APIVALE. Enjoy up to 70% lower token costs, zero rate limits, and seamless PayPal billing. Register now to claim $0.20 free starter credit (+ 50% bonus on 1st top-up) and get instant access to Claude Opus 5!</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-connect-claude-opus-5-to-claude-code-cli" class="cta-primary-btn">Get Free API Key ($0.20 Credit (+ 50% Bonus))</a>
-    <a href="https://apivale.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-connect-claude-opus-5-to-claude-code-cli" class="cta-secondary-btn">Test Opus 5 Playground</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-connect-claude-opus-5-to-claude-code-cli" class="cta-primary-btn">Get Free API Key ($0.20 Credit (+ 50% Bonus))</a>
+    <a href="https://apivel.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-connect-claude-opus-5-to-claude-code-cli" class="cta-secondary-btn">Test Opus 5 Playground</a>
   </div>
 </div>

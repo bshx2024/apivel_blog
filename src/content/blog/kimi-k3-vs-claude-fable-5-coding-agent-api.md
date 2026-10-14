@@ -213,7 +213,7 @@ Yes, you can route both GLM 5.2 and Kimi K3 queries under the same API base URL 
   <h4 class="cta-card-title">🎁 Streamline Your Multi-Model API Infrastructure</h4>
   <p class="cta-card-text">Switch between Kimi K3, Claude Fable 5, DeepSeek V4, and GLM 5.2 dynamically without managing multiple billing consoles or phone verifications. Join thousands of global developers on APIVALE today.</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=kimi-vs-fable" class="cta-primary-btn">Create Free Account</a>
-    <a href="https://apivale.com/docs?utm_source=apivale_blog&utm_medium=blog&utm_campaign=kimi-vs-fable" class="cta-secondary-btn">Read Integration Docs</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=kimi-vs-fable" class="cta-primary-btn">Create Free Account</a>
+    <a href="https://apivel.com/docs?utm_source=apivale_blog&utm_medium=blog&utm_campaign=kimi-vs-fable" class="cta-secondary-btn">Read Integration Docs</a>
   </div>
 </div>

@@ -37,7 +37,7 @@ You can instantly switch your Claude Code CLI backend to Qwen 3.7 without modify
 
 ```bash
 # Set environment variables to route Claude Code to Qwen 3.7 via APIVALE
-export ANTHROPIC_BASE_URL="https://apivale.com/v1"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
 export ANTHROPIC_AUTH_TOKEN="your_apivale_api_key"
 export ANTHROPIC_MODEL="infer/qwen3.7-max"
 
@@ -101,7 +101,7 @@ Add the following environment variables to your shell profile (`~/.zshrc` or `~/
 nano ~/.zshrc
 
 # Add APIVALE Qwen 3.7 routing configuration
-export ANTHROPIC_BASE_URL="https://apivale.com/v1"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
 export ANTHROPIC_AUTH_TOKEN="apivale-key-xxxxxxxxxxxxxxxx"
 export ANTHROPIC_MODEL="infer/qwen3.7-max"
 
@@ -118,7 +118,7 @@ For Windows developers using PowerShell:
 
 ```powershell
 # Set environment variables for the current session
-$env:ANTHROPIC_BASE_URL="https://apivale.com/v1"
+$env:ANTHROPIC_BASE_URL="https://apivel.com/v1"
 $env:ANTHROPIC_AUTH_TOKEN="apivale-key-xxxxxxxxxxxxxxxx"
 $env:ANTHROPIC_MODEL="infer/qwen3.7-max"
 
@@ -142,7 +142,7 @@ import axios from 'axios';
 
 const app = express();
 const PORT = 3005;
-const APIVALE_GATEWAY = 'https://apivale.com/v1';
+const APIVALE_GATEWAY = 'https://apivel.com/v1';
 
 app.use(express.json());
 
@@ -200,8 +200,8 @@ For developers looking to extend terminal workflows with in-process TypeScript p
   <h4 class="cta-card-title">⚡ Unleash Qwen 3.7 on Claude Code via APIVALE</h4>
   <p class="cta-card-text">Stop paying exorbitant rates for long-horizon agent tokens. Route your Claude Code CLI, Cursor, and terminal agents to Qwen 3.7-Max through APIVALE's global edge network. Enjoy 80% lower token costs compared to Claude Sonnet 5, zero regional billing barriers, and high-concurrency quotas. Sign up now and claim $0.20 free starter credit (+ 50% bonus on 1st top-up)!</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=qwen-3-7-claude-code-cli-integration-guide" class="cta-primary-btn">Get Free API Key ($0.20 Credit (+ 50% Bonus))</a>
-    <a href="https://apivale.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=qwen-3-7-claude-code-cli-integration-guide" class="cta-secondary-btn">Test in Playground</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=qwen-3-7-claude-code-cli-integration-guide" class="cta-primary-btn">Get Free API Key ($0.20 Credit (+ 50% Bonus))</a>
+    <a href="https://apivel.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=qwen-3-7-claude-code-cli-integration-guide" class="cta-secondary-btn">Test in Playground</a>
   </div>
 </div>
 
@@ -210,7 +210,7 @@ For developers looking to extend terminal workflows with in-process TypeScript p
 ## Developer FAQ
 
 **Q: Does Claude Code CLI natively accept Qwen 3.7 as a backend model?**  
-**A:** Yes. Because Qwen 3.7 supports the Anthropic API protocol and standard tool-calling schema, setting `ANTHROPIC_BASE_URL="https://apivale.com/v1"` and `ANTHROPIC_MODEL="infer/qwen3.7-max"` allows Claude Code CLI to communicate with Qwen 3.7 smoothly without code edits.
+**A:** Yes. Because Qwen 3.7 supports the Anthropic API protocol and standard tool-calling schema, setting `ANTHROPIC_BASE_URL="https://apivel.com/v1"` and `ANTHROPIC_MODEL="infer/qwen3.7-max"` allows Claude Code CLI to communicate with Qwen 3.7 smoothly without code edits.
 
 **Q: Do I need a Chinese phone number (+86) or identity verification to use Qwen 3.7 on APIVALE?**  
 **A:** No. APIVALE bypasses domestic phone binding and real-name verification walls. You can sign in using GitHub, credit cards, or PayPal, and start making API calls immediately.

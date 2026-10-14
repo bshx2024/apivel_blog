@@ -17,7 +17,7 @@ In this guide, you will configure your development environment in under 30 secon
 
 > [!NOTE]
 > **Kimi K3 High-Concurrency Routing Notice**  
-> APIVALE maintains dedicated high-concurrency API pools for Kimi K3 (`kimi-k3`). You can route both Anthropic `/v1/messages` and OpenAI `/v1/chat/completions` API protocols directly via `https://apivale.com/v1` without encountering upstream capacity drops or identity verification barriers.
+> APIVALE maintains dedicated high-concurrency API pools for Kimi K3 (`kimi-k3`). You can route both Anthropic `/v1/messages` and OpenAI `/v1/chat/completions` API protocols directly via `https://apivel.com/v1` without encountering upstream capacity drops or identity verification barriers.
 
 ```mermaid
 graph LR
@@ -33,13 +33,13 @@ graph LR
 
 > [!TIP]
 > **Featured Snippet: How to point Claude Code CLI to Kimi K3 via APIVALE**  
-> To connect Claude Code CLI to Kimi K3 via APIVALE, export `ANTHROPIC_BASE_URL="https://apivale.com/v1"`, `ANTHROPIC_AUTH_TOKEN="your_apivale_key"`, and `ANTHROPIC_MODEL="kimi-k3"`. Claude Code CLI will instantly route all Anthropic API messages to Kimi K3 without modifying CLI source code.
+> To connect Claude Code CLI to Kimi K3 via APIVALE, export `ANTHROPIC_BASE_URL="https://apivel.com/v1"`, `ANTHROPIC_AUTH_TOKEN="your_apivale_key"`, and `ANTHROPIC_MODEL="kimi-k3"`. Claude Code CLI will instantly route all Anthropic API messages to Kimi K3 without modifying CLI source code.
 
 Run the following terminal commands to override Anthropic's default endpoint:
 
 ```bash
 # Point Claude Code CLI to APIVALE's Anthropic-compatible protocol bridge
-export ANTHROPIC_BASE_URL="https://apivale.com/v1"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
 export ANTHROPIC_AUTH_TOKEN="your_apivale_api_key"
 export ANTHROPIC_MODEL="kimi-k3"
 
@@ -66,7 +66,7 @@ Before configuring your environment, here is how Kimi K3 (routed via APIVALE) co
 
 > [!NOTE]
 > **Why Use an API Gateway Instead of Self-Hosting?**  
-> Self-hosting Kimi K3's 2.8T MoE parameters requires multi-node GPU clusters costing over $100,000. Using **APIVALE’s API Gateway** allows you to leverage Kimi K3's full 1M-context intelligence over HTTP via `https://apivale.com/v1` without hardware capital expenditure or rate-limiting bottlenecks.
+> Self-hosting Kimi K3's 2.8T MoE parameters requires multi-node GPU clusters costing over $100,000. Using **APIVALE’s API Gateway** allows you to leverage Kimi K3's full 1M-context intelligence over HTTP via `https://apivel.com/v1` without hardware capital expenditure or rate-limiting bottlenecks.
 
 ---
 
@@ -93,7 +93,7 @@ To permanently set up your environment so that Claude Code CLI automatically use
 nano ~/.zshrc
 
 # Add APIVALE Kimi K3 environment variables
-export ANTHROPIC_BASE_URL="https://apivale.com/v1"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
 export ANTHROPIC_AUTH_TOKEN="apivale-key-xxxxxxxxxxxxxxxx"
 export ANTHROPIC_MODEL="kimi-k3"
 
@@ -110,7 +110,7 @@ For Windows developers using PowerShell:
 
 ```powershell
 # Set environment variables for current session
-$env:ANTHROPIC_BASE_URL="https://apivale.com/v1"
+$env:ANTHROPIC_BASE_URL="https://apivel.com/v1"
 $env:ANTHROPIC_AUTH_TOKEN="apivale-key-xxxxxxxxxxxxxxxx"
 $env:ANTHROPIC_MODEL="kimi-k3"
 
@@ -128,7 +128,7 @@ Cursor IDE allows custom OpenAI-compatible API base URLs. Route Cursor to Kimi K
 2. Enable **OpenAI API Key** and toggle **Override OpenAI Base URL**.
 3. Set the Base URL to:
    ```text
-   https://apivale.com/v1
+   https://apivel.com/v1
    ```
 4. Enter your APIVALE API Key in the key field.
 5. Under **Add Custom Model**, enter `kimi-k3`, enable it, and select it as your primary model for Cursor Agent and Composer!
@@ -145,7 +145,7 @@ import axios from 'axios';
 
 const app = express();
 const PORT = 3009;
-const APIVALE_GATEWAY = 'https://apivale.com/v1';
+const APIVALE_GATEWAY = 'https://apivel.com/v1';
 
 app.use(express.json());
 
@@ -194,8 +194,8 @@ If your autonomous coding agent requires deep monorepo context exceeding standar
   <h4 class="cta-card-title">⚡ Connect Kimi K3 to Your CLI & IDE with APIVALE</h4>
   <p class="cta-card-text">Supercharge your Claude Code CLI, Cursor, and Cline workflows with Moonshot AI's 2.8T Kimi K3 model. Enjoy 80% lower token spend compared to Claude Sonnet 5, zero rate limits, and seamless PayPal billing. Register now and claim $0.20 free starter credit (+ 50% bonus on 1st top-up)!</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-connect-kimi-k3-to-claude-code-cli" class="cta-primary-btn">Get Free API Key ($0.20 Credit (+ 50% Bonus))</a>
-    <a href="https://apivale.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-connect-kimi-k3-to-claude-code-cli" class="cta-secondary-btn">Test Kimi K3 Playground</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-connect-kimi-k3-to-claude-code-cli" class="cta-primary-btn">Get Free API Key ($0.20 Credit (+ 50% Bonus))</a>
+    <a href="https://apivel.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-connect-kimi-k3-to-claude-code-cli" class="cta-secondary-btn">Test Kimi K3 Playground</a>
   </div>
 </div>
 
@@ -204,7 +204,7 @@ If your autonomous coding agent requires deep monorepo context exceeding standar
 ## Developer FAQ
 
 **Q: How do I connect Kimi K3 to Claude Code CLI without editing source code?**  
-**A:** Simply export `ANTHROPIC_BASE_URL="https://apivale.com/v1"`, `ANTHROPIC_AUTH_TOKEN="your_apivale_key"`, and `ANTHROPIC_MODEL="kimi-k3"`. Claude Code CLI will automatically direct its Anthropic Messages API requests to Kimi K3 via APIVALE.
+**A:** Simply export `ANTHROPIC_BASE_URL="https://apivel.com/v1"`, `ANTHROPIC_AUTH_TOKEN="your_apivale_key"`, and `ANTHROPIC_MODEL="kimi-k3"`. Claude Code CLI will automatically direct its Anthropic Messages API requests to Kimi K3 via APIVALE.
 
 **Q: Can I use PayPal to pay for Kimi K3 API tokens on APIVALE?**  
 **A:** Yes. APIVALE supports **PayPal (global PayPal billing / credit cards via PayPal)** as a primary payment method. You do not need a Chinese (+86) phone number or local identity verification to purchase API credits.
@@ -225,7 +225,7 @@ If your autonomous coding agent requires deep monorepo context exceeding standar
       "name": "How do I connect Kimi K3 to Claude Code CLI without editing source code?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Set ANTHROPIC_BASE_URL to https://apivale.com/v1, ANTHROPIC_AUTH_TOKEN to your APIVALE API key, and ANTHROPIC_MODEL to kimi-k3."
+        "text": "Set ANTHROPIC_BASE_URL to https://apivel.com/v1, ANTHROPIC_AUTH_TOKEN to your APIVALE API key, and ANTHROPIC_MODEL to kimi-k3."
       }
     },
     {

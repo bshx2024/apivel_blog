@@ -19,7 +19,7 @@ In this guide, we analyze the exact math of hardware amortization, electricity, 
 Skip the hardware configurations and $+86$ phone verification. Sign up on APIVALE and use our standardized OpenAI-compatible endpoint:
 
 ```bash
-curl https://apivale.com/v1/chat/completions \
+curl https://apivel.com/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_APIVALE_KEY" \
   -d '{"model": "infer/glm-5.2", "messages": [{"role": "user", "content": "Hello GLM-5.2!"}]}'
@@ -130,7 +130,7 @@ from openai import OpenAI
 # Initialize the APIVALE client
 client = OpenAI(
     api_key=os.environ.get("APIVALE_API_KEY", "YOUR_APIVALE_KEY"),
-    base_url="https://apivale.com/v1"
+    base_url="https://apivel.com/v1"
 )
 
 try:
@@ -160,7 +160,7 @@ import OpenAI from "openai";
 
 const openai = new OpenAI({
   apiKey: process.env.APIVALE_API_KEY || "YOUR_APIVALE_KEY",
-  baseURL: "https://apivale.com/v1",
+  baseURL: "https://apivel.com/v1",
 });
 
 async function runInference() {
@@ -242,4 +242,4 @@ Avoid hardware depreciation and complex setup loops. Get instant access to **GLM
 *   **PayPal Integrated**: Top up instantly and buy on-demand as needed using PayPal.
 *   **Zero KYC**: Start building immediately without phone number or identity verifications.
 
-[Create Your Free APIVALE Account →](https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=local-hosting-vs-cloud-api-glm-5-2-deepseek-v4)
+[Create Your Free APIVALE Account →](https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=local-hosting-vs-cloud-api-glm-5-2-deepseek-v4)

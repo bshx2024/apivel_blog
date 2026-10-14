@@ -29,7 +29,7 @@ lang: "en"
     Sign up for a free APIVALE account to claim <strong>$0.20 free credit</strong> and auto-fill your API key below!
   </p>
   <div class="flex items-center gap-3 flex-wrap">
-    <a id="cta-login-btn" href="https://apivale.com/sign-up?redirect=/blog/deepseek-harness-custom-api-key-rate-limit-fix/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg">⚡ Sign Up / Log In</a>
+    <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/deepseek-harness-custom-api-key-rate-limit-fix/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg">⚡ Sign Up / Log In</a>
     <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export DEEPSEEK_API_KEY=\'your_apivale_api_key\'\nexport DEEPSEEK_BASE_URL=\'https://api.apivale.com/v1\''); alert('Copied setup script!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg">📋 Copy Commands</button>
   </div>
 </div>
@@ -359,7 +359,7 @@ Yes. APIVALE fully supports global PayPal billing (including international credi
   <div class="cta-card-title">⚡ Power DeepSeek Harness with High-Concurrency APIVALE Proxies</div>
   <p class="cta-card-text">Bypass 429 rate limits, eliminate server overload crashes, and run DeepSeek Harness with DeepSeek V4, Claude Sonnet 5, and Qwen 3.7 Max. Register on APIVALE to claim your $0.20 free starter credit and enjoy instant PayPal billing!</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=deepseek-harness-custom-api-key-rate-limit-fix" class="cta-primary-btn">Get Free API Key ($0.20 Credit (+ 50% Bonus))</a>
-    <a href="https://apivale.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=deepseek-harness-custom-api-key-rate-limit-fix" class="cta-secondary-btn">Test DeepSeek V4 Playground</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=deepseek-harness-custom-api-key-rate-limit-fix" class="cta-primary-btn">Get Free API Key ($0.20 Credit (+ 50% Bonus))</a>
+    <a href="https://apivel.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=deepseek-harness-custom-api-key-rate-limit-fix" class="cta-secondary-btn">Test DeepSeek V4 Playground</a>
   </div>
 </div>

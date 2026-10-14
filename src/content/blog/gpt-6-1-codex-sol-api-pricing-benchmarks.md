@@ -35,7 +35,7 @@ keyTakeaways:
     <li><strong>Token Pricing Structure:</strong> Uncached input costs $2.00/1M, prompt caching drops to $0.10/1M, and reasoning output costs $10.00/1M tokens.</li>
     <li><strong>The 20 TPS Speed Barrier:</strong> Despite achieving 88.4% on SWE-bench Verified, generation runs at 20.4 tokens/second, creating latency bottlenecks in CLI loops.</li>
     <li><strong>Dual-Engine Routing Fix:</strong> Pair the reasoning model with DeepSeek V4 (437 TPS, $0.28/1M output) on APIVALE to cut agent token costs by 84%.</li>
-    <li><strong>Instant Global Access:</strong> Provision OpenAI-compatible endpoints on <a href="https://apivale.com/sign-up?redirect=/blog/gpt-6-1-codex-sol-api-pricing-benchmarks" class="text-emerald-400 hover:underline font-semibold">APIVALE ($0.20 Free Trial)</a> with official PayPal and Alipay checkout.</li>
+    <li><strong>Instant Global Access:</strong> Provision OpenAI-compatible endpoints on <a href="https://apivel.com/sign-up?redirect=/blog/gpt-6-1-codex-sol-api-pricing-benchmarks" class="text-emerald-400 hover:underline font-semibold">APIVALE ($0.20 Free Trial)</a> with official PayPal and Alipay checkout.</li>
   </ul>
 </div>
 
@@ -288,7 +288,7 @@ Use this micro-tool to calculate token expenditure and generate verified setup c
     <div class="text-xs text-gray-400">
       ⚡ Test with <span class="text-emerald-400 font-semibold">$0.20 free balance</span>. Instant activation via PayPal & Alipay.
     </div>
-    <a href="https://apivale.com/sign-up?redirect=/blog/gpt-6-1-codex-sol-api-pricing-benchmarks" class="text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-lg transition-all shadow-md">
+    <a href="https://apivel.com/sign-up?redirect=/blog/gpt-6-1-codex-sol-api-pricing-benchmarks" class="text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-lg transition-all shadow-md">
       Create Free API Key ↗
     </a>
   </div>
@@ -437,10 +437,10 @@ Yes. Sol 6.1 lowers uncached input token costs from $3.50/1M tokens down to $2.0
     </div>
   </div>
   <div class="cta-actions">
-    <a href="https://apivale.com/pricing?redirect=/blog/gpt-6-1-codex-sol-api-pricing-benchmarks" class="cta-btn secondary">
+    <a href="https://apivel.com/pricing?redirect=/blog/gpt-6-1-codex-sol-api-pricing-benchmarks" class="cta-btn secondary">
       View Volume Pricing
     </a>
-    <a href="https://apivale.com/sign-up?redirect=/blog/gpt-6-1-codex-sol-api-pricing-benchmarks" class="cta-btn primary">
+    <a href="https://apivel.com/sign-up?redirect=/blog/gpt-6-1-codex-sol-api-pricing-benchmarks" class="cta-btn primary">
       Get Free API Trial ($0.20 Credit)
     </a>
   </div>

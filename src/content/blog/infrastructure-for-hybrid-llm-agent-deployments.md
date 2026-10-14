@@ -33,7 +33,7 @@ curl http://localhost:8080/v1/chat/completions \
   -d '{"model": "minicpm-1b", "messages": [{"role": "user", "content": "Clean this text."}]}'
 
 # Query APIVALE's cloud reasoning models (e.g., DeepSeek-R1 / Claude 3.5 Sonnet)
-curl https://apivale.com/v1/chat/completions \
+curl https://apivel.com/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_APIVALE_KEY" \
   -d '{"model": "deepseek-r1", "messages": [{"role": "user", "content": "Optimize this database query."}]}'
@@ -140,7 +140,7 @@ Evaluate the economic feasibility of establishing a hybrid agent infrastructure.
 </div>
 <div class="savings-amount" id="savings-amt-val">$288.00 / mo</div>
 <p class="savings-note">⚡ Fully compatible with Ollama/llama.cpp SDK configurations. PayPal & crypto billing supported.</p>
-<a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=hybrid-llm-calc" class="calc-cta-btn">Claim Free $0.20 Credit (+ 50% Bonus)</a>
+<a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=hybrid-llm-calc" class="calc-cta-btn">Claim Free $0.20 Credit (+ 50% Bonus)</a>
 </div>
 </div>
 </div>
@@ -498,7 +498,7 @@ local_client = OpenAI(
 
 # APIVALE client handles cloud fallback
 apivale_client = OpenAI(
-    base_url="https://apivale.com/v1",
+    base_url="https://apivel.com/v1",
     api_key=os.environ.get("APIVALE_API_KEY", "YOUR_APIVALE_KEY")
 )
 
@@ -579,8 +579,8 @@ APIVALE bypasses these barriers entirely:
   <h4 class="cta-card-title">🎁 Try APIVALE with $0.20 free credit (+ 50% bonus on 1st top-up)s</h4>
   <p class="cta-card-text">Set up your hybrid LLM agent workflows without billing or registration hurdles. Get instant access to GPT-5.5, Claude 4 Sonnet, DeepSeek V4, and GLM-5.2 via a single OpenAI-compatible API key. Register with your Google/GitHub account and claim your free $1.00 starting balance today.</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=infrastructure-for-hybrid-llm-agent-deployments" class="cta-primary-btn">Create Free Account</a>
-    <a href="https://apivale.com/docs?utm_source=apivale_blog&utm_medium=blog&utm_campaign=infrastructure-for-hybrid-llm-agent-deployments" class="cta-secondary-btn">Read Integration Docs</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=infrastructure-for-hybrid-llm-agent-deployments" class="cta-primary-btn">Create Free Account</a>
+    <a href="https://apivel.com/docs?utm_source=apivale_blog&utm_medium=blog&utm_campaign=infrastructure-for-hybrid-llm-agent-deployments" class="cta-secondary-btn">Read Integration Docs</a>
   </div>
 </div>
 
@@ -595,7 +595,7 @@ APIVALE bypasses these barriers entirely:
 **A:** Yes. When running MiniCPM5-1B via Ollama or llama.cpp, you can pass structured JSON grammar or system prompt rules to force the model to output valid JSON. This is ideal for extracting and formatting variables before sending data to the cloud.
 
 **Q: How do I change the model from MiniCPM to APIVALE in Cursor?**  
-**A:** In Cursor settings, disable the default models, add `https://apivale.com/v1` as your custom endpoint, and input your APIVALE key. You can then select any model (like Claude 3.5 Sonnet or DeepSeek) to use inside your editor workspace.
+**A:** In Cursor settings, disable the default models, add `https://apivel.com/v1` as your custom endpoint, and input your APIVALE key. You can then select any model (like Claude 3.5 Sonnet or DeepSeek) to use inside your editor workspace.
 
 **Q: Is there any latency overhead when using a hybrid router?**  
 **A:** Running the classification step locally takes less than 25-50ms because MiniCPM5-1B runs directly in memory. This small overhead is offset by the massive token and cost savings achieved by not sending every request to the cloud.
@@ -626,7 +626,7 @@ APIVALE bypasses these barriers entirely:
       "name": "How do I change the model from MiniCPM to APIVALE in Cursor?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "In Cursor settings, disable the default models, add https://apivale.com/v1 as your custom endpoint, and input your APIVALE key. You can then select any model (like Claude 3.5 Sonnet or DeepSeek) to use inside your editor workspace."
+        "text": "In Cursor settings, disable the default models, add https://apivel.com/v1 as your custom endpoint, and input your APIVALE key. You can then select any model (like Claude 3.5 Sonnet or DeepSeek) to use inside your editor workspace."
       }
     },
     {

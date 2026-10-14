@@ -51,7 +51,7 @@ Configure APIVALE's OpenAI-compatible proxy gateway to route MiniMax H3 (Hailuo 
 Bypass regional verification blocks and start generating 2K multimodal video with synchronized audio using standard cURL requests:
 
 ```bash
-curl https://apivale.com/v1/chat/completions \
+curl https://apivel.com/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_APIVALE_KEY" \
   -d '{
@@ -195,7 +195,7 @@ class MiniMaxH3Client:
     Production-ready client for MiniMax H3 (Hailuo 3.0) API via APIVALE Gateway.
     Includes exponential backoff retry logic, status verification, and error handling.
     """
-    def __init__(self, api_key: str = None, base_url: str = "https://apivale.com/v1"):
+    def __init__(self, api_key: str = None, base_url: str = "https://apivel.com/v1"):
         self.api_key = api_key or os.getenv("APIVALE_API_KEY")
         if not self.api_key:
             raise ValueError("APIVALE_API_KEY is required to initialize client.")
@@ -273,8 +273,8 @@ if __name__ == "__main__":
   <h4 class="cta-card-title">⚡ Call MiniMax H3 (Hailuo 3.0) API Globally Today</h4>
   <p class="cta-card-text">Want to test MiniMax H3 native 2K video and audio generation without credit card blocks? Access MiniMax H3 on APIVALE for ~$0.13/sec. Pay easily via global PayPal, and get $0.20 free credit (+ 50% bonus on 1st top-up) instantly to start building.</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=minimax-h3-api-pricing-guide" class="cta-primary-btn">Start Building (Free $0.20 Credit (+ 50% Bonus))</a>
-    <a href="https://apivale.com/docs?utm_source=apivale_blog&utm_medium=blog&utm_campaign=minimax-h3-api-pricing-guide" class="cta-secondary-btn">Read API Documentation</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=minimax-h3-api-pricing-guide" class="cta-primary-btn">Start Building (Free $0.20 Credit (+ 50% Bonus))</a>
+    <a href="https://apivel.com/docs?utm_source=apivale_blog&utm_medium=blog&utm_campaign=minimax-h3-api-pricing-guide" class="cta-secondary-btn">Read API Documentation</a>
   </div>
 </div>
 

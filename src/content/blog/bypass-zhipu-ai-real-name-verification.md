@@ -17,7 +17,7 @@ keyTakeaways:
     value: "glm-5.2 / glm-5.3-flash"
     isCode: true
   - label: "Integration Base URL"
-    value: "https://apivale.com/v1"
+    value: "https://apivel.com/v1"
     isCode: true
   - label: "Billing & Free Trial"
     value: "PayPal & Global Cards ($0.20 Trial)"
@@ -28,7 +28,7 @@ keyTakeaways:
   <div class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways: Z.ai Billing & Top-Up Solutions</div>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
     <li><strong>Fix Z.ai Billing Declines:</strong> International credit cards (Visa, MasterCard, Amex) fail on Zhipu and Z.ai due to mainland cross-border merchant settlement limits.</li>
-    <li><strong>PayPal Instant Checkout:</strong> Fund GLM-5.2, GLM-5.3 Flash, and DeepSeek workloads via <a href="https://apivale.com/sign-up?redirect=/blog/bypass-zhipu-ai-real-name-verification/" class="text-emerald-400 hover:underline font-semibold">APIVALE ($0.20 Free Trial)</a> using PayPal and global debit/credit cards with zero foreign exchange (FX) surcharges.</li>
+    <li><strong>PayPal Instant Checkout:</strong> Fund GLM-5.2, GLM-5.3 Flash, and DeepSeek workloads via <a href="https://apivel.com/sign-up?redirect=/blog/bypass-zhipu-ai-real-name-verification/" class="text-emerald-400 hover:underline font-semibold">APIVALE ($0.20 Free Trial)</a> using PayPal and global debit/credit cards with zero foreign exchange (FX) surcharges.</li>
     <li><strong>Zero KYC & No Mainland Phone:</strong> Bypass mandatory Chinese (+86) SMS verification and domestic national ID (KYC) requirements entirely.</li>
     <li><strong>Wholesale Token Economics:</strong> Access flagship GLM models at wholesale rates ($0.50/1M input, $2.50/1M output)—saving up to 64% over official retail pricing.</li>
   </ul>
@@ -42,16 +42,16 @@ If you are an international developer asking **"how to pay for Z.ai"** or strugg
 
 If your international credit card was declined on Z.ai or you received the console error *"Insufficient balance or no resource package please top up"*, follow this 3-step fast-track:
 
-1. **Create Free Account**: Register at [APIVALE](https://apivale.com/sign-up?redirect=/blog/bypass-zhipu-ai-real-name-verification/) using your standard Google or GitHub account to claim your **$0.20 free signup trial** (no credit card or +86 phone required).
+1. **Create Free Account**: Register at [APIVALE](https://apivel.com/sign-up?redirect=/blog/bypass-zhipu-ai-real-name-verification/) using your standard Google or GitHub account to claim your **$0.20 free signup trial** (no credit card or +86 phone required).
 2. **Top Up via PayPal or Cards**: Navigate to Billing and fund your account using **PayPal Instant Checkout** or any global Visa, MasterCard, or Amex card with zero FX surcharges.
-3. **Connect Your Client**: Point your SDK, CLI, or IDE (Claude Code, Cursor, Windsurf) to `https://apivale.com/v1` with your APIVALE bearer key.
+3. **Connect Your Client**: Point your SDK, CLI, or IDE (Claude Code, Cursor, Windsurf) to `https://apivel.com/v1` with your APIVALE bearer key.
 
 ### Instant cURL Verification
 
 Verify your connection and bypass Zhipu identity verification in under 5 seconds:
 
 ```bash
-curl https://apivale.com/v1/chat/completions \
+curl https://apivel.com/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_APIVALE_KEY" \
   -d '{"model": "glm-5.2", "messages": [{"role": "user", "content": "Write a quicksort helper in Rust."}]}'
@@ -133,7 +133,7 @@ Developers configuring custom model keys in AI code editors frequently discover 
           </div>
           <div class="savings-amount" id="zhipu-savings-amt">$16.60 / mo</div>
           <p class="savings-note">⚡ No Chinese +86 SIM, No Identity ID Card. Instant PayPal Checkout.</p>
-          <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=zhipu-kyc-calc" class="calc-cta-btn">Claim Free $0.20 Starter Credit (+ 50% Bonus)</a>
+          <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=zhipu-kyc-calc" class="calc-cta-btn">Claim Free $0.20 Starter Credit (+ 50% Bonus)</a>
         </div>
       </div>
     </div>
@@ -454,7 +454,7 @@ This standard Z.ai error occurs when your account balance falls below the requir
 
 ### 2. Error: "Verification steps required (401 Unauthorized / KYC Required)"
 
-What are the verification steps on Z.ai? The official console requires uploading domestic ID cards and linking a mainland (+86) phone number. Bypassing GLM verification is achieved by pointing your client's `base_url` to `https://apivale.com/v1` and using an APIVALE bearer token (`zhipu_api_key` proxy).
+What are the verification steps on Z.ai? The official console requires uploading domestic ID cards and linking a mainland (+86) phone number. Bypassing GLM verification is achieved by pointing your client's `base_url` to `https://apivel.com/v1` and using an APIVALE bearer token (`zhipu_api_key` proxy).
 
 ---
 
@@ -471,7 +471,7 @@ from openai import OpenAIError
 
 # Set client to APIVALE global proxy
 client = openai.OpenAI(
-    base_url="https://apivale.com/v1",
+    base_url="https://apivel.com/v1",
     api_key=os.environ.get("APIVALE_API_KEY")
 )
 
@@ -501,7 +501,7 @@ if __name__ == "__main__":
 import { OpenAI } from 'openai';
 
 const client = new OpenAI({
-  baseURL: 'https://apivale.com/v1',
+  baseURL: 'https://apivel.com/v1',
   apiKey: process.env.APIVALE_API_KEY,
 });
 
@@ -539,8 +539,8 @@ main();
   <div class="cta-card-title">🛡️ Call Zhipu GLM & Z.ai Models with Zero-KYC PayPal Billing</div>
   <p class="cta-card-text">Ditch +86 phone verifications, Chinese ID cards, and declined credit cards. Fund GLM-5.2 (at just $0.50/1M input and $2.50/1M output—saving up to 64% over official rates), GLM-5.3 Flash, Claude Sonnet 5, and DeepSeek V4 via APIVALE. Pay instantly with PayPal and global cards. Claim your $0.20 free signup trial (+ 50% first-deposit bonus: $5 → $7.50, $29 → $43.50).</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?redirect=/blog/bypass-zhipu-ai-real-name-verification/" class="cta-primary-btn">Claim Free $0.20 Trial</a>
-    <a href="https://apivale.com/pricing?redirect=/blog/bypass-zhipu-ai-real-name-verification/" class="cta-secondary-btn">View Token Pricing ($29 Pack)</a>
+    <a href="https://apivel.com/sign-up?redirect=/blog/bypass-zhipu-ai-real-name-verification/" class="cta-primary-btn">Claim Free $0.20 Trial</a>
+    <a href="https://apivel.com/pricing?redirect=/blog/bypass-zhipu-ai-real-name-verification/" class="cta-secondary-btn">View Token Pricing ($29 Pack)</a>
   </div>
 </div>
 
@@ -550,7 +550,7 @@ main();
 **A:** Zhipu and Z.ai developer portals process payments primarily through mainland Chinese financial settlement networks (Alipay, WeChat Pay, UnionPay). Foreign credit cards (Visa, MasterCard, Amex) are rejected by merchant fraud filters or cross-border payment limits. Using APIVALE allows you to pay instantly via PayPal or international cards with 0 extra foreign exchange (FX) fees.
 
 **Q: How do I fix the Z.ai error "Insufficient balance or no resource package please top up"?**  
-**A:** This error occurs when your Z.ai or GLM resource pack runs out or balance reaches zero. Because international cards cannot directly recharge mainland accounts, developers can route their calls through APIVALE's unified gateway (`https://apivale.com/v1`) using a pre-funded balance via PayPal.
+**A:** This error occurs when your Z.ai or GLM resource pack runs out or balance reaches zero. Because international cards cannot directly recharge mainland accounts, developers can route their calls through APIVALE's unified gateway (`https://apivel.com/v1`) using a pre-funded balance via PayPal.
 
 **Q: What are the verification steps required on Z.ai and how do I bypass them?**  
 **A:** Official Z.ai verification steps require linking a mainland Chinese (+86) mobile phone number via SMS code and completing biometric identity verification or submitting a mainland business license. You can bypass GLM verification by creating a free APIVALE account with your email, claiming $0.20 instant credit, and using an OpenAI-compatible proxy key.

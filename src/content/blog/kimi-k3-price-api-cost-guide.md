@@ -15,8 +15,8 @@ lang: "en"
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
     <li><strong>Frontier-Grade Coding at 1/10th the Cost:</strong> Moonshot AI's flagship 2.8-trillion parameter <strong>Kimi K3</strong> delivers a 93.4% SWE-bench Verified score and a 1M token context window at an official base input rate of <strong>$3.00 / 1M tokens</strong> (slashed to <strong>$0.30 / 1M</strong> on cache hits)—offering near-Claude Opus 5 intelligence at a fraction of the token spend.</li>
-    <li><strong>Zero-KYC Global PayPal Billing:</strong> Bypass regional identity verification (KYC), +86 phone mandates, and domestic Chinese credit card checks by refueling your API balance instantly via <a href="https://apivale.com/sign-up?redirect=/blog/kimi-k3-price-api-cost-guide/" class="text-emerald-400 hover:underline font-semibold">APIVALE's PayPal Global Billing</a>.</li>
-    <li><strong>OpenAI Native Protocol Abstraction:</strong> Direct your Cursor IDE, Claude Code CLI, and LangChain agents to APIVALE's unified endpoint (<code>https://apivale.com/v1</code>) for automatic 429 rate limit failover and smooth token stream delivery.</li>
+    <li><strong>Zero-KYC Global PayPal Billing:</strong> Bypass regional identity verification (KYC), +86 phone mandates, and domestic Chinese credit card checks by refueling your API balance instantly via <a href="https://apivel.com/sign-up?redirect=/blog/kimi-k3-price-api-cost-guide/" class="text-emerald-400 hover:underline font-semibold">APIVALE's PayPal Global Billing</a>.</li>
+    <li><strong>OpenAI Native Protocol Abstraction:</strong> Direct your Cursor IDE, Claude Code CLI, and LangChain agents to APIVALE's unified endpoint (<code>https://apivel.com/v1</code>) for automatic 429 rate limit failover and smooth token stream delivery.</li>
   </ul>
 </div>
 
@@ -33,10 +33,10 @@ lang: "en"
     Sign up for a free APIVALE account (or log in) to claim <strong>$0.20 free starter credit</strong>. Your personal API key will be automatically generated and auto-filled into the cURL and code snippets below!
   </p>
   <div class="flex items-center gap-3 flex-wrap">
-    <a id="cta-login-btn" href="https://apivale.com/sign-up?redirect=/blog/kimi-k3-price-api-cost-guide/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
+    <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/kimi-k3-price-api-cost-guide/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Sign Up / Log In to Auto-Fill Your API Key
     </a>
-    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export OPENAI_BASE_URL=\'https://apivale.com/v1\'\nexport OPENAI_API_KEY=\'your_apivale_api_key\'\nexport MODEL=\'kimi-k3\''); alert('Copied setup script!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
+    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export OPENAI_BASE_URL=\'https://apivel.com/v1\'\nexport OPENAI_API_KEY=\'your_apivale_api_key\'\nexport MODEL=\'kimi-k3\''); alert('Copied setup script!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
       📋 Copy Setup Commands
     </button>
   </div>
@@ -68,11 +68,11 @@ graph LR
 
 ### Quick Start: Execute Kimi K3 API Call in 30 Seconds
 
-To test Kimi K3 via APIVALE's OpenAI-compatible endpoint, pass your API key to `https://apivale.com/v1/chat/completions`. Native OpenAI SDK clients and cURL commands execute seamlessly without requiring custom client libraries:
+To test Kimi K3 via APIVALE's OpenAI-compatible endpoint, pass your API key to `https://apivel.com/v1/chat/completions`. Native OpenAI SDK clients and cURL commands execute seamlessly without requiring custom client libraries:
 
 ```bash
 # Execute a test request to Kimi K3 via APIVALE's OpenAI-compatible endpoint
-curl https://apivale.com/v1/chat/completions \
+curl https://apivel.com/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer your_apivale_api_key" \
   -d '{
@@ -167,7 +167,7 @@ APIVALE provides native protocol translation, allowing Kimi K3 to accept standar
 
 ### 4.1 Production-Grade Python SDK Integration with Exponential Backoff
 
-Below is a complete 15+ line production implementation using the official `openai` Python SDK routed through APIVALE (`https://apivale.com/v1`). It includes robust `try-except` handling, status code checks, and exponential backoff retry logic to gracefully manage network hiccups:
+Below is a complete 15+ line production implementation using the official `openai` Python SDK routed through APIVALE (`https://apivel.com/v1`). It includes robust `try-except` handling, status code checks, and exponential backoff retry logic to gracefully manage network hiccups:
 
 ```python
 import os
@@ -180,7 +180,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(
 
 # Initialize OpenAI client with APIVALE endpoint
 client = OpenAI(
-    base_url="https://apivale.com/v1",
+    base_url="https://apivel.com/v1",
     api_key=os.getenv("APIVALE_API_KEY", "your_apivale_api_key")
 )
 
@@ -298,7 +298,7 @@ Prompt caching reduces Kimi K3 input costs by storing reusable context (such as 
   <h4 class="cta-card-title">🚀 Connect Kimi K3 to Your AI Coding Agents via APIVALE</h4>
   <p class="cta-card-text">Supercharge Cursor IDE, Claude Code CLI, and custom Python pipelines with Moonshot AI's flagship Kimi K3 model. Enjoy zero-KYC global PayPal billing, native OpenAI protocol compatibility, and up to 90% prompt cache savings. Register now to claim $0.20 free starter credit (+ 50% bonus on 1st top-up)!</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=kimi-k3-price-api-cost-guide" class="cta-primary-btn">Get Free Kimi K3 API Key ($0.20 Starter Credit)</a>
-    <a href="https://apivale.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=kimi-k3-price-api-cost-guide" class="cta-secondary-btn">Test Kimi K3 in Playground</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=kimi-k3-price-api-cost-guide" class="cta-primary-btn">Get Free Kimi K3 API Key ($0.20 Starter Credit)</a>
+    <a href="https://apivel.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=kimi-k3-price-api-cost-guide" class="cta-secondary-btn">Test Kimi K3 in Playground</a>
   </div>
 </div>

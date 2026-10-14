@@ -213,8 +213,8 @@ Modify the environment variables inside your desktop config or route via a custo
   <h4 class="cta-card-title">⚡ Run Database Agents Safely and Affordably</h4>
   <p class="cta-card-text">Stop overpaying for massive schema context windows and hitting strict rate limits on Claude Desktop or Claude Code. With APIVALE, get low-latency routing, automatic 90% discounts on prompt caching hits, and a unified dashboard supporting PayPal, global cards, and cryptocurrency payments. Create your account today and get $0.20 free test credits (+ 50% bonus on 1st top-up) immediately!</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=claude-mcp-postgresql" class="cta-primary-btn">Sign Up (Free $0.20 Credit (+ 50% Bonus))</a>
-    <a href="https://apivale.com/docs?utm_source=apivale_blog&utm_medium=blog&utm_campaign=claude-mcp-postgresql" class="cta-secondary-btn">Read Integration Docs</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=claude-mcp-postgresql" class="cta-primary-btn">Sign Up (Free $0.20 Credit (+ 50% Bonus))</a>
+    <a href="https://apivel.com/docs?utm_source=apivale_blog&utm_medium=blog&utm_campaign=claude-mcp-postgresql" class="cta-secondary-btn">Read Integration Docs</a>
   </div>
 </div>
 

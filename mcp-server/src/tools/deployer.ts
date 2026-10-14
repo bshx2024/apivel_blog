@@ -232,7 +232,7 @@ export async function handlePostPublishMonitor(
     indexedStatus: "Monitored via Sitemap & GSC Queue",
     recalculationWindow: "Day 7~9 (Proven Google Index Recalculation & Ranking Promotion Window)",
     provenMilestones: [
-      `Day 1: URL https://apivale.com/blog/${slug} exposed in sitemap and indexed by Googlebot.`,
+      `Day 1: URL https://apivel.com/blog/${slug} exposed in sitemap and indexed by Googlebot.`,
       `Day 7~9: Google ranking algorithms recalculate entity graph; monitor GSC for sudden Position 10~15 jumps and CTR >= 5.0%.`,
       `Day 14: Audit CTR and Rich Snippets. If CTR < 4.0%, tune Title Tag (keep 50-60 chars) and Meta Description (150-160 chars).`
     ]
@@ -258,8 +258,8 @@ export async function handleCheckPagePerformance(
   const env = loadEnvConfig();
   const key = env.PAGESPEED_API_KEY;
   const targetUrl = slug === "home" || slug === "index" 
-    ? "https://apivale.com/blog/" 
-    : `https://apivale.com/blog/${slug}/`;
+    ? "https://apivel.com/blog/" 
+    : `https://apivel.com/blog/${slug}/`;
 
   if (!key) {
     return {

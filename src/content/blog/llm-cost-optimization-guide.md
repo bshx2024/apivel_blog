@@ -22,7 +22,7 @@ In this guide, we analyze the three pillars of LLM cost-cutting, provide real-wo
 Swap expensive API routes with a unified, edge-routed endpoint instantly. Execute this simple cURL command pointing to the APIVALE gateway:
 
 ```bash
-curl https://apivale.com/v1/chat/completions \
+curl https://apivel.com/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_APIVALE_KEY" \
   -d '{
@@ -96,7 +96,7 @@ from openai import OpenAIError
 
 # Initialize client with APIVALE custom endpoint
 client = openai.OpenAI(
-    base_url="https://apivale.com/v1",
+    base_url="https://apivel.com/v1",
     api_key=os.environ.get("APIVALE_API_KEY")
 )
 
@@ -148,7 +148,7 @@ async function checkAccountHealth() {
   }
 
   try {
-    const response = await axios.get('https://apivale.com/v1/dashboard/billing/usage', {
+    const response = await axios.get('https://apivel.com/v1/dashboard/billing/usage', {
       headers: {
         'Authorization': `Bearer ${apiKey}`,
         'Content-Type': 'application/json'
@@ -169,7 +169,7 @@ checkAccountHealth();
   <h4 class="cta-card-title">🚀 Scale Your Agent Fleet and Slash Costs</h4>
   <p class="cta-card-text">Stop wasting money on redundant tokens. Connect your coding agents and workflows to APIVALE to enjoy wholesale pay-as-you-go pricing, free context caching, and high-concurrency global routes. Create your free account and claim $0.20 starting credits (+ 50% bonus on 1st top-up).</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=llm-cost-optimization-guide" class="cta-primary-btn">Sign Up Free</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=llm-cost-optimization-guide" class="cta-primary-btn">Sign Up Free</a>
     <a href="/blog/openrouter-alternatives/" class="cta-secondary-btn">Compare Providers</a>
   </div>
 </div>

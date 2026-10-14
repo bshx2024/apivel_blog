@@ -40,7 +40,7 @@ lang: "en"
     Sign up for a free APIVALE account to claim <strong>$0.20 free starter credit</strong>. Your personal API key will automatically fill into setup commands below!
   </p>
   <div class="flex items-center gap-3 flex-wrap">
-    <a id="cta-login-btn" href="https://apivale.com/sign-up?redirect=/blog/connect-glm-5-3-to-claude-code-cli-cursor/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
+    <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/connect-glm-5-3-to-claude-code-cli-cursor/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Sign Up / Log In to Auto-Fill Your API Key
     </a>
     <button id="copy-script-btn" onclick="navigator.clipboard.writeText('Base URL: https://api.apivale.com/v1\nModel: infer/glm-5.3'); const b=this; b.innerText='✅ Copied!'; setTimeout(()=>b.innerText='📋 Copy Cursor Config', 2000);" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
@@ -169,7 +169,7 @@ Bringing GLM-5.3 to Cursor via APIVALE reduces daily coding costs by over 90% co
             <p class="text-xs text-emerald-400 font-medium mt-0.5" id="glm-savings-pct">🔥 96.2% Reduction in Tooling Overhead</p>
             <p class="text-xs text-gray-400 mt-2">Zero-KYC global billing via PayPal. Full 1M context in Cursor Composer without token degradation.</p>
           </div>
-          <a href="https://apivale.com/sign-up?redirect=/blog/connect-glm-5-3-to-claude-code-cli-cursor/" class="mt-4 inline-flex justify-center items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
+          <a href="https://apivel.com/sign-up?redirect=/blog/connect-glm-5-3-to-claude-code-cli-cursor/" class="mt-4 inline-flex justify-center items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
             ⚡ Claim $0.20 Starter Credit & Connect Cursor
           </a>
         </div>
@@ -440,7 +440,7 @@ Upgrade your IDE with 1M context, state-of-the-art code completion, and deep sec
   <p class="text-gray-300 max-w-xl mx-auto mb-6 text-sm">
     Supercharge Cursor IDE & Windsurf with GLM-5.3 BYOK. Zero KYC, instant activation, and Waffo global billing.
   </p>
-  <a href="https://apivale.com/sign-up?redirect=/blog/connect-glm-5-3-to-claude-code-cli-cursor/" class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-xl transition-all shadow-lg hover:shadow-indigo-500/25">
+  <a href="https://apivel.com/sign-up?redirect=/blog/connect-glm-5-3-to-claude-code-cli-cursor/" class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-xl transition-all shadow-lg hover:shadow-indigo-500/25">
     🚀 Create Free APIVALE Account
   </a>
 </div>

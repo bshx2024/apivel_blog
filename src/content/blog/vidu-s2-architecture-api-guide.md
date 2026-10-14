@@ -29,7 +29,7 @@ lang: "en"
     <li><strong>Vidu S2 Spatial Video Generation:</strong> Vidu S2 achieves real-time interactive spatial video generation at 25–42 FPS (720p), powered by Tsinghua and Shengshu's TurboServe engine.</li>
     <li><strong>ArXiv Insights (arXiv:2609.11638):</strong> Self-Replay Forcing in Vidu S2 eliminates temporal drift across continuous live streams.</li>
     <li><strong>Vidu S2 Avatar Pipeline:</strong> The Vidu S2 avatar pipeline pairs low-latency rendering with reasoning models like DeepSeek-V4 and Qwen 3.7 Max for conversational agency.</li>
-    <li><strong>Global PayPal API Access:</strong> Bypass SMS verification walls and credit card blocks with <a href="https://apivale.com" class="text-emerald-400 hover:underline font-semibold">APIVALE's Vidu S2 API gateway</a>, providing PayPal checkout and $0.20 instant trial credits.</li>
+    <li><strong>Global PayPal API Access:</strong> Bypass SMS verification walls and credit card blocks with <a href="https://apivel.com" class="text-emerald-400 hover:underline font-semibold">APIVALE's Vidu S2 API gateway</a>, providing PayPal checkout and $0.20 instant trial credits.</li>
   </ul>
 </div>
 
@@ -334,7 +334,7 @@ The Vidu S2 architecture is published on arXiv under identifier **arXiv:2609.116
       "publisher": {
         "@type": "Organization",
         "name": "APIVALE",
-        "url": "https://apivale.com"
+        "url": "https://apivel.com"
       },
       "about": [
         {

@@ -40,7 +40,7 @@ lang: "en"
     Want dedicated high-speed access to GLM-5.3 Flash? Create a free APIVALE account to claim <strong>$0.20 starter test credits</strong> and join the VIP cluster provisioning queue!
   </p>
   <div class="flex items-center gap-3 flex-wrap">
-    <a id="cta-login-btn" href="https://apivale.com/sign-up?redirect=/blog/glm-5-3-flash-ox-alpha-api-pricing-guide/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
+    <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/glm-5-3-flash-ox-alpha-api-pricing-guide/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Register to Request Early Access & Claim $0.20 Free Quota
     </a>
     <button id="copy-script-btn" onclick="navigator.clipboard.writeText('Base URL: https://api.apivale.com/v1\nModel: infer/glm-5.3-flash'); alert('Copied GLM-5.3 Flash preview parameters!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
@@ -162,7 +162,7 @@ Compare token pricing, request overage fees, and monthly agent expenses across p
           <p class="text-xs text-emerald-400 font-medium mt-0.5" id="glm-flash-savings-pct">🔥 97.9% Cost Reduction</p>
           <p class="text-xs text-gray-400 mt-2 leading-relaxed">Full 1M context in Cursor Composer without token degradation. Zero KYC and instant top-ups via Waffo Global Billing.</p>
         </div>
-        <a href="https://apivale.com/sign-up?redirect=/blog/glm-5-3-flash-ox-alpha-api-pricing-guide/" class="mt-4 inline-flex justify-center items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
+        <a href="https://apivel.com/sign-up?redirect=/blog/glm-5-3-flash-ox-alpha-api-pricing-guide/" class="mt-4 inline-flex justify-center items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
           ⚡ Request VIP Early Access & Claim $0.20 Free Beta Credit
         </a>
       </div>
@@ -370,7 +370,7 @@ Experience 320B MoE reasoning with 18B active throughput, 1M context windows, an
   <p class="text-gray-300 max-w-xl mx-auto mb-6 text-sm">
     Help us dimension dedicated GPU clusters for GLM-5.3 Flash (Ox Alpha). Register to vote for priority allocation, test with $0.20 free starter credits, and pay via Waffo global billing.
   </p>
-  <a href="https://apivale.com/sign-up?redirect=/blog/glm-5-3-flash-ox-alpha-api-pricing-guide/" style="display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); color: #ffffff !important; text-decoration: none !important; padding: 12px 28px; border-radius: 10px; font-weight: 700; font-size: 14px; box-shadow: 0 4px 16px rgba(79, 70, 229, 0.45); transition: all 0.2s ease;">
+  <a href="https://apivel.com/sign-up?redirect=/blog/glm-5-3-flash-ox-alpha-api-pricing-guide/" style="display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); color: #ffffff !important; text-decoration: none !important; padding: 12px 28px; border-radius: 10px; font-weight: 700; font-size: 14px; box-shadow: 0 4px 16px rgba(79, 70, 229, 0.45); transition: all 0.2s ease;">
     🚀 Request Early Access & Claim $0.20 Free Quota →
   </a>
 </div>

@@ -23,7 +23,7 @@ To bypass official billing barriers, set your terminal environment variables to 
 
 ```bash
 # Set your APIVALE credentials and launch the CLI
-export ANTHROPIC_BASE_URL="https://apivale.com/v1"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
 export ANTHROPIC_AUTH_TOKEN="your_apivale_key_here"
 npx @anthropic-ai/claude-code
 ```
@@ -221,8 +221,8 @@ npx @anthropic-ai/claude-code
   <h4 class="cta-card-title">⚡ Power Up Claude Code on APIVALE</h4>
   <p class="cta-card-text">Ditch regional billing limits and low-concurrency API tiers. Use APIVALE to route your Claude Code terminal agents, Cursor editor configurations, or backend services through our high-performance global network. Optimize your spending with 90% prompt caching discounts and built-in PayPal billing support. Create an account today and claim $0.20 free starter credit (+ 50% bonus on 1st top-up).</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-set-up-claude-code-cli-with-custom-base-url" class="cta-primary-btn">Get Free API Key Now</a>
-    <a href="https://apivale.com/api/?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-set-up-claude-code-cli-with-custom-base-url" class="cta-secondary-btn">Check Pricing Plans</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-set-up-claude-code-cli-with-custom-base-url" class="cta-primary-btn">Get Free API Key Now</a>
+    <a href="https://apivel.com/api/?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-set-up-claude-code-cli-with-custom-base-url" class="cta-secondary-btn">Check Pricing Plans</a>
   </div>
 </div>
 

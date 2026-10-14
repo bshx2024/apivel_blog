@@ -25,7 +25,7 @@ You can resolve messy company names to official homepage URLs using APIVALE’s 
 
 ```bash
 # Route your company search agent to APIVALE's high-concurrency gateway
-export ANTHROPIC_BASE_URL="https://apivale.com/v1"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
 export ANTHROPIC_AUTH_TOKEN="your_apivale_api_key"
 export ANTHROPIC_MODEL="infer/qwen3.7-max"
 
@@ -106,7 +106,7 @@ Before choosing an API provider, it is vital to compare match accuracy, ambiguou
           </div>
           <div class="savings-amount" id="enrich-savings-amt">$495.80 / mo</div>
           <p class="savings-note">⚡ Zero card decline risk. Instant PayPal global top-up & OpenAI-compatible SDKs.</p>
-          <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=company-lookup-calc" class="calc-cta-btn">Claim Free $0.20 Starter Credit (+ 50% Bonus)</a>
+          <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=company-lookup-calc" class="calc-cta-btn">Claim Free $0.20 Starter Credit (+ 50% Bonus)</a>
         </div>
       </div>
     </div>
@@ -447,7 +447,7 @@ import openai
 
 # Initialize OpenAI client pointing to APIVALE gateway
 client = openai.OpenAI(
-    base_url="https://apivale.com/v1",
+    base_url="https://apivel.com/v1",
     api_key=os.environ.get("APIVALE_API_KEY")
 )
 
@@ -512,8 +512,8 @@ Let's calculate the real-world cost of resolving **10,000 company homepages**:
   <h4 class="cta-card-title">⚡ Build High-Accuracy Agent Pipelines with APIVALE</h4>
   <p class="cta-card-text">Stop paying exorbitant rates for static company lookup databases. Route your web search agents, CRM enrichment scripts, and CLI tools to DeepSeek V4, Qwen 3.7-Max, and Claude Sonnet 5 via APIVALE's global edge network. Enjoy 95%+ cost savings, zero regional verification barriers, and seamless global PayPal billing. Sign up now and claim your free $0.20 Credit (+ 50% Bonus)!</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=best-api-search-company-homepage-guide" class="cta-primary-btn">Claim Free $0.20 Credit (+ 50% Bonus)</a>
-    <a href="https://apivale.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=best-api-search-company-homepage-guide" class="cta-secondary-btn">Test Playground Live</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=best-api-search-company-homepage-guide" class="cta-primary-btn">Claim Free $0.20 Credit (+ 50% Bonus)</a>
+    <a href="https://apivel.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=best-api-search-company-homepage-guide" class="cta-secondary-btn">Test Playground Live</a>
   </div>
 </div>
 

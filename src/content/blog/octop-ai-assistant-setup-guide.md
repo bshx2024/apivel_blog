@@ -465,4 +465,4 @@ Octop provides native ACP (Agent Client Protocol) support. Running `octop acp --
 
 Eliminate payment friction and optimize your agent token budget today. Connect your Octop AI Assistant setup to Claude Sonnet 5, Qwen 3.7 Max, and DeepSeek V4 through APIVALE's sub-450ms routing proxy.
 
-👉 **[Create Your Free APIVALE Account](https://apivale.com/)** to claim your **$0.20 free starter credit** upon sign-up and fund your balance securely via Waffo Global Billing with zero subscription lock-in.
+👉 **[Create Your Free APIVALE Account](https://apivel.com/)** to claim your **$0.20 free starter credit** upon sign-up and fund your balance securely via Waffo Global Billing with zero subscription lock-in.

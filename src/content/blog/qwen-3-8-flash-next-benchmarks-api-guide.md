@@ -40,7 +40,7 @@ lang: "en"
     Sign up for a free APIVALE account to claim <strong>$0.20 free starter credit</strong>. Your personal API key will automatically fill into setup commands below!
   </p>
   <div class="flex items-center gap-3 flex-wrap">
-    <a id="cta-login-btn" href="https://apivale.com/sign-up?redirect=/blog/qwen-3-8-flash-next-benchmarks-api-guide/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
+    <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/qwen-3-8-flash-next-benchmarks-api-guide/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Sign Up / Log In to Auto-Fill Your API Key
     </a>
     <button id="copy-script-btn" onclick="navigator.clipboard.writeText('Base URL: https://api.apivale.com/v1\nModel: infer/qwen-3.8-flash-next'); alert('Copied Qwen 3.8 Flash Next config parameters!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
@@ -164,7 +164,7 @@ $$\text{VRAM}_{\text{total}} = \frac{\text{Params}_{\text{total}} \times \text{B
           <p class="text-xs text-emerald-400 font-medium mt-0.5" id="qwen-savings-pct">🔥 99.6% Cost Reduction</p>
           <p class="text-xs text-gray-400 mt-2 leading-relaxed">No hardware maintenance, zero thermal throttling, sub-250ms latency, and zero-KYC global billing via Waffo.</p>
         </div>
-        <a href="https://apivale.com/sign-up?redirect=/blog/qwen-3-8-flash-next-benchmarks-api-guide/" class="mt-4 inline-flex justify-center items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
+        <a href="https://apivel.com/sign-up?redirect=/blog/qwen-3-8-flash-next-benchmarks-api-guide/" class="mt-4 inline-flex justify-center items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
           ⚡ Claim $0.20 Free Starter Credit & Start Testing
         </a>
       </div>
@@ -370,7 +370,7 @@ Unlock 125B MoE capacity with 6B active throughput, 1M context windows, and sub-
   <p class="text-gray-300 max-w-xl mx-auto mb-6 text-sm">
     Supercharge Cursor, Windsurf, and Claude Code CLI with Qwen 3.8 Flash Next. Zero KYC, instant activation, and Waffo global billing.
   </p>
-  <a href="https://apivale.com/sign-up?redirect=/blog/qwen-3-8-flash-next-benchmarks-api-guide/" class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-xl transition-all shadow-lg hover:shadow-indigo-500/25">
+  <a href="https://apivel.com/sign-up?redirect=/blog/qwen-3-8-flash-next-benchmarks-api-guide/" class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-xl transition-all shadow-lg hover:shadow-indigo-500/25">
     🚀 Create Free APIVALE Account
   </a>
 </div>

@@ -30,7 +30,7 @@ In this guide, we break down the technical implications of OpenAI's pre-training
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
     <li><strong>Pre-Training Reset:</strong> OpenAI's codename "Doug" signifies a return to base-model pre-training scaling after post-training RL reached diminishing marginal returns.</li>
     <li><strong>Production Alternatives Today:</strong> Developers can deploy Claude Sonnet 5, Qwen 3.8 Max (<code class="text-indigo-300">infer/qwen3.8-max</code>), and DeepSeek V4 (<code class="text-indigo-300">infer/deepseek-v4-pro</code>) immediately without waiting for unconfirmed OpenAI releases.</li>
-    <li><strong>Seamless Infrastructure:</strong> APIVALE provides a unified OpenAI-compatible endpoint (<code class="text-indigo-300">https://apivale.com/v1</code>) with global <strong>PayPal billing</strong> and zero-KYC access.</li>
+    <li><strong>Seamless Infrastructure:</strong> APIVALE provides a unified OpenAI-compatible endpoint (<code class="text-indigo-300">https://apivel.com/v1</code>) with global <strong>PayPal billing</strong> and zero-KYC access.</li>
   </ul>
 </div>
 
@@ -170,7 +170,7 @@ import axios from 'axios';
 
 const app = express();
 const PORT = 3020;
-const APIVALE_ENDPOINT = 'https://apivale.com/v1/chat/completions';
+const APIVALE_ENDPOINT = 'https://apivel.com/v1/chat/completions';
 
 app.use(express.json());
 
@@ -251,7 +251,7 @@ APIVALE eliminates these barriers by supporting **PayPal (global PayPal billing 
 * **Unified Billing**: Manage spend for Claude Sonnet 5, Qwen 3.8 Max, and DeepSeek V4 from a single balance.
 
 ### Unified OpenAI Native Protocol Integration
-Whether your tools require standard OpenAI `/v1/chat/completions` or Anthropic `/v1/messages`, APIVALE provides complete cloud-side protocol translation. Simply export `OPENAI_API_BASE="https://apivale.com/v1"` in your developer tools to switch models seamlessly.
+Whether your tools require standard OpenAI `/v1/chat/completions` or Anthropic `/v1/messages`, APIVALE provides complete cloud-side protocol translation. Simply export `OPENAI_API_BASE="https://apivel.com/v1"` in your developer tools to switch models seamlessly.
 
 ---
 
@@ -259,8 +259,8 @@ Whether your tools require standard OpenAI `/v1/chat/completions` or Anthropic `
   <h4 class="cta-card-title">⚡ Access Claude Sonnet 5, Qwen 3.8 Max & DeepSeek V4 via APIVALE</h4>
   <p class="cta-card-text">Stop waiting for unreleased model leaks. Supercharge your AI agents today with APIVALE's unified API gateway. Enjoy 85% cost savings, 1M context window, high concurrency, and hassle-free PayPal billing. Sign up now and claim your free starter credit!</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=openai-doug-pretraining-model-alternatives" class="cta-primary-btn">Get Free API Key ($0.20 Starter Credit)</a>
-    <a href="https://apivale.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=openai-doug-pretraining-model-alternatives" class="cta-secondary-btn">Test Models in API Playground</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=openai-doug-pretraining-model-alternatives" class="cta-primary-btn">Get Free API Key ($0.20 Starter Credit)</a>
+    <a href="https://apivel.com/playground?utm_source=apivale_blog&utm_medium=blog&utm_campaign=openai-doug-pretraining-model-alternatives" class="cta-secondary-btn">Test Models in API Playground</a>
   </div>
 </div>
 
@@ -281,7 +281,7 @@ Claude Sonnet 5 leads in complex multi-file refactoring logic and [tool calling]
 Yes. APIVALE supports **PayPal (global PayPal billing / credit cards via PayPal)** as a primary payment method, allowing developers worldwide to access all flagship models without US credit card rejections or identity verification requirements.
 
 ### Do I need to change my code when OpenAI Doug eventually releases?
-No. Because APIVALE uses a unified OpenAI-compatible endpoint (<code class="text-indigo-300">https://apivale.com/v1</code>), you will only need to update your target <code class="text-indigo-300">model</code> parameter in your existing request payload once the model becomes available on the gateway.
+No. Because APIVALE uses a unified OpenAI-compatible endpoint (<code class="text-indigo-300">https://apivel.com/v1</code>), you will only need to update your target <code class="text-indigo-300">model</code> parameter in your existing request payload once the model becomes available on the gateway.
 
 <script type="application/ld+json">
 {

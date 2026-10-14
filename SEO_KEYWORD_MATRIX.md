@@ -9,7 +9,7 @@
 在挑选与拓展长尾关键词时，所有选题与词组必须能够自然承接 APIVALE 的四大核心差异化优势：
 1. 💳 **支持 PayPal 全球结算 (PayPal Billing)**：解决海外开发者或特定区域没有 Stripe / 信用卡被风控拒付的燃眉之急。
 2. 🔓 **免 KYC / 免中国手机号 (+86 Verification Bypass)**：免去使用 Qwen 3.7 Max, Kimi K3, DeepSeek V4, GLM-5.2 等顶尖国产大模型时繁琐的实名认证。
-3. ⚡ **原生 API 协议兼容 (Native OpenAI & Anthropic Endpoint Proxy)**：零代码修改，直接填入 `https://apivale.com/v1` 即可在 Claude Code CLI、Cursor、Windsurf、OpenCode、CodexBar 中无缝运行。
+3. ⚡ **原生 API 协议兼容 (Native OpenAI & Anthropic Endpoint Proxy)**：零代码修改，直接填入 `https://apivel.com/v1` 即可在 Claude Code CLI、Cursor、Windsurf、OpenCode、CodexBar 中无缝运行。
 4. 💰 **AI Agent 极致降本 85%–90%**：针对多轮循环工具调用的 Token 消耗痛点，提供高性价比路由。
 
 ---

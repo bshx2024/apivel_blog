@@ -14,7 +14,7 @@ lang: "en"
 <div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
-    <li><strong>Supergrok+ Limit Bypass:</strong> Bypass official weekly quota exhaustion in multi-agent swarms (Grok Bot, OpenClaw, Hermes) with <a href="https://apivale.com/sign-up?redirect=/blog/grok-bot-api-setup-pricing-troubleshooting/" class="text-emerald-400 hover:underline font-semibold">APIVALE Pay-as-You-Go Gateway (Claim $0.20 Free Credit)</a>.</li>
+    <li><strong>Supergrok+ Limit Bypass:</strong> Bypass official weekly quota exhaustion in multi-agent swarms (Grok Bot, OpenClaw, Hermes) with <a href="https://apivel.com/sign-up?redirect=/blog/grok-bot-api-setup-pricing-troubleshooting/" class="text-emerald-400 hover:underline font-semibold">APIVALE Pay-as-You-Go Gateway (Claim $0.20 Free Credit)</a>.</li>
     <li><strong>82% Multi-Model Cost Arbitrage:</strong> Route routine background tasks to Qwen 3.8 Max (<code>$0.60/1M</code>) and reserve Grok 4.6 for complex reasoning.</li>
     <li><strong>Universal IDE & Bot Integration:</strong> Connect Grok Bot into Cursor IDE, Telegram, Discord, and CLI pipelines via OpenAI-compatible endpoints with zero KYC PayPal billing.</li>
   </ul>

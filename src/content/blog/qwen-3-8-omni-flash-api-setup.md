@@ -40,10 +40,10 @@ lang: "en"
     Complete your <strong>Qwen3.8-Omni-Flash API setup</strong> with instant provisioning. Claim <strong>$0.20 free starter credit</strong> on APIVALE to generate your personal <strong>Qwen3.8-Omni-Flash API key</strong>.
   </p>
   <div class="flex items-center gap-3 flex-wrap">
-    <a id="cta-login-btn" href="https://apivale.com/sign-up?redirect=/blog/qwen-3-8-omni-flash-api-setup/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
+    <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/qwen-3-8-omni-flash-api-setup/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Sign Up / Log In to Auto-Fill Your API Key
     </a>
-    <a href="https://apivale.com/dashboard" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
+    <a href="https://apivel.com/dashboard" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
       View API Gateway Docs
     </a>
   </div>
@@ -308,7 +308,7 @@ Deploy native multimodal speech recognition and long-context audio reasoning at 
   <p class="text-gray-300 max-w-xl mx-auto mb-6 text-sm">
     Complete your Qwen3.8-Omni-Flash API setup on APIVALE today. Zero KYC, instant activation, and seamless Waffo global settlement.
   </p>
-  <a href="https://apivale.com/sign-up?redirect=/blog/qwen-3-8-omni-flash-api-setup/" class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-xl transition-all shadow-lg hover:shadow-indigo-500/25">
+  <a href="https://apivel.com/sign-up?redirect=/blog/qwen-3-8-omni-flash-api-setup/" class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-xl transition-all shadow-lg hover:shadow-indigo-500/25">
     🚀 Create Free APIVALE Account
   </a>
 </div>

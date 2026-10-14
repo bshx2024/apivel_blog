@@ -55,7 +55,7 @@ keyTakeaways:
     Sign up for an APIVALE developer account to claim <strong>$0.20 free starter credits</strong>. Verify your local Strata Qwen outputs against our production FP16 cloud gateway without local RAM saturation!
   </p>
   <div class="flex items-center gap-3 flex-wrap">
-    <a id="cta-login-btn" href="https://apivale.com/sign-up?redirect=/blog/strata-qwen-setup-benchmarks/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
+    <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/strata-qwen-setup-benchmarks/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Sign Up / Log In to Auto-Fill Your API Key
     </a>
     <button id="copy-script-btn" onclick="navigator.clipboard.writeText('Base URL: https://api.apivale.com/v1\nModel: infer/qwen-3.8-flash-next'); const b=this; b.innerText='✓ Copied Config!'; setTimeout(()=>b.innerText='📋 Copy Cloud Endpoint', 2000);" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
@@ -378,10 +378,10 @@ Yes. AMD Radeon GPUs are supported on Linux systems via ROCm 6.1+ (including RX 
     Get instant sub-250ms access to Qwen 3.8 Flash Next, Claude Sonnet 5, and DeepSeek V4. Enjoy <strong>+50% bonus on your first deposit</strong> ($5 yields $7.50, $29 yields $43.50), claim the <strong>$29 Developer Pack (56% OFF, 40M tokens, never expires)</strong>, or begin with <strong>$0.20 free signup trial credit</strong> with PayPal and global card billing.
   </p>
   <div class="flex items-center justify-center gap-4 flex-wrap">
-    <a href="https://apivale.com/pricing?redirect=/blog/strata-qwen-setup-benchmarks/" class="inline-flex items-center text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-3 rounded-lg transition-all shadow-lg hover:shadow-indigo-500/25">
+    <a href="https://apivel.com/pricing?redirect=/blog/strata-qwen-setup-benchmarks/" class="inline-flex items-center text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-3 rounded-lg transition-all shadow-lg hover:shadow-indigo-500/25">
       🚀 View Developer Pricing & Token Packs
     </a>
-    <a href="https://apivale.com/sign-up?redirect=/blog/strata-qwen-setup-benchmarks/" class="inline-flex items-center text-xs font-bold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-5 py-3 rounded-lg transition-all">
+    <a href="https://apivel.com/sign-up?redirect=/blog/strata-qwen-setup-benchmarks/" class="inline-flex items-center text-xs font-bold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-5 py-3 rounded-lg transition-all">
       ⚡ Claim $0.20 Free Trial (Zero Card Required)
     </a>
   </div>

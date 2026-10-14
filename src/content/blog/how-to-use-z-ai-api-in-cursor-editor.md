@@ -20,7 +20,7 @@ In this tutorial, we show you how to configure a custom endpoint in Cursor to ca
 To verify if your custom endpoint is ready, you can run a simple cURL test pointing to the APIVALE proxy. Ensure you replace `YOUR_APIVALE_KEY` with your actual token:
 
 ```bash
-curl https://apivale.com/v1/chat/completions \
+curl https://apivel.com/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_APIVALE_KEY" \
   -d '{"model": "glm-5.2", "messages": [{"role": "user", "content": "Hello, list 3 programming best practices."}]}'
@@ -34,7 +34,7 @@ Attempting to connect Cursor directly to Zhipu's official endpoint vs. using API
 
 | Metric | Official Zhipu Custom Endpoint (`open.bigmodel.cn`) | APIVALE Gateway Endpoint (`api.z.ai` proxy) |
 | :--- | :--- | :--- |
-| **Cursor Base URL** | `https://open.bigmodel.cn/api/paas/v4/` (Incompatible format) | `https://apivale.com/v1` (100% OpenAI compatible) |
+| **Cursor Base URL** | `https://open.bigmodel.cn/api/paas/v4/` (Incompatible format) | `https://apivel.com/v1` (100% OpenAI compatible) |
 | **Authentication Header** | Custom JWT Token (Requires SDK generation) | Standard `Bearer` API Key |
 | **Ideal Model For Cursor** | Manual JSON translation required | `glm-5.2`, `glm-4-plus` mapped automatically |
 | **Payment & Billing** | Chinese Bank Cards / Alipay (declines foreign cards) | **PayPal & Global Credit Cards** (see our [Z.ai Billing Top-Up & Credit Card Guide](/blog/bypass-zhipu-ai-real-name-verification/)) |
@@ -55,7 +55,7 @@ Attempting to connect Cursor directly to Zhipu's official endpoint vs. using API
 Follow this quick guide to set up the Z.ai models in your Cursor editor.
 
 ### Step 1: Get Your APIVALE Key
-1. Go to [APIVALE Gateway](https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-use-z-ai-api-in-cursor-editor) and create a free account.
+1. Go to [APIVALE Gateway](https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-use-z-ai-api-in-cursor-editor) and create a free account.
 2. Navigate to your dashboard, generate an **API Key**, and copy it.
 
 ### Step 2: Configure Settings in Cursor
@@ -67,7 +67,7 @@ Follow this quick guide to set up the Z.ai models in your Cursor editor.
 6. Click on **Configure Override / Base URL**.
 7. Enter the following URL in the input field:
    ```text
-   https://apivale.com/v1
+   https://apivel.com/v1
    ```
 8. In the model list, make sure to add `glm-5.2` and `glm-4-plus` as custom models.
 
@@ -104,7 +104,7 @@ from openai import OpenAIError
 
 # Configure Client pointing to APIVALE Custom Endpoint
 client = openai.OpenAI(
-    base_url="https://apivale.com/v1",
+    base_url="https://apivel.com/v1",
     api_key=os.environ.get("APIVALE_API_KEY")
 )
 
@@ -132,8 +132,8 @@ if __name__ == "__main__":
   <h4 class="cta-card-title">💻 Integrate Z.ai GLM-5.2 in Cursor Instantly</h4>
   <p class="cta-card-text">Connect Zhipu models to Cursor or VS Code in seconds without custom JWT SDK auth wrappers. Access GPT-5.5, Claude 4 Sonnet, DeepSeek V4, and GLM-5.2 through APIVALE's standard OpenAI-compatible base URL. Sign up today and get $0.20 free starting credit (+ 50% bonus on 1st top-up)s.</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-use-z-ai-api-in-cursor-editor" class="cta-primary-btn">Get Free API Key ($0.20 Credit (+ 50% Bonus))</a>
-    <a href="https://apivale.com/docs?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-use-z-ai-api-in-cursor-editor" class="cta-secondary-btn">Integration Docs</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-use-z-ai-api-in-cursor-editor" class="cta-primary-btn">Get Free API Key ($0.20 Credit (+ 50% Bonus))</a>
+    <a href="https://apivel.com/docs?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-use-z-ai-api-in-cursor-editor" class="cta-secondary-btn">Integration Docs</a>
   </div>
 </div>
 
@@ -143,7 +143,7 @@ if __name__ == "__main__":
 **A:** Yes, if you enter a custom Base URL in the main OpenAI field, Cursor will route all OpenAI model requests there. If you want to use both default models and custom models, we recommend adding APIVALE as a custom OpenAI key and specifying `glm-5.2` as an additional model while letting Cursor manage default models natively.
 
 **Q: What is the correct OpenAI base URL format for Cursor?**
-**A:** The standard format is `https://apivale.com/v1`. Do not add a trailing slash `/` or append `/chat/completions` as Cursor appends that automatically.
+**A:** The standard format is `https://apivel.com/v1`. Do not add a trailing slash `/` or append `/chat/completions` as Cursor appends that automatically.
 
 **Q: Do I get billed extra for using custom models in Cursor via APIVALE?**
 **A:** No. APIVALE actually offers GLM-5.2 at rates significantly below the official console pricing ($0.50/1M input and $2.50/1M output, compared to Zhipu's official $1.40/$4.40), saving you up to 64% on token usage.
@@ -166,7 +166,7 @@ if __name__ == "__main__":
       "name": "What is the correct OpenAI base URL format for Cursor?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The standard format is https://apivale.com/v1. Do not add a trailing slash or append /chat/completions as Cursor appends that automatically."
+        "text": "The standard format is https://apivel.com/v1. Do not add a trailing slash or append /chat/completions as Cursor appends that automatically."
       }
     },
     {

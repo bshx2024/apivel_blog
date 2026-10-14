@@ -50,7 +50,7 @@ keyTakeaways:
 
 Configuring **Cursor BYOK (Bring Your Own Key)** allows developers to connect external LLM endpoints directly into [Cursor AI Editor](https://www.cursor.com/). Features like multi-file **Composer mode**, terminal command execution, and inline diff generation have revolutionized full-stack engineering. However, as developers push autonomous coding loops to production, the $20/month Pro quota evaporates rapidly.
 
-Once you exhaust the 500 fast request allotment, queries fall back to slow queue throttling or billable request overages. In this comprehensive technical guide, we break down **Cursor BYOK setup**, evaluate **Cursor Free vs. Pro limits**, audit the viral **`leookun/cursor-byok` GitHub proxy**, and calculate exact token break-even pricing across Claude Sonnet 5 and DeepSeek V4 using [APIVALE Gateway](https://apivale.com/) alongside [high-speed OpenRouter alternatives](/blog/openrouter-alternatives/). For macro-level architectural token savings, review our [enterprise LLM cost optimization guide](/blog/llm-cost-optimization-guide/).
+Once you exhaust the 500 fast request allotment, queries fall back to slow queue throttling or billable request overages. In this comprehensive technical guide, we break down **Cursor BYOK setup**, evaluate **Cursor Free vs. Pro limits**, audit the viral **`leookun/cursor-byok` GitHub proxy**, and calculate exact token break-even pricing across Claude Sonnet 5 and DeepSeek V4 using [APIVALE Gateway](https://apivel.com/) alongside [high-speed OpenRouter alternatives](/blog/openrouter-alternatives/). For macro-level architectural token savings, review our [enterprise LLM cost optimization guide](/blog/llm-cost-optimization-guide/).
 
 ---
 
@@ -226,7 +226,7 @@ For teams exploring terminal agent workflows and local gateways, see our dedicat
 Connecting your custom API key to Cursor takes four straightforward steps:
 
 ### Step 1: Obtain Your API Key
-1. Sign up on [APIVALE Gateway](https://apivale.com/sign-up?redirect=/blog/cursor-pro-vs-custom-api-key) and collect your instant **$0.20 free developer trial credits** (no credit card or phone verification required).
+1. Sign up on [APIVALE Gateway](https://apivel.com/sign-up?redirect=/blog/cursor-pro-vs-custom-api-key) and collect your instant **$0.20 free developer trial credits** (no credit card or phone verification required).
 2. Generate a secure API key (`sk-apivale-...`).
 
 ### Step 2: Open Cursor Settings
@@ -347,8 +347,8 @@ Subscribing to US-based AI developer platforms frequently leads to sudden card d
   <div class="cta-card-title font-bold text-lg text-emerald-400">⚡ Upgrade Your Cursor BYOK Workflow with APIVALE</div>
   <p class="cta-card-text text-gray-300 text-sm mt-2 mb-4">Eliminate 500-request quotas and slow peak-hour queues. Route Cursor IDE directly to APIVALE for wholesale token pricing, zero rate-limit drops, and instant PayPal global checkout.</p>
   <div class="cta-card-actions flex flex-wrap gap-3">
-    <a href="https://apivale.com/sign-up?redirect=/blog/cursor-pro-vs-custom-api-key" class="cta-primary-btn bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-4 py-2 rounded-lg transition">Start Free ($0.20 Trial Credit)</a>
-    <a href="https://apivale.com/pricing?redirect=/blog/cursor-pro-vs-custom-api-key" class="cta-secondary-btn bg-slate-800 hover:bg-slate-700 text-white font-medium px-4 py-2 rounded-lg border border-slate-700 transition">View Developer Pack ($29 for 40M Tokens)</a>
+    <a href="https://apivel.com/sign-up?redirect=/blog/cursor-pro-vs-custom-api-key" class="cta-primary-btn bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-4 py-2 rounded-lg transition">Start Free ($0.20 Trial Credit)</a>
+    <a href="https://apivel.com/pricing?redirect=/blog/cursor-pro-vs-custom-api-key" class="cta-secondary-btn bg-slate-800 hover:bg-slate-700 text-white font-medium px-4 py-2 rounded-lg border border-slate-700 transition">View Developer Pack ($29 for 40M Tokens)</a>
   </div>
 </div>
 

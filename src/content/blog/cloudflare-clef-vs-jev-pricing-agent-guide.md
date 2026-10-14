@@ -286,7 +286,7 @@ Yes. APIVALE provides instant billing using official **PayPal**, international c
       "publisher": {
         "@type": "Organization",
         "name": "APIVALE",
-        "url": "https://apivale.com"
+        "url": "https://apivel.com"
       },
       "about": [
         {

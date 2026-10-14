@@ -53,18 +53,18 @@ We scraped the top 10 organic ranking pages on Google for `z.ai api`. Here is th
 Astro project analysis confirms `base: '/blog'` and dynamic routing `src/pages/[slug].astro`. **All articles reside directly under `/blog/[slug]/` without subdirectories.** Here is the corrected Sitemap:
 
 ### Level 1: Main Blog Home / Portal
-- **URL**: [blog](file:///E:/kaifa/APIVALE_blog/src/pages/index.astro) (resolves to `https://apivale.com/blog/`)
+- **URL**: [blog](file:///E:/kaifa/APIVALE_blog/src/pages/index.astro) (resolves to `https://apivel.com/blog/`)
 - **Primary Role**: Act as the main aggregator Hub, linking to all the Z.ai, Cursor, and pricing comparison subpages below, concentrating internal PageRank link equity.
 
 ### Level 2: Target-IDE Integration Guides (Guides)
-1. **Cursor Integration Page**: `https://apivale.com/blog/how-to-use-z-ai-api-in-cursor-editor/` (Target: `z.ai cursor base url`, `cursor api key` - **KD 23%**)
-2. **Cline VS Code Page**: `https://apivale.com/blog/how-to-integrate-z-ai-in-cline-extension/` (Target: Cline Z.ai configuration)
-3. **Bypass Verification Page**: `https://apivale.com/blog/bypass-zhipu-ai-real-name-verification/` (Target: bypass Zhipu verification, register without Chinese phone)
+1. **Cursor Integration Page**: `https://apivel.com/blog/how-to-use-z-ai-api-in-cursor-editor/` (Target: `z.ai cursor base url`, `cursor api key` - **KD 23%**)
+2. **Cline VS Code Page**: `https://apivel.com/blog/how-to-integrate-z-ai-in-cline-extension/` (Target: Cline Z.ai configuration)
+3. **Bypass Verification Page**: `https://apivel.com/blog/bypass-zhipu-ai-real-name-verification/` (Target: bypass Zhipu verification, register without Chinese phone)
 
 ### Level 3: Programmatic Competitor Comparison Hub (pSEO)
-1. **OpenRouter Competitor Sniper**: `https://apivale.com/blog/openrouter-alternatives/` (Target: **`openrouter alternative`** - **KD 8%**)
-2. **OpenAI Base URL guide**: `https://apivale.com/blog/how-to-change-openai-base-url/` (Target: **`openai base url`** - **Vol 320, CPC $19.33**)
-3. **Pricing Comparison Page**: `https://apivale.com/blog/z-ai-vs-bigmodel-cn-pricing/` (Target: `z.ai international vs bigmodel.cn pricing comparison`)
+1. **OpenRouter Competitor Sniper**: `https://apivel.com/blog/openrouter-alternatives/` (Target: **`openrouter alternative`** - **KD 8%**)
+2. **OpenAI Base URL guide**: `https://apivel.com/blog/how-to-change-openai-base-url/` (Target: **`openai base url`** - **Vol 320, CPC $19.33**)
+3. **Pricing Comparison Page**: `https://apivel.com/blog/z-ai-vs-bigmodel-cn-pricing/` (Target: `z.ai international vs bigmodel.cn pricing comparison`)
 
 ## 📈 4. Content Copywriting Rules
 - **Formatting**: Follow [BLOG_WRITING_STANDARD.md](file:///E:/kaifa/APIVALE_blog/BLOG_WRITING_STANDARD.md). Match official docs' code density (at least 4-6 code blocks per page).

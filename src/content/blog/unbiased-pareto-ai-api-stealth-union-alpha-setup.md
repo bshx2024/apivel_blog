@@ -16,7 +16,7 @@ lang: "en"
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
     <li><strong>Stealth/Union-Alpha Unmasked:</strong> The anonymous model <code>stealth/union-alpha</code> officially unveiled on September 18, 2026, as the production <strong>Unbiased Pareto AI API</strong> (<code>unbiased/pareto</code>), deprecating preview endpoints with immediate <code>404 Not Found</code> errors.</li>
     <li><strong>Composite Multi-Model Architecture:</strong> Unbiased Pareto delivers a 256,000-token context window and 128,000-token max output using a composite routing engine built by former Stripe infrastructure engineers.</li>
-    <li><strong>Dual-Protocol Gateway & Waffo Billing:</strong> Connect Pareto to Cursor and Claude Code CLI with <a href="https://apivale.com/sign-up?redirect=/blog/unbiased-pareto-ai-api-stealth-union-alpha-setup/" class="text-emerald-400 hover:underline font-semibold">APIVALE (Claim $0.20 Free Credit)</a> using Waffo Global Billing with zero mainland KYC friction.</li>
+    <li><strong>Dual-Protocol Gateway & Waffo Billing:</strong> Connect Pareto to Cursor and Claude Code CLI with <a href="https://apivel.com/sign-up?redirect=/blog/unbiased-pareto-ai-api-stealth-union-alpha-setup/" class="text-emerald-400 hover:underline font-semibold">APIVALE (Claim $0.20 Free Credit)</a> using Waffo Global Billing with zero mainland KYC friction.</li>
   </ul>
 </div>
 
@@ -421,4 +421,4 @@ The official launch of the **Unbiased Pareto AI API** highlights the growing shi
 
 Through APIVALE, developers gain native protocol compatibility for Claude Code CLI and Cursor, automated failover protection against upstream rate limits, and transparent checkout via **Waffo Global Billing**.
 
-Ready to restore your automated agent workflows? **[Create your free API key on APIVALE](https://apivale.com/sign-up?redirect=/blog/unbiased-pareto-ai-api-stealth-union-alpha-setup/)** today and claim $0.20 in free test credit to benchmark Unbiased Pareto.
+Ready to restore your automated agent workflows? **[Create your free API key on APIVALE](https://apivel.com/sign-up?redirect=/blog/unbiased-pareto-ai-api-stealth-union-alpha-setup/)** today and claim $0.20 in free test credit to benchmark Unbiased Pareto.

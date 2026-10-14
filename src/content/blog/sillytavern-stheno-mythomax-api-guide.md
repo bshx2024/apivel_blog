@@ -170,8 +170,8 @@ runRoleplayPrompt();
   <h4 class="cta-card-title">🎭 Unlock Immersive Uncensored Roleplay on APIVALE</h4>
   <p class="cta-card-text">Say goodbye to rigid model safety rules and expensive GPU setups. Use APIVALE to route SillyTavern, custom chatbots, or gaming backend servers through our high-performance global network. Access Stheno v3.2, MythoMax, and other top-tier creative models starting at just $0.15 per million tokens. Register today and get free initial credits to start your adventure.</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=sillytavern-stheno-mythomax-api-guide" class="cta-primary-btn">Get Your Free API Key Now</a>
-    <a href="https://apivale.com/api/?utm_source=apivale_blog&utm_medium=blog&utm_campaign=sillytavern-stheno-mythomax-api-guide" class="cta-secondary-btn">View Full Model Pricing</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=sillytavern-stheno-mythomax-api-guide" class="cta-primary-btn">Get Your Free API Key Now</a>
+    <a href="https://apivel.com/api/?utm_source=apivale_blog&utm_medium=blog&utm_campaign=sillytavern-stheno-mythomax-api-guide" class="cta-secondary-btn">View Full Model Pricing</a>
   </div>
 </div>
 

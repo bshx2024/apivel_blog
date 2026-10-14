@@ -14,7 +14,7 @@ lang: "en"
 <div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
-    <li><strong>Instant API Key &amp; Free Trial:</strong> Claim a production <strong>DeepSeek V4.1 Flash API key</strong> with an instant <a href="https://apivale.com/sign-up?redirect=/blog/deepseek-v4-flash-api-guide/" class="text-emerald-400 hover:underline font-semibold">$0.20 free signup trial</a> (no KYC, no mainland phone verification required).</li>
+    <li><strong>Instant API Key &amp; Free Trial:</strong> Claim a production <strong>DeepSeek V4.1 Flash API key</strong> with an instant <a href="https://apivel.com/sign-up?redirect=/blog/deepseek-v4-flash-api-guide/" class="text-emerald-400 hover:underline font-semibold">$0.20 free signup trial</a> (no KYC, no mainland phone verification required).</li>
     <li><strong>September 10 Production Release:</strong> The 48-hour beta endpoint (<code>deepseek-v4.1-flash-expires-on-0910</code>) has officially graduated into production as <strong>DeepSeek V4.1 Flash</strong> with native multimodal vision and a 1M token context window.</li>
     <li><strong>437 Tokens/s at 97% Lower Cost:</strong> Experience blistering decoding throughput reaching <strong>400–437 tokens per second</strong> at wholesale pricing ($0.14/1M input, $0.28/1M output)—saving up to 97% compared to frontier proprietary models.</li>
     <li><strong>Unthrottled Gateway Concurrency:</strong> Route Cursor Composer and Claude Code CLI through APIVALE for unthrottled 500+ RPM pools, bypassing official 429 timeouts and foreign card rejections with <strong>PayPal &amp; Global Card Billing</strong>.</li>
@@ -50,7 +50,7 @@ lang: "en"
     Sign up for a free APIVALE account to claim <strong>$0.20 free starter credit</strong>. Your personal API key will automatically fill into setup commands below!
   </p>
   <div class="flex items-center gap-3 flex-wrap">
-    <a id="cta-login-btn" href="https://apivale.com/sign-up?redirect=/blog/deepseek-v4-flash-api-guide/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
+    <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/deepseek-v4-flash-api-guide/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Sign Up / Log In to Auto-Fill Your API Key
     </a>
     <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export ANTHROPIC_BASE_URL=\'https://api.apivale.com/v1\'\nexport ANTHROPIC_AUTH_TOKEN=\'your_apivale_api_key\'\nexport ANTHROPIC_MODEL=\'deepseek-v4.1-flash\''); alert('Copied setup script!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
@@ -65,7 +65,7 @@ By connecting via APIVALE's high-speed API gateway, you eliminate official `HTTP
 
 ```bash
 # Call official DeepSeek V4.1 Flash API globally via APIVALE Gateway
-curl https://apivale.com/v1/chat/completions \
+curl https://apivel.com/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_APIVALE_KEY" \
   -d '{
@@ -248,7 +248,7 @@ Use this responsive utility to calculate monthly token expenditure and cost arbi
       </div>
       <div class="mt-4">
         <span class="text-xs text-gray-400 font-mono">1-Click Config Command:</span>
-        <pre id="calc-cmd-preview" class="mt-1 p-2 bg-gray-900 rounded text-xs text-gray-300 font-mono overflow-x-auto select-all">export ANTHROPIC_BASE_URL="https://apivale.com/v1"</pre>
+        <pre id="calc-cmd-preview" class="mt-1 p-2 bg-gray-900 rounded text-xs text-gray-300 font-mono overflow-x-auto select-all">export ANTHROPIC_BASE_URL="https://apivel.com/v1"</pre>
       </div>
     </div>
   </div>
@@ -283,13 +283,13 @@ Use this responsive utility to calculate monthly token expenditure and cost arbi
 
       const client = clientSelect.value;
       if (client === 'claude') {
-        cmdPreview.textContent = 'export ANTHROPIC_BASE_URL="https://apivale.com/v1" && export ANTHROPIC_MODEL="deepseek-v4.1-flash"';
+        cmdPreview.textContent = 'export ANTHROPIC_BASE_URL="https://apivel.com/v1" && export ANTHROPIC_MODEL="deepseek-v4.1-flash"';
       } else if (client === 'cursor') {
-        cmdPreview.textContent = 'Cursor Base URL: https://apivale.com/v1 | Model Override: deepseek-v4.1-flash';
+        cmdPreview.textContent = 'Cursor Base URL: https://apivel.com/v1 | Model Override: deepseek-v4.1-flash';
       } else if (client === 'windsurf') {
-        cmdPreview.textContent = 'Windsurf Settings: Base URL: https://apivale.com/v1 | Model: deepseek-v4.1-flash';
+        cmdPreview.textContent = 'Windsurf Settings: Base URL: https://apivel.com/v1 | Model: deepseek-v4.1-flash';
       } else {
-        cmdPreview.textContent = 'OpenAI(base_url="https://apivale.com/v1", api_key="sk-apivale-...")';
+        cmdPreview.textContent = 'OpenAI(base_url="https://apivel.com/v1", api_key="sk-apivale-...")';
       }
     }
 
@@ -316,7 +316,7 @@ Export the native Anthropic environment variables pointing to APIVALE:
 
 ```bash
 # Append to ~/.zshrc or ~/.bashrc
-export ANTHROPIC_BASE_URL="https://apivale.com/v1"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
 export ANTHROPIC_AUTH_TOKEN="sk-apivale-your-api-key-here"
 export ANTHROPIC_MODEL="deepseek-v4.1-flash"
 
@@ -333,7 +333,7 @@ For Windows developers operating in PowerShell:
 
 ```powershell
 # Configure session environment variables
-$env:ANTHROPIC_BASE_URL="https://apivale.com/v1"
+$env:ANTHROPIC_BASE_URL="https://apivel.com/v1"
 $env:ANTHROPIC_AUTH_TOKEN="sk-apivale-your-api-key-here"
 $env:ANTHROPIC_MODEL="deepseek-v4.1-flash"
 
@@ -345,7 +345,7 @@ npx @anthropic-ai/claude-code
 
 To run DeepSeek V4.1 Flash within Cursor Composer:
 1. Open **Cursor Settings (`Ctrl+,` or `Cmd+,`) -> Models -> OpenAI**.
-2. Toggle on **"Override Base URL"** and set the endpoint to `https://apivale.com/v1`.
+2. Toggle on **"Override Base URL"** and set the endpoint to `https://apivel.com/v1`.
 3. Enter your APIVALE API key (`sk-apivale-...`).
 4. Under **Add Custom Model**, enter `deepseek-v4.1-flash` and toggle it as the active model.
 
@@ -356,7 +356,7 @@ For detailed token savings comparisons between native subscriptions and custom A
 In Windsurf IDE:
 1. Navigate to **Windsurf Settings -> AI Provider Configuration**.
 2. Select **Custom OpenAI Compatible Provider**.
-3. Set Base URL to `https://apivale.com/v1` and paste your APIVALE Key.
+3. Set Base URL to `https://apivel.com/v1` and paste your APIVALE Key.
 4. Set Model Name to `deepseek-v4.1-flash` to execute lightning-fast cascading refactors.
 
 ---
@@ -373,7 +373,7 @@ from openai import OpenAI
 
 class RobustDeepSeekClient:
     """Production-grade client for DeepSeek V4.1 Flash with retry failover."""
-    def __init__(self, api_key: str = None, base_url: str = "https://apivale.com/v1"):
+    def __init__(self, api_key: str = None, base_url: str = "https://apivel.com/v1"):
         self.api_key = api_key or os.environ.get("APIVALE_API_KEY")
         self.base_url = base_url.rstrip("/")
         self.client = OpenAI(api_key=self.api_key, base_url=self.base_url)
@@ -445,7 +445,7 @@ In its official September 10, 2026 production release, DeepSeek merged the exper
 In verified community tests, DeepSeek V4.1 Flash achieves decoding throughput between 400 and 437 tokens/s, outperforming GLM 5.1 (~220 tokens/s) and GLM 5.3 Flash (~310 tokens/s). Its Time-to-First-Token (TTFT) averages under 120ms on cached inputs.
 
 ### Where and how do I get a DeepSeek V4.1 Flash API key?
-You can get an OpenAI-compatible DeepSeek V4.1 Flash API key directly on [APIVALE Gateway](https://apivale.com/sign-up?redirect=/blog/deepseek-v4-flash-api-guide/) without a mainland Chinese phone number (+86) or identity KYC checks. New developer signups receive a complimentary **$0.20 free starter credit** (over 100,000 tokens), plus support for PayPal and international Visa/Mastercard payments.
+You can get an OpenAI-compatible DeepSeek V4.1 Flash API key directly on [APIVALE Gateway](https://apivel.com/sign-up?redirect=/blog/deepseek-v4-flash-api-guide/) without a mainland Chinese phone number (+86) or identity KYC checks. New developer signups receive a complimentary **$0.20 free starter credit** (over 100,000 tokens), plus support for PayPal and international Visa/Mastercard payments.
 
 ### Why is DeepSeek V4 Pro traffic being routed to V4.1 Flash?
 DeepSeek's official operational update automatically reroutes legacy `deepseek-v4-pro` calls to the faster, multimodal `deepseek-v4.1-flash` engine while billing at the cheaper Flash tier ($0.14/$0.28 vs $0.55/$2.19), providing instant cost relief until V4.1 Pro launches.
@@ -524,7 +524,7 @@ APIVALE operates distributed high-concurrency connection pools (500+ RPM) with a
   <h4 class="cta-card-title">🐉 Power Up Your Agents with DeepSeek V4.1 Flash</h4>
   <p class="cta-card-text">Ditch high API fees and hardware bottlenecks. Connect DeepSeek V4.1 Flash to Claude Code CLI, Cursor, and Windsurf via APIVALE. Enjoy wholesale token rates ($0.14/1M), zero rate limits, and seamless Waffo global billing. Register now and claim $0.20 free starter credit (+ 50% bonus on 1st top-up)!</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?redirect=/blog/deepseek-v4-flash-api-guide/&utm_source=apivale_blog&utm_medium=blog&utm_campaign=deepseek-v4-flash-api-guide" class="cta-primary-btn">Get Free API Key ($0.20 Credit)</a>
-    <a href="https://apivale.com/playground?redirect=/blog/deepseek-v4-flash-api-guide/&utm_source=apivale_blog&utm_medium=blog&utm_campaign=deepseek-v4-flash-api-guide" class="cta-secondary-btn">Test Online Playground</a>
+    <a href="https://apivel.com/sign-up?redirect=/blog/deepseek-v4-flash-api-guide/&utm_source=apivale_blog&utm_medium=blog&utm_campaign=deepseek-v4-flash-api-guide" class="cta-primary-btn">Get Free API Key ($0.20 Credit)</a>
+    <a href="https://apivel.com/playground?redirect=/blog/deepseek-v4-flash-api-guide/&utm_source=apivale_blog&utm_medium=blog&utm_campaign=deepseek-v4-flash-api-guide" class="cta-secondary-btn">Test Online Playground</a>
   </div>
 </div>

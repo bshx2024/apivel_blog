@@ -22,7 +22,7 @@ In this guide, we walk you through how to bypass these registration barriers and
 You do not need a +86 phone number or a Chinese corporate ID. Simply register a free account on APIVALE and query the models via our unified, OpenAI-compatible endpoint:
 
 ```bash
-curl https://apivale.com/v1/chat/completions \
+curl https://apivel.com/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_APIVALE_KEY" \
   -d '{
@@ -88,7 +88,7 @@ from openai import OpenAIError
 
 # Initialize client pointing to APIVALE gateway
 client = openai.OpenAI(
-    base_url="https://apivale.com/v1",
+    base_url="https://apivel.com/v1",
     api_key=os.environ.get("APIVALE_API_KEY")
 )
 
@@ -123,7 +123,7 @@ Configure your script to query DeepSeek V4:
 import { OpenAI } from 'openai';
 
 const client = new OpenAI({
-  baseURL: 'https://apivale.com/v1',
+  baseURL: 'https://apivel.com/v1',
   apiKey: process.env.APIVALE_API_KEY,
 });
 
@@ -149,7 +149,7 @@ queryModel();
   <h4 class="cta-card-title">⚡ Start Calling Hy3 & DeepSeek V4 Instantly</h4>
   <p class="cta-card-text">Ditch the hassle of buying virtual Chinese phone numbers or managing Alipay accounts. Register on APIVALE today, secure your API key via Waffo Global Billing (credit cards and global wallets), and enjoy high-concurrency access to Tencent Hunyuan, DeepSeek, Zhipu, and Kling APIs (compare video generation economics in our <a href="/blog/llm-cost-optimization-guide/" class="text-emerald-400 hover:underline font-semibold">fal.ai H3 Max vs Kling & Seedance benchmark</a>). Get $0.20 free credit (+ 50% bonus on 1st top-up) on sign-up.</p>
   <div class="cta-card-actions">
-    <a href="https://apivale.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-access-hy3-deepseek-without-86-phone" class="cta-primary-btn">Create Free Account</a>
+    <a href="https://apivel.com/sign-up?utm_source=apivale_blog&utm_medium=blog&utm_campaign=how-to-access-hy3-deepseek-without-86-phone" class="cta-primary-btn">Create Free Account</a>
     <a href="/blog/openrouter-alternatives/" class="cta-secondary-btn">Compare Routing Providers</a>
   </div>
 </div>
@@ -159,7 +159,7 @@ queryModel();
 ## Developer FAQ
 
 **Q: Can I use standard OpenAI SDK wrappers to connect to these models?**  
-**A:** **Yes.** APIVALE is fully OpenAI API protocol compliant. Simply change the client `baseURL` parameter to `https://apivale.com/v1` and supply your APIVALE API key. All existing SDK properties (like stream, temperature, and max_tokens) will function as expected.
+**A:** **Yes.** APIVALE is fully OpenAI API protocol compliant. Simply change the client `baseURL` parameter to `https://apivel.com/v1` and supply your APIVALE API key. All existing SDK properties (like stream, temperature, and max_tokens) will function as expected.
 
 **Q: Are there geographic restrictions on where I can call the API from?**  
 **A:** **No.** Unlike Tencent Cloud and official DeepSeek endpoints, which enforce region-blocking or strict billing validations, APIVALE routes requests through global edge nodes. You can call the API globally (including from the US, UK, EU, and South Korea) without VPNs or proxy setups.
@@ -180,7 +180,7 @@ queryModel();
       "name": "Can I use standard OpenAI SDK wrappers to connect to these models?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. APIVALE is fully OpenAI API protocol compliant. Simply change the client baseURL parameter to https://apivale.com/v1 and supply your APIVALE API key. All existing SDK properties will function as expected."
+        "text": "Yes. APIVALE is fully OpenAI API protocol compliant. Simply change the client baseURL parameter to https://apivel.com/v1 and supply your APIVALE API key. All existing SDK properties will function as expected."
       }
     },
     {

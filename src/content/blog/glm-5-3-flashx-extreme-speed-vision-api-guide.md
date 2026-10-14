@@ -40,7 +40,7 @@ lang: "en"
     Register an APIVALE account to claim <strong>$0.20 free starter credit</strong>. Your personal API token will automatically inject into the CLI configuration scripts below.
   </p>
   <div class="flex items-center gap-3">
-    <a href="https://apivale.com/sign-up?redirect=/blog/glm-5-3-flashx-extreme-speed-vision-api-guide" class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white text-xs font-semibold rounded-lg shadow-md transition-all">
+    <a href="https://apivel.com/sign-up?redirect=/blog/glm-5-3-flashx-extreme-speed-vision-api-guide" class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white text-xs font-semibold rounded-lg shadow-md transition-all">
       Claim $0.20 Free Credit &rarr;
     </a>
   </div>
@@ -395,4 +395,4 @@ Yes, GLM models are created by Zhipu AI (originating from Tsinghua University re
 
 GLM-5.3-FlashX breaks through the traditional latency trade-off in AI software engineering, combining 320B MoE intelligence, 1M context retention, and native visual reasoning with sustained 200 tokens per second generation speeds. By pairing this model with APIVALE's resilient gateway routing and zero-KYC Waffo global billing, engineering teams can eliminate agent wait times and automate visual bug resolution.
 
-Create your free API key on [APIVALE](https://apivale.com) today, claim your $0.20 starter balance, and accelerate your Claude Code and Cursor development workflows.
+Create your free API key on [APIVALE](https://apivel.com) today, claim your $0.20 starter balance, and accelerate your Claude Code and Cursor development workflows.

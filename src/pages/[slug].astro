@@ -115,8 +115,8 @@ if (slugLower.includes('cursor')) defaultClient = 'cursor';
 else if (slugLower.includes('windsurf')) defaultClient = 'windsurf';
 else if (slugLower.includes('opencode')) defaultClient = 'opencode';
 
-const canonicalPageUrl = `https://apivale.com/blog/${post.id}/`;
-const postImageUrl = post.data.image ? (post.data.image.startsWith('http') ? post.data.image : `https://apivale.com${post.data.image}`) : 'https://apivale.com/blog/og-cover.png';
+const canonicalPageUrl = `https://apivel.com/blog/${post.id}/`;
+const postImageUrl = post.data.image ? (post.data.image.startsWith('http') ? post.data.image : `https://apivel.com${post.data.image}`) : 'https://apivel.com/blog/og-cover.png';
 
 const blogPostingSchema = {
 	"@context": "https://schema.org",
@@ -137,15 +137,15 @@ const blogPostingSchema = {
 				"@type": "Person",
 				"name": post.data.author,
 				"jobTitle": post.data.authorTitle || "Technical Specialist, APIVALE",
-				"url": "https://apivale.com/about"
+				"url": "https://apivel.com/about"
 			},
 			"publisher": {
 				"@type": "Organization",
 				"name": "APIVALE",
-				"url": "https://apivale.com",
+				"url": "https://apivel.com",
 				"logo": {
 					"@type": "ImageObject",
-					"url": "https://apivale.com/favicon.svg"
+					"url": "https://apivel.com/favicon.svg"
 				}
 			},
 			"mainEntityOfPage": {
@@ -161,13 +161,13 @@ const blogPostingSchema = {
 					"@type": "ListItem",
 					"position": 1,
 					"name": "Home",
-					"item": "https://apivale.com"
+					"item": "https://apivel.com"
 				},
 				{
 					"@type": "ListItem",
 					"position": 2,
 					"name": "Blog",
-					"item": "https://apivale.com/blog/"
+					"item": "https://apivel.com/blog/"
 				},
 				{
 					"@type": "ListItem",
@@ -342,7 +342,7 @@ const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.key
 				<p class="inline-desc" id="inlineDesc">Sign up via GitHub for instant $0.20 free credit (+ 50% 1st top-up bonus). Access DeepSeek, GLM, and Claude in our playground instantly.</p>
 			</div>
 			<div class="banner-action">
-				<a href={`https://apivale.com/sign-in?redirect=/blog/${post.id}&utm_source=apivale_blog&utm_medium=blog_inline_banner`} class="inline-action-btn" id="inlineActionBtn" rel="nofollow">
+				<a href={`https://apivel.com/sign-in?redirect=/blog/${post.id}&utm_source=apivale_blog&utm_medium=blog_inline_banner`} class="inline-action-btn" id="inlineActionBtn" rel="nofollow">
 					Claim API Credentials
 				</a>
 			</div>
@@ -378,7 +378,7 @@ const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.key
 		</div>
 		<div class="cta-title" id="ctaTitle">Get Free API Key</div>
 		<p class="cta-desc" id="ctaDesc">Sign up via GitHub for instant $0.20 credit (+ 50% bonus). No KYC required.</p>
-		<a href="https://apivale.com/sign-in?redirect=%2Fplayground&utm_source=apivale_blog&utm_medium=blog_floating_card" class="cta-action-btn" id="ctaActionBtn" rel="nofollow">
+		<a href="https://apivel.com/sign-in?redirect=%2Fplayground&utm_source=apivale_blog&utm_medium=blog_floating_card" class="cta-action-btn" id="ctaActionBtn" rel="nofollow">
 			Try Playground Instantly
 		</a>
 	</div>
@@ -955,7 +955,7 @@ const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.key
 				if (descEl) descEl.innerText = floatingData.desc;
 				if (actionBtn) {
 					actionBtn.innerText = floatingData.btnText;
-					actionBtn.href = `https://apivale.com/sign-up?redirect=${encodeURIComponent(window.location.pathname)}&utm_source=apivale_blog&utm_medium=blog_floating_card&utm_campaign=${floatingData.utmCampaign}`;
+					actionBtn.href = `https://apivel.com/sign-up?redirect=${encodeURIComponent(window.location.pathname)}&utm_source=apivale_blog&utm_medium=blog_floating_card&utm_campaign=${floatingData.utmCampaign}`;
 					actionBtn.rel = 'nofollow';
 				}
 
@@ -1011,7 +1011,7 @@ const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.key
 				if (descEl) descEl.innerText = inlineData.desc;
 				if (actionBtn) {
 					actionBtn.innerText = inlineData.btnText;
-					actionBtn.href = `https://apivale.com/sign-in?redirect=%2Fplayground&utm_source=apivale_blog&utm_medium=blog_inline_banner&utm_campaign=${inlineData.utmCampaign}`;
+					actionBtn.href = `https://apivel.com/sign-in?redirect=%2Fplayground&utm_source=apivale_blog&utm_medium=blog_inline_banner&utm_campaign=${inlineData.utmCampaign}`;
 				}
 
 				inlineBanner.style.display = 'block';

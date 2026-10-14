@@ -404,10 +404,10 @@ Verify your MiniMax M3.1-Flash-Preview connectivity and calculate projected 1M-c
     </div>
   </div>
   <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-    <a href="https://apivale.com/sign-up?redirect=/blog/minimax-m3-1-flash-preview-api-setup/" class="w-full sm:w-auto px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-gray-950 font-bold rounded-lg transition-all duration-150 shadow-lg shadow-emerald-500/20" rel="nofollow">
+    <a href="https://apivel.com/sign-up?redirect=/blog/minimax-m3-1-flash-preview-api-setup/" class="w-full sm:w-auto px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-gray-950 font-bold rounded-lg transition-all duration-150 shadow-lg shadow-emerald-500/20" rel="nofollow">
       Claim $0.20 Free API Trial
     </a>
-    <a href="https://apivale.com/pricing?redirect=/blog/minimax-m3-1-flash-preview-api-setup/" class="w-full sm:w-auto px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white font-medium rounded-lg transition-all duration-150 border border-gray-700" rel="nofollow">
+    <a href="https://apivel.com/pricing?redirect=/blog/minimax-m3-1-flash-preview-api-setup/" class="w-full sm:w-auto px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white font-medium rounded-lg transition-all duration-150 border border-gray-700" rel="nofollow">
       View Pay-As-You-Go Rates
     </a>
   </div>

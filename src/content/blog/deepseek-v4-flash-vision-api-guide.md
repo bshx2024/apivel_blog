@@ -15,7 +15,7 @@ lang: "en"
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
     <li><strong>Predictable 384-Token Image Cap:</strong> DeepSeek-V4-Flash-Vision-Exp fixes image token consumption at 384 tokens per image regardless of input dimensions, eliminating dynamic resolution spikes.</li>
-    <li><strong>94.2% Multimodal Savings:</strong> At $0.22/1M input and $0.66/1M output tokens, analyzing 10,000 UI screenshots costs under $0.85 (claim <a href="https://apivale.com/sign-up?redirect=/blog/deepseek-v4-flash-vision-api-guide" class="text-emerald-400 hover:underline font-semibold">$0.20 free starter credit</a>).</li>
+    <li><strong>94.2% Multimodal Savings:</strong> At $0.22/1M input and $0.66/1M output tokens, analyzing 10,000 UI screenshots costs under $0.85 (claim <a href="https://apivel.com/sign-up?redirect=/blog/deepseek-v4-flash-vision-api-guide" class="text-emerald-400 hover:underline font-semibold">$0.20 free starter credit</a>).</li>
     <li><strong>Waffo Global Billing & Zero KYC:</strong> Connect through APIVALE's edge gateway with instant Waffo payments, bypassing domestic +86 SMS gates and international card declines.</li>
   </ul>
 </div>
@@ -26,7 +26,7 @@ Following the text and native multimodal throughput of the official [DeepSeek V4
 
 ```bash
 # Execute a multimodal vision request via APIVALE OpenAI-compatible proxy
-curl https://apivale.com/v1/chat/completions \
+curl https://apivel.com/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_APIVALE_KEY" \
   -d '{
@@ -151,7 +151,7 @@ from openai import OpenAI
 # Initialize client using APIVALE Gateway
 client = OpenAI(
     api_key=os.environ.get("APIVALE_API_KEY", "your-apivale-api-key"),
-    base_url="https://apivale.com/v1"
+    base_url="https://apivel.com/v1"
 )
 
 def encode_image_to_base64(image_path: str) -> tuple[str, str]:
@@ -219,7 +219,7 @@ import OpenAI from "openai";
 
 const openai = new OpenAI({
   apiKey: process.env.APIVALE_API_KEY || "your-apivale-api-key",
-  baseURL: "https://apivale.com/v1",
+  baseURL: "https://apivel.com/v1",
 });
 
 export async function streamVisionAnalysis(imageUrl: string, prompt: string): Promise<void> {
@@ -282,7 +282,7 @@ Image token consumption is hard-capped at 384 tokens per image regardless of ori
 APIVALE natively supports global **Waffo payment methods**, including international credit cards and major digital wallets. Users can top up their account balance with zero KYC and without requiring a Chinese +86 phone number.
 
 ### Can I use DeepSeek V4 Flash Vision with Cursor and Claude Code CLI?
-Yes. Configure your IDE or CLI base URL to `https://apivale.com/v1` and point your model selection parameter to `deepseek-v4-flash-vision-exp`. See our [Cursor BYOK vs. Cursor Pro cost analysis](/blog/cursor-pro-vs-custom-api-key/) for comparative benchmarks.
+Yes. Configure your IDE or CLI base URL to `https://apivel.com/v1` and point your model selection parameter to `deepseek-v4-flash-vision-exp`. See our [Cursor BYOK vs. Cursor Pro cost analysis](/blog/cursor-pro-vs-custom-api-key/) for comparative benchmarks.
 
 ---
 
@@ -292,7 +292,7 @@ To optimize your AI developer workflows and benchmark token budgets across codin
 
 * **Token Cost Calculator**: Test multi-model price comparisons with our [LLM cost optimization guide](/blog/llm-cost-optimization-guide/).
 * **IDE & Agent Configs**: Learn how to bridge external models in Cursor via our [Kimi K3 vs. Claude Code setup](/blog/how-to-connect-kimi-k3-to-claude-code-cli/).
-* **Official Model Hub**: Check out the complete list of 40+ supported models on [APIVALE Pricing Page](https://apivale.com).
+* **Official Model Hub**: Check out the complete list of 40+ supported models on [APIVALE Pricing Page](https://apivel.com).
 
 ---
 
@@ -302,7 +302,7 @@ The **DeepSeek-V4-Flash-Vision-Exp** model sets a standard for cost-efficient mu
 
 By leveraging APIVALE's proxy gateway, developers eliminate access barriers, avoid billing lockouts with **Waffo global checkout**, and gain high-concurrency uptime protection.
 
-Ready to integrate? **[Create a free API key on APIVALE](https://apivale.com)**, claim your $0.20 starter test credit, top up with Waffo, and supercharge your multimodal agent pipelines today.
+Ready to integrate? **[Create a free API key on APIVALE](https://apivel.com)**, claim your $0.20 starter test credit, top up with Waffo, and supercharge your multimodal agent pipelines today.
 
 <script type="application/ld+json">
 {
@@ -338,7 +338,7 @@ Ready to integrate? **[Create a free API key on APIVALE](https://apivale.com)**,
       "name": "Can I use DeepSeek V4 Flash Vision with Cursor and Claude Code CLI?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Configure your IDE or CLI base URL to https://apivale.com/v1 and point your model selection parameter to deepseek-v4-flash-vision-exp."
+        "text": "Yes. Configure your IDE or CLI base URL to https://apivel.com/v1 and point your model selection parameter to deepseek-v4-flash-vision-exp."
       }
     }
   ]

@@ -29,7 +29,7 @@ lang: "en"
     Sign up for a free APIVALE account to claim <strong>$0.20 free starter credit</strong> and test multi-model hybrid routing instantly!
   </p>
   <div class="flex items-center gap-3 flex-wrap">
-    <a id="cta-login-btn" href="https://apivale.com/sign-up?redirect=/blog/gemini-4-pro-release-date-pricing-benchmarks/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg">⚡ Sign Up / Claim Credit</a>
+    <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/gemini-4-pro-release-date-pricing-benchmarks/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg">⚡ Sign Up / Claim Credit</a>
     <button id="copy-script-btn" onclick="navigator.clipboard.writeText('curl https://api.apivale.com/v1/chat/completions \\\n  -H \&quot;Content-Type: application/json\&quot; \\\n  -H \&quot;Authorization: Bearer $APIVALE_API_KEY\&quot; \\\n  -d \'{\&quot;model\&quot;: \&quot;infer/qwen3.7-max\&quot;, \&quot;messages\&quot;: [{\&quot;role\&quot;: \&quot;user\&quot;, \&quot;content\&quot;: \&quot;Ping\&quot;}]}\''); const originalText = this.innerText; this.innerText = '✓ Copied!'; setTimeout(() => this.innerText = originalText, 2000);" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg">📋 Copy Test cURL</button>
   </div>
 </div>
@@ -458,10 +458,10 @@ Frontier models like **Gemini 4 Pro** unlock exciting new possibilities in spati
     Deploy frontier Google Gemini and high-throughput Chinese models in under 60 seconds. Claim $0.20 starter balance upon signup, plus a <strong>+50% bonus on your first deposit</strong> ($5 yields $7.50, $29 yields $43.50). Need long-term stability? Grab the <strong>$29 Developer Pack (56% OFF, 40M tokens, never expires)</strong>.
   </p>
   <div class="flex flex-wrap gap-3">
-    <a href="https://apivale.com/sign-up?redirect=/blog/gemini-4-pro-release-date-pricing-benchmarks/" class="inline-flex items-center px-5 py-2.5 rounded-xl text-sm font-semibold bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-600/30 transition-all">
+    <a href="https://apivel.com/sign-up?redirect=/blog/gemini-4-pro-release-date-pricing-benchmarks/" class="inline-flex items-center px-5 py-2.5 rounded-xl text-sm font-semibold bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-600/30 transition-all">
       ⚡ Claim $0.20 Free Starter Credit
     </a>
-    <a href="https://apivale.com/pricing?redirect=/blog/gemini-4-pro-release-date-pricing-benchmarks/" class="inline-flex items-center px-5 py-2.5 rounded-xl text-sm font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 transition-all">
+    <a href="https://apivel.com/pricing?redirect=/blog/gemini-4-pro-release-date-pricing-benchmarks/" class="inline-flex items-center px-5 py-2.5 rounded-xl text-sm font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 transition-all">
       💳 View Pricing & Developer Packs
     </a>
   </div>

@@ -28,7 +28,7 @@ keyTakeaways:
   <div class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</div>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
     <li><strong>1-Million-Token Context & SWE-bench Leader:</strong> The stealth AI coding model Ox Alpha (also known as <code>0xAlpha</code> or <code>stealth/ox-alpha</code>) achieves 88.2% on SWE-bench Lite with 1,048,576 tokens of context.</li>
-    <li><strong>Dual-Protocol Gateway:</strong> Complete your <strong>Ox Alpha Claude Code setup</strong>, <strong>0xAlpha Cursor API integration</strong>, and <strong>OpenCode CLI connection</strong> with <a href="https://apivale.com/sign-up?redirect=/blog/ox-alpha-claude-code-cursor-setup/" class="text-emerald-400 hover:underline font-semibold" rel="nofollow">APIVALE (Claim $0.20 Free Credit)</a> with zero header mismatches.</li>
+    <li><strong>Dual-Protocol Gateway:</strong> Complete your <strong>Ox Alpha Claude Code setup</strong>, <strong>0xAlpha Cursor API integration</strong>, and <strong>OpenCode CLI connection</strong> with <a href="https://apivel.com/sign-up?redirect=/blog/ox-alpha-claude-code-cursor-setup/" class="text-emerald-400 hover:underline font-semibold" rel="nofollow">APIVALE (Claim $0.20 Free Credit)</a> with zero header mismatches.</li>
     <li><strong>PayPal Global Billing & Zero KYC:</strong> Access Ox Alpha without mainland phone numbers (+86), identity verification locks, or international credit card rejections via PayPal & global cards.</li>
   </ul>
 </div>
@@ -434,7 +434,7 @@ Ox Alpha launched with a temporary free preview on OpenRouter, which quickly suf
 Ox Alpha was deployed anonymously on OpenRouter as a stealth reasoning model by Zhipu AI to stress-test their flagship **GLM-5.3-Flash** architecture. While community rumors initially guessed Google Gemini or Mistral, reverse tokenizer analysis confirmed its Zhipu AI GLM lineage.
 
 ### How do I pay for Ox Alpha API credits with PayPal?
-APIVALE supports official PayPal Instant Checkout, Apple Pay, and international cards with zero KYC identity verification requirements and instant balance crediting. Sign up at [apivale.com/pricing](https://apivale.com/pricing), select your quota, and check out securely via PayPal.
+APIVALE supports official PayPal Instant Checkout, Apple Pay, and international cards with zero KYC identity verification requirements and instant balance crediting. Sign up at [apivale.com/pricing](https://apivel.com/pricing), select your quota, and check out securely via PayPal.
 
 ### How does Ox Alpha compare to Claude Sonnet 5 for coding?
 Ox Alpha scores 88.2% on SWE-bench Lite (close to Sonnet 5's 92.4%) but offers a **5x larger context window (1M tokens vs 200K)** at **85% lower token cost** ($0.45/1M input vs $3.00/1M).
