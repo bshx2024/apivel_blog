@@ -38,7 +38,7 @@ You can instantly switch your Claude Code CLI backend to Qwen 3.7 without modify
 ```bash
 # Set environment variables to route Claude Code to Qwen 3.7 via APIVALE
 export ANTHROPIC_BASE_URL="https://apivel.com/v1"
-export ANTHROPIC_AUTH_TOKEN="your_apivale_api_key"
+export ANTHROPIC_AUTH_TOKEN="your_apivel_api_key"
 export ANTHROPIC_MODEL="infer/qwen3.7-max"
 
 # Launch Claude Code CLI

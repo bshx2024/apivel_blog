@@ -49,7 +49,7 @@ Before running local daemons, test your connectivity against an unthrottled endp
 
 ```bash
 # Verify active connectivity to an unthrottled Claude-compatible gateway
-curl -X POST https://api.apivale.com/v1/chat/completions \
+curl -X POST https://apivel.com/v1/chat/completions \
   -H "Authorization: Bearer your_apivale_key_here" \
   -H "Content-Type: application/json" \
   -d '{
@@ -201,7 +201,7 @@ routes:
         model: "claude-3-5-sonnet-20241022"
         priority: 1
       - provider: "apivale-cloud"
-        endpoint: "https://api.apivale.com/v1"
+        endpoint: "https://apivel.com/v1"
         model: "claude-sonnet-5"
         api_key: "${APIVALE_API_KEY}"
         priority: 2
@@ -276,7 +276,7 @@ import http from 'http';
 import https from 'https';
 
 const LOCAL_GATEWAY = { host: '127.0.0.1', port: 20128, path: '/v1/chat/completions' };
-const CLOUD_GATEWAY = { host: 'api.apivale.com', port: 443, path: '/v1/chat/completions' };
+const CLOUD_GATEWAY = { host: 'apivel.com', port: 443, path: '/v1/chat/completions' };
 const APIVALE_KEY = process.env.APIVALE_API_KEY || 'your_apivale_key_here';
 
 const server = http.createServer(async (req, res) => {
@@ -289,7 +289,7 @@ const server = http.createServer(async (req, res) => {
       await forwardRequest(LOCAL_GATEWAY, rawPayload, req.headers, res, false);
     } catch (localErr) {
       console.warn(`[Failover] Local OmniRoute offline: ${localErr.message}. Cascading to APIVALE...`);
-      const cloudHeaders = { ...req.headers, 'authorization': `Bearer ${APIVALE_KEY}`, 'host': 'api.apivale.com' };
+      const cloudHeaders = { ...req.headers, 'authorization': `Bearer ${APIVALE_KEY}`, 'host': 'apivel.com' };
       await forwardRequest(CLOUD_GATEWAY, rawPayload, cloudHeaders, res, true);
     }
   });
@@ -364,7 +364,7 @@ server.listen(8080, '127.0.0.1', () => {
   </div>
 
   <div class="relative mt-4">
-    <pre id="generated-cli-command" class="bg-gray-950 border border-gray-800 rounded-lg p-4 text-xs font-mono text-cyan-300 overflow-x-auto">export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
+    <pre id="generated-cli-command" class="bg-gray-950 border border-gray-800 rounded-lg p-4 text-xs font-mono text-cyan-300 overflow-x-auto">export ANTHROPIC_BASE_URL="https://apivel.com/v1"
 export ANTHROPIC_AUTH_TOKEN="your_apivale_key_here"
 export ANTHROPIC_MODEL="claude-sonnet-5"
 npx @anthropic-ai/claude-code</pre>
@@ -384,7 +384,7 @@ npx @anthropic-ai/claude-code</pre>
       const agent = agentSelect.value;
       const model = modelSelect.value;
 
-      const baseUrl = mode === 'cloud' ? 'https://api.apivale.com/v1' : 'http://localhost:20128/v1';
+      const baseUrl = mode === 'cloud' ? 'https://apivel.com/v1' : 'http://localhost:20128/v1';
       const keyVal = mode === 'cloud' ? 'your_apivale_key_here' : 'omniroute_local_key';
 
       if (agent === 'claude-code') {
@@ -421,7 +421,7 @@ OmniRoute Claude API failures typically stem from port 20128 collisions (`EADDRI
 No, using OmniRoute on local loopback (`127.0.0.1`) does not trigger Anthropic account bans because requests originate from your local machine. However, exposing the proxy on public IP addresses (`0.0.0.0`) without authentication can leak your API credentials.
 
 ### What are the best managed cloud alternatives to OmniRoute?
-The leading managed cloud alternative is APIVALE (`https://api.apivale.com/v1`), which eliminates local daemon maintenance, Docker resource overhead, and rate limits. APIVALE provides direct access to Claude Sonnet 5, DeepSeek V4, and Qwen 3.7 Max with official PayPal checkout and a $0.20 free signup trial.
+The leading managed cloud alternative is APIVALE (`https://apivel.com/v1`), which eliminates local daemon maintenance, Docker resource overhead, and rate limits. APIVALE provides direct access to Claude Sonnet 5, DeepSeek V4, and Qwen 3.7 Max with official PayPal checkout and a $0.20 free signup trial.
 
 <script type="application/ld+json">
 {
@@ -465,7 +465,7 @@ The leading managed cloud alternative is APIVALE (`https://api.apivale.com/v1`),
       "name": "What are the best managed cloud alternatives to OmniRoute?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "APIVALE (https://api.apivale.com/v1) is the top managed cloud alternative, offering zero-DevOps access to Claude Sonnet 5, DeepSeek V4, and Qwen 3.7 Max with instant PayPal billing and a $0.20 free trial."
+        "text": "APIVALE (https://apivel.com/v1) is the top managed cloud alternative, offering zero-DevOps access to Claude Sonnet 5, DeepSeek V4, and Qwen 3.7 Max with instant PayPal billing and a $0.20 free trial."
       }
     }
   ]

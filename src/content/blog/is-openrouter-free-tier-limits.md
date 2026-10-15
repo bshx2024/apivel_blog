@@ -248,7 +248,7 @@ import { OpenAI } from "openai";
 
 export class ResilientGatewayRouter {
   private freeClient = new OpenAI({ baseURL: "https://openrouter.ai/api/v1", apiKey: process.env.OPENROUTER_KEY });
-  private prodClient = new OpenAI({ baseURL: "https://api.apivale.com/v1", apiKey: process.env.APIVALE_KEY });
+  private prodClient = new OpenAI({ baseURL: "https://apivel.com/v1", apiKey: process.env.APIVALE_KEY });
 
   async completePrompt(prompt: string): Promise<string> {
     try {

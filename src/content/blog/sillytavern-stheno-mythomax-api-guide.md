@@ -22,7 +22,7 @@ In this guide, we show you how to configure SillyTavern to utilize **Stheno v3.2
 Validate your APIVALE connection by running this simple cURL command in your terminal to request a response from the Stheno v3.2 model:
 
 ```bash
-curl https://api.apivale.com/v1/chat/completions \
+curl https://apivel.com/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer your_apivale_key_here" \
   -d '{
@@ -52,7 +52,7 @@ When developing creative interfaces or configuring personal roleplay backends, c
 <div class="my-6 border-l-4 border-indigo-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Definition</span>
   <h4 class="mt-1 text-md font-semibold text-white">SillyTavern API Bridge</h4>
-  <p class="mt-2 text-sm text-gray-300">A SillyTavern API Bridge is a configuration architecture that intercepts chat interface requests from the SillyTavern frontend and relays them to an OpenAI-compatible proxy gateway (such as api.apivale.com/v1) using unified developer keys to access specialized, uncensored open-source models.</p>
+  <p class="mt-2 text-sm text-gray-300">A SillyTavern API Bridge is a configuration architecture that intercepts chat interface requests from the SillyTavern frontend and relays them to an OpenAI-compatible proxy gateway (such as apivel.com/v1) using unified developer keys to access specialized, uncensored open-source models.</p>
 </div>
 
 ---
@@ -65,7 +65,7 @@ Follow these steps to connect your local or mobile SillyTavern installation to A
 2. **Select API Type**: In the "API" dropdown menu, select **OpenAI**. (Note: Do not select KoboldAI or Horde; APIVALE exposes these models through a standard OpenAI-compatible API endpoint).
 3. **Configure the Endpoint URL**: Uncheck the "Use Reverse Proxy" box if it is checked. In the **API URL** input box, paste the APIVALE gateway endpoint:
    ```text
-   https://api.apivale.com/v1
+   https://apivel.com/v1
    ```
 4. **Input the Authentication Token**: Paste your unique APIVALE API key (available in your APIVALE dashboard) into the **API Key** input box.
 5. **Establish Connection**: Click the **Connect** button. SillyTavern will send a handshake request. Once successful, the status indicator will turn green, and the **Model** dropdown list will populate.
@@ -96,7 +96,7 @@ from openai import OpenAI, AuthenticationError, RateLimitError, APIError
 # Initialize client pointing to APIVALE proxy
 client = OpenAI(
     api_key="your_apivale_key_here",
-    base_url="https://api.apivale.com/v1"
+    base_url="https://apivel.com/v1"
 )
 
 try:
@@ -136,7 +136,7 @@ import OpenAI from 'openai';
 // Initialize the SDK pointing to the APIVALE gateway
 const openai = new OpenAI({
   apiKey: 'your_apivale_key_here',
-  baseURL: 'https://api.apivale.com/v1',
+  baseURL: 'https://apivel.com/v1',
 });
 
 async function runRoleplayPrompt() {
@@ -180,7 +180,7 @@ runRoleplayPrompt();
 ## Developer FAQ
 
 **Q: How do I resolve the "API Connection Refused" error in SillyTavern?**  
-**A:** First, verify that the API URL is set exactly to `https://api.apivale.com/v1` and does not contain trailing slashes or sub-paths. Second, ensure that your APIVALE API key is valid and has sufficient credit balance. 
+**A:** First, verify that the API URL is set exactly to `https://apivel.com/v1` and does not contain trailing slashes or sub-paths. Second, ensure that your APIVALE API key is valid and has sufficient credit balance. 
 
 **Q: Which model is best for descriptive, high-speed mobile roleplay?**  
 **A:** `sao10k/l3-stheno-8b` is highly recommended for mobile deployment. Built on Llama 3 8B, it offers exceptionally low latency (TTFT < 150ms) while producing highly expressive, immersive character dialogues.
@@ -201,7 +201,7 @@ runRoleplayPrompt();
       "name": "How do I resolve the \"API Connection Refused\" error in SillyTavern?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "First, verify that the API URL is set exactly to https://api.apivale.com/v1 and does not contain trailing slashes. Second, ensure that your APIVALE API key is valid and has sufficient credit balance."
+        "text": "First, verify that the API URL is set exactly to https://apivel.com/v1 and does not contain trailing slashes. Second, ensure that your APIVALE API key is valid and has sufficient credit balance."
       }
     },
     {

@@ -162,7 +162,7 @@ Use this live calculator to compute your monthly context savings and generate ve
     <div>
       <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider block mb-1">Generated Zero-Login Configuration:</label>
       <div class="relative bg-black/80 rounded-xl p-4 border border-gray-800 font-mono text-xs text-gray-300 overflow-x-auto min-h-[140px]">
-        <pre><code id="longcat-config-text">export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
+        <pre><code id="longcat-config-text">export ANTHROPIC_BASE_URL="https://apivel.com/v1"
 export ANTHROPIC_API_KEY="YOUR_APIVALE_TOKEN"
 claude --model infer/meituan/longcat-2.5</code></pre>
       </div>
@@ -206,11 +206,11 @@ claude --model infer/meituan/longcat-2.5</code></pre>
       if (!modeSelect || !configText) return;
       const mode = modeSelect.value;
       if (mode === 'claude-code') {
-        configText.textContent = 'export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"\nexport ANTHROPIC_API_KEY="YOUR_APIVALE_TOKEN"\nclaude --model infer/meituan/longcat-2.5';
+        configText.textContent = 'export ANTHROPIC_BASE_URL="https://apivel.com/v1"\nexport ANTHROPIC_API_KEY="YOUR_APIVALE_TOKEN"\nclaude --model infer/meituan/longcat-2.5';
       } else if (mode === 'cursor') {
-        configText.textContent = '// In Cursor Settings -> Models -> Custom Base URL:\nBase URL: https://api.apivale.com/v1\nAPI Key: YOUR_APIVALE_TOKEN\nModel: infer/meituan/longcat-2.5';
+        configText.textContent = '// In Cursor Settings -> Models -> Custom Base URL:\nBase URL: https://apivel.com/v1\nAPI Key: YOUR_APIVALE_TOKEN\nModel: infer/meituan/longcat-2.5';
       } else if (mode === 'python') {
-        configText.textContent = 'from openai import OpenAI\n\nclient = OpenAI(base_url="https://api.apivale.com/v1", api_key="YOUR_APIVALE_TOKEN")\nresponse = client.chat.completions.create(\n    model="infer/meituan/longcat-2.5",\n    messages=[{"role": "user", "content": "Analyze repo structure"}]\n)';
+        configText.textContent = 'from openai import OpenAI\n\nclient = OpenAI(base_url="https://apivel.com/v1", api_key="YOUR_APIVALE_TOKEN")\nresponse = client.chat.completions.create(\n    model="infer/meituan/longcat-2.5",\n    messages=[{"role": "user", "content": "Analyze repo structure"}]\n)';
       }
     }
 
@@ -256,10 +256,10 @@ To run Anthropic's official command-line coding agent with LongCat 2.5 routing:
 
 ```bash
 # Set your APIVALE gateway credential
-export ANTHROPIC_API_KEY="sk-apivale-live-prod-token"
+export ANTHROPIC_API_KEY="sk-apivel-live-prod-token"
 
 # Point Messages API requests to the APIVALE proxy
-export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
 
 # Launch Claude Code specifying the LongCat 2.5 model ID
 claude --model infer/meituan/longcat-2.5
@@ -268,7 +268,7 @@ claude --model infer/meituan/longcat-2.5
 ### Configuring Cursor IDE
 In Cursor IDE, navigate to `Settings` $\rightarrow$ `Models`:
 1. Under **OpenAI API Key**, toggle on **Custom Base URL**.
-2. Enter `https://api.apivale.com/v1`.
+2. Enter `https://apivel.com/v1`.
 3. Paste your APIVALE authentication token into the key input.
 4. Under **Model Names**, click `+ Add Model` and type `infer/meituan/longcat-2.5`.
 5. Select `infer/meituan/longcat-2.5` in Cursor Composer to execute long-context repository edits.
@@ -289,7 +289,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger("LongCatApiEngine")
 
 client = OpenAI(
-    base_url="https://api.apivale.com/v1",
+    base_url="https://apivel.com/v1",
     api_key=os.environ.get("APIVALE_API_KEY", "your-apivale-token")
 )
 
@@ -371,7 +371,7 @@ LongCat 2.5 scores 88.6% on SWE-bench Lite with a native 1,000,000-token context
 LongCat 2.5 is Meituan's frontier multimodal foundation model. Built on a 1.6-trillion-parameter Mixture-of-Experts (MoE) network with LongCat Sparse Attention (LSA), it dynamically activates ~48B parameters per token for high-throughput code synthesis and visual-audio comprehension.
 
 ### How do I connect LongCat 2.5 to Cursor and Claude Code?
-Configure your gateway endpoint to `https://api.apivale.com/v1` and supply your APIVALE authorization token. In Claude Code, export `ANTHROPIC_BASE_URL` and specify model `infer/meituan/longcat-2.5`. In Cursor, set the custom OpenAI Base URL and add `infer/meituan/longcat-2.5` to your models list.
+Configure your gateway endpoint to `https://apivel.com/v1` and supply your APIVALE authorization token. In Claude Code, export `ANTHROPIC_BASE_URL` and specify model `infer/meituan/longcat-2.5`. In Cursor, set the custom OpenAI Base URL and add `infer/meituan/longcat-2.5` to your models list.
 
 <script type="application/ld+json">
 {
@@ -407,7 +407,7 @@ Configure your gateway endpoint to `https://api.apivale.com/v1` and supply your 
       "name": "How do I connect LongCat 2.5 to Cursor and Claude Code?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Configure your gateway endpoint to https://api.apivale.com/v1 and supply your APIVALE authorization token. In Claude Code, export ANTHROPIC_BASE_URL and specify model 'infer/meituan/longcat-2.5'. In Cursor, set the custom OpenAI Base URL and add 'infer/meituan/longcat-2.5' to your models list."
+        "text": "Configure your gateway endpoint to https://apivel.com/v1 and supply your APIVALE authorization token. In Claude Code, export ANTHROPIC_BASE_URL and specify model 'infer/meituan/longcat-2.5'. In Cursor, set the custom OpenAI Base URL and add 'infer/meituan/longcat-2.5' to your models list."
       }
     }
   ]

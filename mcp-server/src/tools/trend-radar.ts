@@ -342,7 +342,7 @@ export async function handleExtractCommunityPainpoints(
       {
         category: "Configuration",
         painpoint: `Missing OpenAI / Anthropic compatibility parameters when integrating ${modelName} with Cursor or Claude Code CLI.`,
-        actionableAdviceForArticle: `Provide copy-pasteable export ANTHROPIC_BASE_URL="https://api.apivale.com/v1" and custom model identifiers.`
+        actionableAdviceForArticle: `Provide copy-pasteable export ANTHROPIC_BASE_URL="https://apivel.com/v1" and custom model identifiers.`
       },
       {
         category: "Pricing/Payment",

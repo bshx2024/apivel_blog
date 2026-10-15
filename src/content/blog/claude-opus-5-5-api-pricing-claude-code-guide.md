@@ -23,7 +23,7 @@ keyTakeaways:
   - label: "Target Workflows"
     value: "Claude Code CLI, Cursor, Windsurf"
   - label: "Integration Base URL"
-    value: "https://api.apivale.com/v1"
+    value: "https://apivel.com/v1"
     isCode: true
   - label: "Billing & Quota"
     value: "PayPal & Global Cards ($0.20 Trial)"
@@ -33,7 +33,7 @@ keyTakeaways:
 <div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
-    <li><strong>Gateway Protocol:</strong> Access the <strong>Claude Opus 5.5 API</strong> via APIVALE proxy (<code>https://api.apivale.com/v1</code>) with automatic thinking translation.</li>
+    <li><strong>Gateway Protocol:</strong> Access the <strong>Claude Opus 5.5 API</strong> via APIVALE proxy (<code>https://apivel.com/v1</code>) with automatic thinking translation.</li>
     <li><strong>Dual-Engine Routing:</strong> Route architecture design to the flagship engine and delegate routine code to <a href="/blog/how-to-connect-qwen-3-8-to-claude-code-cli" class="text-emerald-400 underline">Qwen 3.8 Max</a> or <a href="/blog/deepseek-v4-flash-api-guide" class="text-emerald-400 underline">DeepSeek V4.1 Flash</a>. Read our detailed <a href="/blog/claude-opus-vs-gpt-5-5-for-coding/" class="text-emerald-400 underline font-semibold">Claude Opus 5.5 Free Trial vs GPT-5.5 Coding Guide</a>.</li>
     <li><strong>Error Prevention:</strong> Mandatory adaptive thinking throws HTTP 400 if disabled; adjust effort parameters instead.</li>
     <li><strong>Zero-KYC Access:</strong> Instant global PayPal billing with <a href="/sign-up?redirect=/blog/claude-opus-5-5-api-pricing-claude-code-guide" class="text-emerald-400 underline font-medium">$0.20 free signup trial credit</a>.</li>
@@ -51,7 +51,7 @@ Integrating the **Claude Opus 5.5 API** into terminal agent workflows delivers f
 Verify your live terminal connection via cURL:
 
 ```bash
-curl -X POST "https://api.apivale.com/v1/messages" \
+curl -X POST "https://apivel.com/v1/messages" \
   -H "x-api-key: $APIVALE_API_KEY" \
   -H "anthropic-version: 2023-06-01" \
   -H "content-type: application/json" \
@@ -114,14 +114,14 @@ Configure Claude Code CLI to route through APIVALE with PayPal billing:
 
 ```bash
 # Point Claude Code CLI to APIVALE proxy gateway
-export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
-export ANTHROPIC_API_KEY="sk-apivale-prod-live-key"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
+export ANTHROPIC_API_KEY="sk-apivel-prod-live-key"
 
 # Launch terminal agent with Claude Opus 5.5 API
 claude --model claude-opus-5-5
 ```
 
-On Windows PowerShell, run: `$env:ANTHROPIC_BASE_URL="https://api.apivale.com/v1"`.
+On Windows PowerShell, run: `$env:ANTHROPIC_BASE_URL="https://apivel.com/v1"`.
 
 ### Resolving HTTP 400 Thinking Errors
 
@@ -143,8 +143,8 @@ Legacy payloads disabling thinking fail on modern endpoints:
 ```python
 import os, time, json, urllib.request
 
-GATEWAY = "https://api.apivale.com/v1/chat/completions"
-API_KEY = os.getenv("APIVALE_API_KEY", "sk-apivale-live-demo")
+GATEWAY = "https://apivel.com/v1/chat/completions"
+API_KEY = os.getenv("APIVALE_API_KEY", "sk-apivel-live-demo")
 
 def call_apivale(model: str, prompt: str, system: str):
     payload = {"model": model, "messages": [{"role": "system", "content": system}, {"role": "user", "content": prompt}]}

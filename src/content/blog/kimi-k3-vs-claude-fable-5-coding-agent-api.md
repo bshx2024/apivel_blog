@@ -32,7 +32,7 @@ For developers setting up custom endpoints in IDEs like Cursor or terminal tools
 You can verify your connection to both endpoints with a simple, unified cURL command:
 
 ```bash
-curl https://api.apivale.com/v1/chat/completions \
+curl https://apivel.com/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_APIVALE_KEY" \
   -d '{"model": "kimi-k3", "messages": [{"role": "user", "content": "Write a bash script to parse JSON logs."}]}'
@@ -102,7 +102,7 @@ import openai
 
 # Initialize APIVALE client
 client = openai.OpenAI(
-    base_url="https://api.apivale.com/v1",
+    base_url="https://apivel.com/v1",
     api_key="YOUR_APIVALE_API_KEY"
 )
 

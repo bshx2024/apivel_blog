@@ -17,7 +17,7 @@ keyTakeaways:
   - label: "Agent Tool-Calling"
     value: "Restored via leookun/cursor-byok GitHub Proxy"
   - label: "Integration Base URL"
-    value: "https://api.apivale.com/v1"
+    value: "https://apivel.com/v1"
     isCode: true
   - label: "Billing & Free Trial"
     value: "PayPal & Global Cards ($0.20 Free Trial)"
@@ -77,7 +77,7 @@ graph TD
     B -->|Cursor BYOK on Free Tier| E["Cursor Free + Custom API Key"]
     E -->|Native Settings Override| F["Chat & Basic Edits (Tab Limited)"]
     E -->|Community Proxy leookun/cursor-byok| G["Full Composer Agent & Tool Calling Restored"]
-    F --> H["APIVALE Unified Gateway (https://api.apivale.com/v1)"]
+    F --> H["APIVALE Unified Gateway (https://apivel.com/v1)"]
     G --> H
     H -->|DeepSeek V4 Route| I["$0.56/mo (97.2% Cost Reduction)"]
     H -->|Claude Sonnet 5 Route| J["$4.62/mo (Zero 5-Hour Lockouts)"]
@@ -107,7 +107,7 @@ Under native settings overrides:
 To restore complete Agent and tool-calling capabilities on the Cursor Free tier, the open-source community created **[leookun/cursor-byok](https://github.com/leookun/cursor-byok)** (available as precompiled release binaries such as `cursor-byok-windows-amd64.exe`, macOS arm64/x64, and Linux):
 * **Protocol Interception & Local Server**: It launches a lightweight local daemon running at `http://127.0.0.1:8080` that intercepts Cursor's outbound communication and mimics Cursor's internal protocol.
 * **Restoring Agent Capabilities**: It translates Cursor's multi-step Composer agent requests into standard OpenAI-compatible function calls, unlocking multi-file autonomous editing and terminal execution.
-* **Flexible Upstream Routing**: Instead of binding your machine directly to a single provider with rigid credit card rules, you configure the local proxy server's upstream URL to route directly through **APIVALE** (`https://api.apivale.com/v1`).
+* **Flexible Upstream Routing**: Instead of binding your machine directly to a single provider with rigid credit card rules, you configure the local proxy server's upstream URL to route directly through **APIVALE** (`https://apivel.com/v1`).
 
 ---
 
@@ -227,7 +227,7 @@ Connecting your custom API key to Cursor takes four straightforward steps:
 
 ### Step 1: Obtain Your API Key
 1. Sign up on [APIVALE Gateway](https://apivel.com/sign-up?redirect=/blog/cursor-pro-vs-custom-api-key) and collect your instant **$0.20 free developer trial credits** (no credit card or phone verification required).
-2. Generate a secure API key (`sk-apivale-...`).
+2. Generate a secure API key (`sk-apivel-...`).
 
 ### Step 2: Open Cursor Settings
 * Press `Ctrl + ,` (Windows/Linux) or `Cmd + ,` (macOS).
@@ -237,7 +237,7 @@ Connecting your custom API key to Cursor takes four straightforward steps:
 1. In the OpenAI section, toggle **"OpenAI API Key"** and paste your APIVALE key.
 2. Click **"Override OpenAI Base URL"** and set the endpoint to:
    ```text
-   https://api.apivale.com/v1
+   https://apivel.com/v1
    ```
 3. Toggle the model verification switch to validate network latency and authentication.
 
@@ -261,8 +261,8 @@ import axios from 'axios';
 
 const app = express();
 const PORT = 3050;
-const APIVALE_GATEWAY_URL = 'https://api.apivale.com/v1/chat/completions';
-const APIVALE_SECRET_KEY = process.env.APIVALE_API_KEY || 'sk-apivale-prod-key';
+const APIVALE_GATEWAY_URL = 'https://apivel.com/v1/chat/completions';
+const APIVALE_SECRET_KEY = process.env.APIVALE_API_KEY || 'sk-apivel-prod-key';
 
 app.use(express.json({ limit: '20mb' }));
 
@@ -357,7 +357,7 @@ Subscribing to US-based AI developer platforms frequently leads to sudden card d
 ## Frequently Asked Questions (FAQ)
 
 ### How do I generate an API key for Cursor?
-Cursor does not issue proprietary "Cursor API keys" for external usage. Instead, Cursor operates as an AI client that connects to standard OpenAI-compatible keys. To generate an API key, register on a gateway like APIVALE (which grants $0.20 free signup trial credit), copy your secret key (`sk-apivale-...`), navigate to Cursor **Settings -> Features -> Models**, toggle OpenAI API Key on, and enter the Base URL `https://api.apivale.com/v1`.
+Cursor does not issue proprietary "Cursor API keys" for external usage. Instead, Cursor operates as an AI client that connects to standard OpenAI-compatible keys. To generate an API key, register on a gateway like APIVALE (which grants $0.20 free signup trial credit), copy your secret key (`sk-apivel-...`), navigate to Cursor **Settings -> Features -> Models**, toggle OpenAI API Key on, and enter the Base URL `https://apivel.com/v1`.
 
 ### Can I use Cursor BYOK on the Free tier without paying for Cursor Pro?
 Yes. Cursor allows free tier accounts to configure custom OpenAI Base URL endpoints under settings. You do not need an active $20/month Cursor Pro subscription to connect your own API key and use models like DeepSeek V4 or Claude Sonnet 5 in Composer.
@@ -384,7 +384,7 @@ APIVALE officially supports PayPal instant checkout alongside international cred
       "name": "How do I generate an API key for Cursor?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Cursor does not issue proprietary API keys. Instead, obtain an OpenAI-compatible key from a gateway like APIVALE, open Cursor Settings -> Models, and set the Base URL override to https://api.apivale.com/v1."
+        "text": "Cursor does not issue proprietary API keys. Instead, obtain an OpenAI-compatible key from a gateway like APIVALE, open Cursor Settings -> Models, and set the Base URL override to https://apivel.com/v1."
       }
     },
     {

@@ -16,7 +16,7 @@ keyTakeaways:
   - label: "Target Workflows"
     value: "Claude Code CLI, Cursor, Windsurf"
   - label: "Integration Base URL"
-    value: "https://api.apivale.com/v1"
+    value: "https://apivel.com/v1"
     isCode: true
   - label: "Billing & Quota"
     value: "PayPal & Global Cards ($0.20 Trial)"
@@ -67,8 +67,8 @@ To resolve runaway billing while preserving top-tier coding performance, APIVALE
 
 ```bash
 # Verify API endpoint connectivity via APIVALE
-curl -s https://api.apivale.com/v1/messages \
-  -H "x-api-key: your_apivale_api_key" \
+curl -s https://apivel.com/v1/messages \
+  -H "x-api-key: your_apivel_api_key" \
   -H "anthropic-version: 2023-06-01" \
   -H "content-type: application/json" \
   -d '{
@@ -186,10 +186,10 @@ Configure your development terminal to direct Anthropic SDK calls through APIVAL
 
 ```bash
 # Set APIVALE Anthropic-compatible Base URL
-export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
 
-# Paste your APIVALE API Key (Starts with sk-apivale-...)
-export ANTHROPIC_AUTH_TOKEN="your_apivale_api_key"
+# Paste your APIVALE API Key (Starts with sk-apivel-...)
+export ANTHROPIC_AUTH_TOKEN="your_apivel_api_key"
 
 # Define the target model identifier
 export ANTHROPIC_MODEL="claude-sonnet-5.5"
@@ -200,8 +200,8 @@ npx @anthropic-ai/claude-code
 
 On Windows PowerShell:
 ```powershell
-$env:ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
-$env:ANTHROPIC_AUTH_TOKEN="your_apivale_api_key"
+$env:ANTHROPIC_BASE_URL="https://apivel.com/v1"
+$env:ANTHROPIC_AUTH_TOKEN="your_apivel_api_key"
 $env:ANTHROPIC_MODEL="claude-sonnet-5.5"
 npx @anthropic-ai/claude-code
 ```
@@ -249,7 +249,7 @@ export class DualEngineRouter {
   private apiKey: string;
   private baseUrl: string;
 
-  constructor(apiKey: string, baseUrl = "https://api.apivale.com/v1") {
+  constructor(apiKey: string, baseUrl = "https://apivel.com/v1") {
     this.apiKey = apiKey;
     this.baseUrl = baseUrl;
   }

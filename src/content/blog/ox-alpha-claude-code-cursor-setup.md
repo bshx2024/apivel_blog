@@ -17,7 +17,7 @@ keyTakeaways:
     value: "stealth/ox-alpha (GLM-5.3)"
     isCode: true
   - label: "Integration Base URL"
-    value: "https://api.apivale.com/v1"
+    value: "https://apivel.com/v1"
     isCode: true
   - label: "Billing & Free Trial"
     value: "PayPal & Global Cards ($0.20 Trial)"
@@ -187,15 +187,15 @@ Configure your client environment and calculate monthly token savings directly o
 
     let configText = '';
     if (client === 'claude-bash') {
-      configText = `# Ox Alpha Claude Code Setup (Linux / macOS Bash)\nexport ANTHROPIC_BASE_URL="https://api.apivale.com/v1"\nexport ANTHROPIC_AUTH_TOKEN="sk-apivale-your_api_key_here"\nexport ANTHROPIC_MODEL="stealth/ox-alpha"\n\n# Run Claude Code CLI\nclaude`;
+      configText = `# Ox Alpha Claude Code Setup (Linux / macOS Bash)\nexport ANTHROPIC_BASE_URL="https://apivel.com/v1"\nexport ANTHROPIC_AUTH_TOKEN="sk-apivel-your_api_key_here"\nexport ANTHROPIC_MODEL="stealth/ox-alpha"\n\n# Run Claude Code CLI\nclaude`;
     } else if (client === 'claude-ps') {
-      configText = `# Ox Alpha Claude Code Setup (Windows PowerShell)\n$env:ANTHROPIC_BASE_URL="https://api.apivale.com/v1"\n$env:ANTHROPIC_AUTH_TOKEN="sk-apivale-your_api_key_here"\n$env:ANTHROPIC_MODEL="stealth/ox-alpha"\n\n# Run Claude Code CLI\nclaude`;
+      configText = `# Ox Alpha Claude Code Setup (Windows PowerShell)\n$env:ANTHROPIC_BASE_URL="https://apivel.com/v1"\n$env:ANTHROPIC_AUTH_TOKEN="sk-apivel-your_api_key_here"\n$env:ANTHROPIC_MODEL="stealth/ox-alpha"\n\n# Run Claude Code CLI\nclaude`;
     } else if (client === 'cursor') {
-      configText = `// 0xAlpha Cursor API Integration\n// Settings -> Models -> Override OpenAI Base URL: https://api.apivale.com/v1\n// Custom Model Name: stealth/ox-alpha\n\n# .cursorrules (Root of Workspace)\n- Model: stealth/ox-alpha on APIVALE High-Speed Gateway\n- Context: Leverage 1,048,576 token window for full-repo refactoring\n- Protocol: OpenAI-compatible /v1/chat/completions endpoint`;
+      configText = `// 0xAlpha Cursor API Integration\n// Settings -> Models -> Override OpenAI Base URL: https://apivel.com/v1\n// Custom Model Name: stealth/ox-alpha\n\n# .cursorrules (Root of Workspace)\n- Model: stealth/ox-alpha on APIVALE High-Speed Gateway\n- Context: Leverage 1,048,576 token window for full-repo refactoring\n- Protocol: OpenAI-compatible /v1/chat/completions endpoint`;
     } else if (client === 'opencode') {
-      configText = `# OpenCode CLI Ox Alpha Setup\nexport OPENCODE_API_BASE="https://api.apivale.com/v1"\nexport OPENCODE_API_KEY="sk-apivale-your_api_key_here"\nexport OPENCODE_MODEL="stealth/ox-alpha"\n\n# Launch OpenCode CLI\nopencode`;
+      configText = `# OpenCode CLI Ox Alpha Setup\nexport OPENCODE_API_BASE="https://apivel.com/v1"\nexport OPENCODE_API_KEY="sk-apivel-your_api_key_here"\nexport OPENCODE_MODEL="stealth/ox-alpha"\n\n# Launch OpenCode CLI\nopencode`;
     } else if (client === 'windsurf') {
-      configText = `// 0xAlpha Windsurf Configuration\n{\n  "openai.baseUrl": "https://api.apivale.com/v1",\n  "openai.apiKey": "sk-apivale-your_api_key_here",\n  "model": "stealth/ox-alpha"\n}`;
+      configText = `// 0xAlpha Windsurf Configuration\n{\n  "openai.baseUrl": "https://apivel.com/v1",\n  "openai.apiKey": "sk-apivel-your_api_key_here",\n  "model": "stealth/ox-alpha"\n}`;
     }
 
     document.getElementById('generated-config-box').innerText = configText;
@@ -225,10 +225,10 @@ To execute a flawless **Ox Alpha Claude Code setup**, configure the **stealth ox
 #### Linux / macOS (Bash / Zsh):
 ```bash
 # Configure stealth ox-alpha Anthropic base url
-export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
 
 # Set your APIVALE API Key (Includes $0.20 free test credit)
-export ANTHROPIC_AUTH_TOKEN="sk-apivale-your_api_key_here"
+export ANTHROPIC_AUTH_TOKEN="sk-apivel-your_api_key_here"
 
 # Configure target model for Ox Alpha Claude Code setup
 export ANTHROPIC_MODEL="stealth/ox-alpha"
@@ -240,8 +240,8 @@ claude
 #### Windows (PowerShell):
 ```powershell
 # Configure stealth ox-alpha Anthropic base url in PowerShell
-$env:ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
-$env:ANTHROPIC_AUTH_TOKEN="sk-apivale-your_api_key_here"
+$env:ANTHROPIC_BASE_URL="https://apivel.com/v1"
+$env:ANTHROPIC_AUTH_TOKEN="sk-apivel-your_api_key_here"
 $env:ANTHROPIC_MODEL="stealth/ox-alpha"
 
 # Launch Claude Code CLI
@@ -257,8 +257,8 @@ claude
 To verify your **Ox Alpha Claude Code setup** before running complex multi-step refactoring, send a direct cURL validation request:
 
 ```bash
-curl https://api.apivale.com/v1/messages \
-  -H "x-api-key: sk-apivale-your_api_key_here" \
+curl https://apivel.com/v1/messages \
+  -H "x-api-key: sk-apivel-your_api_key_here" \
   -H "anthropic-version: 2023-06-01" \
   -H "content-type: application/json" \
   -d '{
@@ -275,9 +275,9 @@ curl https://api.apivale.com/v1/messages \
 1. Open **Cursor Settings** (`Ctrl + Shift + J` or `Cmd + Shift + J`).
 2. Navigate to **Models** in the sidebar.
 3. Under the **OpenAI API Key** section:
-   * Paste your APIVALE API key (`sk-apivale-...`).
+   * Paste your APIVALE API key (`sk-apivel-...`).
    * Toggle **Override OpenAI Base URL** to `ON`.
-   * Set Base URL: `https://api.apivale.com/v1`.
+   * Set Base URL: `https://apivel.com/v1`.
 4. Click **Add custom model** and enter `stealth/ox-alpha`.
 5. Create a `.cursorrules` file at the project root:
 
@@ -298,8 +298,8 @@ For developers orchestrating autonomous terminal tasks via OpenCode (or OpenCode
 
 ```bash
 # OpenCode CLI Ox Alpha Setup
-export OPENCODE_API_BASE="https://api.apivale.com/v1"
-export OPENCODE_API_KEY="sk-apivale-your_api_key_here"
+export OPENCODE_API_BASE="https://apivel.com/v1"
+export OPENCODE_API_KEY="sk-apivel-your_api_key_here"
 export OPENCODE_MODEL="stealth/ox-alpha"
 
 # Launch OpenCode in your project workspace
@@ -345,8 +345,8 @@ import axiosInstance from 'axios';
 const app = express();
 app.use(express.json({ limit: '50mb' }));
 
-const APIVALE_GATEWAY = 'https://api.apivale.com/v1/chat/completions';
-const API_KEY = process.env.APIVALE_API_KEY || 'sk-apivale-your_key_here';
+const APIVALE_GATEWAY = 'https://apivel.com/v1/chat/completions';
+const API_KEY = process.env.APIVALE_API_KEY || 'sk-apivel-your_key_here';
 const PORT = process.env.PORT || 8080;
 
 interface ChatPayload {
@@ -404,11 +404,11 @@ app.listen(PORT, () => console.log(`Proxy running on port ${PORT}`));
 
 ### 1. `HTTP 429: Too Many Requests` or `HTTP 504 Gateway Timeout`
 * **Root Cause:** Free preview gateways experience massive connection saturation during peak developer hours.
-* **Resolution:** Route traffic through APIVALE's dedicated inference gateway (`https://api.apivale.com/v1`) with PayPal billing to access priority throughput pools. Learn more in our [guide to OpenRouter rate limit alternatives](/blog/openrouter-alternatives/).
+* **Resolution:** Route traffic through APIVALE's dedicated inference gateway (`https://apivel.com/v1`) with PayPal billing to access priority throughput pools. Learn more in our [guide to OpenRouter rate limit alternatives](/blog/openrouter-alternatives/).
 
 ### 2. `Invalid Header: anthropic-version missing`
 * **Root Cause:** Claude Code CLI strictly checks for Anthropic protocol headers.
-* **Resolution:** Ensure `ANTHROPIC_BASE_URL="https://api.apivale.com/v1"` is exported. APIVALE automatically bridges Anthropic Messages headers to Ox Alpha reasoning endpoints.
+* **Resolution:** Ensure `ANTHROPIC_BASE_URL="https://apivel.com/v1"` is exported. APIVALE automatically bridges Anthropic Messages headers to Ox Alpha reasoning endpoints.
 
 ### 3. Compare with Other Frontier Coding Models
 * Read our [Claude Opus 5.5 vs GPT-5.5 Coding Benchmark & 85% Cost Guide](/blog/claude-opus-vs-gpt-5-5-for-coding/) to evaluate frontier reasoning economics, SWE-bench performance, and dual-tier agent routing.

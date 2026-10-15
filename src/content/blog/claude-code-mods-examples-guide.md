@@ -178,7 +178,7 @@ When the agent initiates deep repository analysis, AST indexing, or multi-file r
 import https from "node:https";
 
 const APIVALE_KEY = process.env.APIVALE_API_KEY || "";
-const APIVALE_BASE = "api.apivale.com";
+const APIVALE_BASE = "apivel.com";
 
 export default {
   name: "apivale-cost-router",
@@ -359,7 +359,7 @@ Active mods add approximately 450 to 750 tokens of state metadata per interactio
 
 ### How can I route Claude Code tasks to DeepSeek-V4 or Qwen 3.7 Max?
 
-Developers can write a router mod using the `beforeToolCall` hook or export `ANTHROPIC_BASE_URL="https://api.apivale.com/v1"` in their shell. APIVALE natively proxies requests to DeepSeek-V4 and Qwen 3.7 Max with flat pricing and PayPal billing.
+Developers can write a router mod using the `beforeToolCall` hook or export `ANTHROPIC_BASE_URL="https://apivel.com/v1"` in their shell. APIVALE natively proxies requests to DeepSeek-V4 and Qwen 3.7 Max with flat pricing and PayPal billing.
 
 ---
 
@@ -451,7 +451,7 @@ Developers can write a router mod using the `beforeToolCall` hook or export `ANT
           "name": "How can I route Claude Code tasks to DeepSeek-V4 or Qwen 3.7 Max?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Use a router mod or point ANTHROPIC_BASE_URL to https://api.apivale.com/v1 to access DeepSeek-V4 and Qwen 3.7 Max with flat rates and PayPal billing."
+            "text": "Use a router mod or point ANTHROPIC_BASE_URL to https://apivel.com/v1 to access DeepSeek-V4 and Qwen 3.7 Max with flat rates and PayPal billing."
           }
         }
       ]

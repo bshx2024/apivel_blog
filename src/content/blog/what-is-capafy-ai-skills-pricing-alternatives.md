@@ -16,7 +16,7 @@ keyTakeaways:
     value: "infer/deepseek-v4.1-flash"
     isCode: true
   - label: "Integration Base URL"
-    value: "https://api.apivale.com/v1"
+    value: "https://apivel.com/v1"
     isCode: true
   - label: "Billing & Trial"
     value: "PayPal & Global Cards ($0.20 Trial)"
@@ -235,8 +235,8 @@ Configure your terminal coding agent to run directly against **`infer/deepseek-v
 
 ```bash
 # Point terminal coding agents to APIVALE gateway
-export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
-export ANTHROPIC_API_KEY="sk-apivale-your-active-api-key"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
+export ANTHROPIC_API_KEY="sk-apivel-your-active-api-key"
 
 # Select flagship high-efficiency reasoning model
 export ANTHROPIC_MODEL="infer/deepseek-v4.1-flash"
@@ -250,8 +250,8 @@ Save these variables in `~/.bashrc` or create a project `.claude/settings.json` 
 ```json
 {
   "env": {
-    "ANTHROPIC_BASE_URL": "https://api.apivale.com/v1",
-    "ANTHROPIC_API_KEY": "sk-apivale-your-active-api-key"
+    "ANTHROPIC_BASE_URL": "https://apivel.com/v1",
+    "ANTHROPIC_API_KEY": "sk-apivel-your-active-api-key"
   },
   "model": "infer/deepseek-v4.1-flash",
   "maxThinkingTokens": 8192
@@ -269,8 +269,8 @@ import json
 from openai import OpenAI, APIError, RateLimitError
 
 client = OpenAI(
-    base_url="https://api.apivale.com/v1",
-    api_key=os.getenv("APIVALE_API_KEY", "sk-apivale-your-key-here")
+    base_url="https://apivel.com/v1",
+    api_key=os.getenv("APIVALE_API_KEY", "sk-apivel-your-key-here")
 )
 
 def execute_agent_skill(instruction: str, context: str, model="infer/deepseek-v4.1-flash", max_retries=3):

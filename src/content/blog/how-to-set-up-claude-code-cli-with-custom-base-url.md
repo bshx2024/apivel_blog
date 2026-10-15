@@ -48,7 +48,7 @@ Before routing your terminal agent through a proxy, it is important to compare t
 <div class="my-6 border-l-4 border-indigo-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Definition</span>
   <h4 class="mt-1 text-md font-semibold text-white">Claude Code Custom Router</h4>
-  <p class="mt-2 text-sm text-gray-300">A Claude Code Custom Router is a proxy configuration layer that intercepts network requests originating from the Claude Code CLI and redirects them from api.anthropic.com to an alternative endpoint (such as api.apivale.com/v1) using the anthropic_base_url and anthropic_auth_token environment variables.</p>
+  <p class="mt-2 text-sm text-gray-300">A Claude Code Custom Router is a proxy configuration layer that intercepts network requests originating from the Claude Code CLI and redirects them from api.anthropic.com to an alternative endpoint (such as apivel.com/v1) using the anthropic_base_url and anthropic_auth_token environment variables.</p>
 </div>
 
 ---
@@ -61,7 +61,7 @@ This results in two major bottlenecks for active developers:
 1. **The Rate Limit Wall**: Under official Tier 1/2 developer accounts, running Claude Code on a mid-sized React or Python project can hit the Token Per Minute (TPM) limit in just 3 or 4 terminal prompts, causing the agent to crash with `429 Too Many Requests`.
 2. **Billing and Geographical Access**: Developers in non-supported regions are unable to pay for official API keys, forcing them to rely on third-party aggregators that accept global payment methods like PayPal.
 
-By redirecting the CLI requests using `export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"`, you connect to APIVALE's enterprise-grade endpoint pools, which bypass individual rate limits and route requests through high-bandwidth channels.
+By redirecting the CLI requests using `export ANTHROPIC_BASE_URL="https://apivel.com/v1"`, you connect to APIVALE's enterprise-grade endpoint pools, which bypass individual rate limits and route requests through high-bandwidth channels.
 
 ---
 
@@ -77,7 +77,7 @@ Add the variables to your shell profile (e.g., `~/.zshrc` or `~/.bashrc`) to mak
 nano ~/.zshrc
 
 # Append the custom gateway settings
-export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
 export ANTHROPIC_AUTH_TOKEN="apivale-key-xxxxxxxxxx"
 
 # Apply changes and start Claude Code
@@ -90,7 +90,7 @@ For Windows users, configure your environmental variables in the active PowerShe
 
 ```powershell
 # Set variables in current shell session
-$env:ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
+$env:ANTHROPIC_BASE_URL="https://apivel.com/v1"
 $env:ANTHROPIC_AUTH_TOKEN="apivale-key-xxxxxxxxxx"
 
 # Run Claude Code
@@ -117,7 +117,7 @@ import axios from 'axios';
 
 const app = express();
 const PORT = 3000;
-const TARGET_GATEWAY = 'https://api.apivale.com/v1';
+const TARGET_GATEWAY = 'https://apivel.com/v1';
 
 app.use(express.json());
 
@@ -167,7 +167,7 @@ from flask import Flask, request, Response, stream_with_context
 
 app = Flask(__name__)
 PORT = 3000
-TARGET_GATEWAY = "https://api.apivale.com/v1"
+TARGET_GATEWAY = "https://apivel.com/v1"
 
 @app.route("/v1/messages", methods=["POST"])
 def route_claude_messages():

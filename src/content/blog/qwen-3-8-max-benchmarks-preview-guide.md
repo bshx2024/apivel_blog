@@ -50,7 +50,7 @@ lang: "en"
     <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/qwen-3-8-max-benchmarks-preview-guide/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Sign Up / Log In to Auto-Fill Your API Key
     </a>
-    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export ANTHROPIC_BASE_URL=\'https://api.apivale.com/v1\'\nexport ANTHROPIC_AUTH_TOKEN=\'your_apivale_api_key\'\nexport ANTHROPIC_MODEL=\'infer/qwen3.8-max\''); alert('Copied Qwen 3.8 Max setup script!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
+    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export ANTHROPIC_BASE_URL=\'https://apivel.com/v1\'\nexport ANTHROPIC_AUTH_TOKEN=\'your_apivel_api_key\'\nexport ANTHROPIC_MODEL=\'infer/qwen3.8-max\''); alert('Copied Qwen 3.8 Max setup script!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
       📋 Copy Setup Commands
     </button>
   </div>
@@ -149,14 +149,14 @@ If you are setting up Claude Code CLI or Cursor for the first time, check out ou
 
 ### 1. Connecting Claude Code CLI to Qwen 3.8 Max
 
-Claude Code CLI relies on Anthropic environment variables. APIVALE exposes an Anthropic-compatible protocol bridge at `https://api.apivale.com/v1`.
+Claude Code CLI relies on Anthropic environment variables. APIVALE exposes an Anthropic-compatible protocol bridge at `https://apivel.com/v1`.
 
 Add the following to your `~/.zshrc` or `~/.bashrc`:
 
 ```bash
 # Point Claude Code CLI to APIVALE Protocol Gateway
-export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
-export ANTHROPIC_AUTH_TOKEN="your_apivale_api_key"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
+export ANTHROPIC_AUTH_TOKEN="your_apivel_api_key"
 
 # Route request to Qwen 3.8 Max preview endpoint
 export ANTHROPIC_MODEL="infer/qwen3.8-max"
@@ -167,7 +167,7 @@ npx @anthropic-ai/claude-code
 
 > [!TIP]
 > **Windows PowerShell Instructions**  
-> For Windows environments, execute `$env:ANTHROPIC_BASE_URL="https://api.apivale.com/v1"`, `$env:ANTHROPIC_AUTH_TOKEN="your_apivale_api_key"`, and `$env:ANTHROPIC_MODEL="infer/qwen3.8-max"` before launching `npx @anthropic-ai/claude-code`.
+> For Windows environments, execute `$env:ANTHROPIC_BASE_URL="https://apivel.com/v1"`, `$env:ANTHROPIC_AUTH_TOKEN="your_apivel_api_key"`, and `$env:ANTHROPIC_MODEL="infer/qwen3.8-max"` before launching `npx @anthropic-ai/claude-code`.
 
 ---
 
@@ -178,7 +178,7 @@ Configure Cursor IDE to access Qwen 3.8 Max preview models in 3 quick steps:
 1. Open **Cursor Settings** (`Ctrl + ,` / `Cmd + ,`) -> **Models**.
 2. Enable **Override OpenAI Base URL** and set it to:
    ```text
-   https://api.apivale.com/v1
+   https://apivel.com/v1
    ```
 3. Input your APIVALE API key funded via **PayPal**. Under **Custom Models**, add `infer/qwen3.8-max` and `infer/qwen3.7-max`. You can now select Qwen 3.8 Max directly inside Cursor Composer!
 
@@ -206,8 +206,8 @@ import axios from 'axios';
 
 const app = express();
 const PORT = 3010;
-const APIVALE_GATEWAY = 'https://api.apivale.com/v1';
-const APIVALE_KEY = process.env.APIVALE_API_KEY || 'your_apivale_api_key';
+const APIVALE_GATEWAY = 'https://apivel.com/v1';
+const APIVALE_KEY = process.env.APIVALE_API_KEY || 'your_apivel_api_key';
 
 app.use(express.json({ limit: '10mb' }));
 
@@ -271,7 +271,7 @@ app.listen(PORT, () => console.log(`[APIVALE Proxy] Qwen 3.8 Max Gateway running
 ## Developer FAQ
 
 ### How to get preview access to Qwen 3.8 Max API on APIVALE?
-You can get preview access to Qwen 3.8 Max API on APIVALE by creating a free account and setting your model identifier to `infer/qwen3.8-max` or `infer/qwen3.7-max` at `https://api.apivale.com/v1`. APIVALE provides instant protocol translation for OpenAI and Anthropic SDKs without identity verification barriers.
+You can get preview access to Qwen 3.8 Max API on APIVALE by creating a free account and setting your model identifier to `infer/qwen3.8-max` or `infer/qwen3.7-max` at `https://apivel.com/v1`. APIVALE provides instant protocol translation for OpenAI and Anthropic SDKs without identity verification barriers.
 
 ### What are the SWE-bench benchmarks for Qwen 3.8 Max compared to Claude Sonnet 5?
 Qwen 3.8 Max achieves a 54.8% SWE-bench Verified pass rate and a 92.4% HumanEval score, surpassing Claude Sonnet 5 (53.9% SWE-bench) while reducing API token costs by 80% ($0.60/1M input tokens vs $3.00/1M).
@@ -292,7 +292,7 @@ Yes, APIVALE natively supports PayPal (global PayPal billing / credit cards via 
       "name": "How to get preview access to Qwen 3.8 Max API on APIVALE?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You can get preview access to Qwen 3.8 Max API on APIVALE by signing up for a free account and routing calls to infer/qwen3.8-max at https://api.apivale.com/v1 with standard OpenAI or Anthropic SDKs."
+        "text": "You can get preview access to Qwen 3.8 Max API on APIVALE by signing up for a free account and routing calls to infer/qwen3.8-max at https://apivel.com/v1 with standard OpenAI or Anthropic SDKs."
       }
     },
     {

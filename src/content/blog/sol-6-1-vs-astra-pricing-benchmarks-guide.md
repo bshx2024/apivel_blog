@@ -26,7 +26,7 @@ keyTakeaways:
   - label: "Generation Throughput"
     value: "21.2 TPS vs DeepSeek 437 TPS"
   - label: "Integration Base URL"
-    value: "https://api.apivale.com/v1"
+    value: "https://apivel.com/v1"
     isCode: true
   - label: "Billing & Quota"
     value: "PayPal & Global Cards ($0.20 Trial)"
@@ -65,8 +65,8 @@ Production telemetry across APIVALE clusters reveals that while 6.1 Sol reduces 
 Test drop-in OpenAI-compatible routing via APIVALE:
 
 ```bash
-curl -X POST https://api.apivale.com/v1/chat/completions \
-  -H "Authorization: Bearer sk-apivale-test-key" \
+curl -X POST https://apivel.com/v1/chat/completions \
+  -H "Authorization: Bearer sk-apivel-test-key" \
   -H "Content-Type: application/json" \
   -d '{
     "model": "deepseek-v4-flash",
@@ -162,8 +162,8 @@ import time
 from typing import Dict, Any, List
 from openai import OpenAI
 
-APIVALE_BASE_URL = os.getenv("APIVALE_BASE_URL", "https://api.apivale.com/v1")
-APIVALE_API_KEY = os.getenv("APIVALE_API_KEY", "sk-apivale-test-key")
+APIVALE_BASE_URL = os.getenv("APIVALE_BASE_URL", "https://apivel.com/v1")
+APIVALE_API_KEY = os.getenv("APIVALE_API_KEY", "sk-apivel-test-key")
 
 client = OpenAI(
     base_url=APIVALE_BASE_URL,
@@ -328,7 +328,7 @@ GPT-6 Luna is OpenAI's lightweight tier built for fast autoregressive tasks with
 OpenAI deprecated zero-effort reasoning on GPT-6.1 Sol. The API requires a minimum reasoning effort of "low", meaning any client passing `reasoning_effort: "none"` triggers an immediate HTTP 400 rejection. Developers needing zero-latency responses should use standard models like `deepseek-v4-flash` or `glm-5.3-flash`.
 
 ### Can I connect Sol 6.1 alternatives using standard OpenAI SDKs?
-Yes. All frontier Chinese models hosted on APIVALE (including `deepseek-v4-flash`, `deepseek-v4-pro`, `glm-5.3-flash`, and `kimi-k3`) natively implement the standard OpenAI `/v1/chat/completions` specification. You can swap endpoints by updating `base_url` to `https://api.apivale.com/v1` with zero SDK code modifications.
+Yes. All frontier Chinese models hosted on APIVALE (including `deepseek-v4-flash`, `deepseek-v4-pro`, `glm-5.3-flash`, and `kimi-k3`) natively implement the standard OpenAI `/v1/chat/completions` specification. You can swap endpoints by updating `base_url` to `https://apivel.com/v1` with zero SDK code modifications.
 
 <script type="application/ld+json">
 {

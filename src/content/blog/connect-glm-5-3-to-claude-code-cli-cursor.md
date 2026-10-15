@@ -43,7 +43,7 @@ lang: "en"
     <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/connect-glm-5-3-to-claude-code-cli-cursor/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Sign Up / Log In to Auto-Fill Your API Key
     </a>
-    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('Base URL: https://api.apivale.com/v1\nModel: infer/glm-5.3'); const b=this; b.innerText='✅ Copied!'; setTimeout(()=>b.innerText='📋 Copy Cursor Config', 2000);" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
+    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('Base URL: https://apivel.com/v1\nModel: infer/glm-5.3'); const b=this; b.innerText='✅ Copied!'; setTimeout(()=>b.innerText='📋 Copy Cursor Config', 2000);" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
       📋 Copy Cursor Config
     </button>
   </div>
@@ -81,17 +81,17 @@ Configure APIVALE's OpenAI-compatible proxy gateway to route Cursor IDE requests
 
 ### Quick Start: Configure Cursor IDE for GLM-5.3 in 60 Seconds
 
-To connect Cursor IDE to GLM-5.3, open Cursor Settings, override the OpenAI Base URL to `https://api.apivale.com/v1`, enter your APIVALE key, and add `infer/glm-5.3`.
+To connect Cursor IDE to GLM-5.3, open Cursor Settings, override the OpenAI Base URL to `https://apivel.com/v1`, enter your APIVALE key, and add `infer/glm-5.3`.
 
 1. **Open Settings**: Press `Ctrl + ,` (Windows/Linux) or `Cmd + ,` (macOS), then navigate to **Cursor Settings** $\rightarrow$ **Models**.
 2. **Override Base URL**: Toggle on **OpenAI API Key** and click **Override OpenAI Base URL**.
-3. **Set Endpoint**: Enter `https://api.apivale.com/v1` and paste your `apv-...` API key.
+3. **Set Endpoint**: Enter `https://apivel.com/v1` and paste your `apv-...` API key.
 4. **Add Model**: Under **Add Custom Model**, enter `infer/glm-5.3` (or `glm-5.3`), click the **+** icon, and enable it as your active model.
 
 ```json
 // Cursor Configuration Summary
 {
-  "openai_base_url": "https://api.apivale.com/v1",
+  "openai_base_url": "https://apivel.com/v1",
   "api_key": "apv-live-your_actual_key_here",
   "custom_model": "infer/glm-5.3"
 }
@@ -343,7 +343,7 @@ import axios from 'axios';
 
 const app = express();
 const PORT = 3008;
-const APIVALE_GATEWAY = 'https://api.apivale.com/v1';
+const APIVALE_GATEWAY = 'https://apivel.com/v1';
 
 app.use(express.json());
 
@@ -418,7 +418,7 @@ When running extensive multi-file Composer refactors, tracking session burn rate
 ## Frequently Asked Questions (Developer FAQ)
 
 ### How to use GLM-5.3 in Cursor IDE?
-You can use GLM-5.3 in Cursor IDE by opening Cursor Settings, toggling **Override OpenAI Base URL** to `https://api.apivale.com/v1`, entering your APIVALE API key, and adding `infer/glm-5.3` as a custom model.
+You can use GLM-5.3 in Cursor IDE by opening Cursor Settings, toggling **Override OpenAI Base URL** to `https://apivel.com/v1`, entering your APIVALE API key, and adding `infer/glm-5.3` as a custom model.
 
 ### Is GLM-5.3 cheaper than Cursor Pro fast requests?
 Yes, using GLM-5.3 via APIVALE BYOK costs approximately **$0.0038 per typical edit**, which is over **96% cheaper** than Cursor's $0.10 per extra fast request fee.
@@ -455,7 +455,7 @@ Upgrade your IDE with 1M context, state-of-the-art code completion, and deep sec
       "name": "How to use GLM-5.3 in Cursor IDE?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You can use GLM-5.3 in Cursor IDE by opening Cursor Settings, overriding OpenAI Base URL to https://api.apivale.com/v1, entering your APIVALE API key, and adding infer/glm-5.3 as a custom model."
+        "text": "You can use GLM-5.3 in Cursor IDE by opening Cursor Settings, overriding OpenAI Base URL to https://apivel.com/v1, entering your APIVALE API key, and adding infer/glm-5.3 as a custom model."
       }
     },
     {

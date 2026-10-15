@@ -321,8 +321,8 @@ const hubSchema = {
             <span>Claude Code CLI Gateway Setup (bash)</span>
           </div>
           <pre><code># Route Claude Code CLI through APIVALE Gateway
-export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
-export ANTHROPIC_AUTH_TOKEN="your_apivale_api_key"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
+export ANTHROPIC_AUTH_TOKEN="your_apivel_api_key"
 
 # Select preferred reasoning flagship
 export CLAUDE_DEFAULT_MODEL="claude-sonnet-5"
@@ -339,12 +339,12 @@ claude</code></pre>
             Inside Cursor, navigate to <strong>Settings</strong> → <strong>Models</strong>:
           </p>
           <ul class="setup-steps">
-            <li>Enable <strong>Override OpenAI Base URL</strong>: <code>https://api.apivale.com/v1</code></li>
+            <li>Enable <strong>Override OpenAI Base URL</strong>: <code>https://apivel.com/v1</code></li>
             <li>Provide your APIVALE authentication key</li>
             <li>Add high-efficiency models: <code>deepseek-v4</code>, <code>infer/qwen3.7-max</code>, <code>glm-5.3-flash</code></li>
           </ul>
           <p class="code-desc mt-2">
-            For Python or TypeScript agents, plug the base URL into LangChain via <code>ChatOpenAI(base_url="https://api.apivale.com/v1")</code>. Explore dedicated setup guides for <a href="/blog/how-to-connect-qwen-3-7-to-claude-code-cli/" class="text-green hover:underline">Qwen 3.7 Claude Code CLI</a>, <a href="/blog/connect-glm-5-3-to-claude-code-cli-cursor/" class="text-green hover:underline">GLM-5.3 Cursor Config</a>, and <a href="/blog/cursor-pro-vs-custom-api-key/" class="text-green hover:underline">Cursor Pro vs. Custom API Key Economics</a>.
+            For Python or TypeScript agents, plug the base URL into LangChain via <code>ChatOpenAI(base_url="https://apivel.com/v1")</code>. Explore dedicated setup guides for <a href="/blog/how-to-connect-qwen-3-7-to-claude-code-cli/" class="text-green hover:underline">Qwen 3.7 Claude Code CLI</a>, <a href="/blog/connect-glm-5-3-to-claude-code-cli-cursor/" class="text-green hover:underline">GLM-5.3 Cursor Config</a>, and <a href="/blog/cursor-pro-vs-custom-api-key/" class="text-green hover:underline">Cursor Pro vs. Custom API Key Economics</a>.
           </p>
         </div>
       </div>
@@ -437,7 +437,7 @@ export class ResilientGatewayDispatcher {
   private primaryModel: string = "claude-sonnet-5";
   private failoverModel: string = "deepseek-v4";
 
-  constructor(apiKey: string, baseURL: string = "https://api.apivale.com/v1") {
+  constructor(apiKey: string, baseURL: string = "https://apivel.com/v1") {
     this.gatewayClient = new OpenAI({ apiKey, baseURL });
   }
 

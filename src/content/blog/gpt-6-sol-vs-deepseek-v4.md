@@ -50,7 +50,7 @@ lang: en
     <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/gpt-6-sol-vs-deepseek-v4/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Sign Up / Log In to Auto-Fill Your API Key
     </a>
-    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export OPENAI_BASE_URL=\'https://api.apivale.com/v1\'\nexport OPENAI_API_KEY=\'your_apivale_api_key\'\nexport DEFAULT_MODEL=\'infer/deepseek-v4-pro\''); alert('Copied migration environment script!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
+    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export OPENAI_BASE_URL=\'https://apivel.com/v1\'\nexport OPENAI_API_KEY=\'your_apivel_api_key\'\nexport DEFAULT_MODEL=\'infer/deepseek-v4-pro\''); alert('Copied migration environment script!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
       📋 Copy Setup Commands
     </button>
   </div>
@@ -63,8 +63,8 @@ In the head-to-head comparison of **GPT-6 Sol vs DeepSeek V4**, token economics 
 Verify OpenAI-compatible drop-in connectivity with this cURL command:
 
 ```bash
-curl -X POST https://api.apivale.com/v1/chat/completions \
-  -H "Authorization: Bearer sk-apivale-test-key" \
+curl -X POST https://apivel.com/v1/chat/completions \
+  -H "Authorization: Bearer sk-apivel-test-key" \
   -H "Content-Type: application/json" \
   -d '{
     "model": "infer/deepseek-v4-pro",
@@ -190,8 +190,8 @@ Because APIVALE maintains complete REST protocol parity with OpenAI endpoints, c
 
 ```bash
 # Point OpenAI SDKs to the APIVALE unified gateway
-export OPENAI_BASE_URL="https://api.apivale.com/v1"
-export OPENAI_API_KEY="sk-apivale-your-active-api-key"
+export OPENAI_BASE_URL="https://apivel.com/v1"
+export OPENAI_API_KEY="sk-apivel-your-active-api-key"
 
 # Update target model in your deployment configuration
 export LLM_MODEL_NAME="infer/deepseek-v4-pro"
@@ -203,8 +203,8 @@ In Python using the official `openai` SDK:
 from openai import OpenAI
 
 client = OpenAI(
-    base_url="https://api.apivale.com/v1",
-    api_key="sk-apivale-your-active-api-key"
+    base_url="https://apivel.com/v1",
+    api_key="sk-apivel-your-active-api-key"
 )
 
 response = client.chat.completions.create(
@@ -227,8 +227,8 @@ For high-throughput enterprise pipelines, integrate retry logic with jittered ex
 import os, time, random, requests
 from typing import Dict, Any, Optional
 
-APIVALE_ENDPOINT = "https://api.apivale.com/v1/chat/completions"
-API_KEY = os.getenv("OPENAI_API_KEY", "sk-apivale-token")
+APIVALE_ENDPOINT = "https://apivel.com/v1/chat/completions"
+API_KEY = os.getenv("OPENAI_API_KEY", "sk-apivel-token")
 
 def query_deepseek_with_retry(payload: Dict[str, Any], max_attempts: int = 4) -> Optional[Dict[str, Any]]:
     headers = {
@@ -325,7 +325,7 @@ Test live model execution directly in this article and evaluate enterprise token
     btn.disabled = true;
     btn.innerText = '⏳ Invoking ' + model + '...';
     wrapper.classList.remove('hidden');
-    output.innerText = 'Connecting to https://api.apivale.com/v1 (' + model + ')...';
+    output.innerText = 'Connecting to https://apivel.com/v1 (' + model + ')...';
 
     const start = Date.now();
     try {

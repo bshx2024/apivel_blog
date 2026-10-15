@@ -36,7 +36,7 @@ lang: "en"
     <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/kimi-k3-price-api-cost-guide/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Sign Up / Log In to Auto-Fill Your API Key
     </a>
-    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export OPENAI_BASE_URL=\'https://apivel.com/v1\'\nexport OPENAI_API_KEY=\'your_apivale_api_key\'\nexport MODEL=\'kimi-k3\''); alert('Copied setup script!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
+    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export OPENAI_BASE_URL=\'https://apivel.com/v1\'\nexport OPENAI_API_KEY=\'your_apivel_api_key\'\nexport MODEL=\'kimi-k3\''); alert('Copied setup script!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
       📋 Copy Setup Commands
     </button>
   </div>
@@ -74,7 +74,7 @@ To test Kimi K3 via APIVALE's OpenAI-compatible endpoint, pass your API key to `
 # Execute a test request to Kimi K3 via APIVALE's OpenAI-compatible endpoint
 curl https://apivel.com/v1/chat/completions \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer your_apivale_api_key" \
+  -H "Authorization: Bearer your_apivel_api_key" \
   -d '{
     "model": "kimi-k3",
     "messages": [
@@ -181,7 +181,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(
 # Initialize OpenAI client with APIVALE endpoint
 client = OpenAI(
     base_url="https://apivel.com/v1",
-    api_key=os.getenv("APIVALE_API_KEY", "your_apivale_api_key")
+    api_key=os.getenv("APIVALE_API_KEY", "your_apivel_api_key")
 )
 
 def generate_code_with_kimi_k3(prompt: str, max_retries: int = 3) -> str:

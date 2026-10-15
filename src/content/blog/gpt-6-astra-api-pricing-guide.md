@@ -25,7 +25,7 @@ Autonomous software engineering agents in Cursor or Claude Code CLI consume API 
 
 ```bash
 # Verify direct connectivity and check GPT-6 Astra API setup via APIVALE
-curl -X POST https://api.apivale.com/v1/chat/completions \
+curl -X POST https://apivel.com/v1/chat/completions \
   -H "Authorization: Bearer $APIVALE_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -116,7 +116,7 @@ The most economical way to deploy frontier agents is through a **Tiered Hybrid G
 
 ```mermaid
 graph TD
-    Client["Developer CLI (Cursor / Claude Code / Cline)"] --> Gateway["APIVALE Unified Gateway (api.apivale.com)"]
+    Client["Developer CLI (Cursor / Claude Code / Cline)"] --> Gateway["APIVALE Unified Gateway (apivel.com)"]
     Gateway --> Router{"Agent Task Classifier / Router"}
     Router -- "5% High-Reasoning Tasks (System Plan, AST Design)" --> Astra["GPT-6 Astra ($10/$50 per 1M)"]
     Router -- "70% Code Generation & Edits" --> Qwen["Qwen 3.7 Max (infer/qwen3.7-max at $0.60/$2.40)"]
@@ -180,8 +180,8 @@ Deploy an intelligent routing proxy that sends architectural tasks to `gpt-6-ast
 import os, time, requests
 from typing import Dict, Any, List, Optional
 
-APIVALE_GATEWAY_URL = "https://api.apivale.com/v1/chat/completions"
-APIVALE_API_KEY = os.getenv("APIVALE_API_KEY", "sk-apivale-prod-key-placeholder")
+APIVALE_GATEWAY_URL = "https://apivel.com/v1/chat/completions"
+APIVALE_API_KEY = os.getenv("APIVALE_API_KEY", "sk-apivel-prod-key-placeholder")
 
 def execute_agent_step(messages: List[Dict[str, str]], is_high_reasoning: bool = False) -> Optional[str]:
     primary_model = "gpt-6-astra" if is_high_reasoning else "infer/qwen3.7-max"

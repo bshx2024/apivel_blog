@@ -23,7 +23,7 @@ In this guide, we show you how to register and access a **fully operational Long
 APIVALE acts as a secure, high-speed bridge to Meituan's infrastructure. You can call the model instantly without any regional restrictions:
 
 ```bash
-curl https://api.apivale.com/v1/chat/completions \
+curl https://apivel.com/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_APIVALE_KEY" \
   -d '{"model": "longcat-2.0", "messages": [{"role": "user", "content": "Write a TypeScript function to parse JWTs."}]}'
@@ -85,7 +85,7 @@ Cline (formerly Prevail) is a powerful VS Code extension for autonomous engineer
 1. Open **VS Code** and go to the **Cline** settings panel.
 2. Select **OpenAI Compatible** as the provider.
 3. Input the following settings:
-   - **Base URL**: `https://api.apivale.com/v1`
+   - **Base URL**: `https://apivel.com/v1`
    - **API Key**: `YOUR_APIVALE_API_KEY`
    - **Model ID**: `longcat-2.0`
 4. Set the context window to `1,000,000` tokens to leverage LongCat's native long-context support.
@@ -104,7 +104,7 @@ from openai import OpenAIError
 
 # Initialize client using APIVALE routing endpoint
 client = openai.OpenAI(
-    base_url="https://api.apivale.com/v1",
+    base_url="https://apivel.com/v1",
     api_key=os.getenv("APIVALE_API_KEY")
 )
 

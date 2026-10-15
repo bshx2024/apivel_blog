@@ -16,7 +16,7 @@ lang: "en"
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
     <li><strong>Breakout Coding Performance:</strong> Google's flagship Gemini 3.7 Flash delivers 3x faster TTFT (Time-to-First-Token) and matches frontier coding intelligence on SWE-bench, making it an ideal engine for autonomous coding agents.</li>
     <li><strong>Zero-Credit-Card & Global PayPal Billing:</strong> Route Gemini 3.7 Flash via <a href="https://apivel.com/sign-up?redirect=/blog/gemini-3-7-flash-claude-code-setup/" class="text-emerald-400 hover:underline font-semibold">APIVALE ($0.20 Free Starter Credit)</a> to bypass regional KYC blocks and credit card payment rejections.</li>
-    <li><strong>Drop-in OpenAI & Anthropic Protocol Compatibility:</strong> Connect Gemini 3.7 Flash directly to Cursor, Claude Code CLI, and Windsurf by setting your API endpoint to `https://api.apivale.com/v1`.</li>
+    <li><strong>Drop-in OpenAI & Anthropic Protocol Compatibility:</strong> Connect Gemini 3.7 Flash directly to Cursor, Claude Code CLI, and Windsurf by setting your API endpoint to `https://apivel.com/v1`.</li>
   </ul>
 </div>
 
@@ -30,7 +30,7 @@ lang: "en"
   </p>
   <div class="flex items-center gap-3 flex-wrap">
     <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/gemini-3-7-flash-claude-code-setup/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg">⚡ Sign Up / Log In</a>
-    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export ANTHROPIC_BASE_URL=\'https://api.apivale.com/v1\'\nexport ANTHROPIC_AUTH_TOKEN=\'your_apivale_api_key\'\nexport ANTHROPIC_MODEL=\'gemini-3.7-flash\''); alert('Copied setup script!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg">📋 Copy Commands</button>
+    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export ANTHROPIC_BASE_URL=\'https://apivel.com/v1\'\nexport ANTHROPIC_AUTH_TOKEN=\'your_apivel_api_key\'\nexport ANTHROPIC_MODEL=\'gemini-3.7-flash\''); alert('Copied setup script!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg">📋 Copy Commands</button>
   </div>
 </div>
 
@@ -64,9 +64,9 @@ graph LR
 Configure APIVALE's OpenAI-compatible proxy gateway to route Gemini 3.7 Flash requests with zero-credit-card PayPal billing. Execute the following terminal request:
 
 ```bash
-curl https://api.apivale.com/v1/chat/completions \
+curl https://apivel.com/v1/chat/completions \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer sk-apivale-your_api_key" \
+  -H "Authorization: Bearer sk-apivel-your_api_key" \
   -d '{
     "model": "gemini-3.7-flash",
     "messages": [
@@ -126,7 +126,7 @@ Test model responsiveness and execution TTFT directly inside this article:
       const selfRes = await fetch('/api/user/self', { credentials: 'include' }).then(r => r.json());
       if (selfRes && selfRes.success && selfRes.data) {
         const username = selfRes.data.username || 'User';
-        let userApiKey = 'sk-apivale-user-active';
+        let userApiKey = 'sk-apivel-user-active';
         try {
           const tokenRes = await fetch('/api/token/?p=0', { credentials: 'include' }).then(r => r.json());
           if (tokenRes && tokenRes.success && Array.isArray(tokenRes.data) && tokenRes.data.length > 0) {
@@ -146,7 +146,7 @@ Test model responsiveness and execution TTFT directly inside this article:
 
         if (copyBtn) {
           copyBtn.onclick = () => {
-            navigator.clipboard.writeText(`export ANTHROPIC_BASE_URL='https://api.apivale.com/v1'\nexport ANTHROPIC_AUTH_TOKEN='${userApiKey}'\nexport ANTHROPIC_MODEL='gemini-3.7-flash'`);
+            navigator.clipboard.writeText(`export ANTHROPIC_BASE_URL='https://apivel.com/v1'\nexport ANTHROPIC_AUTH_TOKEN='${userApiKey}'\nexport ANTHROPIC_MODEL='gemini-3.7-flash'`);
             alert('Copied setup script!');
           };
         }
@@ -238,8 +238,8 @@ For related model setup guides, check out our articles on [How to Connect Connec
 Configure your environment variables in `~/.zshrc` or `~/.bashrc`:
 
 ```bash
-export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
-export ANTHROPIC_AUTH_TOKEN="sk-apivale-your_api_key"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
+export ANTHROPIC_AUTH_TOKEN="sk-apivel-your_api_key"
 export ANTHROPIC_MODEL="gemini-3.7-flash"
 
 source ~/.zshrc
@@ -251,8 +251,8 @@ npx @anthropic-ai/claude-code
 Set environment variables in your active PowerShell session:
 
 ```powershell
-$env:ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
-$env:ANTHROPIC_AUTH_TOKEN="sk-apivale-your_api_key"
+$env:ANTHROPIC_BASE_URL="https://apivel.com/v1"
+$env:ANTHROPIC_AUTH_TOKEN="sk-apivel-your_api_key"
 $env:ANTHROPIC_MODEL="gemini-3.7-flash"
 
 npx @anthropic-ai/claude-code
@@ -263,7 +263,7 @@ npx @anthropic-ai/claude-code
 Route Cursor requests in 4 steps:
 1. Open **Cursor Settings** (`Ctrl + ,` / `Cmd + ,`) and navigate to **Models**.
 2. Enable **OpenAI API Key** and check **Override OpenAI Base URL**.
-3. Set the Base URL to `https://api.apivale.com/v1` and enter your APIVALE key (`sk-apivale-...`).
+3. Set the Base URL to `https://apivel.com/v1` and enter your APIVALE key (`sk-apivel-...`).
 4. Click **Add Custom Model**, type `gemini-3.7-flash`, turn it ON, and set it as your workspace default.
 
 ---
@@ -278,7 +278,7 @@ import axios from 'axios';
 
 const app = express();
 const PORT = 3012;
-const APIVALE_GATEWAY = 'https://api.apivale.com/v1';
+const APIVALE_GATEWAY = 'https://apivel.com/v1';
 
 app.use(express.json());
 
@@ -342,7 +342,7 @@ app.listen(PORT, () => {
 Google AI Studio offers limited free tier quotas, but production API usage incurs token fees. On APIVALE, developers access Gemini 3.7 Flash at native prices ($0.15 / $0.60 per 1M tokens) with pay-as-you-go PayPal billing and zero credit card requirements.
 
 ### How do I connect Gemini 3.7 Flash to Cursor IDE?
-In Cursor Settings -> Models, enable OpenAI API Key, toggle Override Base URL, set `https://api.apivale.com/v1`, paste your APIVALE key, and add `gemini-3.7-flash` as a custom model.
+In Cursor Settings -> Models, enable OpenAI API Key, toggle Override Base URL, set `https://apivel.com/v1`, paste your APIVALE key, and add `gemini-3.7-flash` as a custom model.
 
 ### How does Gemini 3.7 Flash price compare to Claude Sonnet 5?
 Gemini 3.7 Flash costs **$0.15 / $0.60 per 1M tokens**, making input **95% cheaper** and output **96% cheaper** than official Claude Sonnet 5 ($3.00 / $15.00).
@@ -373,7 +373,7 @@ Yes. APIVALE fully supports Server-Sent Events (SSE) streaming for real-time out
       "name": "How do I connect Gemini 3.7 Flash to Cursor IDE?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "In Cursor Settings -> Models, enable OpenAI API Key, toggle Override Base URL, set https://api.apivale.com/v1, paste your APIVALE key, and add gemini-3.7-flash as a custom model."
+        "text": "In Cursor Settings -> Models, enable OpenAI API Key, toggle Override Base URL, set https://apivel.com/v1, paste your APIVALE key, and add gemini-3.7-flash as a custom model."
       }
     },
     {

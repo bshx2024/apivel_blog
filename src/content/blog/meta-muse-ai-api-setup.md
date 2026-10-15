@@ -15,7 +15,7 @@ keyTakeaways:
     value: "Meta Muse Spark & MCP Sandboxes"
     isCode: false
   - label: "Gateway Base URL"
-    value: "https://api.apivale.com/v1"
+    value: "https://apivel.com/v1"
     isCode: true
   - label: "Developer Sandbox"
     value: "PayPal & Global Cards ($0.20 Free Trial)"
@@ -64,9 +64,9 @@ To generate a native API key for Muse AI directly from Meta:
 ### Generating Instant API Keys via APIVALE Gateway ($0.20 Free Trial)
 For engineering teams needing immediate deployment without corporate paperwork or waitlists:
 1. **Instant Account Creation**: Sign up on [APIVALE Gateway](https://apivel.com/sign-up?redirect=/blog/meta-muse-ai-api-setup) via GitHub OAuth or email.
-2. **Generate API Key**: Navigate to your dashboard and create a universal API key (`sk-apivale-...`).
+2. **Generate API Key**: Navigate to your dashboard and create a universal API key (`sk-apivel-...`).
 3. **Collect Free Sandbox Credits**: Every new account receives an instant **$0.20 free developer trial** (no credit card or phone verification required) to test endpoint connectivity.
-4. **Universal Wire Format**: Point any agent framework or MCP client directly to `https://api.apivale.com/v1`.
+4. **Universal Wire Format**: Point any agent framework or MCP client directly to `https://apivel.com/v1`.
 
 ---
 
@@ -127,8 +127,8 @@ Configure your terminal environment or tool configuration file:
 
 ```bash
 # Export universal OpenAI-compatible endpoint credentials
-export OPENAI_API_BASE="https://api.apivale.com/v1"
-export OPENAI_API_KEY="sk-apivale-your-registered-key"
+export OPENAI_API_BASE="https://apivel.com/v1"
+export OPENAI_API_KEY="sk-apivel-your-registered-key"
 export MUSE_AGENT_MODEL="infer/deepseek-v4"
 export MUSE_REASONING_MODEL="infer/qwen3.7-max"
 ```
@@ -157,10 +157,10 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("MuseAIGateway")
 
 class ResilientAgentGateway:
-    def __init__(self, base_url="https://api.apivale.com/v1", api_key=None):
+    def __init__(self, base_url="https://apivel.com/v1", api_key=None):
         self.client = OpenAI(
             base_url=base_url, 
-            api_key=api_key or os.getenv("OPENAI_API_KEY", "sk-apivale-prod-key")
+            api_key=api_key or os.getenv("OPENAI_API_KEY", "sk-apivel-prod-key")
         )
         self.primary_model = "infer/deepseek-v4"
         self.fallback_model = "infer/qwen3.7-max"

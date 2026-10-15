@@ -25,7 +25,7 @@ keyTakeaways:
     value: "infer/qwen3.7-max, DeepSeek-V4"
     isCode: true
   - label: "Integration Base URL"
-    value: "https://api.apivale.com/v1"
+    value: "https://apivel.com/v1"
     isCode: true
   - label: "Billing & Trial"
     value: "PayPal & Global Cards ($0.20 Trial)"
@@ -165,7 +165,7 @@ To resolve this dilemma, deploy an automated failover router that sends sub-100K
 import os, time, httpx
 from typing import Dict, Any
 
-APIVALE_BASE_URL = os.getenv("APIVALE_BASE_URL", "https://api.apivale.com/v1")
+APIVALE_BASE_URL = os.getenv("APIVALE_BASE_URL", "https://apivel.com/v1")
 APIVALE_API_KEY = os.getenv("APIVALE_API_KEY", "your-apivale-token")
 
 class ResilientAgentGateway:

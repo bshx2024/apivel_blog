@@ -28,7 +28,7 @@ The release of the **TypeSafe Jev AI model** in September 2026 fundamentally res
 Developers can verify downstream execution via APIVALE's OpenAI-compatible gateway with a basic cURL request:
 
 ```bash
-curl -X POST https://api.apivale.com/v1/chat/completions \
+curl -X POST https://apivel.com/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer $APIVALE_API_KEY" \
   -d '{
@@ -130,7 +130,7 @@ flowchart TD
     B -->|Primitive: choice| C{"Intent & Confidence Check"}
     C -->|confidence < 0.75| D["Conservative Fallback Route"]
     C -->|intent: simple_filter| E["Local Static Handler (0ms Cost)"]
-    C -->|intent: heavy_coding| F["System 2: APIVALE Gateway (api.apivale.com)"]
+    C -->|intent: heavy_coding| F["System 2: APIVALE Gateway (apivel.com)"]
     F --> G["DeepSeek V4 / Qwen 3.7 Max Execution"]
     G --> H["Generated Code Output"]
 ```
@@ -161,8 +161,8 @@ interface AgentPayload {
   context: string;
 }
 
-const APIVALE_GATEWAY = "https://api.apivale.com/v1";
-const APIVALE_KEY = process.env.APIVALE_API_KEY || "sk-apivale-starter";
+const APIVALE_GATEWAY = "https://apivel.com/v1";
+const APIVALE_KEY = process.env.APIVALE_API_KEY || "sk-apivel-starter";
 
 async function executeWithRetry<T>(fn: () => Promise<T>, retries = 3, delay = 500): Promise<T> {
   try {
@@ -320,7 +320,7 @@ No, the TypeSafe Jev AI model is not a chatbot and does not generate free-form t
 The TypeSafe Jev AI model costs $0.042 per 1 million input tokens with zero output token fees ($0.00). In comparison, frontier models like Claude Sonnet 5 cost $3.00 per 1M input tokens and $15.00 per 1M output tokens, making Jev over 60 to 100 times more economical for semantic routing and classification tasks.
 
 ### How Do I Connect Downstream Tasks to DeepSeek V4 on APIVALE?
-You connect downstream reasoning by pointing your OpenAI SDK or HTTP client to `https://api.apivale.com/v1` using your APIVALE API key. Requests specify model targets like `deepseek-v4` or `infer/qwen3.7-max`, executing heavy code generation and agentic logic with native OpenAI compatibility.
+You connect downstream reasoning by pointing your OpenAI SDK or HTTP client to `https://apivel.com/v1` using your APIVALE API key. Requests specify model targets like `deepseek-v4` or `infer/qwen3.7-max`, executing heavy code generation and agentic logic with native OpenAI compatibility.
 
 ### What Payment Methods Does APIVALE Support for International Developers?
 APIVALE supports Waffo Global Billing, enabling developers globally to pay with international credit cards and leading digital wallets without requiring Chinese national ID verification or +86 phone numbers. Every account includes an instant $0.20 free starter credit upon sign-up.
@@ -353,7 +353,7 @@ APIVALE supports Waffo Global Billing, enabling developers globally to pay with 
       "name": "How Do I Connect Downstream Tasks to DeepSeek V4 on APIVALE?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You connect downstream tasks by configuring your OpenAI SDK base URL to https://api.apivale.com/v1 and setting your model parameter to deepseek-v4 or infer/qwen3.7-max."
+        "text": "You connect downstream tasks by configuring your OpenAI SDK base URL to https://apivel.com/v1 and setting your model parameter to deepseek-v4 or infer/qwen3.7-max."
       }
     },
     {

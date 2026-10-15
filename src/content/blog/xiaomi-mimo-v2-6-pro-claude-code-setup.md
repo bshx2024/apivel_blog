@@ -14,7 +14,7 @@ keyTakeaways:
     value: "infer/mimo-v2.6-pro"
     isCode: true
   - label: "Integration Base URL"
-    value: "https://api.apivale.com/v1"
+    value: "https://apivel.com/v1"
     isCode: true
   - label: "Billing & Free Quota"
     value: "PayPal & Global Cards ($0.20 Trial)"
@@ -26,7 +26,7 @@ On September 22, 2026, Xiaomi officially released and open-sourced **MiMo-V2.6**
 <div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
-    <li><strong>SDK Compatibility Protocol</strong>: Native Anthropic and OpenAI wire protocol endpoints (<code class="text-indigo-300">https://api.apivale.com/v1</code>).</li>
+    <li><strong>SDK Compatibility Protocol</strong>: Native Anthropic and OpenAI wire protocol endpoints (<code class="text-indigo-300">https://apivel.com/v1</code>).</li>
     <li><strong>Flagship Invocation Model</strong>: <code class="text-indigo-300">infer/mimo-v2.6-pro</code> for 1M reasoning and <code class="text-indigo-300">infer/mimo-v2.6-flash</code> for high-throughput batch tasks.</li>
     <li><strong>Engineering Edge-Case Fix</strong>: SSE streaming heartbeat injection prevents Claude Code CLI stream idle drops during long-horizon reasoning.</li>
     <li><strong>Global Payment & Free Quota</strong>: Instant activation via PayPal, Credit Cards & Alipay with zero KYC; includes $0.20 free starter credit (+50% bonus on first top-up).</li>
@@ -50,8 +50,8 @@ Navigating phone verification and mismatched streaming protocols often prevents 
 
 ```bash
 # Verify connectivity to Xiaomi MiMo-V2.6 Pro via APIVALE Anthropic endpoint
-curl -X POST https://api.apivale.com/v1/messages \
-  -H "x-api-key: sk-apivale-test-key" \
+curl -X POST https://apivel.com/v1/messages \
+  -H "x-api-key: sk-apivel-test-key" \
   -H "anthropic-version: 2023-06-01" \
   -H "content-type: application/json" \
   -d '{
@@ -112,8 +112,8 @@ Add these lines to your shell profile (`~/.bashrc` or `~/.zshrc`):
 
 ```bash
 # Configure Claude Code CLI to route through APIVALE's unified protocol gateway
-export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
-export ANTHROPIC_API_KEY="sk-apivale-your-active-key"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
+export ANTHROPIC_API_KEY="sk-apivel-your-active-key"
 
 # Launch Claude Code directly targeting Xiaomi MiMo-V2.6 Pro
 claude --model infer/mimo-v2.6-pro
@@ -124,8 +124,8 @@ You can also configure project-level defaults inside `.claude/settings.json`:
 ```json
 {
   "env": {
-    "ANTHROPIC_BASE_URL": "https://api.apivale.com/v1",
-    "ANTHROPIC_API_KEY": "sk-apivale-your-active-key"
+    "ANTHROPIC_BASE_URL": "https://apivel.com/v1",
+    "ANTHROPIC_API_KEY": "sk-apivel-your-active-key"
   },
   "model": "infer/mimo-v2.6-pro",
   "maxThinkingTokens": 8192
@@ -137,8 +137,8 @@ You can also configure project-level defaults inside `.claude/settings.json`:
 Cursor IDE uses standard OpenAI Chat Completions for custom models. Connecting MiMo-V2.6 Pro provides instant context-aware edits, prompt optimization, and Chat sidebar support with full 1M context leverage.
 
 In **Cursor Settings** $\rightarrow$ **Models**:
-1. Override OpenAI Base URL to: `https://api.apivale.com/v1`.
-2. Enter your APIVALE API key (`sk-apivale-...`).
+1. Override OpenAI Base URL to: `https://apivel.com/v1`.
+2. Enter your APIVALE API key (`sk-apivel-...`).
 3. Click **+ Add Custom Model** and enter `infer/mimo-v2.6-pro`.
 
 Add this system prompt configuration to `.cursorrules`:
@@ -309,7 +309,7 @@ import axios, { AxiosError } from "axios";
 
 export class MiMoClient {
   private client = axios.create({
-    baseURL: "https://api.apivale.com/v1",
+    baseURL: "https://apivel.com/v1",
     timeout: 180000
   });
 
@@ -355,7 +355,7 @@ Yes, Xiaomi MiMo-V2.6 Pro is exceptionally well-suited for autonomous coding age
 Xiaomi MiMo-V2.6 open weights are 100% free to download on Hugging Face for self-hosting. For managed cloud API access via APIVALE, pricing is $0.80 per million input tokens and $2.40 per million output tokens. Every newly registered developer receives a $0.20 free trial quota with zero credit card required, and top-ups feature a +50% first-deposit privilege (e.g., $5 yields $7.50).
 
 ### How do I configure prompts and system rules for MiMo-V2.6 Pro in Cursor and Claude Code?
-Configure MiMo-V2.6 Pro prompts by targeting `infer/mimo-v2.6-pro` via APIVALE's endpoint (`https://api.apivale.com/v1`) and specifying strict system instructions in your `.cursorrules` or `.claude/settings.json`. Explicitly enforce structured reasoning before code generation and handle long-horizon 1M token contexts without mid-prompt retrieval degradation.
+Configure MiMo-V2.6 Pro prompts by targeting `infer/mimo-v2.6-pro` via APIVALE's endpoint (`https://apivel.com/v1`) and specifying strict system instructions in your `.cursorrules` or `.claude/settings.json`. Explicitly enforce structured reasoning before code generation and handle long-horizon 1M token contexts without mid-prompt retrieval degradation.
 
 ### How do PayPal and international payments work for MiMo-V2.6 Pro?
 APIVALE natively supports PayPal official instant checkout, major international credit cards (Visa, Mastercard, Amex), Apple Pay, and Alipay with zero currency conversion fees. Developers can top up without mainland phone or identity verification, and new accounts receive an initial $0.20 free starter credit upon registration with automatic +50% extra credits on first top-up.
@@ -397,7 +397,7 @@ APIVALE natively supports PayPal official instant checkout, major international 
       "name": "How do I configure prompts and system rules for MiMo-V2.6 Pro in Cursor and Claude Code?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Configure MiMo-V2.6 Pro prompts by targeting infer/mimo-v2.6-pro via APIVALE's endpoint (https://api.apivale.com/v1) and specifying strict system instructions in your .cursorrules or .claude/settings.json. Explicitly enforce structured reasoning before code generation and handle long-horizon 1M token contexts without mid-prompt retrieval degradation."
+        "text": "Configure MiMo-V2.6 Pro prompts by targeting infer/mimo-v2.6-pro via APIVALE's endpoint (https://apivel.com/v1) and specifying strict system instructions in your .cursorrules or .claude/settings.json. Explicitly enforce structured reasoning before code generation and handle long-horizon 1M token contexts without mid-prompt retrieval degradation."
       }
     },
     {

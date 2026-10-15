@@ -17,7 +17,7 @@ keyTakeaways:
     value: "infer/space-bunny-alpha"
     isCode: true
   - label: "Integration Base URL"
-    value: "https://api.apivale.com/v1"
+    value: "https://apivel.com/v1"
     isCode: true
   - label: "Billing & Free Trial"
     value: "PayPal & Global Cards ($0.20 Trial)"
@@ -34,7 +34,7 @@ keyTakeaways:
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
     <li><strong>Instant API Key & Free Trial</strong>: Claim an instant <code class="text-indigo-300">infer/space-bunny-alpha</code> API key with $0.20 free signup credits without credit card KYC lockouts.</li>
     <li><strong>Breakout 1M Stealth Engine</strong>: The Space Bunny Alpha model operates with a native 1M context window, high-speed CoT reasoning (118 tok/s), and multimodal vision inputs.</li>
-    <li><strong>Native Cline & OpenCode Compatibility</strong>: Route requests directly into VS Code agents and CLI tools via standard OpenAI-compatible endpoints (<code class="text-indigo-300">https://api.apivale.com/v1</code>).</li>
+    <li><strong>Native Cline & OpenCode Compatibility</strong>: Route requests directly into VS Code agents and CLI tools via standard OpenAI-compatible endpoints (<code class="text-indigo-300">https://apivel.com/v1</code>).</li>
     <li><strong>Zero-KYC PayPal Access</strong>: Bypass foreign billing declines with official PayPal checkout, international credit cards, and global zero-FX invoicing.</li>
   </ul>
 </div>
@@ -48,7 +48,7 @@ keyTakeaways:
     </div>
     <div class="rounded-lg bg-gray-950 p-3 border border-gray-800">
       <div class="font-bold text-white mb-1">2. Endpoint & Model ID</div>
-      <p class="text-gray-400">Set baseURL to <code class="text-emerald-400 font-mono">https://api.apivale.com/v1</code> with model identifier <code class="text-emerald-400 font-mono">infer/space-bunny-alpha</code>.</p>
+      <p class="text-gray-400">Set baseURL to <code class="text-emerald-400 font-mono">https://apivel.com/v1</code> with model identifier <code class="text-emerald-400 font-mono">infer/space-bunny-alpha</code>.</p>
     </div>
     <div class="rounded-lg bg-gray-950 p-3 border border-gray-800">
       <div class="font-bold text-white mb-1">3. Launch in Code/Agent</div>
@@ -76,8 +76,8 @@ Through [APIVALE's Unified API Gateway](/blog/openrouter-alternatives/), enginee
 
 ```bash
 # Verify connectivity via APIVALE Unified Gateway
-curl -X POST https://api.apivale.com/v1/chat/completions \
-  -H "Authorization: Bearer sk-apivale-test-key" \
+curl -X POST https://apivel.com/v1/chat/completions \
+  -H "Authorization: Bearer sk-apivel-test-key" \
   -H "Content-Type: application/json" \
   -d '{
     "model": "infer/space-bunny-alpha",
@@ -152,8 +152,8 @@ import os, time, httpx
 from openai import OpenAI, APIError, RateLimitError
 
 client = OpenAI(
-    base_url="https://api.apivale.com/v1",
-    api_key=os.getenv("APIVALE_API_KEY", "sk-apivale-live-token"),
+    base_url="https://apivel.com/v1",
+    api_key=os.getenv("APIVALE_API_KEY", "sk-apivel-live-token"),
     http_client=httpx.Client(timeout=120.0, limits=httpx.Limits(max_keepalive_connections=20))
 )
 
@@ -183,14 +183,14 @@ To wire the Space Bunny Alpha API into **Cline** or **OpenCode** in VS Code, ope
 ```json
 {
   "cline.apiProvider": "openai-compatible",
-  "cline.openAiBaseUrl": "https://api.apivale.com/v1",
-  "cline.openAiApiKey": "sk-apivale-your-registered-key",
+  "cline.openAiBaseUrl": "https://apivel.com/v1",
+  "cline.openAiApiKey": "sk-apivel-your-registered-key",
   "cline.openAiModelId": "infer/space-bunny-alpha",
   "cline.customModelMaxTokens": 32768,
   "cline.contextWindow": 1000000,
   "opencode.providers.custom": {
-    "baseURL": "https://api.apivale.com/v1",
-    "apiKey": "sk-apivale-your-registered-key",
+    "baseURL": "https://apivel.com/v1",
+    "apiKey": "sk-apivel-your-registered-key",
     "model": "infer/space-bunny-alpha",
     "temperature": 0.2
   }
@@ -201,7 +201,7 @@ For Cursor IDE users, add the following directive to `.cursorrules` to instruct 
 
 ```markdown
 # .cursorrules for Space Bunny Alpha Model Integration
-- Target Model: infer/space-bunny-alpha via APIVALE Proxy (https://api.apivale.com/v1)
+- Target Model: infer/space-bunny-alpha via APIVALE Proxy (https://apivel.com/v1)
 - Context Limit: Utilize up to 1M tokens for multi-package monorepo analysis.
 - Coding Style: Output production TypeScript / Python with explicit return types and exhaustive error handling.
 ```
@@ -222,7 +222,7 @@ To ensure uninterrupted continuous integration and agent runs during high-traffi
 
 ```mermaid
 flowchart TD
-    Client["Cline / OpenCode / Claude Code CLI"] --> Gateway["APIVALE Unified Gateway (https://api.apivale.com/v1)"]
+    Client["Cline / OpenCode / Claude Code CLI"] --> Gateway["APIVALE Unified Gateway (https://apivel.com/v1)"]
     Gateway --> Primary{"Primary Target:<br/>infer/space-bunny-alpha"}
     Primary -->|"200 OK (Fast Inference)"| Output["Response Stream (SSE Keep-Alive)"]
     Primary -->|"429 Rate Limit / 503 Overload"| Failover["Smart Failover Engine"]
@@ -286,7 +286,7 @@ flowchart TD
       <span id="bunnyCostResult" class="font-mono text-emerald-400 font-semibold">$0.0250 per call</span>
     </div>
     <div class="mt-2 text-xs font-mono text-gray-300">
-      <span class="text-indigo-400">Endpoint:</span> https://api.apivale.com/v1/chat/completions | <span class="text-indigo-400">Model:</span> infer/space-bunny-alpha
+      <span class="text-indigo-400">Endpoint:</span> https://apivel.com/v1/chat/completions | <span class="text-indigo-400">Model:</span> infer/space-bunny-alpha
     </div>
   </div>
 
@@ -314,7 +314,7 @@ Space Bunny Alpha is a 2026 anonymous high-speed stealth large language model ho
 The Space Bunny Alpha model scores 82.0% on GPQA Diamond and 75.0% on MMLU-Pro while sustaining generation speeds of approximately 118 tokens/second. While Claude Sonnet 5 retains a higher score on complex formal verification, the stealth engine offers 5x context capacity and a 90% cost reduction ($0.25 input / $1.00 output per 1M tokens).
 
 ### 5.4 How do I integrate the API into Cline and OpenCode?
-Configure your extension's custom OpenAI provider setting to point to `https://api.apivale.com/v1`, set your API Key to your APIVALE authentication token, and specify the model identifier as `infer/space-bunny-alpha`. Set the context window parameter to 1M tokens in `settings.json`.
+Configure your extension's custom OpenAI provider setting to point to `https://apivel.com/v1`, set your API Key to your APIVALE authentication token, and specify the model identifier as `infer/space-bunny-alpha`. Set the context window parameter to 1M tokens in `settings.json`.
 
 ---
 
@@ -353,7 +353,7 @@ Configure your extension's custom OpenAI provider setting to point to `https://a
       "name": "How do I integrate Space Bunny Alpha into Cline and OpenCode?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Configure your extension's custom OpenAI provider setting to point to https://api.apivale.com/v1, set your API Key to your APIVALE authentication token, and specify the model identifier as infer/space-bunny-alpha with a 1M context window."
+        "text": "Configure your extension's custom OpenAI provider setting to point to https://apivel.com/v1, set your API Key to your APIVALE authentication token, and specify the model identifier as infer/space-bunny-alpha with a 1M context window."
       }
     }
   ]

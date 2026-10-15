@@ -36,7 +36,7 @@ lang: "en"
     <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/how-to-connect-claude-opus-5-to-claude-code-cli/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Sign Up / Log In to Auto-Fill Your API Key
     </a>
-    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export ANTHROPIC_BASE_URL=\'https://api.apivale.com/v1\'\nexport ANTHROPIC_AUTH_TOKEN=\'your_apivale_api_key\'\nexport ANTHROPIC_MODEL=\'claude-opus-5\''); alert('Copied setup script!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
+    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export ANTHROPIC_BASE_URL=\'https://apivel.com/v1\'\nexport ANTHROPIC_AUTH_TOKEN=\'your_apivel_api_key\'\nexport ANTHROPIC_MODEL=\'claude-opus-5\''); alert('Copied setup script!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
       📋 Copy Setup Commands
     </button>
   </div>
@@ -70,12 +70,12 @@ graph LR
 
 ### Quick Start: Connect Claude Code CLI to Opus 5 in 30 Seconds
 
-To connect Claude Code CLI to Claude Opus 5 via APIVALE, set your terminal environment variables to point to `https://api.apivale.com/v1`. Claude Code CLI natively routes all `/v1/messages` payloads through APIVALE without modifying CLI source code.
+To connect Claude Code CLI to Claude Opus 5 via APIVALE, set your terminal environment variables to point to `https://apivel.com/v1`. Claude Code CLI natively routes all `/v1/messages` payloads through APIVALE without modifying CLI source code.
 
 ```bash
 # Point Claude Code CLI to APIVALE's Anthropic protocol bridge
-export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
-export ANTHROPIC_AUTH_TOKEN="your_apivale_api_key"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
+export ANTHROPIC_AUTH_TOKEN="your_apivel_api_key"
 
 # Set the active model to Claude Opus 5
 export ANTHROPIC_MODEL="claude-opus-5"
@@ -178,7 +178,7 @@ Test your APIVALE endpoint and Claude Opus 5 model execution directly inside thi
         }
 
         if (!userApiKey) {
-          userApiKey = 'sk-apivale-user-active';
+          userApiKey = 'sk-apivel-user-active';
         }
 
         const badge = document.getElementById('user-auth-status-badge');
@@ -207,14 +207,14 @@ Test your APIVALE endpoint and Claude Opus 5 model execution directly inside thi
 
         const codeBlocks = document.querySelectorAll('pre code');
         codeBlocks.forEach(code => {
-          if (code.innerText.includes('your_apivale_api_key')) {
-            code.innerHTML = code.innerHTML.replaceAll('your_apivale_api_key', maskedApiKey);
+          if (code.innerText.includes('your_apivel_api_key')) {
+            code.innerHTML = code.innerHTML.replaceAll('your_apivel_api_key', maskedApiKey);
           }
         });
 
         if (copyBtn) {
           copyBtn.onclick = () => {
-            const scriptStr = `export ANTHROPIC_BASE_URL='https://api.apivale.com/v1'\nexport ANTHROPIC_AUTH_TOKEN='${userApiKey}'\nexport ANTHROPIC_MODEL='claude-opus-5'`;
+            const scriptStr = `export ANTHROPIC_BASE_URL='https://apivel.com/v1'\nexport ANTHROPIC_AUTH_TOKEN='${userApiKey}'\nexport ANTHROPIC_MODEL='claude-opus-5'`;
             navigator.clipboard.writeText(scriptStr);
             alert('Copied setup script with your personal API key!');
           };
@@ -243,7 +243,7 @@ Test your APIVALE endpoint and Claude Opus 5 model execution directly inside thi
     btn.disabled = true;
     btn.innerText = '⏳ Executing ' + selectedModel + '...';
     wrapper.classList.remove('hidden');
-    output.innerText = 'Connecting to https://api.apivale.com/v1 (' + selectedModel + ')...';
+    output.innerText = 'Connecting to https://apivel.com/v1 (' + selectedModel + ')...';
 
     const start = Date.now();
     try {
@@ -329,7 +329,7 @@ Configure your shell profile (`~/.zshrc` or `~/.bashrc`) to direct all Claude Co
 nano ~/.zshrc
 
 # Add APIVALE environment overrides for Claude Opus 5
-export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
 export ANTHROPIC_AUTH_TOKEN="apivale-key-xxxxxxxxxxxxxxxx"
 export ANTHROPIC_MODEL="claude-opus-5"
 
@@ -346,7 +346,7 @@ For Windows developers using PowerShell, define environment variables for your t
 
 ```powershell
 # Set environment variables for APIVALE proxy
-$env:ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
+$env:ANTHROPIC_BASE_URL="https://apivel.com/v1"
 $env:ANTHROPIC_AUTH_TOKEN="apivale-key-xxxxxxxxxxxxxxxx"
 $env:ANTHROPIC_MODEL="claude-opus-5"
 
@@ -363,7 +363,7 @@ Cursor IDE allows setting custom base URLs for Anthropic and OpenAI compatible p
 
 1. Open **Cursor Settings** (`Ctrl + ,` or `Cmd + ,`) -> Navigate to **Models**.
 2. Under **Anthropic** or **OpenAI API**, enable **Override Base URL**.
-3. Set the Base URL to `https://api.apivale.com/v1` and paste your APIVALE key into the API Key field.
+3. Set the Base URL to `https://apivel.com/v1` and paste your APIVALE key into the API Key field.
 4. Under **Add Custom Model**, enter `claude-opus-5`, toggle it **ON**, and select it in Cursor Chat (`Cmd + L`) or Composer (`Cmd + I`).
 
 For detailed pricing math comparing fixed Cursor subscriptions with custom API key token routing, see our [Cursor BYOK vs Pro Real Cost Breakdown](/blog/cursor-pro-vs-custom-api-key/).
@@ -429,7 +429,7 @@ import axios from 'axios';
 
 const app = express();
 const PORT = 3009;
-const APIVALE_GATEWAY = 'https://api.apivale.com/v1';
+const APIVALE_GATEWAY = 'https://apivel.com/v1';
 
 app.use(express.json());
 
@@ -485,7 +485,7 @@ app.listen(PORT, () => console.log(`🚀 Claude Opus 5 Proxy Active on http://lo
 ## Developer FAQ
 
 ### How do I connect Claude Opus 5 to Claude Code CLI without editing source code?
-You can connect Claude Opus 5 to Claude Code CLI without editing source code by exporting APIVALE's custom base URL (`export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"`), authorization token, and model name (`export ANTHROPIC_MODEL="claude-opus-5"`) in your terminal. Claude Code CLI natively redirects all `/v1/messages` calls through APIVALE.
+You can connect Claude Opus 5 to Claude Code CLI without editing source code by exporting APIVALE's custom base URL (`export ANTHROPIC_BASE_URL="https://apivel.com/v1"`), authorization token, and model name (`export ANTHROPIC_MODEL="claude-opus-5"`) in your terminal. Claude Code CLI natively redirects all `/v1/messages` calls through APIVALE.
 
 ### Can I pay for Claude Opus 5 API using PayPal on APIVALE?
 Yes, you can pay for Claude Opus 5 API using PayPal on APIVALE, which natively supports global PayPal billing and major credit cards via PayPal. This enables international developers to bypass credit card verification locks or region restrictions.
@@ -494,7 +494,7 @@ Yes, you can pay for Claude Opus 5 API using PayPal on APIVALE, which natively s
 The primary API invocation model name for Claude Opus 5 on APIVALE is `claude-opus-5` (or `claude-3-5-opus`). You can specify this model ID directly in your environment variables or Cursor model configuration.
 
 ### How to resolve 401 Unauthorized errors when connecting Opus 5 to Claude Code CLI?
-You can resolve 401 Unauthorized errors by ensuring that `ANTHROPIC_AUTH_TOKEN` is set to a valid APIVALE key (e.g. `export ANTHROPIC_AUTH_TOKEN="your_apivale_api_key"`). If using our single-URL interactive feature above, your active API key is auto-filled into the setup scripts automatically.
+You can resolve 401 Unauthorized errors by ensuring that `ANTHROPIC_AUTH_TOKEN` is set to a valid APIVALE key (e.g. `export ANTHROPIC_AUTH_TOKEN="your_apivel_api_key"`). If using our single-URL interactive feature above, your active API key is auto-filled into the setup scripts automatically.
 
 ### Does APIVALE support real-time streaming (SSE) for Opus 5 terminal progress indicators?
 Yes, APIVALE supports real-time streaming (SSE) output for terminal progress indicators in Claude Code CLI and Cursor. The gateway maintains full Server-Sent Events (SSE) streaming compatibility, enabling fluid terminal spinners and zero-lag token responses.
@@ -511,7 +511,7 @@ Yes, APIVALE supports real-time streaming (SSE) output for terminal progress ind
       "name": "How do I connect Claude Opus 5 to Claude Code CLI without editing source code?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You can connect Claude Opus 5 to Claude Code CLI without editing source code by exporting APIVALE's custom base URL (export ANTHROPIC_BASE_URL=\"https://api.apivale.com/v1\"), authorization token, and model name in your terminal. Claude Code CLI natively redirects all /v1/messages calls through APIVALE."
+        "text": "You can connect Claude Opus 5 to Claude Code CLI without editing source code by exporting APIVALE's custom base URL (export ANTHROPIC_BASE_URL=\"https://apivel.com/v1\"), authorization token, and model name in your terminal. Claude Code CLI natively redirects all /v1/messages calls through APIVALE."
       }
     },
     {

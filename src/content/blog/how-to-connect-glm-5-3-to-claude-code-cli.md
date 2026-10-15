@@ -43,7 +43,7 @@ lang: "en"
     <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/how-to-connect-glm-5-3-to-claude-code-cli/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Sign Up / Log In to Auto-Fill Your API Key
     </a>
-    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export ANTHROPIC_BASE_URL=\'https://api.apivale.com/v1\'\nexport ANTHROPIC_AUTH_TOKEN=\'your_apivale_api_key\'\n# 选项 A：极速高频/自动化脚本（首推极致性价比）\nexport ANTHROPIC_MODEL=\'infer/glm-5.3-flash\'\n# 选项 B：复杂逻辑/深度思考（满血 743B MoE 旗舰）\n# export ANTHROPIC_MODEL=\'infer/glm-5.3\''); alert('Copied GLM setup commands!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
+    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export ANTHROPIC_BASE_URL=\'https://apivel.com/v1\'\nexport ANTHROPIC_AUTH_TOKEN=\'your_apivel_api_key\'\n# 选项 A：极速高频/自动化脚本（首推极致性价比）\nexport ANTHROPIC_MODEL=\'infer/glm-5.3-flash\'\n# 选项 B：复杂逻辑/深度思考（满血 743B MoE 旗舰）\n# export ANTHROPIC_MODEL=\'infer/glm-5.3\''); alert('Copied GLM setup commands!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
       📋 Copy Setup Commands
     </button>
   </div>
@@ -75,12 +75,12 @@ Configure APIVALE's Anthropic-compatible reverse proxy to execute Claude Code CL
 
 ### Quick Start: Connect Claude Code CLI in 30 Seconds
 
-To connect Claude Code CLI to the flagship model, configure `ANTHROPIC_BASE_URL="https://api.apivale.com/v1"`, set your `ANTHROPIC_AUTH_TOKEN`, and define `ANTHROPIC_MODEL="infer/glm-5.3"`.
+To connect Claude Code CLI to the flagship model, configure `ANTHROPIC_BASE_URL="https://apivel.com/v1"`, set your `ANTHROPIC_AUTH_TOKEN`, and define `ANTHROPIC_MODEL="infer/glm-5.3"`.
 
 ```bash
 # 1. Point Claude Code CLI to APIVALE's Anthropic-compatible protocol bridge
-export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
-export ANTHROPIC_AUTH_TOKEN="your_apivale_api_key"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
+export ANTHROPIC_AUTH_TOKEN="your_apivel_api_key"
 
 # 2. Assign the active model identifier
 # 选项 A：极速高频/自动化脚本（首推极致性价比）
@@ -152,7 +152,7 @@ Test your APIVALE endpoint and model execution directly inside this article with
       const selfRes = await fetch('/api/user/self', { credentials: 'include' }).then(r => r.json());
       if (selfRes && selfRes.success && selfRes.data) {
         const username = selfRes.data.username || selfRes.data.display_name || 'User';
-        let userApiKey = 'sk-apivale-user-active';
+        let userApiKey = 'sk-apivel-user-active';
         try {
           const tokenRes = await fetch('/api/token/?p=0', { credentials: 'include' }).then(r => r.json());
           if (tokenRes && tokenRes.success && Array.isArray(tokenRes.data) && tokenRes.data.length > 0) {
@@ -179,7 +179,7 @@ Test your APIVALE endpoint and model execution directly inside this article with
         }
         if (copyBtn) {
           copyBtn.onclick = () => {
-            const scriptStr = `export ANTHROPIC_BASE_URL='https://api.apivale.com/v1'\nexport ANTHROPIC_AUTH_TOKEN='${userApiKey}'\n# 选项 A：极速高频/自动化脚本（首推极致性价比）\nexport ANTHROPIC_MODEL='infer/glm-5.3-flash'\n# 选项 B：复杂逻辑/深度思考（满血 743B MoE 旗舰）\n# export ANTHROPIC_MODEL='infer/glm-5.3'`;
+            const scriptStr = `export ANTHROPIC_BASE_URL='https://apivel.com/v1'\nexport ANTHROPIC_AUTH_TOKEN='${userApiKey}'\n# 选项 A：极速高频/自动化脚本（首推极致性价比）\nexport ANTHROPIC_MODEL='infer/glm-5.3-flash'\n# 选项 B：复杂逻辑/深度思考（满血 743B MoE 旗舰）\n# export ANTHROPIC_MODEL='infer/glm-5.3'`;
             navigator.clipboard.writeText(scriptStr);
             alert('Copied setup script with your personal API key!');
           };
@@ -274,7 +274,7 @@ Add the protocol routing variables to your interactive shell profile (`~/.bashrc
 cat << 'EOF' >> ~/.zshrc
 
 # --- APIVALE Protocol Bridge Configuration ---
-export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
 export ANTHROPIC_AUTH_TOKEN="apv-live-your_actual_key_here"
 
 # 选项 A：极速高频/自动化脚本（首推极致性价比）
@@ -294,7 +294,7 @@ For Windows PowerShell users:
 
 ```powershell
 # Set persistent user-level environment variables
-[System.Environment]::SetEnvironmentVariable('ANTHROPIC_BASE_URL', 'https://api.apivale.com/v1', 'User')
+[System.Environment]::SetEnvironmentVariable('ANTHROPIC_BASE_URL', 'https://apivel.com/v1', 'User')
 [System.Environment]::SetEnvironmentVariable('ANTHROPIC_AUTH_TOKEN', 'apv-live-your_actual_key_here', 'User')
 
 # 选项 A：极速高频/自动化脚本（首推极致性价比）
@@ -362,8 +362,8 @@ import time
 import requests
 from typing import Dict, Any, Optional
 
-APIVALE_ENDPOINT = os.getenv("ANTHROPIC_BASE_URL", "https://api.apivale.com/v1")
-APIVALE_API_KEY = os.getenv("ANTHROPIC_AUTH_TOKEN", "your_apivale_api_key")
+APIVALE_ENDPOINT = os.getenv("ANTHROPIC_BASE_URL", "https://apivel.com/v1")
+APIVALE_API_KEY = os.getenv("ANTHROPIC_AUTH_TOKEN", "your_apivel_api_key")
 MODEL_ID = os.getenv("ANTHROPIC_MODEL", "infer/glm-5.3")
 
 def test_agent_gateway(
@@ -439,7 +439,7 @@ If you previously configured the official Anthropic API key in `~/.claude.json` 
   # Unset conflicting Anthropic keys and force APIVALE endpoint
   unset ANTHROPIC_API_KEY
   claude --logout
-  export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
+  export ANTHROPIC_BASE_URL="https://apivel.com/v1"
   export ANTHROPIC_AUTH_TOKEN="your_apivale_key"
   ```
 
@@ -452,7 +452,7 @@ When running automated task chains, developers frequently encounter hosted skill
 ## Frequently Asked Questions (Developer FAQ)
 
 ### How to use GLM-5.3 in Claude Code CLI?
-You can use GLM-5.3 in Claude Code CLI by exporting `ANTHROPIC_BASE_URL="https://api.apivale.com/v1"` and setting `ANTHROPIC_MODEL="infer/glm-5.3"` using your APIVALE API key.
+You can use GLM-5.3 in Claude Code CLI by exporting `ANTHROPIC_BASE_URL="https://apivel.com/v1"` and setting `ANTHROPIC_MODEL="infer/glm-5.3"` using your APIVALE API key.
 
 ### Is GLM-5.3 free to use on APIVALE?
 APIVALE provides **$0.20 free starter credit** upon account registration, allowing you to test hundreds of terminal queries before topping up with PayPal.
@@ -489,7 +489,7 @@ Supercharge your terminal workflow with 1M context, state-of-the-art whitebox se
       "name": "How to use GLM-5.3 in Claude Code CLI?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You can use GLM-5.3 in Claude Code CLI by exporting ANTHROPIC_BASE_URL='https://api.apivale.com/v1' and setting ANTHROPIC_MODEL='infer/glm-5.3' with an APIVALE access token."
+        "text": "You can use GLM-5.3 in Claude Code CLI by exporting ANTHROPIC_BASE_URL='https://apivel.com/v1' and setting ANTHROPIC_MODEL='infer/glm-5.3' with an APIVALE access token."
       }
     },
     {

@@ -141,7 +141,7 @@ from openai import OpenAI, APIError, RateLimitError, AuthenticationError
 
 # Initialize OpenAI Client pointing to APIVALE's OpenAI-compatible Endpoint
 client = OpenAI(
-    api_key=os.getenv("APIVALE_API_KEY", "sk-apivale-demo-key-12345"),
+    api_key=os.getenv("APIVALE_API_KEY", "sk-apivel-demo-key-12345"),
     base_url="https://apivel.com/v1"
 )
 

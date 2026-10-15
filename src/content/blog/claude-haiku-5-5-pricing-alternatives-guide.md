@@ -24,7 +24,7 @@ keyTakeaways:
     value: "infer/deepseek-v4 ($0.14/$0.28)"
     isCode: true
   - label: "Integration Base URL"
-    value: "https://api.apivale.com/v1"
+    value: "https://apivel.com/v1"
     isCode: true
   - label: "Billing & Free Trial"
     value: "PayPal & Global Cards ($0.20 Trial)"
@@ -154,7 +154,7 @@ Developers looking to buy API keys without foreign credit card rejections can co
 
 ```bash
 # Export APIVALE Universal Anthropic Gateway
-export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
 export ANTHROPIC_API_KEY="your-apivale-token"
 export CLAUDE_CODE_MODEL="infer/deepseek-v4"  # Or "infer/qwen3.7-max"
 ```
@@ -167,7 +167,7 @@ This production script dynamically monitors prompt tokens, routing sub-100K call
 import os, time, httpx
 from typing import Dict, Any
 
-APIVALE_BASE_URL = os.getenv("APIVALE_BASE_URL", "https://api.apivale.com/v1")
+APIVALE_BASE_URL = os.getenv("APIVALE_BASE_URL", "https://apivel.com/v1")
 APIVALE_API_KEY = os.getenv("APIVALE_API_KEY", "your-apivale-token")
 
 class ResilientGatewayClient:

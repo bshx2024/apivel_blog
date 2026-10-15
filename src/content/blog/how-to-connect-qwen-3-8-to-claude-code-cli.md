@@ -26,7 +26,7 @@ keyTakeaways:
   - label: "Sub-500ms TTFT"
     value: "~420ms Time-to-First-Token"
   - label: "Integration Base URL"
-    value: "https://api.apivale.com/v1"
+    value: "https://apivel.com/v1"
     isCode: true
   - label: "Billing & Free Trial"
     value: "PayPal & Global Cards ($0.20 Trial)"
@@ -65,7 +65,7 @@ keyTakeaways:
     <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/how-to-connect-qwen-3-8-to-claude-code-cli/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Sign Up / Log In to Auto-Fill Your API Key
     </a>
-    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export ANTHROPIC_BASE_URL=\'https://api.apivale.com/v1\'\nexport ANTHROPIC_AUTH_TOKEN=\'your_apivale_api_key\'\nexport ANTHROPIC_MODEL=\'infer/qwen3.8-max\''); alert('Copied setup script!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
+    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export ANTHROPIC_BASE_URL=\'https://apivel.com/v1\'\nexport ANTHROPIC_AUTH_TOKEN=\'your_apivel_api_key\'\nexport ANTHROPIC_MODEL=\'infer/qwen3.8-max\''); alert('Copied setup script!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
       📋 Copy Setup Commands
     </button>
   </div>
@@ -95,12 +95,12 @@ Configure APIVALE's OpenAI-compatible proxy gateway for seamless Qwen 3.8 execut
 
 ### Quick Start: Qwen 3.8 Claude Code in 30 Seconds
 
-To complete your Qwen 3.8 Claude Code setup via APIVALE, export `ANTHROPIC_BASE_URL="https://api.apivale.com/v1"`, `ANTHROPIC_AUTH_TOKEN="your_apivale_key"`, and `ANTHROPIC_MODEL="infer/qwen3.8-max"`.
+To complete your Qwen 3.8 Claude Code setup via APIVALE, export `ANTHROPIC_BASE_URL="https://apivel.com/v1"`, `ANTHROPIC_AUTH_TOKEN="your_apivale_key"`, and `ANTHROPIC_MODEL="infer/qwen3.8-max"`.
 
 ```bash
 # Point your terminal agent to APIVALE's Anthropic-compatible protocol bridge
-export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
-export ANTHROPIC_AUTH_TOKEN="your_apivale_api_key"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
+export ANTHROPIC_AUTH_TOKEN="your_apivel_api_key"
 
 # Use the flagship MoE endpoint as active model
 export ANTHROPIC_MODEL="infer/qwen3.8-max"
@@ -171,7 +171,7 @@ Test your APIVALE endpoint and model execution directly inside this article:
       const selfRes = await fetch('/api/user/self', { credentials: 'include' }).then(r => r.json());
       if (selfRes && selfRes.success && selfRes.data) {
         const username = selfRes.data.username || selfRes.data.display_name || 'User';
-        let userApiKey = 'sk-apivale-user-active';
+        let userApiKey = 'sk-apivel-user-active';
         try {
           const tokenRes = await fetch('/api/token/?p=0', { credentials: 'include' }).then(r => r.json());
           if (tokenRes && tokenRes.success && Array.isArray(tokenRes.data) && tokenRes.data.length > 0) {
@@ -198,7 +198,7 @@ Test your APIVALE endpoint and model execution directly inside this article:
         }
         if (copyBtn) {
           copyBtn.onclick = () => {
-            const scriptStr = `export ANTHROPIC_BASE_URL='https://api.apivale.com/v1'\nexport ANTHROPIC_AUTH_TOKEN='${userApiKey}'\nexport ANTHROPIC_MODEL='infer/qwen3.8-max'`;
+            const scriptStr = `export ANTHROPIC_BASE_URL='https://apivel.com/v1'\nexport ANTHROPIC_AUTH_TOKEN='${userApiKey}'\nexport ANTHROPIC_MODEL='infer/qwen3.8-max'`;
             navigator.clipboard.writeText(scriptStr);
             alert('Copied setup script with your personal API key!');
           };
@@ -225,7 +225,7 @@ Test your APIVALE endpoint and model execution directly inside this article:
     btn.disabled = true;
     btn.innerText = '⏳ Executing ' + selectedModel + '...';
     wrapper.classList.remove('hidden');
-    output.innerText = 'Connecting to https://api.apivale.com/v1 (' + selectedModel + ')...';
+    output.innerText = 'Connecting to https://apivel.com/v1 (' + selectedModel + ')...';
 
     const start = Date.now();
     try {
@@ -367,7 +367,7 @@ For detailed model evaluations, check out our companion guides on [How to Connec
 
 ## Can You Run This Model in Both Qwen Code CLI and Claude Code?
 
-Yes. Alibaba Cloud pre-trained the model with native OpenAI and Anthropic protocol specifications. When configured with APIVALE's proxy (`https://api.apivale.com/v1`), both **Qwen Code CLI** and **Claude Code CLI** treat APIVALE as a high-concurrency drop-in backend without custom client patches.
+Yes. Alibaba Cloud pre-trained the model with native OpenAI and Anthropic protocol specifications. When configured with APIVALE's proxy (`https://apivel.com/v1`), both **Qwen Code CLI** and **Claude Code CLI** treat APIVALE as a high-concurrency drop-in backend without custom client patches.
 
 - **Zero Local VRAM Requirements**: Run 2.4T MoE intelligence without an enterprise GPU cluster.
 - **Unified Key & PayPal Billing**: Power Qwen Code CLI, Claude Code CLI, Cursor, and Windsurf from a single balance.
@@ -382,7 +382,7 @@ Yes. Alibaba Cloud pre-trained the model with native OpenAI and Anthropic protoc
 Update your shell profile (`~/.zshrc` or `~/.bashrc`):
 
 ```bash
-export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
 export ANTHROPIC_AUTH_TOKEN="apivale-key-xxxxxxxxxxxxxxxx"
 export ANTHROPIC_MODEL="infer/qwen3.8-max"
 
@@ -398,7 +398,7 @@ npx @anthropic-ai/claude-code
 For Windows PowerShell:
 
 ```powershell
-$env:ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
+$env:ANTHROPIC_BASE_URL="https://apivel.com/v1"
 $env:ANTHROPIC_AUTH_TOKEN="apivale-key-xxxxxxxxxxxxxxxx"
 $env:ANTHROPIC_MODEL="infer/qwen3.8-max"
 
@@ -442,7 +442,7 @@ import axios from 'axios';
 
 const app = express();
 const PORT = 3008;
-const APIVALE_GATEWAY = 'https://api.apivale.com/v1';
+const APIVALE_GATEWAY = 'https://apivel.com/v1';
 
 app.use(express.json());
 
@@ -483,7 +483,7 @@ For engineering workflows requiring entire repository ingestion beyond standard 
 
 ```mermaid
 graph TD
-    CLI["Claude Code CLI"] --> Gateway["APIVALE Unified Gateway (https://api.apivale.com/v1)"]
+    CLI["Claude Code CLI"] --> Gateway["APIVALE Unified Gateway (https://apivel.com/v1)"]
     Gateway -->|"Standard Coding (2.4T MoE)"| Qwen["Qwen 3.8-Max (infer/qwen3.8-max)"]
     Gateway -->|"1M Long-Context Ingestion"| MiMo["Xiaomi MiMo-V2.6 Pro (infer/mimo-v2.6-pro)"]
     Gateway -->|"Reasoning Fallback"| Kimi["Kimi K3 (kimi-k3)"]
@@ -494,13 +494,13 @@ graph TD
 ## Frequently Asked Questions (Developer FAQ)
 
 ### How do I connect Qwen 3.8 to Claude Code without editing source code?
-Export `ANTHROPIC_BASE_URL="https://api.apivale.com/v1"`, `ANTHROPIC_AUTH_TOKEN="your_key"`, and `ANTHROPIC_MODEL="infer/qwen3.8-max"`. Claude Code CLI automatically routes requests through APIVALE.
+Export `ANTHROPIC_BASE_URL="https://apivel.com/v1"`, `ANTHROPIC_AUTH_TOKEN="your_key"`, and `ANTHROPIC_MODEL="infer/qwen3.8-max"`. Claude Code CLI automatically routes requests through APIVALE.
 
 ### Is this model faster and cheaper than Claude Sonnet 5 for coding?
 Yes. Qwen 3.8-Max via APIVALE achieves ~420ms TTFT (50% faster) and costs **80% less** ($0.60/1M input tokens vs $3.00/1M for Sonnet 5).
 
 ### Can I use this model in both Qwen Code CLI and Claude Code?
-Yes. Both CLI tools support standard Anthropic messages protocols. Setting `ANTHROPIC_BASE_URL="https://api.apivale.com/v1"` routes both through APIVALE without local GPU setup.
+Yes. Both CLI tools support standard Anthropic messages protocols. Setting `ANTHROPIC_BASE_URL="https://apivel.com/v1"` routes both through APIVALE without local GPU setup.
 
 ### Why is Claude Code getting an auth error during proxy routing?
 Auth errors indicate a missing or invalid `ANTHROPIC_AUTH_TOKEN`. Verify your APIVALE API key is exported correctly in your terminal session.
@@ -539,7 +539,7 @@ Yes. APIVALE provides full Server-Sent Events (SSE) streaming compatibility, ena
       "name": "Can I use Qwen 3.8 in both Qwen Code CLI and Claude Code CLI?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Both Qwen Code CLI and Claude Code CLI can route terminal requests to Qwen 3.8-Max via APIVALE by setting ANTHROPIC_BASE_URL to https://api.apivale.com/v1."
+        "text": "Yes. Both Qwen Code CLI and Claude Code CLI can route terminal requests to Qwen 3.8-Max via APIVALE by setting ANTHROPIC_BASE_URL to https://apivel.com/v1."
       }
     },
     {

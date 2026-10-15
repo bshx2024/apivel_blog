@@ -52,8 +52,8 @@ When autonomous coding agents run recursive file traversals, token expenditure e
 
 ```bash
 # Verify connectivity via APIVALE unified protocol gateway
-curl -X POST https://api.apivale.com/v1/messages \
-  -H "x-api-key: sk-apivale-test-key" \
+curl -X POST https://apivel.com/v1/messages \
+  -H "x-api-key: sk-apivel-test-key" \
   -H "anthropic-version: 2023-06-01" \
   -H "content-type: application/json" \
   -d '{
@@ -208,8 +208,8 @@ Claude Code CLI accepts custom base URLs via environment variables. Add these li
 
 ```bash
 # Point Claude Code CLI to APIVALE unified protocol proxy
-export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
-export ANTHROPIC_API_KEY="sk-apivale-your-active-key"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
+export ANTHROPIC_API_KEY="sk-apivel-your-active-key"
 
 # Route directly to DeepSeek V4 or Qwen 3.8 Max for cost-efficient coding
 claude --model deepseek-v4
@@ -218,7 +218,7 @@ claude --model deepseek-v4
 To configure in **Cursor IDE**:
 1. Open **Cursor Settings** $\rightarrow$ **Models**.
 2. Enable custom models and add `infer/qwen3.7-max` or `deepseek-v4`.
-3. Set the OpenAI Base URL to `https://api.apivale.com/v1`.
+3. Set the OpenAI Base URL to `https://apivel.com/v1`.
 4. Enter your APIVALE key.
 
 ### 5.2 Production TypeScript Agent Client with Exponential Backoff
@@ -236,7 +236,7 @@ export interface AgentPayload {
 
 export class ResilientAgentClient {
   private client = axios.create({
-    baseURL: "https://api.apivale.com/v1",
+    baseURL: "https://apivel.com/v1",
     timeout: 120000,
   });
 

@@ -22,7 +22,7 @@ keyTakeaways:
   - label: "Inference Throughput"
     value: "20.4 TPS vs DeepSeek 437 TPS"
   - label: "Production Fallback Route"
-    value: "https://api.apivale.com/v1"
+    value: "https://apivel.com/v1"
     isCode: true
   - label: "Billing & Settlement"
     value: "PayPal & Alipay ($0.20 Free Trial)"
@@ -61,8 +61,8 @@ Gateway telemetry across APIVALE clusters confirms that while the new engine exc
 Test OpenAI-compatible proxy routing via APIVALE:
 
 ```bash
-curl -X POST https://api.apivale.com/v1/chat/completions \
-  -H "Authorization: Bearer sk-apivale-test-key" \
+curl -X POST https://apivel.com/v1/chat/completions \
+  -H "Authorization: Bearer sk-apivel-test-key" \
   -H "Content-Type: application/json" \
   -d '{
     "model": "openai/gpt-6.1-sol",
@@ -180,8 +180,8 @@ interface AgentTask {
 }
 
 const client = new OpenAI({
-  baseURL: "https://api.apivale.com/v1",
-  apiKey: process.env.APIVALE_API_KEY || "sk-apivale-demo-token",
+  baseURL: "https://apivel.com/v1",
+  apiKey: process.env.APIVALE_API_KEY || "sk-apivel-demo-token",
 });
 
 export async function executeAgentTaskWithFallback(task: AgentTask): Promise<string> {
@@ -279,7 +279,7 @@ Use this micro-tool to calculate token expenditure and generate verified setup c
       <pre class="bg-gray-900 border border-gray-800 rounded-xl p-3 text-xs font-mono text-cyan-300 overflow-x-auto h-[120px]" id="gpt61-config-output">{
   "model": "openai/gpt-6.1-sol",
   "fallbackModel": "infer/deepseek-v4-pro",
-  "openaiBaseUrl": "https://api.apivale.com/v1"
+  "openaiBaseUrl": "https://apivel.com/v1"
 }</pre>
     </div>
   </div>
@@ -326,11 +326,11 @@ Use this micro-tool to calculate token expenditure and generate verified setup c
     function renderConfig() {
       const mode = clientSelect.value;
       if (mode === 'cursor') {
-        configOutput.textContent = '{\n  "openaiBaseUrl": "https://api.apivale.com/v1",\n  "primaryModel": "openai/gpt-6.1-sol",\n  "fallbackModel": "infer/deepseek-v4-pro"\n}';
+        configOutput.textContent = '{\n  "openaiBaseUrl": "https://apivel.com/v1",\n  "primaryModel": "openai/gpt-6.1-sol",\n  "fallbackModel": "infer/deepseek-v4-pro"\n}';
       } else if (mode === 'claude-code') {
-        configOutput.textContent = 'export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"\nexport ANTHROPIC_API_KEY="sk-apivale-your-token"\nexport CLAUDE_DEFAULT_MODEL="openai/gpt-6.1-sol"';
+        configOutput.textContent = 'export ANTHROPIC_BASE_URL="https://apivel.com/v1"\nexport ANTHROPIC_API_KEY="sk-apivel-your-token"\nexport CLAUDE_DEFAULT_MODEL="openai/gpt-6.1-sol"';
       } else {
-        configOutput.textContent = 'OPENAI_BASE_URL="https://api.apivale.com/v1"\nOPENAI_API_KEY="sk-apivale-your-token"\nDEFAULT_MODEL="openai/gpt-6.1-sol"\nFALLBACK_MODEL="infer/deepseek-v4-pro"';
+        configOutput.textContent = 'OPENAI_BASE_URL="https://apivel.com/v1"\nOPENAI_API_KEY="sk-apivel-your-token"\nDEFAULT_MODEL="openai/gpt-6.1-sol"\nFALLBACK_MODEL="infer/deepseek-v4-pro"';
       }
     }
 
@@ -357,14 +357,14 @@ Use this micro-tool to calculate token expenditure and generate verified setup c
 The interactive calculator models monthly token budgets across diverse usage volumes. Shifting iterative syntax parsing to sub-$0.30 models yields substantial savings without sacrificing reasoning accuracy.
 
 ### Instant Environment Configuration
-The setup generator outputs configuration parameters for Cursor IDE, Claude Code CLI, and Python SDK environments. Targeting `https://api.apivale.com/v1` allows developers to alternate between OpenAI, Anthropic, and open-weights models through a unified API key.
+The setup generator outputs configuration parameters for Cursor IDE, Claude Code CLI, and Python SDK environments. Targeting `https://apivel.com/v1` allows developers to alternate between OpenAI, Anthropic, and open-weights models through a unified API key.
 
 ---
 
 ## Frequently Asked Questions (FAQ)
 
 ### Is GPT 6.1 Codex available for developers right now?
-Yes. OpenAI distributes the model under identifier `gpt-6.1-sol` to eligible API tiers. Developers facing regional access restrictions or foreign credit card decline issues can connect immediately through APIVALE's unified gateway endpoint (`https://api.apivale.com/v1`) using standard OpenAI SDK clients.
+Yes. OpenAI distributes the model under identifier `gpt-6.1-sol` to eligible API tiers. Developers facing regional access restrictions or foreign credit card decline issues can connect immediately through APIVALE's unified gateway endpoint (`https://apivel.com/v1`) using standard OpenAI SDK clients.
 
 ### Is GPT-6 Astra better than 6.1 Sol for software engineering?
 GPT-6 Astra delivers higher synthetic scores (91.2% vs 88.4% on SWE-bench) and broader multimodal reasoning, but costs $25.00/1M output tokens compared to $10.00/1M output on 6.1 Sol. For production software engineering and recursive coding agents, the 6.1 tier provides significantly higher performance per dollar.

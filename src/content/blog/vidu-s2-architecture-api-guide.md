@@ -123,7 +123,7 @@ import asyncio
 import httpx
 from typing import AsyncGenerator
 
-APIVALE_BASE_URL = os.getenv("APIVALE_BASE_URL", "https://api.apivale.com/v1")
+APIVALE_BASE_URL = os.getenv("APIVALE_BASE_URL", "https://apivel.com/v1")
 APIVALE_API_KEY = os.getenv("APIVALE_API_KEY", "your-apivale-token")
 
 class ViduS2AvatarOrchestrator:

@@ -39,7 +39,7 @@ Furthermore, Unbiased Pareto introduced official pricing of **$2.50 per 1M input
 To query Pareto immediately using standard OpenAI SDK headers, run this terminal command:
 
 ```bash
-curl -X POST https://api.apivale.com/v1/chat/completions \
+curl -X POST https://apivel.com/v1/chat/completions \
   -H "Authorization: Bearer $APIVALE_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -216,13 +216,13 @@ Estimate your monthly operational expenses and generate verified client configur
     
     let configSnippet = '';
     if (client === 'cursor') {
-      configSnippet = `# Cursor Model Configuration (.cursorrules)\n# Base URL: https://api.apivale.com/v1\n# Primary Model: unbiased/pareto\n# Fallback Model: infer/qwen3.7-max\n\n{\n  "model": "unbiased/pareto",\n  "api_base": "https://api.apivale.com/v1",\n  "failover_models": ["infer/qwen3.7-max", "deepseek-v4"]\n}`;
+      configSnippet = `# Cursor Model Configuration (.cursorrules)\n# Base URL: https://apivel.com/v1\n# Primary Model: unbiased/pareto\n# Fallback Model: infer/qwen3.7-max\n\n{\n  "model": "unbiased/pareto",\n  "api_base": "https://apivel.com/v1",\n  "failover_models": ["infer/qwen3.7-max", "deepseek-v4"]\n}`;
     } else if (client === 'claude-code') {
-      configSnippet = `# Claude Code CLI Environment Setup\nexport ANTHROPIC_BASE_URL="https://api.apivale.com/v1"\nexport ANTHROPIC_AUTH_TOKEN="your_apivale_key_here"\nexport CLAUDE_DEFAULT_MODEL="unbiased/pareto"\nclaude`;
+      configSnippet = `# Claude Code CLI Environment Setup\nexport ANTHROPIC_BASE_URL="https://apivel.com/v1"\nexport ANTHROPIC_AUTH_TOKEN="your_apivale_key_here"\nexport CLAUDE_DEFAULT_MODEL="unbiased/pareto"\nclaude`;
     } else if (client === 'claude-ps') {
-      configSnippet = `# PowerShell Environment Setup\n$env:ANTHROPIC_BASE_URL="https://api.apivale.com/v1"\n$env:ANTHROPIC_AUTH_TOKEN="your_apivale_key_here"\n$env:CLAUDE_DEFAULT_MODEL="unbiased/pareto"\nclaude`;
+      configSnippet = `# PowerShell Environment Setup\n$env:ANTHROPIC_BASE_URL="https://apivel.com/v1"\n$env:ANTHROPIC_AUTH_TOKEN="your_apivale_key_here"\n$env:CLAUDE_DEFAULT_MODEL="unbiased/pareto"\nclaude`;
     } else if (client === 'python') {
-      configSnippet = `from openai import OpenAI\n\nclient = OpenAI(\n    base_url="https://api.apivale.com/v1",\n    api_key="your_apivale_key_here"\n)\n\nresponse = client.chat.completions.create(\n    model="unbiased/pareto",\n    messages=[{"role": "user", "content": "Hello Pareto!"}],\n    temperature=0.2\n)\nprint(response.choices[0].message.content)`;
+      configSnippet = `from openai import OpenAI\n\nclient = OpenAI(\n    base_url="https://apivel.com/v1",\n    api_key="your_apivale_key_here"\n)\n\nresponse = client.chat.completions.create(\n    model="unbiased/pareto",\n    messages=[{"role": "user", "content": "Hello Pareto!"}],\n    temperature=0.2\n)\nprint(response.choices[0].message.content)`;
     }
     
     document.getElementById('pareto-config-box').innerText = configSnippet;
@@ -258,8 +258,8 @@ Configure Unbiased Pareto inside Claude Code CLI using standard Anthropic proxy 
 
 ```bash
 # Point Claude Code to APIVALE gateway
-export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
-export ANTHROPIC_AUTH_TOKEN="your_apivale_api_key"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
+export ANTHROPIC_AUTH_TOKEN="your_apivel_api_key"
 
 # Bind execution to Unbiased Pareto
 export CLAUDE_DEFAULT_MODEL="unbiased/pareto"
@@ -276,7 +276,7 @@ Connect Unbiased Pareto directly into Cursor Composer with full 256K context sup
 
 1. Navigate to **Settings** $\rightarrow$ **Models** $\rightarrow$ **Add Model**.
 2. Enter `unbiased/pareto` as the model name.
-3. Set **Override OpenAI Base URL** to `https://api.apivale.com/v1`.
+3. Set **Override OpenAI Base URL** to `https://apivel.com/v1`.
 4. Provide your APIVALE authentication token in the API key field.
 5. Create a `.cursorrules` file in your repository root:
 
@@ -307,7 +307,7 @@ export class ResilientParetoRouter {
   private primaryModel: string = "unbiased/pareto";
   private fallbackModels: string[] = ["infer/qwen3.7-max", "deepseek-v4"];
 
-  constructor(apiKey: string, baseURL: string = "https://api.apivale.com/v1") {
+  constructor(apiKey: string, baseURL: string = "https://apivel.com/v1") {
     this.client = new OpenAI({ apiKey, baseURL });
   }
 

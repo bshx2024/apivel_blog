@@ -133,7 +133,7 @@ async def route_and_execute(prompt: str):
     # Step 2: MoE Code Synthesis on APIVALE Gateway
     if needs_code:
         async with httpx.AsyncClient(timeout=45.0) as client:
-            res = await client.post("https://api.apivale.com/v1/chat/completions",
+            res = await client.post("https://apivel.com/v1/chat/completions",
                 json={"model": "infer/deepseek-v4", "messages": [{"role": "user", "content": prompt}]},
                 headers={"Authorization": f"Bearer {APIVALE_KEY}"})
             return res.json()["choices"][0]["message"]["content"]

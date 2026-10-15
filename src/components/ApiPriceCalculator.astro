@@ -163,8 +163,8 @@ const { initialModel = 'kimi-k3' } = Astro.props;
       copyCurlBtn.addEventListener('click', () => {
         const selectedKey = modelSelect.value;
         const rateInfo = modelRates[selectedKey] || modelRates['kimi-k3'];
-        const curlSnippet = `curl https://api.apivale.com/v1/chat/completions \\
-  -H "Authorization: Bearer sk-apivale-demo-key" \\
+        const curlSnippet = `curl https://apivel.com/v1/chat/completions \\
+  -H "Authorization: Bearer sk-apivel-demo-key" \\
   -H "Content-Type: application/json" \\
   -d '{
     "model": "${selectedKey}",

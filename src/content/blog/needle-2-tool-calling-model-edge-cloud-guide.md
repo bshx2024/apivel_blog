@@ -147,7 +147,7 @@ Configure your Needle 2 deployment target and calculate monthly token savings di
 
     let configText = '';
     if (target === 'python-router') {
-      configText = `# Needle 2 + APIVALE Hybrid Router\nfrom hybrid_router import HybridAgentRouter\n\nrouter = HybridAgentRouter(\n    apivale_api_key="sk-apivale-your-key-here",\n    confidence_threshold=0.85\n)\n\n# 12ms local execution or automated APIVALE escalation\nresult = router.route_and_execute("Turn off the kitchen lights")`;
+      configText = `# Needle 2 + APIVALE Hybrid Router\nfrom hybrid_router import HybridAgentRouter\n\nrouter = HybridAgentRouter(\n    apivale_api_key="sk-apivel-your-key-here",\n    confidence_threshold=0.85\n)\n\n# 12ms local execution or automated APIVALE escalation\nresult = router.route_and_execute("Turn off the kitchen lights")`;
     } else if (target === 'curl-cli') {
       configText = `# Download Needle 2 standalone 14MB binary\ncurl -L -o needle2 https://github.com/cactus-compute/needle/releases/latest/download/needle2-linux-x64\nchmod +x needle2\n\n# Execute local tool calling with zero GPU\n./needle2 --tools tools.json --prompt "Check battery percentage"`;
     } else if (target === 'esp32-embedded') {
@@ -281,7 +281,7 @@ class HybridAgentRouter:
         self.needle_bin = needle_bin_path
         self.tools_path = tools_path
         self.threshold = confidence_threshold
-        self.cloud_gateway = "https://api.apivale.com/v1/chat/completions"
+        self.cloud_gateway = "https://apivel.com/v1/chat/completions"
 
     def route_and_execute(self, user_prompt: str) -> Dict[str, Any]:
         # 1. Attempt ultra-fast local tool calling via Needle 2 AI model (14MB)
@@ -332,7 +332,7 @@ class HybridAgentRouter:
         }
 
 if __name__ == "__main__":
-    router = HybridAgentRouter(apivale_api_key="sk-apivale-test-key")
+    router = HybridAgentRouter(apivale_api_key="sk-apivel-test-key")
     
     # Fast local tool trigger (Executes on Needle 2 in 12ms for $0.00)
     res_local = router.route_and_execute("Check battery status")

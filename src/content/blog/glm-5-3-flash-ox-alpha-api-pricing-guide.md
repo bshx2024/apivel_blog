@@ -43,7 +43,7 @@ lang: "en"
     <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/glm-5-3-flash-ox-alpha-api-pricing-guide/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Register to Request Early Access & Claim $0.20 Free Quota
     </a>
-    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('Base URL: https://api.apivale.com/v1\nModel: infer/glm-5.3-flash'); alert('Copied GLM-5.3 Flash preview parameters!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
+    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('Base URL: https://apivel.com/v1\nModel: infer/glm-5.3-flash'); alert('Copied GLM-5.3 Flash preview parameters!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
       📋 Copy Preview Config
     </button>
   </div>
@@ -223,7 +223,7 @@ Configure Cursor IDE, Windsurf, and Claude Code CLI with zero KYC using APIVALE'
 
 1. Open Cursor Settings with `Ctrl + ,` (or `Cmd + ,` on macOS) and navigate to **Models**.
 2. Enable **OpenAI API Key** and toggle **Override OpenAI Base URL**.
-3. Set the endpoint to `https://api.apivale.com/v1`.
+3. Set the endpoint to `https://apivel.com/v1`.
 4. Enter your APIVALE API key (`apv-live-...`).
 5. Under **Add Custom Model**, enter `infer/glm-5.3-flash` (or `infer/ox-alpha`), click the **+** button, and enable it as your primary model.
 
@@ -233,7 +233,7 @@ Set Anthropic environment variables in your terminal to route Claude Code comman
 
 ```bash
 # Override Anthropic Protocol Endpoint to APIVALE Gateway
-export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
 export ANTHROPIC_API_KEY="apv-live-your_apivale_key_here"
 
 # Execute Claude Code with GLM-5.3 Flash
@@ -252,7 +252,7 @@ import axios, { AxiosError } from 'axios';
 
 const app = express();
 const PORT = process.env.PORT || 3012;
-const APIVALE_GATEWAY = 'https://api.apivale.com/v1';
+const APIVALE_GATEWAY = 'https://apivel.com/v1';
 
 app.use(express.json());
 

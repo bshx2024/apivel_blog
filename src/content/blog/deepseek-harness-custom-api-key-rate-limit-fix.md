@@ -15,7 +15,7 @@ lang: "en"
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
     <li><strong>Fix Agent Loop 429 Errors:</strong> Autonomous agent loops in DeepSeek Harness (dsh CLI & Desktop) trigger heavy API requests that hit official rate limits. Switching to APIVALE's high-concurrency proxy gateway resolves HTTP 429 and 503 errors.</li>
-    <li><strong>Drop-in Custom Base URL & Key Configuration:</strong> Easily update `~/.dsh/.credentials.yaml` or set environment variables to point `dsh` to `https://api.apivale.com/v1` without altering framework core code.</li>
+    <li><strong>Drop-in Custom Base URL & Key Configuration:</strong> Easily update `~/.dsh/.credentials.yaml` or set environment variables to point `dsh` to `https://apivel.com/v1` without altering framework core code.</li>
     <li><strong>Multi-Model & Global PayPal Billing:</strong> Route DeepSeek Harness requests through APIVALE to access DeepSeek V4, Claude Sonnet 5, and Qwen 3.7 Max using pay-as-you-go PayPal billing with zero credit card restrictions.</li>
   </ul>
 </div>
@@ -30,7 +30,7 @@ lang: "en"
   </p>
   <div class="flex items-center gap-3 flex-wrap">
     <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/deepseek-harness-custom-api-key-rate-limit-fix/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg">⚡ Sign Up / Log In</a>
-    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export DEEPSEEK_API_KEY=\'your_apivale_api_key\'\nexport DEEPSEEK_BASE_URL=\'https://api.apivale.com/v1\''); alert('Copied setup script!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg">📋 Copy Commands</button>
+    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export DEEPSEEK_API_KEY=\'your_apivel_api_key\'\nexport DEEPSEEK_BASE_URL=\'https://apivel.com/v1\''); alert('Copied setup script!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg">📋 Copy Commands</button>
   </div>
 </div>
 
@@ -64,9 +64,9 @@ graph LR
 Configure APIVALE's OpenAI-compatible proxy gateway to route DeepSeek Harness requests with zero-credit-card PayPal billing. Execute the following terminal request:
 
 ```bash
-curl https://api.apivale.com/v1/chat/completions \
+curl https://apivel.com/v1/chat/completions \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer sk-apivale-your_api_key" \
+  -H "Authorization: Bearer sk-apivel-your_api_key" \
   -d '{
     "model": "infer/deepseek-v4-pro",
     "messages": [
@@ -127,8 +127,8 @@ version: "1.0"
 providers:
   apivale:
     type: "openai-compatible"
-    baseURL: "https://api.apivale.com/v1"
-    apiKey: "sk-apivale-your_api_key_here"
+    baseURL: "https://apivel.com/v1"
+    apiKey: "sk-apivel-your_api_key_here"
     api: "openai-completions"
     timeoutMs: 60000
     models:
@@ -152,10 +152,10 @@ For temporary sessions, TUI mode (`dsh tui`), or CI/CD pipelines, export environ
 
 #### macOS & Linux (`~/.zshrc` / `~/.bashrc`):
 ```bash
-export DEEPSEEK_API_KEY="sk-apivale-your_api_key_here"
-export DEEPSEEK_BASE_URL="https://api.apivale.com/v1"
-export OPENAI_BASE_URL="https://api.apivale.com/v1"
-export OPENAI_API_KEY="sk-apivale-your_api_key_here"
+export DEEPSEEK_API_KEY="sk-apivel-your_api_key_here"
+export DEEPSEEK_BASE_URL="https://apivel.com/v1"
+export OPENAI_BASE_URL="https://apivel.com/v1"
+export OPENAI_API_KEY="sk-apivel-your_api_key_here"
 
 source ~/.zshrc
 dsh run --model infer/deepseek-v4-pro
@@ -163,10 +163,10 @@ dsh run --model infer/deepseek-v4-pro
 
 #### Windows PowerShell:
 ```powershell
-$env:DEEPSEEK_API_KEY="sk-apivale-your_api_key_here"
-$env:DEEPSEEK_BASE_URL="https://api.apivale.com/v1"
-$env:OPENAI_BASE_URL="https://api.apivale.com/v1"
-$env:OPENAI_API_KEY="sk-apivale-your_api_key_here"
+$env:DEEPSEEK_API_KEY="sk-apivel-your_api_key_here"
+$env:DEEPSEEK_BASE_URL="https://apivel.com/v1"
+$env:OPENAI_BASE_URL="https://apivel.com/v1"
+$env:OPENAI_API_KEY="sk-apivel-your_api_key_here"
 
 dsh run --model infer/deepseek-v4-pro
 ```
@@ -176,8 +176,8 @@ dsh run --model infer/deepseek-v4-pro
 If you launch `dsh` in web or desktop app mode (`npx @deepseek-ai/dsh web` or `DeepSeek Harness Desktop`), configure the custom gateway in 4 clicks:
 1. Open the local dashboard (default: `http://127.0.0.1:3080`).
 2. Navigate to **Settings → Models → Add Custom Provider**.
-3. Set **Base URL** to `https://api.apivale.com/v1` and **Protocol** to `openai-completions`.
-4. Enter your APIVALE API Key (`sk-apivale-...`), click **Save Credentials**, and set it as default.
+3. Set **Base URL** to `https://apivel.com/v1` and **Protocol** to `openai-completions`.
+4. Enter your APIVALE API Key (`sk-apivel-...`), click **Save Credentials**, and set it as default.
 
 ---
 
@@ -191,8 +191,8 @@ import axios, { AxiosError } from 'axios';
 
 const app = express();
 const PORT = process.env.PORT || 3088;
-const APIVALE_GATEWAY = 'https://api.apivale.com/v1';
-const APIVALE_KEY = process.env.APIVALE_API_KEY || 'sk-apivale-your_api_key';
+const APIVALE_GATEWAY = 'https://apivel.com/v1';
+const APIVALE_KEY = process.env.APIVALE_API_KEY || 'sk-apivel-your_api_key';
 
 app.use(express.json({ limit: '10mb' }));
 
@@ -275,10 +275,10 @@ In AI software engineering, a "harness" refers to the runtime environment and to
 No. Under the DeepSeek framework, an AI Agent equals "Model (Soul) + Harness (Infrastructure)". The LLM provides reasoning capabilities, while the harness provides the plugins, sandboxes, and execution loops that turn raw model outputs into real-world workspace actions.
 
 ### How do I fix 429 Too Many Requests errors in DeepSeek Harness (`dsh`)?
-You can resolve 429 rate limit errors in DeepSeek Harness by setting your custom base URL to APIVALE's high-concurrency gateway (`https://api.apivale.com/v1`) in `~/.dsh/.credentials.yaml`. If you are testing the temporary `deepseek-v4.1-flash-expires-on-0910` beta and hitting official 20-concurrency throttling, read our [DeepSeek V4.1 Flash 0910 Beta troubleshooting and production setup guide](/blog/deepseek-v4-flash-api-guide/) to route through APIVALE's 500+ RPM pools without lockouts.
+You can resolve 429 rate limit errors in DeepSeek Harness by setting your custom base URL to APIVALE's high-concurrency gateway (`https://apivel.com/v1`) in `~/.dsh/.credentials.yaml`. If you are testing the temporary `deepseek-v4.1-flash-expires-on-0910` beta and hitting official 20-concurrency throttling, read our [DeepSeek V4.1 Flash 0910 Beta troubleshooting and production setup guide](/blog/deepseek-v4-flash-api-guide/) to route through APIVALE's 500+ RPM pools without lockouts.
 
 ### How do I configure a custom API key in DeepSeek Harness CLI?
-Set your custom API key by updating `~/.dsh/.credentials.yaml` under the `providers` section or by exporting `export DEEPSEEK_API_KEY="sk-apivale-your_key"` and `export DEEPSEEK_BASE_URL="https://api.apivale.com/v1"` in your terminal.
+Set your custom API key by updating `~/.dsh/.credentials.yaml` under the `providers` section or by exporting `export DEEPSEEK_API_KEY="sk-apivel-your_key"` and `export DEEPSEEK_BASE_URL="https://apivel.com/v1"` in your terminal.
 
 ### Can I run Claude Sonnet 5 or Qwen 3.7 Max inside DeepSeek Harness?
 Yes. DeepSeek Harness features a model-agnostic plugin architecture. By routing requests through APIVALE, you can set your model identifier to `claude-sonnet-5` or `infer/qwen3.7-max` directly in your `dsh` configuration.
@@ -322,7 +322,7 @@ Yes. APIVALE fully supports global PayPal billing (including international credi
       "name": "How do I fix 429 Too Many Requests errors in DeepSeek Harness (dsh)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You can resolve 429 rate limit errors in DeepSeek Harness by setting your custom base URL to APIVALE's high-concurrency gateway (https://api.apivale.com/v1) in ~/.dsh/.credentials.yaml."
+        "text": "You can resolve 429 rate limit errors in DeepSeek Harness by setting your custom base URL to APIVALE's high-concurrency gateway (https://apivel.com/v1) in ~/.dsh/.credentials.yaml."
       }
     },
     {
@@ -330,7 +330,7 @@ Yes. APIVALE fully supports global PayPal billing (including international credi
       "name": "How do I configure a custom API key in DeepSeek Harness CLI?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Set your custom API key by updating ~/.dsh/.credentials.yaml under the providers section or by exporting export DEEPSEEK_API_KEY='sk-apivale-your_key' and export DEEPSEEK_BASE_URL='https://api.apivale.com/v1' in your terminal."
+        "text": "Set your custom API key by updating ~/.dsh/.credentials.yaml under the providers section or by exporting export DEEPSEEK_API_KEY='sk-apivel-your_key' and export DEEPSEEK_BASE_URL='https://apivel.com/v1' in your terminal."
       }
     },
     {

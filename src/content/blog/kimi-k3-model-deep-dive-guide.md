@@ -36,14 +36,14 @@ Override your Anthropic API environment variables in your terminal to route auto
 ```bash
 # 1. Point Anthropic SDK / CLI to APIVALE's unified API Gateway
 export ANTHROPIC_BASE_URL="https://apivel.com/v1"
-export ANTHROPIC_AUTH_TOKEN="sk-apivale-your-api-key-here"
+export ANTHROPIC_AUTH_TOKEN="sk-apivel-your-api-key-here"
 
 # 2. Globally set the model target to Kimi K3
 export ANTHROPIC_MODEL="kimi-k3"
 
 # 3. Permanently save to shell profile (~/.zshrc or ~/.bashrc)
 echo 'export ANTHROPIC_BASE_URL="https://apivel.com/v1"' >> ~/.zshrc
-echo 'export ANTHROPIC_AUTH_TOKEN="sk-apivale-your-api-key-here"' >> ~/.zshrc
+echo 'export ANTHROPIC_AUTH_TOKEN="sk-apivel-your-api-key-here"' >> ~/.zshrc
 source ~/.zshrc
 
 # 4. Launch Anthropic Claude Code CLI for autonomous terminal tasks

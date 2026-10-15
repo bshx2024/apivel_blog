@@ -80,7 +80,7 @@ Unlike traditional dense models that execute all weights for every generated tok
 
 ```mermaid
 graph TD
-    User["Developer Client / Agent (Claude Code / Cursor / Script)"] --> APIVALE["APIVALE Unified Gateway (https://api.apivale.com/v1)"]
+    User["Developer Client / Agent (Claude Code / Cursor / Script)"] --> APIVALE["APIVALE Unified Gateway (https://apivel.com/v1)"]
     
     subgraph "APIVALE High-Availability Router"
         APIVALE --> Auth["Zero-KYC Waffo Billing & Auth Engine"]
@@ -235,8 +235,8 @@ Export the proxy endpoint and target model in your shell configuration (`~/.bash
 
 ```bash
 # Set APIVALE Anthropic-compatible Base URL
-export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
-export ANTHROPIC_API_KEY="sk-apivale-your-api-key-here"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
+export ANTHROPIC_API_KEY="sk-apivel-your-api-key-here"
 
 # Route Claude Code to Hy4 Preview
 export CLAUDE_CODE_MODEL="infer/hy4-preview"
@@ -246,8 +246,8 @@ export CLAUDE_CODE_SUBAGENT_MODEL="infer/hy4-preview"
 For Windows PowerShell users:
 
 ```powershell
-$env:ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
-$env:ANTHROPIC_API_KEY="sk-apivale-your-api-key-here"
+$env:ANTHROPIC_BASE_URL="https://apivel.com/v1"
+$env:ANTHROPIC_API_KEY="sk-apivel-your-api-key-here"
 $env:CLAUDE_CODE_MODEL="infer/hy4-preview"
 ```
 
@@ -266,7 +266,7 @@ To use the 770B MoE engine for Cursor Composer, inline edits, and terminal agent
 1. Open Cursor Settings (`Cmd + Shift + J` or `Ctrl + Shift + J`) $\rightarrow$ **Models**.
 2. Toggle on **Override OpenAI Base URL** and enter:
    ```text
-   https://api.apivale.com/v1
+   https://apivel.com/v1
    ```
 3. Paste your APIVALE API key into the **OpenAI API Key** field and click **Save**.
 
@@ -306,8 +306,8 @@ from openai import AsyncOpenAI, APIConnectionError, RateLimitError, APIStatusErr
 
 # Initialize Async Client configured for APIVALE Gateway
 client = AsyncOpenAI(
-    base_url="https://api.apivale.com/v1",
-    api_key=os.getenv("APIVALE_API_KEY", "sk-apivale-demo-key"),
+    base_url="https://apivel.com/v1",
+    api_key=os.getenv("APIVALE_API_KEY", "sk-apivel-demo-key"),
     timeout=60.0,
     max_retries=0  # Managed explicitly in application logic
 )
@@ -359,7 +359,7 @@ if __name__ == "__main__":
 
 ### 1. Fixing HTTP 429 Too Many Requests
 * **Root Cause:** Free public endpoints or single-provider accounts throttle concurrent connections during large batch prompts.
-* **Resolution:** Route traffic through `https://api.apivale.com/v1`. APIVALE balances queries across multiple high-capacity MoE clusters, eliminating artificial concurrency throttling.
+* **Resolution:** Route traffic through `https://apivel.com/v1`. APIVALE balances queries across multiple high-capacity MoE clusters, eliminating artificial concurrency throttling.
 
 ### 2. Fixing HTTP 504 Gateway Timeout on 1M Context Prompts
 * **Root Cause:** Processing 500k+ tokens in a single request can exceed standard 30-second client timeouts before first-token delivery.
@@ -383,7 +383,7 @@ In internal blind engineering evaluations across 203 tasks, the engine scored 2.
 APIVALE integrates **Waffo Global Billing**, enabling top-ups via PayPal, credit cards, Apple Pay, and Google Pay with zero identity verification (zero-KYC).
 
 ### Can I use Hy4 preview in Claude Code CLI and Cursor?
-Yes. APIVALE natively abstracts OpenAI and Anthropic API protocols. Point your endpoint to `https://api.apivale.com/v1`, set your model to `infer/hy4-preview`, and start coding immediately.
+Yes. APIVALE natively abstracts OpenAI and Anthropic API protocols. Point your endpoint to `https://apivel.com/v1`, set your model to `infer/hy4-preview`, and start coding immediately.
 
 ---
 

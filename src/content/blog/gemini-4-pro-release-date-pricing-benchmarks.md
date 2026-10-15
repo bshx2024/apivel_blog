@@ -30,7 +30,7 @@ lang: "en"
   </p>
   <div class="flex items-center gap-3 flex-wrap">
     <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/gemini-4-pro-release-date-pricing-benchmarks/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg">⚡ Sign Up / Claim Credit</a>
-    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('curl https://api.apivale.com/v1/chat/completions \\\n  -H \&quot;Content-Type: application/json\&quot; \\\n  -H \&quot;Authorization: Bearer $APIVALE_API_KEY\&quot; \\\n  -d \'{\&quot;model\&quot;: \&quot;infer/qwen3.7-max\&quot;, \&quot;messages\&quot;: [{\&quot;role\&quot;: \&quot;user\&quot;, \&quot;content\&quot;: \&quot;Ping\&quot;}]}\''); const originalText = this.innerText; this.innerText = '✓ Copied!'; setTimeout(() => this.innerText = originalText, 2000);" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg">📋 Copy Test cURL</button>
+    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('curl https://apivel.com/v1/chat/completions \\\n  -H \&quot;Content-Type: application/json\&quot; \\\n  -H \&quot;Authorization: Bearer $APIVALE_API_KEY\&quot; \\\n  -d \'{\&quot;model\&quot;: \&quot;infer/qwen3.7-max\&quot;, \&quot;messages\&quot;: [{\&quot;role\&quot;: \&quot;user\&quot;, \&quot;content\&quot;: \&quot;Ping\&quot;}]}\''); const originalText = this.innerText; this.innerText = '✓ Copied!'; setTimeout(() => this.innerText = originalText, 2000);" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg">📋 Copy Test cURL</button>
   </div>
 </div>
 
@@ -40,7 +40,7 @@ Based on telemetry from over 120,000 production agent calls handled through the 
 
 ```bash
 # Verify gateway connectivity and multi-model availability via APIVALE
-curl -s https://api.apivale.com/v1/models \
+curl -s https://apivel.com/v1/models \
   -H "Authorization: Bearer $APIVALE_API_KEY" | jq '.data[].id' | grep -E 'gemini|qwen|deepseek'
 ```
 
@@ -260,7 +260,7 @@ import OpenAI from "openai";
 // Initialize APIVALE Unified Gateway Client
 const apivaleClient = new OpenAI({
   apiKey: process.env.APIVALE_API_KEY || "your_apivale_key",
-  baseURL: "https://api.apivale.com/v1",
+  baseURL: "https://apivel.com/v1",
 });
 
 interface ExecutionTask {
@@ -419,7 +419,7 @@ To get an official Google Cloud key, developers traditionally sign up through Go
 
 ### How to use Gemini Pro as an API in Cursor and Claude Code?
 To connect Gemini Pro and hybrid failover models to AI coding tools like Cursor, Claude Code CLI, or Windsurf:
-1. Copy the unified base URL: `https://api.apivale.com/v1`.
+1. Copy the unified base URL: `https://apivel.com/v1`.
 2. Enter your APIVALE Bearer API key in the BYOK / OpenAI-compatible configuration box.
 3. Set your target model identifier (e.g. `infer/gemini-2.5-pro` or hybrid cascades like `infer/qwen3.7-max`) and execute requests without protocol translation errors.
 
@@ -509,7 +509,7 @@ Frontier models like **Gemini 4 Pro** unlock exciting new possibilities in spati
       "name": "How to use Gemini Pro as an API in Cursor and Claude Code?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Set base URL to https://api.apivale.com/v1 in your Cursor or Claude Code BYOK settings, enter your APIVALE key, and route to infer/gemini-2.5-pro or high-throughput alternatives with standard OpenAI protocols."
+        "text": "Set base URL to https://apivel.com/v1 in your Cursor or Claude Code BYOK settings, enter your APIVALE key, and route to infer/gemini-2.5-pro or high-throughput alternatives with standard OpenAI protocols."
       }
     }
   ]

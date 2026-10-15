@@ -349,7 +349,7 @@ const schemaData = {
           <div class="feature-icon">🔌</div>
           <h3>Drop-in SDK Compatibility</h3>
           <p>
-            No SDK rewriting required. Simply replace the <code>base_url</code> in your Cursor, Windsurf, or Claude Code CLI configurations with <code>https://api.apivale.com/v1</code> and use your standard OpenAI or Anthropic client libraries.
+            No SDK rewriting required. Simply replace the <code>base_url</code> in your Cursor, Windsurf, or Claude Code CLI configurations with <code>https://apivel.com/v1</code> and use your standard OpenAI or Anthropic client libraries.
           </p>
         </div>
       </div>
@@ -533,8 +533,8 @@ const schemaData = {
     // Copy cURL demo
     if (copyCurlBtn) {
       copyCurlBtn.addEventListener('click', () => {
-        const curlSnippet = `curl https://api.apivale.com/v1/chat/completions \\
-  -H "Authorization: Bearer sk-apivale-demo-key" \\
+        const curlSnippet = `curl https://apivel.com/v1/chat/completions \\
+  -H "Authorization: Bearer sk-apivel-demo-key" \\
   -H "Content-Type: application/json" \\
   -d '{
     "model": "deepseek-v4-flash",

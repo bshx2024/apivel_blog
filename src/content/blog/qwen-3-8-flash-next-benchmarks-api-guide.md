@@ -43,7 +43,7 @@ lang: "en"
     <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/qwen-3-8-flash-next-benchmarks-api-guide/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Sign Up / Log In to Auto-Fill Your API Key
     </a>
-    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('Base URL: https://api.apivale.com/v1\nModel: infer/qwen-3.8-flash-next'); alert('Copied Qwen 3.8 Flash Next config parameters!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
+    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('Base URL: https://apivel.com/v1\nModel: infer/qwen-3.8-flash-next'); alert('Copied Qwen 3.8 Flash Next config parameters!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
       📋 Copy Endpoint Config
     </button>
   </div>
@@ -226,7 +226,7 @@ Integrate Qwen 3.8 Flash Next into your command line and IDE environments with n
 
 1. Open Cursor Settings via `Ctrl + ,` (or `Cmd + ,` on macOS) and navigate to **Models**.
 2. Enable **OpenAI API Key** and toggle **Override OpenAI Base URL**.
-3. Set the endpoint URL to `https://api.apivale.com/v1`.
+3. Set the endpoint URL to `https://apivel.com/v1`.
 4. Enter your APIVALE API key (`apv-live-...`).
 5. Under **Add Custom Model**, enter `infer/qwen-3.8-flash-next`, click the **+** button, and select it as your default model.
 
@@ -236,7 +236,7 @@ Export environment variables in your terminal to proxy Claude Code execution thr
 
 ```bash
 # Set Anthropic Protocol Gateway Override
-export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
 export ANTHROPIC_API_KEY="apv-live-your_apivale_key_here"
 
 # Launch Claude Code with Qwen 3.8 Flash Next
@@ -255,7 +255,7 @@ import axios, { AxiosError } from 'axios';
 
 const app = express();
 const PORT = process.env.PORT || 3010;
-const APIVALE_ENDPOINT = 'https://api.apivale.com/v1';
+const APIVALE_ENDPOINT = 'https://apivel.com/v1';
 
 app.use(express.json());
 
@@ -354,7 +354,7 @@ Qwen 3.8 Flash Next is the upgraded MoE release incorporating 125B total paramet
 While GGUF and Ollama quantizations exist, running 4-bit Q4_K_M requires ~82GB of VRAM across at least 4x RTX 4090 GPUs. For individual developers, routing through APIVALE's cloud gateway ($0.05/1M) eliminates multi-thousand dollar hardware costs.
 
 ### Does Qwen 3.8 Flash Next support Cursor IDE Composer?
-Yes, Qwen 3.8 Flash Next fully supports Cursor Composer, Chat, and inline edits via APIVALE's OpenAI-compatible endpoint (`https://api.apivale.com/v1`) using the model name `infer/qwen-3.8-flash-next`.
+Yes, Qwen 3.8 Flash Next fully supports Cursor Composer, Chat, and inline edits via APIVALE's OpenAI-compatible endpoint (`https://apivel.com/v1`) using the model name `infer/qwen-3.8-flash-next`.
 
 ### How can international developers pay for Qwen API access without a Chinese phone number?
 APIVALE provides **Waffo Global Billing**, enabling developers worldwide to pay with international credit cards and digital wallets without requiring domestic +86 SMS verification or Chinese identity KYC checks.

@@ -17,7 +17,7 @@ keyTakeaways:
     value: "minimax-m3.1-flash-preview"
     isCode: true
   - label: "Integration Base URL"
-    value: "https://api.apivale.com/v1"
+    value: "https://apivel.com/v1"
     isCode: true
   - label: "Billing & Free Trial"
     value: "PayPal & Global Cards ($0.20 Trial)"
@@ -33,7 +33,7 @@ keyTakeaways:
   <div class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</div>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
     <li><strong>Ultra-Low Latency & 1M Window</strong>: MiniMax M3.1-Flash-Preview introduces a 1,000,000-token context window with a 512K output capacity, optimized for autonomous agent loops and deep monorepo refactoring.</li>
-    <li><strong>Dual-Protocol Compatibility</strong>: Wire directly to Claude Code CLI, Cursor IDE, and Windsurf via APIVALE's unified OpenAI and Anthropic proxy endpoints (<code class="text-indigo-300">https://api.apivale.com/v1</code>).</li>
+    <li><strong>Dual-Protocol Compatibility</strong>: Wire directly to Claude Code CLI, Cursor IDE, and Windsurf via APIVALE's unified OpenAI and Anthropic proxy endpoints (<code class="text-indigo-300">https://apivel.com/v1</code>).</li>
     <li><strong>5-Level Reasoning Effort Tuning</strong>: Adjust reasoning depth on the fly with the native <code class="text-indigo-300">effort</code> parameter (from <code class="text-indigo-300">low</code> for instant autocomplete to <code class="text-indigo-300">max</code> for multi-file bug hunting).</li>
     <li><strong>Zero-KYC PayPal Access</strong>: Bypass mainland phone (+86) identity locks, international card declines, and restrictive token packages with APIVALE's pay-as-you-go PayPal billing.</li>
   </ul>
@@ -58,8 +58,8 @@ However, M3.1-Flash is bundled inside the proprietary **MiniMax Code** desktop c
 
 ```bash
 # Verify MiniMax M3.1-Flash-Preview connectivity via APIVALE Unified Gateway
-curl -X POST https://api.apivale.com/v1/chat/completions \
-  -H "Authorization: Bearer sk-apivale-test-key" \
+curl -X POST https://apivel.com/v1/chat/completions \
+  -H "Authorization: Bearer sk-apivel-test-key" \
   -H "Content-Type: application/json" \
   -d '{
     "model": "minimax-m3.1-flash-preview",
@@ -139,7 +139,7 @@ import time
 import httpx
 from openai import OpenAI, APIError, RateLimitError
 
-def create_minimax_client(api_key: str, base_url: str = "https://api.apivale.com/v1") -> OpenAI:
+def create_minimax_client(api_key: str, base_url: str = "https://apivel.com/v1") -> OpenAI:
     """Initialize an OpenAI-compatible client routed through the APIVALE proxy."""
     return OpenAI(
         api_key=api_key,
@@ -180,7 +180,7 @@ def execute_agentic_code_task(
             raise RuntimeError(f"MiniMax Gateway error: {api_err}") from api_err
 
 if __name__ == "__main__":
-    api_key = os.getenv("APIVALE_API_KEY", "sk-apivale-demo-key")
+    api_key = os.getenv("APIVALE_API_KEY", "sk-apivel-demo-key")
     client = create_minimax_client(api_key)
     task = "Write a high-throughput lock-free ring buffer in modern C++20."
     print("Executing code generation with MiniMax M3.1-Flash (effort=max)...")
@@ -201,7 +201,7 @@ Navigating dual portal architectures and regional identity checks is the primary
 
 ```mermaid
 graph TD
-    A["Developer Environment (Cursor / Claude Code / Python SDK)"] -->|OpenAI or Anthropic Protocol| B["APIVALE Unified Gateway (https://api.apivale.com/v1)"]
+    A["Developer Environment (Cursor / Claude Code / Python SDK)"] -->|OpenAI or Anthropic Protocol| B["APIVALE Unified Gateway (https://apivel.com/v1)"]
     B -->|Automatic Protocol Translation & Token Sanitization| C["MiniMax M3.1-Flash Dedicated Inference Cluster"]
     B -->|Zero-KYC Global Billing Gateway| D["PayPal Instant Checkout & Global Cards"]
     B -->|Automatic Failover Protection| E["DeepSeek V4.1 Flash / Xiaomi MiMo-V2.6 Pro"]
@@ -213,7 +213,7 @@ MiniMax operates two isolated developer infrastructures:
 2. **Global International Platform (`api.minimax.io`)**: Targeted at international teams, but frequently rejects international virtual credit cards and enforces static prepaid token packages.
 
 Configuring your tools with APIVALE removes these barriers. Developers specify a single unified endpoint:
-* **Base URL**: `https://api.apivale.com/v1`
+* **Base URL**: `https://apivel.com/v1`
 * **Model Identifier**: `minimax-m3.1-flash-preview`
 * **Protocol Compatibility**: Full parity with OpenAI `POST /chat/completions` and Anthropic `POST /messages`.
 
@@ -234,7 +234,7 @@ Verify your MiniMax M3.1-Flash-Preview connectivity and calculate projected 1M-c
       <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
       <div class="font-semibold text-white text-sm">MiniMax M3.1-Flash Gateway Inspector</div>
     </div>
-    <span class="text-xs text-gray-400 font-mono">Endpoint: api.apivale.com/v1</span>
+    <span class="text-xs text-gray-400 font-mono">Endpoint: apivel.com/v1</span>
   </div>
   
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
@@ -322,7 +322,7 @@ Verify your MiniMax M3.1-Flash-Preview connectivity and calculate projected 1M-c
   </div>
   <div class="p-4 bg-gray-900 border border-gray-800 rounded-lg">
     <div class="font-semibold text-white text-sm">How do I configure MiniMax M3.1-Flash in Cursor IDE?</div>
-    <p class="mt-2 text-sm text-gray-300">Navigate to Cursor <strong>Settings &gt; Models</strong>. Turn on <strong>Override OpenAI Base URL</strong> and enter <code class="text-indigo-300">https://api.apivale.com/v1</code>. Add <code class="text-indigo-300">minimax-m3.1-flash-preview</code> to your model list and paste your APIVALE API key into the OpenAI API Key field.</p>
+    <p class="mt-2 text-sm text-gray-300">Navigate to Cursor <strong>Settings &gt; Models</strong>. Turn on <strong>Override OpenAI Base URL</strong> and enter <code class="text-indigo-300">https://apivel.com/v1</code>. Add <code class="text-indigo-300">minimax-m3.1-flash-preview</code> to your model list and paste your APIVALE API key into the OpenAI API Key field.</p>
   </div>
   <div class="p-4 bg-gray-900 border border-gray-800 rounded-lg">
     <div class="font-semibold text-white text-sm">How can international developers top up (MiniMax 充值) without a Chinese phone?</div>
@@ -364,7 +364,7 @@ Verify your MiniMax M3.1-Flash-Preview connectivity and calculate projected 1M-c
       "name": "How do I configure MiniMax M3.1-Flash in Cursor IDE?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "In Cursor Settings > Models, turn on Override OpenAI Base URL, set it to https://api.apivale.com/v1, and add model minimax-m3.1-flash-preview."
+        "text": "In Cursor Settings > Models, turn on Override OpenAI Base URL, set it to https://apivel.com/v1, and add model minimax-m3.1-flash-preview."
       }
     },
     {

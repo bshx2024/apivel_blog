@@ -40,7 +40,7 @@ Run the following terminal commands to override OpenAI's default endpoint:
 ```bash
 # Point OpenAI Codex CLI to APIVALE's OpenAI-compatible protocol bridge
 export OPENAI_API_BASE="https://apivel.com/v1"
-export OPENAI_API_KEY="your_apivale_api_key"
+export OPENAI_API_KEY="your_apivel_api_key"
 export CODEX_MODEL="kimi-k3"
 
 # Launch OpenAI Codex CLI

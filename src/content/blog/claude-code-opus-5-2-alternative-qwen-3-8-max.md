@@ -51,7 +51,7 @@ lang: en
     <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/claude-code-opus-5-2-alternative-qwen-3-8-max/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Sign Up / Log In to Auto-Fill Your API Key
     </a>
-    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export ANTHROPIC_BASE_URL=\'https://api.apivale.com/v1\'\nexport ANTHROPIC_AUTH_TOKEN=\'your_apivale_api_key\'\nexport ANTHROPIC_MODEL=\'infer/qwen3.8-max\''); alert('Copied setup script!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
+    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export ANTHROPIC_BASE_URL=\'https://apivel.com/v1\'\nexport ANTHROPIC_AUTH_TOKEN=\'your_apivel_api_key\'\nexport ANTHROPIC_MODEL=\'infer/qwen3.8-max\''); alert('Copied setup script!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
       📋 Copy Setup Commands
     </button>
   </div>
@@ -66,8 +66,8 @@ Based on over 25,000 production sessions across APIVALE's global routing cluster
 Test latency and protocol compatibility with this direct cURL command:
 
 ```bash
-curl -X POST https://api.apivale.com/v1/messages \
-  -H "x-api-key: sk-apivale-test-key" \
+curl -X POST https://apivel.com/v1/messages \
+  -H "x-api-key: sk-apivel-test-key" \
   -H "anthropic-version: 2023-06-01" \
   -H "content-type: application/json" \
   -d '{
@@ -207,11 +207,11 @@ Add these lines to your shell profile (`~/.bashrc`, `~/.zshrc`, or Windows Power
 
 ```bash
 # Point Anthropic base URL to the APIVALE unified gateway
-export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
 
 # Set your APIVALE authentication credentials
-export ANTHROPIC_AUTH_TOKEN="sk-apivale-prod-7f9a2e38c1b44d5e90a"
-export ANTHROPIC_API_KEY="sk-apivale-prod-7f9a2e38c1b44d5e90a"
+export ANTHROPIC_AUTH_TOKEN="sk-apivel-prod-7f9a2e38c1b44d5e90a"
+export ANTHROPIC_API_KEY="sk-apivel-prod-7f9a2e38c1b44d5e90a"
 
 # Select Qwen 3.8 Max as your active model engine
 export ANTHROPIC_MODEL="infer/qwen3.8-max"
@@ -310,7 +310,7 @@ Test your APIVALE endpoint and model execution directly inside this article:
     btn.disabled = true;
     btn.innerText = '⏳ Executing ' + selectedModel + '...';
     wrapper.classList.remove('hidden');
-    output.innerText = 'Connecting to https://api.apivale.com/v1 (' + selectedModel + ')...';
+    output.innerText = 'Connecting to https://apivel.com/v1 (' + selectedModel + ')...';
 
     const start = Date.now();
     try {

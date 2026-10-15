@@ -86,7 +86,7 @@ Claude Code is a command-line agent tool that benefits immensely from LongCat-2.
 ```bash
 # Export the custom endpoint and your APIVALE key
 export CLAUDE_BASE_URL="https://apivel.com/v1"
-export CLAUDE_API_KEY="your_apivale_api_key_here"
+export CLAUDE_API_KEY="your_apivel_api_key_here"
 
 # Start the agent using the LongCat-2.0 model
 claude --model longcat-2.0

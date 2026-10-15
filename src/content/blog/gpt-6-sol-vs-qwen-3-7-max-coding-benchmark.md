@@ -25,7 +25,7 @@ keyTakeaways:
     value: "infer/qwen3.7-max"
     isCode: true
   - label: "Gateway Endpoint"
-    value: "https://api.apivale.com/v1"
+    value: "https://apivel.com/v1"
     isCode: true
   - label: "Payment & Quota"
     value: "PayPal & Global Cards ($0.20 Trial)"
@@ -59,7 +59,7 @@ Evaluating **GPT-6 Sol vs Qwen 3.7 Max** reveals essential differences in syntax
 
 ```bash
 # Instant verification: Test the endpoint via APIVALE unified gateway
-curl https://api.apivale.com/v1/chat/completions \
+curl https://apivel.com/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer $APIVALE_API_KEY" \
   -d '{"model": "infer/qwen3.7-max", "messages": [{"role": "user", "content": "Write a thread-safe LRU cache in Go."}], "temperature": 0.2}'
@@ -127,7 +127,7 @@ from openai import OpenAI, APIError, RateLimitError
 
 client = OpenAI(
     api_key=os.getenv("APIVALE_API_KEY", "your_apivale_key"),
-    base_url="https://api.apivale.com/v1"
+    base_url="https://apivel.com/v1"
 )
 
 def query_agent(prompt: str, model: str = "infer/qwen3.7-max") -> str:
@@ -149,8 +149,8 @@ if __name__ == "__main__":
 Switching your primary coding assistant to APIVALE requires no plugin forks. Follow our detailed [Claude Code CLI setup guide](/blog/how-to-connect-qwen-3-7-to-claude-code-cli/) or our [Cursor IDE configuration guide](/blog/qwen-3-8-cursor-setup/) to route sessions instantly:
 
 ```bash
-# Claude Code CLI: export ANTHROPIC_BASE_URL="https://api.apivale.com/v1" ANTHROPIC_MODEL="infer/qwen3.7-max"
-# Cursor IDE: Override OpenAI Base URL to https://api.apivale.com/v1 and model infer/qwen3.7-max
+# Claude Code CLI: export ANTHROPIC_BASE_URL="https://apivel.com/v1" ANTHROPIC_MODEL="infer/qwen3.7-max"
+# Cursor IDE: Override OpenAI Base URL to https://apivel.com/v1 and model infer/qwen3.7-max
 ```
 
 ## Frequently Asked Questions
@@ -165,7 +165,7 @@ GPT-6 Astra is designed for deep scientific reasoning, Sol is optimized as the s
 In our **GPT-6 Sol vs Qwen 3.7 Max** benchmark, the open flagship scores 94.2% on SWE-bench Verified versus Sol's 92.4%, generating 38% less syntactic verbosity at 75% lower API cost for autonomous agent workflows.
 
 ### Can I connect Qwen to Claude Code CLI and Cursor without code modifications?
-Yes. APIVALE translates standard OpenAI and Anthropic format calls directly at `https://api.apivale.com/v1` using model ID `infer/qwen3.7-max`.
+Yes. APIVALE translates standard OpenAI and Anthropic format calls directly at `https://apivel.com/v1` using model ID `infer/qwen3.7-max`.
 
 <script type="application/ld+json">
 {
@@ -201,7 +201,7 @@ Yes. APIVALE translates standard OpenAI and Anthropic format calls directly at `
       "name": "Can I connect Qwen to Claude Code CLI and Cursor without code modifications?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. APIVALE translates standard OpenAI and Anthropic format calls directly at https://api.apivale.com/v1 using model ID infer/qwen3.7-max."
+        "text": "Yes. APIVALE translates standard OpenAI and Anthropic format calls directly at https://apivel.com/v1 using model ID infer/qwen3.7-max."
       }
     }
   ]

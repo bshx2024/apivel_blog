@@ -26,7 +26,7 @@ You can resolve messy company names to official homepage URLs using APIVALE’s 
 ```bash
 # Route your company search agent to APIVALE's high-concurrency gateway
 export ANTHROPIC_BASE_URL="https://apivel.com/v1"
-export ANTHROPIC_AUTH_TOKEN="your_apivale_api_key"
+export ANTHROPIC_AUTH_TOKEN="your_apivel_api_key"
 export ANTHROPIC_MODEL="infer/qwen3.7-max"
 
 # Execute your Python or Node.js enrichment pipeline

@@ -47,7 +47,7 @@ In this comprehensive guide, we analyze CodexBar's architecture, audit its secur
   <p class="text-xs text-gray-300 mb-2">Before configuring CodexBar for Windows or terminal agents, verify high-concurrency routing with cURL:</p>
 ```bash
 # Verify APIVALE routing for flagship Claude Sonnet 5
-curl -X POST "https://api.apivale.com/v1/messages" \
+curl -X POST "https://apivel.com/v1/messages" \
   -H "x-api-key: apivale-key-xxxxxxxxxx" \
   -H "anthropic-version: 2023-06-01" \
   -H "content-type: application/json" \
@@ -505,7 +505,7 @@ The safest architectural pattern for developers is **credential isolation**. Ins
 
 ```bash
 # Isolate your environment using an APIVALE proxy token
-export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
 export ANTHROPIC_AUTH_TOKEN="apivale-key-xxxxxxxxxx"
 ```
 
@@ -545,7 +545,7 @@ For Windows developers who prefer a visual dashboard without compiling Swift pac
 +-----------------------------------------------------------------------+
 |                         APIVALE WEB DASHBOARD                         |
 |                                                                       |
-|  [Active Gateway Pool] -> api.apivale.com/v1                          |
+|  [Active Gateway Pool] -> apivel.com/v1                          |
 |  [Current Balance]    -> $45.50 USD (Funded via Waffo)                |
 |                                                                       |
 |  Model Telemetry:                                                     |
@@ -604,7 +604,7 @@ Configure your environment to route all Anthropic SDK traffic through APIVALE:
 #### macOS / Linux (`~/.zshrc` or `~/.bashrc`)
 ```bash
 # Append custom APIVALE endpoint configurations
-export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
 export ANTHROPIC_AUTH_TOKEN="apivale-key-xxxxxxxxxx"
 
 # Apply changes and start Claude Code
@@ -615,7 +615,7 @@ npx @anthropic-ai/claude-code
 #### Windows PowerShell (`$PROFILE`)
 ```powershell
 # Set APIVALE environmental variables in active PowerShell session
-$env:ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
+$env:ANTHROPIC_BASE_URL="https://apivel.com/v1"
 $env:ANTHROPIC_AUTH_TOKEN="apivale-key-xxxxxxxxxx"
 
 # Launch Claude Code CLI
@@ -632,7 +632,7 @@ import axios, { AxiosError } from 'axios';
 
 const app = express();
 const PORT = 3000;
-const APIVALE_GATEWAY = 'https://api.apivale.com/v1';
+const APIVALE_GATEWAY = 'https://apivel.com/v1';
 
 app.use(express.json({ limit: '50mb' }));
 
@@ -753,7 +753,7 @@ Yes, CodexBar is an open-source macOS app maintained by trusted developer Peter 
 While CodexBar's native GUI app is built exclusively for macOS menu bars, Windows and Linux developers can easily run CodexBar on Windows 11 & 10 via the headless `codexbar` CLI inside WSL2 or use native community tray ports (like `Win-CodexBar`). Alternatively, APIVALE provides a unified cross-platform web dashboard for real-time RPM/TPM quota tracking with zero OS restrictions.
 
 ### How do I fix 429 Too Many Requests rate limits in Claude Code CLI?
-You can fix 429 rate limit errors by pointing Claude Code CLI to APIVALE's high-concurrency gateway. Set `export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"` and `export ANTHROPIC_AUTH_TOKEN="your_apivale_key"` in your shell profile to bypass individual account rate limits.
+You can fix 429 rate limit errors by pointing Claude Code CLI to APIVALE's high-concurrency gateway. Set `export ANTHROPIC_BASE_URL="https://apivel.com/v1"` and `export ANTHROPIC_AUTH_TOKEN="your_apivale_key"` in your shell profile to bypass individual account rate limits.
 
 ### How does APIVALE handle global billing and payments?
 APIVALE provides global **Waffo Global Billing and PayPal** support, allowing developers worldwide to pay for API usage via international credit cards, digital wallets, and PayPal without needing complex KYC verifications or experiencing regional credit card blocks.
@@ -784,7 +784,7 @@ APIVALE provides global **Waffo Global Billing and PayPal** support, allowing de
       "name": "How do I fix 429 Too Many Requests rate limits in Claude Code CLI?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You can fix 429 rate limit errors by pointing Claude Code CLI to APIVALE's high-concurrency gateway. Set export ANTHROPIC_BASE_URL=\"https://api.apivale.com/v1\" and export ANTHROPIC_AUTH_TOKEN=\"your_apivale_key\" in your shell profile to bypass individual account rate limits."
+        "text": "You can fix 429 rate limit errors by pointing Claude Code CLI to APIVALE's high-concurrency gateway. Set export ANTHROPIC_BASE_URL=\"https://apivel.com/v1\" and export ANTHROPIC_AUTH_TOKEN=\"your_apivale_key\" in your shell profile to bypass individual account rate limits."
       }
     },
     {

@@ -53,7 +53,7 @@ Operating across a 320B Mixture-of-Experts (MoE) footprint with 18B active weigh
 Verify gateway reachability and model response latency in under 5 seconds using cURL:
 
 ```bash
-curl -X POST https://api.apivale.com/v1/chat/completions \
+curl -X POST https://apivel.com/v1/chat/completions \
   -H "Authorization: Bearer $APIVALE_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -233,7 +233,7 @@ Integrating GLM-5.3-FlashX into your development environment requires routing re
 
 ```mermaid
 graph LR
-    A["Developer Client (Claude Code / Cursor)"] --> B["APIVALE Unified Gateway (api.apivale.com)"]
+    A["Developer Client (Claude Code / Cursor)"] --> B["APIVALE Unified Gateway (apivel.com)"]
     B --> C["Protocol Translation & Schema Sanitizer"]
     C --> D["GLM-5.3-FlashX Dedicated Engine (200 TPS)"]
     C -.->|"Failover on 429"| E["GLM-5.3 Flash (Ox Alpha) Backup"]
@@ -249,7 +249,7 @@ Configure Claude Code CLI in your terminal:
 export ANTHROPIC_API_KEY="your-apivale-api-key"
 
 # Redirect endpoint to APIVALE protocol translation hub
-export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
 
 # Override default Claude model with GLM-5.3-FlashX
 export ANTHROPIC_MODEL="glm-5.3-flashx"
@@ -260,7 +260,7 @@ claude
 
 For Cursor IDE:
 1. Navigate to **Cursor Settings &rarr; Models**.
-2. Under **OpenAI Base URL**, enter: `https://api.apivale.com/v1`.
+2. Under **OpenAI Base URL**, enter: `https://apivel.com/v1`.
 3. Under **API Key**, enter your APIVALE token.
 4. In the Model Names list, add `glm-5.3-flashx` and toggle it as active (for complex repository auditing, see our companion walkthrough on <a href="/blog/connect-glm-5-3-to-claude-code-cli-cursor/" class="text-cyan-400 hover:underline font-semibold">configuring GLM-5.3 in Cursor IDE with custom .cursorrules</a>).
 
@@ -272,7 +272,7 @@ import OpenAI from "openai";
 
 const client = new OpenAI({
   apiKey: process.env.APIVALE_API_KEY || "your-apivale-api-key",
-  baseURL: "https://api.apivale.com/v1",
+  baseURL: "https://apivel.com/v1",
 });
 
 /**

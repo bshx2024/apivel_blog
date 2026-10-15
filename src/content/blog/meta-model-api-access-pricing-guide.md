@@ -15,7 +15,7 @@ keyTakeaways:
     value: "infer/deepseek-v4 / infer/qwen3.7-max"
     isCode: true
   - label: "Gateway Base URL"
-    value: "https://api.apivale.com/v1"
+    value: "https://apivel.com/v1"
     isCode: true
   - label: "Regional Unblock"
     value: "Global Anycast & PayPal ($0.20 Free Sandbox)"
@@ -136,8 +136,8 @@ Add your API credentials and preferred fallback targets to your project's `.env`
 
 ```bash
 # APIVALE High-Performance Endpoint
-OPENAI_API_BASE="https://api.apivale.com/v1"
-OPENAI_API_KEY="sk-apivale-prod-your-secure-key"
+OPENAI_API_BASE="https://apivel.com/v1"
+OPENAI_API_KEY="sk-apivel-prod-your-secure-key"
 PRIMARY_REASONING_MODEL="infer/deepseek-v4"
 BACKUP_REASONING_MODEL="infer/qwen3.7-max"
 REQUEST_TIMEOUT_SECONDS=60
@@ -157,7 +157,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(me
 logger = logging.getLogger("MetaModelGateway")
 
 class ResilientGatewayClient:
-    def __init__(self, base_url="https://api.apivale.com/v1", api_key=None):
+    def __init__(self, base_url="https://apivel.com/v1", api_key=None):
         self.api_key = api_key or os.getenv("OPENAI_API_KEY")
         if not self.api_key:
             raise ValueError("APIVALE API key missing from environment.")

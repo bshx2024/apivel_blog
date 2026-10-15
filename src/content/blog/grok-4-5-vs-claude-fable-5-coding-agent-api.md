@@ -43,14 +43,14 @@ In this benchmark guide, we compare Grok 4.5 and Claude Fable 5 across SWE-bench
 
 ### Quick Start: Route Cursor to Grok 4.5 via APIVALE in 30 Seconds
 
-To connect Cursor to Grok 4.5 via APIVALE, open **Cursor Settings** (`Ctrl + ,` or `Cmd + ,`), navigate to **Models**, override the OpenAI Base URL to `https://api.apivale.com/v1`, input your APIVALE key, and add `infer/grok-4.5` as a custom model.
+To connect Cursor to Grok 4.5 via APIVALE, open **Cursor Settings** (`Ctrl + ,` or `Cmd + ,`), navigate to **Models**, override the OpenAI Base URL to `https://apivel.com/v1`, input your APIVALE key, and add `infer/grok-4.5` as a custom model.
 
 You can also run your terminal agent (such as Claude Code CLI) directly with Grok 4.5 by exporting the variables below:
 
 ```bash
 # Override Anthropic base endpoints to APIVALE Gateway
-export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
-export ANTHROPIC_AUTH_TOKEN="your_apivale_api_key"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
+export ANTHROPIC_AUTH_TOKEN="your_apivel_api_key"
 export ANTHROPIC_MODEL="infer/grok-4.5"
 
 # Launch your agent loop
@@ -123,7 +123,7 @@ import openai
 
 # Initialize APIVALE client
 client = openai.OpenAI(
-    base_url="https://api.apivale.com/v1",
+    base_url="https://apivel.com/v1",
     api_key=os.environ.get("APIVALE_API_KEY", "YOUR_APIVALE_API_KEY")
 )
 
@@ -175,7 +175,7 @@ When running coding agents inside terminal interfaces (like Claude Code CLI), pr
 ## Developer FAQ
 
 ### How do I connect Grok 4.5 to Cursor without official billing?
-You can connect Grok 4.5 to Cursor without official billing by configuring APIVALE as your custom OpenAI-compatible provider. Simply set the base URL to `https://api.apivale.com/v1`, input your APIVALE API key funded via PayPal, and add `infer/grok-4.5` as a custom model inside the Cursor settings page.
+You can connect Grok 4.5 to Cursor without official billing by configuring APIVALE as your custom OpenAI-compatible provider. Simply set the base URL to `https://apivel.com/v1`, input your APIVALE API key funded via PayPal, and add `infer/grok-4.5` as a custom model inside the Cursor settings page.
 
 ### Can I pay for SpaceXAI Grok 4.5 and Claude Fable 5 via PayPal?
 Yes, you can pay for SpaceXAI Grok 4.5 and Claude Fable 5 via PayPal on APIVALE, which natively supports global PayPal billing and major credit cards via PayPal. Developers worldwide can access these models without encountering regional card blockouts.
@@ -201,7 +201,7 @@ Yes, APIVALE supports real-time token streaming (SSE) for Grok 4.5, ensuring low
       "name": "How do I connect Grok 4.5 to Cursor without official billing?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You can connect Grok 4.5 to Cursor without official billing by configuring APIVALE as your custom OpenAI-compatible provider. Simply set the base URL to https://api.apivale.com/v1, input your APIVALE API key funded via PayPal, and add infer/grok-4.5 as a custom model inside the Cursor settings page."
+        "text": "You can connect Grok 4.5 to Cursor without official billing by configuring APIVALE as your custom OpenAI-compatible provider. Simply set the base URL to https://apivel.com/v1, input your APIVALE API key funded via PayPal, and add infer/grok-4.5 as a custom model inside the Cursor settings page."
       }
     },
     {

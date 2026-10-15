@@ -15,7 +15,7 @@ lang: "en"
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
     <li><strong>80% Token Cost Arbitrage:</strong> Routing Cursor Composer and Chat to Qwen 3.8 via <a href="https://apivel.com/sign-up?redirect=/blog/qwen-3-8-cursor-setup/" class="text-emerald-400 hover:underline font-semibold">APIVALE (Claim $0.20 Free Credit)</a> cuts input token expenses to $0.60/1M tokens ($2.40/1M output).</li>
-    <li><strong>Instant OpenAI Protocol Override:</strong> Enter <code>https://api.apivale.com/v1</code> into Cursor's OpenAI Base URL override to run <code>infer/qwen3.8-max</code> without custom local bridge tunnels.</li>
+    <li><strong>Instant OpenAI Protocol Override:</strong> Enter <code>https://apivel.com/v1</code> into Cursor's OpenAI Base URL override to run <code>infer/qwen3.8-max</code> without custom local bridge tunnels.</li>
     <li><strong>Global PayPal Billing:</strong> Avoid international credit card declines and mandatory identity checks with instant PayPal top-ups.</li>
   </ul>
 </div>
@@ -43,7 +43,7 @@ lang: "en"
     <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/qwen-3-8-cursor-setup/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Sign Up / Log In to Auto-Fill Your API Key
     </a>
-    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('Base URL: https://api.apivale.com/v1\nModel Name: infer/qwen3.8-max'); const b=this; b.innerText='✅ Copied!'; setTimeout(()=>b.innerText='📋 Copy Cursor Settings', 2000);" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
+    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('Base URL: https://apivel.com/v1\nModel Name: infer/qwen3.8-max'); const b=this; b.innerText='✅ Copied!'; setTimeout(()=>b.innerText='📋 Copy Cursor Settings', 2000);" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
       📋 Copy Cursor Settings
     </button>
   </div>
@@ -53,7 +53,7 @@ For software engineers utilizing **Cursor IDE** and **Cursor Composer** for full
 
 Deploying Alibaba Cloud's flagship 2.4-trillion parameter **Qwen 3.8-Max** locally requires an enterprise cluster of 18x NVIDIA H200 GPUs (over 2.4TB VRAM). (For developers seeking lightning-fast 140+ tps token generation, explore our <a href="/blog/qwen-3-8-flash-next-benchmarks-api-guide/" class="text-cyan-400 hover:underline font-semibold">Qwen 3.8 Flash Next Benchmarks & API Guide</a>, or see our practical setup for <a href="/blog/qwen-3-8-cursor-setup" class="text-cyan-400 hover:underline font-semibold">Qwen-Image-2.1 API for ComfyUI & Native RGBA</a>). Attempting to bridge local Ollama instances into Cursor fails due to Cursor's cloud routing architecture (`api2.cursor.sh`), which cannot resolve `localhost:11434` without complex tunnel daemons.
 
-By configuring Cursor's native OpenAI Base URL override to point to APIVALE (`https://api.apivale.com/v1`), developers unlock unthrottled Qwen 3.8-Max inference with zero hardware overhead, 80% token cost reduction, and seamless **PayPal global billing**.
+By configuring Cursor's native OpenAI Base URL override to point to APIVALE (`https://apivel.com/v1`), developers unlock unthrottled Qwen 3.8-Max inference with zero hardware overhead, 80% token cost reduction, and seamless **PayPal global billing**.
 
 ```mermaid
 graph LR
@@ -80,16 +80,16 @@ Configure APIVALE's OpenAI-compatible proxy gateway to route Cursor IDE chat and
 Follow these three steps to integrate Qwen 3.8 into your Cursor workflow:
 
 1. Open Cursor Settings (`Cmd + Shift + J` on macOS or `Ctrl + Shift + J` on Windows/Linux) and navigate to **Models**.
-2. Under the **OpenAI API Key** section, toggle on **Override OpenAI Base URL** and enter `https://api.apivale.com/v1`, then paste your APIVALE API key.
+2. Under the **OpenAI API Key** section, toggle on **Override OpenAI Base URL** and enter `https://apivel.com/v1`, then paste your APIVALE API key.
 3. Click **Add Model**, type `infer/qwen3.8-max`, click the checkmark, and toggle off other models to make Qwen 3.8 your primary model.
 
 ```json
 // Cursor Models Configuration Parameters
 {
-  "openai_base_url": "https://api.apivale.com/v1",
+  "openai_base_url": "https://apivel.com/v1",
   "model_name": "infer/qwen3.8-max",
   "alternative_model": "infer/qwen3.7-max",
-  "authentication": "Bearer your_apivale_api_key"
+  "authentication": "Bearer your_apivel_api_key"
 }
 ```
 
@@ -258,7 +258,7 @@ Integrating APIVALE's Qwen 3.8 into Cursor IDE requires modifying three specific
                            │
 ┌──────────────────────────▼─────────────────────────────┐
 │ 2. Enable OpenAI API Key & Override Base URL           │
-│    -> Enter Base URL: https://api.apivale.com/v1       │
+│    -> Enter Base URL: https://apivel.com/v1       │
 │    -> Paste APIVALE API Key (Bearer Token)             │
 └──────────────────────────┬─────────────────────────────┘
                            │
@@ -275,10 +275,10 @@ Navigate to Cursor's model settings to redirect requests away from OpenAI's defa
 1. Press `Cmd + Shift + J` (macOS) or `Ctrl + Shift + J` (Windows / Linux) to launch the **Cursor Settings** modal.
 2. Select **Models** in the left-hand navigation pane.
 3. Locate the **OpenAI API Key** card.
-4. Paste your APIVALE API Key (`sk-apivale-xxxxxxxxxxxxxxxx`) into the input box.
+4. Paste your APIVALE API Key (`sk-apivel-xxxxxxxxxxxxxxxx`) into the input box.
 5. Click **Override OpenAI Base URL**, check the toggle box, and input:
    ```
-   https://api.apivale.com/v1
+   https://apivel.com/v1
    ```
 6. Click the blue **Save** or refresh button to verify the key.
 
@@ -365,7 +365,7 @@ Developers switching to custom API keys in Cursor occasionally encounter local n
 
 When developers attempt to connect Cursor to locally hosted models (e.g., `http://localhost:11434/v1` via Ollama), Cursor fails with network connection errors. This occurs because Cursor processes AI requests through its cloud gateway (`api2.cursor.sh`), which has no physical route into your machine's `localhost` without third-party reverse SSH or Cloudflare tunnels.
 
-By routing through APIVALE's global cloud endpoint (`https://api.apivale.com/v1`), your requests are received over public SSL with zero tunnel configuration, zero hardware heating, and 99.99% uptime.
+By routing through APIVALE's global cloud endpoint (`https://apivel.com/v1`), your requests are received over public SSL with zero tunnel configuration, zero hardware heating, and 99.99% uptime.
 
 ### Fixing HTTP 429 Rate Limits with Production Proxy & Failover Routing
 
@@ -377,7 +377,7 @@ import axios from 'axios';
 
 const app = express();
 const PORT = 4010;
-const APIVALE_BASE_URL = 'https://api.apivale.com/v1';
+const APIVALE_BASE_URL = 'https://apivel.com/v1';
 
 app.use(express.json());
 
@@ -439,7 +439,7 @@ For more details on multi-model routing and alternatives, see our step-by-step t
 
 ### How do I add Qwen 3.8 to Cursor without a credit card?
 
-You can add Qwen 3.8 to Cursor without a credit card by signing up for APIVALE, which supports global **PayPal billing** and credit cards via PayPal. Once registered, top up your balance, override the OpenAI Base URL in Cursor to `https://api.apivale.com/v1`, and add `infer/qwen3.8-max` as your custom model.
+You can add Qwen 3.8 to Cursor without a credit card by signing up for APIVALE, which supports global **PayPal billing** and credit cards via PayPal. Once registered, top up your balance, override the OpenAI Base URL in Cursor to `https://apivel.com/v1`, and add `infer/qwen3.8-max` as your custom model.
 
 ### Does Cursor Tab autocomplete work with custom Qwen 3.8 API keys?
 
@@ -447,7 +447,7 @@ Cursor Tab inline autocomplete is powered exclusively by Cursor's internal propr
 
 ### Why does connecting to localhost Ollama fail in Cursor?
 
-Connecting to localhost Ollama fails in Cursor because Cursor routes all model requests through its cloud gateway (`api2.cursor.sh`), which cannot resolve private `localhost` addresses on your local machine. You must either expose your local port with a tunnel service or use a cloud-hosted API gateway like APIVALE (`https://api.apivale.com/v1`).
+Connecting to localhost Ollama fails in Cursor because Cursor routes all model requests through its cloud gateway (`api2.cursor.sh`), which cannot resolve private `localhost` addresses on your local machine. You must either expose your local port with a tunnel service or use a cloud-hosted API gateway like APIVALE (`https://apivel.com/v1`).
 
 ### How much cheaper is Qwen 3.8 on APIVALE compared to Claude Sonnet 5?
 
@@ -465,7 +465,7 @@ Qwen 3.8 on APIVALE costs **$0.60 per 1M input tokens** and **$2.40 per 1M outpu
       "name": "How do I add Qwen 3.8 to Cursor without a credit card?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You can add Qwen 3.8 to Cursor without a credit card by signing up for APIVALE, which supports global PayPal billing and credit cards via PayPal. Once registered, override the OpenAI Base URL in Cursor to https://api.apivale.com/v1 and add infer/qwen3.8-max."
+        "text": "You can add Qwen 3.8 to Cursor without a credit card by signing up for APIVALE, which supports global PayPal billing and credit cards via PayPal. Once registered, override the OpenAI Base URL in Cursor to https://apivel.com/v1 and add infer/qwen3.8-max."
       }
     },
     {

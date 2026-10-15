@@ -101,7 +101,7 @@ class MultiAgentCostRouter:
     """
     def __init__(self, apivale_api_key: str = None):
         self.api_key = apivale_api_key or os.getenv("APIVALE_API_KEY")
-        self.gateway_url = "https://api.apivale.com/v1/chat/completions"
+        self.gateway_url = "https://apivel.com/v1/chat/completions"
 
     def execute_agent_task(self, prompt: str, task_type: str = "routine") -> str:
         # High reasoning -> Grok 4.6; Routine triage -> Qwen 3.8 Max
@@ -133,7 +133,7 @@ class MultiAgentCostRouter:
         return response.json()["choices"][0]["message"]["content"]
 
 if __name__ == "__main__":
-    router = MultiAgentCostRouter(apivale_api_key="sk-apivale-your-api-key")
+    router = MultiAgentCostRouter(apivale_api_key="sk-apivel-your-api-key")
     
     # 1. Routine task routed to Qwen 3.8 Max ($0.60/1M tokens)
     summary = router.execute_agent_task("Filter out spam emails from this inbox batch", task_type="routine")
@@ -189,32 +189,32 @@ Use this interactive troubleshooting tool to diagnose your exact error message a
       invalid_key: {
         title: "❌ Root Cause: Invalid Bearer Auth Header or Base URL Path Mismatch",
         cause: "Your client is either missing the 'Bearer ' token prefix, loading an empty env variable, or appending '/chat/completions' twice.",
-        fix: "1. Set Base URL to: https://api.apivale.com/v1 (without /chat/completions).\n2. Format header: Authorization: Bearer sk-apivale-...\n3. Verify $env:APIVALE_API_KEY is not null.",
-        curl: "curl https://api.apivale.com/v1/models \\\n  -H \"Authorization: Bearer YOUR_APIVALE_KEY\""
+        fix: "1. Set Base URL to: https://apivel.com/v1 (without /chat/completions).\n2. Format header: Authorization: Bearer sk-apivel-...\n3. Verify $env:APIVALE_API_KEY is not null.",
+        curl: "curl https://apivel.com/v1/models \\\n  -H \"Authorization: Bearer YOUR_APIVALE_KEY\""
       },
       anti_bot: {
         title: "🛡️ Root Cause: Cloudflare / WAF Anti-Bot Challenge on Web Endpoints",
         cause: "Scraping consumer web endpoints (grok.com) triggers automated bot mitigation and IP blocks.",
-        fix: "1. Switch to OpenAI-compatible gateway at https://api.apivale.com/v1.\n2. Include Content-Type: application/json header and API key.\n3. Enterprise node routing eliminates anti-bot challenges.",
-        curl: "curl https://api.apivale.com/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer YOUR_APIVALE_KEY\" \\\n  -d '{\"model\": \"infer/grok-4.6\", \"messages\": [{\"role\": \"user\", \"content\": \"ping\"}]}'"
+        fix: "1. Switch to OpenAI-compatible gateway at https://apivel.com/v1.\n2. Include Content-Type: application/json header and API key.\n3. Enterprise node routing eliminates anti-bot challenges.",
+        curl: "curl https://apivel.com/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer YOUR_APIVALE_KEY\" \\\n  -d '{\"model\": \"infer/grok-4.6\", \"messages\": [{\"role\": \"user\", \"content\": \"ping\"}]}'"
       },
       moderation: {
         title: "⚠️ Root Cause: Over-Sensitive Keyword Guardrails on Cybersecurity/Code Prompts",
         cause: "Security audits or fuzzing snippets can trigger safety filters.",
         fix: "1. Frame prompt in system role: 'You are an authorized defensive cybersecurity auditor analyzing code for CWE vulnerabilities.'\n2. Request structured static analysis metrics.\n3. Model infer/grok-4.6 via APIVALE provides raw completions without chat UI censorship filters.",
-        curl: "curl https://api.apivale.com/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer YOUR_APIVALE_KEY\" \\\n  -d '{\"model\": \"infer/grok-4.6\", \"messages\": [{\"role\": \"system\", \"content\": \"You are a static code security analyzer.\"}, {\"role\": \"user\", \"content\": \"Analyze this SQL query for parameterized compliance: SELECT * FROM users WHERE id = $1;\"}]}'"
+        curl: "curl https://apivel.com/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer YOUR_APIVALE_KEY\" \\\n  -d '{\"model\": \"infer/grok-4.6\", \"messages\": [{\"role\": \"system\", \"content\": \"You are a static code security analyzer.\"}, {\"role\": \"user\", \"content\": \"Analyze this SQL query for parameterized compliance: SELECT * FROM users WHERE id = $1;\"}]}'"
       },
       cursor_timeout: {
         title: "🔌 Root Cause: Cursor Custom OpenAI Endpoint Format Error",
         cause: "Cursor expects an OpenAI-compatible Base URL ending in /v1. Subpaths trigger 404 or timeouts.",
-        fix: "1. Open Cursor Settings (Ctrl+Shift+J) -> Models -> OpenAI API.\n2. Set Base URL: https://api.apivale.com/v1\n3. Add Custom Model: infer/grok-4.6\n4. Test in Cursor Chat.",
-        curl: "curl https://api.apivale.com/v1/chat/completions \\\n  -H \"Authorization: Bearer YOUR_APIVALE_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"model\": \"infer/grok-4.6\", \"messages\": [{\"role\": \"user\", \"content\": \"Hello Cursor Grok\"}]}'"
+        fix: "1. Open Cursor Settings (Ctrl+Shift+J) -> Models -> OpenAI API.\n2. Set Base URL: https://apivel.com/v1\n3. Add Custom Model: infer/grok-4.6\n4. Test in Cursor Chat.",
+        curl: "curl https://apivel.com/v1/chat/completions \\\n  -H \"Authorization: Bearer YOUR_APIVALE_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"model\": \"infer/grok-4.6\", \"messages\": [{\"role\": \"user\", \"content\": \"Hello Cursor Grok\"}]}'"
       },
       high_demand: {
         title: "⏳ Root Cause: Supergrok+ Weekly Rate Limit / Server Congestion (HTTP 429)",
         cause: "Consumer Supergrok+ plans cap message volume during continuous agent loops.",
         fix: "1. Route requests to APIVALE's unmetered pay-as-you-go enterprise pool.\n2. Implement exponential backoff with jitter.\n3. Route background tasks to infer/qwen3.8-max for zero dropped loops.",
-        curl: "curl https://api.apivale.com/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer YOUR_APIVALE_KEY\" \\\n  -d '{\"model\": \"infer/grok-4.6\", \"messages\": [{\"role\": \"user\", \"content\": \"Test latency\"}]}'"
+        curl: "curl https://apivel.com/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer YOUR_APIVALE_KEY\" \\\n  -d '{\"model\": \"infer/grok-4.6\", \"messages\": [{\"role\": \"user\", \"content\": \"Test latency\"}]}'"
       }
     };
 
@@ -271,7 +271,7 @@ To prevent false-positive moderation flags while analyzing security flaws, struc
 ```
 
 ### 3. API Gateway vs. Web Chat Moderation
-The web chat interface at `grok.com` applies front-end content filtering. In contrast, routing through **APIVALE's REST API endpoint** (`https://api.apivale.com/v1/chat/completions`) provides direct completions without web-layer filtering, ideal for continuous CI/CD security tooling.
+The web chat interface at `grok.com` applies front-end content filtering. In contrast, routing through **APIVALE's REST API endpoint** (`https://apivel.com/v1/chat/completions`) provides direct completions without web-layer filtering, ideal for continuous CI/CD security tooling.
 
 ---
 
@@ -279,11 +279,11 @@ The web chat interface at `grok.com` applies front-end content filtering. In con
 
 ### 1. "There was an error! the api developer key is invalid." (HTTP 401)
 * **Root Cause:** Malformed `Authorization` header, missing `Bearer ` prefix, or passing an invalid API key.
-* **Resolution:** Ensure header format is strictly `Authorization: Bearer sk-apivale-your_key_here` and Base URL points to `https://api.apivale.com/v1`.
+* **Resolution:** Ensure header format is strictly `Authorization: Bearer sk-apivel-your_key_here` and Base URL points to `https://apivel.com/v1`.
 
 ### 2. "Request rejected by anti bot rules" (HTTP 403)
 * **Root Cause:** Headless browser automation targeting consumer web endpoints (`grok.com/api`) blocked by Cloudflare WAF.
-* **Resolution:** Switch to APIVALE's direct REST API endpoint (`https://api.apivale.com/v1`), which uses enterprise server-to-server interconnects without anti-bot blocks.
+* **Resolution:** Switch to APIVALE's direct REST API endpoint (`https://apivel.com/v1`), which uses enterprise server-to-server interconnects without anti-bot blocks.
 
 ---
 
@@ -293,8 +293,8 @@ Configuring Cursor IDE to use **Grok 4.6** or **Grok 4.5** as a custom OpenAI en
 
 1. Open Cursor Settings (**`Ctrl + Shift + J`** or **`Cmd + Shift + J`**).
 2. Navigate to **Models > OpenAI API** and toggle **ON**.
-3. Enable **Override OpenAI Base URL** and enter `https://api.apivale.com/v1`.
-4. Enter your APIVALE API key (`sk-apivale-...`).
+3. Enable **Override OpenAI Base URL** and enter `https://apivel.com/v1`.
+4. Enter your APIVALE API key (`sk-apivel-...`).
 5. Under custom model names, add `infer/grok-4.6` (or `infer/grok-4.5`).
 6. Test in Cursor Chat (`Ctrl + L`).
 
@@ -303,13 +303,13 @@ Configuring Cursor IDE to use **Grok 4.6** or **Grok 4.5** as a custom OpenAI en
 ## Frequently Asked Questions
 
 ### How do I bypass Supergrok+ weekly rate limits in Grok Bot?
-You can bypass Supergrok+ weekly rate limits by switching your multi-agent clients (Grok Bot, OpenClaw, Hermes) to APIVALE's unmetered pay-as-you-go API gateway (`https://api.apivale.com/v1`). Traffic routes through dedicated enterprise pools with zero weekly message caps.
+You can bypass Supergrok+ weekly rate limits by switching your multi-agent clients (Grok Bot, OpenClaw, Hermes) to APIVALE's unmetered pay-as-you-go API gateway (`https://apivel.com/v1`). Traffic routes through dedicated enterprise pools with zero weekly message caps.
 
 ### What is Grok moderation bypass and how do I prevent false positive refusals?
 Grok moderation bypass refers to resolving over-sensitive safety filter refusals on legitimate code security audits and penetration testing prompts. Developers can avoid false positives by framing system prompts with a clear defensive cybersecurity role and calling unconstrained REST API endpoints via APIVALE.
 
 ### How do I fix "There was an error! The API developer key is invalid."?
-To fix this error, check that your HTTP header includes `Authorization: Bearer sk-apivale-...` with the word `Bearer ` properly spaced. Ensure your Base URL is set strictly to `https://api.apivale.com/v1` (without appending `/chat/completions`).
+To fix this error, check that your HTTP header includes `Authorization: Bearer sk-apivel-...` with the word `Bearer ` properly spaced. Ensure your Base URL is set strictly to `https://apivel.com/v1` (without appending `/chat/completions`).
 
 ### Can I pay for Grok Bot API using PayPal?
 Yes. APIVALE fully supports global PayPal billing, enabling developers worldwide to fund API tokens using PayPal balance or major credit/debit cards with zero KYC friction. All new accounts receive **$0.20 free starter credit**.

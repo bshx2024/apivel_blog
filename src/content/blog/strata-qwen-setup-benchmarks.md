@@ -18,7 +18,7 @@ keyTakeaways:
     value: "infer/qwen-3.8-flash-next"
     isCode: true
   - label: "Integration Base URL"
-    value: "https://api.apivale.com/v1"
+    value: "https://apivel.com/v1"
     isCode: true
   - label: "Billing & Quota"
     value: "PayPal & Global Cards ($0.20 Trial)"
@@ -58,7 +58,7 @@ keyTakeaways:
     <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/strata-qwen-setup-benchmarks/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Sign Up / Log In to Auto-Fill Your API Key
     </a>
-    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('Base URL: https://api.apivale.com/v1\nModel: infer/qwen-3.8-flash-next'); const b=this; b.innerText='✓ Copied Config!'; setTimeout(()=>b.innerText='📋 Copy Cloud Endpoint', 2000);" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
+    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('Base URL: https://apivel.com/v1\nModel: infer/qwen-3.8-flash-next'); const b=this; b.innerText='✓ Copied Config!'; setTimeout(()=>b.innerText='📋 Copy Cloud Endpoint', 2000);" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
       📋 Copy Cloud Endpoint
     </button>
   </div>
@@ -70,7 +70,7 @@ The open-source **Strata Qwen** inference runtime changes this equation. By leve
 
 ```bash
 # Compare local throughput against APIVALE cloud endpoint
-curl -X POST https://api.apivale.com/v1/chat/completions \
+curl -X POST https://apivel.com/v1/chat/completions \
   -H "Authorization: Bearer $APIVALE_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -191,7 +191,7 @@ claude
 
 In **Cursor Settings > Models > OpenAI API Key** (detailed in our [Qwen 3.8 Cursor IDE configuration guide](/blog/qwen-3-8-cursor-setup/)):
 1. Check **Override OpenAI Base URL**.
-2. Input `http://localhost:8085/v1` for local execution, or `https://api.apivale.com/v1` for APIVALE cloud.
+2. Input `http://localhost:8085/v1` for local execution, or `https://apivel.com/v1` for APIVALE cloud.
 3. Add `infer/qwen-3.8-flash-next` and enable the toggle.
 
 ## Why Strata Qwen Local Inference Pairs with Cloud Gateway
@@ -213,7 +213,7 @@ Integrate local inference with automatic failover to the APIVALE cloud gateway w
 import os, sys, time, requests
 
 LOCAL_ENDPOINT = "http://localhost:8085/v1/chat/completions"
-CLOUD_ENDPOINT = "https://api.apivale.com/v1/chat/completions"
+CLOUD_ENDPOINT = "https://apivel.com/v1/chat/completions"
 APIVALE_KEY = os.getenv("APIVALE_API_KEY", "")
 
 payload = {

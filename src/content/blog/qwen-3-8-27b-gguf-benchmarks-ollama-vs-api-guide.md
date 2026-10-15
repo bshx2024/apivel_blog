@@ -25,7 +25,7 @@ keyTakeaways:
     value: "infer/qwen3.7-max"
     isCode: true
   - label: "API Gateway Base URL"
-    value: "https://api.apivale.com/v1"
+    value: "https://apivel.com/v1"
     isCode: true
   - label: "Billing & Free Sandbox"
     value: "PayPal & Global Cards ($0.20 Trial)"
@@ -210,9 +210,9 @@ Cursor IDE includes built-in support for custom OpenAI-compatible endpoints. Fol
 3. Scroll to **OpenAI API Key** and toggle it **ON**.
 4. In the **Override OpenAI Base URL** field, enter:
    ```text
-   https://api.apivale.com/v1
+   https://apivel.com/v1
    ```
-5. Enter your APIVALE API key (`sk-apivale-xxxxxxxxxxxxxxxx`) in the API Key input.
+5. Enter your APIVALE API key (`sk-apivel-xxxxxxxxxxxxxxxx`) in the API Key input.
 6. Click **Add Model** and input the official model identifier:
    ```text
    infer/qwen3.7-max
@@ -226,7 +226,7 @@ sequenceDiagram
     participant Edge as APIVALE Global Gateway
     participant Engine as Qwen 3.8 Max Cluster (2.4T MoE)
     
-    Dev->>Edge: POST https://api.apivale.com/v1/chat/completions
+    Dev->>Edge: POST https://apivel.com/v1/chat/completions
     Note over Dev,Edge: Bearer Token • OpenAI Protocol • infer/qwen3.7-max
     Edge->>Engine: High-Throughput Tensor Routing (128K Context)
     Engine-->>Edge: SSE Stream (sub-300ms TTFT)
@@ -253,10 +253,10 @@ Developers executing autonomous multi-turn terminal loops can configure Anthropi
 
 ```bash
 # 1. Export APIVALE high-speed gateway URL
-export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
 
 # 2. Provide your APIVALE authentication token
-export ANTHROPIC_AUTH_TOKEN="sk-apivale-your-api-key"
+export ANTHROPIC_AUTH_TOKEN="sk-apivel-your-api-key"
 
 # 3. Specify the Qwen 3.8 Max invocation model
 export ANTHROPIC_MODEL="infer/qwen3.7-max"
@@ -284,7 +284,7 @@ class QwenGatewayClient:
     def __init__(
         self, 
         api_key: Optional[str] = None, 
-        base_url: str = "https://api.apivale.com/v1",
+        base_url: str = "https://apivel.com/v1",
         max_retries: int = 5
     ):
         self.api_key = api_key or os.getenv("APIVALE_API_KEY")
@@ -345,7 +345,7 @@ class QwenGatewayClient:
         raise RuntimeError(f"Failed to complete request to {model} after {self.max_retries} attempts.")
 
 if __name__ == "__main__":
-    client = QwenGatewayClient(api_key="sk-apivale-test-key")
+    client = QwenGatewayClient(api_key="sk-apivel-test-key")
     result = client.complete_code_task("Write a robust TypeScript retry interceptor for Axios.")
     print("Execution Result:\n", result["content"])
 ```
@@ -356,11 +356,11 @@ if __name__ == "__main__":
 
 ### 1. `CUDA error: out of memory (cudaMalloc failed)`
 * **Root Cause:** Loading Qwen 3.8 27B with a 32K context window onto an 16GB or 24GB local GPU.
-* **Resolution:** Point your Cursor OpenAI Base URL to `https://api.apivale.com/v1` and use `infer/qwen3.7-max`. Cloud inference dynamically manages memory buffers across enterprise GPU clusters without local VRAM bounds.
+* **Resolution:** Point your Cursor OpenAI Base URL to `https://apivel.com/v1` and use `infer/qwen3.7-max`. Cloud inference dynamically manages memory buffers across enterprise GPU clusters without local VRAM bounds.
 
 ### 2. Cursor Shows "Model Not Found: infer/qwen3.7-max"
 * **Root Cause:** Typo in the custom model name or base URL missing the `/v1` suffix.
-* **Resolution:** Ensure the Override OpenAI Base URL is exactly `https://api.apivale.com/v1` (with no trailing slash), and verify your APIVALE key has active credit.
+* **Resolution:** Ensure the Override OpenAI Base URL is exactly `https://apivel.com/v1` (with no trailing slash), and verify your APIVALE key has active credit.
 
 ### 3. Compare with Other Gateway & Coding Guides
 * Check our [Qwen 3.8 Cursor Setup & .cursorrules Tuning Guide](/blog/qwen-3-8-cursor-setup/) for deep IDE custom rule templates.

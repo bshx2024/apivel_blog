@@ -28,7 +28,7 @@ Switch your terminal agents or custom scripts to APIVALE’s high-concurrency ga
 ```bash
 # Point your Anthropic or OpenAI compatible SDK to APIVALE
 export ANTHROPIC_BASE_URL="https://apivel.com/v1"
-export ANTHROPIC_AUTH_TOKEN="your_apivale_api_key"
+export ANTHROPIC_AUTH_TOKEN="your_apivel_api_key"
 export ANTHROPIC_MODEL="infer/qwen3.7-max"
 
 # Launch your agent CLI

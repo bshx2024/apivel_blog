@@ -193,54 +193,54 @@ const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.key
 			return [
 				{ label: 'SDK Compatibility', value: 'OpenAI & Anthropic Native SDKs', isCode: false },
 				{ label: 'Target Model', value: 'gemini-3.7-flash / gemini-4-pro', isCode: true },
-				{ label: 'Gateway Endpoint', value: 'baseURL: "https://api.apivale.com/v1"', isCode: true },
+				{ label: 'Gateway Endpoint', value: 'baseURL: "https://apivel.com/v1"', isCode: true },
 				{ label: 'Developer Sandbox', value: '$0.20 Free Credit (Zero KYC & Card)', highlight: true }
 			];
 		} else if (targetTopic === 'qwen') {
 			return [
 				{ label: 'Flagship Invocation', value: 'infer/qwen3.7-max', isCode: true },
 				{ label: 'Target Workflows', value: 'Claude Code CLI, Cursor, Windsurf' },
-				{ label: 'Integration Base URL', value: 'https://api.apivale.com/v1', isCode: true },
+				{ label: 'Integration Base URL', value: 'https://apivel.com/v1', isCode: true },
 				{ label: 'Billing & Quota', value: 'Waffo Global Billing ($0.20 Trial)', highlight: true }
 			];
 		} else if (targetTopic === 'claude') {
 			return [
 				{ label: 'Protocol Architecture', value: 'Native Anthropic Protocol / Sub-50ms', isCode: false },
 				{ label: 'Target Engine', value: 'Claude Sonnet 5 / Claude 3.7', isCode: true },
-				{ label: 'CLI Config Variable', value: 'ANTHROPIC_BASE_URL="https://api.apivale.com/v1"', isCode: true },
+				{ label: 'CLI Config Variable', value: 'ANTHROPIC_BASE_URL="https://apivel.com/v1"', isCode: true },
 				{ label: 'Developer Quota', value: '$0.20 Instant Credit (No Card Required)', highlight: true }
 			];
 		} else if (targetTopic === 'deepseek') {
 			return [
 				{ label: 'Direct Model Engines', value: 'DeepSeek V4 / DeepSeek R1 Reasoning', isCode: true },
 				{ label: 'High-Concurrency Failover', value: 'Multi-Cluster Active Routing (Zero 429)', isCode: false },
-				{ label: 'Compatible Endpoint', value: 'https://api.apivale.com/v1', isCode: true },
+				{ label: 'Compatible Endpoint', value: 'https://apivel.com/v1', isCode: true },
 				{ label: 'Instant Sandbox Access', value: '$0.20 Free Test Credits (No KYC)', highlight: true }
 			];
 		} else if (targetTopic === 'glm') {
 			return [
 				{ label: 'Target Model', value: 'infer/glm-5.3 / glm-5.3-flash', isCode: true },
 				{ label: 'Developer Tooling', value: 'Claude Code CLI, Cursor .cursorrules', isCode: false },
-				{ label: 'API Gateway', value: 'https://api.apivale.com/v1', isCode: true },
+				{ label: 'API Gateway', value: 'https://apivel.com/v1', isCode: true },
 				{ label: 'Billing & Onboarding', value: 'Waffo Global Billing ($0.20 Free Trial)', highlight: true }
 			];
 		} else if (targetTopic === 'longcat') {
 			return [
 				{ label: 'Sparse MoE Scale', value: '1.6T MoE (48B Active) & 1M Window', isCode: false },
 				{ label: 'Flagship Invocation', value: 'infer/meituan/longcat-2.5', isCode: true },
-				{ label: 'Gateway Endpoint', value: 'https://api.apivale.com/v1', isCode: true },
+				{ label: 'Gateway Endpoint', value: 'https://apivel.com/v1', isCode: true },
 				{ label: 'Global Billing', value: 'PayPal & Global Cards ($0.20 Trial)', highlight: true }
 			];
 		} else if (targetTopic === 'cursor') {
 			return [
 				{ label: 'IDE Integration', value: 'Cursor Custom API Key / OpenAI Format', isCode: false },
 				{ label: 'Recommended Models', value: 'Claude Sonnet 5, Qwen 3.7 Max, DeepSeek V4', isCode: false },
-				{ label: 'Override Base URL', value: 'https://api.apivale.com/v1', isCode: true },
+				{ label: 'Override Base URL', value: 'https://apivel.com/v1', isCode: true },
 				{ label: 'Developer Sandbox', value: '$0.20 Free Credit (Zero Card / No KYC)', highlight: true }
 			];
 		} else {
 			return [
-				{ label: 'Universal Gateway', value: 'baseURL: "https://api.apivale.com/v1"', isCode: true },
+				{ label: 'Universal Gateway', value: 'baseURL: "https://apivel.com/v1"', isCode: true },
 				{ label: 'Supported Ecosystems', value: 'Cursor, Claude Code, Cline, Windsurf', isCode: false },
 				{ label: 'Global Billing Rail', value: 'Waffo Global Billing (Zero KYC)', isCode: false },
 				{ label: 'Sandbox Quota', value: '$0.20 Developer Credit (No Card Required)', highlight: true }

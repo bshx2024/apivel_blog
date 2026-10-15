@@ -197,8 +197,8 @@ To configure your Claude CLI or Desktop to route through APIVALE, set the enviro
 Before launching your terminal coding assistant, export the custom base URL and token:
 ```bash
 # Redirect Claude Code to APIVALE
-export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
-export ANTHROPIC_AUTH_TOKEN="your_apivale_api_key_here"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
+export ANTHROPIC_AUTH_TOKEN="your_apivel_api_key_here"
 
 # Run Claude Code normally
 npx @anthropic-ai/claude-code

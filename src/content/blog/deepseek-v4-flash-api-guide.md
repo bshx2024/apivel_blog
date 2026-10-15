@@ -53,7 +53,7 @@ lang: "en"
     <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/deepseek-v4-flash-api-guide/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Sign Up / Log In to Auto-Fill Your API Key
     </a>
-    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export ANTHROPIC_BASE_URL=\'https://api.apivale.com/v1\'\nexport ANTHROPIC_AUTH_TOKEN=\'your_apivale_api_key\'\nexport ANTHROPIC_MODEL=\'deepseek-v4.1-flash\''); alert('Copied setup script!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
+    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('export ANTHROPIC_BASE_URL=\'https://apivel.com/v1\'\nexport ANTHROPIC_AUTH_TOKEN=\'your_apivel_api_key\'\nexport ANTHROPIC_MODEL=\'deepseek-v4.1-flash\''); alert('Copied setup script!');" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
       📋 Copy Setup Commands
     </button>
   </div>
@@ -289,7 +289,7 @@ Use this responsive utility to calculate monthly token expenditure and cost arbi
       } else if (client === 'windsurf') {
         cmdPreview.textContent = 'Windsurf Settings: Base URL: https://apivel.com/v1 | Model: deepseek-v4.1-flash';
       } else {
-        cmdPreview.textContent = 'OpenAI(base_url="https://apivel.com/v1", api_key="sk-apivale-...")';
+        cmdPreview.textContent = 'OpenAI(base_url="https://apivel.com/v1", api_key="sk-apivel-...")';
       }
     }
 
@@ -317,7 +317,7 @@ Export the native Anthropic environment variables pointing to APIVALE:
 ```bash
 # Append to ~/.zshrc or ~/.bashrc
 export ANTHROPIC_BASE_URL="https://apivel.com/v1"
-export ANTHROPIC_AUTH_TOKEN="sk-apivale-your-api-key-here"
+export ANTHROPIC_AUTH_TOKEN="sk-apivel-your-api-key-here"
 export ANTHROPIC_MODEL="deepseek-v4.1-flash"
 
 # Reload configuration and launch agent
@@ -334,7 +334,7 @@ For Windows developers operating in PowerShell:
 ```powershell
 # Configure session environment variables
 $env:ANTHROPIC_BASE_URL="https://apivel.com/v1"
-$env:ANTHROPIC_AUTH_TOKEN="sk-apivale-your-api-key-here"
+$env:ANTHROPIC_AUTH_TOKEN="sk-apivel-your-api-key-here"
 $env:ANTHROPIC_MODEL="deepseek-v4.1-flash"
 
 # Start Claude Code session
@@ -346,7 +346,7 @@ npx @anthropic-ai/claude-code
 To run DeepSeek V4.1 Flash within Cursor Composer:
 1. Open **Cursor Settings (`Ctrl+,` or `Cmd+,`) -> Models -> OpenAI**.
 2. Toggle on **"Override Base URL"** and set the endpoint to `https://apivel.com/v1`.
-3. Enter your APIVALE API key (`sk-apivale-...`).
+3. Enter your APIVALE API key (`sk-apivel-...`).
 4. Under **Add Custom Model**, enter `deepseek-v4.1-flash` and toggle it as the active model.
 
 For detailed token savings comparisons between native subscriptions and custom API keys, read our breakdown on [Cursor BYOK vs. Cursor Pro Real Cost Math](/blog/cursor-pro-vs-custom-api-key/).

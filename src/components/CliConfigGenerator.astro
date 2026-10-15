@@ -71,8 +71,8 @@ const activeModelVal = modelMap[defaultModel] || 'infer/qwen3.7-max';
         </button>
       </div>
       <pre class="snippet-pre"><code id="configCodeDisplay">{`# Export APIVALE proxy base URL and API key
-export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
-export ANTHROPIC_API_KEY="sk-apivale-your-api-key"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
+export ANTHROPIC_API_KEY="sk-apivel-your-api-key"
 
 # Launch Claude Code CLI with target model
 claude --model ${activeModelVal}`}</code></pre>
@@ -109,8 +109,8 @@ claude --model ${activeModelVal}`}</code></pre>
 
     const templates = {
       'claude-code': (model) => `# Export APIVALE OpenAI & Anthropic compatible proxy endpoint
-export ANTHROPIC_BASE_URL="https://api.apivale.com/v1"
-export ANTHROPIC_API_KEY="sk-apivale-your-api-key"
+export ANTHROPIC_BASE_URL="https://apivel.com/v1"
+export ANTHROPIC_API_KEY="sk-apivel-your-api-key"
 
 # Launch Claude Code CLI with target model
 claude --model ${model}`,
@@ -118,20 +118,20 @@ claude --model ${model}`,
       'cursor': (model) => `// Open Cursor Settings -> Models -> OpenAI API Key
 // Set Base URL and custom API key:
 
-Base URL: https://api.apivale.com/v1
-API Key:  sk-apivale-your-api-key
+Base URL: https://apivel.com/v1
+API Key:  sk-apivel-your-api-key
 Model:    ${model}`,
 
       'windsurf': (model) => `// Configure Windsurf settings.json:
 {
-  "openai.baseUrl": "https://api.apivale.com/v1",
-  "openai.apiKey": "sk-apivale-your-api-key",
+  "openai.baseUrl": "https://apivel.com/v1",
+  "openai.apiKey": "sk-apivel-your-api-key",
   "windsurf.model": "${model}"
 }`,
 
       'opencode': (model) => `# OpenCode CLI configuration export:
-export OPENAI_BASE_URL="https://api.apivale.com/v1"
-export OPENAI_API_KEY="sk-apivale-your-api-key"
+export OPENAI_BASE_URL="https://apivel.com/v1"
+export OPENAI_API_KEY="sk-apivel-your-api-key"
 
 opencode --model ${model}`
     };

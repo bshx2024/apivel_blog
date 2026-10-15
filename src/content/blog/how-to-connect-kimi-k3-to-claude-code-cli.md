@@ -40,7 +40,7 @@ Run the following terminal commands to override Anthropic's default endpoint:
 ```bash
 # Point Claude Code CLI to APIVALE's Anthropic-compatible protocol bridge
 export ANTHROPIC_BASE_URL="https://apivel.com/v1"
-export ANTHROPIC_AUTH_TOKEN="your_apivale_api_key"
+export ANTHROPIC_AUTH_TOKEN="your_apivel_api_key"
 export ANTHROPIC_MODEL="kimi-k3"
 
 # Launch Anthropic Claude Code CLI

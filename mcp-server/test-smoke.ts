@@ -40,7 +40,7 @@ async function runSmokeTests() {
   // Test 7: Anti-Spam Audit
   const auditTest = runAntiSpamAudit(
     "Connect Qwen 3.8 to Claude Code CLI (80% Off) | APIVALE",
-    "Alibaba's Qwen 3.8-Max features a 2.4-trillion parameter MoE architecture.\n\n```bash\nexport ANTHROPIC_BASE_URL=\"https://api.apivale.com/v1\"\nexport ANTHROPIC_API_KEY=\"sk-test\"\nclaude --model infer/qwen3.8-max\n```\n\n### FAQ\nIs Qwen 3.8 free? Yes with free tier."
+    "Alibaba's Qwen 3.8-Max features a 2.4-trillion parameter MoE architecture.\n\n```bash\nexport ANTHROPIC_BASE_URL=\"https://apivel.com/v1\"\nexport ANTHROPIC_API_KEY=\"sk-test\"\nclaude --model infer/qwen3.8-max\n```\n\n### FAQ\nIs Qwen 3.8 free? Yes with free tier."
   );
   console.log(`✅ [Anti-Spam Audit] Passed: ${auditTest.passed}, Blockers: ${auditTest.blockers.length}, Warnings: ${auditTest.warnings.length}`);
 

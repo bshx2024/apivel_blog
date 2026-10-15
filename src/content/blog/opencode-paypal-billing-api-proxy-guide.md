@@ -56,7 +56,7 @@ keyTakeaways:
     <a id="cta-login-btn" href="https://apivel.com/sign-up?redirect=/blog/opencode-paypal-billing-api-proxy-guide/" class="inline-flex items-center text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-md">
       ⚡ Sign Up / Log In to Auto-Fill Your API Key
     </a>
-    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('OPENAI_BASE_URL=https://api.apivale.com/v1\nOPENAI_API_KEY=your_apivale_api_key'); const el = this; const old = el.innerHTML; el.innerHTML = '✓ Copied OpenCode Config!'; setTimeout(() => { el.innerHTML = old; }, 2000);" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
+    <button id="copy-script-btn" onclick="navigator.clipboard.writeText('OPENAI_BASE_URL=https://apivel.com/v1\nOPENAI_API_KEY=your_apivel_api_key'); const el = this; const old = el.innerHTML; el.innerHTML = '✓ Copied OpenCode Config!'; setTimeout(() => { el.innerHTML = old; }, 2000);" class="inline-flex items-center text-xs font-semibold bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 px-4 py-2.5 rounded-lg transition-all">
       📋 Copy OpenCode Config
     </button>
   </div>
@@ -110,7 +110,7 @@ Understanding the OpenCode ecosystem requires analyzing the difference between *
 | **Pricing Structure** | Subscription | Fixed Credit Packs | **Pay-As-You-Go ($0.27/1M Blended)** |
 
 ### Overcoming OpenCode Go & Zen Limits with OpenCode PayPal Routing
-When running OpenCode Go, developers frequently hit daily request limits during continuous integration (CI) test runs. By pointing OpenCode CLI to `https://api.apivale.com/v1` backed by OpenCode PayPal credits, requests are routed dynamically across high-concurrency provider pools, eliminating 5-hour cooldown lockout walls.
+When running OpenCode Go, developers frequently hit daily request limits during continuous integration (CI) test runs. By pointing OpenCode CLI to `https://apivel.com/v1` backed by OpenCode PayPal credits, requests are routed dynamically across high-concurrency provider pools, eliminating 5-hour cooldown lockout walls.
 
 ---
 
@@ -500,7 +500,7 @@ OpenCode natively supports custom OpenAI-compatible and Anthropic-compatible end
 
 ```bash
 # macOS / Linux terminal setup (~/.bashrc or ~/.zshrc)
-export OPENAI_BASE_URL="https://api.apivale.com/v1"
+export OPENAI_BASE_URL="https://apivel.com/v1"
 export OPENAI_API_KEY="apivale-key-xxxxxxxxxxxxxxxx"
 export OPENCODE_MODEL="infer/qwen3.7-max"
 
@@ -510,7 +510,7 @@ opencode run
 
 For Windows PowerShell developers:
 ```powershell
-$env:OPENAI_BASE_URL="https://api.apivale.com/v1"
+$env:OPENAI_BASE_URL="https://apivel.com/v1"
 $env:OPENAI_API_KEY="apivale-key-xxxxxxxxxxxxxxxx"
 $env:OPENCODE_MODEL="infer/qwen3.7-max"
 opencode run
@@ -528,7 +528,7 @@ services:
     ports:
       - "3000:8080"
     environment:
-      - OPENAI_API_BASE_URL=https://api.apivale.com/v1
+      - OPENAI_API_BASE_URL=https://apivel.com/v1
       - OPENAI_API_KEY=apivale-key-xxxxxxxxxxxxxxxx
       - WEBUI_AUTH=True
     volumes:
@@ -551,7 +551,7 @@ import axios, { AxiosError } from 'axios';
 
 const app = express();
 const PORT = process.env.PORT || 8080;
-const APIVALE_GATEWAY = 'https://api.apivale.com/v1';
+const APIVALE_GATEWAY = 'https://apivel.com/v1';
 
 app.use(express.json({ limit: '50mb' }));
 
@@ -641,7 +641,7 @@ Yes. APIVALE natively supports **OpenCode PayPal billing and Waffo Global Billin
 OpenCode Go is the introductory tier constrained by strict daily token and request caps. OpenCode Zen is the extended inference catalog for agentic workflows. Routing requests through APIVALE allows developers to access the same frontier models (Claude Sonnet 5, Qwen 3.7 Max, DeepSeek V4) with unthrottled concurrency at wholesale pay-as-you-go pricing.
 
 ### How do I bypass rate limits in OpenCode using OpenCode PayPal routing on APIVALE?
-You can bypass rate limits by pointing your OpenCode client's OpenAI Base URL to `https://api.apivale.com/v1` funded via OpenCode PayPal billing and supplying your APIVALE API key. APIVALE dynamically balances agent traffic across multiple high-throughput endpoint pools, preventing 429 Too Many Requests lockout errors.
+You can bypass rate limits by pointing your OpenCode client's OpenAI Base URL to `https://apivel.com/v1` funded via OpenCode PayPal billing and supplying your APIVALE API key. APIVALE dynamically balances agent traffic across multiple high-throughput endpoint pools, preventing 429 Too Many Requests lockout errors.
 
 ### Does APIVALE support Server-Sent Events (SSE) streaming in OpenCode?
 Yes. APIVALE fully supports real-time SSE streaming for smooth typewriter output, reasoning token extraction, and tool-calling execution inside OpenCode CLI and connected agent environments.
@@ -672,7 +672,7 @@ Yes. APIVALE fully supports real-time SSE streaming for smooth typewriter output
       "name": "How do I bypass rate limits in OpenCode using OpenCode PayPal routing on APIVALE?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You can bypass rate limits by pointing your OpenCode client's OpenAI Base URL to https://api.apivale.com/v1 funded via OpenCode PayPal billing and supplying your APIVALE API key. APIVALE dynamically balances agent traffic across multiple high-throughput endpoint pools, preventing 429 Too Many Requests lockout errors."
+        "text": "You can bypass rate limits by pointing your OpenCode client's OpenAI Base URL to https://apivel.com/v1 funded via OpenCode PayPal billing and supplying your APIVALE API key. APIVALE dynamically balances agent traffic across multiple high-throughput endpoint pools, preventing 429 Too Many Requests lockout errors."
       }
     },
     {

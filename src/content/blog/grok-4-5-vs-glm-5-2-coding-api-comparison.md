@@ -94,7 +94,7 @@ Connecting Cursor IDE to Grok 4.5 or GLM-5.2 via APIVALE allows developers to by
 2. Navigate to **Models** > **OpenAI API**.
 3. Toggle the OpenAI API switch to **ON**.
 4. Set the Base URL field to: `https://apivel.com/v1` (do not append `/chat/completions`).
-5. Enter your APIVALE API key (`sk-apivale-...`).
+5. Enter your APIVALE API key (`sk-apivel-...`).
 6. Under custom model names, add `glm-5.2` or `infer/grok-4.5` and enable them.
 7. Click Save. Your editor is now connected to a 1M-context coding engine.
 

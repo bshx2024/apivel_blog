@@ -54,7 +54,7 @@ Traditional audio pipelines chain Whisper speech recognition to an LLM, causing 
 Test the endpoint immediately using this standard cURL payload:
 
 ```bash
-curl https://api.apivale.com/v1/chat/completions \
+curl https://apivel.com/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_APIVALE_KEY" \
   -d '{
@@ -237,7 +237,7 @@ import requests
 def analyze_audio_with_qwen(audio_file_path: str, prompt_instruction: str) -> dict:
     """Sends raw audio to Qwen3.8-Omni-Flash API via APIVALE for native speaker diarization."""
     api_key = os.getenv("APIVALE_API_KEY", "YOUR_APIVALE_KEY")
-    endpoint = "https://api.apivale.com/v1/chat/completions"
+    endpoint = "https://apivel.com/v1/chat/completions"
 
     with open(audio_file_path, "rb") as f:
         audio_b64 = base64.b64encode(f.read()).decode("utf-8")

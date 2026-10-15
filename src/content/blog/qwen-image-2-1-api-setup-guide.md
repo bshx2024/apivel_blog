@@ -14,7 +14,7 @@ keyTakeaways:
     value: "infer/qwen-image-2.1"
     isCode: true
   - label: "API Gateway Base URL"
-    value: "https://api.apivale.com/v1"
+    value: "https://apivel.com/v1"
     isCode: true
   - label: "Billing & Free Sandbox"
     value: "PayPal & Global Cards ($0.20 Trial)"
@@ -50,8 +50,8 @@ For production teams building web applications, e-commerce graphics, and autonom
 
 ```bash
 # Verify connectivity to Qwen-Image-2.1 via APIVALE REST API gateway
-curl -X POST https://api.apivale.com/v1/images/generations \
-  -H "Authorization: Bearer sk-apivale-test-key" \
+curl -X POST https://apivel.com/v1/images/generations \
+  -H "Authorization: Bearer sk-apivel-test-key" \
   -H "Content-Type: application/json" \
   -d '{
     "model": "infer/qwen-image-2.1",
@@ -171,8 +171,8 @@ import base64
 import requests
 from typing import Optional, Dict, Any
 
-APIVALE_BASE_URL = "https://api.apivale.com/v1"
-APIVALE_API_KEY = os.getenv("APIVALE_API_KEY", "sk-apivale-test-key")
+APIVALE_BASE_URL = "https://apivel.com/v1"
+APIVALE_API_KEY = os.getenv("APIVALE_API_KEY", "sk-apivel-test-key")
 
 def generate_qwen_image(
     prompt: str,
@@ -238,7 +238,7 @@ ComfyUI is the standard canvas for generative design, but running local 7B DiT w
 ### 4.1 Connecting APIVALE Custom Node to ComfyUI Workflow
 
 Using APIVALE's custom cloud node offloads heavy transformer compute while retaining complete node-graph flexibility:
-1. Clone the node to `ComfyUI/custom_nodes/` and set Base URL to `https://api.apivale.com/v1`.
+1. Clone the node to `ComfyUI/custom_nodes/` and set Base URL to `https://apivel.com/v1`.
 2. Select `infer/qwen-image-2.1` in the model selector.
 3. Pipe the **IMAGE (RGBA)** output directly into composition nodes without external mask extractors.
 
@@ -340,7 +340,7 @@ Test prompts, toggle native RGBA transparency, and inspect generated payloads di
         seed: parseInt(seed)
       };
 
-      codeEl.textContent = `# cURL Execution:\ncurl -X POST https://api.apivale.com/v1/images/generations \\\n  -H "Authorization: Bearer YOUR_API_KEY" \\\n  -H "Content-Type: application/json" \\\n  -d '${JSON.stringify(payload, null, 2)}'`;
+      codeEl.textContent = `# cURL Execution:\ncurl -X POST https://apivel.com/v1/images/generations \\\n  -H "Authorization: Bearer YOUR_API_KEY" \\\n  -H "Content-Type: application/json" \\\n  -d '${JSON.stringify(payload, null, 2)}'`;
     }, 200);
   }
 

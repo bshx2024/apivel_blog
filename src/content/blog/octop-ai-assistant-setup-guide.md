@@ -35,7 +35,7 @@ However, developers completing an Octop AI Assistant setup frequently encounter 
 This **Octop AI Assistant setup guide** provides step-by-step instructions to configure custom API providers, troubleshoot stream chunk errors, and route traffic through APIVALE's high-concurrency gateway. Test your API connection in seconds with this minimal cURL command:
 
 ```bash
-curl -X POST "https://api.apivale.com/v1/chat/completions" \
+curl -X POST "https://apivel.com/v1/chat/completions" \
   -H "Authorization: Bearer YOUR_APIVALE_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -146,7 +146,7 @@ Connecting high-performance models to your Octop AI Assistant setup requires bin
 │                                   ▼                                    │
 │                 ┌───────────────────────────────────┐                  │
 │                 │    APIVALE OpenAI-Compatible Proxy │                  │
-│                 │       (https://api.apivale.com)   │                  │
+│                 │       (https://apivel.com)   │                  │
 │                 └─────────────────┬─────────────────┘                  │
 │                                   │                                    │
 │         ┌─────────────────────────┼────────────────────────┐           │
@@ -163,14 +163,14 @@ Setting up global environment variables ensures that all agents in your Octop AI
 ```bash
 # ~/.octop/env
 # Global API Gateway Configuration for Octop AI Assistant Setup
-OPENAI_API_BASE=https://api.apivale.com/v1
-OPENAI_API_KEY=sk-apivale-prod-live-credential-token
+OPENAI_API_BASE=https://apivel.com/v1
+OPENAI_API_KEY=sk-apivel-prod-live-credential-token
 DEFAULT_CHAT_MODEL=infer/qwen3.7-max
 FALLBACK_CHAT_MODEL=claude-sonnet-5-20260901
 
 # ACP Outbound Proxy Variables for Claude Code
-ANTHROPIC_BASE_URL=https://api.apivale.com
-ANTHROPIC_API_KEY=sk-apivale-prod-live-credential-token
+ANTHROPIC_BASE_URL=https://apivel.com
+ANTHROPIC_API_KEY=sk-apivel-prod-live-credential-token
 ```
 
 When Octop boots, `apply_env_file` loads these variables before starting internal server workers, immediately connecting your Octop AI Assistant setup to APIVALE. If you plan to delegate automated coding sessions to external terminal agents via `octop acp`, consult our production guide on [Claude Code CLI proxy configurations](/blog/claude-code-opus-5-2-alternative-qwen-3-8-max/) for token window limits and model failover parameters.
@@ -187,7 +187,7 @@ import time
 import requests
 
 def test_octop_apivale_gateway():
-    api_base = os.getenv("OPENAI_API_BASE", "https://api.apivale.com/v1")
+    api_base = os.getenv("OPENAI_API_BASE", "https://apivel.com/v1")
     api_key = os.getenv("OPENAI_API_KEY")
     
     if not api_key:
@@ -408,7 +408,7 @@ document.addEventListener('DOMContentLoaded', updateOctopCalc);
 Octop is an open-source, self-hosted multi-agent AI assistant developed by Tencent Cloud that coordinates local and cloud LLMs across Web, CLI, and IM messaging channels. In contrast, Octopus Deploy is a commercial DevOps release management and automated software deployment server completely unrelated to artificial intelligence runtimes.
 
 ### How do I configure custom OpenAI-compatible models in an Octop AI Assistant setup?
-Define `OPENAI_API_BASE=https://api.apivale.com/v1` and `OPENAI_API_KEY=YOUR_KEY` in `~/.octop/env`, then restart the daemon using `octop service restart`. All agents in your Octop AI Assistant setup automatically inherit the route for chat completions.
+Define `OPENAI_API_BASE=https://apivel.com/v1` and `OPENAI_API_KEY=YOUR_KEY` in `~/.octop/env`, then restart the daemon using `octop service restart`. All agents in your Octop AI Assistant setup automatically inherit the route for chat completions.
 
 ### Can I run Claude Sonnet 5 or DeepSeek V4 in Octop without an international credit card?
 Yes. Using APIVALE's proxy gateway, developers can fund their Octop AI Assistant setup via Waffo Global Billing using regular credit cards and domestic digital wallets without undergoing KYC verification or triggering overseas banking declines.
@@ -436,7 +436,7 @@ Octop provides native ACP (Agent Client Protocol) support. Running `octop acp --
       "name": "How do I configure custom OpenAI-compatible models in an Octop AI Assistant setup?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Define OPENAI_API_BASE=https://api.apivale.com/v1 and OPENAI_API_KEY=YOUR_KEY in ~/.octop/env, then restart the daemon using octop service restart. All agents in your Octop AI Assistant setup automatically inherit the route for chat completions."
+        "text": "Define OPENAI_API_BASE=https://apivel.com/v1 and OPENAI_API_KEY=YOUR_KEY in ~/.octop/env, then restart the daemon using octop service restart. All agents in your Octop AI Assistant setup automatically inherit the route for chat completions."
       }
     },
     {

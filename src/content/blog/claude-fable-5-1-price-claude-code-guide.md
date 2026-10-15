@@ -29,7 +29,7 @@ This empirical guide provides a complete breakdown of Claude Fable 5.1 pricing e
 
 ```bash
 # Verify native Anthropic Messages protocol via APIVALE Gateway
-curl https://api.apivale.com/v1/messages \
+curl https://apivel.com/v1/messages \
   -H "x-api-key: $APIVALE_API_KEY" \
   -H "anthropic-version: 2023-06-01" \
   -H "content-type: application/json" \
@@ -187,7 +187,7 @@ import requests
 from typing import Dict, Any
 
 APIVALE_API_KEY = os.getenv("APIVALE_API_KEY", "your_apivale_key_here")
-GATEWAY_URL = "https://api.apivale.com/v1/chat/completions"
+GATEWAY_URL = "https://apivel.com/v1/chat/completions"
 
 # 85% Cost Arbitrage Model Mapping
 COMPLEX_MODEL = "claude-fable-5.1"

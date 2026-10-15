@@ -153,7 +153,7 @@ keyTakeaways:
   - label: "Target Workflows"
     value: "Claude Code CLI, Cursor, Windsurf"
   - label: "Integration Base URL"
-    value: "https://api.apivale.com/v1"
+    value: "https://apivel.com/v1"
     isCode: true
   - label: "Billing & Quota"
     value: "PayPal & Global Cards ($0.20 Trial)"
@@ -268,7 +268,7 @@ keyTakeaways:
 <div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
-    <li><strong>SDK 兼容协议</strong>：原生 OpenAI / Anthropic 兼容协议 (<code>https://api.apivale.com/v1</code>)</li>
+    <li><strong>SDK 兼容协议</strong>：原生 OpenAI / Anthropic 兼容协议 (<code>https://apivel.com/v1</code>)</li>
     <li><strong>旗舰调用标识</strong>：<code>infer/xiaomi-mimo-v2.6-pro</code> (或目标模型确切 ID)</li>
     <li><strong>工程避坑关键</strong>：避免 429 与 SSE 流式断连的最佳生产配置</li>
     <li><strong>免卡测试额度</strong>：支持 PayPal 官方即时结账与全球信用卡/支付宝（0 额外跨境手续费），新用户赠送 $0.20 免卡免实名测试金额</li>
