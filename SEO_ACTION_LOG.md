@@ -56,23 +56,23 @@
 
 
 
+
+
 ## 📝 优化行动记录 (2026-10)
 
-### 📅 2026-10-15 - 📝 [内容动作]: 基于 Google Trends 全网突发爆词 (Breakout) 发布《Sol 6.1 vs Astra: Pricing, Latency Benchmarks & Low-Cost Agent Alternatives》，截流对比选型流量并引流至 APIVALE 国产大模型
-* **影响页面/关键词**：`/blog/sol-6-1-vs-astra-pricing-benchmarks-guide/` (`sol 6.1 vs astra`, `astra vs sol 6.1`, `6.1 sol vs astra`, `gpt 6.1 sol`, `sol 6.1 vs opus 5.5`)
-* **动作详情**：基于 2026 年 10 月 13~15 日 Google Trends 监测到的 `sol 6.1 vs astra` 等全网 Breakout 突发关键词（增长率 100%+），严格遵循 Master Blog Standard 撰写发布深度长文：1) 标题采用双轨 ABC 规范（MetaTitle 59 字符，H1 75 字符）；2) 聚焦 6.1 Sol 真实生产痛点（20 TPS 延迟屏障、## 📝 优化行动记录 (2026-10)
-0/1M 输出价格、强制 reasoning 导致的 HTTP 400 报错与 /v1/responses 协议绑定）；3) 客观构建 7 模型横评矩阵（包含 Astra、Opus 5.5、DeepSeek-V4、GLM-5.3、Qwen 3.8 Max）；4) 提出 Dual-Engine Fallback 架构，引流至 APIVALE 原生 `/v1/chat/completions` 接口与 $0.20 免费额度；5) 内嵌交互式月度 Token 成本计算器（破除 Doorway 扣分）；6) 轮换署名作者为 Sofia Costa，并完成 FAQPage JSON-LD 结构化数据嵌入。
-* **预期因果假设**：趁 Google Trends 流量洪峰期抢占首批索引与 GEO 引用源地位，预计 7~14 天内进入 Google 前 5 位及 Perplexity/ChatGPT Search 核心引用源，单日为 APIVALE 带来 30~80 个高质量海外开发者技术访问与新注册转化。
+### 📅 2026-10-16 - 📝 [内容动作]: 基于 Google 下拉词、PASF 与 Google Trends 突破词发布《OpenAI Dots API, Pricing & Fails: vs Meta Muse & Self-Hosted Fixes》，覆盖无独立API、Pro $100/月、静默烧Token、403超时三大痛点，提供4平台客观横评表、Docker高可用配置与交互式计算器，署名轮换为 Alex Rivera，并完成双向内链织网与 llms.txt 标准部署。
+* **影响页面/关键词**：/blog/openai-dots-api-pricing-vs-muse/ (openai dots api, openai dots price, openai dots vs muse, openai dots fail, openai dots review, chatgpt dots)
+* **动作详情**：基于 Google 下拉词、PASF 与 Google Trends 突破词发布《OpenAI Dots API, Pricing & Fails: vs Meta Muse & Self-Hosted Fixes》，覆盖无独立API、Pro $100/月、静默烧Token、403超时三大痛点，提供4平台客观横评表、Docker高可用配置与交互式计算器，署名轮换为 Alex Rivera，并完成双向内链织网与 llms.txt 标准部署。
+* **预期因果假设**：在 OpenAI Dots 发布第 3 周沉淀期抢占开发者寻求 API 与性价比替代的搜索意图，预计 7~14 天内进入 Google 核心关键词前 5 位及 Perplexity/SearchGPT 主引用源，单日带动 40~100 个自主 Agent 开发者访问与 APIVALE 注册转化。
 
-### 📅 2026-10-10 - ⚙️ [技术/UX 动作]: 针对 Cursor BYOK 高排位 0 点击（0.6% CTR, Pos 6.8）意图错位重构：将比价型 TDK 切换为 GitHub Proxy 与 Agent 解锁指南，精准截流第 2~3 位开源工具词
-* **影响页面/关键词**：`/blog/cursor-pro-vs-custom-api-key/` (`cursor byok`, `cursor-byok`, `cursor-byok github`, `cursor-byok-windows-amd64`, `byok cursor`)
-* **动作详情**：GSC 深度穿透发现 `cursor-byok-windows-amd64` 排名第 2.0、`cursor-byok github` 排名第 3.0、`cursor byok` 排名第 6.4，合计 55+ 展现但点击为 0。根因在于开发者寻找 leookun/cursor-byok 代理工具和解决 Agent Tool-calling 锁死，而原标题偏向营销比价。执行重构：1) MetaTitle 升级为 `Cursor BYOK: GitHub Proxy Setup & Fix Disabled Agent | APIVALE`（56 字符）；2) Description（154 字符）前置 `setup leookun/cursor-byok GitHub proxy on Windows/macOS to restore disabled Agent tool-calling`；3) 注入 `dateModified: "2026-10-10"`。
-* **预期因果假设**：消除意图错位，建立开源工具与技术排坑的权威信任背书。预期 14 天内第 2~3 位开源长尾词 CTR 突破 15%~25%，主词 `cursor byok` CTR 从 0% 提升至 4%~8%，单日新增 5~10 个极客自然点击。
+## 📝 优化行动记录 (2026-10)
 
-### 📅 2026-10-10 - ⚙️ [技术/UX 动作]: 针对 GSC 点击率低（0.9% CTR, Pos 8.1）进行深度技术与意图重构：1) 将 metaTitle 升级为 58 字符 ABC 架构，突出 MoE 消除非专业标题党误解；2) 重写 Description（155 字符），剔除商业 API 推销词汇，直击 125B MoE(6B active) 分层与 OOM 故障排查极客痛点。
-* **影响页面/关键词**：`/blog/strata-qwen-setup-benchmarks/` (`strata qwen`, `qwen strata`, `strata qwen 3.8`)
-* **动作详情**：针对 GSC 揭示的 `strata qwen` 主力词展现 195、仅 2 点击（1.0% CTR）的技术常识防备心理，将 MetaTitle 升级为 `Strata Qwen MoE Setup: Run 125B on 12GB VRAM at 94 t/s | APIVALE`（58 字符），Description 压至 155 字符黄金长度（剔除商业 API 导流词汇，强化 125B MoE 6B active 分层与 OOM fixes），全面提升极客搜索信任度。
+### 📅 2026-10-09 - ⚙️ [技术/UX 动作]: 针对 GSC 点击率低（0.9% CTR, Pos 8.1）进行深度技术与意图重构：1) 将 metaTitle 升级为 58 字符 ABC 架构，突出 MoE 消除非专业标题党误解；2) 重写 Description（155 字符），剔除商业 API 推销词汇，直击 125B MoE(6B active) 分层与 OOM 故障排查极客痛点。
+* **影响页面/关键词**：/blog/strata-qwen-setup-benchmarks/ (strata qwen, qwen strata, strata qwen 3.8)
+* **动作详情**：针对 GSC 点击率低（0.9% CTR, Pos 8.1）进行深度技术与意图重构：1) 将 metaTitle 升级为 58 字符 ABC 架构，突出 MoE 消除非专业标题党误解；2) 重写 Description（155 字符），剔除商业 API 推销词汇，直击 125B MoE(6B active) 分层与 OOM 故障排查极客痛点。
 * **预期因果假设**：消除开发者搜索 'strata qwen' 时的虚假宣传防备心理与商业软文抗拒，契合本地极客开源与架构意图。预期 14 天内主力关键词 'strata qwen' 的 SERP CTR 从 1.0% 回升至 2.5%~4.0%，推动综合排名进入 Top 5。
+
+## 📝 优化行动记录 (2026-10)
 
 ### 📅 2026-10-09 - 📝 [高曝光大户爆破 & CTR翻倍攻坚]: 重构《Strata Qwen》、《Meta Muse AI》与《OmniRoute》三大支柱页TDK
 
@@ -105,7 +105,7 @@
 ### 📅 2026-10-09 - ⚙️ [技术SEO紧急止血 & 爬虫去噪]: 全站封堵带参CTA页面索引，注入Rehype Nofollow与动态Noindex防护网
 
 * **影响页面/路由与全站范围**：
-  * 全站根域爬虫规则：`https://apivel.com/robots.txt`（主站 `web/default/public/robots.txt` 与经典版）
+  * 全站根域爬虫规则：`https://apivale.com/robots.txt`（主站 `web/default/public/robots.txt` 与经典版）
   * 博客端爬虫规则：`public/robots.txt`
   * 全站基础布局：`src/layouts/Layout.astro`
   * 博客编译构建链路：`astro.config.mjs`
@@ -122,7 +122,7 @@
 
 * **影响页面/路由与线上链接**：
   * 主发布页面：`/blog/claude-code-mods-examples-guide/` (`src/content/blog/claude-code-mods-examples-guide.md`)
-  * 线上链接：`https://apivel.com/blog/claude-code-mods-examples-guide/`
+  * 线上链接：`https://apivale.com/blog/claude-code-mods-examples-guide/`
   * 织网双向协同页面：
     * `/blog/how-to-connect-qwen-3-7-to-claude-code-cli/`
     * `/blog/claude-haiku-5-5-pricing-alternatives-guide/`
@@ -141,7 +141,7 @@
 
 * **影响页面/路由与线上链接**：
   * 主重构页面：`/blog/claude-haiku-5-5-pricing-alternatives-guide/` (`src/content/blog/claude-haiku-5-5-pricing-alternatives-guide.md`)
-  * 线上链接：`https://apivel.com/blog/claude-haiku-5-5-pricing-alternatives-guide/`
+  * 线上链接：`https://apivale.com/blog/claude-haiku-5-5-pricing-alternatives-guide/`
   * 织网双向协同页面：
     * `/blog/haiku-5-5-vs-luna-6-pricing-agent-guide/`
     * `/blog/cloudflare-clef-vs-jev-pricing-agent-guide/`
@@ -159,7 +159,7 @@
 
 * **影响页面/路由与线上链接**：
   * 主优化页面：`/blog/haiku-5-5-vs-luna-6-pricing-agent-guide/` (`src/content/blog/haiku-5-5-vs-luna-6-pricing-agent-guide.md`)
-  * 线上链接：`https://apivel.com/blog/haiku-5-5-vs-luna-6-pricing-agent-guide/`
+  * 线上链接：`https://apivale.com/blog/haiku-5-5-vs-luna-6-pricing-agent-guide/`
 * **调整背景与实测数据驱动（页面军师/哥飞体检引擎诊断）**：
   * **原总分已由 90 飙升至 98 分 (A 级)**：主题聚焦度 100% 满分，Title/H1 双认领，推断主词 100% 锁定对比赛道，P0/P1 问题清零；
   * **攻克最后两项扣分**：
@@ -171,7 +171,7 @@
 
 * **影响页面/路由与线上链接**：
   * 主优化页面：`/blog/haiku-5-5-vs-luna-6-pricing-agent-guide/` (`src/content/blog/haiku-5-5-vs-luna-6-pricing-agent-guide.md`)
-  * 线上链接：`https://apivel.com/blog/haiku-5-5-vs-luna-6-pricing-agent-guide/`
+  * 线上链接：`https://apivale.com/blog/haiku-5-5-vs-luna-6-pricing-agent-guide/`
 * **调整背景与实测数据驱动（页面军师/哥飞体检引擎诊断）**：
   * **体检总分 90 分 (A) 扣分诊断**：算法推断主词撕裂（Title 未包含 `GPT-6`，H1 包含，算法误将主词降级推断为单模大词 `gpt-6 luna`，判定赛道错位）；
   * **主要扣分点消除**：
@@ -184,7 +184,7 @@
 
 * **影响页面/路由与线上链接**：
   * 新建页面：`/blog/haiku-5-5-vs-luna-6-pricing-agent-guide/` (`src/content/blog/haiku-5-5-vs-luna-6-pricing-agent-guide.md`)
-  * 线上链接：`https://apivel.com/blog/haiku-5-5-vs-luna-6-pricing-agent-guide/`
+  * 线上链接：`https://apivale.com/blog/haiku-5-5-vs-luna-6-pricing-agent-guide/`
   * 织网老页面：
     * `/blog/claude-haiku-5-5-pricing-alternatives-guide/`
     * `/blog/cloudflare-clef-vs-jev-pricing-agent-guide/`
@@ -202,7 +202,7 @@
 
 * **影响页面/路由与线上链接**：
   * 主优化页面：`/blog/cloudflare-clef-vs-jev-pricing-agent-guide/` (`src/content/blog/cloudflare-clef-vs-jev-pricing-agent-guide.md`)
-  * 线上链接：`https://apivel.com/blog/cloudflare-clef-vs-jev-pricing-agent-guide/`
+  * 线上链接：`https://apivale.com/blog/cloudflare-clef-vs-jev-pricing-agent-guide/`
 * **调整背景与实测数据驱动（页面军师/哥飞体检引擎诊断）**：
   * **原总分已由 96 飙升至 99 分 (A 级)**：聚焦度 100%，Title/H1 双认领，当页直出 378ms；密度榜加权扣分项已全部被清零消灭；
   * **唯 1 扣分项**：正文词数超标 142 词（全页 1942 词，超过 1800 满分线，扣 1 分）；
@@ -219,7 +219,7 @@
 
 * **影响页面/路由与线上链接**：
   * 新建页面：`/blog/cloudflare-clef-vs-jev-pricing-agent-guide/` (`src/content/blog/cloudflare-clef-vs-jev-pricing-agent-guide.md`)
-  * 线上链接：`https://apivel.com/blog/cloudflare-clef-vs-jev-pricing-agent-guide/`
+  * 线上链接：`https://apivale.com/blog/cloudflare-clef-vs-jev-pricing-agent-guide/`
   * 织网老页面：
     * `/blog/typesafe-jev-ai-model-deepseek-v4-guide/`
     * `/blog/strata-qwen-setup-benchmarks/`
@@ -246,7 +246,7 @@
 
 * **影响页面/路由与线上链接**：
   * 主优化页面：`/blog/claude-haiku-5-5-pricing-alternatives-guide/` (`src/content/blog/claude-haiku-5-5-pricing-alternatives-guide.md`)
-  * 线上链接：`https://apivel.com/blog/claude-haiku-5-5-pricing-alternatives-guide/`
+  * 线上链接：`https://apivale.com/blog/claude-haiku-5-5-pricing-alternatives-guide/`
 * **调整背景与实测数据驱动**：
   * 哥飞体检显示总词数已由 2290 降至 1938 词，距离 1800 满分线仅超 138 词；
   * `0 20` 杂质已被彻底清零，第二意图成功进化为高净值词 `claude code cli`；
@@ -261,7 +261,7 @@
 
 * **影响页面/路由与线上链接**：
   * 主优化页面：`/blog/claude-haiku-5-5-pricing-alternatives-guide/` (`src/content/blog/claude-haiku-5-5-pricing-alternatives-guide.md`)
-  * 线上链接：`https://apivel.com/blog/claude-haiku-5-5-pricing-alternatives-guide/`
+  * 线上链接：`https://apivale.com/blog/claude-haiku-5-5-pricing-alternatives-guide/`
 * **调整背景与实测数据驱动（页面军师最新体检诊断）**：
   * **⚠ 赛道错位警报**：哥飞分词引擎误将 `5.5` 中的小数点作为截断符，导致推断词变成了民间猜测旧词 `claude haiku 5`（缺失 `.5`），而 Google US 该词前十多为旧帖（Haiku 4.5 与 Sonnet 5 对比），从而误触发“赛道错位”；
   * **杂质候选意图污染**：正文与 CTA 频繁出现 `$0.20`，被分词引擎剥离后拼成高频词 `0 20`，污染了模型核心主题；
@@ -279,7 +279,7 @@
 
 * **影响页面/路由与线上链接**：
   * 新增发布页面：`/blog/claude-haiku-5-5-pricing-alternatives-guide/` (`src/content/blog/claude-haiku-5-5-pricing-alternatives-guide.md`)
-  * 线上链接：`https://apivel.com/blog/claude-haiku-5-5-pricing-alternatives-guide/`
+  * 线上链接：`https://apivale.com/blog/claude-haiku-5-5-pricing-alternatives-guide/`
   * 双向内链织网老页面：
     * `/blog/ox-alpha-claude-code-cursor-setup/` (`src/content/blog/ox-alpha-claude-code-cursor-setup.md`)
     * `/blog/how-to-connect-qwen-3-7-to-claude-code-cli/` (`src/content/blog/how-to-connect-qwen-3-7-to-claude-code-cli.md`)
@@ -314,7 +314,7 @@
 
 * **影响页面/路由与线上链接**：
   * 主优化页面：`/blog/vidu-s2-architecture-api-guide/` (`src/content/blog/vidu-s2-architecture-api-guide.md`)
-  * 线上链接：`https://apivel.com/blog/vidu-s2-architecture-api-guide/`
+  * 线上链接：`https://apivale.com/blog/vidu-s2-architecture-api-guide/`
 * **调整背景与算法切词机制深入诊断**：
   * **4 词拼接误判**：由于原 Title 为 `Vidu S2: Spatial Video...`，哥飞与 Google 语法树将冒号前后合并切分出了 `vidu s2 spatial video` 这个偏门学术短语，再次判定与该词的 SERP（全是 ArXiv 论文与官方发布稿）“赛道错位”；
 * **具体落地优化动作**：
@@ -330,7 +330,7 @@
 
 * **影响页面/路由与线上链接**：
   * 主优化页面：`/blog/vidu-s2-architecture-api-guide/` (`src/content/blog/vidu-s2-architecture-api-guide.md`)
-  * 线上链接：`https://apivel.com/blog/vidu-s2-architecture-api-guide/`
+  * 线上链接：`https://apivale.com/blog/vidu-s2-architecture-api-guide/`
 * **调整背景与 Google Trends 数据驱动验证**：
   * **搜索量级天差地别 (100 vs 0)**：Google Trends 监控证实 `vidu s2` 指数高达 100（Breakout 暴涨），而孤立的 `vidu s2 api` 当前热度为 0。若强行将主词孤立限制在 `vidu s2 api`，天花板被严重锁死；
   * **用户还搜索了 (Related Searches)**：深度检索证实，用户搜索母词 `Vidu S2` 后，长尾痛点高度聚焦在 `Vidu api 价格`、`Vidu api 文档`、`Vidu Stream`；
@@ -347,7 +347,7 @@
 
 * **影响页面/路由与线上链接**：
   * 主优化页面：`/blog/vidu-s2-architecture-api-guide/` (`src/content/blog/vidu-s2-architecture-api-guide.md`)
-  * 线上链接：`https://apivel.com/blog/vidu-s2-architecture-api-guide/`
+  * 线上链接：`https://apivale.com/blog/vidu-s2-architecture-api-guide/`
 * **调整背景与实测数据驱动（页面军师/哥飞体检最新诊断）**：
   * **⚠ 赛道错位警报**：页面军师诊断指出，原标题包含 `Architecture` 导致主词被误推断为 `vidu s2 architecture`。Google 该词前十几乎全是 ArXiv 原件和学术讨论（商业转化价值为 0），且前十标题不含该词，触发“赛道错位”；
   * **Description 扣分 (丢 1.3 分)**：原 Description 缺少 `architecture` 词项，导致单词命中率仅 67%；
@@ -368,7 +368,7 @@
 * **影响页面/路由与线上链接**：
   * 主优化页面：`/blog/vidu-s2-architecture-api-guide/` (`src/content/blog/vidu-s2-architecture-api-guide.md`)
   * 协同主力流量页：`/blog/ox-alpha-claude-code-cursor-setup/` (`src/content/blog/ox-alpha-claude-code-cursor-setup.md`)
-  * 线上链接：`https://apivel.com/blog/vidu-s2-architecture-api-guide/`
+  * 线上链接：`https://apivale.com/blog/vidu-s2-architecture-api-guide/`
 * **调整背景与实测数据驱动（页面军师/哥飞体检关键洞察）**：
   * **域名侧阵地割裂诊断**：页面军师指出全站主力自然流量来自 `ox-alpha-claude-code-cursor-setup`（月搜数百），与多模态模型不同族且“现有阵地辐射不到本页”；
   * **3 词榜致命丢分 (0/8，丢 4.9 分)**：此前因表格非目标短语（`Asynchronous Queue`）重复占据前列，导致目标核心 3 词未进 Top 10；
@@ -388,7 +388,7 @@
 
 * **影响页面/路由与线上链接**：
   * 主优化页面：`/blog/vidu-s2-architecture-api-guide/` (`src/content/blog/vidu-s2-architecture-api-guide.md`)
-  * 线上链接：`https://apivel.com/blog/vidu-s2-architecture-api-guide/`
+  * 线上链接：`https://apivale.com/blog/vidu-s2-architecture-api-guide/`
 * **调整背景与实测数据驱动（页面军师/哥飞体检最新诊断）**：
   * 页面军师复测升至 **On Page 98 分 (A)**，但剩余两处微调扣分（丢 2.5 分）：
     1. **△ 关键词密度 3.93% 偏高（丢 1.5 分）**：多词词组 `vidu s2` 超过 3% 红线，触发 SpamBrain 过度优化警告；
@@ -403,7 +403,7 @@
 
 * **影响页面/路由与线上链接**：
   * 主优化页面：`/blog/vidu-s2-architecture-api-guide/` (`src/content/blog/vidu-s2-architecture-api-guide.md`)
-  * 线上链接：`https://apivel.com/blog/vidu-s2-architecture-api-guide/`
+  * 线上链接：`https://apivale.com/blog/vidu-s2-architecture-api-guide/`
 * **调整背景与实测数据驱动（页面军师/哥飞体检二次体检）**：
   * 哥飞 SEO 体检初测打出 **On Page 93 分 (A)**，但暴露三大扣分项（丢 8.5 分）：
     1. **△ H1 主标题（丢 2.5 分）**：Astro 模板自带 `<h1 class="post-title">`，Markdown 顶部多余 `#` 导致整页出现 2 个 H1，主题信号分散；
@@ -423,7 +423,7 @@
 
 * **影响页面/路由与线上链接**：
   * 主优化页面：`/blog/vidu-s2-architecture-api-guide/` (`src/content/blog/vidu-s2-architecture-api-guide.md`)
-  * 线上链接：`https://apivel.com/blog/vidu-s2-architecture-api-guide/`
+  * 线上链接：`https://apivale.com/blog/vidu-s2-architecture-api-guide/`
 * **调整背景与实测数据驱动**：
   * **Google Trends Breakout (>5,000%)**：监控显示 `vidu s2` 在美国加州（California）出现 100% 集中度的爆发式搜索，搜索下拉长尾高度聚焦在 `real-time interactive editable and spatial video generation`、`vidu s2 arxiv`、`vidu s2 github`、`vidu s2-avatar`。
   * **GEO 与开发者痛点洞察**：
@@ -456,7 +456,7 @@
 
 * **影响页面/路由与线上链接**：
   * 主优化页面：`/blog/gpt-6-1-codex-sol-api-pricing-benchmarks/` (`src/content/blog/gpt-6-1-codex-sol-api-pricing-benchmarks.md`)
-  * 线上链接：`https://apivel.com/blog/gpt-6-1-codex-sol-api-pricing-benchmarks/`
+  * 线上链接：`https://apivale.com/blog/gpt-6-1-codex-sol-api-pricing-benchmarks/`
 * **调整背景与实测数据驱动（页面军师/哥飞体检二次诊断）**：
   * **P0 堆砌扣分与赛道警报**：上一版推断词虽成功夺回 `gpt 6 1 codex`（聚焦 100%），但体检暴露两大硬伤：
     1. **多词词组密度 6.39% 超标（丢 1.5 分）**：多词词组超过 3% 触发 SpamBrain 关键词堆砌高危拦截；
@@ -476,7 +476,7 @@
 
 * **影响页面/路由与线上链接**：
   * 主优化页面：`/blog/is-openrouter-free-tier-limits/` (`src/content/blog/is-openrouter-free-tier-limits.md`)
-  * 线上链接：`https://apivel.com/blog/is-openrouter-free-tier-limits/`
+  * 线上链接：`https://apivale.com/blog/is-openrouter-free-tier-limits/`
 * **调整背景与 GSC 24h 痛点诊断**：
   * **P0 级高排名 0 点击急救**：GSC 24 小时报表揭示，该博文高居 Google 搜索 **第 4.6 位（首页前五）**，斩获 **66 次高频展现**，但点击为 0（**CTR 0%**），是全站最大点击浪费源之一。
   * **搜索意图与 GEO 诊断**：
@@ -505,7 +505,7 @@
 
 * **影响页面/路由与线上链接**：
   * 主优化页面：`/blog/omniroute-claude-code-setup/` (`src/content/blog/omniroute-claude-code-setup.md`)
-  * 线上链接：`https://apivel.com/blog/omniroute-claude-code-setup/`
+  * 线上链接：`https://apivale.com/blog/omniroute-claude-code-setup/`
 * **调整背景与 GSC 24h 痛点诊断**：
   * **P0 级高展现低 CTR 急救**：GSC 24 小时报表揭示，该博文累计斩获 **180 次高频展现（全站第二高，排名第 7.1 位）**，但仅产生 **1 次点击（CTR 0.6%）**，流量严重浪费。
   * **搜索意图与 GEO 诊断**：
@@ -532,7 +532,7 @@
 ### 📅 2026-10-06 - 📝 [新博文发布 & 前沿借势降维引流]: 上线《Claude Sonnet 5.5 API Pricing, Benchmarks & Dual-Engine Cost Guide》，借势 9.28 爆发热点精准引流中国大模型矩阵
 
 * **影响页面/路由与线上链接**：
-  * **全新发布**：`src/content/blog/claude-sonnet-5-5-api-pricing-claude-code-guide.md` (`https://apivel.com/blog/claude-sonnet-5-5-api-pricing-claude-code-guide/`)
+  * **全新发布**：`src/content/blog/claude-sonnet-5-5-api-pricing-claude-code-guide.md` (`https://apivale.com/blog/claude-sonnet-5-5-api-pricing-claude-code-guide/`)
   * **双向内链织网老博文**：
     1. `src/content/blog/claude-opus-vs-gpt-5-5-for-coding.md`
     2. `src/content/blog/how-to-connect-qwen-3-8-to-claude-code-cli.md`
@@ -557,7 +557,7 @@
 ### 📅 2026-10-06 - 📝 [新博文发布 & 前沿主题集群织网]: 上线《Strata Qwen Setup: Run 125B MoE on 12GB VRAM》，捕获全网 Breakout 级暴涨流量并完成原子双向内链闭环
 
 * **影响页面/路由与线上链接**：
-  * **全新发布**：`src/content/blog/strata-qwen-setup-benchmarks.md` (`https://apivel.com/blog/strata-qwen-setup-benchmarks/`)
+  * **全新发布**：`src/content/blog/strata-qwen-setup-benchmarks.md` (`https://apivale.com/blog/strata-qwen-setup-benchmarks/`)
   * **双向内链织网老博文**：
     1. `src/content/blog/qwen-3-8-flash-next-benchmarks-api-guide.md`
     2. `src/content/blog/how-to-connect-qwen-3-8-to-claude-code-cli.md`
@@ -623,12 +623,12 @@
 ### 📅 2026-10-04 - 📝 [内链拓扑网络与集群导航强化]: 《OpenRouter Free Tier》与《Cursor BYOK》全站双向内链网格织入与集群导航卡片闭环部署
 
 * **影响页面/路由与线上链接**：
-  * 主页面 1：`/blog/is-openrouter-free-tier-limits/` (`src/content/blog/is-openrouter-free-tier-limits.md`) → `https://apivel.com/blog/is-openrouter-free-tier-limits/`
-  * 主页面 2：`/blog/cursor-pro-vs-custom-api-key/` (`src/content/blog/cursor-pro-vs-custom-api-key.md`) → `https://apivel.com/blog/cursor-pro-vs-custom-api-key/`
+  * 主页面 1：`/blog/is-openrouter-free-tier-limits/` (`src/content/blog/is-openrouter-free-tier-limits.md`) → `https://apivale.com/blog/is-openrouter-free-tier-limits/`
+  * 主页面 2：`/blog/cursor-pro-vs-custom-api-key/` (`src/content/blog/cursor-pro-vs-custom-api-key.md`) → `https://apivale.com/blog/cursor-pro-vs-custom-api-key/`
   * 协同注入内链页面：
-    * `/blog/opencode-paypal-billing-api-proxy-guide/` → `https://apivel.com/blog/opencode-paypal-billing-api-proxy-guide/`
-    * `/blog/how-to-reduce-opencode-token-costs/` → `https://apivel.com/blog/how-to-reduce-opencode-token-costs/`
-    * `/blog/openrouter-alternatives/` → `https://apivel.com/blog/openrouter-alternatives/`
+    * `/blog/opencode-paypal-billing-api-proxy-guide/` → `https://apivale.com/blog/opencode-paypal-billing-api-proxy-guide/`
+    * `/blog/how-to-reduce-opencode-token-costs/` → `https://apivale.com/blog/how-to-reduce-opencode-token-costs/`
+    * `/blog/openrouter-alternatives/` → `https://apivale.com/blog/openrouter-alternatives/`
 * **调整背景与内链孤岛排查**：
   * **内链审计诊断**：针对今日完成 TDK 与内容精细化优化的两篇急救博文进行内部链接拓扑复核：
     1. 《Cursor BYOK》在全站已有超过 15 篇高质量博文及核心落地页（如 `qwen-3-8-cursor-setup`, `ox-alpha-claude-code-cursor-setup`, `llm-gateway.astro` 等）的强锚文本入链，网络权重充足；但文末缺少主题集群推荐卡片。
@@ -654,7 +654,7 @@
 
 * **影响页面/路由**：
   * 主优化页面：`/blog/cursor-pro-vs-custom-api-key/` (`src/content/blog/cursor-pro-vs-custom-api-key.md`)
-  * 线上链接：`https://apivel.com/blog/cursor-pro-vs-custom-api-key/`
+  * 线上链接：`https://apivale.com/blog/cursor-pro-vs-custom-api-key/`
 * **调整背景与搜索意图深度纠偏**：
   * **P0 级高展现 0 点击急救页**：GSC 24 小时实时数据显示该页面在 **Google 排名第 6.6 位**，累计获得 **74 次展现**，但 **点击为 0（CTR 0%）**。
   * **核心主词绝对锁定为 `cursor byok`**：
@@ -683,7 +683,7 @@
 
 * **影响页面/路由与线上链接**：
   * 主优化页面：`/blog/is-openrouter-free-tier-limits/` (`src/content/blog/is-openrouter-free-tier-limits.md`)
-  * 线上链接：`https://apivel.com/blog/is-openrouter-free-tier-limits/`
+  * 线上链接：`https://apivale.com/blog/is-openrouter-free-tier-limits/`
 * **调整背景与搜索意图洞察**：
   * **P0 级高排名低点击急救页**：GSC 24 小时实时数据显示该页面已冲上 **Google 搜索结果第 3.7 位**，获得 **92 次高频展现**，但 **点击为 0（CTR 0%）**。
   * **Google 实测搜索意图诊断**：
@@ -1730,7 +1730,7 @@
   1. **GitHub 顶流开源项目高价值技术反链（DA 96+ 权重直传）**：
      * **外链目标**：`https://github.com/momokli/openclaw-deploy/issues/77`（Issue: `[models] Catalog-Drift: deepseek-flash vs deepseek-v4-flash je Agent-Kontext`）
      * **技术上下文**：针对维护者在 Agent 自动化调度中遇到的 `deepseek-v4-flash` 与 `deepseek-flash` 命名漂移报错，以及对“`deepseek-flash` 是否原生支持 vision”的疑虑，提供精准的官方架构证实（9 月 10 日统一多模态视觉 + 1M 窗口），并附带一套完整的 TypeScript 双向别名规范化解析器源码（防 429 速率限制与子代理失效）。
-     * **自然引用外链**：在文末作为深入基准与重试策略指南自然引用：`[DeepSeek V4.1 Flash API Architecture & Transition Guide](https://apivel.com/blog/deepseek-v4-flash-api-guide/)`，排版标准、100% 存活，提供真实工程价值。
+     * **自然引用外链**：在文末作为深入基准与重试策略指南自然引用：`[DeepSeek V4.1 Flash API Architecture & Transition Guide](https://apivale.com/blog/deepseek-v4-flash-api-guide/)`，排版标准、100% 存活，提供真实工程价值。
   2. **X.com 官方主号发布防限流 Thread Hook 矩阵（社交信号与公域截流）**：
      * **推文目标**：X 账号 `@Jackmo4578` 发布针对工程师工作流痛点的专属技术推文。
      * **双推策略落地**：主推文以 437 t/s 吞吐性能、1.4% 旗舰成本、官方 20 RPM 限制与隐蔽降级为钩子（纯技术干货不带外链，规避推特降权算法）；首评（Reply）无缝挂载完整博客链接，自动渲染出 `apivale.com` 官方博文 Rich Preview 卡片大图，形成完整闭环引流。
@@ -1746,7 +1746,7 @@
   1. **GitHub 顶流开源仓库技术外链（权重天花板）**：
      * **外链目标**：`https://github.com/NousResearch/hermes-agent/issues/107389`
      * **技术上下文**：针对 Unsloth 创始人 Daniel Han、Albert Gu 等顶级 AI 科学家集聚的“`deepseek-flash` 被底层客户端静默降级重写回 `deepseek-chat`”硬核争论，落地 90% 源码级分析与 Python 防护代码（阐明丢失原生多模态视觉、丢失 400+ t/s 吞吐、丢失 Thinking Tokens 危害）。
-     * **锚文本与链接**：文末以中立技术参考源自然引用：`[DeepSeek V4.1 Flash API Architecture & Model Transition Guide](https://apivel.com/blog/deepseek-v4-flash-api-guide/)`。
+     * **锚文本与链接**：文末以中立技术参考源自然引用：`[DeepSeek V4.1 Flash API Architecture & Model Transition Guide](https://apivale.com/blog/deepseek-v4-flash-api-guide/)`。
   2. **X.com (Twitter) 顶流大 V 抢占首批前排卡片神评**：
      * **推广目标**：顶流产品与技术博主 Pawel Huryn（@PawelHuryn，数十万粉丝）关于《Qwen 3.8-Flash vs. DeepSeek V4.1 Flash 抓 Bug 速度与成本精算》刚发 1 小时的新推文。
      * **评论落地**：成功在首排发布 270 字符精练点评（解析 43 min vs 97 min 的 400+ t/s 算力优势与 20 并发 429 瓶颈），并自动渲染出 `apivale.com` 官方博文完整 Rich Preview 卡片大图，直接截流海外工程师公域流量。
@@ -1772,7 +1772,7 @@
 * **影响页面/关键词**：/blog/deepseek-v4-flash-api-guide/ (deepseek v4.1 flash, deepseek-flash, deepseek 0910, model_mismatch, deepseek-v4.1-flash-expires-on-0910, deepseek claude code cli, stream_options include_usage)
   * 外链源 1: `https://github.com/steven5210/astra-fable-project-room/issues/59` (针对首包返回 `deepseek-flash` 触发 `model_mismatch` 提供严格规范的 Canonical Alias Set TypeScript 校验函数，并证明 V4.1 多模态真实交付)
   * 外链源 2: `https://github.com/can1357/oh-my-pi/issues/11508` (针对客户端 Catalog 命名权衡给出双别名注册建议，规避 #11511 丢失 thinking 参数缺陷，并警示 Anthropic 协议下流式 usage 必需参数)
-* **动作详情**：基于“90% 实打实代码与技术排错 + 10% 自然出处”的纯白帽精准布道打法：1) 针对客户端校验严格的开发者提供生产级双别名平滑兼容代码，正面打消其对 V4.1 原生视觉与 437 t/s 推理性能的疑虑；2) 针对主流工具链 Catalog 维护者的 4 个架构争议提供第一手真实生产网关建议，并自然带入 `https://apivel.com/blog/deepseek-v4-flash-api-guide/` 作为基准测试与协议配置落地指南。
+* **动作详情**：基于“90% 实打实代码与技术排错 + 10% 自然出处”的纯白帽精准布道打法：1) 针对客户端校验严格的开发者提供生产级双别名平滑兼容代码，正面打消其对 V4.1 原生视觉与 437 t/s 推理性能的疑虑；2) 针对主流工具链 Catalog 维护者的 4 个架构争议提供第一手真实生产网关建议，并自然带入 `https://apivale.com/blog/deepseek-v4-flash-api-guide/` 作为基准测试与协议配置落地指南。
 * **预期因果假设**：借助 GitHub 超高域名权重（Domain Authority 96+）及与 0910 故障完全吻合的超强技术上下文，向 Google 注入高质量反向链接与实体语义关联；预计 3~7 天内随着两篇 Issue 被 Googlebot 抓取建立索引，拦截开发者搜索报错代码（`model_mismatch`、`deepseek-v4.1-flash-expires-on-0910`）的长尾技术流量，并协同带动落地页在 Google SERP 首页 Top 3 的排位固化。
 
 ### 📅 2026-09-10 - 📝 [内容动作]: 针对突发热点 "DeepSeek V4.1 Flash (0910 正式转正与全网实测)" 执行核心落地页全面重构与 CRO 注入：1) 迎合 0910 当日 beta 截止，将 MetaTitle 升级为 `DeepSeek V4.1 Flash API & Pricing Guide (0910) | APIVALE`（严格 56 字符）；2) 引用全网真实一手社区原声（X 知名工程师 Ivan Fioravanti 实测 350+ t/s 但官方在高负荷下 "failing quite often" 报错实况），直击官方并发 429 痛点；3) 注入实测客观对比表（包含 Geeky Gadgets 权威评测 437 t/s、Terminal Bench 2.1 84.2 分、Reddit/Singularity 98% Astra 分数比对）；4) 注入响应式 CRO 交互微工具（实时计算对比 Claude Sonnet 5 节省 97% 账单，一键复制 Cursor/Claude Code 配置）；5) 补齐 FAQ H2 语义树与完整 FAQPage JSON-LD Schema；6) 与 `deepseek-harness-custom-api-key-rate-limit-fix` 和 `deepseek-v4-flash-vision-api-guide` 完成双向网状内链织网。
@@ -2054,14 +2054,14 @@
 | **2026-08-16** | 📝 [内容动作] | **基于 SEO 体检与核心关键词审计，重构并全面优化文章 `/blog/how-to-connect-qwen-3-8-to-claude-code-cli`**：<br/>1. **核心关键词精准对齐 (主攻：`Qwen 3.8`)**：将页面核心焦点调整为 `Qwen 3.8`，Meta Title 优化为 `Connect Qwen 3.8 to Claude Code CLI & Cursor | APIVALE`（56字符），H1 优化为 `How to Connect Qwen 3.8 to Claude Code CLI & Cursor`；<br/>2. **消除全页标题跳级 (解决 -1.5 分扣分项)**：剥离 HTML 组件中非梯队 `<h4>` 标签，消除跨级跳跃，全面落实 1 个 H1 -> H2 -> H3 的 AST 树状结构与 Symmetric Sub-node Rule（对称子节点规范）；<br/>3. **精简优化正文篇幅 (解决 -1.0 分扣分项)**：将冗余与重复段落精简至最佳目标区间，避免主题稀释；<br/>4. **合规与“独特性 4 个 1”落地**：完备集成 PAS 引言、E-E-A-T 锚点、PayPal 全球支付强调、15+ 行 TypeScript Express Proxy 生产级代码、以及 FAQSchema 结构化数据。 |
 | **2026-08-16** | 📝 [内容动作] | **上线爆款新文章 `/blog/deepseek-harness-custom-api-key-rate-limit-fix`（主攻 Google Trends >5,000% 暴涨热词：`deepseek harness custom api key`, `dsh 429 rate limit fix`, `deepseek harness cli setup`）**：<br/>1. 抢占 DeepSeek AI 最新发布的开源 Agent 框架 DeepSeek Harness (dsh) 爆火流量，轮换作者为 **Kenji Tanaka**（AI Developer Relations Engineer）；<br/>2. Title Tag 精准压至 59 字符 (`DeepSeek Harness API Key Setup: Fix 429 Rate Limits | APIVALE`)，URL 匹配 `deepseek-harness-custom-api-key-rate-limit-fix`；<br/>3. 正文全面覆盖用户下拉框与 Trends 核心意图：解释 `dsh` 多 Agent 循环触发 `429 Rate Limit` 与 `503 Overload` 的底层根因、10,000+ API 次请求的实测吞吐量对比表格（2,000 RPM vs 100 RPM）、配置 `~/.dsh/.credentials.yaml` 自定义 `base_url` 与 API Key 教程（包含 **PayPal 全球支付** 与免 KYC 优势）；<br/>4. 落地定义框、25+ 行带 429/502 自动重试退避与降级至 `infer/qwen3.7-max` 的 TypeScript 生产级 Failover 代理解析、FAQ Schema 结构化数据。 |
 | **2026-08-14** | 📝 [内容动作] | **上线爆款新文章 `/blog/gemini-3-7-flash-claude-code-setup`（主攻 Google Trends 暴涨词：`gemini 3.7 flash pricing`, `gemini 3.7 flash benchmark`, `gemini 3.7 flash cursor setup`）**：<br/>1. 抢占 Google AI 刚发布的旗舰代码模型 Gemini 3.7 Flash 爆发流量，轮换作者为 **Sofia Costa**（FinTech Integration & API Security Expert）；<br/>2. Title Tag 精准压至 53 字符 (`Gemini 3.7 Flash Pricing & Coding Setup Guide | APIVALE`)，URL 契合 `gemini-3-7-flash-claude-code-setup`；<br/>3. 正文全面覆盖用户下拉框与 Trends 三大意图：Pricing 成本对比（对比 official Google / Claude Sonnet 5 / DeepSeek V4）、SWE-bench 代码性能 benchmark、Cursor 与 Claude Code CLI 直连接入指南、解决海外开发者无外币卡免 KYC 与 **PayPal 全球支付** 痛点；<br/>4. 落地定义框、25+ 行带 429/502 自动降级至 `infer/qwen3.7-max` 及 SSE 流式传输的 TypeScript 生产级代码、FAQ Schema 结构化数据。 |
-| **2026-08-14** | 📝 [内容动作] | **上线爆款新文章 `/blog/connect-glm-5-3-to-claude-code-cli-cursor`（主攻搜索与下拉热词：`glm-5.3 to claude`, `connect glm-5.3`, `3 to claude code`）**：<br/>1. 抢占智谱旗舰 GLM-5.3（700B）发布热度与 DeepSeek V4 涨价窗口，轮换作者为 **Kenji Tanaka**（AI Developer Relations Engineer）；<br/>2. Title Tag 精准压至 55 字符 (`Connect GLM-5.3 to Claude Code CLI & Cursor | APIVALE`)，URL 匹配 `connect-glm-5-3-to-claude-code-cli-cursor` 达 100% 覆盖率；<br/>3. 正文全面覆盖用户下拉框与 PAA 四大意图：GLM-5.3 官方评测与 Reddit 口碑、API 价格与免费模式解答、在 Claude Code CLI / Cursor 中通过 `https://apivel.com/v1` 原生转接、解决海外用户免 +86 KYC 与 **PayPal 全球支付** 痛点；<br/>4. 落地定义框、15+ 行带 429/502 自动降级至 DeepSeek V4 Pro 及 SSE 流式传输的 TypeScript 生产级代码、FAQ Schema 结构化数据。 |
+| **2026-08-14** | 📝 [内容动作] | **上线爆款新文章 `/blog/connect-glm-5-3-to-claude-code-cli-cursor`（主攻搜索与下拉热词：`glm-5.3 to claude`, `connect glm-5.3`, `3 to claude code`）**：<br/>1. 抢占智谱旗舰 GLM-5.3（700B）发布热度与 DeepSeek V4 涨价窗口，轮换作者为 **Kenji Tanaka**（AI Developer Relations Engineer）；<br/>2. Title Tag 精准压至 55 字符 (`Connect GLM-5.3 to Claude Code CLI & Cursor | APIVALE`)，URL 匹配 `connect-glm-5-3-to-claude-code-cli-cursor` 达 100% 覆盖率；<br/>3. 正文全面覆盖用户下拉框与 PAA 四大意图：GLM-5.3 官方评测与 Reddit 口碑、API 价格与免费模式解答、在 Claude Code CLI / Cursor 中通过 `https://api.apivale.com/v1` 原生转接、解决海外用户免 +86 KYC 与 **PayPal 全球支付** 痛点；<br/>4. 落地定义框、15+ 行带 429/502 自动降级至 DeepSeek V4 Pro 及 SSE 流式传输的 TypeScript 生产级代码、FAQ Schema 结构化数据。 |
 | **2026-08-12** | 📝 [内容动作] | **上线爆款新文章 `/blog/grok-bot-api-setup-pricing-troubleshooting`（主攻爆量父级词：`grok bot`，次级词：`grok bot cursor`, `grok bot in telegram`, `grok bot pricing`, `grok not working`）**：<br/>1. 抢占 Google Trends 指数垂直飙升至 80~100 的超级热词 `grok bot`，轮换作者为 **Kenji Tanaka**（AI Developer Relations Engineer）；<br/>2. Title Tag 精准控制在 58 字符 (`Grok Bot API Setup, Pricing & Fix Not Working | APIVALE`)，前置抓取主词 `grok bot` 并附带 ABC 标题公式与 `| APIVALE` 品牌后缀；<br/>3. 正文全面覆盖用户下拉框四大意图群：Cursor/Telegram/Discord 接入指南、Grok Bot 与 Grok 4.6 价格比价（强调 **PayPal 全球支付**）、解决 HTTP 429 崩溃与 "Grok Not Working High Demand" 报错解决方案；<br/>4. 落地定义框、15+ 行带指数退避与 Failover 重试机制的 Python 生产级代码、FAQ Schema 结构化数据。 |
 | **2026-08-10** | 📝 [内容动作] | **上线新文章 `/blog/openai-doug-pretraining-model-alternatives` 剖析 OpenAI Doug 预训练技术趋势与 3 大替代旗舰模型（主攻关键词：`openai doug api`）**：<br/>1. 深度分析 OpenAI 爆料模型 Doug 与 Garlic 的预训练 Scaling Reset 逻辑，以及 Gemini 3 带来的竞争倒逼；<br/>2. 针对 Doug 尚无公开 API 的痛点，提出《The 3-Tier Multi-Gateway LLM Arbitrage & Failover Triangle》三级模型容错与降本架构，推荐 **Claude Sonnet 5**、**Qwen 3.8 Max** (`infer/qwen3.8-max`) 与 **DeepSeek V4** (`infer/deepseek-v4-pro`) 作为当下生产级替代；<br/>3. Title Tag 严格控制在 57 字符 (`OpenAI Doug Leaks & Top 3 LLM Alternatives (2026) | APIVALE`)，Meta Description 压至 160 字符；<br/>4. 提供 15+ 行完整 TypeScript 动态路由与指数退避重试代理代码，集成 **PayPal 全球支付** 与 FAQ Schema 结构化数据。 |
 | **2026-08-09** | 📝 [内容动作] | **根据 SEO 终极体检复核报告对 `/blog/openrouter-alternatives` 完成 100% 满分精修**：<br/>1. **Title 长度精准压至 55 字符 (解 60 字符截断扣分)**：缩短 Title Tag 为 `5 Best OpenRouter Alternatives (PayPal Billing) | APIVALE` (55字符)，避免搜索结果截断；<br/>2. **消除全页标题层级跳级 (丢1.5分)**：将 `Layout.astro` 底部 Footer 及文章底部 Author Box 内的 `<h4>` 全部重构为 CSS `.footer-col-title`，全页消除非法跳级；<br/>3. **突破 3/4/5 词短语密度榜 (丢5.9分)**：自然植入 `5 best OpenRouter alternatives in 2026` 与 `best OpenRouter alternatives` 核心长尾组，全面登顶 1~5 词密度榜首；<br/>4. **彻底消除 CLS 布局抖动**：为 `[slug].astro` 底部作者头像补全显式 `width="60" height="60"` 属性声明。 |
 | **2026-08-07** | 📝 [内容动作] | **上线新文章 `/blog/is-gpt-5-6-free-luna-terra-sol-api-guide` 并基于 Google 实时 Search Autocomplete 与 PASF 完成全量关键词重构（主攻：`is gpt 5.6 free`）**：<br/>1. 针对全网热议及实时 SERP 搜索下拉/关联推荐（`gpt 5.6 free api`, `gpt 5.6 free trial`, `gpt 5.6 free tier`, `how to access gpt 5.6 for free`, `gpt 5.6 free github`, `GPT-5.6 pricing`, `GPT-5.6 vs Fable 5`）完成 3 层关键词架构植入；<br/>2. 优化 Title Tag (`Is GPT-5.6 Free? Free Tier, Trial & API Guide | APIVALE` - 58字符) 与 Meta Description (160字符)；<br/>3. 重构 H2/H3 逻辑结构，加入《How to Access GPT-5.6 for Free》、《The Truth About GPT-5.6 Free API Scripts & GitHub Wrappers》以及与 **Claude Fable 5** 的 Benchmark 对比；<br/>4. FAQ 补充 `GPT-5.6 free trial` / `GitHub wrapper HTTP 401/403` / `Claude Fable 5 vs GPT-5.6 Sol` 直答模块。 |
 | **2026-08-05** | 🔗 [外链与推广] | **ComLinkAI 自动化控制双波冲锋：累计完成 73 条高质量技术博客反链发布与表单回链**：<br/>1. 查验并整合今日生成的全部 3 份外联日志文件：[comlinkai_publish_report_2026-08-05 (2).csv](file:///f:/旅行携带资料/kaifa/APIVALE_blog/comlinkai_publish_report_2026-08-05%20%282%29.csv)（波段A阶段 9 条）、[comlinkai_publish_report_2026-08-05 (3).csv](file:///f:/旅行携带资料/kaifa/APIVALE_blog/comlinkai_publish_report_2026-08-05%20%283%29.csv)（波段A全量 54 条）、以及最新生成的 [comlinkai_publish_report_2026-08-05 (4).csv](file:///f:/旅行携带资料/kaifa/APIVALE_blog/comlinkai_publish_report_2026-08-05%20%284%29.csv)（波段B全量 36 条）；<br/>2. **全天累计处理 90 个**独立技术/AI 目标页面，**成功发表 73 条**高质工程讨论反链评论（波段A 48条 + 波段B 25条，整体过审发表率 81.1%）；<br/>3. **覆盖 40+ 个行业顶级域名**：包括 `scriptbyai.com`, `scaler.com`, `machinelearningmastery.com`, `americanbazaaronline.com`, `sudoall.com`, `opensourceforu.com`, `aivorapulse.com`, `how2shout.com`, `radneurons.com` 等；<br/>4. **硬核技术切入**：波段A聚焦 DTO/Retry/OpenAI SDK 解耦架构，波段B深度切入 Kimi K3 的 16/896 Sparse MoE 路由、Delta Attention 机制、MXFP4 压缩及 1M 窗口下 KV Cache / 尾部延迟等顶级前沿议题，通过 Name/Website 双字段精准植入 APIVALE 品牌与官网链接，实现无垃圾风险的高权重推广。 |
 | **2026-08-04** | 📝 [内容动作] | **全站 37 篇博客 Frontmatter 三要素 (Title Tag / Description / H1) 自动化合规重构**：<br/>1. 针对 29 篇不合规文章进行批量精准修复，实现 37 篇博客 **100% 达标**；<br/>2. 统一 Meta Title 为 `50–60 字符` 且带 `| APIVALE` 品牌后缀（严格对齐 ABC 标题公式）；<br/>3. 统一 Meta Description 为 `140–160 字符`（包含高密度主动语态与 PayPal 充值/免卡/API代理核心卖点）；<br/>4. 消除 Extra H1 标签，保障 Markdown AST 层级规范。 |
-| **2026-08-03** | 🔗 [外链与推广] | **Semrush 竞品 OpenRouter 全量反链库剥离与第一波 10 大博客自动评论冲锋**：<br/>1. 通过 ComLinkAI 网页自动化全量翻页抓取 Semrush 46 个页面，构建包含 **1,206 条 openrouter.ai 独立外部反链**的 APIVALE 拓客主数据库（[openrouter_semrush_all_4600_backlinks_20260803.csv](file:///f:/旅行携带资料/kaifa/APIVALE_blog/openrouter_semrush_all_4600_backlinks_20260803.csv)）；<br/>2. 完成全量大盘分类归因（70.6% 媒体 Portal, 18.3% 科技博客, 7.8% AI 导航对比站, 3.2% 开发者网关文档）；<br/>3. 经 HTTP 响应码与 DOM 表单结构自动校验，筛选出 15+ 个 100% 连通、带 `Website` 网址框且免登录的顶级技术博客；<br/>4. **完成第一波 10 大免登录独立博客的自动化控制与表单预填**（全量使用 `APIVALE`, `support@apivale.com`, `https://apivel.com/`），自动生成包含 Azure 节点差异、DeepSeek 双格式适配、`/v1` 后缀静默失败防范、Logit Bias 参数透传、Rate-limit 限流结构等硬核工程细节的高过审英文评论，全面提升官方外链权重与开发者引流。 |
+| **2026-08-03** | 🔗 [外链与推广] | **Semrush 竞品 OpenRouter 全量反链库剥离与第一波 10 大博客自动评论冲锋**：<br/>1. 通过 ComLinkAI 网页自动化全量翻页抓取 Semrush 46 个页面，构建包含 **1,206 条 openrouter.ai 独立外部反链**的 APIVALE 拓客主数据库（[openrouter_semrush_all_4600_backlinks_20260803.csv](file:///f:/旅行携带资料/kaifa/APIVALE_blog/openrouter_semrush_all_4600_backlinks_20260803.csv)）；<br/>2. 完成全量大盘分类归因（70.6% 媒体 Portal, 18.3% 科技博客, 7.8% AI 导航对比站, 3.2% 开发者网关文档）；<br/>3. 经 HTTP 响应码与 DOM 表单结构自动校验，筛选出 15+ 个 100% 连通、带 `Website` 网址框且免登录的顶级技术博客；<br/>4. **完成第一波 10 大免登录独立博客的自动化控制与表单预填**（全量使用 `APIVALE`, `support@apivale.com`, `https://apivale.com/`），自动生成包含 Azure 节点差异、DeepSeek 双格式适配、`/v1` 后缀静默失败防范、Logit Bias 参数透传、Rate-limit 限流结构等硬核工程细节的高过审英文评论，全面提升官方外链权重与开发者引流。 |
 | **2026-08-03** | 🔗 [外链与推广] | 完成 10 条高质量免登录/允许 Guest 评论的技术博客反链发布与发布页核验，覆盖 9 个技术/AI 垂直域名（网页主题涉及 Gemini Flash 2.0 1M 上下文、GPT-OSS MoE 路由、Thinking Tokens 及 Claw Code 等）：<br/>1. `office365itpros.com` (`.../m365mutator-test-data/`)<br/>2-3. `software.amato.com.br` (`.../spamanvil-antispam-plugin-for-wordpress/` *2条*)<br/>4. `www.how2shout.com` (`.../openrouter-fusion-multi-model-ai-deep-research.html`)<br/>5. `mspoweruser.com` (`.../developers-are-loving-googles-new-gemini-flash-2-0-so-much/`)<br/>6. `www.salesforceben.com` (`.../i-tested-claude-fable-on-3-use-cases...`)<br/>7. `brimmatech.com` (`.../an-ai-llm-primer-why-you-might-care/`)<br/>8. `semaphore.io` (`.../blog/gpt-oss`)<br/>9. `firethering.com` (`.../trinity-large-thinking-open-source-agent-model/`)<br/>10. `computingforgeeks.com` (`.../claw-code-open-source-claude-code-alternative/`)<br/>*(注：另有 1 目标域名 `www.readtangle.com` 触发敏感词策略已被 ComLinkAI 自动拦截)* |
 | **2026-08-02** | 📝 [内容动作] | 基于 GSC 24 小时数据审计（曝光 31 次，点击率 0%，排名 9.8），重构 `/blog/minimax-h3-api-pricing-guide` 页面 Title Tag 与 Meta Description：控制字符数在 58 字符以内，植入硬核价格锚点（`$0.13/s`）与开发者痛点 hook（`PayPal`），刺激 SERP 点击率提升。 |
 | **2026-08-01** | 📝 [内容动作] | 上线新文章 `/blog/deepseek-v4-flash-api-guide`（主攻关键词：`deepseek v4 flash api`）；同步针对站内老文章完成双向内链注入，提升新文收录权重。 |
@@ -2083,7 +2083,7 @@
 | **2026-07-30** | ⚙️ [技术/UX 动作] | 修复 Cloudflare Worker 路由 bug：在 Pages 资产代理过程中自动剥离 `/blog` 前缀，解决部分静态资源 404 问题。 |
 | **2026-07-29** | ⚙️ [技术/UX 动作] | 升级文章嵌入式 Playground 交互体验：增加模型下拉选择器（支持 Qwen 3.7 Max, Kimi K3, DeepSeek V4）、预设 Prompt 模版与 150-token 成本防护墙。 |
 | **2026-07-29** | ⚙️ [技术/UX 动作] | 优化注册转化链路：将 Playground CTA 按钮直连 Sign-up 页面，用户注册返回后自动在代码框中填入实效 API Key。 |
-| **2026-07-29** | ⚙️ [技术/UX 动作] | 增强 API Key 安全显示逻辑：屏幕端显示掩码遮罩（`sk-apivel-****`），一键复制时复制完整明文 Key。 |
+| **2026-07-29** | ⚙️ [技术/UX 动作] | 增强 API Key 安全显示逻辑：屏幕端显示掩码遮罩（`sk-apivale-****`），一键复制时复制完整明文 Key。 |
 | **2026-07-29** | ⚙️ [技术/UX 动作] | 修复 SPA 路由 308 重定向 404 隐患：增加登录跳转 URL 尾部斜杠 (`/`) 标准化处理。 |
 | **2026-07-28** | 📝 [内容动作] | 基于 Google Trends 搜索趋势分析，优化 Grok 4.5 相关文章的词组组合；上线文章 `/blog/grok-4-5-vs-claude-fable-5-coding-agent-api`。 |
 
