@@ -62,6 +62,12 @@ const activeModelVal = modelMap[defaultModel] || 'infer/qwen3.7-max';
       </select>
     </div>
 
+    <!-- API Key Customizer Input (Direct On-Page Interaction) -->
+    <div class="config-field">
+      <label class="field-label" for="cliApiKeyInput">Your apivel API Key:</label>
+      <input type="text" id="cliApiKeyInput" class="config-select" value="sk-apivel-your-api-key" placeholder="Paste your API key here..." />
+    </div>
+
     <!-- Code Block Snippet Display -->
     <div class="code-snippet-box">
       <div class="snippet-header">
@@ -108,38 +114,41 @@ claude --model ${activeModelVal}`}</code></pre>
     let activeClient = 'claude-code';
 
     const templates = {
-      'claude-code': (model) => `# Export apivel OpenAI & Anthropic compatible proxy endpoint
+      'claude-code': (model, key) => `# Export apivel OpenAI & Anthropic compatible proxy endpoint
 export ANTHROPIC_BASE_URL="https://apivel.com/v1"
-export ANTHROPIC_API_KEY="sk-apivel-your-api-key"
+export ANTHROPIC_API_KEY="${key}"
 
 # Launch Claude Code CLI with target model
 claude --model ${model}`,
 
-      'cursor': (model) => `// Open Cursor Settings -> Models -> OpenAI API Key
+      'cursor': (model, key) => `// Open Cursor Settings -> Models -> OpenAI API Key
 // Set Base URL and custom API key:
 
 Base URL: https://apivel.com/v1
-API Key:  sk-apivel-your-api-key
+API Key:  ${key}
 Model:    ${model}`,
 
-      'windsurf': (model) => `// Configure Windsurf settings.json:
+      'windsurf': (model, key) => `// Configure Windsurf settings.json:
 {
   "openai.baseUrl": "https://apivel.com/v1",
-  "openai.apiKey": "sk-apivel-your-api-key",
+  "openai.apiKey": "${key}",
   "windsurf.model": "${model}"
 }`,
 
-      'opencode': (model) => `# OpenCode CLI configuration export:
+      'opencode': (model, key) => `# OpenCode CLI configuration export:
 export OPENAI_BASE_URL="https://apivel.com/v1"
-export OPENAI_API_KEY="sk-apivel-your-api-key"
+export OPENAI_API_KEY="${key}"
 
 opencode --model ${model}`
     };
 
+    const apiKeyInput = document.getElementById('cliApiKeyInput');
+
     function updateSnippet() {
       const selectedModel = modelSelect.value;
+      const keyVal = (apiKeyInput && apiKeyInput.value.trim()) ? apiKeyInput.value.trim() : 'sk-apivel-your-api-key';
       const tplFunc = templates[activeClient] || templates['claude-code'];
-      codeDisplay.innerText = tplFunc(selectedModel);
+      codeDisplay.innerText = tplFunc(selectedModel, keyVal);
 
       if (langDisplay) {
         langDisplay.innerText = activeClient === 'cursor' || activeClient === 'windsurf' ? 'JSON / CONFIG' : 'BASH';
@@ -156,6 +165,9 @@ opencode --model ${model}`
     });
 
     modelSelect.addEventListener('change', updateSnippet);
+    if (apiKeyInput) {
+      apiKeyInput.addEventListener('input', updateSnippet);
+    }
     updateSnippet();
 
     if (copyBtn) {

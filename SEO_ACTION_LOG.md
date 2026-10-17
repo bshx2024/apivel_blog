@@ -74,6 +74,13 @@
   * `https://apivel.com/public/robots.txt`
 * **因果假设**：由于 `1017` 权重属于极早期新词快照，全网尚无系统性工程评测与集成教程，该文将在 24–48 小时内登顶 Google 前三名，并凭借 FAQ Schema 与高信噪比对比表成为 Perplexity、SearchGPT、Claude 的高频首选引用源，直接拦截海量寻找 DeepSeek 低成本 API、海外支付方案与高并发路由的开发者。
 
+
+* **分类**：⚙️ [体检消扣分与承接架构升级]
+* **动作详情**：
+  * **消除纯跳转扣分（-4.5分）**：针对 Web.Cafe 军师对落地页承接的扣分规则，在 `src/components/CliConfigGenerator.astro` 增加实时 `<input>` API Key 配置交互输入框，用户直接在文章页内自定义生成 Claude Code / Cursor / Windsurf / OpenCode 一键配置；将页面所有带有暗示“纯跳转体验”的 `Try Playground Instantly` 文本调整为符合实际意图的 `Claim $0.20 Free Credit →`，确保爬虫识别为高价值当页功能承接工具页，彻底消除 4.5 分纯跳转落地页判定。
+  * **消除关键词密度过高扣分（-1.5分）**：将正文中多词词组 `DeepSeek V4.1 Flash` 从 3.16% 密集堆砌通过代词与同义词替换（`the 1017 snapshot`、`the Flash model`、`the checkpoint`）自然稀释至 2.1% 安全区间（<3% 阈值），谨防被判过度优化。
+  * **词数严格约束**：全页剥除标签后可视总词数控制在 1700–1750 词最佳黄金区间，完全符合 1200~1800 词标准。
+* **影响页面**：`https://apivel.com/blog/deepseek-v4-1-flash-1017-api-setup/`
+* **因果假设**：消除 4.5 分承接扣分与 1.5 分密度扣分后，Web.Cafe 页面画像军师评分将从 95 分直冲 100 分满分（A+），为谷歌搜索排名提供完美的 On-Page 质量信号与自然用户行为留存。
+
 ---
-
-
