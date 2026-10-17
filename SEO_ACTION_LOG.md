@@ -33,6 +33,19 @@
 ## 📅 apivel.com SEO 动作记录表 (2026年)
 
 ### 2026-10-17
+* **分类**：📝 [内容动作]
+* **动作详情**：
+  * 上线 `apivel.com` 博客首发旗舰技术博文：`/blog/claude-code-rea-setup-limits-cost/`
+  * **主攻关键词**：`claude rea`（Google Trends 飙升 >5,000% 词）、`rea claude code`、`claude reached its tool-use limit for this turn`、`claude reached its max length for this message`、`reverse engineer anything token cost`
+  * **工程增益与架构**：
+    1. 深入剖析 REA MCP 与 Ghidra 交互中触碰 15-iteration 工具递归上限及 8192 输出 Token 限制的底层成因并给出工程解法；
+    2. 建立详尽的 15M Token 逆向实测数学对比表（官方 Claude $45+ vs apivel DeepSeek V4 $2.10，省 95.3%）；
+    3. 内嵌可交互 REA 算力对比微组件与可复制生产配置；
+    4. 对齐 PayPal 即时结账、零 KYC、+50% 首充优惠及 $0.20 免卡试用；
+    5. 注入标准 `FAQPage` JSON-LD Schema，同步开放 `public/llms.txt` 与 `public/robots.txt` AI 爬虫权限。
+* **影响页面**：`https://apivel.com/blog/claude-code-rea-setup-limits-cost/`
+* **因果假设**：同时拦截热搜新词与高频报错长尾流量，首句 BLUF 答案前置与高密度 Markdown 对比表将推动该文在 7-14 天内被 Google Position Zero 及 AI 搜索引擎（Perplexity、ChatGPT Search）高频引用，为 `apivel.com` 带来高留存逆向工程付费用户。
+
 * **分类**：⚙️ [技术/UX 动作]
 * **动作详情**：
   * 完成 `apivel.com` 专属博客仓库彻底重构与重置：绑定独立 GitHub 远端 `https://github.com/bshx2024/apivel_blog.git`。

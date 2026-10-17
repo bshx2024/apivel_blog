@@ -1,11 +1,6 @@
-# APIVALE Technical Documentation & LLM Gateway
+# apivel Technical Documentation & LLM Gateway
 
-> APIVALE provides enterprise-grade, low-latency API routing gateways connecting global developers to frontier foundation models (DeepSeek V4, Qwen 3.7 Max, GLM-5.3, MiniMax H3, Kimi K3) via OpenAI- and Anthropic-compatible protocols with zero KYC, instant PayPal checkout, and 0% foreign transaction fees.
+> apivel (https://apivel.com) provides enterprise-grade, low-latency API routing gateways connecting global developers to frontier foundation models (DeepSeek V4, Qwen 3.8 Max, GLM-5.3, MiniMax H3, Kimi K3) via native OpenAI- and Anthropic-compatible protocols with zero KYC, instant PayPal checkout, and 0% foreign transaction fees.
 
 ## Core Model & Persistent Agent Guides
-- [OpenAI Dots API & Pricing vs Meta Muse](https://apivel.com/blog/openai-dots-api-pricing-vs-muse/): Comprehensive evaluation of OpenAI Dots API availability, Pro pricing tiers ($100/mo), background token burn, sandbox timeouts, and self-hosted OpenDots setup via APIVALE.
-- [Meta Muse AI API Setup & Pricing](https://apivel.com/blog/meta-muse-ai-api-setup/): Complete guide to Meta Model API key generation, Muse Spark 1.1 token pricing, and Model Context Protocol (MCP) tool integration.
-- [GPT-6 Astra API Pricing Guide](https://apivel.com/blog/gpt-6-astra-api-pricing-guide/): Technical benchmarks, token pricing breakdown, and proxy failover architectures for OpenAI's frontier agentic model.
-- [OpenRouter Alternatives with PayPal Billing](https://apivel.com/blog/openrouter-alternatives/): In-depth comparison of multi-provider AI gateways, card decline fixes, and PayPal instant checkout.
-- [DeepSeek V4 Flash API Guide](https://apivel.com/blog/deepseek-v4-flash-api-guide/): High-throughput reasoning model endpoints, token cost optimization, and streaming connection stabilization.
-- [How to Connect Qwen 3.8 to Claude Code CLI](https://apivel.com/blog/how-to-connect-qwen-3-8-to-claude-code-cli/): Step-by-step CLI setup, custom base URL configuration, and context window tuning.
+- [REA in Claude Code: Fix Tool Limits & Cut Token Costs](https://apivel.com/blog/claude-code-rea-setup-limits-cost/): Comprehensive engineering guide to resolving "claude reached its tool-use limit for this turn" and "max length for this message" in REA (Reverse Engineer Anything) MCP reverse engineering. Explains Ghidra pointer recursion limits, context budgeting, and cutting token expenses by 85% to 95% with DeepSeek V4 and Qwen 3.8 Max via apivel.

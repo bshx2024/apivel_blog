@@ -14,6 +14,16 @@ Allow: /sign-up/
 Allow: /sign-in
 Allow: /sign-in/
 
-Sitemap: https://apivale.com/blog/sitemap-index.xml
-Sitemap: https://apivale.com/sitemap.xml
+User-agent: GPTBot
+Allow: /blog/
+
+User-agent: ClaudeBot
+Allow: /blog/
+
+User-agent: PerplexityBot
+Allow: /blog/
+
+Sitemap: https://apivel.com/blog/sitemap-index.xml
+Sitemap: https://apivel.com/sitemap.xml
+
 
