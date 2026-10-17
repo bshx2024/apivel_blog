@@ -58,6 +58,14 @@
 
 
 
+
+## 📝 优化行动记录 (2026-10)
+
+### 📅 2026-10-17 - ⚙️ [技术/UX 动作]: GSC Performance Optimization for deepseek-v4-flash-api-guide: front-loaded Cursor and free registration bonus in metaTitle/description to boost 0% CTR on Pos 3-7 queries, added Cursor 30s parameter reference table for P0 Featured Snippets, expanded FAQ JSON-LD schema, fixed zero-alert inline UX, and upgraded CTA card to full wallet benefits.
+* **影响页面/关键词**：/blog/deepseek-v4-flash-api-guide/ (Keywords: cursor deepseek v4.1, cursor deepseek v4.1 flash, deepseek api free trial credits 2026 registration bonus)
+* **动作详情**：GSC Performance Optimization for deepseek-v4-flash-api-guide: front-loaded Cursor and free registration bonus in metaTitle/description to boost 0% CTR on Pos 3-7 queries, added Cursor 30s parameter reference table for P0 Featured Snippets, expanded FAQ JSON-LD schema, fixed zero-alert inline UX, and upgraded CTA card to full wallet benefits.
+* **预期因果假设**：Convert high-intent impressions on 'cursor deepseek v4.1' (Pos 3-7) into clicks, increasing SERP CTR from 1.7% to 5%+, while capturing Google Position 0 Featured Snippet and Perplexity/ChatGPT Search citations.
+
 ## 📝 优化行动记录 (2026-10)
 
 ### 📅 2026-10-17 - 📝 [内容动作]: Evergreen Refresh for deepseek-v4-flash-api-guide: injected H2 'DeepSeek V4 Flash 0731 Update & Latest Benchmarks' covering 0731 checkpoint aliasing and Oct 2026 pricing, updated dateModified to 2026-10-17, tags, and optimized metaTitle length to 57 chars. Avoided new article keyword cannibalization.
