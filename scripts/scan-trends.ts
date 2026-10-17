@@ -12,6 +12,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import { sendFeishuBlogAlert, BlogAlertItem } from "./notifier.js";
 
 interface EntitySeed {
   name: string;
@@ -178,6 +179,25 @@ async function scan() {
 
   console.log(`\n💡 To generate a full blog frontmatter scaffold for any keyword above:`);
   console.log(`   bun run scripts/fast-trend-probe.ts "<keyword>"\n`);
+
+  // If --alert flag is passed, dispatch top 3 opportunities to Feishu
+  const shouldAlert = process.argv.includes("--alert");
+  if (shouldAlert && uncoveredOpportunities.length > 0) {
+    console.log(`📡 Dispatching Top 3 opportunities to Feishu Webhook...`);
+    const alertItems: BlogAlertItem[] = uncoveredOpportunities.slice(0, 3).map(o => ({
+      keyword: o.query,
+      category: o.category,
+      level: "S (极速抢发)",
+      suggestedSlug: o.suggestedSlug,
+      metaTitle: `${o.query} API: Pricing, Setup & Cost Guide | APIVALE`,
+      suggestedH1: `${o.query} API & Pricing: Production Setup & Arbitrage Guide`,
+      trendsUrl: `https://trends.google.com/trends/explore?q=${encodeURIComponent(o.query)}`,
+      serpUrl: `https://www.google.com/search?q=${encodeURIComponent(o.query)}`
+    }));
+
+    const alertResult = await sendFeishuBlogAlert(alertItems);
+    console.log(`[+] Feishu Alert Result: ${alertResult.message}`);
+  }
 }
 
 scan();

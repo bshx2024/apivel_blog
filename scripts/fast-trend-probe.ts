@@ -10,8 +10,11 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import { sendFeishuBlogAlert } from "./notifier.js";
 
-const queryArg = process.argv.slice(2).join(" ").trim();
+const rawArgs = process.argv.slice(2);
+const shouldAlert = rawArgs.includes("--alert");
+const queryArg = rawArgs.filter(a => a !== "--alert").join(" ").trim();
 
 if (!queryArg) {
   console.log(`
@@ -210,6 +213,21 @@ keyTakeaways:
   suggests.slice(0, 4).forEach(s => console.log(`      - H2: ${capitalize(s)}`));
   console.log(`  • Tier 3 (Conversion & CTA): OpenAI-compatible baseURL, $0.20 trial, PayPal instant billing`);
   console.log(`\n===============================================================\n`);
+
+  if (shouldAlert) {
+    console.log(`📡 Dispatching interactive alert card to Feishu...`);
+    const res = await sendFeishuBlogAlert({
+      keyword: queryArg,
+      category: "Target Model / Agent Framework",
+      level: "S (极速抢发)",
+      suggestedSlug: copy.slug,
+      metaTitle: copy.metaTitle,
+      suggestedH1: copy.h1,
+      trendsUrl: `https://trends.google.com/trends/explore?q=${encodeURIComponent(queryArg)}`,
+      serpUrl: `https://www.google.com/search?q=${encodeURIComponent(queryArg)}`
+    });
+    console.log(`[+] Feishu Alert Result: ${res.message}\n`);
+  }
 }
 
 run();
