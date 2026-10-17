@@ -1,7 +1,7 @@
 ---
 title: "DeepSeek V4.1 Flash API Key: Free Trial, Pricing & Cursor Setup"
 metaTitle: "DeepSeek V4.1 Flash Cursor & API Setup Guide | APIVALE"
-description: "Configure DeepSeek V4.1 Flash in Cursor & CLI in 30s. Claim $0.20 free trial registration bonus (no KYC/card), 437 t/s speed, and unthrottled 500 RPM via PayPal."
+description: "Configure DeepSeek V4.1 Flash in Cursor & CLI in 30s. Claim $0.20 free trial bonus (no KYC/card), 437 t/s speed, and unthrottled 500 RPM via PayPal."
 date: "2026-09-10"
 dateModified: "2026-10-17"
 author: "Kenji Tanaka"
@@ -92,7 +92,7 @@ graph LR
     B -->|APIVALE Enterprise Gateway (/v1)| D["APIVALE Intelligent Proxy Pool"]
     D -->|High-Speed Dedicated Relay| E["DeepSeek V4.1 Flash (437 t/s Production)"]
     D -->|Multimodal Failover Cluster| F["stealth/ox-alpha & Qwen 3.8 Max"]
-    D -->|Global Zero-KYC Settlement| G["Waffo Global Billing (Cards & PayPal)"]
+    D -->|Global Zero-KYC Settlement| G["PayPal & Global Card Gateway"]
 ```
 
 ### 1. The 0910 Deprecation Trap
@@ -219,7 +219,7 @@ A defining architectural breakthrough in the 0910 release is how DeepSeek V4.1 F
 
 | Model / Gateway Target | Total / Active Parameters | Context Window | Peak Generation Speed | Official Input / Output (1M) | Best for... (Honest Engineering Assessment) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **DeepSeek V4.1 Flash** (via APIVALE) | 284B MoE (13B Active) | **1,000,000** | **437 tokens/s** | **$0.14 / $0.28** | **High-speed coding loops, multi-file agents & Waffo global billing** |
+| **DeepSeek V4.1 Flash** (via APIVALE) | 284B MoE (13B Active) | **1,000,000** | **437 tokens/s** | **$0.14 / $0.28** | **High-speed coding loops, multi-file agents & PayPal global billing** |
 | **DeepSeek V4 Pro** (Legacy) | 671B MoE (37B Active) | 1,000,000 | 85 tokens/s | $0.55 / $2.19 | Deep theoretical reasoning where generation speed is non-critical |
 | **GLM-5.3 Flash** | 220B MoE (12B Active) | 128,000 | 310 tokens/s | $0.15 / $0.30 | Domestic compliance-first enterprise microservices |
 | **Claude Sonnet 5** | Proprietary Dense | 200,000 | 75 tokens/s | $3.00 / $15.00 | Mission-critical greenfield architecture & zero-shot styling |
