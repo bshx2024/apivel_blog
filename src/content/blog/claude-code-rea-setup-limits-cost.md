@@ -1,7 +1,7 @@
 ---
 title: "Claude Code REA Setup: Fix Tool Limits & Cut Token Costs by 85%"
 metaTitle: "Claude Code REA: Fix Tool Limits & Cut Token Costs | apivel"
-description: "Claude Code REA guide: fix 'claude reached its tool-use limit', bypass token rate limits, and cut costs by 85% with DeepSeek V4 & Qwen 3.8 via apivel gateway."
+description: "Claude Code REA guide: fix 'claude reached its tool-use limit', bypass token rate limits, and cut costs by 85% with DeepSeek V4 & Qwen 3.8 via apivel."
 date: "2026-10-17"
 author: "Kenji Tanaka"
 authorTitle: "AI Developer Relations Engineer, apivel"
