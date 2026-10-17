@@ -10,14 +10,14 @@ interface Props {
 
 const { 
 	title, 
-	description = "APIVALE - High-performance unified API routing gateway for developers. Low-latency, zero-friction access to DeepSeek, GLM, and multimodal models.",
+	description = "apivel - High-performance unified API routing gateway for developers. Low-latency, zero-friction access to DeepSeek, Qwen, Claude, and multimodal models.",
 	image = "/blog/og-cover.png",
 	canonicalUrl,
 	schema,
 	isHub = false
 } = Astro.props;
 
-const siteTitle = title.includes('APIVALE') ? title : `${title} | APIVALE`;
+const siteTitle = title.includes('apivel') ? title : `${title} | apivel`;
 const resolvedCanonical = canonicalUrl || new URL(Astro.url.pathname, Astro.site || Astro.url.origin).href;
 
 const isStandalone = isHub || Astro.url.pathname.includes('llm-gateway') || Astro.url.pathname.includes('openrouter-pricing');
@@ -92,7 +92,7 @@ const googlebotDirective = hasQueryString ? 'noindex, follow' : 'index, follow, 
 			<div class="nav-container">
 				<a href={isStandalone ? "/" : "/blog/"} class="logo-link">
 					<span class="logo-icon">✦</span>
-					<span class="logo-text">APIVALE</span>
+					<span class="logo-text">apivel</span>
 					{!isStandalone && <span class="logo-badge">BLOG</span>}
 				</a>
 				
@@ -125,7 +125,7 @@ const googlebotDirective = hasQueryString ? 'noindex, follow' : 'index, follow, 
 				<div class="footer-brand">
 					<a href={isStandalone ? "/" : "/blog/"} class="logo-link">
 						<span class="logo-icon">✦</span>
-						<span class="logo-text">APIVALE</span>
+						<span class="logo-text">apivel</span>
 					</a>
 					<p class="brand-desc">High-performance API routing gateway for next-gen AI builders.</p>
 				</div>
@@ -153,7 +153,7 @@ const googlebotDirective = hasQueryString ? 'noindex, follow' : 'index, follow, 
 				</div>
 			</div>
 			<div class="footer-bottom">
-				<p>&copy; {new Date().getFullYear()} APIVALE. All rights reserved.</p>
+				<p>&copy; {new Date().getFullYear()} apivel. All rights reserved.</p>
 			</div>
 		</footer>
 	</body>

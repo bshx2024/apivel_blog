@@ -70,7 +70,7 @@ const activeModelVal = modelMap[defaultModel] || 'infer/qwen3.7-max';
           📋 Copy Config
         </button>
       </div>
-      <pre class="snippet-pre"><code id="configCodeDisplay">{`# Export APIVALE proxy base URL and API key
+      <pre class="snippet-pre"><code id="configCodeDisplay">{`# Export apivel proxy base URL and API key
 export ANTHROPIC_BASE_URL="https://apivel.com/v1"
 export ANTHROPIC_API_KEY="sk-apivel-your-api-key"
 
@@ -84,7 +84,7 @@ claude --model ${activeModelVal}`}</code></pre>
         <span>🔒 Native OpenAI & Anthropic Protocol Compatible • Global Waffo Billing</span>
       </div>
       <a 
-        href="https://apivel.com/sign-in?redirect=%2Fplayground&utm_source=apivale_blog&utm_medium=config_generator" 
+        href="https://apivel.com/sign-in?redirect=%2Fplayground&utm_source=apivel_blog&utm_medium=config_generator" 
         class="footer-action-btn"
         target="_blank"
         rel="noopener"
@@ -108,7 +108,7 @@ claude --model ${activeModelVal}`}</code></pre>
     let activeClient = 'claude-code';
 
     const templates = {
-      'claude-code': (model) => `# Export APIVALE OpenAI & Anthropic compatible proxy endpoint
+      'claude-code': (model) => `# Export apivel OpenAI & Anthropic compatible proxy endpoint
 export ANTHROPIC_BASE_URL="https://apivel.com/v1"
 export ANTHROPIC_API_KEY="sk-apivel-your-api-key"
 

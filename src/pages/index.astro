@@ -30,20 +30,26 @@ const authorAvatars: Record<string, string> = {
 		<div class="hero-glow-2"></div>
 		<div class="hero-content">
 			<span class="hero-tag">DEVELOPER HUB</span>
-			<h1>APIVALE Engineering Blog</h1>
+			<h1>apivel Engineering Blog</h1>
 			<p>Deep dives, tutorials, and benchmarking analysis for building scalable AI products using low-latency unified API routing.</p>
 			<div class="featured-badge-banner">
-				<a href="/blog/longcat-2-5-api-setup-benchmarks/" class="featured-banner-link">
-					<span class="badge-fire">🔥 BREAKING SOTA</span>
-					<span class="badge-text">Meituan LongCat 2.5 API (1.6T MoE & 1M Context) Setup & Benchmarks →</span>
-				</a>
+				<span class="featured-banner-link">
+					<span class="badge-fire">⚡ OFFICIAL API GATEWAY</span>
+					<span class="badge-text">Ultra Low-Latency Multi-Model Inference with PayPal & Global Billing</span>
+				</span>
 			</div>
 		</div>
 	</section>
 
 	<section class="posts-section">
 		<div class="posts-grid">
-			{sortedPosts.map((post) => {
+			{sortedPosts.length === 0 ? (
+				<div class="no-posts-container" style="text-align: center; padding: 4rem 1rem; color: #94a3b8; grid-column: 1 / -1;">
+					<p style="font-size: 1.125rem; margin-bottom: 0.5rem; color: #e2e8f0;">Stay Tuned — Fresh Engineering Insights Arriving Soon</p>
+					<p style="font-size: 0.875rem;">Our team is crafting comprehensive API benchmarks, integration guides, and cost optimization blueprints.</p>
+				</div>
+			) : (
+				sortedPosts.map((post) => {
 				const avatarUrl = authorAvatars[post.data.author];
 				return (
 					<article class="post-card">
@@ -80,7 +86,7 @@ const authorAvatars: Record<string, string> = {
 						</div>
 					</article>
 				);
-			})}
+			}))}
 		</div>
 	</section>
 </Layout>

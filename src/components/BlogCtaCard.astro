@@ -7,15 +7,15 @@ interface Props {
 }
 
 const {
-  title = "⚡ Slash Coding Agent Token Costs by 80% with APIVALE",
+  title = "⚡ Slash Coding Agent Token Costs by 80% with apivel",
   subtitle = "Connect Claude Code CLI, Cursor, and Windsurf to official Chinese flagship AI APIs with zero KYC and instant billing.",
   currentSlug = "",
   currentPath = ""
 } = Astro.props;
 
 const redirectTarget = currentPath || (currentSlug ? `/blog/${currentSlug}` : '/pricing');
-const pricingRedirectUrl = `https://apivel.com/pricing?redirect=${encodeURIComponent(redirectTarget)}&utm_source=apivale_blog&utm_medium=blog_cta_card`;
-const signUpRedirectUrl = `https://apivel.com/sign-up?redirect=${encodeURIComponent(redirectTarget)}&utm_source=apivale_blog&utm_medium=blog_cta_card`;
+const pricingRedirectUrl = `https://apivel.com/pricing?redirect=${encodeURIComponent(redirectTarget)}&utm_source=apivel_blog&utm_medium=blog_cta_card`;
+const signUpRedirectUrl = `https://apivel.com/sign-up?redirect=${encodeURIComponent(redirectTarget)}&utm_source=apivel_blog&utm_medium=blog_cta_card`;
 ---
 
 <div class="blog-cta-card">
