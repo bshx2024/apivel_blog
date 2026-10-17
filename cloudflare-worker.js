@@ -1,7 +1,7 @@
 /**
- * Cloudflare Worker: Global Gateway & SEO Analytics Engine for APIVALE
+ * Cloudflare Worker: Global Gateway & SEO Analytics Engine for apivel
  * 
- * Target Route on Cloudflare: apivale.com/*
+ * Target Route on Cloudflare: apivel.com/*
  * 
  * Functions:
  * 1. 100% 覆盖全站（主站 + Blog 博客所有文章 + 工具落地页）的爬虫与真人访客边缘统计
@@ -132,7 +132,7 @@ async function loadStats(env) {
   // 1. 优先尝试 Cloudflare KV
   if (env && env.KV_STATS) {
     try {
-      const data = await env.KV_STATS.get('apivale_crawler_analytics', 'json');
+      const data = await env.KV_STATS.get('apivel_crawler_analytics', 'json');
       if (data) {
         if (!data.recentCrawls) data.recentCrawls = BASELINE_DATA.recentCrawls;
         if (!data.pageCounts) data.pageCounts = BASELINE_DATA.pageCounts;
@@ -148,7 +148,7 @@ async function loadStats(env) {
   const redisToken = env?.UPSTASH_REDIS_REST_TOKEN;
   if (redisUrl && redisToken) {
     try {
-      const res = await fetch(`${redisUrl}/get/apivale_crawler_analytics`, {
+      const res = await fetch(`${redisUrl}/get/apivel_crawler_analytics`, {
         headers: { Authorization: `Bearer ${redisToken}` }
       });
       const json = await res.json();
@@ -174,7 +174,7 @@ async function saveStats(stats, env) {
   // 1. 保存到 Cloudflare KV
   if (env && env.KV_STATS) {
     try {
-      await env.KV_STATS.put('apivale_crawler_analytics', JSON.stringify(stats));
+      await env.KV_STATS.put('apivel_crawler_analytics', JSON.stringify(stats));
       saved = true;
     } catch (e) {
       console.error('KV Write Error:', e);
@@ -186,7 +186,7 @@ async function saveStats(stats, env) {
   const redisToken = env?.UPSTASH_REDIS_REST_TOKEN;
   if (redisUrl && redisToken) {
     try {
-      await fetch(`${redisUrl}/set/apivale_crawler_analytics`, {
+      await fetch(`${redisUrl}/set/apivel_crawler_analytics`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${redisToken}`,
@@ -337,7 +337,7 @@ function renderStatsHtml(initialStats) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>APIVALE 真实爬虫与访客监控大盘 | Cloudflare Edge Engine</title>
+  <title>apivel 真实爬虫与访客监控大盘 | Cloudflare Edge Engine</title>
   <meta name="robots" content="noindex, nofollow">
   <style>
     :root {
@@ -472,7 +472,7 @@ function renderStatsHtml(initialStats) {
   <div class="container">
     <div class="header-bar">
       <div class="site-title">
-        <span>⚡ APIVALE 全站边缘监控引擎</span>
+        <span>⚡ apivel 全站边缘监控引擎</span>
         <span id="conn-badge" class="badge badge-wait">加载中...</span>
       </div>
       <div class="actions">
@@ -484,7 +484,7 @@ function renderStatsHtml(initialStats) {
 
     <div class="banner">
       <strong>🌐 监控覆盖范围：</strong>
-      已在 Cloudflare Edge 总网关接管！同时 100% 捕获 <strong>APIVALE 主站首页、控制台</strong> 以及 <strong>Blog 全部 SEO 文章、计算器落地页</strong>。
+      已在 Cloudflare Edge 总网关接管！同时 100% 捕获 <strong>apivel 主站首页、控制台</strong> 以及 <strong>Blog 全部 SEO 文章、计算器落地页</strong>。
     </div>
 
     <h2>爬虫什么时候来的（北京时间，只算真实官方爬虫）</h2>
@@ -559,7 +559,7 @@ function renderStatsHtml(initialStats) {
     </div>
 
     <div class="footer-info">
-      <span>APIVALE SEO & Crawler Monitor (Cloudflare Global Edge)</span>
+      <span>apivel SEO & Crawler Monitor (Cloudflare Global Edge)</span>
       <span id="update-time">最后更新：正在同步...</span>
     </div>
   </div>
@@ -984,7 +984,7 @@ export default {
 
         return response;
       } catch (error) {
-        return new Response("APIVALE Blog Gateway Timeout", { 
+        return new Response("apivel Blog Gateway Timeout", { 
           status: 504, 
           headers: { "Content-Type": "text/plain" } 
         });
