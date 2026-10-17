@@ -61,6 +61,7 @@ graph TD
 | `is codexbar safe` | Informational / Trust | Tier 3 | CodexBar Tool | `/blog/codexbar-windows-setup-safety-guide` | ✅ 已上线 | P2 | 安全隐私审计 + 开源源码排查 |
 | `how to access z-ai glm-5-2 without chinese phone` | High Intent / Edge-Case | Tier 3 | Zhipu GLM-5.2 (Z.ai) | `/blog/how-to-access-z-ai-glm-5-2` | ✅ 已上线 | P1 | 免除 +86 手机验证码与实名认证 |
 | `deepseek v4 flash api` | High Intent / Commercial | Tier 3 | DeepSeek V4 | `/blog/deepseek-v4-flash-api-guide` | ✅ 已上线 | P0 | 极速版推理网关与超低延迟体验 |
+| `deepseek v4.1 flash 1017 api` | High Intent / Commercial | Tier 1 | DeepSeek V4.1 Flash | `/blog/deepseek-v4-1-flash-1017-api-setup` | ✅ 已上线 | P0 | 1017 权重首发测评、125k上下文漂移修复与低成本路由 |
 | `open-source alternatives to deepgram voice agent api` | Technical / Niche | Tier 3 | Voice Agent LLM Gateway | `/blog/voice-agent-api-cost-optimization` | ⏳ 计划中 | P2 | 替换高昂语音 API，搭建低成本管道 |
 
 ---

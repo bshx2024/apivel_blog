@@ -17,10 +17,25 @@ Allow: /sign-in/
 User-agent: GPTBot
 Allow: /blog/
 
+User-agent: OAI-SearchBot
+Allow: /blog/
+
+User-agent: ChatGPT-User
+Allow: /blog/
+
 User-agent: ClaudeBot
 Allow: /blog/
 
+User-agent: anthropic-ai
+Allow: /blog/
+
 User-agent: PerplexityBot
+Allow: /blog/
+
+User-agent: Google-Extended
+Allow: /blog/
+
+User-agent: Bytespider
 Allow: /blog/
 
 Sitemap: https://apivel.com/blog/sitemap-index.xml

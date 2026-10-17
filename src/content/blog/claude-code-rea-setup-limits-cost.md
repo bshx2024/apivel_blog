@@ -146,7 +146,7 @@ curl -s -X POST "https://apivel.com/v1/chat/completions" \
 
 ### Step 3: Launch with Flagship Cost-Optimized Models
 
-Launch targeting DeepSeek V4 Flash for ultra-fast decompilation loops, or Qwen 3.8 Max for massive 1M token struct refactoring:
+Launch targeting DeepSeek V4 Flash (see our dedicated [DeepSeek V4.1 Flash 1017 API Setup Guide](/blog/deepseek-v4-1-flash-1017-api-setup/) for 437 t/s benchmark details, 503 failover routing, and tool-calling drift mitigation) for ultra-fast decompilation loops, or Qwen 3.8 Max for massive 1M token struct refactoring:
 
 ```bash
 # Run with DeepSeek V4 (High throughput, 95% savings)
