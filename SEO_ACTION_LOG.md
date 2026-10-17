@@ -46,10 +46,14 @@
 * **影响页面**：`https://apivel.com/blog/claude-code-rea-setup-limits-cost/`
 * **因果假设**：同时拦截热搜新词与高频报错长尾流量，首句 BLUF 答案前置与高密度 Markdown 对比表将推动该文在 7-14 天内被 Google Position Zero 及 AI 搜索引擎（Perplexity、ChatGPT Search）高频引用，为 `apivel.com` 带来高留存逆向工程付费用户。
 
-* **分类**：⚙️ [技术/UX 动作]
+* **分类**：🎯 [关键词与排版精修动作]
 * **动作详情**：
-  * 完成 `apivel.com` 专属博客仓库彻底重构与重置：绑定独立 GitHub 远端 `https://github.com/bshx2024/apivel_blog.git`。
-  * 全量清空老项目遗产博文，消除跨站重复内容风险；重置 Astro 全站品牌词为 `apivel`。
-  * 确立《BLOG_WRITING_STANDARD.md》核心主规范与 5-Gate 发布协议，准备启动 Day 1 选题生产。
-* **影响页面**：全站 (`https://apivel.com/blog/`)
-* **因果假设**：为 `apivel.com` 建立绝对纯净的单域名权威拓扑，杜绝重复内容扣分，为首批核心商业词上线打下坚实底层架构。
+  * **主词归位矫正**：根据 Web.Cafe 军师诊断反馈，将原分散标题重构为以 `Claude Code REA` 及 `Claude REA` 为前置的强占位连续 N-gram（H1: `Claude Code REA Setup: Fix Tool Limits & Cut Token Costs by 85%`；MetaTitle: `Claude Code REA: Fix Tool Limits & Cut Token Costs | apivel`）。
+  * **描述优化与消扣分**：重写 Meta Description 实现 100% 完整命中 `Claude Code REA`，消除 2 分扣分；正文关键词密度重新平衡（`Claude Code REA` 37次，`Claude REA` 21次）。
+  * **词数精炼**：正文核心可视词数从 2375 词精炼至 1750 词黄金区间，消除主题稀释。
+  * **首页架构升级**：引入 Breaking SOTA 动态热点胶囊、主题分类药丸栏（Topic Filter Pills）及 Featured Spotlight 通栏头条双栏卡片（内嵌终端预览），解决单篇文章网格空旷感。
+* **影响页面**：`https://apivel.com/blog/` 及 `/blog/claude-code-rea-setup-limits-cost/`
+* **因果假设**：彻底打破「泛词 claude code」的赛道错位误判，使算法与 Google 精确锚定在「Claude Code REA」新蓝海赛道，On Page 评分提升至 99-100 分。
+
+---
+
