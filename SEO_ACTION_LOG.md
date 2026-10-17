@@ -57,22 +57,30 @@
 
 
 
+## 📝 优化行动记录 (2026-10)
+
+### 📅 2026-10-17 - ⚙️ [技术/UX 动作]: 吸收 TrendSpy 新词雷达设计，为 APIVALE 博客搭建专有监控工具：1) 集成 scripts/fast-trend-probe.ts（Google 官方下拉实时探针 + 商业意图与吃瓜过滤 + 自动产出符合 SOP 的 50-60 字符 ABC Title/H1/Description/Frontmatter）；2) 集成 scripts/scan-trends.ts（全量轮询 DeepSeek/Qwen/GLM/Kimi/MiniMax/OpenAI 核心实体，反查已发布文章比对未覆盖的技术空白词）；3) 在 package.json 注入 trend:probe 与 trend:scan 便捷指令。
+* **影响页面/关键词**：全站新词监控流水线 (DeepSeek, Qwen, GLM, Kimi, MiniMax, OpenAI, Claude, Cursor)
+* **动作详情**：吸收 TrendSpy 新词雷达设计，为 APIVALE 博客搭建专有监控工具：1) 集成 scripts/fast-trend-probe.ts（Google 官方下拉实时探针 + 商业意图与吃瓜过滤 + 自动产出符合 SOP 的 50-60 字符 ABC Title/H1/Description/Frontmatter）；2) 集成 scripts/scan-trends.ts（全量轮询 DeepSeek/Qwen/GLM/Kimi/MiniMax/OpenAI 核心实体，反查已发布文章比对未覆盖的技术空白词）；3) 在 package.json 注入 trend:probe 与 trend:scan 便捷指令。
+* **预期因果假设**：将 APIVALE 博客的技术新词发现与立项周期从依赖人工被动检索压缩至 5 秒内自动化完成，精准过滤零转化八卦与跑分噪声，保持对全球主流 LLM API 突发词（如 OpenAI Dots, DeepSeek V4）的毫秒级拦截领先优势。
 
 ## 📝 优化行动记录 (2026-10)
 
-### 📅 2026-10-16 - 📝 [内容动作]: 基于 Google 下拉词、PASF 与 Google Trends 突破词发布《OpenAI Dots API, Pricing & Fails: vs Meta Muse & Self-Hosted Fixes》，覆盖无独立API、Pro $100/月、静默烧Token、403超时三大痛点，提供4平台客观横评表、Docker高可用配置与交互式计算器，署名轮换为 Alex Rivera，并完成双向内链织网与 llms.txt 标准部署。
-* **影响页面/关键词**：/blog/openai-dots-api-pricing-vs-muse/ (openai dots api, openai dots price, openai dots vs muse, openai dots fail, openai dots review, chatgpt dots)
-* **动作详情**：基于 Google 下拉词、PASF 与 Google Trends 突破词发布《OpenAI Dots API, Pricing & Fails: vs Meta Muse & Self-Hosted Fixes》，覆盖无独立API、Pro $100/月、静默烧Token、403超时三大痛点，提供4平台客观横评表、Docker高可用配置与交互式计算器，署名轮换为 Alex Rivera，并完成双向内链织网与 llms.txt 标准部署。
-* **预期因果假设**：在 OpenAI Dots 发布第 3 周沉淀期抢占开发者寻求 API 与性价比替代的搜索意图，预计 7~14 天内进入 Google 核心关键词前 5 位及 Perplexity/SearchGPT 主引用源，单日带动 40~100 个自主 Agent 开发者访问与 APIVALE 注册转化。
+### 📅 2026-10-15 - 📝 [内容动作]: 基于 Google Trends 全网突发爆词 (Breakout) 发布《Sol 6.1 vs Astra: Pricing, Latency Benchmarks & Low-Cost Agent Alternatives》，截流对比选型流量并引流至 APIVALE 国产大模型
+* **影响页面/关键词**：`/blog/sol-6-1-vs-astra-pricing-benchmarks-guide/` (`sol 6.1 vs astra`, `astra vs sol 6.1`, `6.1 sol vs astra`, `gpt 6.1 sol`, `sol 6.1 vs opus 5.5`)
+* **动作详情**：基于 2026 年 10 月 13~15 日 Google Trends 监测到的 `sol 6.1 vs astra` 等全网 Breakout 突发关键词（增长率 100%+），严格遵循 Master Blog Standard 撰写发布深度长文：1) 标题采用双轨 ABC 规范（MetaTitle 59 字符，H1 75 字符）；2) 聚焦 6.1 Sol 真实生产痛点（20 TPS 延迟屏障、## 📝 优化行动记录 (2026-10)
+0/1M 输出价格、强制 reasoning 导致的 HTTP 400 报错与 /v1/responses 协议绑定）；3) 客观构建 7 模型横评矩阵（包含 Astra、Opus 5.5、DeepSeek-V4、GLM-5.3、Qwen 3.8 Max）；4) 提出 Dual-Engine Fallback 架构，引流至 APIVALE 原生 `/v1/chat/completions` 接口与 $0.20 免费额度；5) 内嵌交互式月度 Token 成本计算器（破除 Doorway 扣分）；6) 轮换署名作者为 Sofia Costa，并完成 FAQPage JSON-LD 结构化数据嵌入。
+* **预期因果假设**：趁 Google Trends 流量洪峰期抢占首批索引与 GEO 引用源地位，预计 7~14 天内进入 Google 前 5 位及 Perplexity/ChatGPT Search 核心引用源，单日为 APIVALE 带来 30~80 个高质量海外开发者技术访问与新注册转化。
 
-## 📝 优化行动记录 (2026-10)
+### 📅 2026-10-10 - ⚙️ [技术/UX 动作]: 针对 Cursor BYOK 高排位 0 点击（0.6% CTR, Pos 6.8）意图错位重构：将比价型 TDK 切换为 GitHub Proxy 与 Agent 解锁指南，精准截流第 2~3 位开源工具词
+* **影响页面/关键词**：`/blog/cursor-pro-vs-custom-api-key/` (`cursor byok`, `cursor-byok`, `cursor-byok github`, `cursor-byok-windows-amd64`, `byok cursor`)
+* **动作详情**：GSC 深度穿透发现 `cursor-byok-windows-amd64` 排名第 2.0、`cursor-byok github` 排名第 3.0、`cursor byok` 排名第 6.4，合计 55+ 展现但点击为 0。根因在于开发者寻找 leookun/cursor-byok 代理工具和解决 Agent Tool-calling 锁死，而原标题偏向营销比价。执行重构：1) MetaTitle 升级为 `Cursor BYOK: GitHub Proxy Setup & Fix Disabled Agent | APIVALE`（56 字符）；2) Description（154 字符）前置 `setup leookun/cursor-byok GitHub proxy on Windows/macOS to restore disabled Agent tool-calling`；3) 注入 `dateModified: "2026-10-10"`。
+* **预期因果假设**：消除意图错位，建立开源工具与技术排坑的权威信任背书。预期 14 天内第 2~3 位开源长尾词 CTR 突破 15%~25%，主词 `cursor byok` CTR 从 0% 提升至 4%~8%，单日新增 5~10 个极客自然点击。
 
-### 📅 2026-10-09 - ⚙️ [技术/UX 动作]: 针对 GSC 点击率低（0.9% CTR, Pos 8.1）进行深度技术与意图重构：1) 将 metaTitle 升级为 58 字符 ABC 架构，突出 MoE 消除非专业标题党误解；2) 重写 Description（155 字符），剔除商业 API 推销词汇，直击 125B MoE(6B active) 分层与 OOM 故障排查极客痛点。
-* **影响页面/关键词**：/blog/strata-qwen-setup-benchmarks/ (strata qwen, qwen strata, strata qwen 3.8)
-* **动作详情**：针对 GSC 点击率低（0.9% CTR, Pos 8.1）进行深度技术与意图重构：1) 将 metaTitle 升级为 58 字符 ABC 架构，突出 MoE 消除非专业标题党误解；2) 重写 Description（155 字符），剔除商业 API 推销词汇，直击 125B MoE(6B active) 分层与 OOM 故障排查极客痛点。
+### 📅 2026-10-10 - ⚙️ [技术/UX 动作]: 针对 GSC 点击率低（0.9% CTR, Pos 8.1）进行深度技术与意图重构：1) 将 metaTitle 升级为 58 字符 ABC 架构，突出 MoE 消除非专业标题党误解；2) 重写 Description（155 字符），剔除商业 API 推销词汇，直击 125B MoE(6B active) 分层与 OOM 故障排查极客痛点。
+* **影响页面/关键词**：`/blog/strata-qwen-setup-benchmarks/` (`strata qwen`, `qwen strata`, `strata qwen 3.8`)
+* **动作详情**：针对 GSC 揭示的 `strata qwen` 主力词展现 195、仅 2 点击（1.0% CTR）的技术常识防备心理，将 MetaTitle 升级为 `Strata Qwen MoE Setup: Run 125B on 12GB VRAM at 94 t/s | APIVALE`（58 字符），Description 压至 155 字符黄金长度（剔除商业 API 导流词汇，强化 125B MoE 6B active 分层与 OOM fixes），全面提升极客搜索信任度。
 * **预期因果假设**：消除开发者搜索 'strata qwen' 时的虚假宣传防备心理与商业软文抗拒，契合本地极客开源与架构意图。预期 14 天内主力关键词 'strata qwen' 的 SERP CTR 从 1.0% 回升至 2.5%~4.0%，推动综合排名进入 Top 5。
-
-## 📝 优化行动记录 (2026-10)
 
 ### 📅 2026-10-09 - 📝 [高曝光大户爆破 & CTR翻倍攻坚]: 重构《Strata Qwen》、《Meta Muse AI》与《OmniRoute》三大支柱页TDK
 
