@@ -9,7 +9,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "trend:probe": "bun run scripts/fast-trend-probe.ts",
+    "trend:scan": "bun run scripts/scan-trends.ts"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^7.2.0",
