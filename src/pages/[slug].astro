@@ -316,12 +316,12 @@ const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.key
 		</div>
 
 		<!-- Zero-Login Interactive Tool Widgets (Above the Fold) -->
-		{isPriceOrBenchmark && slugLower !== 'openrouter-pricing' && (
-			<ApiPriceCalculator initialModel={initialModel} />
-		)}
-
 		{isCliOrSetup && slugLower !== 'openrouter-pricing' && (
 			<CliConfigGenerator defaultClient={defaultClient} defaultModel={initialModel} />
+		)}
+
+		{!isCliOrSetup && isPriceOrBenchmark && slugLower !== 'openrouter-pricing' && (
+			<ApiPriceCalculator initialModel={initialModel} />
 		)}
 
 		<!-- Fallback for general articles if neither matched -->

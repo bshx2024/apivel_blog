@@ -17,7 +17,7 @@ const {
 	isHub = false
 } = Astro.props;
 
-const siteTitle = title.includes('apivel') ? title : `${title} | apivel`;
+const siteTitle = /apivel|apivale/i.test(title) ? title : `${title} | apivel`;
 const resolvedCanonical = canonicalUrl || new URL(Astro.url.pathname, Astro.site || Astro.url.origin).href;
 
 const isStandalone = isHub || Astro.url.pathname.includes('llm-gateway') || Astro.url.pathname.includes('openrouter-pricing');
