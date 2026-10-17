@@ -1,12 +1,13 @@
 ---
 title: "DeepSeek V4.1 Flash API Key: Free Trial, Pricing & Cursor Setup"
-metaTitle: "DeepSeek V4.1 Flash API Key: Pricing & Cursor Setup | APIVALE"
+metaTitle: "DeepSeek V4.1 Flash API: Pricing & Cursor Setup | APIVALE"
 description: "Get DeepSeek V4.1 Flash API key with $0.20 free trial. Experience 437 t/s throughput, 97% lower costs, zero-KYC PayPal billing, and instant Cursor/CLI setup."
 date: "2026-09-10"
+dateModified: "2026-10-17"
 author: "Kenji Tanaka"
 authorTitle: "AI Developer Relations Engineer, APIVALE"
 authorBio: "Kenji Tanaka is an AI developer relations engineer specializing in LLM protocol translation, IDE coding extensions, and high-concurrency API proxy architectures."
-tags: ["DeepSeek V4.1 Flash API", "DeepSeek V4.1 Flash API Key", "DeepSeek API Pricing", "DeepSeek Free API", "Cursor BYOK", "DeepSeek V4.1 Flash", "PayPal"]
+tags: ["DeepSeek V4.1 Flash API", "DeepSeek V4.1 Flash API Key", "DeepSeek V4 Flash 0731", "DeepSeek API Pricing", "DeepSeek Free API", "Cursor BYOK", "DeepSeek V4.1 Flash", "PayPal"]
 image: "/blog/access-hy3-deepseek-outside-china.png"
 lang: "en"
 ---
@@ -15,7 +16,7 @@ lang: "en"
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
     <li><strong>Instant API Key &amp; Free Trial:</strong> Claim a production <strong>DeepSeek V4.1 Flash API key</strong> with an instant <a href="https://apivel.com/sign-up?redirect=/blog/deepseek-v4-flash-api-guide/" class="text-emerald-400 hover:underline font-semibold">$0.20 free signup trial</a> (no KYC, no mainland phone verification required).</li>
-    <li><strong>September 10 Production Release:</strong> The 48-hour beta endpoint (<code>deepseek-v4.1-flash-expires-on-0910</code>) has officially graduated into production as <strong>DeepSeek V4.1 Flash</strong> with native multimodal vision and a 1M token context window.</li>
+    <li><strong>September 10 Production Release &amp; 0731 Aliasing:</strong> The 48-hour beta endpoint (<code>deepseek-v4.1-flash-expires-on-0910</code>) and internal <code>0731</code> checkpoint have officially graduated into production as <strong>DeepSeek V4.1 Flash</strong> with native multimodal vision and a 1M token context window.</li>
     <li><strong>437 Tokens/s at 97% Lower Cost:</strong> Experience blistering decoding throughput reaching <strong>400–437 tokens per second</strong> at wholesale pricing ($0.14/1M input, $0.28/1M output)—saving up to 97% compared to frontier proprietary models.</li>
     <li><strong>Unthrottled Gateway Concurrency:</strong> Route Cursor Composer and Claude Code CLI through APIVALE for unthrottled 500+ RPM pools, bypassing official 429 timeouts and foreign card rejections with <strong>PayPal &amp; Global Card Billing</strong>.</li>
   </ul>
@@ -23,6 +24,7 @@ lang: "en"
 
 <div class="my-4 p-3.5 bg-gray-950/90 border border-indigo-500/30 rounded-xl flex items-center flex-wrap gap-2 text-xs shadow-lg backdrop-blur-sm">
   <span class="text-indigo-400 font-bold uppercase tracking-wider flex items-center gap-1">⚡ Quick Jump:</span>
+  <a href="#0731-update" class="px-3 py-1.5 bg-gray-900 hover:bg-indigo-950 border border-gray-700 hover:border-indigo-500 rounded-lg text-emerald-300 transition-all font-medium">⚡ 0731 Update</a>
   <a href="#calculator" class="px-3 py-1.5 bg-gray-900 hover:bg-indigo-950 border border-gray-700 hover:border-indigo-500 rounded-lg text-emerald-300 transition-all font-medium">💰 Price &amp; Free Credits</a>
   <a href="#setup" class="px-3 py-1.5 bg-gray-900 hover:bg-indigo-950 border border-gray-700 hover:border-indigo-500 rounded-lg text-cyan-300 transition-all font-medium">💻 Agent Setup Guide</a>
   <a href="#benchmarks" class="px-3 py-1.5 bg-gray-900 hover:bg-indigo-950 border border-gray-700 hover:border-indigo-500 rounded-lg text-gray-200 transition-all font-medium">📊 437 t/s Benchmark</a>
@@ -112,6 +114,29 @@ A widespread developer complaint surfacing across GitHub issues (LiteLLM, Dify, 
 | `deepseek-v4-pro` | Scheduled Deprecation (Sept 14) | Auto-downconverted to Flash tier | APIVALE Gateway (auto-discounted) |
 
 Through APIVALE's unified proxy layer, developers can invoke either `deepseek-flash`, `deepseek-v4.1-flash`, or dynamic pointers like `~deepseek/deepseek-flash-latest` interchangeably—the gateway automatically normalizes protocol headers, handles dynamic pointer redirects, and prevents client configuration exceptions.
+
+---
+
+<div id="0731-update"></div>
+
+## DeepSeek V4 Flash 0731 Update & Latest Benchmarks
+
+### 1. The 0731 Checkpoint vs. 0910 GA Architecture
+Developers tracking model versioning frequently query `deepseek v4 flash 0731`. In late July 2026 (the 0731 checkpoint), DeepSeek initially evaluated an internal sparse MoE distillation checkpoint designed to test 400+ tokens/second decoding pipelines before the 0910 GA transition.
+
+* **Checkpoint Evolution**: The `0731` experimental release served as the architecture baseline for multi-head latent attention (MLA) optimizations. It has since been superseded by the production `deepseek-v4.1-flash` GA endpoint, which integrates native 1M context handling and eliminated the 20-request concurrency ceiling.
+* **API Compatibility & Aliasing**: If legacy scripts, local Ollama bridges, or third-party agent harnesses invoke `deepseek-v4-flash-0731` or `deepseek-v4-flash`, APIVALE's gateway automatically bridges and aliases the request to `deepseek-v4.1-flash`, ensuring zero breaking changes, zero 404 errors, and full wholesale token rate benefits.
+
+### 2. Token Pricing & Cost Metrics (Updated October 2026)
+Following the 0731 and 0910 deployment milestones, DeepSeek updated official production token tiers:
+
+| Model Version / Endpoint | Context Window | Prompt Input (1M Tokens) | Completion Output (1M Tokens) | Cache Hit Discount | Peak Decoding Speed |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **DeepSeek V4.1 Flash (GA)** | 1,000,000 | **$0.14** | **$0.28** | Up to 80% ($0.028/1M) | **437 tokens/s** |
+| **DeepSeek V4 Flash 0731 (Legacy)** | 128,000 | Aliased to GA ($0.14) | Aliased to GA ($0.28) | Standard caching | ~380 tokens/s |
+| **Frontier Proprietary Baseline** | 200,000 | $3.00 – $5.00 | $15.00 – $25.00 | 50% ($1.50/1M) | ~60–85 tokens/s |
+
+*Note: Pricing and parameters verified via official documentation as of October 2026. All requests routed through APIVALE benefit from instant PayPal checkout, zero KYC, and a $0.20 free signup trial.*
 
 ---
 

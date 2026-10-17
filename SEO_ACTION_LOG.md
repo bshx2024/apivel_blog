@@ -57,6 +57,14 @@
 
 
 
+
+## 📝 优化行动记录 (2026-10)
+
+### 📅 2026-10-17 - 📝 [内容动作]: Evergreen Refresh for deepseek-v4-flash-api-guide: injected H2 'DeepSeek V4 Flash 0731 Update & Latest Benchmarks' covering 0731 checkpoint aliasing and Oct 2026 pricing, updated dateModified to 2026-10-17, tags, and optimized metaTitle length to 57 chars. Avoided new article keyword cannibalization.
+* **影响页面/关键词**：/blog/deepseek-v4-flash-api-guide/ (Keywords: deepseek v4 flash 0731, deepseek v4 flash pricing)
+* **动作详情**：Evergreen Refresh for deepseek-v4-flash-api-guide: injected H2 'DeepSeek V4 Flash 0731 Update & Latest Benchmarks' covering 0731 checkpoint aliasing and Oct 2026 pricing, updated dateModified to 2026-10-17, tags, and optimized metaTitle length to 57 chars. Avoided new article keyword cannibalization.
+* **预期因果假设**：Leverage Google Freshness algorithm and Google Autocomplete 'deepseek v4 flash 0731' search surge to push pillar page into Top 1~3 rankings while preserving link equity and preventing keyword cannibalization.
+
 ## 📝 优化行动记录 (2026-10)
 
 ### 📅 2026-10-17 - ⚙️ [技术/UX 动作]: 吸收 TrendSpy 新词雷达设计，为 APIVALE 博客搭建专有监控工具：1) 集成 scripts/fast-trend-probe.ts（Google 官方下拉实时探针 + 商业意图与吃瓜过滤 + 自动产出符合 SOP 的 50-60 字符 ABC Title/H1/Description/Frontmatter）；2) 集成 scripts/scan-trends.ts（全量轮询 DeepSeek/Qwen/GLM/Kimi/MiniMax/OpenAI 核心实体，反查已发布文章比对未覆盖的技术空白词）；3) 在 package.json 注入 trend:probe 与 trend:scan 便捷指令。
