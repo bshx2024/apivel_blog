@@ -97,3 +97,14 @@
   * `https://apivel.com/blog/deepseek-v4-1-flash-1017-api-setup/`
   * `https://apivel.com/blog/claude-code-rea-setup-limits-cost/`
 * **因果假设**：MiniMax M3.1 Flash 作为 200T+ Token 免费实测转正的爆款模型，去除标题中冗余的品牌噪音后可大幅提高 CTR；同时规范 `apivel` 品牌心智强化域名权威，结合 HowTo 与 FAQPage 结构化 Schema，在 Perplexity、SearchGPT 及 Google 对“MiniMax M3.1 Flash size/free/benchmark/censored”等搜索查询中获得顶格 Featured Snippet 与知识面板展示。
+
+---
+
+* **分类**：⚙️ [Web.Cafe 体检消扣分与密度/词数/描述黄金标准重构]
+* **动作详情**：
+  * **消除 Meta Description 截断扣分（-1.5分）**：将描述长度由原 188 字符精简至 **151 字符**（`MiniMax M3.1 Flash (Space Bunny): 428B MoE size, DeepSWE benchmark vs DeepSeek, censorship test & 5-min Claude Code API setup via apivel ($0.20 trial).`），完美适配 140~160 字符 SERP 视口，杜绝尾部截断。
+  * **消除多词词组密度过高扣分（-1.5分）**：通过自然代词替换（`M3.1 Flash`, `the 428B model`, `this checkpoint`），将正文多词词组 `MiniMax M3.1 Flash` 从 38 次（3.77% 堆砌警告）精准降解至 9 次（2.51% 安全区间，<3% 阈值）。
+  * **消除词数超标与主题稀释扣分（-1.0分）**：重构并精炼冗余过渡句式，将全页可视词数由 2862 词收敛至 **1437 词** 黄金高效能区间（1200~1800 词标准），大幅提升信息增益（Information Gain）。
+  * **意图聚焦**：将 DeepSeek 明确降权为参照基线，消除多意图并列竞争，主意图 100% 锁定在 `MiniMax M3.1 Flash` 模型本身。
+* **影响页面**：`https://apivel.com/blog/minimax-m3-flash-api-setup-benchmark/`
+* **因果假设**：消除 3 大核心扣分项（共 4.0 分）后，Web.Cafe 页面画像军师体检评分将由 95 分直冲 99~100 分满分（A+），页面信噪比提升，有效防止因多词堆砌触碰搜索引擎算法警报，提升 Google 首页前三排名稳定性。
