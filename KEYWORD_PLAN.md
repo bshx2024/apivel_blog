@@ -13,6 +13,7 @@ This document tracks all researched high-potential keyword clusters, proposed ar
 | **3** | *Top 5 OpenRouter Alternatives with Instant PayPal Billing (2026)* | `openrouter alternatives with paypal` | `openrouter alternative`, `cheap llm api key`, `zero kyc api key`, `pay openrouter with paypal` | Transactional / Commercial | ⏳ **Planned** |
 | **4** | *How to Slash AI Agent Token Costs by 90% in Multi-Turn Loops* | `reduce llm api costs for ai agents` | `tools for reducing llm api costs`, `how to reduce llm api costs`, `ai agent token management` | Commercial / Cost Optimization | ⏳ **Planned** |
 | **5** | *Cursor IDE Setup with Custom API Key: BYOK Cost Breakdown & Speed Benchmarks* | `cursor custom api key` | `cursor pro vs custom api key`, `cursor deepseek v4 setup`, `cursor rules api gateway` | High Intent / Commercial | ⏳ **Planned** |
+| **6** | *MiniMax M3.1 Flash Benchmarks, Size & API Setup Guide* | `minimax m3.1 flash` | `minimax m3.1 flash size`, `minimax m3.1 flash free`, `minimax m3.1 flash benchmark`, `minimax m3 better than deepseek`, `minimax m3 censored`, `minimax m3.1 flash artificial analysis`, `minimax m3.1 flash huggingface` | Informational + Commercial / Breakout | ✅ **Published** |
 
 ---
 
