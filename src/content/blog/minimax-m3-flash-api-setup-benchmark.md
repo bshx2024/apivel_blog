@@ -1,12 +1,12 @@
 ---
-title: "MiniMax M3.1 Flash Benchmarks, Size & API Setup Guide | APIVALE"
-metaTitle: "MiniMax M3.1 Flash Benchmarks, Size & API Setup | APIVALE"
-description: "MiniMax M3.1 Flash (ex-Space Bunny): 428B MoE size explained, Artificial Analysis benchmarks vs DeepSeek, censorship answer, plus 5-min Claude Code & Cursor setup via APIVALE ($0.20 trial)."
+title: "MiniMax M3.1 Flash Benchmarks, Size & API Setup Guide"
+metaTitle: "MiniMax M3.1 Flash Benchmarks, Size & API Setup | apivel"
+description: "MiniMax M3.1 Flash (ex-Space Bunny): 428B MoE size explained, Artificial Analysis benchmarks vs DeepSeek, censorship answer, plus 5-min Claude Code & Cursor setup via apivel ($0.20 trial)."
 date: "2026-10-20"
 author: "Priya Sharma"
-authorTitle: "AI Infrastructure Engineer, APIVALE"
+authorTitle: "AI Infrastructure Engineer, apivel"
 authorBio: "Priya Sharma is an AI infrastructure engineer specializing in LLM gateway routing, MoE model evaluation, and cost-optimized inference pipelines for high-volume developer workflows."
-tags: ["MiniMax M3.1 Flash", "MiniMax M3", "Space Bunny", "API Setup", "Claude Code", "Cursor", "Benchmark", "DeepSeek", "APIVALE", "PayPal"]
+tags: ["MiniMax M3.1 Flash", "MiniMax M3", "Space Bunny", "API Setup", "Claude Code", "Cursor", "Benchmark", "DeepSeek", "apivel", "PayPal"]
 image: "/blog/og-cover.png"
 lang: "en"
 keyTakeaways:
@@ -25,7 +25,7 @@ keyTakeaways:
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
     <li><strong>428B MoE / 23B Active:</strong> MiniMax M3.1 Flash uses a sparse Mixture-of-Experts architecture — 428B total parameters but only ~23B activate per inference, giving you near-frontier capability at flash-tier cost ($0.15/M input, $0.60/M output).</li>
     <li><strong>Benchmark Leader vs DeepSeek:</strong> On <strong>DeepSWE v1.1</strong> (independent agentic coding evaluation), MiniMax M3.1 Flash scores <strong>73.7%</strong> versus DeepSeek V4 Flash's ~68%. On BankerToolBench multi-step tool use, it scores <strong>76.2</strong> — best-in-class among flash-tier models.</li>
-    <li><strong>Was Free as "Space Bunny":</strong> The model ran anonymously on OpenRouter as "Space Bunny" from late September 2025, processing 200T+ tokens for free before its October 2025 reveal. The production API is now paid; <a href="https://apivel.com/sign-up?redirect=/blog/minimax-m3-flash-api-setup-benchmark" class="text-violet-400 hover:underline font-semibold">APIVALE</a> offers a $0.20 free trial with zero KYC.</li>
+    <li><strong>Was Free as "Space Bunny":</strong> The model ran anonymously on OpenRouter as "Space Bunny" from late September 2025, processing 200T+ tokens for free before its October 2025 reveal. The production API is now paid; <a href="https://apivel.com/sign-up?redirect=/blog/minimax-m3-flash-api-setup-benchmark" class="text-violet-400 hover:underline font-semibold">apivel</a> offers a $0.20 free trial with zero KYC.</li>
     <li><strong>Claude Code + Cursor Ready:</strong> MiniMax supports both OpenAI-compatible (<code>https://apivel.com/v1</code>) and Anthropic-compatible (<code>https://apivel.com/anthropic</code>) protocols — connect to Claude Code, Cursor, or Windsurf in under 5 minutes.</li>
   </ul>
 </div>
@@ -36,11 +36,11 @@ keyTakeaways:
   <p class="mt-2 text-sm text-gray-300"><strong>MiniMax M3.1 Flash</strong> is a 428B-parameter Mixture-of-Experts language model developed by Chinese AI company MiniMax, with approximately 23B active parameters per forward pass, a 1,000,000-token context window, and a <code>reasoning_effort</code> parameter supporting five control levels (low / medium / high / xhigh / max). It is natively compatible with both the OpenAI API schema (endpoint: <code>https://api.minimax.io/v1</code>) and the Anthropic API schema (<code>https://api.minimax.io/anthropic</code>), and was anonymously tested as <em>"Space Bunny"</em> on OpenRouter from September 23 to October 2025 before its public naming.</p>
 </div>
 
-Three weeks before MiniMax named it, developers were routing 200 trillion tokens through a model called **"Space Bunny"** — and most of them had no idea who built it. When the anonymous OpenRouter model was revealed as **MiniMax M3.1 Flash** in October 2025, the developer community simultaneously celebrated and started stress-testing its claims. This guide answers the four questions dominating every discussion thread: *How big is it really? Is it still free? Does it beat DeepSeek? And is it censored?* — then shows you how to connect it to Claude Code and Cursor in five minutes via [APIVALE](https://apivel.com/sign-up?redirect=/blog/minimax-m3-flash-api-setup-benchmark).
+Three weeks before MiniMax named it, developers were routing 200 trillion tokens through a model called **"Space Bunny"** — and most of them had no idea who built it. When the anonymous OpenRouter model was revealed as **MiniMax M3.1 Flash** in October 2025, the developer community simultaneously celebrated and started stress-testing its claims. This guide answers the four questions dominating every discussion thread: *How big is it really? Is it still free? Does it beat DeepSeek? And is it censored?* — then shows you how to connect it to Claude Code and Cursor in five minutes via [apivel](https://apivel.com/sign-up?redirect=/blog/minimax-m3-flash-api-setup-benchmark).
 
 ```mermaid
 graph TD
-    A["Developer Tool<br/>(Claude Code / Cursor / Windsurf)"] -->|"ANTHROPIC_BASE_URL or<br/>OPENAI_BASE_URL"| B["APIVALE Unified Gateway<br/>apivel.com/v1 · apivel.com/anthropic"]
+    A["Developer Tool<br/>(Claude Code / Cursor / Windsurf)"] -->|"ANTHROPIC_BASE_URL or<br/>OPENAI_BASE_URL"| B["apivel Unified Gateway<br/>apivel.com/v1 · apivel.com/anthropic"]
     B -->|"1M Context · reasoning_effort"| C["MiniMax M3.1 Flash<br/>428B MoE / 23B Active"]
     B -->|"Failover"| D["DeepSeek V4 Flash<br/>$0.14/M input"]
     B -->|"Failover"| E["Qwen 3.7 Max<br/>$0.48/M input"]
@@ -77,7 +77,7 @@ This is why MiniMax M3.1 Flash can be priced at **$0.15 per million input tokens
 
 **Cheapest way to use it today:**
 
-1. **APIVALE $0.20 free trial** — No credit card, no KYC. Sign up at [apivel.com/sign-up](https://apivel.com/sign-up?redirect=/blog/minimax-m3-flash-api-setup-benchmark), receive $0.20 in API credits immediately, redeemable against MiniMax M3.1 Flash calls (~1.3M input tokens worth of testing at list price).
+1. **apivel $0.20 free trial** — No credit card, no KYC. Sign up at [apivel.com/sign-up](https://apivel.com/sign-up?redirect=/blog/minimax-m3-flash-api-setup-benchmark), receive $0.20 in API credits immediately, redeemable against MiniMax M3.1 Flash calls (~1.3M input tokens worth of testing at list price).
 2. **$29 Developer Pack** — 40M tokens, 56% OFF list price, never expires. Paid via PayPal Instant Checkout or international Visa/Mastercard (0 FX fees).
 
 ---
@@ -159,17 +159,17 @@ The search pattern `minimax m3.1 flash huggingface` reflects developers wanting 
 
 ---
 
-## Setup Guide: Claude Code + Cursor + Windsurf via APIVALE
+## Setup Guide: Claude Code + Cursor + Windsurf via apivel
 
-APIVALE provides both OpenAI-compatible and Anthropic-compatible endpoints for MiniMax M3.1 Flash, enabling native integration with every major AI coding tool.
+apivel provides both OpenAI-compatible and Anthropic-compatible endpoints for MiniMax M3.1 Flash, enabling native integration with every major AI coding tool.
 
-### Step 1 — Get Your APIVALE API Key (Free)
+### Step 1 — Get Your apivel API Key (Free)
 
 Sign up at [apivel.com/sign-up](https://apivel.com/sign-up?redirect=/blog/minimax-m3-flash-api-setup-benchmark). You receive **$0.20 in free credits immediately** — no credit card, no KYC, PayPal optional at checkout. Copy your API key from the dashboard.
 
 ### Step 2 — Claude Code Setup (Anthropic-Compatible)
 
-Claude Code natively routes through the Anthropic API schema. Override the base URL to point at APIVALE's Anthropic-compatible endpoint:
+Claude Code natively routes through the Anthropic API schema. Override the base URL to point at apivel's Anthropic-compatible endpoint:
 
 ```bash
 # Set environment variables (add to ~/.bashrc or ~/.zshrc for persistence)
@@ -204,12 +204,12 @@ claude --model MiniMax-M3.1-Flash
 2. Scroll to "API Keys" section
 3. Toggle ON "Override OpenAI Base URL"
 4. Enter: https://apivel.com/v1
-5. Paste your APIVALE key into the "OpenAI API Key" field
+5. Paste your apivel key into the "OpenAI API Key" field
 6. Under "Model", add custom model: MiniMax-M3.1-Flash
 7. Save and select MiniMax-M3.1-Flash from the model dropdown
 ```
 
-> **Note:** Cursor's "Override OpenAI Base URL" is global — native OpenAI/GPT models will route through APIVALE while active. Toggle off to restore direct OpenAI access.
+> **Note:** Cursor's "Override OpenAI Base URL" is global — native OpenAI/GPT models will route through apivel while active. Toggle off to restore direct OpenAI access.
 
 ### Step 4 — Windsurf / Any OpenAI-Compatible IDE
 
@@ -282,9 +282,9 @@ def agent_loop(client, messages, turn_count=0):
 
 ---
 
-## Cost Benchmark: APIVALE vs Official MiniMax API
+## Cost Benchmark: apivel vs Official MiniMax API
 
-| Scenario | Official MiniMax API | APIVALE (MiniMax M3.1 Flash) | APIVALE (DeepSeek V4 Flash) |
+| Scenario | Official MiniMax API | apivel (MiniMax M3.1 Flash) | apivel (DeepSeek V4 Flash) |
 |---|---|---|---|
 | 1M input tokens | $0.15 | **$0.15** (same model) | **$0.14** |
 | 10M token coding session | $1.50–$3.00 | **$1.50–$3.00** | **$1.40–$2.80** |
@@ -296,7 +296,7 @@ def agent_loop(client, messages, turn_count=0):
 | +50% deposit bonus | No | **+$2.50 on $5 deposit** | **+$2.50 on $5 deposit** |
 | Verified date | Oct 20, 2026 | Oct 20, 2026 | Oct 20, 2026 |
 
-**The practical APIVALE advantage:** MiniMax's official API has geographic access restrictions and no PayPal support. APIVALE provides stable global access to the same model at the same price, with PayPal Instant Checkout, zero KYC, and automatic failover to DeepSeek V4 Flash or Qwen 3.7 Max if needed.
+**The practical apivel advantage:** MiniMax's official API has geographic access restrictions and no PayPal support. apivel provides stable global access to the same model at the same price, with PayPal Instant Checkout, zero KYC, and automatic failover to DeepSeek V4 Flash or Qwen 3.7 Max if needed.
 
 ---
 
@@ -305,7 +305,7 @@ def agent_loop(client, messages, turn_count=0):
     Run MiniMax M3.1 Flash in Claude Code — $0.20 Free, No Card Required
   </div>
   <p class="text-gray-300 text-sm mb-4">
-    Access MiniMax M3.1 Flash (428B MoE, 1M context) via APIVALE's Anthropic-compatible endpoint. Global PayPal billing, zero KYC, automatic failover to DeepSeek V4 Flash. +50% first deposit bonus included.
+    Access MiniMax M3.1 Flash (428B MoE, 1M context) via apivel's Anthropic-compatible endpoint. Global PayPal billing, zero KYC, automatic failover to DeepSeek V4 Flash. +50% first deposit bonus included.
   </p>
   <div class="cta-badge-grid">
     <div class="cta-badge">⚡ Native Base URL (https://apivel.com/anthropic)</div>
@@ -341,7 +341,7 @@ def agent_loop(client, messages, turn_count=0):
       "name": "Is MiniMax M3.1 Flash completely free?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "MiniMax M3.1 Flash was free during its anonymous 'Space Bunny' testing phase on OpenRouter from September 23 to October 2025. The production API is now paid at $0.15 per million input tokens and $0.60 per million output tokens. A $0.20 free trial with no credit card or KYC required is available via APIVALE at apivel.com/sign-up."
+        "text": "MiniMax M3.1 Flash was free during its anonymous 'Space Bunny' testing phase on OpenRouter from September 23 to October 2025. The production API is now paid at $0.15 per million input tokens and $0.60 per million output tokens. A $0.20 free trial with no credit card or KYC required is available via apivel at apivel.com/sign-up."
       }
     },
     {
@@ -384,16 +384,16 @@ def agent_loop(client, messages, turn_count=0):
 {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "How to use MiniMax M3.1 Flash in Claude Code via APIVALE",
+  "name": "How to use MiniMax M3.1 Flash in Claude Code via apivel",
   "totalTime": "PT5M",
   "supply": [
-    { "@type": "HowToSupply", "name": "APIVALE API key (free at apivel.com/sign-up)" }
+    { "@type": "HowToSupply", "name": "apivel API key (free at apivel.com/sign-up)" }
   ],
   "step": [
     {
       "@type": "HowToStep",
       "position": 1,
-      "name": "Get your APIVALE API key",
+      "name": "Get your apivel API key",
       "text": "Sign up at apivel.com/sign-up. Receive $0.20 in free credits immediately with no credit card or KYC required. Copy your API key from the dashboard."
     },
     {
@@ -406,7 +406,7 @@ def agent_loop(client, messages, turn_count=0):
       "@type": "HowToStep",
       "position": 3,
       "name": "Launch Claude Code with MiniMax M3.1 Flash",
-      "text": "Run: claude --model MiniMax-M3.1-Flash. Claude Code routes all requests through APIVALE's Anthropic-compatible endpoint to MiniMax M3.1 Flash."
+      "text": "Run: claude --model MiniMax-M3.1-Flash. Claude Code routes all requests through apivel's Anthropic-compatible endpoint to MiniMax M3.1 Flash."
     },
     {
       "@type": "HowToStep",

@@ -84,3 +84,16 @@
 * **因果假设**：消除 4.5 分承接扣分与 1.5 分密度扣分后，Web.Cafe 页面画像军师评分将从 95 分直冲 100 分满分（A+），为谷歌搜索排名提供完美的 On-Page 质量信号与自然用户行为留存。
 
 ---
+
+* **分类**：🚀 [新词内容发布与品牌一致性规范]
+* **动作详情**：
+  * **捕获热点与意图图谱**：响应全网及 OpenRouter 匿名热榜模型 “Space Bunny” 揭晓为 `MiniMax M3.1 Flash`，首发权威集成与深度 Benchmark 指南 `/blog/minimax-m3-flash-api-setup-benchmark/`。
+  * **品牌规范与标题修正**：纠正卡片标题误带 `| APIVALE` 冗余后缀的问题；将卡片主标题规范为干净清晰的 `MiniMax M3.1 Flash Benchmarks, Size & API Setup Guide`，将 SERP 标题统一收敛为 `... | apivel`，并将全站及正文品牌引用由 `APIVALE` 统一订正为官方域名与 Logo 标识 **`apivel`**。
+  * **GEO/大模型搜索引擎优化**：嵌入双重结构化数据（FAQPage JSON-LD 覆盖 6 大核心 PAA 痛点、HowTo JSON-LD 结构化声明 4 步无缝迁移方案），原生适配 GPTBot, ClaudeBot, PerplexityBot。
+  * **4 项真实工程增益**：Reddit/GitHub 原生社区开发者引言（@ryanwong-dev）、428B MoE / 23B 激活稀疏架构对比、73.7% DeepSWE v1.1 跑分、1M 上下文长文本分析与多步金融/自动化 ToolBench 评测。
+  * **双向织网互联**：在 `/blog/deepseek-v4-1-flash-1017-api-setup/`（跑分对比后）与 `/blog/claude-code-rea-setup-limits-cost/`（1M context 替代方案）注入上下文锚点内链。
+* **影响页面**：
+  * `https://apivel.com/blog/minimax-m3-flash-api-setup-benchmark/`
+  * `https://apivel.com/blog/deepseek-v4-1-flash-1017-api-setup/`
+  * `https://apivel.com/blog/claude-code-rea-setup-limits-cost/`
+* **因果假设**：MiniMax M3.1 Flash 作为 200T+ Token 免费实测转正的爆款模型，去除标题中冗余的品牌噪音后可大幅提高 CTR；同时规范 `apivel` 品牌心智强化域名权威，结合 HowTo 与 FAQPage 结构化 Schema，在 Perplexity、SearchGPT 及 Google 对“MiniMax M3.1 Flash size/free/benchmark/censored”等搜索查询中获得顶格 Featured Snippet 与知识面板展示。

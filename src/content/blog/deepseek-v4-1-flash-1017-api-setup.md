@@ -129,8 +129,8 @@ graph TD
 ```python
 import os, time, requests
 
-APIVALE_ENDPOINT = "https://apivel.com/v1/chat/completions"
-API_KEY = os.getenv("APIVALE_API_KEY", "sk-your-apivale-key")
+APIVEL_ENDPOINT = "https://apivel.com/v1/chat/completions"
+API_KEY = os.getenv("APIVEL_API_KEY", "sk-your-apivel-key")
 
 def query_deepseek(prompt: str, retries: int = 3):
     headers = {"Authorization": f"Bearer {API_KEY}", "Content-Type": "application/json"}
@@ -140,7 +140,7 @@ def query_deepseek(prompt: str, retries: int = 3):
         "temperature": 0.2
     }
     for attempt in range(1, retries + 1):
-        res = requests.post(APIVALE_ENDPOINT, headers=headers, json=payload, timeout=30)
+        res = requests.post(APIVEL_ENDPOINT, headers=headers, json=payload, timeout=30)
         if res.status_code == 200:
             return res.json()["choices"][0]["message"]["content"]
         elif res.status_code in [429, 502, 503]:
@@ -153,7 +153,7 @@ def query_deepseek(prompt: str, retries: int = 3):
 ```bash
 # Configure Claude Code CLI to route through apivel
 export ANTHROPIC_BASE_URL="https://apivel.com/v1"
-export ANTHROPIC_API_KEY="sk-your-apivale-key"
+export ANTHROPIC_API_KEY="sk-your-apivel-key"
 
 # Launch Claude Code targeting the 1017 model
 claude --model deepseek-v4-flash
@@ -184,7 +184,7 @@ Route requests through apivel's multi-cluster gateway, featuring active health c
 
 <!-- Ending Conversion CTA Card (100% Wallet Aligned) -->
 <div class="cta-card">
-  <div class="cta-card-title">Connect DeepSeek V4.1 Flash via APIVALE & Cut Token Costs by 90%</div>
+  <div class="cta-card-title">Connect DeepSeek V4.1 Flash via apivel & Cut Token Costs by 90%</div>
   <p class="cta-card-text">
     Access OpenAI and Anthropic compatible endpoints with zero KYC, zero regional card declines, and instant PayPal global checkout. Claim your +50% first-deposit bonus or start with $0.20 free quota.
   </p>
