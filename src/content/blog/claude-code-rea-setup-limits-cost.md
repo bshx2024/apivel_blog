@@ -69,7 +69,7 @@ The following benchmark compares running an autonomous 20-cycle decompilation se
 | **Verified Test Timestamp** | October 17, 2026 | October 17, 2026 | October 17, 2026 |
 | **Best For...** | Proprietary Zero-Shot Logic | High-Frequency Loop Decompilation | Monolithic Multi-Module Analysis |
 
-> **New alternative:** **MiniMax M3.1 Flash** (formerly "Space Bunny") now offers a **1M-token context window** at **$0.15/M input** — making it a strong candidate for large-binary REA sessions that exceed Qwen's pricing threshold. See the [MiniMax M3.1 Flash API Setup & Benchmark Guide](/blog/minimax-m3-flash-api-setup-benchmark/) for integration details.
+> **Frontier Reasoning vs. Massive Context:** When resolving deep architectural bugs or indirect pointer recursion, pair your workflow with [Claude Opus 5.5](/blog/claude-opus-5-5-price-limits-claude-code/) for high-level reasoning while maintaining high-frequency decompilation loops on DeepSeek or Qwen. For massive monolithic binary dumps exceeding 500k tokens, see the [MiniMax M3.1 Flash API Setup & Benchmark Guide](/blog/minimax-m3-flash-api-setup-benchmark/).
 
 ---
 

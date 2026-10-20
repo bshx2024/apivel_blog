@@ -14,6 +14,7 @@ This document tracks all researched high-potential keyword clusters, proposed ar
 | **4** | *How to Slash AI Agent Token Costs by 90% in Multi-Turn Loops* | `reduce llm api costs for ai agents` | `tools for reducing llm api costs`, `how to reduce llm api costs`, `ai agent token management` | Commercial / Cost Optimization | ⏳ **Planned** |
 | **5** | *Cursor IDE Setup with Custom API Key: BYOK Cost Breakdown & Speed Benchmarks* | `cursor custom api key` | `cursor pro vs custom api key`, `cursor deepseek v4 setup`, `cursor rules api gateway` | High Intent / Commercial | ⏳ **Planned** |
 | **6** | *MiniMax M3.1 Flash Benchmarks, Size & API Setup Guide* | `minimax m3.1 flash` | `minimax m3.1 flash size`, `minimax m3.1 flash free`, `minimax m3.1 flash benchmark`, `minimax m3 better than deepseek`, `minimax m3 censored`, `minimax m3.1 flash artificial analysis`, `minimax m3.1 flash huggingface` | Informational + Commercial / Breakout | ✅ **Published** |
+| **7** | *Claude Opus 5.5 Price, Limits & Claude Code Guide* | `claude opus 5.5` | `claude code opus 5.5`, `claude opus 5.5 price`, `claude opus 5.5 free`, `claude opus 5.5 vs sonnet 5.5`, `claude opus 5.5 rate limit` | Technical / Cost & Rate Limit Breakout | ✅ **Published** |
 
 ---
 
