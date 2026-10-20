@@ -75,8 +75,8 @@ Evaluating Qwen 4 against active frontier baselines requires analyzing both anti
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Qwen4-Max** | Proprietary Sparse MoE | Cloud API (Late Q4 2026) | HyperConnection, QSA | Target 78%+ DeepSWE | Complex multi-agent coding loops |
 | **Qwen 4 27B** | 27B Dense/MoE Hybrid | Hugging Face (Post-Max) | 24GB VRAM Single-GPU Fit | Target 69%+ DeepSWE | Air-gapped on-premise local dev |
-| **DeepSeek V4.1 Flash** | 552B MoE (8B-16B Active) | [Available Live on apivel](/blog/deepseek-v4-1-flash-1017-api-setup/) | Extreme Token Efficiency | 77.0 DeepSWE | Cost-sensitive high-throughput API |
-| **MiniMax M3.1 Flash** | 428B MoE (23B Active) | [Available Live on apivel](/blog/minimax-m3-flash-api-setup-benchmark/) | 1,000,000 Token Context | 73.7 DeepSWE v1.1 | Massive monorepo analysis & RAG |
+| **DeepSeek V4.1 Flash** | 552B MoE (8B-16B Active) | Live API: [DeepSeek V4.1 Flash Guide](/blog/deepseek-v4-1-flash-1017-api-setup/) | Extreme Token Efficiency | 77.0 DeepSWE | Cost-sensitive high-throughput API |
+| **MiniMax M3.1 Flash** | 428B MoE (23B Active) | Live API: [MiniMax M3.1 Flash Benchmark](/blog/minimax-m3-flash-api-setup-benchmark/) | 1,000,000 Token Context | 73.7 DeepSWE v1.1 | Massive monorepo analysis & RAG |
 | **Claude Sonnet 5** | Proprietary Dense/MoE | Enterprise Production | Precision & Consistency | 79.5 HumanEval | High-stakes production architecture |
 
 > **Source Verification:** Benchmark baselines audited October 20, 2026. Competitive data synthesized from Artificial Analysis leaderboards, DeepSWE evaluation runs, and official engineering releases.
