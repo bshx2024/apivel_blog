@@ -89,7 +89,7 @@ Independent telemetry from Artificial Analysis and standardized evaluation suite
 |---|---|---|---|---|
 | **MiniMax M3.1 Flash** | **73.7%** | $0.15 | 1M | Agentic multi-file loops & massive repos |
 | DeepSeek V4 Flash | ~68.0% | $0.14 | 128K | Budget-sensitive modular tasks |
-| Qwen 3.7 Max | ~71.2% | $0.48 | 128K | Complex multilingual reasoning |
+| Qwen 3.7 Max | ~71.2% | $0.48 | 128K | Complex multilingual reasoning (see [Qwen 4 roadmap](/blog/qwen-4-release-date-api-roadmap/)) |
 | Claude Sonnet 5 | ~75.0% | $3.00 | 200K | Precision frontier engineering |
 
 > **Source Verification:** Benchmark evaluations were compiled October 18, 2025, cross-validated against Artificial Analysis leaderboard runs and MiniMax telemetry. Telemetry audited October 20, 2026.

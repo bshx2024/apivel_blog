@@ -87,7 +87,7 @@ The table below outlines empirical benchmarks captured on October 17, 2026:
 | **Avg Time-To-First-Token** | **68ms** | 92ms | 145ms | DeepSeek (Instant IDE auto-completion) |
 | **Verified Verification Date** | `2026-10-17` | `2026-10-17` | `2026-10-17` | Direct telemetry audit via apivel |
 
-> **See also:** The newly released **MiniMax M3.1 Flash** (428B MoE, 1M context, $0.15/M input) scores **73.7% on DeepSWE v1.1** and is a direct competitor in the flash-tier agentic coding space. For a full head-to-head comparison including censorship analysis and reasoning_effort control, see [MiniMax M3.1 Flash Benchmarks & API Setup Guide](/blog/minimax-m3-flash-api-setup-benchmark/).
+> **See also:** Track upcoming frontier architectures in our [Qwen 4 Release Date, 27B Roadmap & API Guide](/blog/qwen-4-release-date-api-roadmap/), or explore the newly released [MiniMax M3.1 Flash Benchmarks & API Setup Guide](/blog/minimax-m3-flash-api-setup-benchmark/).
 
 ### Latency & Token Price Arbitrage ($0.14 vs $0.15)
 For pipelines processing 500 million tokens monthly, the 1017 model costs **$105.00**—slashing expenses by 98% compared to proprietary models ($7,500+).
