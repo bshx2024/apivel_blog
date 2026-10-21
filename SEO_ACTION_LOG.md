@@ -44,10 +44,19 @@
     4. 提供 60+ 行健壮的带指数退避和状态码处理的 Production TypeScript 生产配置；
     5. 全面落实双向内链织网：同步在 `claude-code-rea-setup-limits-cost.md` 和 `claude-opus-5-5-price-limits-claude-code.md` 中织入精准上下文反向锚文本；
     6. 注入标准 `FAQPage` JSON-LD Schema，对齐 PayPal 即时结账、零 KYC、+50% 充值优惠及 $0.20 免卡试用。
-* **影响页面**：
-  * 新建：`https://apivel.com/blog/freellmapi-claude-code-review-alternatives/`
-  * 更新反向内链：`/blog/claude-code-rea-setup-limits-cost/`、`/blog/claude-opus-5-5-price-limits-claude-code/`
-* **因果假设**：利用 Google Trends 暴涨期与 Reddit 开发者对 FreeLLMAPI 频繁 429 报错的强痛点，以“客观安全评测 + 架构解法”切入，承接在寻找免 Docker、免绑卡、稳定支持 Claude Code 的高意向开发者，7–14 天内形成 AI 搜索（Perplexity、ChatGPT Search）权威引用，为 APIVALE 的中国大模型（Qwen 3.7 Max, DeepSeek V4）持续引流高转化注册用户。
+* **分类**：🎯 [军师体检诊断与主词归位矫正]
+* **动作详情**：
+  * **主词归位矫正**：响应 Web.Cafe（哥飞军师诊断）反馈——原 Title/H1 中因包含宽泛大词 `Claude Code` 且正文 `claude code` bigram 频次过高，导致算法推断主词错位为竞争激烈且赛道错位的 `claude code`。
+  * **重构 Title 与 H1**：将 Title/H1 强力归位并前置核心实体 `FreeLLMAPI`（H1: `FreeLLMAPI Review: Is It Safe, Rate Limits & Best API Alternative`；MetaTitle: `FreeLLMAPI Review: Safe Alternative & Key Guide | APIVALE`），确保 100% 毫无悬念推断核心词为 `FreeLLMAPI`。
+  * **攻占 1~5 词密度榜（消除 4.9 分加权扣分）**：
+    1. 1-gram: `freellmapi` 频次提升至 68 次，稳居全篇第 1 名（远超所有功能停用词）；
+    2. 2-gram: `safe freellmapi` (9次)、`freellmapi alternative` (8次)、`freellmapi 429` (7次) 霸占前列，压制无序泛词；
+    3. 3-gram: `safe freellmapi alternative` (8次) 登顶第 1 名；
+    4. 4-gram: `freellmapi 429 rate limit` (5次) 登顶第 1 名；
+    5. 5-gram: `freellmapi 429 rate limit error` (4次) 登顶第 1 名。
+  * **全页词数瘦身（消除 1 分超长扣分）**：将 Markdown 纯正文从 1751 词精炼至 1543 词，使包含 SSR 外框与组件后的全页可见词数完美约束在 1200~1800 词黄金区间。
+* **影响页面**：`https://apivel.com/blog/freellmapi-claude-code-review-alternatives/`
+* **因果假设**：彻底消灭“主词赛道错位”误判，夺回丢掉的 5.9 分，使 On Page 评分从 95 分冲刺至 99–100 分，并确保 Google 与 AI 搜索引擎在检索 `freellmapi` 及相关安全/替代方案长尾词时精准置顶本页。
 
 ---
 
