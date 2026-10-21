@@ -111,6 +111,7 @@ Token count exceeded response generation ceiling (8192 output tokens).
    Analyze only the cryptographic verification routine at sub_401B20. Do not dump the full .text segment.
    ```
 2. **Expand Output Buffers via apivel**: Official Anthropic APIs enforce an 8,192 token output generation cap. Routing through apivel to **Qwen 3.8 Max** or **DeepSeek V4** leverages extended streaming buffers capable of handling extensive decompiled C blocks without truncation.
+3. **Avoid Fragile Free-Tier Routers**: Developers attempting to offset costs with self-hosted multi-provider routers frequently face immediate 429 concurrency freezes. Read our in-depth [FreeLLMAPI Review & Safe Claude Code Alternative](/blog/freellmapi-claude-code-review-alternatives/) to see why free-tier aggregation breaks under multi-turn agent execution and how high-throughput endpoints solve it.
 
 ---
 

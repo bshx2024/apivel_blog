@@ -32,6 +32,25 @@
 
 ## 📅 apivel.com SEO 动作记录表 (2026年)
 
+### 2026-10-21
+* **分类**：📝 [内容发布与双向织网动作]
+* **动作详情**：
+  * **捕获热点与意图图谱**：响应 Web.Cafe（哥飞社群）2026-10-21 捕获的 Breakout 级热词 `freellmapi`（Google Trends 飙升 >5,000%，Top 搜索词 `freellmapi github`, `openrouter`, `claude code`, `docker`, `is freellmapi safe`），首发深度对比与安全评测博文：`/blog/freellmapi-claude-code-review-alternatives/`。
+  * **主攻关键词**：`FreeLLMAPI`、`FreeLLMAPI GitHub`、`Free LLM API for Claude Code`、`FreeLLMAPI vs OpenRouter vs OmniRoute`、`Is FreeLLMAPI safe`、`FreeLLMAPI Docker setup alternatives`、`Free LLM API 429 rate limit fix`。
+  * **工程增益与架构**：
+    1. 深入剖析自建 Free-Tier 路由的 3 大死穴：3–5 RPM 免费层上限在 Agent 多轮调用下必触发 429、Failover 降级到 8B 弱模型导致代码被改崩、频繁轮询触发原厂封号风险；
+    2. 提供详尽的四方对比矩阵（FreeLLMAPI vs OpenRouter vs OmniRoute vs APIVALE，含客观 "Best for..." 正向列与 2026年10月核验时间戳）；
+    3. 植入带真实原声引用的 Community Voice Box，并内嵌交互式 Rate Limit & Cost 模拟器（原生 `<select>`/`<input>`/`<button>`，消除 Doorway Page 扣分）；
+    4. 提供 60+ 行健壮的带指数退避和状态码处理的 Production TypeScript 生产配置；
+    5. 全面落实双向内链织网：同步在 `claude-code-rea-setup-limits-cost.md` 和 `claude-opus-5-5-price-limits-claude-code.md` 中织入精准上下文反向锚文本；
+    6. 注入标准 `FAQPage` JSON-LD Schema，对齐 PayPal 即时结账、零 KYC、+50% 充值优惠及 $0.20 免卡试用。
+* **影响页面**：
+  * 新建：`https://apivel.com/blog/freellmapi-claude-code-review-alternatives/`
+  * 更新反向内链：`/blog/claude-code-rea-setup-limits-cost/`、`/blog/claude-opus-5-5-price-limits-claude-code/`
+* **因果假设**：利用 Google Trends 暴涨期与 Reddit 开发者对 FreeLLMAPI 频繁 429 报错的强痛点，以“客观安全评测 + 架构解法”切入，承接在寻找免 Docker、免绑卡、稳定支持 Claude Code 的高意向开发者，7–14 天内形成 AI 搜索（Perplexity、ChatGPT Search）权威引用，为 APIVALE 的中国大模型（Qwen 3.7 Max, DeepSeek V4）持续引流高转化注册用户。
+
+---
+
 ### 2026-10-17
 * **分类**：📝 [内容动作]
 * **动作详情**：
