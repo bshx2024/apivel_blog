@@ -15,6 +15,8 @@ This document tracks all researched high-potential keyword clusters, proposed ar
 | **5** | *Cursor IDE Setup with Custom API Key: BYOK Cost Breakdown & Speed Benchmarks* | `cursor custom api key` | `cursor pro vs custom api key`, `cursor deepseek v4 setup`, `cursor rules api gateway` | High Intent / Commercial | ⏳ **Planned** |
 | **6** | *MiniMax M3.1 Flash Benchmarks, Size & API Setup Guide* | `minimax m3.1 flash` | `minimax m3.1 flash size`, `minimax m3.1 flash free`, `minimax m3.1 flash benchmark`, `minimax m3 better than deepseek`, `minimax m3 censored`, `minimax m3.1 flash artificial analysis`, `minimax m3.1 flash huggingface` | Informational + Commercial / Breakout | ✅ **Published** |
 | **7** | *Claude Opus 5.5 Price, Limits & Claude Code Guide* | `claude opus 5.5` | `claude code opus 5.5`, `claude opus 5.5 price`, `claude opus 5.5 free`, `claude opus 5.5 vs sonnet 5.5`, `claude opus 5.5 rate limit` | Technical / Cost & Rate Limit Breakout | ✅ **Published** |
+| **8** | *9Router vs OmniRoute: Best Claude Alternatives & Setup* | `9router vs omniroute` | `9router alternatives`, `9router install`, `9router npm`, `9router proxy`, `claude code proxy`, `qwen 3.7 max` | Technical / Comparison & Breakout | ✅ **Published** |
+
 
 ---
 

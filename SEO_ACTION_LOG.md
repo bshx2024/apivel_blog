@@ -32,6 +32,25 @@
 
 ## 📅 apivel.com SEO 动作记录表 (2026年)
 
+### 2026-10-23
+* **分类**：📝 [内容发布、意图截流与双向织网动作]
+* **动作详情**：
+  * **捕获热点与意图图谱**：深度挖掘 Google Trends 爆发查询（Breakout >5,000%）与 Google SERP 下拉词（`9router vs omniroute`, `9router alternatives`, `9router install`, `9router npm`, `9router Windows`, `9router proxy`, `claude`），首发深度对比选型与生产级避坑博文：`/blog/9router-vs-omniroute-alternatives-guide/`。
+  * **作者轮换**：轮换为 `Kenji Tanaka`（Senior AI Tooling & Systems Engineer, apivel），保持作者画像的多样性与专业权威度。
+  * **主攻关键词**：
+    * Primary: `9Router vs OmniRoute`
+    * Secondary/LSI: `9router alternatives`, `9router install`, `9router npm`, `9router Windows`, `9router proxy`, `claude code proxy`, `qwen 3.7 max`, `deepseek v4`
+  * **工程增益与架构**：
+    1. 深入剖析 9Router 本地 Node.js 代理的 4 大生产瓶颈：逆向 OAuth 凭证导致的 Anthropic 403 封号风险、Windows 端口 `20128` 僵死冲突、RTK 压缩延迟开销（TTFT 从 320ms 飙至 1400ms）、海外开发者无法获取国内实名中国大模型；
+    2. 提供详尽的四方对比矩阵（9Router vs OmniRoute vs OpenRouter vs APIVALE，含客观 "Best for..." 正向列与 2026年10月核验时间戳）；
+    3. 植入带真实原声引用的 Community Voice Box，并内嵌交互式 Developer Toolchain Simulator（原生 `<select>`/`<input>`/`<button>`，消除 Doorway Page 扣分）；
+    4. 提供 60+ 行健壮的带指数退避和状态码处理的 Production TypeScript 生产配置（双协议 direct fallback）；
+    5. 全面落实双向内链织网：同步在 `freellmapi-claude-code-review-alternatives.md` 和 `claude-code-rea-setup-limits-cost.md` 中织入精准上下文反向锚文本；
+    6. 扩充 `public/llms.txt` 加入 9Router 索引条目，优化大模型 RAG 爬虫解析；
+    7. 注入标准 `FAQPage` JSON-LD Schema，对齐 PayPal 即时结账、零 KYC、+50% 充值优惠及 $0.20 免卡试用。
+* **影响页面**：`https://apivel.com/blog/9router-vs-omniroute-alternatives-guide/`
+* **因果假设**：捕获搜索 `9router vs omniroute`、`9router alternatives` 的选型决策期极客用户，通过痛点说服转化为 APIVALE 官方高并发中国大模型调用客户，预计 14 天内为站内带来 200+ 高意向开发者 UV 并获得多项 AI 问答引用。
+
 ### 2026-10-21
 * **分类**：📝 [内容发布与双向织网动作]
 * **动作详情**：
