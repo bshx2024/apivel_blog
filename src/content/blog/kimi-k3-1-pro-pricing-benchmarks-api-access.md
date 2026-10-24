@@ -23,28 +23,28 @@ keyTakeaways:
 <div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
-    <li><strong>2.8T MoE / 104B Active Parameters:</strong> Moonshot AI's newly released Kimi K3.1 Pro scales post-training compute over a 2.8-trillion parameter MoE backbone with a native 1,000,000-token context window.</li>
-    <li><strong>Near-Opus Coding Precision:</strong> Achieves <strong>65.7% on Terminal-Bench 4.0</strong>, closing the gap with Claude Opus 5.5 (66.4%) and decisively outscoring GPT-6 Astra (58.2%) on real terminal execution.</li>
-    <li><strong>Official Token Pricing:</strong> Priced at <strong>$2.00/1M input</strong> and <strong>$10.00/1M output</strong>, with a 2-3× faster Highspeed variant available at $20.00/1M output.</li>
-    <li><strong>Global Zero-KYC Onboarding:</strong> Skip the mainland +86 phone verification and domestic card roadblocks. Route requests via <a href="https://apivel.com/sign-up?redirect=/blog/kimi-k3-1-pro-pricing-benchmarks-api-access" class="text-emerald-400 hover:underline font-semibold">APIVALE with instant PayPal billing and a $0.20 free signup trial</a>.</li>
+    <li><strong>2.8T MoE / 104B Active Parameters:</strong> Moonshot AI's Kimi K3.1 Pro deploys a 2.8-trillion parameter sparse MoE architecture with a native 1,000,000-token context window.</li>
+    <li><strong>Near-Opus Coding Precision:</strong> Scores <strong>65.7% on Terminal-Bench 4.0</strong>, challenging Claude Opus 5.5 (66.4%) while outperforming GPT-6 Astra (58.2%).</li>
+    <li><strong>Commercial API Pricing:</strong> Billed at <strong>$2.00/1M input</strong> and <strong>$10.00/1M output</strong>, alongside a 2-3× faster Highspeed variant at $20.00/1M output.</li>
+    <li><strong>Global Zero-KYC Onboarding:</strong> Bypass domestic +86 SMS verification and card barriers via <a href="https://apivel.com/sign-up?redirect=/blog/kimi-k3-1-pro-pricing-benchmarks-api-access" class="text-emerald-400 hover:underline font-semibold">APIVALE with instant PayPal billing and a $0.20 free signup trial</a>.</li>
   </ul>
 </div>
 
 <div class="my-6 border-l-4 border-indigo-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Definition</span>
   <div class="mt-1 text-md font-semibold text-white">Kimi K3.1 Pro (Moonshot AI)</div>
-  <p class="mt-2 text-sm text-gray-300"><strong>Kimi K3.1 Pro</strong> is a frontier 2.8-trillion parameter multimodal Mixture-of-Experts (MoE) foundation model developed by Moonshot AI. Activating ~104 billion parameters per token forward pass, it combines Kimi Delta Attention (KDA) with Attention Residuals (AttnRes) to deliver 1M-token context recall, 3D procedural mesh generation, and high-autonomy agentic software engineering.</p>
+  <p class="mt-2 text-sm text-gray-300"><strong>Kimi K3.1 Pro</strong> is a frontier 2.8-trillion parameter multimodal Mixture-of-Experts (MoE) foundation model developed by Moonshot AI. Activating ~104 billion parameters per token, it pairs Kimi Delta Attention (KDA) with Attention Residuals (AttnRes) to deliver 1M-token context recall, 3D procedural mesh generation, and high-autonomy agentic software engineering.</p>
 </div>
 
-On October 24, 2026, Moonshot AI officially deployed its post-trained flagship: **Kimi K3.1 Pro** alongside its low-latency counterpart, **Kimi K3.1 Pro Highspeed**. Within hours of the release, developer interest surged by over 5,000% across global search indexes, driven by two polar reactions: astonishment at its **65.7% Terminal-Bench 4.0** score, and immediate friction surrounding official access barriers, token burn rates, and 5-hour rolling rate limits.
+On October 24, 2026, Moonshot AI deployed its post-trained flagship: **Kimi K3.1 Pro** and the low-latency **K3.1 Pro Highspeed**. Within hours, search volume surged over 5,000% across developer indexes, focusing on its **65.7% Terminal-Bench 4.0** score alongside practical questions on token burn rates, 5-hour rolling quotas, and overseas access obstacles.
 
-While Moonshot committed to open-sourcing full model weights on **November 4, 2026**, running a 2.8T MoE checkpoint locally requires multiple datacenter-class GPUs exceeding 1.4TB of specialized memory. For working engineers who want to test K3.1 Pro inside Claude Code CLI, Cursor, or autonomous agent loops today, managed cloud API routing is the only viable path.
+Although Moonshot plans to release model weights on **November 4, 2026**, self-hosting a 2.8T MoE locally demands specialized clusters exceeding 1.4TB VRAM. For engineers integrating K3.1 into Claude Code CLI, Cursor, or multi-agent loops today, managed cloud API routing provides the only scalable path.
 
 ```mermaid
 graph TD
     A["Developer Environment<br/>(Claude Code / Cursor / Windsurf)"] -->|"OPENAI_BASE_URL or<br/>ANTHROPIC_BASE_URL"| B["APIVALE Unified Gateway<br/>https://apivel.com/v1"]
     B -->|"1M Context · KDA Linear Attention"| C["Kimi K3.1 Pro<br/>2.8T MoE / 104B Active ($2.00 / $10.00)"]
-    B -->|"Low Latency CLI Fallback"| D["Kimi K3.1 Pro Highspeed<br/>2-3× Throughput ($20.00 Output)"]
+    B -->|"Low Latency CLI Fallback"| D["K3.1 Pro Highspeed<br/>2-3× Throughput ($20.00 Output)"]
     B -->|"Failover Resilience"| E["Claude Opus 5.5<br/>66.4% Terminal-Bench ($4.00 / $20.00)"]
     B -->|"Budget Code Fallback"| F["DeepSeek V4 Flash<br/>$0.14 / 1M Input"]
     C --> G["Instant Global Settlement<br/>PayPal · Credit Cards · $0.20 Free Trial"]
@@ -52,96 +52,89 @@ graph TD
 
 ---
 
-## 1. 2.8T MoE Architecture: Capacity vs Active Inference Compute
+## 1. 2.8T MoE Architecture: Capacity vs Active Compute
 
-Kimi K3.1 Pro is built upon a sparse Mixture-of-Experts (MoE) design totaling **2.8 trillion parameters**. Instead of activating all weights on every forward pass, the dynamic routing gating network selectively activates **16 out of 896 fine-grained expert heads**, resulting in approximately **104 billion active parameters** per generated token.
+The checkpoint utilizes a sparse Mixture-of-Experts layout totaling **2.8 trillion parameters**. The gating network dynamically activates **16 out of 896 expert heads**, executing forward passes with approximately **104 billion active parameters**.
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
-│                   Kimi K3.1 Pro Architectural Stack                    │
+│                      Core Architectural Parameters                     │
 ├────────────────────────────────────────────────────────────────────────┤
 │ • Total Parameter Scale:      2.8 Trillion (2,800B)                    │
 │ • Active Parameters / Token:  ~104 Billion (16 / 896 Experts)          │
 │ • Sequence Context Window:    1,000,000 Tokens (Native 1M)             │
-│ • Attention Mechanism:        KDA (Kimi Delta Attention) + AttnRes     │
-│ • Primary Modalities:         Text, High-Res Image, Video, 3D Meshes   │
+│ • Attention Formulation:      KDA (Kimi Delta Attention) + AttnRes     │
 │ • Weights Release Target:     November 4, 2026 (Open-Weights License)  │
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
-### KDA Hybrid Attention & KV Cache Footprint
+### KDA Hybrid Attention & KV Cache Reduction
 
-Traditional Transformers encounter quadratic memory expansion $O(N^2)$ when scaling to 1,000,000 tokens. Kimi K3.1 Pro integrates **Kimi Delta Attention (KDA)**, an advanced hybrid linear attention formulation paired with Attention Residuals (AttnRes).
+Standard Transformers face quadratic $O(N^2)$ memory growth over 1,000,000 tokens. The model pairs **Kimi Delta Attention (KDA)** with Attention Residuals (AttnRes), compressing historical key-value states into a fixed-size representation while preserving full-rank softmax for local token sequences.
 
-KDA compresses the key-value representation into a fixed-state matrix for historic context chunks while reserving full-rank softmax attention strictly for immediate local token spans. This architecture achieves three tangible engineering benefits:
-1. **70% Smaller KV Cache Footprint:** Allows multi-agent swarms to hold 100K+ token codebases in memory without running out of server VRAM.
-2. **Sub-400ms Time-to-First-Token (TTFT):** Significantly lowers initial prompt processing latency on massive document ingestions.
-3. **Flawless Needle-in-a-Haystack Recall:** Maintained 99.8% retrieval accuracy across all depth segments up to 1,000,000 tokens during Artificial Analysis stress testing.
+This hybrid pipeline yields three concrete engineering gains:
+1. **70% Reduced KV Cache Footprint:** Allows agents to retain large codebases without GPU out-of-memory crashes.
+2. **Sub-400ms TTFT:** Minimizes initial prompt ingestion delays across extensive documentation.
+3. **High-Accuracy Recall:** Maintained 99.8% needle-in-a-haystack retrieval during Artificial Analysis evaluations.
 
-### Local Hardware Feasibility vs Cloud API Reality
+### Local Deployment Reality
 
-The announcement of a November 4 open-weights release prompted widespread questions in r/LocalLLaMA regarding self-hosting. In unquantized FP16, a 2.8T parameter model requires roughly **5.6 Terabytes of high-bandwidth VRAM**. 
-
-Even with aggressive 4-bit AWQ or GGUF quantization, the minimum memory footprint remains above **1.4 Terabytes**. A cluster capable of hosting this locally costs upwards of $120,000 in dedicated hardware. Consequently, production integration requires managed API routing with dynamic fallback protection.
+In unquantized FP16, a 2.8T parameter model requires roughly **5.6 Terabytes of VRAM**. Even under 4-bit quantization, minimum memory requirements remain above **1.4 Terabytes** ($120,000+ hardware rig). Consequently, production workloads rely on managed cloud API routing.
 
 ---
 
 ## 2. Kimi K3.1 Pro Pricing Plans vs Highspeed Variant
 
-Moonshot AI has structured commercial pricing for K3.1 Pro to compete directly with frontier models like Claude Sonnet 5, Claude Opus 5.5, and GPT-6 Astra.
+Commercial pricing directly targets developer workloads previously dominated by Claude Sonnet 5, Claude Opus 5.5, and GPT-6 Astra.
 
-| Pricing Tier | Input Price / 1M Tokens | Output Price / 1M Tokens | Cached Input / 1M | Max Context | Best Suited For... |
+| Model Checkpoint | Input / 1M Tokens | Output / 1M Tokens | Cached Input / 1M | Max Context | Best Suited For... |
 |---|---|---|---|---|---|
-| **Kimi K3.1 Pro (Standard)** | **$2.00** | **$10.00** | **$0.50** | 1,000,000 | Deep architectural refactoring & agent loops |
-| **Kimi K3.1 Pro Highspeed** | **$2.00** | **$20.00** | **$0.50** | 1,000,000 | Interactive CLI coding & low-latency IDE autocomplete |
-| [Claude Opus 5.5](/blog/claude-opus-5-5-price-limits-claude-code/) | $4.00 | $20.00 | $0.40 | 1,000,000 | Complex enterprise compliance & auditing |
-| [Qwen 3.7 Max](/blog/qwen-4-release-date-api-roadmap/) | $0.48 | $1.92 | $0.12 | 128,000 | High-volume multilingual automation |
-| [DeepSeek V4 Flash](/blog/deepseek-v4-1-flash-1017-api-setup/) | $0.14 | $0.28 | $0.02 | 128,000 | High-frequency cost-sensitive micro-tasks |
+| **Kimi K3.1 Pro (Standard)** | **$2.00** | **$10.00** | **$0.50** | 1,000,000 | Deep refactoring & multi-file agents |
+| **K3.1 Pro Highspeed** | **$2.00** | **$20.00** | **$0.50** | 1,000,000 | Fast CLI pair programming & real-time IDE |
+| [Claude Opus 5.5](/blog/claude-opus-5-5-price-limits-claude-code/) | $4.00 | $20.00 | $0.40 | 1,000,000 | Enterprise auditing & architecture |
+| [Qwen 3.7 Max](/blog/qwen-4-release-date-api-roadmap/) | $0.48 | $1.92 | $0.12 | 128,000 | High-volume automated scripting |
+| [DeepSeek V4 Flash](/blog/deepseek-v4-1-flash-1017-api-setup/) | $0.14 | $0.28 | $0.02 | 128,000 | Budget-sensitive automated unit tests |
 
 > *Note: Pricing and parameters verified via official Moonshot AI and provider documentation as of October 24, 2026.*
 
-### Token Burn Mechanics in Long-Horizon Coding
+### Token Burn in Autonomous Coding Loops
 
-Because K3.1 Pro features a 1M context window, multi-turn coding tools like Claude Code CLI or Cursor Composer will continuously resend previous terminal output, file trees, and AST diffs. 
-
-A single 15-turn debugging loop involving 40,000 tokens of context generates over 600,000 cumulative input tokens ($1.20) and 15,000 output tokens ($0.15). Without prompt caching or gateway-level token arbitrage, a busy engineering team can burn hundreds of dollars weekly.
+With a 1M context window, multi-turn coding assistants repeatedly transmit terminal stdout, AST diffs, and project files. A 15-turn task with 40,000 tokens of context can consume over 600,000 cumulative input tokens ($1.20) and 15,000 output tokens ($0.15).
 
 **APIVALE Cost-Optimization Strategy:**
-* **$0.20 Instant Sandbox Credit:** New users receive $0.20 free credit upon registration with zero KYC or credit card requirements.
-* **+50% First Top-Up Bonus:** Deposit $29 to receive $43.50 in compute (or deposit $5 to receive $7.50).
-* **$29 Developer Special Pack:** 40,000,000 tokens with 56% savings and permanent validity, billable via PayPal Instant Checkout.
+* **$0.20 Instant Sandbox Credit:** New developers receive $0.20 free credit upon registration with zero KYC.
+* **+50% First Deposit Bonus:** Top up $29 to receive $43.50 in compute (or deposit $5 to receive $7.50).
+* **$29 Developer Special Pack:** 40,000,000 non-expiring tokens (56% discount) via PayPal Instant Checkout.
 
 ---
 
 ## 3. Verified Benchmarks & Artificial Analysis Leaderboard
 
-Independent telemetry compiled across developer benchmarks confirms that K3.1 Pro represents a substantial leap over older MoE checkpoints.
+Independent evaluations confirm that the post-trained checkpoint delivers competitive gains on agentic terminal execution.
 
 ```
 Terminal-Bench 4.0 Coding Agent Accuracy
 Claude Opus 5.5       █████████████████████████████████ 66.4%
-Kimi K3.1 Pro         ████████████████████████████████▌ 65.7%
+K3.1 Pro              ████████████████████████████████▌ 65.7%
 GPT-6 Astra           █████████████████████████████     58.2%
 MiniMax M3.1 Flash    ███████████████████████████       54.1%
 DeepSeek V4 Flash     ████████████████████████▌         51.8%
 ```
 
-### Terminal-Bench 4.0 & Agentic Software Engineering
+### Terminal-Bench 4.0 & Engineering Capabilities
 
-**Terminal-Bench 4.0** tests an AI's capacity to execute bash commands, diagnose broken test suites, inspect Docker logs, and resolve git merge conflicts within a restricted container environment. 
+On **Terminal-Bench 4.0**, testing bash command execution, container diagnostics, and git merge resolution, the model scored **65.7%**—closely trailing **Claude Opus 5.5 (66.4%)** while outpacing GPT-6 Astra by 7.5 percentage points. It successfully self-corrected environment errors in 84% of evaluated failures.
 
-Kimi K3.1 Pro scored **65.7%**, finishing just 0.7 percentage points behind **Claude Opus 5.5 (66.4%)** while outperforming GPT-6 Astra by 7.5 points. Its error-recovery mechanism proved particularly resilient, self-correcting permission errors and missing pip dependencies in 84% of multi-step failures.
+### Specialized 3D & OfficeQA Workflows
 
-### Specialized Workflows: 3D Generation & OfficeQA Pro
-
-* **OfficeQA Pro v2 (Financial & Cross-Document Analysis):** Scored **64.4 (SoTA)**, outpacing all frontier proprietary models in extracting multi-sheet balance-sheet projections and constructing DCF models.
-* **3D Spatial Reasoning & Scripting (3D Make):** Demonstrates native comprehension of procedural spatial geometry. It can write complete Godot 4.x GDScript engines, Blender Python automation scripts, and export 3D-printable manifold meshes directly from rough ASCII diagrams or reference images.
+* **OfficeQA Pro v2:** Reached **64.4 (SoTA)** on complex multi-sheet balance sheet extractions and DCF financial projections.
+* **3D Spatial Reasoning (3D Make):** Generates procedural Godot 4.x GDScript, Blender Python scripts, and watertight 3D-printable meshes from descriptive text or 2D diagrams.
 
 ---
 
 ## 4. Reddit Community Voices & Production Edge Cases
 
-While benchmark numbers are impressive, real-world deployment reveals immediate operational friction. The following quote reflects common sentiment on developer forums:
+Developer discussions highlight key operational considerations for production integration:
 
 > *"Terminal-Bench score of 65.7% is genuinely within spitting distance of Opus 5.5 (66.4%). But good luck running 2.8T MoE locally even when weights drop Nov 4. The 5-hour rolling rate limits on hosted accounts are brutal for multi-turn agent loops. We desperately need a reliable pay-per-token API gateway with standard OpenAI/Anthropic headers."*  
 > — **u/antonio_tensor**, *r/LocalLLaMA*, October 24, 2026
@@ -150,125 +143,90 @@ While benchmark numbers are impressive, real-world deployment reveals immediate 
 
 ```
 ┌──────────────────────────────────────┬────────────────────────────────────────────────────────┐
-│ Edge-Case Obstacle                   │ APIVALE Architectural Fix                              │
+│ Production Edge Case                 │ APIVALE Routing Solution                               │
 ├──────────────────────────────────────┼────────────────────────────────────────────────────────┤
-│ 1. 5-Hour Rolling Rate Limits        │ Dynamic failover pools distribute bursts across        │
-│    (HTTP 429 Too Many Requests)      │ multiple high-capacity upstream endpoints.             │
+│ 1. 5-Hour Rolling Rate Limits (429)  │ Load-balanced enterprise pools absorb high burst volume│
 ├──────────────────────────────────────┼────────────────────────────────────────────────────────┤
-│ 2. Long-Context SSE Stream Timeouts  │ Proxy-level keep-alive pulses prevent client drops     │
-│    (504 Gateway Timeout on 100K+)    │ during 2.8T MoE inter-token deliberation pauses.       │
+│ 2. Long-Context Timeouts (504)       │ Heartbeat keep-alive signals preserve open connections │
 ├──────────────────────────────────────┼────────────────────────────────────────────────────────┤
 │ 3. Mainland KYC & +86 Phone Barrier  │ Global billing infrastructure accepts PayPal and cards │
-│    (Account sign-up lockouts)        │ with zero domestic identity verification.              │
 └──────────────────────────────────────┴────────────────────────────────────────────────────────┘
 ```
 
-When multi-agent tools initiate parallel workspace reviews, official hosted accounts frequently hit rolling token ceilings. Through [APIVALE's unified gateway](https://apivel.com/sign-up?redirect=/blog/kimi-k3-1-pro-pricing-benchmarks-api-access), incoming requests are automatically balanced across enterprise pools with automated retry semantics.
+Through [APIVALE's unified gateway](https://apivel.com/sign-up?redirect=/blog/kimi-k3-1-pro-pricing-benchmarks-api-access), incoming requests are automatically load-balanced across enterprise endpoints with automated retry handling.
 
 ---
 
 ## 5. Instant API Access: 5-Minute Setup for Claude Code & Cursor
 
-Developers do not need a Chinese phone number, domestic Alipay identity verification, or specialized SDKs to run Kimi K3.1 Pro. The APIVALE routing layer transforms native OpenAI and Anthropic protocol payloads into Moonshot's backend schema.
+Developers can bypass mainland phone numbers and identity checks. The APIVALE routing layer adapts standard OpenAI and Anthropic schemas to the upstream model.
 
-### Production-Ready Python Integration (with Exponential Backoff)
-
-The following snippet demonstrates robust production invocation with automatic retry handling for rate limits (HTTP 429) and upstream gateway stalls (HTTP 502/504):
+### Resilient Python Integration (with Exponential Backoff)
 
 ```python
-import os
-import time
-import requests
-from typing import Dict, Any, Optional
+import os, time, requests
+from typing import Optional
 
 APIVALE_BASE_URL = "https://apivel.com/v1"
 APIVALE_API_KEY = os.getenv("APIVALE_API_KEY", "sk-apivel-your-api-key")
 
-def query_kimi_k31_pro(
-    prompt: str,
-    system_prompt: str = "You are an expert autonomous software engineer.",
-    max_retries: int = 3,
-    temperature: float = 0.2
-) -> Optional[str]:
-    """Execute a resilient completion call to Kimi K3.1 Pro via APIVALE gateway."""
+def query_k31_pro(prompt: str, max_retries: int = 3) -> Optional[str]:
+    """Execute completion call via APIVALE gateway with backoff."""
     url = f"{APIVALE_BASE_URL}/chat/completions"
-    headers = {
-        "Authorization": f"Bearer {APIVALE_API_KEY}",
-        "Content-Type": "application/json"
-    }
-    payload: Dict[str, Any] = {
+    headers = {"Authorization": f"Bearer {APIVALE_API_KEY}", "Content-Type": "application/json"}
+    payload = {
         "model": "infer/kimi-k3.1-pro",
-        "messages": [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": prompt}
-        ],
-        "temperature": temperature,
-        "max_tokens": 4096,
-        "stream": False
+        "messages": [{"role": "user", "content": prompt}],
+        "temperature": 0.2
     }
-
     for attempt in range(1, max_retries + 1):
         try:
-            response = requests.post(url, headers=headers, json=payload, timeout=90)
-            if response.status_code == 200:
-                data = response.json()
-                return data["choices"][0]["message"]["content"]
-            elif response.status_code in [429, 502, 503, 504]:
-                wait_time = (2 ** attempt) + 0.5
-                print(f"[Retry] Status {response.status_code}. Backing off for {wait_time:.1f}s...")
-                time.sleep(wait_time)
-            else:
-                print(f"[Error] Request failed with status {response.status_code}: {response.text}")
-                break
-        except requests.exceptions.RequestException as e:
-            wait_time = (2 ** attempt) + 0.5
-            print(f"[Network] Exception on attempt {attempt}: {e}. Retrying in {wait_time:.1f}s...")
-            time.sleep(wait_time)
-            
+            res = requests.post(url, headers=headers, json=payload, timeout=90)
+            if res.status_code == 200:
+                return res.json()["choices"][0]["message"]["content"]
+            elif res.status_code in [429, 502, 503, 504]:
+                time.sleep((2 ** attempt) + 0.5)
+        except requests.exceptions.RequestException:
+            time.sleep((2 ** attempt) + 0.5)
     return None
 
 if __name__ == "__main__":
-    task = "Analyze this Godot 4 GDScript error and output a procedural 3D collision fix."
-    result = query_kimi_k31_pro(task)
-    print("Kimi K3.1 Pro Response:\n", result)
+    print(query_k31_pro("Analyze this Godot 4 GDScript error and output a 3D collision fix."))
 ```
 
 ### Configuring Claude Code CLI
 
-To redirect Claude Code CLI to Kimi K3.1 Pro via APIVALE's Anthropic-compatible adapter:
-
 ```bash
-# 1. Export APIVALE Anthropic gateway URL and your API Key
+# 1. Export APIVALE Anthropic gateway and API Key
 export ANTHROPIC_BASE_URL="https://apivel.com/anthropic"
 export ANTHROPIC_API_KEY="sk-apivel-your-api-key"
 
-# 2. Instruct Claude Code to route requests to Kimi K3.1 Pro
+# 2. Instruct Claude Code to route requests to the model
 export CLAUDE_CODE_MODEL="infer/kimi-k3.1-pro"
 
-# 3. Launch CLI session with sub-400ms TTFT
+# 3. Launch CLI session
 claude
 ```
 
 ### Configuring Cursor IDE & Windsurf
 
-In Cursor or Windsurf, navigate to **Settings $\rightarrow$ Models**:
-1. Check **Override OpenAI Base URL** and input: `https://apivel.com/v1`
-2. Enter your APIVALE API key in the OpenAI API Key field.
-3. In the Model List, add custom model: `infer/kimi-k3.1-pro` (or `infer/kimi-k3.1-pro-highspeed`).
-4. Save and select this model in Cursor Composer or Chat.
+In Cursor or Windsurf (**Settings $\rightarrow$ Models**):
+1. Enable **Override OpenAI Base URL**: `https://apivel.com/v1`
+2. Enter your APIVALE key in the API Key field.
+3. In Model List, add: `infer/kimi-k3.1-pro` (or `infer/kimi-k3.1-pro-highspeed`).
 
 ---
 
 ## 6. Frequently Asked Questions (FAQ)
 
 ### What is the official pricing for Kimi K3.1 Pro API?
-Kimi K3.1 Pro Standard is priced at **$2.00 per million input tokens** and **$10.00 per million output tokens** ($0.50 per 1M cached prompt tokens). The K3.1 Pro Highspeed variant costs **$2.00 per 1M input** and **$20.00 per 1M output**, providing 2-3× faster generation for interactive command-line environments.
+Kimi K3.1 Pro Standard is priced at **$2.00 per million input tokens** and **$10.00 per million output tokens** ($0.50 per 1M cached prompt tokens). The Highspeed variant costs **$2.00 per 1M input** and **$20.00 per 1M output**, providing 2-3× faster generation.
 
 ### Is Kimi K3.1 Pro open source on Hugging Face?
-Moonshot AI has committed to open-sourcing the full model weights on **November 4, 2026**. However, self-hosting the 2.8-trillion parameter MoE model requires over 1.4TB of VRAM even at 4-bit precision, making cloud API routing the practical option for individual developers and startups.
+Moonshot AI committed to open-sourcing model weights on **November 4, 2026**. However, self-hosting requires over 1.4TB VRAM even with 4-bit quantization, making hosted cloud API routing the practical choice for most teams.
 
 ### How do international developers sign up without a Chinese phone number?
-Official Moonshot platforms require domestic +86 SMS verification and mainland banking credentials. Global developers can access Kimi K3.1 Pro via **APIVALE's unified gateway** (`https://apivel.com/v1`), which supports instant PayPal checkout, international credit cards, and provides a $0.20 free signup trial without requiring any KYC.
+Global developers can access the model via **APIVALE's unified gateway** (`https://apivel.com/v1`), which supports instant PayPal checkout, major credit cards, and a $0.20 free signup trial with zero KYC.
 
 ---
 
