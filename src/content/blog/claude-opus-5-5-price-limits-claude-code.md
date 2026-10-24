@@ -88,12 +88,13 @@ Selecting the optimal foundation model requires balancing cognitive reasoning de
 | Foundation Checkpoint | Context Window | Input / Output (per 1M) | Prompt Cache Read | Coding & SWE Benchmark | Thinking Mechanism | Best For... (Honesty Column) |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Claude Opus 5.5** | 1,000,000 Tokens | $4.00 / $20.00 | $0.20 | 81.2% SWE-bench Verified | Mandatory Adaptive | Complex multi-file architecture & root-cause debugging |
+| **Kimi K3.1 Pro** | 1,000,000 Tokens | $2.00 / $10.00 | $0.50 | 65.7% Terminal-Bench 4.0 | KDA Hybrid MoE | Long-horizon coding agents & 3D mesh modeling (see [Kimi K3.1 Pro guide](/blog/kimi-k3-1-pro-pricing-benchmarks-api-access/)) |
 | **Claude Sonnet 5.5** | 500,000 Tokens | $3.00 / $15.00 | $0.30 | 78.4% SWE-bench Verified | Optional / Configurable | High-velocity feature iteration & UI components |
 | **Claude Fable 5.1** | 200,000 Tokens | $3.00 / $15.00 | $0.30 | 75.1% SWE-bench Verified | Fixed Depth | Creative generation & interactive customer dialogs |
 | **Qwen 3.7 Max** | 131,072 Tokens | $0.48 / $0.48 | $0.05 | 73.8% SWE-bench Verified | Hybrid MoE | High-volume continuous integration & script testing |
 | **DeepSeek V4.1 Flash** | 128,000 Tokens | $0.14 / $0.28 | $0.014 | 77.0% DeepSWE | Native MoE Sparse | Mass unit test generation & batch code refactoring |
 
-*Note: Pricing, benchmark scores, and API specifications verified via official documentation and third-party evaluation runs as of October 20, 2026.*
+*Note: Pricing, benchmark scores, and API specifications verified via official documentation and third-party evaluation runs as of October 24, 2026.*
 
 ### When to Deploy Opus 5.5 vs. Sonnet 5.5
 * **Deploy Opus 5.5 When:** Designing core database schemas, debugging asynchronous race conditions across distributed microservices, or executing major dependency migrations where single-token logic errors cause production outages.
@@ -108,19 +109,23 @@ To protect development budgets from runaways caused by mandatory thinking blocks
 ```mermaid
 flowchart TD
     A["Developer Command in Claude Code CLI"] --> B["apivel Intelligent Gateway"]
-    B --> C{"Task Complexity Analysis"}
+    C{"Task Complexity Analysis"}
+    B --> C
     C -->|"Architecture / Deep Bug"| D["Claude Opus 5.5 (Deep Reasoning)"]
+    C -->|"Terminal Coding / 1M Context"| K["Kimi K3.1 Pro ($2.00 / $10.00)"]
     C -->|"Routine Editing / Code Gen"| E["Claude Sonnet 5.5 (Fast Execution)"]
     C -->|"Unit Tests / Linting"| F["DeepSeek V4.1 Flash ($0.14/1M)"]
-    D -->|"Rate Limit / Failover"| E
+    D -->|"Rate Limit / Failover"| K
+    K -->|"Failover"| E
     E -->|"Emergency Fallback"| G["Qwen 3.7 Max Gateway"]
     D --> H["Unified Streaming Response"]
+    K --> H
     E --> H
     F --> H
     G --> H
 ```
 
-By assigning heavy architectural analysis to Opus 5.5 while delegating iterative file writes and test executions to [DeepSeek V4.1 Flash](/blog/deepseek-v4-1-flash-1017-api-setup/) or [Qwen 3.7 Max](/blog/qwen-4-release-date-api-roadmap/), teams cut net monthly API expenditures by **65% to 75%** without sacrificing code quality.
+By assigning heavy architectural analysis to Opus 5.5 while delegating iterative file writes and terminal executions to [Kimi K3.1 Pro](/blog/kimi-k3-1-pro-pricing-benchmarks-api-access/), [DeepSeek V4.1 Flash](/blog/deepseek-v4-1-flash-1017-api-setup/), or [Qwen 3.7 Max](/blog/qwen-4-release-date-api-roadmap/), teams cut net monthly API expenditures by **65% to 75%** without sacrificing code quality.
 
 ---
 

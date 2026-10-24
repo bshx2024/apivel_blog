@@ -93,7 +93,7 @@ if (slugLower.includes('opus') || postMeta.includes('claude-opus')) {
 	initialModel = 'minimax-h3';
 } else if (postMeta.includes('kimi') || postMeta.includes('moonshot') || postMeta.includes('月之暗面')) {
 	targetTopic = 'kimi';
-	initialModel = 'kimi-k3';
+	initialModel = 'kimi-k3.1-pro';
 } else if (postMeta.includes('opus') || postMeta.includes('claude-opus')) {
 	targetTopic = 'claude';
 	initialModel = 'claude-opus-5';
@@ -229,6 +229,13 @@ const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.key
 			return [
 				{ label: 'Sparse MoE Scale', value: '1.6T MoE (48B Active) & 1M Window', isCode: false },
 				{ label: 'Flagship Invocation', value: 'infer/meituan/longcat-2.5', isCode: true },
+				{ label: 'Gateway Endpoint', value: 'https://apivel.com/v1', isCode: true },
+				{ label: 'Global Billing', value: 'PayPal & Global Cards ($0.20 Trial)', highlight: true }
+			];
+		} else if (targetTopic === 'kimi') {
+			return [
+				{ label: 'Sparse MoE Scale', value: '2.8T MoE (104B Active) & 1M Window', isCode: false },
+				{ label: 'Flagship Invocation', value: 'infer/kimi-k3.1-pro', isCode: true },
 				{ label: 'Gateway Endpoint', value: 'https://apivel.com/v1', isCode: true },
 				{ label: 'Global Billing', value: 'PayPal & Global Cards ($0.20 Trial)', highlight: true }
 			];
@@ -804,34 +811,34 @@ const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.key
 				'kimi': {
 					floating: {
 						en: {
-							badge: '🎁 Trial Credit',
-							title: 'Bypass Kimi K3 Geoblocks',
-							desc: 'Ditch +86 phone and mainland payment constraints. Call Kimi K3 2.8T globally. Sign up with GitHub for $0.20 free credit (+ 50% 1st top-up bonus).',
-							btnText: 'Try Kimi K3 Instantly',
-							utmCampaign: 'kimi_bypass'
+							badge: '🔥 2.8T MoE Frontier',
+							title: 'Call Kimi K3.1 Pro Globally',
+							desc: 'Run 1M context MoE reasoning with Terminal-Bench 65.7% accuracy. Bypass +86 phone KYC, instant $0.20 credit via PayPal & cards (+50% bonus).',
+							btnText: 'Try K3.1 Pro Instantly',
+							utmCampaign: 'kimi_access'
 						},
 						zh: {
-							badge: '🔥 限时体验',
-							title: '免实名测试 Kimi K3 2.8T',
-							desc: '跳过国内手机号与支付卡校验。直接调用 Kimi K3 2.8T 大模型，使用 GitHub 一键登录即刻体验送 $0.20。',
-							btnText: '一键免登录体验 Kimi →',
-							utmCampaign: 'kimi_bypass'
+							badge: '🔥 2.8T MoE 旗舰',
+							title: '免实名体验 Kimi K3.1 Pro',
+							desc: '1M 上下文与 Terminal-Bench 65.7% 顶尖代码表现！直连 Claude Code & Cursor，跳过 +86 实名，PayPal 全球即时结算，送 $0.20 (+ 50% 首充奖励)。',
+							btnText: '一键体验 K3.1 Pro →',
+							utmCampaign: 'kimi_access'
 						}
 					},
 					inline: {
 						en: {
-							badge: '💡 Trial Access',
-							title: 'Bypass Kimi K3 Verification',
-							desc: 'Test Moonshot Kimi K3 globally in our online playground. Direct REST API endpoints, GitHub sign-on, and $0.20 free test credits (+ 50% 1st top-up bonus).',
+							badge: '⚡ 1M Context Engine',
+							title: 'Connect Kimi K3.1 Pro API Endpoints',
+							desc: 'Bypass mainland KYC and 5-hour rate limit queues. High-concurrency OpenAI & Anthropic compatible endpoints with seamless PayPal billing.',
 							btnText: 'Test Kimi Playground',
-							utmCampaign: 'kimi_bypass'
+							utmCampaign: 'kimi_access'
 						},
 						zh: {
-							badge: '💡 免实名通道',
-							title: '想免实名测试 Kimi K3 2.8T 接口？',
-							desc: '免去官方手机绑定与充值门槛限制。通过 APIVALE 绑定 GitHub 即可获得 $0.20 体验金 (首充加赠 50%)，直接在网页端 Playground 进行调试。',
-							btnText: '立即体验 Kimi 接口 →',
-							utmCampaign: 'kimi_bypass'
+							badge: '⚡ 1M 上下文引擎',
+							title: '想免实名调用 Kimi K3.1 Pro 接口？',
+							desc: '2.8 万亿 MoE 架构，对齐 Claude Opus 5.5。APIVALE 提供高可用 OpenAI/Anthropic 兼容网关，PayPal 即时充值，送 $0.20 免费体验金。',
+							btnText: '立即测试 Kimi 接口 →',
+							utmCampaign: 'kimi_access'
 						}
 					}
 				},

@@ -18,6 +18,7 @@ const modelMap: Record<string, string> = {
   'gemini-37': 'infer/gemini-3.7-flash',
   'grok-45': 'infer/grok-4.5',
   'claude-sonnet-5': 'claude-3-5-sonnet-20241022',
+  'kimi-k3.1-pro': 'infer/kimi-k3.1-pro',
   'kimi-k3': 'kimi-k3',
   'needle-2': 'infer/needle-2',
 };
@@ -57,6 +58,7 @@ const activeModelVal = modelMap[defaultModel] || 'infer/qwen3.7-max';
         <option value="infer/gemini-3.7-flash" selected={defaultModel === 'gemini-37'}>Gemini 3.7 Flash (infer/gemini-3.7-flash)</option>
         <option value="infer/grok-4.5" selected={defaultModel === 'grok-45'}>xAI Grok 4.5 (infer/grok-4.5)</option>
         <option value="claude-3-5-sonnet-20241022" selected={defaultModel === 'claude-sonnet-5'}>Claude Sonnet 5 (claude-3-5-sonnet-20241022)</option>
+        <option value="infer/kimi-k3.1-pro" selected={defaultModel === 'kimi-k3.1-pro' || defaultModel === 'kimi-k3'}>Moonshot Kimi K3.1 Pro 2.8T MoE (infer/kimi-k3.1-pro)</option>
         <option value="kimi-k3" selected={defaultModel === 'kimi-k3'}>Moonshot Kimi K3 2.8T MoE (kimi-k3)</option>
         <option value="infer/needle-2" selected={defaultModel === 'needle-2'}>Needle 2 AI Tool Calling (infer/needle-2)</option>
       </select>

@@ -32,6 +32,7 @@ const { initialModel = 'kimi-k3' } = Astro.props;
           <option value="grok-45" selected={initialModel === 'grok-45'}>xAI Grok 4.5 — $0.90 / 1M tokens</option>
           <option value="claude-sonnet-5" selected={initialModel === 'claude-sonnet-5'}>Claude Sonnet 5 — $1.50 / 1M tokens</option>
           <option value="claude-opus-5" selected={initialModel === 'claude-opus-5'}>Claude Opus 5 — $6.90 / 1M tokens</option>
+          <option value="kimi-k3.1-pro" selected={initialModel === 'kimi-k3.1-pro' || initialModel === 'kimi-k3'}>Moonshot Kimi K3.1 Pro 2.8T — $2.00 / 1M tokens</option>
           <option value="kimi-k3" selected={initialModel === 'kimi-k3'}>Moonshot Kimi K3 2.8T — $1.20 / 1M tokens</option>
           <option value="needle-2" selected={initialModel === 'needle-2'}>Needle 2 AI Tool Calling — $0.03 / 1M tokens</option>
           <option value="minimax-h3" selected={initialModel === 'minimax-h3'}>MiniMax H3 — $0.06 / sec 2K Video</option>
@@ -125,6 +126,7 @@ const { initialModel = 'kimi-k3' } = Astro.props;
       'grok-45': { official: 2.00, apivale: 0.90, name: 'xAI Grok 4.5', modelKey: 'infer/grok-4.5' },
       'claude-sonnet-5': { official: 3.00, apivale: 1.50, name: 'Claude Sonnet 5', modelKey: 'claude-3-5-sonnet-20241022' },
       'claude-opus-5': { official: 15.00, apivale: 6.90, name: 'Claude Opus 5', modelKey: 'claude-3-opus-20240229' },
+      'kimi-k3.1-pro': { official: 4.50, apivale: 2.00, name: 'Kimi K3.1 Pro 2.8T', modelKey: 'infer/kimi-k3.1-pro' },
       'kimi-k3': { official: 3.00, apivale: 1.20, name: 'Kimi K3 2.8T', modelKey: 'kimi-k3' },
       'needle-2': { official: 0.10, apivale: 0.03, name: 'Needle 2 AI', modelKey: 'infer/needle-2' },
       'minimax-h3': { official: 0.13, apivale: 0.06, isVideo: true, name: 'MiniMax H3 Video', modelKey: 'minimax-h3' }

@@ -46,7 +46,9 @@ graph TD
     B -->|"1M Context · reasoning_effort"| C["MiniMax M3.1 Flash<br/>428B MoE / 23B Active"]
     B -->|"Failover Routing"| D["DeepSeek V4 Flash<br/>$0.14/M input"]
     B -->|"Failover Routing"| E["Qwen 3.7 Max<br/>$0.48/M input"]
+    B -->|"Frontier 2.8T MoE Routing"| K["Kimi K3.1 Pro<br/>$2.00/M input"]
     C --> F["Instant Global Checkout<br/>PayPal · Cards · $0.20 Trial"]
+    K --> F
 ```
 
 ---
@@ -88,6 +90,7 @@ Independent telemetry from Artificial Analysis and standardized evaluation suite
 | Model Checkpoint | DeepSWE v1.1 Score | Input Cost / 1M | Context Length | Best For... |
 |---|---|---|---|---|
 | **MiniMax M3.1 Flash** | **73.7%** | $0.15 | 1M | Agentic multi-file loops & massive repos |
+| **Kimi K3.1 Pro** | **~76.5%** | $2.00 | 1M | 2.8T MoE Terminal-Bench leader (see [Kimi K3.1 Pro guide](/blog/kimi-k3-1-pro-pricing-benchmarks-api-access/)) |
 | DeepSeek V4 Flash | ~68.0% | $0.14 | 128K | Budget-sensitive modular tasks |
 | Qwen 3.7 Max | ~71.2% | $0.48 | 128K | Complex multilingual reasoning (see [Qwen 4 roadmap](/blog/qwen-4-release-date-api-roadmap/)) |
 | Claude Opus 5.5 | 81.2% | $4.00 | 1M | Deep autonomous architecture (see [Claude Opus 5.5 guide](/blog/claude-opus-5-5-price-limits-claude-code/)) |
