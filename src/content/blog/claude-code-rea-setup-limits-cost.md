@@ -69,7 +69,7 @@ The following benchmark compares running an autonomous 20-cycle decompilation se
 | **Verified Test Timestamp** | October 17, 2026 | October 17, 2026 | October 17, 2026 |
 | **Best For...** | Proprietary Zero-Shot Logic | High-Frequency Loop Decompilation | Monolithic Multi-Module Analysis |
 
-> **Frontier Reasoning vs. Massive Context:** When resolving deep architectural bugs or indirect pointer recursion, pair your workflow with [Claude Opus 5.5](/blog/claude-opus-5-5-price-limits-claude-code/) for high-level reasoning while maintaining high-frequency decompilation loops on DeepSeek or Qwen. For massive monolithic binary dumps exceeding 500k tokens, see the [MiniMax M3.1 Flash API Setup & Benchmark Guide](/blog/minimax-m3-flash-api-setup-benchmark/).
+> **Frontier Reasoning vs. Massive Context:** When resolving deep architectural bugs or indirect pointer recursion, pair your workflow with [Claude Opus 5.5](/blog/claude-opus-5-5-price-limits-claude-code/) for high-level reasoning while maintaining high-frequency decompilation loops on DeepSeek or Qwen. For massive monolithic binary dumps exceeding 500k tokens, see the [MiniMax M3.1 Flash API Setup & Benchmark Guide](/blog/minimax-m3-flash-api-setup-benchmark/). To prevent subagents from generating over-engineered wrapper scripts during automated analysis, integrate the [Ponytail GitHub Skill](/blog/ponytail-github-skill-install-review/) to enforce strict YAGNI minimalism.
 
 ---
 

@@ -111,7 +111,7 @@ When executing refactoring instructions, coding agents spawn background subagent
 By the second agent turn, standard free quotas exhaust completely, causing persistent 429 halts.
 
 ### Failover Degradation: The Intelligence Cliff
-When primary models throttle, FreeLLMAPI cascades requests to lightweight 7B/8B models. These small models lack the reasoning depth to maintain multi-file context, frequently dropping imports and producing invalid syntax. This structural degradation makes a dedicated **FreeLLMAPI alternative** essential for professional engineers. Similarly, teams evaluating local port daemons and token compression tools can consult our detailed [9Router vs OmniRoute Alternatives Guide](https://apivel.com/blog/9router-vs-omniroute-alternatives-guide/) for comparative benchmarks on OAuth risk prevention and 3-tier fallback configurations.
+When primary models throttle, FreeLLMAPI cascades requests to lightweight 7B/8B models. These small models lack the reasoning depth to maintain multi-file context, frequently dropping imports and producing invalid syntax. This structural degradation makes a dedicated **FreeLLMAPI alternative** essential for professional engineers. Similarly, teams evaluating local port daemons and token compression tools can consult our detailed [9Router vs OmniRoute Alternatives Guide](https://apivel.com/blog/9router-vs-omniroute-alternatives-guide/), or explore our [Ponytail GitHub Skill Guide](https://apivel.com/blog/ponytail-github-skill-install-review/) to eliminate agent over-engineering and boilerplate at the prompt level.
 
 ---
 

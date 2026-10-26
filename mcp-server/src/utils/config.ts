@@ -2,14 +2,14 @@ import path from "path";
 import fs from "fs";
 
 function findProjectRoot(): string {
-  let cur = import.meta.dir;
+  let cur = (import.meta as any).dirname || (import.meta as any).dir || process.cwd();
   for (let i = 0; i < 5; i++) {
     if (fs.existsSync(path.join(cur, "astro.config.mjs")) || fs.existsSync(path.join(cur, "KEYWORD_PLAN.md"))) {
       return cur;
     }
     cur = path.dirname(cur);
   }
-  return path.resolve(import.meta.dir, "../../..");
+  return process.cwd();
 }
 
 export const PROJECT_ROOT = findProjectRoot();
