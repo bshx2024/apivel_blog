@@ -75,6 +75,7 @@ Commercial pricing competes directly with frontier developer tiers:
 | **Kimi K3.1 Pro (Standard)** | **$2.00** | **$10.00** | **$0.50** | 1,000,000 | Deep refactoring & multi-file agents |
 | **K3.1 Pro Highspeed** | **$2.00** | **$20.00** | **$0.50** | 1,000,000 | Interactive CLI coding & real-time IDE |
 | [Claude Opus 5.5](/blog/claude-opus-5-5-price-limits-claude-code/) | $4.00 | $20.00 | $0.40 | 1,000,000 | Enterprise auditing & architecture |
+| [GPT-6.1 Terra](/blog/openai-6-1-terra-vs-sol-benchmark-pricing/) | $1.00 | $5.00 | $0.25 | 1,100,000 | High-speed GUI & computer-use automation |
 | [Qwen 3.7 Max](/blog/qwen-4-release-date-api-roadmap/) | $0.48 | $1.92 | $0.12 | 128,000 | High-volume batch automation |
 | [DeepSeek V4 Flash](/blog/deepseek-v4-1-flash-1017-api-setup/) | $0.14 | $0.28 | $0.02 | 128,000 | Budget-sensitive automated unit tests |
 

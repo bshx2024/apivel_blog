@@ -87,7 +87,7 @@ The table below outlines empirical benchmarks captured on October 17, 2026:
 | **Avg Time-To-First-Token** | **68ms** | 92ms | 145ms | DeepSeek (Instant IDE auto-completion) |
 | **Verified Verification Date** | `2026-10-17` | `2026-10-17` | `2026-10-17` | Direct telemetry audit via apivel |
 
-> **See also:** Track upcoming frontier architectures in our [Qwen 4 Release Date, 27B Roadmap & API Guide](/blog/qwen-4-release-date-api-roadmap/), or explore the newly released [MiniMax M3.1 Flash Benchmarks & API Setup Guide](/blog/minimax-m3-flash-api-setup-benchmark/).
+> **See also:** Compare mid-tier and flagship execution costs in our [OpenAI 6.1 Terra vs Sol Benchmark & Pricing Guide](/blog/openai-6-1-terra-vs-sol-benchmark-pricing/), track upcoming releases in our [Qwen 4 Release Date, 27B Roadmap & API Guide](/blog/qwen-4-release-date-api-roadmap/), or explore the newly released [MiniMax M3.1 Flash Benchmarks & API Setup Guide](/blog/minimax-m3-flash-api-setup-benchmark/).
 
 ### Latency & Token Price Arbitrage ($0.14 vs $0.15)
 For pipelines processing 500 million tokens monthly, the 1017 model costs **$105.00**—slashing expenses by 98% compared to proprietary models ($7,500+).

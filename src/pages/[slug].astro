@@ -100,9 +100,9 @@ if (slugLower.includes('opus') || postMeta.includes('claude-opus')) {
 } else if (postMeta.includes('sonnet') || postMeta.includes('claude') || postMeta.includes('fable')) {
 	targetTopic = 'claude';
 	initialModel = 'claude-sonnet-5';
-} else if (postMeta.includes('gpt-5.6') || postMeta.includes('gpt-5-6') || postMeta.includes('gpt-6') || postMeta.includes('luna') || postMeta.includes('sol') || postMeta.includes('astra')) {
+} else if (postMeta.includes('gpt-5.6') || postMeta.includes('gpt-5-6') || postMeta.includes('gpt-6') || postMeta.includes('luna') || postMeta.includes('sol') || postMeta.includes('astra') || postMeta.includes('terra')) {
 	targetTopic = 'gpt56';
-	initialModel = 'kimi-k3';
+	initialModel = 'infer/qwen3.7-max';
 } else if (postMeta.includes('longcat') || postMeta.includes('meituan') || postMeta.includes('美团')) {
 	targetTopic = 'longcat';
 	initialModel = 'longcat-2.5';

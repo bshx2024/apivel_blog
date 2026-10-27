@@ -80,6 +80,7 @@ Evaluating Qwen 4 against active frontier baselines requires analyzing both anti
 | **MiniMax M3.1 Flash** | 428B MoE (23B Active) | Live API: [MiniMax M3.1 Flash Benchmark](/blog/minimax-m3-flash-api-setup-benchmark/) | 1,000,000 Token Context | 73.7 DeepSWE v1.1 | Massive monorepo analysis & RAG |
 | **Claude Opus 5.5** | Proprietary Dense/MoE | Live API: [Claude Opus 5.5 Guide](/blog/claude-opus-5-5-price-limits-claude-code/) | Autonomous Thinking & Codebase Refactor | 81.2% SWE-bench | Long-horizon agentic loops |
 | **Claude Sonnet 5** | Proprietary Dense/MoE | Enterprise Production | Precision & Consistency | 79.5 HumanEval | High-stakes production architecture |
+| **GPT-6.1 Terra** | OpenAI 1.1M Mid-Tier | Live API: [GPT-6.1 Terra vs Sol Guide](/blog/openai-6-1-terra-vs-sol-benchmark-pricing/) | 1,100,000 Token Context | 72.4% UI Agents | High-speed GUI & computer-use execution |
 
 > **Source Verification:** Benchmark baselines audited October 20, 2026. Competitive data synthesized from Artificial Analysis leaderboards, DeepSWE evaluation runs, and official engineering releases.
 

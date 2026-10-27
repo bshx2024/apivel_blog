@@ -32,6 +32,27 @@
 
 ## 📅 apivel.com SEO 动作记录表 (2026年)
 
+### 2026-10-27
+* **分类**：📝 [热点内容首发、GEO 优化与双向织网动作]
+* **动作详情**：
+  * **捕获热点与意图图谱**：响应 2026-10-26/27 Google Trends（100分瞬时峰值）及 Web.Cafe 关键词雷达新词 `openai 6.1 terra`，全面拆解 Google 真实意图链（`openai 6.1 terra vs sol`、`gpt 6.1 terra pricing`、`gpt 6.1 terra benchmark`、`gpt 6.1 terra speed`、`openai 6.1 terra reddit`、`What is GPT 6.1 Terra?`），首发深度评测与中国大模型平替引流博文：`/blog/openai-6-1-terra-vs-sol-benchmark-pricing/`。
+  * **作者轮换**：轮换为 `Elena Rostova`（Distributed Systems & LLM Performance Architect, APIVALE），保持 E-E-A-T 权威性与作者画像轮换规则。
+  * **主攻关键词**：
+    * Primary: `OpenAI 6.1 Terra`, `GPT-6.1 Terra vs Sol`, `GPT-6.1 Terra Pricing`
+    * Secondary/LSI: `gpt 6.1 terra benchmark`, `gpt 6.1 terra speed`, `openai 6.1 terra reddit`, `What is GPT 6.1 Terra?`, `qwen 3.7 max alternative`, `deepseek v4 coding loop`, `paypal api checkout`
+  * **工程增益与架构**：
+    1. 深入剖析 OpenAI GPT-6 四层阶梯架构（Luna、Terra、Sol、Astra）与 1.1M 输入 Context Window 规格；
+    2. 基于 88 tps vs 29 tps 实测数据客观呈现 3x 生成速度跃升，同时曝光 Reddit 真实开发者痛点——18.2% 任务中出现“偷懒注释（`// TODO`）”与多步 Agent 循环中的 JSON 格式漂移；
+    3. 嵌入客观对比矩阵（GPT-6.1 Terra vs GPT-6.1 Sol vs Qwen 3.7 Max vs DeepSeek V4，含“Best for...”列与 2026年10月核验时间戳）；
+    4. 推出“特洛伊木马”引流平替策略：在代码完整性与高并发吞吐需求下，顺理成章承接 Qwen 3.7 Max（$1.20 输出，直降 76%）与 DeepSeek V4（$1.10 输出，直降 78%）；
+    5. 嵌入交互式微工具（Live Interactive Cost Simulator），支持动态选择模型、任务量与 Context，计算月度 Token 成本与偷懒风险；
+    6. 提供 45+ 行生产级 Python 智能路由脚本，支持检测到 Terra 偷懒注释时自动无缝 Failover 到 Qwen 3.7 Max；
+    7. 前瞻性落实 GEO 大模型爬虫优化：更新 `public/llms.txt` 结构化条目，正文采用自包含段落与问答实体块，消除 RAG 切片代词歧义；
+    8. 全面落实双向内链织网：同步在 `kimi-k3-1-pro-pricing-benchmarks-api-access.md`、`deepseek-v4-1-flash-1017-api-setup.md`、`qwen-4-release-date-api-roadmap.md` 中织入反向锚文本；
+    9. 注入标准 `FAQPage` JSON-LD Schema，精准回答 Google PAA 四大高频问题，对齐 PayPal 即时结账、零 KYC、+50% 充值奖励及 $0.20 免卡免实名试用。
+* **影响页面**：`https://apivel.com/blog/openai-6-1-terra-vs-sol-benchmark-pricing/`
+* **因果假设**：通过“前台迎合 Terra vs Sol 核心搜索意图，中台暴露偷懒与高频烧钱痛点，后台无缝引导至 Qwen 3.7 Max / DeepSeek V4”的精准截流模型，在 14 天内吃下首波爆发期自然搜索流量（预计 1,200+ UV），并在 SearchGPT / Perplexity 涉及“GPT-6.1 Terra vs Sol”及“Terra Coding Alternatives”的自由问答中获得第一顺位权威引用。
+
 ### 2026-10-26
 * **分类**：📝 [热点内容首发、GEO 优化与双向织网动作]
 * **动作详情**：
