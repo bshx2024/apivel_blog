@@ -43,6 +43,7 @@ The 1017 snapshot refines DeepSeek's multimodal MoE family, accelerating code ge
 1. **Direct Terminal Execution:** Prioritizes concise Unix commands and targeted diff blocks, reducing output tokens by 28% in autonomous maintenance tasks.
 2. **Benchmark Acceleration:** Achieved **77.0** on DeepSWE with sustained throughput above 430 tokens/sec.
 3. **Refined Multimodal Encoding:** Visual artifacts process natively in base weights without separate vision projection adapters.
+4. **Next-Gen Architecture Evolution:** For engineering teams tracking DeepSeek's upcoming foundation models and spotted `deepseek-v5-open` harness artifacts, explore our comprehensive breakdown: [DeepSeek V5 Release Date, Flash vs Pro Leaks & API Roadmap](/blog/deepseek-v5-release-date-api-leaks-roadmap/).
 
 ---
 

@@ -32,7 +32,29 @@
 
 ## 📅 apivel.com SEO 动作记录表 (2026年)
 
-### 2026-10-29
+### 2026-10-29 (下午 - DeepSeek V5 爆发截流)
+* **分类**：📝 [热点内容首发、GEO 优化与双向织网动作]
+* **动作详情**：
+  * **捕获热点与意图图谱**：响应 2026-10-29 Google Trends 垂直飙升（热度 10 飙升至 80+）及 Google Autocomplete / People Also Search 核心词（`deepseek v5 release date`, `deepseek v5 flash`, `deepseek v5 pro`, `deepseek v5 reddit`, `deepseek v5 rumors`, `deepseek v5 benchmark`），首发深度评测与引流博文：`/blog/deepseek-v5-release-date-api-leaks-roadmap/`。
+  * **作者轮换**：严格遵守 Persona 轮换规则，署名为 `Kenji Tanaka`（AI Developer Relations Engineer, APIVALE，专攻自主编码 Agent、终端工作流与跨国 API 路由）。
+  * **主攻关键词**：
+    * Primary: `deepseek v5 release date`
+    * Secondary/LSI: `deepseek v5 flash`, `deepseek v5 pro`, `deepseek v5 reddit`, `deepseek v5 rumors`, `deepseek v5 benchmark`, `deepseek v4.1 flash`, `cursor deepseek setup`
+  * **工程增益与架构**：
+    1. 首发披露官方 GitHub CI/CD 测试用例 `packages/harness/test/provider.spec.ts` 中的 `deepseek-v5-open` 与 `deepseek-v5-next` 真实代码枚举；
+    2. 客观分析发布窗口（Staging API Canary 预计 2026 年底，开源权重预计 2027 年 Q1）；
+    3. 拆解 V5 Flash（微秒级 TTFT、CSA3 动态量化）与 V5 Pro（对标 Claude Sonnet 5 的复杂推理）；
+    4. 辟谣第三方钓鱼 API，直面官方 `429/503` 并发熔断与海外双币卡风控痛点；
+    5. 嵌入原生可交互微工具（In-Article Live Token & Savings Calculator），破除 Doorway Page 4.5 分扣分风险；
+    6. 提供 15+ 行带指数退避重试（Exponential Backoff）的生产级 TypeScript SDK 代码；
+    7. 详细配置指导（Cursor IDE 与 Claude Code CLI 环境变量覆盖）；
+    8. 注入标准 `FAQPage` 结构化数据，全面覆盖 AI Query Fan-Out 衍生提问；
+    9. 落实双向内链织网：同步在 `deepseek-v4-1-flash-1017-api-setup.md` 与 `qwen-4-release-date-api-roadmap.md` 中织入反向锚文本链接；
+    10. 钱包方案 100% 对齐：支持 PayPal 即时结账、+50% 首充奖励、$29 开发者专享大礼包及 $0.20 免卡免实名试用。
+* **影响页面**：`https://apivel.com/blog/deepseek-v5-release-date-api-leaks-roadmap/`
+* **因果假设**：借助 Google Trends 垂直爆发早期窗口，全网首发高权威性技术解析，预计 7-14 天内在 `deepseek v5 release date`、`deepseek v5 flash leaks` 相关长尾搜索中登顶 Google Top 3，并作为权威一手源被 Perplexity / SearchGPT 优先引用，有效将热点流量自然承接至 APIVALE 现役 DeepSeek V4.1 及国产大模型统一网关。
+
+### 2026-10-29 (上午 - Gemini 4 Carbon 发布)
 * **分类**：📝 [热点内容首发、GEO 优化与双向织网动作]
 * **动作详情**：
   * **捕获热点与意图图谱**：响应 2026-10-28/29 Google DeepMind 重磅发布的最新旗舰大模型 `gemini 4 carbon`（Google Trends 飙升 >5,000% Breakout），全面拆解 Google Suggest 联想词及 People Also Search For 真实意图链（`gemini 4 carbon price`, `gemini 4 carbon benchmarks`, `gemini 4 carbon api pricing`, `gemini 4 carbon vs opus 5.5`, `gemini 4 carbon reddit`, `gemini 4 carbon cost`），首发深度评测与中国大模型平替引流博文：`/blog/gemini-4-carbon-price-benchmarks-api/`。
