@@ -41,8 +41,8 @@
     * Primary: `deepseek v5`（Google Trends 66-100 超级父级词）
     * Secondary/LSI: `deepseek v5 release date`, `deepseek v5 flash`, `deepseek v5 pro`, `deepseek v5 reddit`, `deepseek v5 rumors`, `deepseek v4.1 flash`
   * **On-Page 100 分满分调优与意图对齐**：
-    1. Title/H1 结构优化：升级为 `DeepSeek V5: Release Date, Flash Leaks & API Setup | APIVALE`（59 字符），以超级大词 `DeepSeek V5` 作为独立第一实体，消除长尾降维错位；
-    2. 全页词数优化：正文精炼至 1343 词（全页渲染约 1680 词），严格进入 1200-1800 最佳区间，消除 1 分扣分；
+    1. Title/H1 结构彻底纠正：升级为 `DeepSeek V5: Leaks, Specs & Free API Setup | APIVALE`（52 字符）与 H1 `DeepSeek V5: Architecture Leaks, Models & API Setup Guide`（57 字符），彻底剥离 Title/H1 中的 `release date` 组合词，消除 N-gram 4词强匹配干扰，让 `deepseek v5` 独占 [TH] 最高声明权重；
+    2. 全页词数优化：正文精炼至 1272 词（全页 SSR 渲染降至 1600 词黄金线），彻底消除 2048 词扣 1 分提示；
     3. 双向与网状内链强化：深度织入 `deepseek-v4-1-flash-1017-api-setup.md`、`qwen-4-release-date-api-roadmap.md`、`gemini-4-carbon-price-benchmarks-api.md`、`kimi-k3-1-pro-pricing-benchmarks-api-access.md` 及定价与试用页，达到最佳 GEO 互联网络。
   * **工程增益与架构**：
     1. 首发披露官方 GitHub CI/CD 测试用例 `packages/harness/test/provider.spec.ts` 中的 `deepseek-v5-open` 与 `deepseek-v5-next` 真实代码枚举；
