@@ -20,16 +20,6 @@ keyTakeaways:
     value: "Instant PayPal & Global Cards ($0.20 Free Signup Trial, no credit card lock)"
 ---
 
-<div class="my-6 border-l-4 border-emerald-500 bg-gray-900 rounded-r-lg p-5">
-  <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
-  <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
-    <li><strong>Frontier Benchmark Lead:</strong> Released on October 28, 2026, Google DeepMind's Gemini 4 Carbon topped the Artificial Analysis Intelligence Index v5.0, surpassing Claude Opus 5.5.</li>
-    <li><strong>The Thinking Token Multiplier:</strong> Introductory rates are <strong>$2.00/1M input and $10.00/1M output</strong>, but scheduled standard pricing doubles to <strong>$4.00/1M and $20.00/1M</strong>, with internal reasoning tokens fully billed as output.</li>
-    <li><strong>Severe Cross-Border & Rate Caps:</strong> Search interest spiked over 5,000% worldwide (led by China, Armenia, and Hong Kong), yet developers face strict Google Cloud enterprise billing, foreign card blocks, and frequent <code>429 ResourceExhausted</code> errors.</li>
-    <li><strong>85% Cost-Reduction Tiering:</strong> Developers routing multi-turn agent loops through <a href="https://apivel.com/sign-up?redirect=/blog/gemini-4-carbon-price-benchmarks-api" class="text-emerald-400 hover:underline font-semibold">APIVALE's unified gateway with instant PayPal billing</a> combine Carbon with Qwen 3.8 Max and DeepSeek V4 to slash token overhead while bypassing KYC locks.</li>
-  </ul>
-</div>
-
 <div class="my-6 border-l-4 border-indigo-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Definition</span>
   <div class="mt-1 text-md font-semibold text-white">Gemini 4 Carbon (Google DeepMind)</div>
@@ -38,7 +28,7 @@ keyTakeaways:
 
 On October 28, 2026, Google DeepMind launched **Gemini 4 Carbon**, immediately triggering a breakout spike of over 5,000% in global search traffic. Following closely behind Gemini 4 Argon, Carbon was engineered for heavy multi-turn agentic coding, formal scientific proofing, and autonomous cyberdefense vulnerability patching.
 
-While benchmark dashboards show Gemini 4 Carbon topping the Artificial Analysis Intelligence Index v5.0, production engineers are confronting immediate commercial hurdles: token burn from opaque thinking loops, a looming price doubling to **$4.00 / $20.00 per million tokens**, and stringent Google Cloud credit card verifications.
+While benchmark dashboards show Carbon topping the Artificial Analysis Intelligence Index v5.0, production engineers confront immediate commercial hurdles: token burn from opaque thinking loops, a looming price doubling to **$4.00 / $20.00 per million tokens**, and stringent Google Cloud card verifications.
 
 ```mermaid
 graph TD
@@ -55,11 +45,11 @@ graph TD
 
 ## 1. Gemini 4 Carbon Architecture & Benchmarks vs Opus 5.5
 
-Google engineered Gemini 4 Carbon with dedicated TPU infrastructure and a native 1-million-token multi-modal context buffer.
+Google engineered Carbon with dedicated TPU infrastructure and a native 1-million-token multi-modal context buffer.
 
 ### Artificial Analysis v5.0 & Coding Performance
 
-In synthetic benchmarks, Gemini 4 Carbon demonstrated measurable gains:
+In synthetic benchmarks, the model demonstrated measurable gains:
 * **Reasoning Index:** Topped Artificial Analysis v5.0 under `reasoning_effort: high`.
 * **SWE-bench Verified:** Reached competitive parity with Claude Opus 5.5 on multi-file patches.
 * **Context Retrieval:** Maintained 99.8% needle recall across the entire 1M-token buffer.
@@ -77,22 +67,22 @@ Despite leaderboard wins, Reddit developers (`r/singularity` and `r/ClaudeAI`) v
     "Carbon benchmarks amazingly on single-shot puzzle prompts, but inside Cursor Composer it generates massive reasoning traces that eat 20,000 tokens before touching the first file. When it hits a syntax error, it re-thinks the entire context from scratch instead of applying localized surgical diffs. Claude Opus 5.5 is still far cleaner in developer ergonomics."
   </blockquote>
   <div class="mt-2 text-xs text-gray-400">
-    Source: Verified developer discussion on Google Gemini 4 Carbon agent telemetry (October 2026).
+    Source: Verified developer discussion on Carbon agent telemetry (October 2026).
   </div>
 </div>
 
 ---
 
-## 2. Gemini 4 Carbon API Pricing & The "Thinking Token" Multiplier
+## 2. API Pricing Dynamics & The "Thinking Token" Multiplier
 
-Understanding the economics of Gemini 4 Carbon requires looking beyond top-line sticker rates into how chain-of-thought inference is billed.
+Understanding the economics of Carbon requires looking beyond top-line sticker rates into how chain-of-thought inference is billed.
 
 ### Introductory vs Post-Launch Pricing Schedule
 
 Google rolled out an introductory promotional discount matching Argon, but formal documentation specifies a mandatory doubling once the initial promotional phase concludes:
 
-* **Introductory Promotional Rate:** **$2.00 / 1M input tokens** and **$10.00 / 1M output tokens**.
-* **Standard Post-Launch Rate:** **$4.00 / 1M input tokens** and **$20.00 / 1M output tokens**.
+* **Introductory Rate:** **$2.00 / 1M input** and **$10.00 / 1M output tokens**.
+* **Standard Post-Launch Rate:** **$4.00 / 1M input** and **$20.00 / 1M output tokens**.
 * **Context Caching Discount:** 95% reduction on cached prompt tokens (~$0.10/1M).
 
 ### Why Internal Reasoning Tokens Explode Agent Invoices
@@ -104,7 +94,7 @@ In autonomous coding environments (such as Claude Code CLI, Cursor, or Aider), m
 
 ### Objective Model Comparison Matrix
 
-The table below contrasts Gemini 4 Carbon against Anthropic's flagship and top high-efficiency open-architecture alternatives:
+The table below contrasts Carbon against Anthropic's flagship and top high-efficiency open-architecture alternatives:
 
 | Model ID | Input Price / 1M | Output Price / 1M | Thinking Token Billing | Context Window | Native Protocol | PayPal & Zero-KYC | Best For |
 | :--- | :--- | :--- | :--- | :--- | :--- | :---: | :--- |
@@ -116,9 +106,9 @@ The table below contrasts Gemini 4 Carbon against Anthropic's flagship and top h
 
 ---
 
-## 3. Gemini 4 Carbon Access Limits & Google Cloud Barriers
+## 3. Quota Limits, Rollout Schedule & Google Cloud Barriers
 
-Google Trends regional telemetry reveals that search demand for Gemini 4 Carbon is intensely concentrated across regions outside Silicon Valley:
+Google Trends regional telemetry reveals that search demand for the model is intensely concentrated across regions outside Silicon Valley:
 
 * **Top Search Locations:** China (#1), Armenia (#2), Russia (#3), Hong Kong (#4), and Singapore (#5).
 
@@ -131,7 +121,7 @@ Developers in these high-demand territories encounter structural barriers when a
 
 ### 429 ResourceExhausted in Multi-Turn CLI Loops
 
-During peak usage hours, Gemini 4 Carbon's free tiers and Tier-1 developer accounts frequently encounter aggressive rate limiting:
+During peak hours, Tier-1 developer accounts frequently encounter aggressive rate limiting:
 ```
 google.api_core.exceptions.ResourceExhausted: 429 You have exhausted your capacity on model gemini-4-carbon. Quota exceeded for metric: generaterequests_per_minute.
 ```
@@ -139,7 +129,7 @@ In autonomous terminal sessions, an unexpected 429 error kills running sub-proce
 
 ---
 
-## 4. Slashing Gemini 4 Carbon Agent Costs with Tiered Routing
+## 4. Slashing Frontier Agent Invoices via Tiered Routing
 
 Rather than routing every lightweight task through a $20.00/1M model, modern software teams implement **Hierarchical Model Tiering**:
 * **Tier 1 (Carbon / Opus 5.5):** Reserved exclusively for root architecture decisions, multi-component planning, and final security scans.
@@ -173,7 +163,7 @@ curl -X POST "https://apivel.com/v1/chat/completions" \
 
 ### In-Article Live Token Cost & Agent Run Estimator
 
-Calculate expected savings by comparing full Gemini 4 Carbon invocation costs against a tiered architecture:
+Calculate expected savings by comparing full Carbon invocation costs against a tiered architecture:
 
 <div class="my-8 rounded-xl border border-gray-700 bg-gray-900/90 p-6 shadow-2xl">
   <div class="text-base font-semibold text-white flex items-center gap-2">
@@ -204,7 +194,7 @@ Calculate expected savings by comparing full Gemini 4 Carbon invocation costs ag
   <div class="mt-5 rounded-lg bg-gray-800/80 p-4 border border-gray-700/60">
     <div class="flex items-center justify-between">
       <div>
-        <div class="text-xs text-gray-400">Pure Gemini 4 Carbon:</div>
+        <div class="text-xs text-gray-400">Pure Carbon:</div>
         <div id="carbonEstimate" class="text-xl font-bold text-rose-400">$10.00</div>
       </div>
       <div class="text-center px-4">
