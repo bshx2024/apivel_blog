@@ -38,8 +38,12 @@
   * **捕获热点与意图图谱**：响应 2026-10-29 Google Trends 垂直飙升（热度 10 飙升至 80+）及 Google Autocomplete / People Also Search 核心词（`deepseek v5 release date`, `deepseek v5 flash`, `deepseek v5 pro`, `deepseek v5 reddit`, `deepseek v5 rumors`, `deepseek v5 benchmark`），首发深度评测与引流博文：`/blog/deepseek-v5-release-date-api-leaks-roadmap/`。
   * **作者轮换**：严格遵守 Persona 轮换规则，署名为 `Kenji Tanaka`（AI Developer Relations Engineer, APIVALE，专攻自主编码 Agent、终端工作流与跨国 API 路由）。
   * **主攻关键词**：
-    * Primary: `deepseek v5 release date`
-    * Secondary/LSI: `deepseek v5 flash`, `deepseek v5 pro`, `deepseek v5 reddit`, `deepseek v5 rumors`, `deepseek v5 benchmark`, `deepseek v4.1 flash`, `cursor deepseek setup`
+    * Primary: `deepseek v5`（Google Trends 66-100 超级父级词）
+    * Secondary/LSI: `deepseek v5 release date`, `deepseek v5 flash`, `deepseek v5 pro`, `deepseek v5 reddit`, `deepseek v5 rumors`, `deepseek v4.1 flash`
+  * **On-Page 100 分满分调优与意图对齐**：
+    1. Title/H1 结构优化：升级为 `DeepSeek V5: Release Date, Flash Leaks & API Setup | APIVALE`（59 字符），以超级大词 `DeepSeek V5` 作为独立第一实体，消除长尾降维错位；
+    2. 全页词数优化：正文精炼至 1343 词（全页渲染约 1680 词），严格进入 1200-1800 最佳区间，消除 1 分扣分；
+    3. 双向与网状内链强化：深度织入 `deepseek-v4-1-flash-1017-api-setup.md`、`qwen-4-release-date-api-roadmap.md`、`gemini-4-carbon-price-benchmarks-api.md`、`kimi-k3-1-pro-pricing-benchmarks-api-access.md` 及定价与试用页，达到最佳 GEO 互联网络。
   * **工程增益与架构**：
     1. 首发披露官方 GitHub CI/CD 测试用例 `packages/harness/test/provider.spec.ts` 中的 `deepseek-v5-open` 与 `deepseek-v5-next` 真实代码枚举；
     2. 客观分析发布窗口（Staging API Canary 预计 2026 年底，开源权重预计 2027 年 Q1）；
