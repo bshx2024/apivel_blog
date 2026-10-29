@@ -17,7 +17,7 @@ This document tracks all researched high-potential keyword clusters, proposed ar
 | **7** | *Claude Opus 5.5 Price, Limits & Claude Code Guide* | `claude opus 5.5` | `claude code opus 5.5`, `claude opus 5.5 price`, `claude opus 5.5 free`, `claude opus 5.5 vs sonnet 5.5`, `claude opus 5.5 rate limit` | Technical / Cost & Rate Limit Breakout | ✅ **Published** |
 | **8** | *9Router vs OmniRoute: Best Claude Alternatives & Setup* | `9router vs omniroute` | `9router alternatives`, `9router install`, `9router npm`, `9router proxy`, `claude code proxy`, `qwen 3.7 max` | Technical / Comparison & Breakout | ✅ **Published** |
 | **9** | *Kimi K3.1 Pro Pricing, Benchmarks & API Access Guide* | `kimi k3.1 pro pricing` | `kimi k3.1 pro benchmarks`, `kimi k3.1 pro reddit`, `kimi k3.1 pro api access`, `kimi k3.1 pro artificial analysis`, `terminal-bench 4.0` | Breakout / Evaluation & Commercial | ✅ **Published** |
-| **10** | *Gemini 4 Carbon Price, Benchmarks & API: The Developer's Guide* | `gemini 4 carbon price` | `gemini 4 carbon benchmarks`, `gemini 4 carbon api pricing`, `gemini 4 carbon vs opus 5.5`, `gemini 4 carbon reddit`, `gemini 4 carbon cost` | Technical / Cost & Frontier Breakout | ✅ **Published** |
+| **10** | *Gemini 4 Carbon: Benchmarks, Price & API Guide* | `gemini 4 carbon` | `gemini 4 carbon price`, `gemini 4 carbon benchmarks`, `gemini 4 carbon api pricing`, `gemini 4 carbon vs opus 5.5`, `gemini 4 carbon reddit` | Technical / Frontier Breakout | ✅ **Published** |
 
 
 ---
