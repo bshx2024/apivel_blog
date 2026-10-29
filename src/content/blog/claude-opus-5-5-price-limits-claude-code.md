@@ -112,20 +112,23 @@ flowchart TD
     C{"Task Complexity Analysis"}
     B --> C
     C -->|"Architecture / Deep Bug"| D["Claude Opus 5.5 (Deep Reasoning)"]
+    C -->|"Cyberdefense / 1M Context"| GC["Gemini 4 Carbon ($4.00 / $20.00)"]
     C -->|"Terminal Coding / 1M Context"| K["Kimi K3.1 Pro ($2.00 / $10.00)"]
     C -->|"Routine Editing / Code Gen"| E["Claude Sonnet 5.5 (Fast Execution)"]
     C -->|"Unit Tests / Linting"| F["DeepSeek V4.1 Flash ($0.14/1M)"]
-    D -->|"Rate Limit / Failover"| K
+    D -->|"Rate Limit / Failover"| GC
+    GC -->|"Failover"| K
     K -->|"Failover"| E
     E -->|"Emergency Fallback"| G["Qwen 3.7 Max Gateway"]
     D --> H["Unified Streaming Response"]
+    GC --> H
     K --> H
     E --> H
     F --> H
     G --> H
 ```
 
-By assigning heavy architectural analysis to Opus 5.5 while delegating iterative file writes and terminal executions to [Kimi K3.1 Pro](/blog/kimi-k3-1-pro-pricing-benchmarks-api-access/), [DeepSeek V4.1 Flash](/blog/deepseek-v4-1-flash-1017-api-setup/), or [Qwen 3.7 Max](/blog/qwen-4-release-date-api-roadmap/), teams cut net monthly API expenditures by **65% to 75%** without sacrificing code quality.
+By assigning heavy architectural analysis to Opus 5.5 or [Gemini 4 Carbon](/blog/gemini-4-carbon-price-benchmarks-api/) while delegating iterative file writes and terminal executions to [Kimi K3.1 Pro](/blog/kimi-k3-1-pro-pricing-benchmarks-api-access/), [DeepSeek V4.1 Flash](/blog/deepseek-v4-1-flash-1017-api-setup/), or [Qwen 3.7 Max](/blog/qwen-4-release-date-api-roadmap/), teams cut net monthly API expenditures by **65% to 75%** without sacrificing code quality.
 
 ---
 
