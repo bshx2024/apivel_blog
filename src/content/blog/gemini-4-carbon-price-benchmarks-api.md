@@ -79,7 +79,7 @@ Understanding the economics of Carbon requires looking beyond top-line sticker r
 
 ### Introductory vs Post-Launch Pricing Schedule
 
-Google rolled out an introductory promotional discount matching Argon, but formal documentation specifies a mandatory doubling once the initial promotional phase concludes:
+Google rolled out an introductory promotional discount matching [Gemini 4 Argon](/blog/gemini-4-argon-coding-test-review/), but formal documentation specifies a mandatory doubling once the initial promotional phase concludes:
 
 * **Introductory Rate:** **$2.00 / 1M input** and **$10.00 / 1M output tokens**.
 * **Standard Post-Launch Rate:** **$4.00 / 1M input** and **$20.00 / 1M output tokens**.
@@ -130,7 +130,7 @@ In autonomous terminal sessions, sudden 429 errors terminate sub-processes, disc
 ## 4. Slashing Frontier Agent Invoices via Tiered Routing
 
 Rather than routing every lightweight task through a $20.00/1M model, teams deploy **Hierarchical Model Tiering**:
-* **Tier 1 (Carbon / Opus 5.5):** Reserved for root architecture decisions, multi-component planning, and final security scans.
+* **Tier 1 (Carbon / Opus 5.5 / Argon):** Reserved for root architecture decisions, multi-component planning, and final security scans. Compare full engineering benchmarks in our [Gemini 4 Argon coding test review](/blog/gemini-4-argon-coding-test-review/).
 * **Tier 2 (Qwen 3.8 Max / DeepSeek V4):** Executes 85% of iterative tasks: writing unit tests, running bash commands, formatting diffs, and linting. Teams can also route long document analysis to [Kimi K3.1 Pro](/blog/kimi-k3-1-pro-pricing-benchmarks-api-access/).
 
 ### Claude Code & Cursor Failover Configuration
