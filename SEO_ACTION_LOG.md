@@ -314,7 +314,7 @@
 * **动作详情**：
   * **热点意图全网捕获**：响应 Google 搜索框下拉补全（`gemini 4 argon coding test`, `gemini 4 argon coding review`, `gemini program accidents`）、People Also Search For（`gemini 4 argon coding test reddit`, `gemini 4 argon price`, `benchmarks`, `github`, `free`），首发深度评测与多模型两层路由指南 `/blog/gemini-4-argon-coding-test-review/`。
   * **指标与门禁合规**：
-    1. **双轨标题与精炼元数据**：MetaTitle `Gemini 4 Argon Coding Test: Benchmarks & Review | APIVALE`（56 字符，严格控制在 50~60 字符最佳区间）；H1 `Gemini 4 Argon Coding Test: Benchmarks, Price & Reddit Review`（61 字符，<= 80 字符）；Meta Description `Read the Gemini 4 Argon coding test review: DeepSWE benchmarks, token burn, GitHub test cases, and high-performance zero-KYC PayPal alternatives on APIVALE.`（156 字符，严格卡在 140~160 字符 sweet spot）；可视文本词数 1740 词（完全处于 1200~1800 词黄金区间）。
+    1. **双轨标题与精炼元数据**：MetaTitle `Gemini 4 Argon Coding Test: Benchmarks & Review | APIVALE`（56 字符，严格控制在 50~60 字符最佳区间）；H1 `Gemini 4 Argon Coding Test: Benchmarks, Price & Reddit Review`（61 字符，<= 80 字符）；Meta Description `Read the Gemini 4 Argon coding test review: DeepSWE benchmarks, token burn, GitHub test cases, and high-performance zero-KYC PayPal alternatives on APIVALE.`（156 字符，严格卡在 140~160 字符 sweet spot）；可视文本词数精简收敛至 1415 词（全页含全局模板 1600 词，彻底消除超词扣 1 分）；小标题 H2 完整继承主词单词，命中率达 100%（消除 0.8 分扣分，精准阻断推断词误判为红海大词）。
     2. **作者轮换**：署名轮换至 AI Infrastructure Engineer `Priya Sharma`。
     3. **4 项真实工程增益**：Reddit r/google_antigravity 开发者真实原声（5小时滚动配额烧穿、高推理耗尽痛点，附真实 URL 与作者 Far_Management_7991）、DeepSWE v1.1 (77.9%) vs Terminal-bench 4.0 (57.4%) 硬核基准对比表（含竞品 Best for... 客观评价）、12月1日价格翻倍（$4/$20）冲击拆解、15+ 行 Cursor `settings.json` 与 Claude Code CLI 双协议生产级配置。
     4. **即时交互微工具**：内嵌动态 Token 成本对比与双层路由节省计算器（原生 `<input>`/`<select>`，无 native alert），消除纯跳转落地页（Doorway Page）扣分。
