@@ -40,15 +40,16 @@
   * **主攻关键词**：
     * Primary: `gpt-6.2 astra` / `gpt 6.2 astra`
     * Secondary/LSI: `GPT-6 Astra OpenAI`, `GPT Astra release date`, `GPT-6 Astra release`, `GPT-6 Astra benchmark`, `GPT-6 Astra price`, `GPT Astra Reddit`, `GPT-6 Astra X`
-  * **On-Page & GEO 调优**：
-    1. Title/H1 意图深度对齐：MetaTitle 设为 `GPT-6.2 Astra: Leak Truth, Benchmarks & Price | APIVALE`（55 字符，契合 50-60 字符标准），H1 为 `GPT-6.2 Astra in Codex: Leak Truth, Benchmarks, Price & Fixes`（61 字符，<= 80 字符），Meta Description 152 字符直击泄露真相与平替；
-    2. GEO 实体消歧：首段明确区分汽车发动机实体与 OpenAI 次级模型代号，完成 Named Entity Grounding；
-    3. 披露真实 Reddit / X 社区原声与 Telemetry 抓包记录（30秒空转轮询 Bug、Cache 留存仅 30 分钟痛点）；
-    4. 嵌入 15+ 行生产级带指数退避与抖动的 Python 双模型故障转移路由代码，以及 `AGENTS.md` 防空转轮询配置；
-    5. 嵌入原生交互微工具（In-Article Token Burn & Cost Calculator），规避 Doorway Page 4.5 分扣分风险；
-    6. 注入标准 `FAQPage` JSON-LD 结构化数据，实现直接问答（Direct Answer）；
-    7. 落地双向内链织网：同步在 `openai-6-1-terra-vs-sol-benchmark-pricing.md` 与 `claude-opus-5-5-price-limits-claude-code.md` 中织入反向锚文本链接；
-    8. 钱包方案对齐：支持 PayPal 官方即时结账、+50% 首充奖励、$29 开发者专享大礼包及 $0.20 免卡免实名试用。
+  * **On-Page & GEO 调优 (100 分满分二轮精调)**：
+    1. Title/H1/H2 意图与结构位绝对锁定：MetaTitle 设为 `GPT-6.2 Astra: Leak Truth, Benchmarks & Price | APIVALE`（55 字符），H1 为 `GPT-6.2 Astra in Codex: Leak Truth, Benchmarks, Price & Fixes`（61 字符），所有 H2 结构位显式覆盖 `GPT-6.2 Astra`，彻底消除搜索引擎分词器由于标点误判为 `gpt-6 astra` 的赛道错位问题；
+    2. 全页词数精准瘦身：去除 Markdown 内多余重复计算器，提炼 Python 核心代码，将正文词数压缩至 1412 词（全页 SSR 渲染精准降至 1650 词黄金线），彻底攻克 2098 词（>1800）扣 1 分的体检项；
+    3. P2 行为资产与会话延伸：新增 `## 6. Recommended AI Tools & Related Guides` 模块，深度互联站内交互工具（DeepSeek Pricing Calculator）与核心博文（Claude Code REA / Qwen 4 / GPT-6.1 Terra），破除“用完即走”，延长用户停留时间；
+    4. GEO 实体消歧：首段完成 Named Entity Grounding，明确定义其为 OpenAI Codex 次级模型标识，消除汽车 GMC 6.2 歧义；
+    5. 披露真实 Reddit / X 社区原声与 Telemetry 抓包记录（30秒空转轮询 Bug、Cache 留存仅 30 分钟痛点）；
+    6. 嵌入原生 Python 双模型故障转移路由代码，以及 `AGENTS.md` 防空转轮询配置；
+    7. 注入标准 `FAQPage` JSON-LD 结构化数据，实现直接问答（Direct Answer）；
+    8. 落地双向内链织网：同步在 `openai-6-1-terra-vs-sol-benchmark-pricing.md` 与 `claude-opus-5-5-price-limits-claude-code.md` 中织入反向锚文本链接；
+    9. 钱包方案对齐：支持 PayPal 官方即时结账、+50% 首充奖励、$29 开发者专享大礼包及 $0.20 免卡免实名试用。
 * **影响页面**：`https://apivel.com/blog/gpt-6-2-astra-benchmarks-price-reddit/`
 * **因果假设**：抓取并正面满足用户对 `gpt-6.2 astra` 的求证、跑分与价格意图，在 7-14 天内占领 `GPT-6 Astra Reddit`、`GPT-6 Astra price`、`GPT-6.2 astra` 谷歌前排与 Perplexity / SearchGPT 核心引用源；通过痛点剖析顺势将重度受困于 Token 消耗的海外开发者截流转化为 Qwen 3.7 Max / DeepSeek V4 统一网关用户。
 
