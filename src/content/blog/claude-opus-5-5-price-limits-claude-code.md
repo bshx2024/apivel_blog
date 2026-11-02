@@ -75,7 +75,7 @@ Engineers upgrading to Claude Pro or Team subscriptions to leverage Opus 5.5 in 
 Fixed monthly plans rely on pooled compute quotas governed by strict 5-hour sliding windows and hard weekly limits:
 * **Subagent Fan-Out:** Claude Code spawns parallel background tools for ripgrep search, AST parsing, and file edits. A single developer command can trigger 25 consecutive model invocations.
 * **Over-Engineering Tunnel Vision:** Community discussions highlight that Opus 5.5 occasionally over-engineers solutions—generating multi-layered abstractions and defensive wrappers for straightforward utility scripts—burning through quota reserves.
-* **Zero Spillover Protection:** Once the weekly cap triggers, official subscription interfaces do not allow automated per-token overage billing. Work ceases entirely until the scheduled weekly reset.
+* **Zero Spillover Protection:** Once the weekly cap triggers, official subscription interfaces do not allow automated per-token overage billing. Work ceases entirely until the scheduled weekly reset. This dynamic mirrors the quota burn and polling bugs observed in OpenAI's unannounced canary tests (see our [GPT-6.2 Astra benchmarks, pricing, and Reddit telemetry analysis](/blog/gpt-6-2-astra-benchmarks-price-reddit/)), where unthrottled agentic loops quickly exhaust fixed subscription tiers.
 
 Through [apivel](https://apivel.com/?redirect=/blog/claude-opus-5-5-price-limits-claude-code), requests route via unthrottled enterprise tier channels using pure **pay-as-you-go billing**. You pay strictly for the exact tokens consumed with zero weekly shutoffs and zero forced downtime.
 

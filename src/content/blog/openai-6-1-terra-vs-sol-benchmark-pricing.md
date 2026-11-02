@@ -55,7 +55,7 @@ graph TD
 
 ## 1. What is GPT-6.1 Terra? Architecture and Model Positioning
 
-OpenAI structures the GPT-6 generation into four distinct compute tiers: **Luna** (compact edge execution), **Terra** (mid-tier high-throughput workhorse), **Sol** (heavyweight reasoning flagship), and **Astra** (frontier multimodal research system).
+OpenAI structures the GPT-6 generation into four distinct compute tiers: **Luna** (compact edge execution), **Terra** (mid-tier high-throughput workhorse), **Sol** (heavyweight reasoning flagship), and **Astra** (frontier multimodal research system; see our [GPT-6.2 Astra telemetry and price audit](/blog/gpt-6-2-astra-benchmarks-price-reddit/) for unannounced Codex canary tests).
 
 ```
 ┌────────────────────────────────────────────────────────┐
