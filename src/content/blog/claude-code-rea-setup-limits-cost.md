@@ -175,7 +175,7 @@ Within the CLI, issue your decompilation task:
     <span class="text-xs text-gray-400 bg-gray-800 px-3 py-1 rounded-full">Live Math Model</span>
   </div>
   <p class="text-sm text-gray-300 mb-4 leading-relaxed">
-    Estimate how much you save on reverse engineering loops by switching from official Claude Sonnet ($15/1M output) to apivel DeepSeek V4 and Qwen 3.8 endpoints:
+    Estimate how much you save on reverse engineering loops by switching from official Claude Sonnet ($15/1M output) to apivel DeepSeek V4, Qwen, and [LongCat-2.5 Preview](/blog/longcat-2-5-preview-benchmark-api-reddit/) (1.6T MoE with 1M context) endpoints:
   </p>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
     <div class="bg-gray-800/80 p-4 rounded-lg border border-gray-700">

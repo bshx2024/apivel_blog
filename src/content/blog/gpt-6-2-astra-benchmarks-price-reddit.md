@@ -171,6 +171,7 @@ You can create an API key on [APIVALE](https://apivel.com/sign-up?redirect=/blog
 
 Explore related engineering toolkits and model benchmarks on APIVALE to optimize your developer workflow:
 
+* **[LongCat 2.5 Preview Benchmark & API Guide](/blog/longcat-2-5-preview-benchmark-api-reddit/)**: Review 1.6T MoE benchmark data, LongCat vs Space Bunny tests, and zero-KYC API setup.
 * **[DeepSeek Pricing & Savings Calculator](/tools/deepseek-pricing-calculator/)**: Calculate real-time token spend differences across DeepSeek V4 and proprietary LLMs.
 * **[Claude Code REA Setup Guide](/blog/claude-code-rea-setup-limits-cost/)**: Fix tool-use limits and cut token costs by 85% in terminal workflows.
 * **[Qwen 4 Release Date & Roadmap](/blog/qwen-4-release-date-api-roadmap/)**: Track 27B open weights, benchmarks, and production deployment strategies.

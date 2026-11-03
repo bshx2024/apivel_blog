@@ -121,6 +121,7 @@ Developers frequently debate whether to standardize on MiniMax or [DeepSeek V4.1
 
 **Engineering Recommendation:**
 * Use **M3.1 Flash** when tasks involve extensive repository analysis (up to 1M tokens) or autonomous multi-step tool loops.
+* For multimodal visual coding and terminal-centric agents, compare benchmarks against the newly released [LongCat-2.5 Preview](/blog/longcat-2-5-preview-benchmark-api-reddit/) (Meituan's 1.6T MoE architecture).
 * Use **DeepSeek V4 Flash** for short-context tasks, factual queries, or on-prem deployment.
 * For complex codebase refactoring, you can also cross-reference our [Claude Code REA guide](/blog/claude-code-rea-setup-limits-cost/) to optimize multi-turn token consumption.
 
