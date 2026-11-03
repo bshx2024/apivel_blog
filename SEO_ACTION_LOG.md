@@ -40,9 +40,10 @@
   * **主攻关键词**：
     * Primary: `longcat-2.5-preview`, `longcat 2.5 api`
     * Secondary/LSI: `longcat-2.5-preview benchmark`, `longcat 2.5 benchmark`, `longcat 2.5 vs space bunny`, `longcat 2.5 reddit`, `longcat 2.5 free`, `meituan longcat 2.5 preview`
-  * **On-Page & GEO 优化**：
-    1. Title Tag 遵循 ABC 标题公式：`LongCat 2.5 Preview API: Benchmark, Reddit & Free Test | APIVALE`（59 字符），H1 设为 `LongCat 2.5 Preview: 1.6T MoE Benchmark, API Setup & Reddit Review`（67 字符）；
-    2. Meta Description 覆盖高频转化词：`Test Meituan LongCat-2.5 Preview: 1.6T MoE benchmark data, LongCat vs Space Bunny tests, Reddit feedback, and instant OpenAI-compatible API with a free trial.`（153 字符）；
+  * **On-Page & GEO 优化 (100 分满分锁定微调)**：
+    1. Title Tag 遵循 ABC 标题公式并 100% 前置锁定主词：`LongCat-2.5 Preview: Benchmark, API & Reddit | APIVALE`（精准 53 字符，彻底解决 Title 长度 64 略超 60 扣 2 分）；
+    2. H1 强力剔除 `1.6T MoE` 抢词：`LongCat-2.5 Preview: Benchmark, API Setup & Reddit Review`（58 字符），所有 H2 结构位显式覆盖 `LongCat-2.5`，彻底消除 `1 6t moe` 赛道错位误判；
+    3. Meta Description 覆盖高频转化词：`Test Meituan LongCat-2.5 Preview: official benchmark data, LongCat-2.5 vs Space Bunny tests, Reddit feedback, and instant OpenAI-compatible API free trial.`（153 字符）；
     3. 痛点深度攻坚：剖析 1.6T MoE 消费级硬件不可本地运行硬核数学推导，确立云端 API 的唯一解；
     4. 竞品神仙对决：新增 `LongCat 2.5 vs Space Bunny Alpha (MiniMax)` 1M 原生上下文横向对比与综合性能表格（含核验时间戳与客观正向优势列）；
     5. 采掘可验证社区原声：披露从 `owl-alpha` 到 LongCat-2.5 的真实 Reddit 原声与终端循环重试痛点；
