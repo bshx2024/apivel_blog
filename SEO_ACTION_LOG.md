@@ -44,6 +44,7 @@
     1. Title Tag 遵循 ABC 标题公式并 100% 前置锁定指数 100 父级主词：`LongCat-2.5: Benchmark, API Setup & Reddit Review | APIVALE`（精准 58 字符，彻底解决 Title 长度 64 略超 60 扣 2 分）；
     2. H1 强力剔除 `Preview` 与 `1.6T MoE` 抢词：`LongCat-2.5: Benchmark, API Setup & Reddit Review`（50 字符），解除主词与长尾词 Preview 的死绑，100% 认领流量指数 100 的 Parent Topic；
     3. Meta Description 覆盖高频转化词：`Full guide to Meituan LongCat-2.5: verified benchmarks, LongCat-2.5 vs Space Bunny tests, Reddit feedback, and instant OpenAI-compatible API with a free trial.`（156 字符）；
+    4. 关键词密度健康化降频：将 `LongCat-2.5` 频次由 62 次精准降解为 33 次（替换为代词与自然技术同义语），多词词组密度从 4.18% 降至 2.74% 黄金区间，彻底消除过度优化与堆砌风险（拿回 1.5 分）；
     3. 痛点深度攻坚：剖析 1.6T MoE 消费级硬件不可本地运行硬核数学推导，确立云端 API 的唯一解；
     4. 竞品神仙对决：新增 `LongCat 2.5 vs Space Bunny Alpha (MiniMax)` 1M 原生上下文横向对比与综合性能表格（含核验时间戳与客观正向优势列）；
     5. 采掘可验证社区原声：披露从 `owl-alpha` 到 LongCat-2.5 的真实 Reddit 原声与终端循环重试痛点；
