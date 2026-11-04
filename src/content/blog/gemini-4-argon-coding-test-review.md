@@ -133,7 +133,7 @@ graph LR
 
 High-volume engineering squads solve this through a **Two-Tier Agentic Routing Strategy**:
 
-* **Tier 1 (High-Level Planning):** Route repository scans and architectural schema planning to Gemini 4 Argon or Claude Opus 5.5.
+* **Tier 1 (High-Level Planning):** Route repository scans and architectural schema planning to Gemini 4 Argon, Claude Opus 5.5, or [GPT-6.2 Astra in Codex](/blog/gpt-6-2-astra-benchmarks-price-reddit/).
 * **Tier 2 (Bulk Execution):** Offload 80% of operational tasks—scaffolding, unit tests, docstrings, and diffs—to **Qwen 3.7 Max** (`infer/qwen3.7-max`) or **DeepSeek V4** (`infer/deepseek-v4`).
 
 Through [APIVALE](https://apivel.com/?redirect=/blog/gemini-4-argon-coding-test-review), developers access these models via OpenAI and Anthropic compatible endpoints with instant PayPal checkout and zero KYC.

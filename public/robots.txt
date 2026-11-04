@@ -38,7 +38,17 @@ Allow: /blog/
 User-agent: Bytespider
 Allow: /blog/
 
+User-agent: Meta-ExternalAgent
+Allow: /blog/
+
+User-agent: Applebot-Extended
+Allow: /blog/
+
+User-agent: Cohere-ai
+Allow: /blog/
+
+User-agent: YouBot
+Allow: /blog/
+
 Sitemap: https://apivel.com/blog/sitemap-index.xml
 Sitemap: https://apivel.com/sitemap.xml
-
-

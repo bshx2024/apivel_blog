@@ -280,6 +280,7 @@ Explore related high-context benchmarks across the APIVALE platform:
 * **[MiniMax M3.1 Flash & Space Bunny Setup Guide](/blog/minimax-m3-flash-api-setup-benchmark/)**: Benchmark 1M context windows, pricing, and Claude Code integrations.
 * **[Claude Code REA Setup & Cost Limits](/blog/claude-code-rea-setup-limits-cost/)**: Prevent agent token burn and configure dual-model failover architectures.
 * **[OpenAI GPT-6.1 Terra vs Sol Benchmark](/blog/openai-6-1-terra-vs-sol-benchmark-pricing/)**: Detailed speed, reasoning, and context analysis across frontier flagships.
+* **[GPT-6.2 Astra Benchmarks & Price Guide](/blog/gpt-6-2-astra-benchmarks-price-reddit/)**: Review unannounced Codex & v0 canary tests, token burn mitigations, and failover routing.
 * **[Qwen 4 Release Date & API Roadmap](/blog/qwen-4-release-date-api-roadmap/)**: Production deployment benchmarks and open-weight migration strategies.
 
 <div class="cta-card my-8 rounded-2xl p-6 bg-gradient-to-br from-indigo-950 to-gray-900 border border-indigo-700">
