@@ -277,6 +277,8 @@ Configure your custom model provider inside your Cursor configuration file with 
 
 ## 7. Cost & Operational Comparison: Official Anthropic vs. apivel
 
+For organizations needing verifiable model provenance across Anthropic and MoE foundation models without paying an exorbitant [70x zk-proof tax like Anthropic FlashProve](/blog/anthropic-flashprove-zk-inference-guide/), apivel provides direct token transparency, upstream pass-through, and zero-FX billing.
+
 | Operational Parameter | Official Anthropic Subscription | apivel Unified Gateway |
 | :--- | :--- | :--- |
 | **Quota Allocation** | Rigid 5-hour rolling & weekly hard cap | **100% Uncapped Pay-As-You-Go** |
