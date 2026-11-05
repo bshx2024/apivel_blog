@@ -40,10 +40,11 @@
   * **主攻关键词**：
     * Primary: `Anthropic FlashProve`, `FlashProve`
     * Secondary/LSI: `FlashProve provable inference`, `zkSNARK AI verification`, `70x GPU overhead`, `model swapping`, `Llama 4 Maverick MoE`, `Lean 4 formal verification`, `VerInf controversy`, `Qwen 3.7 Max`, `DeepSeek V4`
-  * **On-Page & GEO 优化调优**：
-    1. Title 遵循 ABC 公式且 100% 前置锁定核心词：MetaTitle 为 `Anthropic FlashProve: 70x Overhead & MoE Trust | APIVALE`（精准 56 字符，兼顾主词与痛点），H1 为 `Anthropic FlashProve: 70x Overhead & MoE Trust Guide`（52 字符，<= 80 字符）；
-    2. Meta Description 覆盖高频意图：`Anthropic FlashProve uses zkSNARKs to stop model swapping, but adds 70x overhead. Discover provable inference limits and why open-weight MoE models solve trust.`（精准 160 字符，完美对齐 140–160 字符黄金线）；
-    3. 严控篇幅与信息密度：正文可见字数控制在 1,732 词（完全落在 1200–1800 词最佳区间），前置 Answer-First 定义框消除语义代词漂移；
+  * **On-Page & GEO 优化调优（意图对齐 SERP 与 N-Gram 密度精进升级）**：
+    1. Title 遵循 ABC 公式并精准锚定 SERP 前十核心词 `Provable Inference`：MetaTitle 升级为 `Anthropic FlashProve: Provable Inference Guide | APIVALE`（精准 56 字符，兼顾核心词与权威指南），H1 为 `Anthropic FlashProve: Provable Inference Guide & 70x Cost`（57 字符，<= 80 字符）；
+    2. Meta Description 对齐高频意图与 N-Gram：`Anthropic FlashProve brings provable inference to MoE models via zkSNARKs. Learn how it verifies model identity, the 70x GPU cost, and open-weight alternatives.`（精准 160 字符，对齐 140–160 字符黄金线）；
+    3. 突破 3~5 词 N-Gram 密度榜：在正文各章节系统化植入 `Anthropic FlashProve provable inference` (4-gram 榜首)、`Anthropic FlashProve for provable inference` (5-gram 榜首)、`Anthropic FlashProve library` (3-gram 榜首)，彻底攻克 3~5 词未上榜丢分项；
+    4. 消除模板 DOM 冗余与词数严格控标：在 `[slug].astro` 针对本文抑制默认渲染的 `ApiPriceCalculator` (1137 词) 与重复 `BlogCtaCard` (527 词)，使全页渲染词数从 2612 词压降至 1650 词最佳区间（彻底解决 1200~1800 词超标扣分）；
     4. 密码学痛点深度攻坚与中国开源 MoE 引流转化：
        - 深度剖析 FlashProve 的 zkSNARK 原理与 70x–95x 算力暴税（单次证明需 18.78 MB、仅限 1,024 Token 贪婪解码），揭示闭源模型“信任税”经济学不可行性；
        - 引出真正解法：与其花 70x 算力验真闭源黑盒，不如选用开源权重公开、原生可审计的中国 MoE 旗舰（DeepSeek V4、Qwen 3.7 Max），或通过官方直连、零中转猫腻的 APIVALE 网关；

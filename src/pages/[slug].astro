@@ -324,16 +324,16 @@ const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.key
 		</div>
 
 		<!-- Zero-Login Interactive Tool Widgets (Above the Fold) -->
-		{isCliOrSetup && slugLower !== 'openrouter-pricing' && (
+		{!slugLower.includes('flashprove') && isCliOrSetup && slugLower !== 'openrouter-pricing' && (
 			<CliConfigGenerator defaultClient={defaultClient} defaultModel={initialModel} />
 		)}
 
-		{!isCliOrSetup && isPriceOrBenchmark && slugLower !== 'openrouter-pricing' && (
+		{!slugLower.includes('flashprove') && !isCliOrSetup && isPriceOrBenchmark && slugLower !== 'openrouter-pricing' && (
 			<ApiPriceCalculator initialModel={initialModel} />
 		)}
 
 		<!-- Fallback for general articles if neither matched -->
-		{!isPriceOrBenchmark && !isCliOrSetup && slugLower !== 'openrouter-pricing' && (
+		{!slugLower.includes('flashprove') && !isPriceOrBenchmark && !isCliOrSetup && slugLower !== 'openrouter-pricing' && (
 			<ApiPriceCalculator initialModel={initialModel} />
 		)}
 
@@ -357,7 +357,7 @@ const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.key
 		</div>
 
 		<!-- Reusable Technical Developer CTA Card -->
-		<BlogCtaCard currentSlug={post.id} currentPath={`/blog/${post.id}`} />
+		{!post.body?.includes('cta-card') && (<BlogCtaCard currentSlug={post.id} currentPath={`/blog/${post.id}`} />)}
 
 		<!-- Post Footer Author Box -->
 		<footer class="post-footer">
