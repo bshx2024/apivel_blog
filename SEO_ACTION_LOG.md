@@ -43,8 +43,9 @@
   * **On-Page & GEO 优化调优（意图对齐 SERP 与 N-Gram 密度精进升级）**：
     1. Title 遵循 ABC 公式并精准锚定搜索截图中最高频的申请与文档需求：MetaTitle 为 `OpenAI GPT-6 Cyber API: Access Gating & Model Card | APIVALE`（精准 60 字符，符合 50–60 字符 / 600px 限制）；H1 标题为 `OpenAI GPT-6 Cyber API: Access Gating, Pricing & Uncensored Security Auditing`（精准 77 字符，<= 80 字符）；
     2. Meta Description 对齐核心参数：`OpenAI GPT-6 Cyber offers 48.5% on ExploitGym but locks API access behind Daybreak Red. Compare Model Card limits with zero-refusal Qwen 3.7 Max code auditing.`（精准 159 字符，严格落在 140–160 字符区间）；
-    3. 严格控制可见正文词数：经无语法标记纯正文统计，全页有效可见词为 1,481 词，严格处于 1200~1800 词最佳规范区间；
-    4. 突破大模型友好（GEO）与 RAG 切片优化：
+    3. 严格控制全页渲染词数（On-Page 97 → 99+ 专项精进）：在 `src/pages/[slug].astro` 针对本文抑制冗余的默认 `<CliConfigGenerator />`（1,000 词），使全页渲染词数从 2,482 词降至 ~1,550 词最佳黄金区间，彻底解决正文词数超标丢分；
+    4. 小标题关键词 100% 覆盖与“还在搜”扩展：将 H2 升级为 `What is the OpenAI GPT-6 Cyber API?` 与 `Daybreak Red Gating: Why OpenAI GPT-6 Cyber API Access Is Locked`，实现推断主词 4 词在 H2 100% 满格命中；同时新增 FAQ 模块专门解答 SERP 热搜词 `Openai gpt 6 cyber api documentation`；
+    5. 突破大模型友好（GEO）与 RAG 切片优化：
        - 切片完全自包含（Self-Contained Chunks）：消除指代不明的代词，各 H2/H3 首句 40 词内直出实体名称与核心指标；
        - 高熵信息呈现：提供 ExploitGym 基准 ASCII 图谱、多维度技术参数对比表（含专属 "Best For" 定位列）；
        - 注入真实 Reddit r/netsec #918234 资深固件审计员 `v0id_ptr` 针对 `codex_error_info: cyber_policy` 误杀拒答的原声原话与真实报错 JSON 数据包；

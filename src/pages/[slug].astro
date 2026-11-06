@@ -42,6 +42,7 @@ const postMeta = `${slugLower} ${titleLower} ${tagsLower}`;
 
 const isPriceOrBenchmark = /price|cost|saving|benchmark|comparison|versus|vs|deepseek|minimax|rate/i.test(slugLower + ' ' + titleLower);
 const isCliOrSetup = /cli|cursor|windsurf|opencode|connect|setup|config|mcp|guide|access|bypass/i.test(slugLower + ' ' + titleLower);
+const hasCustomWidget = slugLower.includes('flashprove') || slugLower.includes('cyber');
 
 let initialModel = 'glm-5.3-flash';
 let targetTopic = 'general';
@@ -324,16 +325,16 @@ const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.key
 		</div>
 
 		<!-- Zero-Login Interactive Tool Widgets (Above the Fold) -->
-		{!slugLower.includes('flashprove') && isCliOrSetup && slugLower !== 'openrouter-pricing' && (
+		{!hasCustomWidget && isCliOrSetup && slugLower !== 'openrouter-pricing' && (
 			<CliConfigGenerator defaultClient={defaultClient} defaultModel={initialModel} />
 		)}
 
-		{!slugLower.includes('flashprove') && !isCliOrSetup && isPriceOrBenchmark && slugLower !== 'openrouter-pricing' && (
+		{!hasCustomWidget && !isCliOrSetup && isPriceOrBenchmark && slugLower !== 'openrouter-pricing' && (
 			<ApiPriceCalculator initialModel={initialModel} />
 		)}
 
 		<!-- Fallback for general articles if neither matched -->
-		{!slugLower.includes('flashprove') && !isPriceOrBenchmark && !isCliOrSetup && slugLower !== 'openrouter-pricing' && (
+		{!hasCustomWidget && !isPriceOrBenchmark && !isCliOrSetup && slugLower !== 'openrouter-pricing' && (
 			<ApiPriceCalculator initialModel={initialModel} />
 		)}
 
