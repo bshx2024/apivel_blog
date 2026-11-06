@@ -217,6 +217,14 @@ apivel officially supports instant **PayPal Checkout**, international credit car
 
 ---
 
+## Technical Cross-References & Related Analyses
+
+* **[OpenAI GPT-6 Cyber API Access & Model Card Guide](/blog/openai-gpt-6-cyber-api-access-guide/)**: Compare Daybreak Red enterprise gating and ExploitGym benchmarks with uncensored Qwen 3.7 Max binary auditing.
+* **[GPT-6.2 Astra Leak Truth & Benchmarks](/blog/gpt-6-2-astra-benchmarks-price-reddit/)**: Technical analysis of unannounced Codex telemetry, SWE-bench scores, and agent fallback routing.
+* **[Anthropic FlashProve Provable Inference Guide](/blog/anthropic-flashprove-zk-inference-guide/)**: Complete analysis of zkSNARK verification overhead and cryptographic model authentication.
+
+---
+
 <div class="cta-card">
   <div class="cta-card-title">Run Claude Code REA at 85% Less Cost with apivel</div>
   <p class="cta-card-text">
