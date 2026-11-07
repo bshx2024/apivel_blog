@@ -32,6 +32,47 @@
 
 ## 📅 apivel.com SEO 动作记录表 (2026年)
 
+### 2026-11-07 (Wave 1 站内 SEO 与落地页改造 - OmniRoute Claude Code 意图补全与 Sitemap 拓扑打通)
+* **分类**：📝 [内容精细化重构]、⚙️ [技术/Sitemap 拓扑修复]、🔗 [双向内链高权重输送]
+* **动作详情**：
+  * **Title 与 H1 意图定力维护**：严格遵守精准守则，拒绝因小众排错词改动已有良好排名的核心资产，Frontmatter 与 H1 坚守核心意图：
+    - `title: "OmniRoute Claude Code Setup: Free Models & Plugin | APIVALE"`
+    - `metaTitle: "OmniRoute Claude Code Setup: Free Models & Plugin | APIVALE"`
+  * **注入 GSC 真实高曝光 0 点击意图 H3 标题**：
+    - `### How to install OmniRoute in Claude Code CLI?`
+    - `### How to add OmniRoute proxy to Claude Desktop?`
+    - `### How to connect OmniRoute to Claude with zero rate limits?`
+    - `### Troubleshooting Port 20128 connection refused & 429 throttle`
+  * **排错段落（Troubleshooting）工程级收敛**：
+    - 完整字面收敛 3 个核心 GSC 查询变体：`http://localhost:20128`、`http://127.0.0.1:20128`、`http://localhost:20128/v1`；
+    - 深入剖析现代操作系统与 Node.js 18+ 环境下 `localhost` 优先解析为 IPv6 `::1` 导致与单栈 IPv4 监听冲突而触发 `ECONNREFUSED` / `connection refused` 的网络底层机制；
+    - 提供即时探活诊断命令：`curl -i http://127.0.0.1:20128/v1/models`，并给出僵尸进程释放指令 `kill -9 $(lsof -t -i:20128)`；
+  * **打通站内拓扑与关联文章双向内链**：
+    - 在 `/src/pages/index.astro` 的 Topics Filter Pills Bar 挂载 `OmniRoute Claude Code` 直达锚点，全站首页静态列表完整同步展示；
+    - 在 3 篇已有稳定曝光和排名的关联老文章中挂载精确锚文本 `OmniRoute Claude Code setup`：
+      1. `/src/content/blog/claude-code-rea-setup-limits-cost.md`
+      2. `/src/content/blog/9router-vs-omniroute-alternatives-guide.md`
+      3. `/src/content/blog/freellmapi-claude-code-review-alternatives.md`
+  * **Sitemap 索引生成与 Cloudflare Worker 边缘代理修复**：
+    - 验证 `astro.config.mjs` 中的 `@astrojs/sitemap` 完整生成 22 篇页面索引（包括 `/blog/omniroute-claude-code-setup/`），清理碰撞重定向消除构建警告；
+    - 升级 `cloudflare-worker.js` 与 `public/robots.txt`，双重显式申明：
+      `Sitemap: https://apivale.com/blog/sitemap-index.xml`
+      `Sitemap: https://apivale.com/sitemap.xml`
+    - 在 Cloudflare Worker 中新增专属 Sitemap 边缘拦截代理，将 `/sitemap.xml`、`/sitemap-index.xml`、`/sitemap-0.xml` 及其 `/blog/*` 前缀请求代理至 Cloudflare Pages，并将 XML 内部域名动态对齐为当前客户端访问的主机名（`https://${url.hostname}`），彻底解决 Googlebot 抓取跨域和 404 回退问题。
+  * **本地构建与部署推送**：
+    - 升级编译环境至 Node.js v22.23.4 (npm 10.9.9)，通过 `npm run build` 实现 0 报错构建，静态页面产物 `dist/omniroute-claude-code-setup/index.html` (107KB) 完整生成；
+    - 提交 Git 远端备份并成功推送至 `origin/main` (`de4ed77`)。
+* **影响页面**：
+  * `https://apivale.com/blog/omniroute-claude-code-setup/`
+  * `https://apivel.com/blog/omniroute-claude-code-setup/`
+  * `https://apivale.com/sitemap.xml`
+  * `https://apivale.com/blog/sitemap-index.xml`
+  * `https://apivel.com/robots.txt`
+* **因果假设**：
+  1. 通过在 H3 中精确承接未覆盖的“How to install in CLI”、“How to add to Desktop”及排错意图，将原先 1,000+ 展现、0 点击的小众与排错查询 CTR 从 0% 提升至 5%–12%；
+  2. 修复 `http://localhost:20128` 与 `http://127.0.0.1:20128` 搜索词的精确匹配，迅速夺取技术排错类长尾关键词的 SERP 首位 Featured Snippet；
+  3. 站内 3 篇高权重同题材老文章内链反哺与 Sitemap 全局打通，使 Googlebot 对新落地页的抓取频次与权重评分大幅提速，预计 7–14 天内进入前 3 搜索排位。
+
 ### 2026-11-07 (SEO 权重与外链闭环 - 301 边缘重定向补全)
 * **分类**：⚙️ [技术/UX 动作、外链与 301 重定向权重闭环]
 * **动作详情**：
