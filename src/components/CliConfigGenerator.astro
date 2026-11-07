@@ -28,9 +28,14 @@ const activeModelVal = modelMap[defaultModel] || 'infer/qwen3.7-max';
 
 <div class="cli-config-card" id="cliConfigGeneratorWidget">
   <div class="card-header">
-    <div class="card-badge">
-      <span class="pulse-dot"></span>
-      <span>⚡ Quick Setup Generator</span>
+    <div class="header-badges">
+      <div class="card-badge">
+        <span class="pulse-dot"></span>
+        <span>⚡ Quick Setup Generator</span>
+      </div>
+      <div id="trialBadge" class="trial-badge" style="display: none;">
+        <span>🟢 24h Free Trial Key Activated ($0.05 / 25k Tokens ready to test)</span>
+      </div>
     </div>
     <div class="card-title">CLI & IDE One-Click Configurator</div>
     <p class="card-subtitle">Select your coding tool and target model to generate instant, zero-login proxy configuration commands.</p>
@@ -110,6 +115,8 @@ claude --model ${activeModelVal}`}</code></pre>
     const codeDisplay = document.getElementById('configCodeDisplay');
     const langDisplay = document.getElementById('snippetLangDisplay');
     const copyBtn = document.getElementById('copyConfigBtn');
+    const apiKeyInput = document.getElementById('cliApiKeyInput');
+    const trialBadge = document.getElementById('trialBadge');
 
     if (!codeDisplay || !modelSelect) return;
 
@@ -143,8 +150,6 @@ export OPENAI_API_KEY="${key}"
 
 opencode --model ${model}`
     };
-
-    const apiKeyInput = document.getElementById('cliApiKeyInput');
 
     function updateSnippet() {
       const selectedModel = modelSelect.value;
@@ -184,6 +189,71 @@ opencode --model ${model}`
         });
       });
     }
+
+    // === Automatic Guest Trial Key Activation ===
+    const STORAGE_KEY = 'apivale_guest_trial';
+
+    function applyTrialKey(key) {
+      if (apiKeyInput) {
+        apiKeyInput.value = key;
+      }
+      if (trialBadge) {
+        trialBadge.style.display = 'inline-flex';
+      }
+      updateSnippet();
+    }
+
+    function initGuestTrial() {
+      try {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (stored) {
+          const parsed = JSON.parse(stored);
+          if (parsed && parsed.key && parsed.expires_at && parsed.expires_at > Date.now()) {
+            applyTrialKey(parsed.key);
+            return;
+          }
+        }
+      } catch (e) {}
+
+      const endpoints = [
+        'https://apivel.com/api/guest-token',
+        'https://apivale.com/api/guest-token',
+        '/api/guest-token'
+      ];
+
+      async function fetchGuestKey() {
+        for (const url of endpoints) {
+          try {
+            const resp = await fetch(url, {
+              method: 'GET',
+              headers: { 'Accept': 'application/json' }
+            });
+            if (resp.ok) {
+              const resJson = await resp.json();
+              if (resJson && resJson.success && resJson.data && resJson.data.key) {
+                const trialData = {
+                  key: resJson.data.key,
+                  base_url: resJson.data.base_url || 'https://apivel.com/v1',
+                  quota: resJson.data.quota || 25000,
+                  expires_at: Date.now() + ((resJson.data.expires_in || 86400) * 1000)
+                };
+                try {
+                  localStorage.setItem(STORAGE_KEY, JSON.stringify(trialData));
+                } catch (err) {}
+                applyTrialKey(trialData.key);
+                return;
+              }
+            }
+          } catch (err) {
+            // fallback to next endpoint
+          }
+        }
+      }
+
+      fetchGuestKey();
+    }
+
+    initGuestTrial();
   });
 </script>
 
@@ -213,6 +283,14 @@ opencode --model ${model}`
     margin-bottom: 1.25rem;
   }
 
+  .header-badges {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.6rem;
+  }
+
   .card-badge {
     display: inline-flex;
     align-items: center;
@@ -224,7 +302,25 @@ opencode --model ${model}`
     font-weight: 600;
     padding: 0.25rem 0.6rem;
     border-radius: 20px;
-    margin-bottom: 0.6rem;
+  }
+
+  .trial-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    color: #34d399;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.65rem;
+    border-radius: 20px;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-2px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .pulse-dot {
