@@ -42,6 +42,11 @@ export default defineConfig({
   markdown: {
     rehypePlugins: [rehypeNofollowTrackingLinks]
   },
-  redirects: {},
+  redirects: {
+    '/blog/gpt-6-cyber-request-access-api-guide': '/blog/openai-gpt-6-cyber-api-access-guide/',
+    '/blog/gpt-6-cyber-request-access-api-guide/': '/blog/openai-gpt-6-cyber-api-access-guide/',
+    '/gpt-6-cyber-request-access-api-guide': '/blog/openai-gpt-6-cyber-api-access-guide/',
+    '/gpt-6-cyber-request-access-api-guide/': '/blog/openai-gpt-6-cyber-api-access-guide/'
+  },
   integrations: [sitemap()]
 });

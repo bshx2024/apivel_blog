@@ -887,7 +887,11 @@ export default {
       "/blog/grok-bot-api-setup-pricing": "/blog/grok-bot-api-setup-pricing-troubleshooting/",
       "/blog/grok-bot-api-setup-pricing/": "/blog/grok-bot-api-setup-pricing-troubleshooting/",
       "/grok-bot-api-setup-pricing": "/blog/grok-bot-api-setup-pricing-troubleshooting/",
-      "/grok-bot-api-setup-pricing/": "/blog/grok-bot-api-setup-pricing-troubleshooting/"
+      "/grok-bot-api-setup-pricing/": "/blog/grok-bot-api-setup-pricing-troubleshooting/",
+      "/blog/gpt-6-cyber-request-access-api-guide": "/blog/openai-gpt-6-cyber-api-access-guide/",
+      "/blog/gpt-6-cyber-request-access-api-guide/": "/blog/openai-gpt-6-cyber-api-access-guide/",
+      "/gpt-6-cyber-request-access-api-guide": "/blog/openai-gpt-6-cyber-api-access-guide/",
+      "/gpt-6-cyber-request-access-api-guide/": "/blog/openai-gpt-6-cyber-api-access-guide/"
     };
 
     if (PERMANENT_REDIRECTS[url.pathname]) {

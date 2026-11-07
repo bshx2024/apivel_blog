@@ -32,6 +32,15 @@
 
 ## 📅 apivel.com SEO 动作记录表 (2026年)
 
+### 2026-11-07 (SEO 权重与外链闭环 - 301 边缘重定向补全)
+* **分类**：⚙️ [技术/UX 动作、外链与 301 重定向权重闭环]
+* **动作详情**：
+  * **修复历史/外部 Slug 访问回退问题**：针对外部外链与历史测试路径 `gpt-6-cyber-request-access-api-guide` 访问导致回退至首页的问题，在 `public/_redirects`、`cloudflare-worker.js` (PERMANENT_REDIRECTS) 以及 `astro.config.mjs` (redirects) 三层补齐 301 永久重定向，全域规范化重定向至权威路径 `/blog/openai-gpt-6-cyber-api-access-guide/`。
+  * **影响页面**：
+    * `https://apivel.com/blog/gpt-6-cyber-request-access-api-guide/` ➔ `https://apivel.com/blog/openai-gpt-6-cyber-api-access-guide/` (301)
+    * `https://apivale.com/blog/gpt-6-cyber-request-access-api-guide/` ➔ `https://apivale.com/blog/openai-gpt-6-cyber-api-access-guide/` (301)
+* **因果假设**：彻底阻断外部反链和爬虫访问历史 slug 产生的 404 / 首页软回退，确保 Googlebot 和真人访客权重 100% 汇聚于正式的 GEO 权威落地页，提升长尾关键词在 SERP 中的排名稳定性。
+
 ### 2026-11-06 (上午 - OpenAI GPT-6 Cyber 安全模型突发热点截流、GEO 实体图谱与中国开源大模型截流转化)
 * **分类**：📝 [突发热点截流、GEO 实体与大模型友好优化、安全审计准入门槛破局与中国开源大模型截流转化]
 * **动作详情**：
