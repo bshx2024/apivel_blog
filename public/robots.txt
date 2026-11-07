@@ -50,5 +50,7 @@ Allow: /blog/
 User-agent: YouBot
 Allow: /blog/
 
+Sitemap: https://apivale.com/blog/sitemap-index.xml
+Sitemap: https://apivale.com/sitemap.xml
 Sitemap: https://apivel.com/blog/sitemap-index.xml
 Sitemap: https://apivel.com/sitemap.xml

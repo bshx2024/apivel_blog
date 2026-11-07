@@ -925,6 +925,49 @@ export default {
     }
     
     // ==========================================
+    // 2.5 SITEMAP EDGE ROUTING & DYNAMIC PROXY
+    // ==========================================
+    const isSitemapRequest = 
+      url.pathname === "/sitemap.xml" || 
+      url.pathname === "/blog/sitemap.xml" || 
+      url.pathname === "/sitemap-index.xml" || 
+      url.pathname === "/blog/sitemap-index.xml" || 
+      url.pathname === "/sitemap-0.xml" || 
+      url.pathname === "/blog/sitemap-0.xml";
+
+    if (isSitemapRequest) {
+      const BLOG_HOST = "apivel-blog.pages.dev";
+      let targetFile = "/sitemap-index.xml";
+      if (url.pathname.endsWith("sitemap-0.xml")) {
+        targetFile = "/sitemap-0.xml";
+      }
+
+      const pagesSitemapUrl = `https://${BLOG_HOST}${targetFile}`;
+      try {
+        const pagesRes = await fetch(pagesSitemapUrl, {
+          headers: { "Host": BLOG_HOST }
+        });
+
+        if (pagesRes.ok) {
+          let xmlText = await pagesRes.text();
+          // 将 XML 内的站点域名动态对齐为当前客户端请求的主机名（如 apivale.com 或 apivel.com）
+          const currentOrigin = `https://${url.hostname}`;
+          xmlText = xmlText.replace(/https:\/\/(?:apivel\.com|apivale\.com)/g, currentOrigin);
+
+          return new Response(xmlText, {
+            status: 200,
+            headers: {
+              "Content-Type": "application/xml; charset=UTF-8",
+              "Cache-Control": "public, max-age=3600, s-maxage=14400"
+            }
+          });
+        }
+      } catch (err) {
+        console.error("Sitemap proxy failed:", err);
+      }
+    }
+
+    // ==========================================
     // 3. BLOG & STANDALONE ROUTE PROXY (Cloudflare Pages)
     // ==========================================
     const BLOG_HOST = "apivel-blog.pages.dev"; 
@@ -1009,6 +1052,8 @@ Disallow: /dashboard
 Disallow: /playground?*
 Allow: /
 
+Sitemap: https://apivale.com/blog/sitemap-index.xml
+Sitemap: https://apivale.com/sitemap.xml
 Sitemap: https://apivel.com/blog/sitemap-index.xml
 Sitemap: https://apivel.com/sitemap.xml
 `;

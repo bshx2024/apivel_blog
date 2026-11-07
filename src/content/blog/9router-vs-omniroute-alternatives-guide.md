@@ -76,7 +76,7 @@ flowchart TD
 ```
 
 ### Unified Schema Translation in 9Router vs OmniRoute
-In both **local proxy routing**, the software binds to a local port (such as `http://localhost:20128/v1`), mapping incoming client requests to upstream provider schemas. When choosing between **9Router alternatives**, engineers prioritize solutions that support native Anthropic wire protocols alongside standard OpenAI formats.
+In both **local proxy routing**, the software binds to a local port (such as `http://localhost:20128/v1`), mapping incoming client requests to upstream provider schemas. If you are specifically configuring Claude CLI tools, follow our step-by-step [OmniRoute Claude Code setup](/blog/omniroute-claude-code-setup/) walkthrough to fix loopback connection issues. When choosing between **9Router alternatives**, engineers prioritize solutions that support native Anthropic wire protocols alongside standard OpenAI formats.
 
 ### RTK Context Compression & Token Optimization
 9Router integrates RTK context compression to prune redundant terminal logs and AST diffs, cutting prompt token overhead by 20% to 40%. While beneficial, this local regex transformation adds latency, prompting teams to seek cloud-based **9Router alternatives** that deliver raw upstream throughput.
