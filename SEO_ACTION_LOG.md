@@ -40,24 +40,25 @@
   * **主攻关键词**：
     * Primary: `Qwen4-Max`, `Qwen 4 Benchmark`, `Qwen 4 27B`, `Qwen 4 Release Date`
     * Secondary/LSI: `qwen 4 27b release date`, `qwen 4 flash`, `qwen max 参数量`, `qwen 4 huggingface`, `Terminal-Bench 4.0`, `DashScope Token Plan`, `Cursor`, `Claude Code`
-  * **On-Page & GEO 优化调优（意图对齐 SERP 与 N-Gram 密度升级）**：
-    1. Title 遵循 ABC 黄金公式并覆盖截图最高频词：MetaTitle 为 `Qwen4-Max Real Benchmark & API: 27B Roadmap | APIVALE`（精准 52 字符，符合 50–60 字符 / 600px 限制）；H1 标题为 `Qwen4-Max Benchmark Analysis: 2.4T MoE Specs, 27B Release & API Access`（精准 70 字符，<= 80 字符）；
-    2. Meta Description 对齐核心参数：`Explore Qwen4-Max real benchmarks across Terminal-Bench 4.0, 2.4T MoE parameter specs, Qwen 4 27B release date on HuggingFace, and pay-as-you-go API access.`（精准 154 字符，严格落在 140–160 字符区间）；
-    3. 页面内嵌交互微工具（In-Article Live Playground）：内嵌 `Qwen4-Max Reasoning Budget & Spend Calculator`，支持多种场景与思考强度模拟，动态计算最适 `max_tokens` 缓冲并对比 APIVALE Pay-as-you-go 成本，彻底消除 Doorway Page 判罚风险；
-    4. 突破大模型友好（GEO）与实体消歧：
+  * **On-Page & GEO 优化调优（意图对齐 SERP、N-Gram 密度升级与哥飞 SEO 军师体检纠偏）**：
+    1. Title 遵循 ABC 黄金公式并解决推断词赛道错位问题：原 H1 中含 `2.4T MoE` 被分词引擎识别为 `2 4t moe` 误诊为首要推断词；优化后 MetaTitle 为 `Qwen 4 Max (Qwen4-Max) Benchmark & API: 27B Guide | APIVALE`（59 字符，严格在 50–60 字符 / 600px 内）；H1 为 `Qwen 4 Max (Qwen4-Max) Benchmark, 27B Release & API Access Guide`（64 字符，<= 80 字符），使 `qwen 4` 与 `qwen 4 max` 成为 #1、#2 核心推断词，Title 与 URL 关键词单词命中率达 100%；
+    2. Meta Description 对齐核心参数：`Full Qwen 4 Max (Qwen4-Max) benchmark analysis across Terminal-Bench 4.0, MoE specs, Qwen 4 27B release date on HuggingFace, and pay-as-you-go API access.`（精准 154 字符，严格落在 140–160 字符区间）；
+    3. 全页词数优化与主题聚焦度提分：将全页渲染词数从 2,318 词精简至 1,790 词（正文可见词 1,391 词），严格落在 1,200~1,800 最佳推荐区间，彻底消除篇幅超标扣分并强化核心词密度加权；
+    4. 页面内嵌交互微工具（In-Article Live Playground）：内嵌 `Qwen 4 Max Reasoning Budget & Spend Calculator`，支持多种场景与思考强度模拟，动态计算最适 `max_tokens` 缓冲并对比 APIVALE Pay-as-you-go 成本，彻底消除 Doorway Page 判罚风险；
+    5. 突破大模型友好（GEO）与实体消歧：
        - 倒金字塔首句事实直接作答（Declarative Fact Sentence）；
        - 注入多维度代际规格消歧对比表（含专属 "Best For" 定位列与 2026-11-16 时间戳）；
        - 注入真实 V2EX #1256534、Reddit r/LocalLLaMA、Reddit r/Qwen_AI、掘金 #7706814430332780607 开发者原声原话与链接；
        - 包含 25+ 行生产级 Cursor & Claude Code 配置与 Python failover 容灾代码（解决 max_tokens 与 thinking budget 共享冲突）；
        - 注入 Schema.org `TechArticle` 与 `FAQPage` 双重结构化微数据；
        - 同步在 `public/llms.txt` 注册纯文本事实知识条目；
-    5. 动态侧边栏模型话题注册：在 `src/pages/[slug].astro` 中注册 `qwen4-max` 话题与专属中英文悬浮转化卡片，并在 `hasCustomWidget` 中加入抑制规则，使全页渲染词数稳定在 1,755 词黄金区间；
-    6. 双向内链织网：
+    6. 动态侧边栏模型话题注册：在 `src/pages/[slug].astro` 中注册 `qwen4-max` 话题与专属中英文悬浮转化卡片，并在 `hasCustomWidget` 中加入抑制规则；
+    7. 双向内链织网：
        - 打开并修改已有文章 `qwen-4-release-date-api-roadmap.md`，将预测节点更新为指向当前最新实测的反向链接；
        - 在 `deepseek-v4-1-flash-1017-api-setup.md` 中注入指向本文的 1M 上下文替代路线锚文本；
-    7. 钱包与 CRO 方案对齐：PayPal 官方即时结账、首充 +50% 奖励（$5 → $7.50, $29 → $43.50）、$29 开发者大礼包及 $0.20 免卡免 KYC 试用，全按钮携带 `redirect=/blog/qwen-4-max-benchmark-api-reddit`。
+    8. 钱包与 CRO 方案对齐：PayPal 官方即时结账、首充 +50% 奖励（$5 → $7.50, $29 → $43.50）、$29 开发者大礼包及 $0.20 免卡免 KYC 试用，全按钮携带 `redirect=/blog/qwen-4-max-benchmark-api-reddit`。
 * **影响页面**：`https://apivel.com/blog/qwen-4-max-benchmark-api-reddit/`
-* **14 天因果假设**：在发布后 14 天内，随着全球开发者对 Qwen4-Max 跑分真相、27B 开源发布时间表以及 DashScope Token Plan 门槛的搜索激增，本页面将成为 AI 引擎（Perplexity、SearchGPT、Claude）的核心引用源，精准承接搜跑分和开源时间的自然流量，并转化为通过 PayPal 充值免实名调用中国大模型的付费用户。
+* **14 天因果假设**：在修正 Title/H1 并剔除 `2 4t moe` 干扰后，核心推断词完美对齐月搜量 49.5K 的 `qwen 4` 及高转化高意图词 `qwen 4 max`，On-Page 体检分由 87 B 跃升至 98+ A+；全网爬虫抓取后 14 天内，页面将建立起稳定的 Google 首页索引与 AI 实体知识库引用，承接海外开发者绕开 Token Plan 订阅、通过 PayPal 接入中国旗舰大模型的强劲付费转化。
 
 ### 2026-11-07 (Wave 1 站内 SEO 与落地页改造 - OmniRoute Claude Code 意图补全与 Sitemap 拓扑打通)
 * **分类**：📝 [内容精细化重构]、⚙️ [技术/Sitemap 拓扑修复]、🔗 [双向内链高权重输送]
