@@ -42,12 +42,15 @@ const postMeta = `${slugLower} ${titleLower} ${tagsLower}`;
 
 const isPriceOrBenchmark = /price|cost|saving|benchmark|comparison|versus|vs|deepseek|minimax|rate/i.test(slugLower + ' ' + titleLower);
 const isCliOrSetup = /cli|cursor|windsurf|opencode|connect|setup|config|mcp|guide|access|bypass/i.test(slugLower + ' ' + titleLower);
-const hasCustomWidget = slugLower.includes('flashprove') || slugLower.includes('cyber');
+const hasCustomWidget = slugLower.includes('flashprove') || slugLower.includes('cyber') || slugLower.includes('qwen-4-max');
 
 let initialModel = 'glm-5.3-flash';
 let targetTopic = 'general';
 
-if (slugLower.includes('opus') || postMeta.includes('claude-opus')) {
+if (postMeta.includes('qwen4-max') || postMeta.includes('qwen-4-max')) {
+	targetTopic = 'qwen4-max';
+	initialModel = 'infer/qwen4-max';
+} else if (slugLower.includes('opus') || postMeta.includes('claude-opus')) {
 	targetTopic = 'claude';
 	initialModel = 'claude-opus-5';
 } else if (postMeta.includes('flashx') || postMeta.includes('glm-5.3-flashx') || postMeta.includes('glm-5-3-flashx')) {
@@ -197,6 +200,13 @@ const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.key
 				{ label: 'Target Model', value: 'gemini-3.7-flash / gemini-4-pro', isCode: true },
 				{ label: 'Gateway Endpoint', value: 'baseURL: "https://apivel.com/v1"', isCode: true },
 				{ label: 'Developer Sandbox', value: '$0.20 Free Credit (Zero KYC & Card)', highlight: true }
+			];
+		} else if (targetTopic === 'qwen4-max') {
+			return [
+				{ label: 'Sparse MoE Scale', value: '2.4T MoE (71B Active) & 1M Window', isCode: false },
+				{ label: 'Flagship Invocation', value: 'infer/qwen4-max', isCode: true },
+				{ label: 'Gateway Endpoint', value: 'https://apivel.com/v1', isCode: true },
+				{ label: 'Global Billing', value: 'PayPal & Global Cards ($0.20 Trial)', highlight: true }
 			];
 		} else if (targetTopic === 'qwen') {
 			return [
@@ -670,6 +680,40 @@ const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.key
 							desc: '原生音视频全模态低延迟交互，免去繁琐实名审核。通过 APIVALE 一键登录获取 $0.20 体验金，支持控制台 Playground 与 API 调用。',
 							btnText: '立即体验 Omni-Flash →',
 							utmCampaign: 'qwen_omni'
+						}
+					}
+				},
+				'qwen4-max': {
+					floating: {
+						en: {
+							badge: '🚀 2.4T MoE + 328B N-Gram',
+							title: 'Access Qwen4-Max Pay-As-You-Go',
+							desc: 'Bypass mandatory Alibaba Token Plan subscriptions. Direct OpenAI & Anthropic compatible gateway for Cursor & Claude Code. Instant $0.20 trial via PayPal.',
+							btnText: 'Try Qwen4-Max Instantly',
+							utmCampaign: 'qwen4_max_access'
+						},
+						zh: {
+							badge: '🚀 2.4T 万亿 MoE',
+							title: '免订阅体验 Qwen4-Max 旗舰',
+							desc: '跳过阿里云百炼 Token Plan 强绑与国内实名！按量付费调用 71B 激活 Qwen4-Max，支持 Cursor 与 Claude Code，PayPal 即结，送 $0.20 体验金。',
+							btnText: '一键免实名体验 Qwen4-Max →',
+							utmCampaign: 'qwen4_max_access'
+						}
+					},
+					inline: {
+						en: {
+							badge: '⚡ 1M Context Frontier',
+							title: 'Connect Qwen4-Max Without Token Plan Lock-In',
+							desc: 'Ingest 1,000,000 token repos with 71B active MoE inference. High-concurrency OpenAI & Anthropic compatible endpoints with seamless PayPal billing.',
+							btnText: 'Test Qwen4-Max Playground',
+							utmCampaign: 'qwen4_max_access'
+						},
+						zh: {
+							badge: '⚡ 100万 超长上下文',
+							title: '想按量即用免实名调用 Qwen4-Max？',
+							desc: '2.4 万亿 MoE 架构搭配 328B N-gram 嵌入层。APIVALE 提供高可用 OpenAI/Anthropic 兼容网关，PayPal 即时充值，送 $0.20 免费试用金。',
+							btnText: '立即免实名测试 Qwen4-Max →',
+							utmCampaign: 'qwen4_max_access'
 						}
 					}
 				},

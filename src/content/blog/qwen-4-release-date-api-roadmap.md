@@ -39,7 +39,7 @@ During the opening keynote of the **Apsara Conference** in Hangzhou, Alibaba LLM
 * **Generational Scope:** Qwen 4 will succeed the Qwen 3.8 and 2.5 generations across both proprietary API tiers and open weights.
 * **Tier Stratification:** The commercial lineup preserves three cloud tiers—**Qwen4-Max**, **Qwen4-Plus**, and **Qwen4-Flash**—alongside a designated open-weights deployment tier led by **Qwen 4 27B**.
 * **Long-Term Trajectory:** Alibaba confirmed that subsequent milestones (**Qwen 4.5 and Qwen 5**) are designed to scale into 5 to 10 trillion parameter MoE clusters.
-* **Public Readiness:** As of late October 2026, no public weights, model cards, or direct DashScope API keys have been released. Alibaba's formal stance remains "coming very soon."
+* **Public Readiness & November Launch:** As of mid-November 2026, Alibaba has launched the closed cloud preview of **Qwen4-Max** (2.4T MoE, 71B active parameters). For full benchmark data and Cursor setup, consult our **[Qwen4-Max Real Benchmark & API Access Guide](/blog/qwen-4-max-benchmark-api-reddit/)**. Alibaba's formal schedule confirms open weights for **Qwen 4 27B** will drop on Hugging Face following the preview window.
 
 ### Community Predictions: Reddit r/LocalLLaMA, Polymarket Odds & Rollout Windows
 Without a fixed calendar date from Hangzhou, tracking markets and developer communities have established distinct expectations:

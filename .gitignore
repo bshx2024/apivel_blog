@@ -27,3 +27,4 @@ pnpm-debug.log*
 mcp-server/node_modules/
 mcp-server/dist/
 .env.mcp
+scratch/
