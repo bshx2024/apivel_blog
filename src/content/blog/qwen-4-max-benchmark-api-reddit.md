@@ -71,7 +71,7 @@ The table below benchmarks Qwen 4 Max against leading frontier models:
 | DeepSeek V4.1 Flash | 552B MoE / 37B Active | 128,000 | 46.2% | $0.27 / $1.10 | Low-latency micro-tasks & budget API integration |
 | Qwen 3.8 Max | 1.8-Trillion MoE / 48B Active | 128,000 | 42.1% | $2.40 / $7.20 | Legacy Chinese enterprise batch pipelines |
 
-*Table data verified as of November 16, 2026, across standardized evaluation harnesses.*
+*Table data verified as of November 16, 2026, across standardized evaluation harnesses. If your pipeline prioritizes ultra-high throughput (200+ tok/s) and 1M context for bulk document extraction over visual reasoning, compare our [ERNIE 5.5 Flash Preview API & Reddit Review](/blog/ernie-5-5-flash-preview-api-reddit/).*
 
 ---
 

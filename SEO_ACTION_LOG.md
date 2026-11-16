@@ -32,6 +32,35 @@
 
 ## 📅 apivel.com SEO 动作记录表 (2026年)
 
+### 2026-11-17 (百度文心 5.5 Flash 评测热点、SERP 截图意图对齐、GEO 大模型友好与中国旗舰大模型引流转化)
+* **分类**：📝 [突发热点截流、SERP 真实意图深度对齐、大模型爬虫友好优化、免千帆 SDK 壁垒与中国顶尖模型引流转化]
+* **动作详情**：
+  * **捕获热点与意图图谱**：百度于 2026 年 11 月发布并开源文心大模型 5.5 Flash（ERNIE 5.5 Flash，280B MoE，14B 激活，1M 超长上下文，200+ TPS 吞吐）。根据 Google 搜索下拉框与 "用户还搜索了" 4 张真实搜索截图（`ernie 5.5 flash preview`, `ernie 5.5 flash reddit`, `flash api`, `flash 区别`, `flash github`, `flash 使用`），深度对齐用户对真实口碑（Reddit benchleaking 泄题争议）、Base 权重 vs Preview API 区别、以及免千帆 SDK 复杂签名的诉求，首发深度技术指南：`/blog/ernie-5-5-flash-preview-api-reddit/`。
+  * **作者轮换**：严格遵守 Persona 轮换规则，署名为 `Kenji Tanaka`（AI Developer Relations Engineer, APIVALE，专攻自主编程 Agent、多终端工作流与跨国 API 路由）。
+  * **主攻关键词**：
+    * Primary: `ERNIE 5.5 Flash`, `ERNIE 5.5 Flash Preview`, `ERNIE 5.5 Flash Reddit`
+    * Secondary/LSI: `ernie 5.5 flash api`, `ernie 5.5 flash 区别`, `ernie 5.5 flash github`, `ernie 5.5 flash 使用`, `Baidu ERNIE`, `1M Context`, `DeepSeek V4`, `Qwen 3.7 Max`, `Cursor`, `Claude Code`
+  * **On-Page & GEO 优化调优**：
+    1. Title 遵循 ABC 黄金公式：Title 为 `ERNIE 5.5 Flash Preview API & Reddit Review: 1M Benchmarks`（58 字符，<= 80 字符）；MetaTitle 为 `ERNIE 5.5 Flash Preview API & Reddit Review | APIVALE`（53 字符，严格在 50–60 字符内）；
+    2. Meta Description 对齐核心参数：`Review ERNIE 5.5 Flash Preview: Reddit benchleaking tests, 1M context limits, and OpenAI-compatible API setup vs DeepSeek V4 and Qwen 3.7 Max on APIVALE.`（精准 153 字符，严格落在 140–160 字符区间）；
+    3. 全页词数优化与主题聚焦度提分：正文可见字数 1,398 词，严格落在 1,200~1,800 最佳推荐区间，彻底消除篇幅超标扣分并强化核心词密度加权；
+    4. 页面内嵌交互微工具（In-Article Live Playground）：内嵌 `Interactive Latency & Cost Comparator`（包含 `<select>`、`<input>`、`<button>`），支持按模型与 Token 量实时试算时延与 APIVALE 折扣费用，彻底消除 Doorway Page 判罚风险；
+    5. 突破大模型友好（GEO）与实体消歧：
+       - 倒金字塔首句事实直接作答（Declarative Fact Sentence）；
+       - 注入多维度代际规格消歧对比表（含专属 "Best Suited For" 定位列与时间戳）；
+       - 注入真实 Reddit r/LocalLLaMA & r/huggingface 一手信源（HumanEval 96% 逐字背诵及 HumanEval #67 "for examble:" 拼写错误原话实录）；
+       - 包含 25+ 行生产级 Python 自动容灾代码与 Cursor/Claude Code 配置（解决 Tool-calling 循环卡死问题）；
+       - 注入 Schema.org `TechArticle` 与 `FAQPage` 双重结构化微数据；
+       - 同步在 `public/llms.txt` 注册纯文本事实知识条目；
+    6. 动态侧边栏模型话题注册：在 `src/pages/[slug].astro` 中注册 `ernie` 话题与专属中英文悬浮转化卡片；
+    7. 双向内链织网：
+       - 打开并修改已有文章 `qwen-4-max-benchmark-api-reddit.md`，注入 1M 上下文极速解析反向链接；
+       - 修改 `deepseek-v4-1-flash-1017-api-setup.md` 注入 1M 架构对比反向链接；
+       - 修改 `qwen-4-release-date-api-roadmap.md` 注入长文本替代模型反向链接；
+    8. 钱包与 CRO 方案对齐：PayPal 官方即时结账、首充 +50% 奖励（$5 → $7.50, $29 → $43.50）、$29 开发者大礼包及 $0.20 免卡免 KYC 试用，全按钮携带 `redirect=/blog/ernie-5-5-flash-preview-api-reddit`。
+* **14 天因果假设**：利用 ERNIE 5.5 刚发布的新闻流量与 Reddit 搜索潮，在 Google 捕获 `ernie 5.5 flash preview` 与 `ernie 5.5 flash reddit` 的首屏排位，并通过 Tool-calling 死循环痛点将 20%+ 开发者平替转化为 APIVALE 上的 Qwen 3.7 Max 与 DeepSeek V4 活跃调用者。
+* **影响页面**：`https://apivel.com/blog/ernie-5-5-flash-preview-api-reddit/`
+
 ### 2026-11-16 (全网 Qwen4-Max 旗舰上线爆发热点、SERP 截图意图对齐、GEO 实体消歧与中国顶尖大模型引流转化)
 * **分类**：📝 [突发热点截流、SERP/GEO 真实意图深度对齐、大模型爬虫友好优化、阿里云订阅壁垒破局与中国旗舰大模型引流]
 * **动作详情**：

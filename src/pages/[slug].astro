@@ -449,7 +449,9 @@ const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.key
 				const postBody = document.querySelector('.post-body')?.innerText?.toLowerCase() || '';
 				const fullArticleText = postTitle + ' ' + postBody;
 
-				if (fullArticleText.includes('mimo') || fullArticleText.includes('xiaomi') || fullArticleText.includes('小米')) {
+				if (fullArticleText.includes('ernie') || fullArticleText.includes('文心') || fullArticleText.includes('baidu')) {
+					topic = 'ernie';
+				} else if (fullArticleText.includes('mimo') || fullArticleText.includes('xiaomi') || fullArticleText.includes('小米')) {
 					topic = 'mimo';
 				} else if (fullArticleText.includes('flashx') || fullArticleText.includes('glm-5.3-flashx') || fullArticleText.includes('glm-5-3-flashx')) {
 					topic = 'glm-5.3-flashx';
@@ -479,6 +481,40 @@ const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.key
 			}
 
 			const TOPIC_CONFIG = {
+				'ernie': {
+					floating: {
+						en: {
+							badge: '⚡ 200+ TPS / 1M Context',
+							title: 'Call ERNIE 5.5 Flash via OpenAI API',
+							desc: 'High-throughput 280B MoE model with 1,000,000 token context. Zero Qianfan SDK lock-in, automated failover to Qwen 3.7 Max & DeepSeek V4.',
+							btnText: 'Try ERNIE 5.5 Flash Instantly',
+							utmCampaign: 'ernie_flash_access'
+						},
+						zh: {
+							badge: '⚡ 200+ TPS / 1M 上下文',
+							title: '免千帆认证调用文心 5.5 Flash',
+							desc: '280B MoE 架构与 100 万字长文本！免实名免签注，直连 OpenAI 兼容接口，支持热容灾转移至通义千问与 DeepSeek，送 $0.20 体验金。',
+							btnText: '一键体验文心 5.5 Flash →',
+							utmCampaign: 'ernie_flash_access'
+						}
+					},
+					inline: {
+						en: {
+							badge: '🚀 1M Context Pipeline',
+							title: 'Connect ERNIE 5.5 Flash & Chinese LLM Matrix',
+							desc: 'Process whole monorepos with 1,000,000 tokens context. Standard OpenAI/Anthropic gateway with instant PayPal billing and +50% top-up bonus.',
+							btnText: 'Test ERNIE 5.5 Endpoint',
+							utmCampaign: 'ernie_flash_access'
+						},
+						zh: {
+							badge: '🚀 1M 极速长文本',
+							title: '想免实名调用文心大模型 5.5 Flash 接口？',
+							desc: '单次吞吐百万级代码库，超 200 tokens/s 解码速度。APIVALE 提供高可用 OpenAI/Anthropic 兼容网关，PayPal 即时充值，送 $0.20 免费体验金。',
+							btnText: '立即测试文心 5.5 接口 →',
+							utmCampaign: 'ernie_flash_access'
+						}
+					}
+				},
 				'mimo': {
 					floating: {
 						en: {
