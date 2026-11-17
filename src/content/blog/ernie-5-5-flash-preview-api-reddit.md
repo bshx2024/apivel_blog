@@ -107,7 +107,7 @@ To evaluate practical utility, we benchmarked ERNIE 5.5 Flash against leading fr
 
 1. **Throughput Advantage:** ERNIE 5.5 Flash delivers 215 tokens/second, ideal for scanning massive legal transcripts, contracts, and log dumps.
 2. **Coding Resilience:** **Qwen 3.7 Max** and **DeepSeek V4** execute complex bug fixes in Cursor without getting trapped in cyclical tool loops.
-3. **Multi-Model Routing:** Pair ERNIE 5.5 Flash for 1M context digestion with Qwen 3.7 Max for deterministic code execution.
+3. **Multi-Model Routing:** Pair ERNIE 5.5 Flash for 1M context digestion with Qwen 3.7 Max for deterministic code execution. In high-throughput CI/CD pipelines, this multi-model architecture forms the backbone of automated pull request triage, dramatically mitigating the [AI coding impact on senior engineers](https://apivel.com/blog/ai-coding-impact-senior-engineers/) swamped by unvetted junior vibe coding pull requests.
 
 ---
 

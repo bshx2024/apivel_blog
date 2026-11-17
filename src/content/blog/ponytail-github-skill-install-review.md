@@ -129,7 +129,7 @@ Evaluating the **Ponytail GitHub skill** across 40 multi-file refactoring runs o
 
 ### The Compounded Savings Formula
 
-The prompt eliminates ~21% of token waste, but official Claude 3.7 output tokens remain costly ($15.00/1M). Long autonomous sweeps, such as [Claude Code REA](/blog/claude-code-rea-setup-limits-cost/), consume 30M to 80M tokens monthly. Compounding YAGNI with wholesale API pricing yields maximum savings:
+The prompt eliminates ~21% of token waste, but official Claude 3.7 output tokens remain costly ($15.00/1M). Long autonomous sweeps—and junior developers flooding repositories with speculative agent PRs—consume 30M to 80M tokens monthly while paralyzing senior code review queues (see our structural report on the [AI coding impact on senior engineers](https://apivel.com/blog/ai-coding-impact-senior-engineers/)). Compounding YAGNI with wholesale API pricing yields maximum savings:
 
 $$\text{Total Spend Reduction} = 1 - \left( (1 - 0.212_{\text{Token Savings}}) \times \frac{\$1.20_{\text{Qwen Rate}}}{\$15.00_{\text{Claude Rate}}} \right) \approx 93.7\%$$
 

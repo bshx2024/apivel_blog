@@ -47,7 +47,10 @@ const hasCustomWidget = slugLower.includes('flashprove') || slugLower.includes('
 let initialModel = 'glm-5.3-flash';
 let targetTopic = 'general';
 
-if (postMeta.includes('qwen4-max') || postMeta.includes('qwen-4-max')) {
+if (slugLower.includes('senior') || slugLower.includes('ai-coding')) {
+	targetTopic = 'ai-coding';
+	initialModel = 'deepseek-v4';
+} else if (postMeta.includes('qwen4-max') || postMeta.includes('qwen-4-max')) {
 	targetTopic = 'qwen4-max';
 	initialModel = 'infer/qwen4-max';
 } else if (slugLower.includes('opus') || postMeta.includes('claude-opus')) {
@@ -481,6 +484,40 @@ const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.key
 			}
 
 			const TOPIC_CONFIG = {
+				'ai-coding': {
+					floating: {
+						en: {
+							badge: '⚡ Architect PR Automation',
+							title: 'Automate Code Reviews with DeepSeek V4',
+							desc: 'Eliminate AI slop & 10x PR review throughput. Two-tier model routing via OpenAI-compatible API with zero KYC & PayPal checkout.',
+							btnText: 'Try DeepSeek V4 & ERNIE 5.5',
+							utmCampaign: 'senior_ai_coding_pr'
+						},
+						zh: {
+							badge: '⚡ 架构师审查提效',
+							title: 'DeepSeek V4 自动化 PR 审查网关',
+							desc: '终结低质 AI 代码堆积，构建两层模型自动化审查管线。直连 OpenAI 兼容接口，免实名 PayPal 结账，送 $0.20 体验金。',
+							btnText: '一键接入双层审查网关 →',
+							utmCampaign: 'senior_ai_coding_pr'
+						}
+					},
+					inline: {
+						en: {
+							badge: '⚡ Two-Tier PR Review Matrix',
+							title: 'Cut AI Review Token Costs by 85%',
+							desc: 'Pair lightweight triage (ERNIE 5.5 Flash) with deep reasoning (DeepSeek V4 & Qwen 3.7 Max). Native OpenAI gateway with PayPal instant billing.',
+							btnText: 'Get API Key & CI Config',
+							utmCampaign: 'senior_ai_coding_pr'
+						},
+						zh: {
+							badge: '⚡ 工业级审查流水线',
+							title: '双层模型降低 85% 代码审查成本',
+							desc: '轻量模型（文心 5.5 Flash）语法过滤 + 深度推理（DeepSeek V4 / 通义千问 3.7 Max）架构审计。支持 PayPal 全球充值，免实名即开即用。',
+							btnText: '获取 CI/CD 配置与 Key →',
+							utmCampaign: 'senior_ai_coding_pr'
+						}
+					}
+				},
 				'ernie': {
 					floating: {
 						en: {
