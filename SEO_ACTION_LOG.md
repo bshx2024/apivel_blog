@@ -41,9 +41,12 @@
     * Primary: `ai coding impact senior engineers`, `senior engineer compensation`, `companies only hiring seniors`
     * Secondary/LSI: `engineers salary`, `What engineer makes $500,000 a year?`, `vibe coding saas reddit`, `pr review bottleneck`, `two-tier model architecture`, `DeepSeek V4`, `Qwen 3.7 Max`, `ERNIE 5.5 Flash`, `APIVALE`
   * **On-Page & GEO 优化调优（严格遵循 5-Gate 原子协议）**：
-    1. Title 遵循 ABC 黄金公式：MetaTitle 为 `AI Coding Impact Senior Engineers: Salary & Jobs | APIVALE`（58 字符，严格在 50–60 字符内，以 `| APIVALE` 结尾）；H1 为 `AI Coding Impact on Senior Engineers: Salary, Jobs, and the $500K Architect`（75 字符，严格在 <=80 字符内）；
-    2. Meta Description 对齐核心意图：`Explore the AI coding impact on senior engineers: why companies only hire seniors, salary shifts, and how $500K architects automate PR reviews on APIVALE.`（154 字符，精准落在 140–160 字符区间）；
-    3. 全文正文词数达标：可见正文字数 1454 词，严格落在 1200~1800 词最佳区间，0 Errors / 0 Warnings；
+    1. Title & H1 黄金对齐并彻底消除介词 "on" 导致的语义错位：经军师实测诊断，介词 "on" 会挤占 4 词滑动窗口导致定语 "engineers" 被截断为 "coding impact on senior"，被 Google 误判为老年人（60+ 岁）学习编程。全面将 Title、H1、URL 与正文主词统一对齐为无歧义黄金词组：
+       - MetaTitle: `AI Coding Impact Senior Engineers: Salary & Jobs | APIVALE`（58 字符，包含 `ai coding impact senior` 与 `coding impact senior engineers`）；
+       - H1: `# AI Coding Impact Senior Engineers: Salary, Jobs & the $500K Architect`（69 字符，100% 词群精准匹配 Title，达成 Title/H1 双 100% 认证）；
+       - URL: `/ai-coding-impact-senior-engineers/`（100% 覆盖）；
+    2. 3/4/5 词密度榜全面登顶：优化后 3-gram（`ai coding impact` 17 次，第 1 名；`coding impact senior` 17 次，第 2 名）、4-gram（`ai coding impact senior` 15 次，第 1 名；`coding impact senior engineers` 15 次，第 2 名）、5-gram（`ai coding impact senior engineers` 13 次，第 1 名）全量由技术目标词绝对霸榜，彻底根除老年人赛道错位；
+    3. 全文正文词数精炼：精简 FAQ 与正文冗长修饰，可见正文从 1454 词精练至 1342 词，全页渲染总词数有效压实，0 Errors / 0 Warnings；
     4. 页面内嵌交互微工具（In-Article Live Playground）：内嵌 `Senior Engineering PR Review & ROI Calculator`（包含 `<input type="range">`、`<select>`、动态实时计算），支持工程师输入团队人数、每周 PR 数、选择审核模型，实时动态换算出节省的 Senior 审查工时与 APIVALE 双层网关相对 Claude 3.5 节省的 90%+ 费用；
     5. GEO 与实体知识图谱增强：前 100 词以 BLUF 明确界定“AI 编码悖论”，嵌入真实 Reddit r/ExperiencedDevs 社区原声卡片；对比表格包含客观“Best for...”诚实架构列；注入完整 FAQPage Schema 结构化数据响应 4 大 PAA 疑问；
     6. 转化承接与钱包对齐：结尾标准 `.cta-card`，完全对齐 +50% 首充特权（$5 -> $7.50, $29 -> $43.50）、$29 开发者包（56% OFF，4000万 Token）、$0.20 免费注册额度，双按钮携带 `redirect=/blog/ai-coding-impact-senior-engineers`，严格指定 PayPal 官方结账与全球国际信用卡（0 外汇手续费）；
