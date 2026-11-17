@@ -40,10 +40,10 @@
   * **主攻关键词**：
     * Primary: `ERNIE 5.5 Flash`, `ERNIE 5.5 Flash Preview`, `ERNIE 5.5 Flash Reddit`
     * Secondary/LSI: `ernie 5.5 flash api`, `ernie 5.5 flash 区别`, `ernie 5.5 flash github`, `ernie 5.5 flash 使用`, `Baidu ERNIE`, `1M Context`, `DeepSeek V4`, `Qwen 3.7 Max`, `Cursor`, `Claude Code`
-  * **On-Page & GEO 优化调优**：
-    1. Title 遵循 ABC 黄金公式：Title 为 `ERNIE 5.5 Flash Preview API & Reddit Review: 1M Benchmarks`（58 字符，<= 80 字符）；MetaTitle 为 `ERNIE 5.5 Flash Preview API & Reddit Review | APIVALE`（53 字符，严格在 50–60 字符内）；
-    2. Meta Description 对齐核心参数：`Review ERNIE 5.5 Flash Preview: Reddit benchleaking tests, 1M context limits, and OpenAI-compatible API setup vs DeepSeek V4 and Qwen 3.7 Max on APIVALE.`（精准 153 字符，严格落在 140–160 字符区间）；
-    3. 全页词数优化与主题聚焦度提分：正文可见字数 1,398 词，严格落在 1,200~1,800 最佳推荐区间，彻底消除篇幅超标扣分并强化核心词密度加权；
+  * **On-Page & GEO 优化调优（含哥飞 SEO 军师 On Page 45分 $\rightarrow$ 提分纠偏专项）**：
+    1. Title 遵循 ABC 黄金公式并解决推断词赛道错位问题：原正文中混用连字符 `` `ERNIE-5.5-Flash-Preview` `` 导致分词引擎将 `.` 当空格、`-` 保留，误拼出怪异推断词 `ernie-5 5-flash-preview` 导致 Title/H1/Desc 命中率归零；全面将正文规范为带空格的自然实体 `ERNIE 5.5 Flash Preview`；MetaTitle 为 `ERNIE 5.5 Flash Preview API & Reddit Review | APIVALE`（53 字符，严格在 50–60 字符内）；H1 为 `ERNIE 5.5 Flash Preview: API Setup & Reddit Benchmarks`（54 字符，<= 80 字符），使 `ERNIE 5.5 Flash Preview` 单词命中率达 100%；
+    2. Meta Description 对齐核心参数：`ERNIE 5.5 Flash Preview review: Reddit benchleaking tests, 1M context limits, and OpenAI-compatible API setup vs DeepSeek V4 and Qwen 3.7 Max on APIVALE.`（精准 153 字符，严格落在 140–160 字符区间，核心主词前置）；
+    3. 全页词数优化与主题聚焦度提分：消除长代码块与冗余文本，将全页渲染词数从 2,262 词精简至 1,868 词（正文可见词 1,215 词），严格落在 1,200~1,800 最佳推荐区间，彻底消除篇幅超标扣分并强化核心词密度加权；
     4. 页面内嵌交互微工具（In-Article Live Playground）：内嵌 `Interactive Latency & Cost Comparator`（包含 `<select>`、`<input>`、`<button>`），支持按模型与 Token 量实时试算时延与 APIVALE 折扣费用，彻底消除 Doorway Page 判罚风险；
     5. 突破大模型友好（GEO）与实体消歧：
        - 倒金字塔首句事实直接作答（Declarative Fact Sentence）；
