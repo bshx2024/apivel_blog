@@ -1,7 +1,7 @@
 ---
 title: "AI Coding Impact Senior Engineers: Salary, Jobs & the $500K Architect"
 metaTitle: "AI Coding Impact Senior Engineers: Salary & Jobs | APIVALE"
-description: "Explore the coding impact senior engineers: why companies only hire seniors, salary shifts, and how $500K architects automate PR reviews on APIVALE."
+description: "Explore the AI coding impact on senior engineers: why companies only hire seniors, 2026 salary shifts, and how $500K architects automate PR reviews on APIVALE."
 date: "2026-11-17"
 author: "Elena Rostova"
 authorTitle: "Senior LLM Systems Architect & Agent Infrastructure Specialist, APIVALE"
