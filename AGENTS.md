@@ -8,6 +8,16 @@ astro dev --background
 
 Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
 
+## Project-Scoped Customizations & Skills (Zero Global Pollution Rule)
+
+All skills, toolchains, and custom workflows tailored for APIVALE (such as `apivale-blog-publishing` and `apivale-comment-outreach`) **MUST be placed strictly inside the project-scoped directory**:
+👉 **`.agent/skills/<skill-name>/SKILL.md`**
+
+**Strict Isolation Rules**:
+- **Zero Global Leakage**: NEVER write project-specific skills, personas, or workflows to the machine-level global directory (`~/.gemini/config/skills/` or `C:\Users\Administrator\.gemini\config\skills\`). Global skills are auto-injected into *every* conversation across *all* projects on the machine, contaminating unrelated workspaces.
+- **Git Version Control**: All project skills must be committed under `.agent/skills/` so they are project-scoped, team-shareable, and version-controlled.
+- **Local Toolchain Execution**: Run audit scripts directly from the workspace: `node .agent/skills/apivale-blog-publishing/scripts/audit_article.cjs <file>`.
+
 ## Standard Operating Procedure (SOP) for SEO Blog Creation
 
 Before writing or editing any blog post for APIVALE, you **MUST** consult and adhere to the Master Blog Writing & SEO/GEO Standard:
