@@ -47,7 +47,10 @@ const hasCustomWidget = slugLower.includes('flashprove') || slugLower.includes('
 let initialModel = 'glm-5.3-flash';
 let targetTopic = 'general';
 
-if (slugLower.includes('senior') || slugLower.includes('ai-coding')) {
+if (slugLower.includes('gpt-6-2-sol') || slugLower.includes('sol')) {
+	targetTopic = 'sol';
+	initialModel = 'gpt-6.2-sol';
+} else if (slugLower.includes('senior') || slugLower.includes('ai-coding')) {
 	targetTopic = 'ai-coding';
 	initialModel = 'deepseek-v4';
 } else if (postMeta.includes('qwen4-max') || postMeta.includes('qwen-4-max')) {
@@ -484,6 +487,40 @@ const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.key
 			}
 
 			const TOPIC_CONFIG = {
+				'sol': {
+					floating: {
+						en: {
+							badge: '⚡ 1.1M Context Workhorse',
+							title: 'Call GPT-6.2 Sol with Zero KYC',
+							desc: 'OpenAI official everyday workhorse model with 1,100,000 tokens context. Standard OpenAI-compatible gateway with instant PayPal checkout.',
+							btnText: 'Try GPT-6.2 Sol Now',
+							utmCampaign: 'gpt62_sol_access'
+						},
+						zh: {
+							badge: '⚡ 1.1M 上下文主力机',
+							title: '免海外信用卡调用 GPT-6.2 Sol',
+							desc: 'OpenAI 官方最新主力日常模型！支持 110 万超长上下文，标准 OpenAI 兼容端点，PayPal 即时结算送 $0.20 体验金。',
+							btnText: '一键接入 GPT-6.2 Sol →',
+							utmCampaign: 'gpt62_sol_access'
+						}
+					},
+					inline: {
+						en: {
+							badge: '⚡ High-Efficiency Pipeline',
+							title: 'Cut GPT-6.2 Sol Agent Token Costs by 85%',
+							desc: 'Pair GPT-6.2 Sol with Qwen 3.7 Max and DeepSeek V4 for multi-agent loops. Sub-50ms gateway with PayPal instant billing.',
+							btnText: 'Get API Key & Sandbox',
+							utmCampaign: 'gpt62_sol_access'
+						},
+						zh: {
+							badge: '⚡ 工业级双层路由',
+							title: '降低 85% 的 GPT-6.2 Sol 智能体 Token 成本',
+							desc: '将常规子任务分流至通义千问与 DeepSeek V4，保留核心架构于 Sol。支持 PayPal 全球直付，0 跨境手续费。',
+							btnText: '获取 API Key 与沙盒额度 →',
+							utmCampaign: 'gpt62_sol_access'
+						}
+					}
+				},
 				'ai-coding': {
 					floating: {
 						en: {

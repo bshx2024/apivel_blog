@@ -130,7 +130,7 @@ In autonomous terminal sessions, sudden 429 errors terminate sub-processes, disc
 ## 4. Slashing Frontier Agent Invoices via Tiered Routing
 
 Rather than routing every lightweight task through a $20.00/1M model, teams deploy **Hierarchical Model Tiering**:
-* **Tier 1 (Carbon / Opus 5.5 / Argon):** Reserved for root architecture decisions, multi-component planning, and final security scans. Compare full engineering benchmarks in our [Gemini 4 Argon coding test review](/blog/gemini-4-argon-coding-test-review/).
+* **Tier 1 (Carbon / Opus 5.5 / Argon):** Reserved for root architecture decisions, multi-component planning, and final security scans. Compare full engineering benchmarks in our [Gemini 4 Argon coding test review](/blog/gemini-4-argon-coding-test-review/) or evaluate OpenAI's daily workhorse [GPT-6.2 Sol](/blog/gpt-6-2-sol-api-pricing-benchmarks/).
 * **Tier 2 (Qwen 3.8 Max / DeepSeek V4):** Executes 85% of iterative tasks: writing unit tests, running bash commands, formatting diffs, and linting. Teams can also route long document analysis to [Kimi K3.1 Pro](/blog/kimi-k3-1-pro-pricing-benchmarks-api-access/).
 
 ### Claude Code & Cursor Failover Configuration
