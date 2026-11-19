@@ -38,7 +38,7 @@ keyTakeaways:
 
 Between October 31 and November 2, 2026, developers monitoring Codex telemetry and v0 frontend workflows noticed an unexpected model string: `gpt-6.2-astra`. While public interfaces display standard GPT-6 Astra, internal usage dashboards and `system_fingerprint` logs recorded autonomous coding runs against this unannounced canary checkpoint.
 
-This shadow deployment highlights a severe operational trade-off: while GPT-6 Astra delivers frontier reasoning, rapid cache eviction and high-frequency sub-agent loops deplete subscription quotas in under an hour. To provide a sustainable daily workhorse alternative, OpenAI deployed its efficient sibling model [GPT-6.2 Sol](https://apivel.com/blog/gpt-6-2-sol-api-pricing-benchmarks/), which shares the same 1.1M context window at lower cold input rates.
+This shadow deployment highlights a severe operational trade-off: while GPT-6 Astra delivers frontier reasoning, rapid cache eviction and high-frequency sub-agent loops deplete subscription quotas in under an hour. To provide a sustainable daily workhorse alternative, OpenAI deployed its efficient sibling model (see our [Sol 6.1 vs 6.2 differences and speed benchmarks](https://apivel.com/blog/gpt-6-2-sol-api-pricing-benchmarks/)), which shares the same 1.1M context window at lower cold input rates.
 
 ```mermaid
 graph TD

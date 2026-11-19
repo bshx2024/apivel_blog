@@ -128,7 +128,7 @@ flowchart TD
     G --> H
 ```
 
-By assigning heavy architectural analysis to Opus 5.5 or [Gemini 4 Carbon](/blog/gemini-4-carbon-price-benchmarks-api/) while delegating iterative file writes and terminal executions to [Kimi K3.1 Pro](/blog/kimi-k3-1-pro-pricing-benchmarks-api-access/), [DeepSeek V4.1 Flash](/blog/deepseek-v4-1-flash-1017-api-setup/), or [Qwen 3.7 Max](/blog/qwen-4-release-date-api-roadmap/), teams cut net monthly API expenditures by **65% to 75%** without sacrificing code quality.
+By assigning heavy architectural analysis to Opus 5.5 or [Gemini 4 Carbon](/blog/gemini-4-carbon-price-benchmarks-api/) while delegating iterative file writes and terminal executions to [Sol 6.1 vs 6.2](/blog/gpt-6-2-sol-api-pricing-benchmarks/), [Kimi K3.1 Pro](/blog/kimi-k3-1-pro-pricing-benchmarks-api-access/), [DeepSeek V4.1 Flash](/blog/deepseek-v4-1-flash-1017-api-setup/), or [Qwen 3.7 Max](/blog/qwen-4-release-date-api-roadmap/), teams cut net monthly API expenditures by **65% to 75%** without sacrificing code quality.
 
 ---
 
