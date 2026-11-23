@@ -157,7 +157,7 @@ When complex prompts activate high-effort reasoning, Astra generates hidden thin
 
 ## 5. Slashing GPT-6.2 Astra Costs: Dual-Model Fallback Setup
 
-Senior engineering teams resolve Astra cost spikes by implementing a **Hybrid Orchestrator-Worker Architecture**.
+Senior engineering teams resolve Astra cost spikes by implementing a **Hybrid Orchestrator-Worker Architecture** (for a comprehensive evaluation against Anthropic's flagship, see our breakdown in [GPT-6.2 Astra vs Opus 5.5: Key Differences & Cost Fix](/blog/gpt-6-2-astra-vs-opus-5-5-differences/)).
 
 ### Production Python Fallback Router with Jittered Retry
 

@@ -83,7 +83,7 @@ Through [apivel](https://apivel.com/?redirect=/blog/claude-opus-5-5-price-limits
 
 ## 3. Head-to-Head: Claude Opus 5.5 vs. Sonnet 5.5 vs. Fable 5.1
 
-Selecting the optimal foundation model requires balancing cognitive reasoning depth against inference speed and budget constraints.
+Selecting the optimal foundation model requires balancing cognitive reasoning depth against inference speed and budget constraints (for a head-to-head comparison against OpenAI's flagship, consult our [GPT-6.2 Astra vs Opus 5.5: Key Differences & Cost Fix](/blog/gpt-6-2-astra-vs-opus-5-5-differences/)).
 
 | Foundation Checkpoint | Context Window | Input / Output (per 1M) | Prompt Cache Read | Coding & SWE Benchmark | Thinking Mechanism | Best For... (Honesty Column) |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |

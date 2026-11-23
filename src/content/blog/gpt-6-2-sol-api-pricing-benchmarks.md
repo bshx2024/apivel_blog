@@ -105,7 +105,7 @@ These community experiences establish a clear operational rule: **Sol 6.2 is sup
 
 ## Sol 6.2 vs Astra vs Claude Opus 5.5: Objective Benchmark Comparison
 
-To contextualize where Sol 6.2 fits within the broader ecosystem, we evaluated it against OpenAI's frontier flagship (GPT-6.2 Astra), Anthropic's autonomous standard (Claude Opus 5.5), and leading cost-efficient open-weight alternatives:
+To contextualize where Sol 6.2 fits within the broader ecosystem, we evaluated it against OpenAI's frontier flagship (GPT-6.2 Astra), Anthropic's autonomous standard (Claude Opus 5.5), and leading cost-efficient open-weight alternatives (see our direct comparison in [GPT-6.2 Astra vs Opus 5.5: Key Differences & Cost Fix](/blog/gpt-6-2-astra-vs-opus-5-5-differences/)):
 
 | Model Candidate | Context Window | Input / 1M | Output / 1M | GPQA Diamond | SWE-bench | Best for... (Honesty Column) |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
