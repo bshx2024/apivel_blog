@@ -69,6 +69,11 @@
     - Reddit / Hacker News 检索（通过 `site:reddit.com` / `site:news.ycombinator.com` 检索真实讨论串与 URL）；
   - **采掘内容**：提取 1 条真实的开发者报错痛点、抱怨或配置困惑（包含真实的 URL、平台和作者 handle）。
   - **防幻觉降级兜底**：若该技术极为前沿冷门，无法搜索到 100% 可验证的外部帖子，**坚决严禁造假**！必须降级为“官方 RFC/官方文档直链”或“APIVALE 生产网关脱敏工单日志”。
+- **SERP 真实截图 1:1 三层逆向采掘 (SERP Screenshot Inversion SOP)**：
+  - 当针对目标词提供或采掘到真实 Google SERP 截图时，必须将截图包含的 **3 种典型形态** 逐一结构化解构，并 1:1 映射到博文各个技术章节：
+    1. **形态 1 (Google 搜索核心下拉词 - Dropdown A)**：`release date`、`pricing`、`reddit`、`flash`、`air`、`huggingface` $\rightarrow$ 必须直接吸收进 MetaTitle（如 `Release Date, Pricing & Reddit Review`），正文必须设立小节深度解析轻量版与开源权重规划。
+    2. **形态 2 (开发者工具与生态检索词 - Dropdown B)**：`openrouter`、`opencode`、`ollama` $\rightarrow$ 必须设立专门章节对比 OpenRouter（风控拒卡/高加价）vs APIVALE（PayPal 即时直结/免 KYC/送 $0.20 测试金），并给出 OpenCode/Claude Code CLI 的两行免配置接入代码。
+    3. **形态 3 (Google PAA 4 大原生问答 - PAA Box)**：【P0 核心铁律】**严禁自行编造通用 FAQ！正文 FAQ 的 4 个 H3 标题与 FAQPage JSON-LD Schema 必须 1:1 逐字复制并回答截图中的 4 大 PAA 原生问句**，全力争夺 Google AI Overviews 零位引用。
 - **分级主题下钻与技术缝隙挖掘 (Multi-Level Topic Drill-Down & Content Gap Mining)**：
   - 利用 SERP 顶部 Topic 胶囊按钮、Google Images 标签、搜索框下拉建议与 PAA 进行 2-3 层逐层点击下钻（Drill-Down）：
     - **一级主题 (Topic 1 - 大类维度)**：搜主词出的第一排标签（如竞品 `Claude Opus` / `DeepSeek V4`、场景 `Coding`），决定文章 H2 核心逻辑模块。
