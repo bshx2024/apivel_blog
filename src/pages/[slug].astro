@@ -59,6 +59,9 @@ if (slugLower.includes('gpt-6-2-sol') || slugLower.includes('sol')) {
 } else if (slugLower.includes('opus') || postMeta.includes('claude-opus')) {
 	targetTopic = 'claude';
 	initialModel = 'claude-opus-5';
+} else if (postMeta.includes('glm-5-4') || postMeta.includes('glm-5.4')) {
+	targetTopic = 'glm-5.4';
+	initialModel = 'glm-5.4';
 } else if (postMeta.includes('flashx') || postMeta.includes('glm-5.3-flashx') || postMeta.includes('glm-5-3-flashx')) {
 	targetTopic = 'glm-5.3-flashx';
 	initialModel = 'glm-5.3-flashx';
@@ -234,6 +237,13 @@ const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.key
 				{ label: 'High-Concurrency Failover', value: 'Multi-Cluster Active Routing (Zero 429)', isCode: false },
 				{ label: 'Compatible Endpoint', value: 'https://apivel.com/v1', isCode: true },
 				{ label: 'Instant Sandbox Access', value: '$0.20 Free Test Credits (No KYC)', highlight: true }
+			];
+		} else if (targetTopic === 'glm-5.4') {
+			return [
+				{ label: 'Architecture', value: '28-Layer Recurrent Loop Transformer', isCode: false },
+				{ label: 'Target Model', value: 'infer/glm-5.4 (1M Context Window)', isCode: true },
+				{ label: 'Gateway Endpoint', value: 'https://apivel.com/v1', isCode: true },
+				{ label: 'Global Billing', value: 'PayPal & Global Cards ($0.20 Free Trial)', highlight: true }
 			];
 		} else if (targetTopic === 'glm') {
 			return [

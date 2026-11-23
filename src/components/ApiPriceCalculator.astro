@@ -23,6 +23,7 @@ const { initialModel = 'kimi-k3' } = Astro.props;
       <label class="calc-label" for="calcModelSelect">Select LLM Model:</label>
       <div class="calc-select-wrapper">
         <select id="calcModelSelect" class="calc-select">
+          <option value="glm-5.4" selected={initialModel === 'glm-5.4'}>Zhipu GLM-5.4 Loop Transformer — $0.65 / 1M tokens</option>
           <option value="glm-5.3-flash" selected={initialModel === 'glm-5.3-flash'}>GLM-5.3 Flash (Ox Alpha) — $0.08 / 1M tokens</option>
           <option value="glm-5.3" selected={initialModel === 'glm-5.3'}>Zhipu GLM-5.3 743B — $0.50 / 1M tokens</option>
           <option value="qwen-38-flash" selected={initialModel === 'qwen-38-flash'}>Qwen 3.8 Flash Next — $0.05 / 1M tokens</option>
@@ -116,6 +117,7 @@ const { initialModel = 'kimi-k3' } = Astro.props;
 
     // Pricing per 1M tokens (Official vs APIVALE)
     const modelRates = {
+      'glm-5.4': { official: 2.20, apivale: 0.65, name: 'Zhipu GLM-5.4 (Loop Transformer)', modelKey: 'infer/glm-5.4' },
       'glm-5.3-flash': { official: 0.20, apivale: 0.08, name: 'GLM-5.3 Flash (Ox Alpha)', modelKey: 'infer/glm-5.3-flash' },
       'glm-5.3': { official: 1.40, apivale: 0.50, name: 'Zhipu GLM-5.3 743B', modelKey: 'infer/glm-5.3' },
       'qwen-38-flash': { official: 0.20, apivale: 0.05, name: 'Qwen 3.8 Flash Next', modelKey: 'infer/qwen-3.8-flash-next' },

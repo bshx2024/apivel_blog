@@ -19,6 +19,7 @@ This document tracks all researched high-potential keyword clusters, proposed ar
 | **9** | *Kimi K3.1 Pro Pricing, Benchmarks & API Access Guide* | `kimi k3.1 pro pricing` | `kimi k3.1 pro benchmarks`, `kimi k3.1 pro reddit`, `kimi k3.1 pro api access`, `kimi k3.1 pro artificial analysis`, `terminal-bench 4.0` | Breakout / Evaluation & Commercial | ✅ **Published** |
 | **10** | *Gemini 4 Carbon: Benchmarks, Price & API Guide* | `gemini 4 carbon` | `gemini 4 carbon price`, `gemini 4 carbon benchmarks`, `gemini 4 carbon api pricing`, `gemini 4 carbon vs opus 5.5`, `gemini 4 carbon reddit` | Technical / Frontier Breakout | ✅ **Published** |
 | **11** | *DeepSeek V5: Architecture Leaks, Models & API Setup Guide* | `deepseek v5` | `deepseek v5 leaks`, `deepseek v5 specs`, `deepseek v5 flash`, `deepseek v5 pro`, `deepseek v5 release date` | Breakout / Parent Topic & Commercial | ✅ **Published** |
+| **12** | *GLM-5.4: Loop Transformer Architecture, Benchmarks & API Guide* | `GLM-5.4` | `GLM-5.4 Loop Transformer`, `GLM-5.4 benchmarks`, `GLM-5.4 api`, `zhipu glm 5.4`, `marathon thinking` | Technical / Frontier Breakout / Commercial | ✅ **Published** |
 
 
 ---
