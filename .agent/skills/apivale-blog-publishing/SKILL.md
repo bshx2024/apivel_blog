@@ -43,8 +43,9 @@ description: >-
   2. **$29 开发者专享礼包**：直降 56%、4000万 Token、永久有效；
   3. **新用户 $0.20 免卡起步金**：注册即用，零门槛沙盒。
 
-### 3. 作者轮换机制 (Persona Rotation)
-每篇博文必须在现有作者库中轮换，杜绝同一作者连续署名：
+### 3. 作者轮换机制与真人头像铁律 (Persona Rotation & Real Human Avatars - P0)
+* **真人头像强制要求**：所有作者必须全量配置并正常加载 1024x1024 真人高清头像。头像资源必须在 `public/authors/<slug>.png` 与 `public/blog/authors/<slug>.png` 双路径严格同步，彻底杜绝因 Astro `base: '/blog'` 路径前缀导致图片 404 并回退到纯文字/首字母占位符或断图图标。
+* **严格轮换（杜绝连续重名）**：每篇博文必须在现有 5 位作者库中轮换，相连文章绝不使用同一作者：
 * **Elena Rostova**：*Senior LLM Systems Architect & Agent Infrastructure Specialist*（专攻自主 Agent 推理循环、Thinking Token / 马拉松思维预算控制与高并发路由）。
 * **Kenji Tanaka**：*AI Developer Relations & Infrastructure Engineer*（专攻终端工作流、Claude Code CLI、多智能体调试与开发者生态）。
 * **Sofia Costa**：*Senior Cloud & API Gateway Architect*（专攻跨国低延迟网关、容灾转移与计费透明度）。
