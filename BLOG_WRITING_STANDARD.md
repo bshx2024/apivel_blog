@@ -69,11 +69,12 @@
     - Reddit / Hacker News 检索（通过 `site:reddit.com` / `site:news.ycombinator.com` 检索真实讨论串与 URL）；
   - **采掘内容**：提取 1 条真实的开发者报错痛点、抱怨或配置困惑（包含真实的 URL、平台和作者 handle）。
   - **防幻觉降级兜底**：若该技术极为前沿冷门，无法搜索到 100% 可验证的外部帖子，**坚决严禁造假**！必须降级为“官方 RFC/官方文档直链”或“APIVALE 生产网关脱敏工单日志”。
-- **SERP 真实截图 1:1 三层逆向采掘 (SERP Screenshot Inversion SOP)**：
-  - 当针对目标词提供或采掘到真实 Google SERP 截图时，必须将截图包含的 **3 种典型形态** 逐一结构化解构，并 1:1 映射到博文各个技术章节：
-    1. **形态 1 (Google 搜索核心下拉词 - Dropdown A)**：`release date`、`pricing`、`reddit`、`flash`、`air`、`huggingface` $\rightarrow$ 必须直接吸收进 MetaTitle（如 `Release Date, Pricing & Reddit Review`），正文必须设立小节深度解析轻量版与开源权重规划。
-    2. **形态 2 (开发者工具与生态检索词 - Dropdown B)**：`openrouter`、`opencode`、`ollama` $\rightarrow$ 必须设立专门章节对比 OpenRouter（风控拒卡/高加价）vs APIVALE（PayPal 即时直结/免 KYC/送 $0.20 测试金），并给出 OpenCode/Claude Code CLI 的两行免配置接入代码。
-    3. **形态 3 (Google PAA 4 大原生问答 - PAA Box)**：【P0 核心铁律】**严禁自行编造通用 FAQ！正文 FAQ 的 4 个 H3 标题与 FAQPage JSON-LD Schema 必须 1:1 逐字复制并回答截图中的 4 大 PAA 原生问句**，全力争夺 Google AI Overviews 零位引用。
+- **SERP 真实截图 1:1 四层逆向采掘与防爆 SOP (Zero-Omission Screenshot Ingestion Protocol - P0)**：
+  - 当针对目标词提供或采掘到真实 Google SERP 截图时，系统**必须强制首要执行“逐图视觉审计与 1:1 意图映射”，严禁跳过截图直接起草**！必须在回复开篇显式输出《SERP 截图 1:1 映射清单》，结构化解构 4 大典型形态：
+    1. **形态 1 (Google 搜索核心下拉建议词 - 衍生版与高意图分支)**：如 `flash`、`air`、`pricing`、`reddit`（例如 `glm 5.3 flash vs glm 5.4`） $\rightarrow$ 用户强烈关注轻量版与旗舰的代际取舍，**必须直接吸收进 MetaTitle、H1、Description，并在正文设立专属独立对比子章节（如 `GLM-5.3 Flash vs GLM-5.4`）**！同时严格遵循【P0 防赛道错位铁律】：严禁把泛新闻词 `Release Date` 放在 Title/H1 首位声明位，防止被官方 GitHub/HuggingFace 权重页挤入通报赛道导致 URL 覆盖度骤降。
+    2. **形态 2 (跨界实体歧义排查防线 - Negative Entity Disambiguation)**：仔细排查下拉框中是否混入汽车型号、发动机排量、五金工业等非技术跨界词（如 `gmc 5.4 vs 6.2` 卡车引擎、`corvette 6.2`、`opel astra`）。一旦出现，MetaTitle、H1、Description 与前言中**必须全量显式绑定 AI / LLM / Foundation Model 定语**，筑牢技术实体防火墙，彻底杜绝 Google 算法误归入汽车或机械赛道！
+    3. **形态 3 (开发者生态与竞品对比下拉词)**：如 `[Model] vs gpt`、`openrouter`、`opencode`、`ollama` $\rightarrow$ Description 必须显式声明竞品对比（如 `token pricing vs GPT`）；正文设立专门章节对比 OpenRouter（风控拒卡/高加价）vs APIVALE（PayPal 即时结账/免 KYC/送 $0.20 测试金），并给出开箱即用两行接入代码。
+    4. **形态 4 (Google PAA 4 大原生问答 1:1 逐字复制铁律)**：【P0 核心铁律】**严禁自行编造通用 FAQ！正文 FAQ 的 4 个 H3 标题与 FAQPage JSON-LD Schema 必须 1:1 逐字复制并回答截图中的 4 大 PAA 原生问句**，全力争夺 Google AI Overviews 零位引用。严禁在正文中使用机械报菜名套话，必须以真实资深工程师视角自然展开。
 - **分级主题下钻与技术缝隙挖掘 (Multi-Level Topic Drill-Down & Content Gap Mining)**：
   - 利用 SERP 顶部 Topic 胶囊按钮、Google Images 标签、搜索框下拉建议与 PAA 进行 2-3 层逐层点击下钻（Drill-Down）：
     - **一级主题 (Topic 1 - 大类维度)**：搜主词出的第一排标签（如竞品 `Claude Opus` / `DeepSeek V4`、场景 `Coding`），决定文章 H2 核心逻辑模块。
@@ -103,12 +104,14 @@
    - 注入**结尾钱包对齐转化卡片 (`.cta-card`)**：严格对齐 APIVALE 钱包实际方案：首充特权额外送 +50%（充 $5 得 $7.50，充 $29 得 $43.50，充 $99 得 $148.50）、$29 开发者专享礼包（直降 56%、4000万 Token、永久有效）、新用户 $0.20 免卡免实名起步金；提供双行动按钮（直达定价页 `/pricing` 与直达快速注册页 `/sign-up`），且必须动态携带 `redirect=/blog/<slug>`；
    - 严格执行**组件无 H 标签红线 (Strict AST Widget Cleanliness)**：自定义内嵌 HTML 组件（如 Definition Box、Key Takeaways、Playground、CRO 卡片）中**严禁使用原生 `<h1>`-`<h4>` 标签**，统一使用 `<div class="font-semibold text-white ...">` 或 `<span>` 加 CSS 类名，杜绝破坏纯 Markdown 的 `H1 -> H2 -> H3` 语义树而被判定“标题跳级”扣分；
    - **动态侧边栏模型话题注册 (Dynamic Floating CTA Topic Registry)**：若文章涉及新大模型（如 Xiaomi MiMo、GLM、Qwen、DeepSeek 等），必须同步在 `src/pages/[slug].astro` 的 `TOPIC_CONFIG` 中注册专属中英文转化卡片文案（包含 `badge`、`title`、`desc`、`metric`、`ctaText`）；
+   - **辅助竞品模型控频铁律 (Anti-Competitor Dilution Rule)**：除对比表格（1次）与网关架构摘要（1次）外，严禁在正文重复出现竞品模型（如 Qwen 3.7 Max, DeepSeek V4）全名，其余位置全部替换为功能代词（如 `auxiliary workhorse models`, `secondary execution tier`）；主模型 2~5 词组必须垄断 N-gram 密度榜前三，彻底清除候选意图中的次级杂音词，确保密度榜位置加权满分（挽回 3 分）；
+   - **硅谷工程原生去翻译腔规范 (Banish Translationese)**：杜绝 `autonomous developers`、`scaling physical weights`、`syntax emission` 等机器直译与 SEO 报菜名句式，以硅谷资深 LLM 架构师（Elena Rostova 等）的专业语调深度撰写；
    - 注入 **FAQ JSON-LD Schema**。
 2. **Gate 2 (前置自动化 SEO 健康度与真实性体检)**：
-   - 自动运行 `audit_article_seo_health` 工具；
+   - 自动运行 `audit_article_seo_health` 与 `simulate_ngrams` 工具；
    - **外部链接 HTTP 探针**：自动校验正文中所有外部链接（特别是 GitHub Issue / Reddit 引用），必须返回 `HTTP 200`，任何 404 死链直接作为 S0 Blocker 拦截！
    - **对比数据核验**：确保对比表格包含最新官方核准时间戳与来源出处说明；
-   - 强制确保：0 Blockers、0 Warnings、MetaTitle 严格 50–60 字符 (Max 600px 宽度)、H1 <= 80 字符、Meta Description 140–160 字符、正文可见词数 1200–1800 词最佳（防止冗余稀释）、全面落实 PayPal 官方即时结账与全球免 KYC 结算标准、内嵌交互体验区消除 4.5 分落地页跳出风险。
+   - 强制确保：0 Blockers、0 Warnings、MetaTitle 严格 50–60 字符 (Max 600px 宽度)、H1 <= 80 字符、Meta Description 140–160 字符、纯 Markdown 正文有效阅读词数严格在 **1,500 ~ 1,750 词**（全页渲染总词数不超过 1800 词上限，挽回正文字数 1 分）、全面落实 PayPal 官方即时结账与全球免 KYC 结算标准、内嵌交互体验区消除 4.5 分落地页跳出风险。
 3. **Gate 3 (原子双向内链织网 - 必须同步修改老文章)**：
    - 自动在站内检索同主题/相关主题的 2~3 篇核心高权重老文章；
    - **在同一次修改中直接打开并编辑这些老文章**，将新文章作为上下文精准锚文本/Mermaid 节点织入老文章正文，实现双向权重闭环，坚决杜绝孤岛页面。

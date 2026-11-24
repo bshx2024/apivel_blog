@@ -55,33 +55,52 @@ description: >-
 
 ## 二、Phase 1: 需求采掘与 3C 意图诊断 (SERP 真实截图 1:1 三层逆向采掘 SOP)
 
-坚决反对凭空脑补题目。当用户提供 SERP 截图（或自行进行搜索引擎检索）时，必须将截图包含的 **3 种典型形态** 逐一结构化解构，并 1:1 映射到博文的对应技术章节：
+坚决反对凭空脑补题目。**当用户提供 SERP 截图（或自行进行搜索引擎检索）时，系统必须强制自动执行“SERP 截图 1:1 结构化采掘与映射门禁”，严禁跳过截图直接起草！**
+
+### 0. 自动截图嗅探与零遗漏强约束门禁 (Zero-Omission Screenshot Ingestion Directive - P0)
+* **强制触发条件**：只要用户对话中附带了图片（`media_*.png` 或截图），**第一动作必须是对所有截图进行逐图视觉审计与结构化解构，并在回复开头显式输出《SERP 截图 1:1 映射清单》**，绝不让用户重复提醒或核实！
+* **四大必查形态与强制落地规范**：
 
 ```
-┌────────────────────────────────────────────────────────────────────────┐
-│ SERP 真实截图 1:1 意图逆向采掘图谱                                     │
-├────────────────────────────────────────────────────────────────────────┤
-│ 形态 1: Google 搜索下拉框 (Search Suggestion Dropdown):                 │
-│    - 典型词：[Model] release date, pricing, reddit, flash, air         │
-│    - 意图属性：利益与焦虑层 (成本、发布时间、社区评价、轻量版)           │
-│    - 强制落地：直接吸收进 Title / MetaTitle，正文设立专门章节回应      │
-├────────────────────────────────────────────────────────────────────────┤
-│ 形态 2: 开发者生态与工具链下拉框 (Developer Ecosystem Dropdown):        │
-│    - 典型词：[Model] openrouter, opencode [Model], ollama [Model]      │
-│    - 意图属性：工程接入层 (开发者寻找接入渠道、CLI 工具、本地/云端方案) │
-│    - 强制落地：H1/正文设置专门章节对比 OpenRouter (风控/加价) vs APIVALE │
-│               并给出 OpenCode / Claude Code / Ollama 开箱即用配置代码   │
-├────────────────────────────────────────────────────────────────────────┤
-│ 形态 3: Google PAA (People Also Ask) 4 大原生问答框:                   │
-│    - 典型词：Is [Model] cheaper than GPT? What does [X] stand for?     │
-│             Which Z.AI models are free? How do I install [Model]?      │
-│    - 意图属性：权威答疑与 GEO 语义抓取层 (抢占 AI Overviews 零位引用)   │
-│    - 强制落地：【P0 铁律】严禁自行编造 FAQ！正文 FAQ 的 4 个 H3 标题与  │
-│               FAQPage JSON-LD 必须 1:1 逐字复制并回答这 4 个原生问句！ │
-└────────────────────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│ SERP 真实截图 1:1 意图逆向采掘与防爆图谱                                                 │
+├────────────────────────────────────────────────────────────────────────────────────────┤
+│ 形态 1: 搜索下拉建议词 (Search Suggestion Dropdown - 高意图分支与衍生版):                  │
+│    - 典型词：[Model] release date, pricing, reddit, [Model]-flash, air, preview         │
+│    - 衍生版本挖掘（如 glm 5.3 flash vs glm 5.4）：                                       │
+│      👉 强制落地：用户强烈关注“用低成本 Flash 还是升级旗舰”；必须直接吸收进 Title /     │
+│         MetaTitle，并在正文设立专属独立对比子章节（如 GLM-5.3 Flash vs GLM-5.4）！       │
+├────────────────────────────────────────────────────────────────────────────────────────┤
+│ 形态 2: 跨界实体歧义排查防线 (Negative Entity Disambiguation - 消除赛道误判):          │
+│    - 典型词：gmc 5.4 vs 6.2 (卡车发动机), corvette 6.2 (跑车), opel astra (轿车)        │
+│    - 意图属性：算法歧义陷阱（非技术实体负向碰撞）                                       │
+│    - 强制落地：一旦下拉框中出现跨界词，MetaTitle、H1、Description 与前言中**必须全量    │
+│      显式绑定 AI / LLM / Foundation Model 定语**，筑牢技术实体防火墙，彻底杜绝 Google   │
+│      将页面归入汽车、机械或通用统计学赛道！                                            │
+├────────────────────────────────────────────────────────────────────────────────────────┤
+│ 形态 3: 开发者生态与竞品对比下拉词 (Developer Ecosystem & Cross-Model Comparison):     │
+│    - 典型词：[Model] vs gpt, openrouter [Model], opencode [Model], ollama [Model]      │
+│    - 意图属性：工程接入层与竞品替代层                                                   │
+│    - 强制落地：Description 必须显式声明竞品对比（如 Pricing vs GPT）；正文设立专门章节   │
+│      对比 OpenRouter (风控拒卡/高加价) vs APIVALE (PayPal即时结账/免KYC/送$0.20测试金)， │
+│      并提供开箱即用集成代码。                                                          │
+├────────────────────────────────────────────────────────────────────────────────────────┤
+│ 形态 4: Google PAA (People Also Ask) 4 大原生问答框 (AI Overviews 零位引用收割):        │
+│    - 典型词：Is [Model] cheaper than GPT? Is [Model] considered ai?                    │
+│             What is the difference between GLM and LLM? What are the GLM models?       │
+│    - 意图属性：权威答疑与 GEO 语义抓取层                                                │
+│    - 强制落地：【P0 铁律】严禁自行编造 FAQ！正文 FAQ 的 4 个 H3 标题与 FAQPage JSON-LD  │
+│      必须 1:1 逐字复制并回答截图中出现的 4 个原生问句！严禁遗漏！                       │
+└────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-### 3C 诊断清单
+### 1. 动笔前强制自检与映射清单（回复开篇必须呈现）
+当检测到用户附带截图时，AI 在动笔撰写前必须在回复开头呈现以下对齐清单：
+1. **下拉建议词解析**：列出截图中所有下拉词，标注已提取的衍生版（如 `Flash`）、竞品词（如 `vs GPT`）及过滤的实体歧义词（如 `GMC`）；
+2. **PAA 4 问逐字提取**：1:1 完整打印截图中 Google PAA 的 4 个原生英文问句；
+3. **元数据吸收方案**：展示 MetaTitle（50–60 字符）、H1（$\le 80$ 字符）、Description（140–160 字符）如何 100% 融合上述意图。
+
+### 2. 3C 诊断清单
 1. **Content Type (内容类型)**：以权威技术深度评测、价格对比与生产实操指南（Technical Deep-Dive, Pricing & Engineering Guide）为主。
 2. **Content Format (内容格式)**：结构化 AST（Technical Summary Box $\rightarrow$ 架构/发布解构 $\rightarrow$ 官方/第三方基准表 & 价格对比 $\rightarrow$ 社区真实原声卡片 $\rightarrow$ 开发者工具链接入 (OpenRouter/OpenCode/Ollama) $\rightarrow$ 两层架构方案 $\rightarrow$ 原生可交互微工具 $\rightarrow$ 15+行 Python 生产代码 $\rightarrow$ 1:1 PAA 问答与 FAQ Schema）。
 3. **Content Angle (切入视角)**：从“模型发布、官方定价与社区踩坑（如马拉松思维、海外封号）”切入，升华至“工程落地与双层降本”，自然承接 APIVALE 的高可用免 KYC 网关方案。
@@ -92,14 +111,15 @@ description: >-
 
 ### 1. ABC + 截图高意图矩阵黄金公式
 ```text
-[核心模型主词]: [截图最高频利益词 (如 Release Date, Pricing)] & [社区/生态接入词 (如 Reddit Review / OpenRouter)] | [品牌钩子]
+[核心模型主词]: [截图衍生版/核心分支 (如 Flash)] + [高频利益词 (如 Differences, Benchmarks)] | [品牌钩子]
 ```
 * **MetaTitle 字符数硬指标**：**50–60 字符（max 600px）**，必须以 `| APIVALE` 结尾。
-  * *GLM-5.4 实战范例*：`GLM-5.4: Release Date, Pricing & Reddit Review | APIVALE`（**56 字符**，100% 覆盖截图核心词）。
+  * *GLM-5.4 vs 5.3 实战范例*：`GLM-5.4 vs 5.3: Flash Differences & Benchmarks | APIVALE`（**56 字符**，100% 覆盖截图核心下拉词 `Flash` 与主词）。
+  * *GLM-5.4 架构实战范例*：`GLM-5.4 Architecture: Benchmarks & API Pricing | APIVALE`（**56 字符**）。
 * **H1 标题**：$\le 80$ 字符，直击核心痛点，且主词短语与 Title 保持 100% 对称。
-  * *GLM-5.4 实战范例*：`# GLM-5.4: Release Date, Pricing, Reddit Review & OpenRouter Setup`（**64 字符**）。
-* **Meta Description**：**140–160 字符**，高 CTR 承诺，必须完整包含自然语言核心词句。
-  * *GLM-5.4 实战范例*：`Zhipu AI releases GLM-5.4: Loop Transformer architecture, official pricing vs GPT, Reddit feedback, OpenRouter access, and zero-KYC PayPal API integration.`（**155 字符**）。
+  * *GLM-5.4 vs 5.3 实战范例*：`# GLM-5.4 vs 5.3: Flash Differences, Loop Architecture & Benchmarks`（**65 字符**）。
+* **Meta Description**：**140–160 字符**，高 CTR 承诺，必须完整包含截图所反映的自然语言核心词句（包含衍生版、竞品对比与核心架构痛点）。
+  * *GLM-5.4 vs 5.3 实战范例*：`Compare GLM-5.4 vs 5.3 and Flash: Loop Transformer architecture differences, SWE coding benchmarks, token pricing vs GPT, and two-tier routing on APIVALE.`（**154 字符**）。
 
 ### 2. 避坑铁律：防 4 词截断与介词挤出法则 (The "on" Bug Fix)
 * **算法底层原理**：搜索引擎分词与 SEO 军师算法强制提取 **2~4 词组合** 作为推断词候选。
@@ -195,6 +215,54 @@ description: >-
 * **梯级控制策略**：
   * **纯 Markdown 正文有效阅读词数**：严格控制在 **1,500 ~ 1,750 词**！
   * **渲染全页词数**：加上直出的交互微工具、Mermaid 脚本与 JSON-LD Schema 后，全页总词数稳定在 2400~2600 词。纯文字绝不突破 1800 词上限，既保证了 GEO 深度，又达成 0 警告。
+
+### 5. 辅助模型与量词反客为主铁律 (挽回密度榜丢 3 分)
+* **警报来源**：军师提示 *“前排仍有不少与目标词无关的高频词，可对照下方密度榜调整文案”*、*“其它候选意图：「1m tokens」、「qwen 3 7 max」——一页只能做透一个主词，多意图会互相稀释。”* 并扣除整整 3 分！
+* **致命根源**：在撰写特定主模型（如 `GLM-5.4`）文章时，若在两层网关、Mermaid 架构图、费用计算器或 Python 代码中反复出现辅助竞品模型（如 `Qwen 3.7 Max` 重复 9 次）或单位量词（如 `1M Tokens` 重复 5 次）、网关 URL（`https://apivel.com/v1` 重复 8 次），它们会直接霸占 3-gram、4-gram、5-gram 密度榜前列，将主词挤到第 5~7 名开外甚至未上榜。
+* **黄金控频与反制军规**：
+  1. **辅助竞品模型极简原则**：除基准评测对比表格（1 次）和两层路由说明（1 次）外，正文其余位置**严禁重复出现竞品全名**！全部替换为功能代词：
+     * ❌ `Qwen 3.7 Max ($0.25 in / $0.80 out)`
+     * 👉 `auxiliary workhorse models` / `secondary execution tier` / `high-throughput endpoints`。
+  2. **量词与 URL 降噪**：
+     * ❌ `Input Price (Per 1M Tokens)` $\rightarrow$ 👉 `Input Price (Per Million Tokens)`；
+     * ❌ 8 次手写 `https://apivel.com/v1` $\rightarrow$ 👉 `cloud gateway (apivel.com/v1)` 或 `our unified endpoint`。
+  3. **主实体 2~5 词组绝对垄断矩阵**：
+     * **2-grams 榜首**：`[model] [sub-version]`（如 `glm-5 4`，密度严控在 2.2%~2.7%）；
+     * **3-grams 榜首**：`[model] [sub-version] architecture`（必须斩获 #1）；
+     * **4-grams 榜首**：`[model] [sub-version] loop transformer` / `[model] [sub-version] architecture benchmarks`（包揽 #1 和 #2）；
+     * **5-grams 榜首**：`[model] [sub-version] loop transformer architecture`（斩获 #1）。
+  4. **达成结果**：密度榜位置加权打分满分（22/22 分），全额夺回 3 分！
+
+### 6. 泛新闻词声明陷阱与“赛道错位”防爆军规 (消除 ⚠ 赛道错位，挽回 URL 丢分)
+* **警报来源**：军师提示 *“⚠ 赛道错位：「[model] release」的第一页与本页主题几乎无关（前十标题基本不含本页话题词）——这个词在谷歌里已被别的含义占据，不是本页的赛道”*。
+* **致命根源**：虽然 SERP 截图中有 `[model] release date`，但若在 Title 和 H1 前置位紧跟 `Release Date`（如 `GLM-5.4: Release Date...`），分词器会将 `[model] release` 提取为站长声明的首要核心词。而在 Google US，`release` 被官方开源仓库（GitHub）、Hugging Face 权重下载和 ArXiv 学术通报彻底垄断。我们的商业评测和 API 落地页去争抢该词会被直接判定为“赛道错位”！同时，URL 是 `...-architecture-benchmarks-api`，根本没有 `release`，直接导致 URL 关键词覆盖度暴跌至 33%（丢 1.3 分），Description 单词命中率也丢 1.3 分！
+* **必胜对齐军规**：
+  1. **Title/H1 前置位坚决锁定工程与商业主意图**：
+     * 必须以 `Architecture`, `Benchmarks`, `API Pricing`, `Reddit Review` 领跑！
+     * *实战黄金标题*：`GLM-5.4 Architecture: Benchmarks & API Pricing | APIVALE`（56 字符）。
+  2. **意图满足与声明隔离**：
+     * 截图中的 `release date`、`when is [model] coming out` 依然在正文前两段以倒金字塔首句事实回答（如 *"On November 23, 2026, Zhipu AI officially rolled out..."*），原地满足用户检索意图与 GEO 引用；
+     * 但**绝不允许 `release` 出现在 Title/H1 的首要声明位**！
+  3. **URL 覆盖度 100% 闭环**：
+     * URL 中的每一个实词（如 `architecture`、`benchmarks`、`api`）必须完整回显在 Title、H1 和 Meta Description 中，确保 URL 覆盖度从 33% 飙升至 100%！
+
+### 7. 硅谷技术博客原生“去翻译腔”规范 (Banish Translationese)
+* **严苛准则**：APIVALE 的受众是全球资深 AI 工程师、独立黑客与 CTO。文章必须展现纯正硅谷资深架构师（Senior Systems Architect）的专业语感，坚决杜绝生硬机器直译（Chinglish）与明显的 AI 提示词泄露（Prompt Leaks）。
+* **四大去翻译腔对照红线**：
+  1. **概念误译直译（Banish Literal Chinglish）**：
+     * ❌ `autonomous developers` $\rightarrow$ 👉 `engineers running autonomous agent workflows`
+     * ❌ `scaling physical weights` $\rightarrow$ 👉 `bloating raw parameter counts into multi-trillion territory`
+     * ❌ `before syntax emission starts` $\rightarrow$ 👉 `before code emission begins` / `before the first token streams`
+  2. **机械 SEO 报菜名泄露（Banish Robot-like SEO Leaks）**：
+     * ❌ `To address the core Google PAA query "Is GLM cheaper than GPT?", the matrix below...` $\rightarrow$ 👉 `When evaluating total cost of ownership against OpenAI and Anthropic flagships, how does the model compare on real-world engineering workloads? The matrix below benchmarks verified coding metrics...`
+     * ❌ `Search queries highlight intense interest in lighter checkpoints like...` $\rightarrow$ 👉 `Beyond the flagship checkpoint, the community is watching closely for lightweight variants like...`
+     * ❌ `Developers frequently query how to access the model...` $\rightarrow$ 👉 `With new model checkpoints rolling out, engineers want to connect the model to terminal toolchains...`
+  3. **语义重叠与词汇搭配失准（Banish Unnatural Collocations）**：
+     * ❌ `recurrent layer looping` $\rightarrow$ 👉 `weight-tied recurrent execution`
+     * ❌ `triggers a marathon thinking cooldown` $\rightarrow$ 👉 `triggers an unexpected thinking latency delay` / `reasoning timeout`
+     * ❌ `while maintaining agile inference economics` $\rightarrow$ 👉 `while keeping serving latency and inference costs manageable`
+  4. **真实社区痛点描述（Native Authenticity）**：
+     * 用真实海外开发者的语调描述银行卡拒付、SMS (+86) 短信验证与风控拦截，展现切身体会的技术共鸣。
 
 ---
 
