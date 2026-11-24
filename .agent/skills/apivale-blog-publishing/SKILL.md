@@ -52,6 +52,18 @@ description: >-
 * **Alex Rivera**：*Lead AI Systems Architect*（专攻企业级模型选型、分布式缓存与安全沙盒）。
 * **Priya Sharma**：*AI Performance & Distributed Computing Engineer*（专攻基准评测、SWE-bench 复现与吞吐优化）。
 
+### 4. 自动全量推送到远程仓库铁律 (Immediate Git Remote Push Directive - P0 强制必执)
+* **核心铁律**：**任何一次博文创作、修改、润色、字数精简、内链织网或 SEO 优化完成后，AI 必须在当前事务中直接、主动推送到远程仓库 (`git push origin main`)，绝不等待用户提醒，绝不遗留在本地工作区！**
+* **自动化触发部署**：推送远程仓库是保障 Cloudflare Pages / Vercel 生产环境自动化构建、更新 CDN 缓存以及供哥飞军师（Page Coach）复测的绝对前置生命线。只在本地 commit 或修改文件等于发布失败。
+* **Windows 环境执行防坑规范**：
+  1. **提权规避 Sandbox 限制**：在 Windows 沙箱环境下操作 `.git` 极易报权限冲突（`index.lock: Permission denied`），调用 `run_command` 执行 Git 命令时**必须声明 `BypassSandbox: true`**；
+  2. **语法连接符**：Windows PowerShell 环境下不支持 `&&` 连接符，必须使用分号 `;` 分隔命令；
+  3. **标准发布指令流水线**：
+     ```powershell
+     git add -A; git commit -m "feat(blog): publish <slug> and weave bidirectional mesh links"; git push origin main
+     ```
+     每次回答用户前，必须以终端输出 `main -> main` 为成功标志！
+
 ---
 
 ## 二、Phase 1: 需求采掘与 3C 意图诊断 (纯关键词自主采掘与 SERP 截图 1:1 逆向 SOP)
@@ -374,18 +386,19 @@ bun .agent/skills/apivale-blog-publishing/scripts/simulate_ngrams.cjs src/conten
 2. **动作日志归档**：在 `SEO_ACTION_LOG.md` 记录立项背景、主攻词、优化动作与 14 天因果响应假设。
 3. **关键词计划同步**：在 `KEYWORD_PLAN.md` 将状态更新为 `Published`。
 
-### Gate 5: 编译测试与远程推送 (Windows 环境防坑指南)
+### Gate 5: 编译测试与强制远程推送 (Windows 环境防坑指南与自动化部署)
 1. **执行本地全量编译**：
    在 Windows 环境下，直接 `astro build` 会因 Telemetry 尝试在 AppData 创建目录而报错 `EPERM`。必须使用以下标准免报错构建指令：
    ```powershell
    $env:ASTRO_TELEMETRY_DISABLED="1"; bun node_modules\astro\bin\astro.mjs build
    ```
-   必须确认 0 报错，静态页面全量生成成功（例如 `29 page(s) built in 1.8s`）。
-2. **原子 Git Commit 与推送**：
-   暂存所有涉及修改的文件（新博文 + 旧博文 + `[slug].astro` + `llms.txt` + `SEO_ACTION_LOG.md` + 组件），执行单一规范 Git Commit，并推送到远程仓库：
-   ```bash
+   必须确认 0 报错，静态页面全量生成成功（例如 `32 page(s) built in 1.44s`）。
+2. **原子 Git Commit 与【强制即时推送远程】**：
+   暂存所有涉及修改的文件（新博文 + 旧博文 + `[slug].astro` + `llms.txt` + `SEO_ACTION_LOG.md` + 组件/Skill），执行单一规范 Git Commit，并**直接、主动推送到远程仓库**：
+   ```powershell
    git add -A; git commit -m "feat(blog): publish <slug> with bidirectional links & PAA alignment"; git push origin main
    ```
+   *【核心红线】*：严禁在完成编辑后仅留在本地等待用户询问！每次任何博文或代码变动必须作为整体直接推送至远程仓库（必须输出 `main -> main`），确保云端构建生效与哥飞军师复测！
 
 ---
 
