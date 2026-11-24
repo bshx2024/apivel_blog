@@ -24,7 +24,7 @@ keyTakeaways:
   <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Definition</span>
   <div class="mt-1 text-md font-semibold text-white">Gemini 4 Argon (gemini-4-argon)</div>
   <p class="mt-2 text-sm text-gray-300">
-    <strong>Gemini 4 Argon</strong> is Google's frontier reasoning model for long-horizon software engineering in Google Antigravity. While leading DeepSWE benchmarks, its aggressive token burn and scheduled price hike lead developers toward multi-model routing gateways like <a href="https://apivel.com/?redirect=/blog/gemini-4-argon-coding-test-review" class="text-indigo-400 hover:underline font-semibold">APIVALE</a>.
+    <strong>Gemini 4 Argon</strong> is Google's frontier reasoning model for long-horizon software engineering in Google Antigravity. While leading DeepSWE benchmarks, its aggressive token burn and scheduled price hike lead developers toward multi-model routing gateways like <a rel="nofollow" href="https://apivel.com/?redirect=/blog/gemini-4-argon-coding-test-review" class="text-indigo-400 hover:underline font-semibold">APIVALE</a>.
   </p>
 </div>
 
@@ -273,7 +273,7 @@ def run_coding_task(prompt: str) -> str:
   <div class="border border-gray-800 bg-gray-900/60 rounded-xl p-5">
     <div class="font-semibold text-white text-base">What is the best cost-effective alternative to Gemini 4 Argon for coding?</div>
     <div class="mt-2 text-sm text-gray-300 leading-relaxed">
-      A Two-Tier Routing Strategy delivers optimal balance: keep Argon for root architecture while offloading 80% of routine coding to Qwen 3.7 Max ($0.48/M) and DeepSeek V4 ($0.28/M) via <a href="https://apivel.com/?redirect=/blog/gemini-4-argon-coding-test-review" class="text-indigo-400 hover:underline">APIVALE</a>, saving up to 85% with zero KYC.
+      A Two-Tier Routing Strategy delivers optimal balance: keep Argon for root architecture while offloading 80% of routine coding to Qwen 3.7 Max ($0.48/M) and DeepSeek V4 ($0.28/M) via <a rel="nofollow" href="https://apivel.com/?redirect=/blog/gemini-4-argon-coding-test-review" class="text-indigo-400 hover:underline">APIVALE</a>, saving up to 85% with zero KYC.
     </div>
   </div>
 </div>
@@ -336,7 +336,7 @@ def run_coding_task(prompt: str) -> str:
     </div>
   </div>
   <div class="flex items-center justify-center gap-4 flex-wrap">
-    <a href="https://apivel.com/sign-up?redirect=/blog/gemini-4-argon-coding-test-review" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm px-6 py-3 rounded-xl shadow-lg transition-all">Claim $0.20 Free Starter Credit &rarr;</a>
-    <a href="https://apivel.com/pricing?redirect=/blog/gemini-4-argon-coding-test-review" class="bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 font-semibold text-sm px-6 py-3 rounded-xl transition-all">Explore Transparent Pricing</a>
+    <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/gemini-4-argon-coding-test-review" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm px-6 py-3 rounded-xl shadow-lg transition-all">Claim $0.20 Free Starter Credit &rarr;</a>
+    <a rel="nofollow" href="https://apivel.com/pricing?redirect=/blog/gemini-4-argon-coding-test-review" class="bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 font-semibold text-sm px-6 py-3 rounded-xl transition-all">Explore Transparent Pricing</a>
   </div>
 </div>

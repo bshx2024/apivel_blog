@@ -26,7 +26,7 @@ keyTakeaways:
     <li><strong>YAGNI Enforcer:</strong> The open-source <a href="https://github.com/DietrichGebert/ponytail" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline font-semibold">Ponytail GitHub skill</a> forces coding agents to think like the "laziest senior developer", eliminating code bloat and unneeded dependencies.</li>
     <li><strong>Multi-IDE Support:</strong> Packaged for Claude Code via <code>/plugin</code>, this framework easily ports to Cursor, Windsurf, and Copilot through <code>.cursorrules</code>.</li>
     <li><strong>Verified Efficiency:</strong> Independent SWE-bench tests show Ponytail cuts token consumption by <strong>10% to 26%</strong> and reduces code volume by 15% to 54%.</li>
-    <li><strong>Compounded Savings:</strong> Pair the prompt with <a href="https://apivel.com/sign-up?redirect=/blog/ponytail-github-skill-install-review" class="text-emerald-400 hover:underline font-semibold">APIVALE's high-reasoning models (Qwen 3.7 Max & DeepSeek V4)</a> to slash coding expenses by over 85% via PayPal checkout.</li>
+    <li><strong>Compounded Savings:</strong> Pair the prompt with <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/ponytail-github-skill-install-review" class="text-emerald-400 hover:underline font-semibold">APIVALE's high-reasoning models (Qwen 3.7 Max & DeepSeek V4)</a> to slash coding expenses by over 85% via PayPal checkout.</li>
   </ul>
 </div>
 

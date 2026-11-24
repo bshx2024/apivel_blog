@@ -26,7 +26,7 @@ keyTakeaways:
     <li><strong>Speed Breakthrough:</strong> GPT-6.1 Terra processes agentic workflows up to 3x faster than GPT-6.1 Sol, dropping multi-step task execution from 15 minutes down to ~1 minute.</li>
     <li><strong>Token Economics:</strong> Standard API pricing is set at <strong>$1.00/1M input</strong> and <strong>$5.00/1M output tokens</strong>, reducing raw invocation cost by 50% compared to Sol.</li>
     <li><strong>The Reasoning Trade-off:</strong> High throughput introduces notable "lazy code" behavior and early subtask termination on complex multi-file engineering problems.</li>
-    <li><strong>Drop-in Frontier Alternatives:</strong> Developers requiring zero-truncation reasoning can route seamlessly to <strong>Qwen 3.7 Max</strong> and <strong>DeepSeek V4</strong> via <a href="https://apivel.com/sign-up?redirect=/blog/openai-6-1-terra-vs-sol-benchmark-pricing" class="text-emerald-400 hover:underline font-semibold">APIVALE using PayPal checkout and a $0.20 free signup trial</a>.</li>
+    <li><strong>Drop-in Frontier Alternatives:</strong> Developers requiring zero-truncation reasoning can route seamlessly to <strong>Qwen 3.7 Max</strong> and <strong>DeepSeek V4</strong> via <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/openai-6-1-terra-vs-sol-benchmark-pricing" class="text-emerald-400 hover:underline font-semibold">APIVALE using PayPal checkout and a $0.20 free signup trial</a>.</li>
   </ul>
 </div>
 
@@ -399,10 +399,10 @@ Explore related frontier model benchmarks across the APIVALE platform:
     <div class="cta-badge">💳 Instant PayPal Checkout • Zero KYC • Global Cards</div>
   </div>
   <div class="cta-button-group">
-    <a href="https://apivel.com/pricing?redirect=/blog/openai-6-1-terra-vs-sol-benchmark-pricing" class="cta-btn cta-btn-primary">
+    <a rel="nofollow" href="https://apivel.com/pricing?redirect=/blog/openai-6-1-terra-vs-sol-benchmark-pricing" class="cta-btn cta-btn-primary">
       Claim +50% Deposit Bonus ($5 → $7.50) →
     </a>
-    <a href="https://apivel.com/sign-up?redirect=/blog/openai-6-1-terra-vs-sol-benchmark-pricing" class="cta-btn cta-btn-secondary">
+    <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/openai-6-1-terra-vs-sol-benchmark-pricing" class="cta-btn cta-btn-secondary">
       Claim $0.20 Free Trial (No Card Needed) →
     </a>
   </div>

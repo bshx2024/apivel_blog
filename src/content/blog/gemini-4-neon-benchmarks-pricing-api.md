@@ -195,7 +195,7 @@ Use the live simulator below to calculate your team's monthly token expenditure 
     <div class="text-slate-300 text-center sm:text-left">
       Estimated Monthly Dollar Savings: <strong id="neonDollarSavings" class="text-cyan-300 font-mono text-sm">$111.82/mo</strong>.
     </div>
-    <a href="https://apivel.com/sign-up?redirect=/blog/gemini-4-neon-benchmarks-pricing-api" class="px-4 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold transition whitespace-nowrap">
+    <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/gemini-4-neon-benchmarks-pricing-api" class="px-4 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold transition whitespace-nowrap">
       Deploy Smart Two-Tier Gateway &rarr;
     </a>
   </div>
@@ -404,10 +404,10 @@ This architecture guarantees 100% operational uptime for automated CI runners an
     </div>
 
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a href="https://apivel.com/sign-up?redirect=/blog/gemini-4-neon-benchmarks-pricing-api" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm transition shadow-lg shadow-cyan-500/20">
+      <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/gemini-4-neon-benchmarks-pricing-api" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm transition shadow-lg shadow-cyan-500/20">
         Claim $0.20 Free Trial &rarr;
       </a>
-      <a href="https://apivel.com/pricing?redirect=/blog/gemini-4-neon-benchmarks-pricing-api" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 text-white font-semibold text-sm border border-slate-700 transition">
+      <a rel="nofollow" href="https://apivel.com/pricing?redirect=/blog/gemini-4-neon-benchmarks-pricing-api" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 text-white font-semibold text-sm border border-slate-700 transition">
         Explore Model Pricing
       </a>
     </div>

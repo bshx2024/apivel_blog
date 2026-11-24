@@ -26,7 +26,7 @@ keyTakeaways:
     <li><strong>2.8T MoE Backbone:</strong> Kimi K3.1 Pro deploys a 2.8T MoE architecture (~104B active) with a native 1,000,000-token window.</li>
     <li><strong>Near-Opus Precision:</strong> Scores <strong>65.7% on Terminal-Bench 4.0</strong>, challenging closed frontier models and beating GPT-6 Astra (58.2%).</li>
     <li><strong>Commercial Token Rates:</strong> Priced at <strong>$2.00/1M input</strong> and <strong>$10.00/1M output</strong>, with a low-latency Highspeed variant ($20.00/1M output).</li>
-    <li><strong>Global Zero-KYC Access:</strong> Bypass mainland +86 phone and card checks via <a href="https://apivel.com/sign-up?redirect=/blog/kimi-k3-1-pro-pricing-benchmarks-api-access" class="text-emerald-400 hover:underline font-semibold">APIVALE with instant PayPal billing and a $0.20 free trial</a>.</li>
+    <li><strong>Global Zero-KYC Access:</strong> Bypass mainland +86 phone and card checks via <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/kimi-k3-1-pro-pricing-benchmarks-api-access" class="text-emerald-400 hover:underline font-semibold">APIVALE with instant PayPal billing and a $0.20 free trial</a>.</li>
   </ul>
 </div>
 

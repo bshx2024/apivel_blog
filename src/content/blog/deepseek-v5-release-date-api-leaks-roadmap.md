@@ -23,7 +23,7 @@ keyTakeaways:
 <div class="my-6 border-l-4 border-indigo-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Definition</span>
   <div class="mt-1 text-md font-semibold text-white">DeepSeek V5 Architecture & Gateway Access</div>
-  <p class="mt-2 text-sm text-gray-300"><strong>DeepSeek V5</strong> is the upcoming next-generation Mixture-of-Experts (MoE) foundation model from DeepSeek, featuring verified test fixtures <code>deepseek-v5-open</code> and <code>deepseek-v5-next</code> in upstream repositories. Through <a href="https://apivel.com/?redirect=/blog/deepseek-v5-release-date-api-leaks-roadmap" class="text-indigo-400 hover:underline font-semibold">apivel</a>, global developers can access active production endpoints like <a href="/blog/deepseek-v4-1-flash-1017-api-setup/" class="text-indigo-400 hover:underline font-semibold">DeepSeek V4.1 Flash</a> and upcoming V5 tiers with native OpenAI and Anthropic protocol translation, zero KYC, and instant PayPal billing.</p>
+  <p class="mt-2 text-sm text-gray-300"><strong>DeepSeek V5</strong> is the upcoming next-generation Mixture-of-Experts (MoE) foundation model from DeepSeek, featuring verified test fixtures <code>deepseek-v5-open</code> and <code>deepseek-v5-next</code> in upstream repositories. Through <a rel="nofollow" href="https://apivel.com/?redirect=/blog/deepseek-v5-release-date-api-leaks-roadmap" class="text-indigo-400 hover:underline font-semibold">apivel</a>, global developers can access active production endpoints like <a href="/blog/deepseek-v4-1-flash-1017-api-setup/" class="text-indigo-400 hover:underline font-semibold">DeepSeek V4.1 Flash</a> and upcoming V5 tiers with native OpenAI and Anthropic protocol translation, zero KYC, and instant PayPal billing.</p>
 </div>
 
 Developer excitement around **DeepSeek V5** has erupted worldwide following GitHub harness code discoveries. As AI engineers evaluate production pipelines across [DeepSeek V4.1 Flash 1017](/blog/deepseek-v4-1-flash-1017-api-setup/), [Qwen 4-Max](/blog/qwen-4-release-date-api-roadmap/), and [Gemini 4 Carbon](/blog/gemini-4-carbon-price-benchmarks-api/), this guide analyzes verified repository leaks, projected Flash vs. Pro tiers, benchmark baselines, and practical API routing today.
@@ -329,7 +329,7 @@ Official platforms require domestic phone verification. Through apivel (`https:/
     <div class="cta-badge">💳 PayPal & Global Cards (0 Extra FX)</div>
   </div>
   <div class="cta-actions">
-    <a href="/pricing?redirect=/blog/deepseek-v5-release-date-api-leaks-roadmap" class="cta-btn primary">Claim +50% Bonus ($5 → $7.50)</a>
-    <a href="/sign-up?redirect=/blog/deepseek-v5-release-date-api-leaks-roadmap" class="cta-btn secondary">Get $0.20 Free Trial (Zero Card)</a>
+    <a rel="nofollow" href="/pricing?redirect=/blog/deepseek-v5-release-date-api-leaks-roadmap" class="cta-btn primary">Claim +50% Bonus ($5 → $7.50)</a>
+    <a rel="nofollow" href="/sign-up?redirect=/blog/deepseek-v5-release-date-api-leaks-roadmap" class="cta-btn secondary">Get $0.20 Free Trial (Zero Card)</a>
   </div>
 </div>

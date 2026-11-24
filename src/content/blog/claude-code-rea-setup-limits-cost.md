@@ -24,7 +24,7 @@ keyTakeaways:
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
     <li><strong>Fix Agent Halt Failures:</strong> In <strong>Claude Code REA</strong> workflows, the dreaded <code>claude reached its tool-use limit for this turn</code> error triggers when Ghidra decompilation queries exhaust Anthropic's 15-iteration per-turn budget during recursive pointer traces.</li>
-    <li><strong>Bypass Response Truncation:</strong> The <code>claude reached its max length for this message</code> error occurs when disassembled symbol dumps exceed standard 200k context windows; routing through <a href="https://apivel.com/sign-up?redirect=/blog/claude-code-rea-setup-limits-cost" class="text-emerald-400 hover:underline font-semibold">apivel</a> unlocks unthrottled 1M context with Qwen 3.8.</li>
+    <li><strong>Bypass Response Truncation:</strong> The <code>claude reached its max length for this message</code> error occurs when disassembled symbol dumps exceed standard 200k context windows; routing through <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/claude-code-rea-setup-limits-cost" class="text-emerald-400 hover:underline font-semibold">apivel</a> unlocks unthrottled 1M context with Qwen 3.8.</li>
     <li><strong>85% to 95% Token Cost Arbitrage:</strong> Reverse-engineering a 15MB binary with REA consumes 15M–25M tokens ($45–$75+ on Claude Sonnet 5). Routing via apivel to DeepSeek V4 ($0.14/1M) or Qwen 3.8 Max ($0.48/1M) slashes project expenses to under $3.50 with instant PayPal checkout.</li>
   </ul>
 </div>
@@ -237,10 +237,10 @@ apivel officially supports instant **PayPal Checkout**, international credit car
     <div class="cta-badge">💳 Instant PayPal Checkout • Zero KYC • Global Cards</div>
   </div>
   <div class="cta-button-group">
-    <a href="https://apivel.com/pricing?redirect=/blog/claude-code-rea-setup-limits-cost" class="cta-btn cta-btn-primary">
+    <a rel="nofollow" href="https://apivel.com/pricing?redirect=/blog/claude-code-rea-setup-limits-cost" class="cta-btn cta-btn-primary">
       Claim +50% Deposit Bonus ($5 → $7.50) →
     </a>
-    <a href="https://apivel.com/sign-up?redirect=/blog/claude-code-rea-setup-limits-cost" class="cta-btn cta-btn-secondary">
+    <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/claude-code-rea-setup-limits-cost" class="cta-btn cta-btn-secondary">
       Get $0.20 Free Quota (No Card Needed) →
     </a>
   </div>

@@ -30,7 +30,7 @@ keyTakeaways:
     <li><strong>OmniRoute Claude Code Setup:</strong> Point your CLI agent to <code>http://127.0.0.1:20128/v1</code> or <code>http://localhost:20128/v1</code> via <code>ANTHROPIC_BASE_URL</code> to pool model quotas and avoid sudden Anthropic rate limits.</li>
     <li><strong>Fixing API Not Work &amp; Port 20128 Errors:</strong> Resolve <code>connection refused</code> by diagnosing IPv6 vs. IPv4 loopback binding (switching from <code>http://localhost:20128</code> to <code>http://127.0.0.1:20128</code>) and releasing orphaned socket listeners.</li>
     <li><strong>Zero Rate Limit Coding:</strong> High-throughput coding loops easily trigger 429 errors on free tiers; configuring automatic cascading to APIVALE provides instant cloud failover.</li>
-    <li><strong>Zero-DevOps Cloud Alternative:</strong> Skip background daemon crashes and expired keys by using <a href="https://apivel.com/sign-up?redirect=/blog/omniroute-claude-code-setup/" class="text-emerald-400 hover:underline font-semibold">APIVALE ($0.20 Free Credit)</a> with instant PayPal billing and 99.99% uptime.</li>
+    <li><strong>Zero-DevOps Cloud Alternative:</strong> Skip background daemon crashes and expired keys by using <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/omniroute-claude-code-setup/" class="text-emerald-400 hover:underline font-semibold">APIVALE ($0.20 Free Credit)</a> with instant PayPal billing and 99.99% uptime.</li>
   </ul>
 </div>
 

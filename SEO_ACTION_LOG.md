@@ -32,6 +32,28 @@
 
 ## 📅 apivel.com SEO 动作记录表 (2026年)
 
+### 2026-11-24 (全站带参数 CTA 转化外链 nofollow 深度止血、URL 蚕食与 PageRank 外泄封堵、Top 1~5 文章 Title CTR 磁吸调优、GPT 6.2 Sol 排名抢救与原子推送)
+* **分类**：⚙️ [技术 SEO 深度止血、Robots 阻断索引漏洞封堵、全站 79 处 CTA 参数外链 rel=nofollow 强制补齐、SERP 点击率 CTR 磁吸优化、URL 关键词对齐与掉队文章权重注入]
+* **动作详情**：
+  * **背景与 GSC 报表异动溯源**：
+    1. **参数 URL 蚕食事故**：GSC 过去 24 小时报表排查发现，`https://apivel.com/pricing?redirect=...`（排名第 2.0）与 `https://apivel.com/pricing?redirect=/openrouter-pricing/`（排名第 3.0）反客为主出现在 Google 展现列表中，抢占核心品牌词曝光并稀释爬虫预算。根因定位为全站 29 个文件中 79 处指向 `/pricing?redirect=...` 和 `/sign-up?redirect=...` 的内部 CTA 链接缺失 `rel="nofollow"`，且受 `robots.txt` 的 `Disallow: /pricing?*` 阻断，导致 Google 无法读取 canonical 标签进而强行将带参数的纯裸链接收录入库；
+    2. **全站 0 点击 (CTR 0%) 优化**：针对位居搜索前 5 名的高位文章（Gemini 4 Carbon 排名第 1.0、Claude Opus 5.5 排名第 3.0、LongCat 2.5 排名第 3.0），Title/Description 缺乏动作激发词与强吸引力钩子，进行磁吸重构；
+    3. **掉队文章拯救**：`/blog/gpt-6-2-sol-api-pricing-benchmarks/` 掉落至 Position 53.0（第 6 页），根因为文章 Title/H1 原文为 `Sol 6.1 vs 6.2`，与 URL 核心关键词 `gpt-6-2-sol-api-pricing-benchmarks` 严重脱节（脱靶扣分）。
+  * **技术改造与内容外科手术落地**：
+    1. **全站 nofollow 止血**：批量重构 `src/content/blog/` 下全部 27 篇博客及 `src/components/` 相关组件，强制注入 `rel="nofollow"`（共修复 79 处遗漏链接），彻底切断 Googlebot 对参数化 URL 的权重传递与发现链条；
+    2. **Top 1~5 磁吸 Title 与 Description 升级**：
+       - `gemini-4-carbon-price-benchmarks-api`: MetaTitle 优化为 `Gemini 4 Carbon API: Price, Benchmarks & Access | APIVALE`（56 字符），引入动作动词 `Get Gemini 4 Carbon API access...`；
+       - `claude-opus-5-5-price-limits-claude-code`: MetaTitle 优化为 `Claude Opus 5.5 Price, Limits & Claude Code Fix | APIVALE`（57 字符），品牌后缀统一对齐为 `| APIVALE`，引入 `Bypass Claude Opus 5.5 weekly rate limits...`；
+       - `longcat-2-5-preview-benchmark-api-reddit`: MetaTitle 优化为 `LongCat 2.5 API Setup: Benchmarks & Reddit Review | APIVALE`（57 字符），消除连字符分词陷阱；
+    3. **GPT 6.2 Sol 赛道重轨与内链强化 (Rescue Pos 53)**：
+       - Title / MetaTitle 重构为 `GPT 6.2 Sol API: Pricing, Benchmarks & Sol 6.1 Differences`（57 字符），100% 覆盖 URL 核心单词；
+       - 同步在 `gpt-6-2-astra-vs-opus-5-5-differences.md` 中强化精确锚文本内链 `[GPT-6.2 Sol API Pricing & Benchmarks](/blog/gpt-6-2-sol-api-pricing-benchmarks/)`；
+       - 本地 `audit_article.cjs` 验证通过，0 Errors, 0 Warnings。
+* **14 天因果响应假设**：
+  * GSC 中带 `?redirect=` 的错误收录将在 7–14 天内逐渐从展示列表中被 Googlebot 清除淘汰，权重回流至 `/pricing` 与博客核心文章；
+  * Top 1~5 文章 CTR 从 0% 恢复至 8%~15% 正常健康区间；
+  * `GPT 6.2 Sol` 页面在 URL 关键词 100% 对齐及内链提权后，将在 14 天内从第 53 位大幅回升至前 15 名。
+
 ### 2026-11-24 (Freebuff AI Coding Review 全面评测首发、广告变现机制与会话限额解构、多智能体自动代码审查深度审计、私有双层网关接入与 5-Gate 原子发布)
 * **分类**：📝 [AI 编程工具深度评测、多智能体自动化代码审查机制、免订阅广告变现模式剖析、代码库隐私安全审计、私有化双层网关落地方案、5-Gate 原子发布与双向织网]
 * **动作详情**：

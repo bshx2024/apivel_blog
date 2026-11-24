@@ -25,7 +25,7 @@ keyTakeaways:
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
     <li><strong>428B MoE / 23B Active:</strong> MiniMax M3.1 Flash uses a sparse Mixture-of-Experts architecture — 428B total parameters with ~23B active per forward pass, delivering frontier coding quality at flash-tier pricing ($0.15/M input, $0.60/M output).</li>
     <li><strong>Benchmark Verdict:</strong> Scores <strong>73.7% on DeepSWE v1.1</strong>, outperforming DeepSeek V4 Flash (~68.0%) on agentic software development, alongside a top-tier <strong>76.2 on BankerToolBench</strong> for multi-step tool calls.</li>
-    <li><strong>Ex-"Space Bunny":</strong> Processed 200T+ tokens freely during its stealth OpenRouter phase. The official production checkpoint is now token-billed; <a href="https://apivel.com/sign-up?redirect=/blog/minimax-m3-flash-api-setup-benchmark" class="text-violet-400 hover:underline font-semibold">apivel</a> provides a $0.20 free signup trial with zero KYC.</li>
+    <li><strong>Ex-"Space Bunny":</strong> Processed 200T+ tokens freely during its stealth OpenRouter phase. The official production checkpoint is now token-billed; <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/minimax-m3-flash-api-setup-benchmark" class="text-violet-400 hover:underline font-semibold">apivel</a> provides a $0.20 free signup trial with zero KYC.</li>
     <li><strong>Universal Compatibility:</strong> Connects directly to Claude Code CLI (<code>https://apivel.com/anthropic</code>) and Cursor / Windsurf (<code>https://apivel.com/v1</code>) in under 5 minutes.</li>
   </ul>
 </div>
@@ -229,10 +229,10 @@ print("Solution:", response.choices[0].message.content)
     <div class="cta-badge">💳 PayPal Instant Checkout • Zero KYC • Global Cards</div>
   </div>
   <div class="cta-button-group">
-    <a href="https://apivel.com/pricing?redirect=/blog/minimax-m3-flash-api-setup-benchmark" class="cta-btn cta-btn-primary">
+    <a rel="nofollow" href="https://apivel.com/pricing?redirect=/blog/minimax-m3-flash-api-setup-benchmark" class="cta-btn cta-btn-primary">
       Claim +50% Deposit Bonus ($5 → $7.50) →
     </a>
-    <a href="https://apivel.com/sign-up?redirect=/blog/minimax-m3-flash-api-setup-benchmark" class="cta-btn cta-btn-secondary">
+    <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/minimax-m3-flash-api-setup-benchmark" class="cta-btn cta-btn-secondary">
       Claim $0.20 Free Trial (No Card Needed) →
     </a>
   </div>

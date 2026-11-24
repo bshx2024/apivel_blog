@@ -26,7 +26,7 @@ keyTakeaways:
     <li><strong>The Leak Reality:</strong> Telemetry logs in late October 2026 confirmed <code>gpt-6.2-astra</code> in backend Codex analytics and v0 agent deployments while public menus show standard GPT-6 Astra.</li>
     <li><strong>Token Economics:</strong> At <strong>$2.50/1M input</strong> and <strong>$10.00/1M output</strong> with aggressive 30-minute cache retention, Astra workflows rapidly deplete developer quotas.</li>
     <li><strong>The 30-Second Polling Bug:</strong> Autonomous sub-agents trigger cache-read cost spikes by waking every 30 seconds, accelerating 5-hour limit exhaustion in Cursor and Claude Code.</li>
-    <li><strong>Production Fallback:</strong> Engineering teams route sub-tasks to <strong>Qwen 3.7 Max</strong> and <strong>DeepSeek V4</strong> via <a href="https://apivel.com/sign-up?redirect=/blog/gpt-6-2-astra-benchmarks-price-reddit" class="text-emerald-400 hover:underline font-semibold">APIVALE using PayPal checkout with a $0.20 free trial</a>.</li>
+    <li><strong>Production Fallback:</strong> Engineering teams route sub-tasks to <strong>Qwen 3.7 Max</strong> and <strong>DeepSeek V4</strong> via <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/gpt-6-2-astra-benchmarks-price-reddit" class="text-emerald-400 hover:underline font-semibold">APIVALE using PayPal checkout with a $0.20 free trial</a>.</li>
   </ul>
 </div>
 
@@ -364,10 +364,10 @@ Explore related engineering toolkits and model benchmarks on APIVALE to optimize
     </div>
   </div>
   <div class="cta-actions">
-    <a href="https://apivel.com/pricing?redirect=/blog/gpt-6-2-astra-benchmarks-price-reddit" class="cta-btn cta-btn-primary">
+    <a rel="nofollow" href="https://apivel.com/pricing?redirect=/blog/gpt-6-2-astra-benchmarks-price-reddit" class="cta-btn cta-btn-primary">
       Claim +50% Deposit Bonus ($5 → $7.50) →
     </a>
-    <a href="https://apivel.com/sign-up?redirect=/blog/gpt-6-2-astra-benchmarks-price-reddit" class="cta-btn cta-btn-secondary">
+    <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/gpt-6-2-astra-benchmarks-price-reddit" class="cta-btn cta-btn-secondary">
       Claim $0.20 Free Trial (No Card Needed) →
     </a>
   </div>

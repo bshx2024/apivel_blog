@@ -190,7 +190,7 @@ Evaluate how deploying a two-tier review pipeline reduces the **AI coding impact
     <div class="text-slate-300 text-center sm:text-left">
       Estimated Senior Hours Reclaimed: <strong id="hoursReclaimed" class="text-cyan-300 font-mono text-sm">28.8 hrs/mo</strong> (Over $3,600 in engineering value).
     </div>
-    <a href="https://apivel.com/sign-up?redirect=/blog/ai-coding-impact-senior-engineers" class="px-4 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold transition whitespace-nowrap">
+    <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/ai-coding-impact-senior-engineers" class="px-4 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold transition whitespace-nowrap">
       Deploy Two-Tier Gate &rarr;
     </a>
   </div>
@@ -360,10 +360,10 @@ By configuring the gateway to APIVALE, teams access DeepSeek V4 and Qwen 3.7 Max
     </div>
 
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a href="https://apivel.com/sign-up?redirect=/blog/ai-coding-impact-senior-engineers" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm transition shadow-lg shadow-cyan-500/20">
+      <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/ai-coding-impact-senior-engineers" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm transition shadow-lg shadow-cyan-500/20">
         Claim $0.20 Free Trial &rarr;
       </a>
-      <a href="https://apivel.com/pricing?redirect=/blog/ai-coding-impact-senior-engineers" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 text-white font-semibold text-sm border border-slate-700 transition">
+      <a rel="nofollow" href="https://apivel.com/pricing?redirect=/blog/ai-coding-impact-senior-engineers" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 text-white font-semibold text-sm border border-slate-700 transition">
         Explore Model Pricing
       </a>
     </div>
