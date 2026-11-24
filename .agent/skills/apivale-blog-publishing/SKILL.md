@@ -267,23 +267,27 @@ description: >-
   3. **URL 覆盖度 100% 闭环**：
      * URL 中的每一个实词（如 `differences`、`benchmarks`、`flash`）必须完整回显在 Title、H1 和 Meta Description 中，确保 URL 覆盖度从 33% 飙升至 100%！
 
-### 7. 硅谷技术博客原生“去翻译腔”规范 (Banish Translationese)
-* **严苛准则**：APIVALE 的受众是全球资深 AI 工程师、独立黑客与 CTO。文章必须展现纯正硅谷资深架构师（Senior Systems Architect）的专业语感，坚决杜绝生硬机器直译（Chinglish）与明显的 AI 提示词泄露（Prompt Leaks）。
-* **四大去翻译腔对照红线**：
-  1. **概念误译直译（Banish Literal Chinglish）**：
-     * ❌ `autonomous developers` $\rightarrow$ 👉 `engineers running autonomous agent workflows`
+### 7. 硅谷技术博客原生“去翻译腔”规范 (Banish Translationese Playbook)
+* **严苛准则**：APIVALE 的受众是全球资深 AI 工程师、独立黑客与 CTO。文章必须展现纯正硅谷资深架构师（Lead Infrastructure & AI Systems Architect）的专业语感，坚决杜绝生硬机器直译（Chinglish）、模版化 AI 转折套话与明显的 AI 提示词泄露（Prompt Leaks）。
+* **四大去翻译腔对照红线与重构实战**：
+  1. **开篇痛点切入（Banish Generic AI Transitions）**：
+     * ❌ `The developer evaluation of [Model A] vs [Model B] escalated following late releases. As software teams integrate autonomous CLI tools, choosing between these two intelligence tiers directly affects build throughput...`
+     * 👉 `Choosing between **[Model A] vs [Model B]** isn't just another benchmark vanity match—it fundamentally alters how terminal agents behave in production. As teams hand over repositories to autonomous CLI agents like Claude Code CLI, Cursor, and Windsurf, choosing a foundation model directly dictates whether background workers ship clean pull requests or silently drain your team's API budget before noon.`
+  2. **设计哲学与架构对比（Banish Passive & Academic Clichés）**：
+     * ❌ `Rather than competing strictly on parameter volume, [Model A] vs [Model B] highlights contrasting AI design philosophies. The fundamental architectural divergence between both flagships lies in how internal reasoning is computed and executed...`
+     * 👉 `At their core, **[Model A] vs [Model B]** represent two opposing bets on model scaling. Anthropic bet on massive parameter foundations, native tool use, and non-disableable adaptive thinking. Zhipu AI challenged linear parameter scaling by executing recurrent depth through shared weights in an iterative 28-layer Loop Transformer.`
+  3. **社区真实原声引言（Banish Sterile Reporting）**：
+     * ❌ `Practical deployment reports across r/ClaudeCode and r/LocalLLaMA surface key trade-offs between both architectures...`
+     * 👉 `Vendor benchmark cards don't capture the sheer frustration of watching a terminal agent stall on a single file edit. Community discussions across Reddit highlight where both models break down under real workloads:`
+  4. **跨国支付与生态摩擦（Banish Generic Friction Description）**：
+     * ❌ `Accessing either model through official single-vendor portals creates administrative friction. Subscribing to Chinese developer plans requires a domestic phone number (+86)...`
+     * 👉 `Running dual-model pipelines across international boundaries quickly runs into billing hurdles. Subscribing directly to domestic developer plans requires a domestic (+86) phone number for SMS verification and routinely rejects international Visa or Mastercard payments. On the flip side, official Western direct tiers enforce strict rolling token caps that lock out teams during heavy sprints. APIVALE eliminates the operational overhead via **PayPal Instant Checkout**, international credit cards, and Alipay with zero foreign exchange fees and no KYC gating.`
+  5. **底层技术概念地道对齐清单**：
+     * ❌ `recurrent layer looping` $\rightarrow$ 👉 `weight-tied recurrent execution`
      * ❌ `scaling physical weights` $\rightarrow$ 👉 `bloating raw parameter counts into multi-trillion territory`
      * ❌ `before syntax emission starts` $\rightarrow$ 👉 `before code emission begins` / `before the first token streams`
-  2. **机械 SEO 报菜名泄露（Banish Robot-like SEO Leaks）**：
-     * ❌ `To address the core Google PAA query "Is GLM cheaper than GPT?", the matrix below...` $\rightarrow$ 👉 `When evaluating total cost of ownership against OpenAI and Anthropic flagships, how does the model compare on real-world engineering workloads? The matrix below benchmarks verified coding metrics...`
-     * ❌ `Search queries highlight intense interest in lighter checkpoints like...` $\rightarrow$ 👉 `Beyond the flagship checkpoint, the community is watching closely for lightweight variants like...`
-     * ❌ `Developers frequently query how to access the model...` $\rightarrow$ 👉 `With new model checkpoints rolling out, engineers want to connect the model to terminal toolchains...`
-  3. **语义重叠与词汇搭配失准（Banish Unnatural Collocations）**：
-     * ❌ `recurrent layer looping` $\rightarrow$ 👉 `weight-tied recurrent execution`
      * ❌ `triggers a marathon thinking cooldown` $\rightarrow$ 👉 `triggers an unexpected thinking latency delay` / `reasoning timeout`
      * ❌ `while maintaining agile inference economics` $\rightarrow$ 👉 `while keeping serving latency and inference costs manageable`
-  4. **真实社区痛点描述（Native Authenticity）**：
-     * 用真实海外开发者的语调描述银行卡拒付、SMS (+86) 短信验证与风控拦截，展现切身体会的技术共鸣。
 
 ### 8. 带小数点模型版本号与连字符 Title/URL 分词冲突防爆铁律 (消除 URL 覆盖率 75% 丢分，直通 100%)
 * **警报来源**：军师提示 *“△ 关键词出现在 URL（域名或路径）（丢 0.5 分）：URL 中关键词覆盖 75%”*，且“推断词”栏显示截断短语如 `glm-5 4 vs 5 (TH)`。
@@ -296,6 +300,40 @@ description: >-
   1. **Title 和 H1 必须使用空格分隔**：写作 `GLM 5.4 vs 5.3`（空格分隔），严禁在模型名与带小数点的版本号之间使用连字符连接（如 ❌ `GLM-5.4` 👉 ✅ `GLM 5.4`）。
   2. **URL 词群 100% 逐词对称映射**：Title/H1 采用空格后，分词器提取出的 4 词组合为 `["glm", "5", "4", "vs"]`，在 URL 路径 `glm-5-4-vs-5-3-differences` 中 4/4 全部命中，URL 关键词覆盖度达成 100% 满分！
   3. **次要版本号自然闭环**：URL 中的 `5-3` 亦与正文次要版本号 `5.3` 保持语义对齐，全额夺回 0.5 分。
+
+### 9. 双前沿模型强强对决 (Multi-Model Frontier Duel) 军规级对齐技巧
+当主关键词属于**双前沿模型对比**（如 `GLM-5.4 vs Claude Opus 5.5`、`GPT-6.2 Astra vs Opus 5.5`）时，由于同时引入了两个自带小数点的重磅实体，极易触发“双重分词错位”、“双实体堆砌稀释”与“字数恶性膨胀”。必须执行以下 4 项对齐绝技：
+
+1. **双小数点实体分词与 URL 100% 映射**：
+   - 标题/H1 严禁写作 `GLM-5.4 vs Claude Opus 5.5`（连字符会锁死 `glm-5`），必须一律空格化：`GLM 5.4 vs Claude Opus 5.5`；
+   - URL 采用标准化全展开短横线路径：`/blog/glm-5-4-vs-claude-opus-5-5-benchmarks/`；
+   - 分词推断词提取 `["glm", "5", "4", "vs"]` 或 `["claude", "opus", "5", "5"]` 时，与 URL 的逐词命中率达成 100% 满分。
+2. **双实体 2-Gram 密度动态平衡术 (Dual 2-Gram Density Balancing)**：
+   - 单模型文章仅需防范单一模型的 2-gram 堆砌（如 `glm 5`）；但在双模型对比文章中，双方实体（如 `glm 5` 与 `opus 5`、`5 4` 与 `5 5`）极易同时冲破 3.5% 密度报警线；
+   - **黄金压制军规**：两方模型全称在正文仅作为对比段落主干，正文展开中必须轮流大量交替使用**功能性代词**：
+     - 指代 Anthropic 旗舰：`Anthropic's flagship`, `the autonomous model`, `the frontier specialist`；
+     - 指代 Zhipu AI 旗舰：`Zhipu AI's flagship`, `the recurrent model`, `the Loop Transformer model`；
+     - 共同指代：`both frontier tiers`, `both architectures`；
+     - 将双方各自的 2-gram 密度严格压制在 **2.4% ~ 2.7%** 黄金区间，彻底杜绝关键词堆砌报警。
+3. **精简标题树结构 (The 12–13 Headings Golden Rule)**：
+   - 双模型对比文章切忌层层嵌套 H3 子标题（严禁为每个模型的细枝末节设立 H3，防止标题数暴涨至 20+ 导致军师报“Heading Token 过多，语义树稀释”）；
+   - **黄金骨架**：全篇仅设 6~7 个核心 H2，H3 仅且只允许出现在：
+     1. 核心基准对比的 1 个子要点（如 `### SWE-bench Verified and Token Pricing Realities`）；
+     2. Google PAA 4 大原生问答（4 个 H3 必须 1:1 原文保留）；
+     全页总标题数精准控制在 **12 ~ 13 个**，语义树纯净度满分。
+4. **正文 8 大模块分节字数硬预算表 (Section Word Budgeting)**：
+   - 为确保纯正文词数在 **1,350 ~ 1,550 词**、渲染总 Token 严格在 **2,050 ~ 2,180**（防范超过 2,200 Token 主题稀释），撰写时必须按以下预算执行：
+     | 模块序号 | 核心模块内容 | 纯正文词数预算 | 关键功能与组件要求 |
+     | :--- | :--- | :--- | :--- |
+     | **Block 0** | Summary Box + 开篇背景 Hook | ~230–250 词 | 包含 1 秒 BLUF 结论、痛点 Hook、紧随 Mermaid 拓扑图 |
+     | **Block 1** | 核心架构对比 (H2) | ~180–200 词 | Loop Transformer 递归深度 vs 自适应思考机制 |
+     | **Block 2** | 基准跑分与中立对比表 (H2 + H3) | ~220–250 词 | SWE-bench、CursorBench 对比表 + Best For 客观列 |
+     | **Block 3** | Reddit 社区原声卡片与分析 (H2) | ~160–180 词 | r/ClaudeCode 速率配额 + r/LocalLLaMA 马拉松思维卡片 |
+     | **Block 4** | 跨国支付与生态摩擦突破 (H2) | ~100–120 词 | 解决 +86 短信与外卡拒付，引入 PayPal / 免 KYC 网关 |
+     | **Block 5** | 交互微工具区 (H2) | ~90–100 词 | 内嵌 `<input>` / `<select>` 计算器，纯 DOM 状态更新 |
+     | **Block 6** | 生产代码与 CLI 配置 (H2) | ~140–160 词 | 15+ 行防超时 Python 异步客户端 + CLI 环境变量 |
+     | **Block 7** | FAQ 4 大 PAA 原生问答 (H2 + 4x H3) | ~190–210 词 | 1:1 回答 PAA 问答，精炼直出结论，嵌入 FAQPage Schema |
+     | **合计** | **全篇纯 Markdown 有效可见词** | **1,350 ~ 1,550 词** | **渲染总 Token 严格在 2,050 ~ 2,180，全 Gates 满分通关** |
 
 ---
 
@@ -323,7 +361,7 @@ bun .agent/skills/apivale-blog-publishing/scripts/simulate_ngrams.cjs src/conten
 必须达成：
 * `0 Errors, 0 Warnings`；
 * Title 长度 $\le 80$ 字符；MetaTitle 50–60 字符；Meta Description 140–160 字符；
-* 正文可见词数严格在 **1,500 ~ 1,750 词**；
+* 正文可见词数严格在 **1,350 ~ 1,550 词**（确保渲染后全页总 Token $\le 2,200$，杜绝主题稀释扣分）；
 * 必须包含 `<input>` / `<select>` 与 `.cta-card`；
 * 严禁出现 Stripe 或 Crypto。
 
