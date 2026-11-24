@@ -50,6 +50,9 @@ let targetTopic = 'general';
 if (slugLower.includes('gpt-6-2-sol') || slugLower.includes('sol')) {
 	targetTopic = 'sol';
 	initialModel = 'gpt-6.2-sol';
+} else if (slugLower.includes('freebuff') || postMeta.includes('freebuff')) {
+	targetTopic = 'freebuff';
+	initialModel = 'deepseek-v4';
 } else if (slugLower.includes('senior') || slugLower.includes('ai-coding')) {
 	targetTopic = 'ai-coding';
 	initialModel = 'deepseek-v4';
@@ -528,6 +531,40 @@ const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.key
 							desc: '将常规子任务分流至通义千问与 DeepSeek V4，保留核心架构于 Sol。支持 PayPal 全球直付，0 跨境手续费。',
 							btnText: '获取 API Key 与沙盒额度 →',
 							utmCampaign: 'gpt62_sol_access'
+						}
+					}
+				},
+				'freebuff': {
+					floating: {
+						en: {
+							badge: '⚡ Freebuff Alternative',
+							title: 'Private AI Code Review with DeepSeek V4',
+							desc: 'Bypass ad-supported session limits and telemetry leaks. Unthrottled multi-agent code review via OpenAI-compatible API with PayPal checkout.',
+							btnText: 'Claim $0.20 Free Sandbox Trial',
+							utmCampaign: 'freebuff_review_alternative'
+						},
+						zh: {
+							badge: '⚡ Freebuff 替代方案',
+							title: 'DeepSeek V4 私有化代码审查网关',
+							desc: '告别广告植入与每日会话时长限制，保护私有代码库。直连 OpenAI 兼容端点，PayPal 即时结算，免 KYC 送 $0.20 体验金。',
+							btnText: '一键接入私有审查网关 →',
+							utmCampaign: 'freebuff_review_alternative'
+						}
+					},
+					inline: {
+						en: {
+							badge: '⚡ Dedicated Multi-Agent Gateway',
+							title: 'Zero-Telemetry PR & Code Review Routing',
+							desc: 'Pair ultra-fast syntax verification with deep reasoning (DeepSeek V4 & Qwen 3.7 Max). Sub-50ms latency, zero ad tracking, and instant PayPal billing.',
+							btnText: 'Get API Key & Review Script',
+							utmCampaign: 'freebuff_review_alternative'
+						},
+						zh: {
+							badge: '⚡ 专属多智能体审查网关',
+							title: '零遥测隐私泄露的 PR 审查管线',
+							desc: '极致语法检查与深度架构推理（DeepSeek V4 / 通义千问 3.7 Max）结合。50ms 跨国低延迟，支持 PayPal 全球直充与支付宝，免实名即开即用。',
+							btnText: '获取自动化审查配置 →',
+							utmCampaign: 'freebuff_review_alternative'
 						}
 					}
 				},

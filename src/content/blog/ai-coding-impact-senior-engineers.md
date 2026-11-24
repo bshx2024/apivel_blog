@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', updateReviewCalc);
 
 ## Production CI/CD Setup for Senior Engineers: Automated PR Review Action
 
-Integrating an automated review pipeline to lessen the **AI coding impact senior engineers** face requires zero vendor SDK lock-in. Using APIVALE's OpenAI-compatible endpoint, this Python action inspects git diffs in seconds:
+Integrating an automated review pipeline to lessen the **AI coding impact senior engineers** face requires zero vendor SDK lock-in. While ad-supported subagent harnesses (see our [Freebuff AI coding review](/blog/freebuff-ai-coding-review/)) offer automated turn reviews for hobbyist projects, enterprise codebases require private zero-retention infrastructure. Using APIVALE's OpenAI-compatible endpoint, this Python action inspects git diffs in seconds:
 
 ```python
 # .github/scripts/ai_pr_reviewer.py
