@@ -57,6 +57,21 @@
   - 明确文章包含的 **3-5 个核心实体链 (Entity Chains)**（例如：`APIVALE Router` $\rightarrow$ `OpenAI SDK Protocol` $\rightarrow$ `Claude Code CLI` $\rightarrow$ `PayPal / Global Billing`）。确保正文中核心实体及其强关联概念自然共现，构建高密度实体图谱。
 
 ### Step 2: SERP 竞品检索、3C 诊断与社区原声采掘 (SERP 3C & Primary-Source Mining Audit)
+- **输入流与意图采掘双轨机制 (Two-Track SERP Intent Ingestion Protocol - P0)**：
+  - **模式 A (纯关键词自主采掘 / Pure-Keyword Autonomous Mode)**：
+    - 当用户**仅发送核心关键词**（未附带任何截图，如 `glm 5.4 vs 5.3`）时，AI **严禁向用户索取截图，也严禁跳过采掘凭空脑补**！
+    - **必须第一时间自动在终端执行采掘脚本**（使用 `BypassSandbox: true`）：
+      ```bash
+      bun .agent/skills/apivale-blog-publishing/scripts/fetch_serp_intent.cjs "<核心关键词>"
+      ```
+    - 联动 `search_web` 抓取 Google 首页 People Also Ask (PAA) 真实问答：
+      ```
+      search_web(query: '"<核心关键词>" "People also ask" OR "FAQ"')
+      ```
+    - 自动提取：**无空格下拉词、有空格下拉词、关联衍生高意图词（如 `flash`、`vs gpt`）、跨界实体冲突警告（如 `gmc 5.4`）、首页 PAA 4 问**。
+  - **模式 B (SERP 真实截图 1:1 视觉审计 / Screenshot Ingestion Mode)**：
+    - 当用户提供 SERP 截图时，第一动作必须对所有截图进行逐图视觉审计与结构化解构。
+  - **【强制开篇输出门禁】**：无论模式 A 还是模式 B，在动笔撰写博文正文前，**必须在回复的最前面显式输出《Google SERP 意图逆向采掘报告》**，明确列出无空格与有空格下拉建议词、衍生版本、PAA 4 问及跨界防歧义定语方案，绝不让用户重复核实！
 - 对目标关键词进行搜索引擎检索，获取排名 Top 5 的竞品页面，并读取全文/HTML。
 - **搜索意图 3C 诊断 (Search Intent 3C Diagnosis)**：
   - **Content Type (内容类型)**：确认主导类型（Blog post, Landing page, Technical Documentation）。
@@ -69,12 +84,12 @@
     - Reddit / Hacker News 检索（通过 `site:reddit.com` / `site:news.ycombinator.com` 检索真实讨论串与 URL）；
   - **采掘内容**：提取 1 条真实的开发者报错痛点、抱怨或配置困惑（包含真实的 URL、平台和作者 handle）。
   - **防幻觉降级兜底**：若该技术极为前沿冷门，无法搜索到 100% 可验证的外部帖子，**坚决严禁造假**！必须降级为“官方 RFC/官方文档直链”或“APIVALE 生产网关脱敏工单日志”。
-- **SERP 真实截图 1:1 四层逆向采掘与防爆 SOP (Zero-Omission Screenshot Ingestion Protocol - P0)**：
-  - 当针对目标词提供或采掘到真实 Google SERP 截图时，系统**必须强制首要执行“逐图视觉审计与 1:1 意图映射”，严禁跳过截图直接起草**！必须在回复开篇显式输出《SERP 截图 1:1 映射清单》，结构化解构 4 大典型形态：
-    1. **形态 1 (Google 搜索核心下拉建议词 - 衍生版与高意图分支)**：如 `flash`、`air`、`pricing`、`reddit`（例如 `glm 5.3 flash vs glm 5.4`） $\rightarrow$ 用户强烈关注轻量版与旗舰的代际取舍，**必须直接吸收进 MetaTitle、H1、Description，并在正文设立专属独立对比子章节（如 `GLM-5.3 Flash vs GLM-5.4`）**！同时严格遵循【P0 防赛道错位铁律】：严禁把泛新闻词 `Release Date` 放在 Title/H1 首位声明位，防止被官方 GitHub/HuggingFace 权重页挤入通报赛道导致 URL 覆盖度骤降。
+- **SERP 真实截图 / 自动化采掘四层逆向防爆 SOP (Zero-Omission SERP Ingestion Protocol - P0)**：
+  - 系统结构化解构 4 大典型形态：
+    1. **形态 1 (Google 搜索核心下拉建议词 - 无空格 & 有空格衍生版与高意图分支)**：如 `flash`、`air`、`pricing`、`reddit`（例如 `glm 5.3 flash vs glm 5.4`） $\rightarrow$ 用户强烈关注轻量版与旗舰的代际取舍，**必须直接吸收进 MetaTitle、H1、Description，并在正文设立专属独立对比子章节（如 `GLM-5.3 Flash vs GLM-5.4`）**！同时严格遵循【P0 防赛道错位铁律】：严禁把泛新闻词 `Release Date` 放在 Title/H1 首位声明位，防止被官方 GitHub/HuggingFace 权重页挤入通报赛道导致 URL 覆盖度骤降。
     2. **形态 2 (跨界实体歧义排查防线 - Negative Entity Disambiguation)**：仔细排查下拉框中是否混入汽车型号、发动机排量、五金工业等非技术跨界词（如 `gmc 5.4 vs 6.2` 卡车引擎、`corvette 6.2`、`opel astra`）。一旦出现，MetaTitle、H1、Description 与前言中**必须全量显式绑定 AI / LLM / Foundation Model 定语**，筑牢技术实体防火墙，彻底杜绝 Google 算法误归入汽车或机械赛道！
     3. **形态 3 (开发者生态与竞品对比下拉词)**：如 `[Model] vs gpt`、`openrouter`、`opencode`、`ollama` $\rightarrow$ Description 必须显式声明竞品对比（如 `token pricing vs GPT`）；正文设立专门章节对比 OpenRouter（风控拒卡/高加价）vs APIVALE（PayPal 即时结账/免 KYC/送 $0.20 测试金），并给出开箱即用两行接入代码。
-    4. **形态 4 (Google PAA 4 大原生问答 1:1 逐字复制铁律)**：【P0 核心铁律】**严禁自行编造通用 FAQ！正文 FAQ 的 4 个 H3 标题与 FAQPage JSON-LD Schema 必须 1:1 逐字复制并回答截图中的 4 大 PAA 原生问句**，全力争夺 Google AI Overviews 零位引用。严禁在正文中使用机械报菜名套话，必须以真实资深工程师视角自然展开。
+    4. **形态 4 (Google PAA 4 大原生问答 1:1 逐字复制铁律)**：【P0 核心铁律】**严禁自行编造通用 FAQ！正文 FAQ 的 4 个 H3 标题与 FAQPage JSON-LD Schema 必须 1:1 逐字复制并回答截图或自动化采掘中的 4 大 PAA 原生问句**，全力争夺 Google AI Overviews 零位引用。严禁在正文中使用机械报菜名套话，必须以真实资深工程师视角自然展开。
 - **分级主题下钻与技术缝隙挖掘 (Multi-Level Topic Drill-Down & Content Gap Mining)**：
   - 利用 SERP 顶部 Topic 胶囊按钮、Google Images 标签、搜索框下拉建议与 PAA 进行 2-3 层逐层点击下钻（Drill-Down）：
     - **一级主题 (Topic 1 - 大类维度)**：搜主词出的第一排标签（如竞品 `Claude Opus` / `DeepSeek V4`、场景 `Coding`），决定文章 H2 核心逻辑模块。

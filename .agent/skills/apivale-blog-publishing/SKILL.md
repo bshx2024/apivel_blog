@@ -53,19 +53,37 @@ description: >-
 
 ---
 
-## 二、Phase 1: 需求采掘与 3C 意图诊断 (SERP 真实截图 1:1 三层逆向采掘 SOP)
+## 二、Phase 1: 需求采掘与 3C 意图诊断 (纯关键词自主采掘与 SERP 截图 1:1 逆向 SOP)
 
-坚决反对凭空脑补题目。**当用户提供 SERP 截图（或自行进行搜索引擎检索）时，系统必须强制自动执行“SERP 截图 1:1 结构化采掘与映射门禁”，严禁跳过截图直接起草！**
+坚决反对凭空脑补题目。系统支持并强制执行**两大零遗漏意图采掘输入流**：无论用户是“仅提供核心关键词”还是“附带真实 SERP 截图”，AI 都必须强制执行结构化采掘，**并在回复开头显式输出《Google SERP 意图逆向采掘报告》，绝不让用户重复提醒或核实是否参考了下拉词与 PAA！**
 
-### 0. 自动截图嗅探与零遗漏强约束门禁 (Zero-Omission Screenshot Ingestion Directive - P0)
+### 0. 模式 A：纯核心关键词自主逆向采掘 SOP (Pure-Keyword Autonomous Harvester - P0)
+* **强制触发条件**：当用户**仅发送核心关键词**（未附带任何截图，例如直接发送 `glm 5.4 vs 5.3`）时，AI **绝不向用户索取截图，也绝不凭空捏造**，必须第一时间自主向 Google 执行逆向采掘。
+* **强制执行工具链**：
+  在终端中调用项目内置采掘脚本（由于需向 Google Suggest API 发起请求，必须使用 `BypassSandbox: true`）：
+  ```bash
+  bun .agent/skills/apivale-blog-publishing/scripts/fetch_serp_intent.cjs "<核心关键词>"
+  ```
+  同时结合 `search_web` 提取 Google SERP 首页真实的 People Also Ask (PAA) 问答：
+  ```
+  search_web(query: '"<核心关键词>" "People also ask" OR "FAQ"')
+  ```
+* **四大自动化采掘指标（必须 100% 采集并显式输出）**：
+  1. **无空格下拉建议词 (Without Trailing Space)**：在搜索框中完整输入目标词但末尾不加空格（`[keyword]`）时，Google 官方返回的 Autocomplete 列表；
+  2. **有空格下拉建议词 (With Trailing Space)**：在目标词末尾追加一个空格（`[keyword] `）时，Google 官方返回的高频关联搜索词；
+  3. **细分实体与衍生版探测 (Related Variants & High-Intent Branches)**：自动侦测如 `[Model] flash`（如 `glm 5.3 flash vs glm 5.4`）、`[Model] pricing`、`[Model] benchmark`、`[Model] vs gpt` 等衍生高意图词；
+  4. **跨界实体冲突排查 (Negative Entity Disambiguation)**：排查是否撞车汽车引擎（如 `gmc 5.4 vs 6.2`、`5.3 chevy engine`）、统计学（`linear regression`）等非技术领域。一旦检出，强制在 Title/H1/Description 中绑定 `AI / LLM / Foundation Model` 定语，建立技术语义防火墙；
+  5. **Google 首页 PAA 4 大原生问答 (People Also Ask)**：提取首页展示的 4 个真实英文问句，1:1 原文吸收进正文 FAQ 与 FAQPage JSON-LD。
+
+### 1. 模式 B：SERP 真实截图 1:1 视觉审计与映射 SOP (Zero-Omission Screenshot Ingestion - P0)
 * **强制触发条件**：只要用户对话中附带了图片（`media_*.png` 或截图），**第一动作必须是对所有截图进行逐图视觉审计与结构化解构，并在回复开头显式输出《SERP 截图 1:1 映射清单》**，绝不让用户重复提醒或核实！
 * **四大必查形态与强制落地规范**：
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│ SERP 真实截图 1:1 意图逆向采掘与防爆图谱                                                 │
+│ SERP 真实截图 / 自动化采掘 1:1 意图逆向采掘与防爆图谱                                    │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
-│ 形态 1: 搜索下拉建议词 (Search Suggestion Dropdown - 高意图分支与衍生版):                  │
+│ 形态 1: 搜索下拉建议词 (Search Suggestion Dropdown - 无空格 & 有空格高意图分支与衍生版): │
 │    - 典型词：[Model] release date, pricing, reddit, [Model]-flash, air, preview         │
 │    - 衍生版本挖掘（如 glm 5.3 flash vs glm 5.4）：                                       │
 │      👉 强制落地：用户强烈关注“用低成本 Flash 还是升级旗舰”；必须直接吸收进 Title /     │
@@ -90,17 +108,18 @@ description: >-
 │             What is the difference between GLM and LLM? What are the GLM models?       │
 │    - 意图属性：权威答疑与 GEO 语义抓取层                                                │
 │    - 强制落地：【P0 铁律】严禁自行编造 FAQ！正文 FAQ 的 4 个 H3 标题与 FAQPage JSON-LD  │
-│      必须 1:1 逐字复制并回答截图中出现的 4 个原生问句！严禁遗漏！                       │
+│      必须 1:1 逐字复制并回答截图中或首页出现的 4 个原生问句！严禁遗漏！                 │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-### 1. 动笔前强制自检与映射清单（回复开篇必须呈现）
-当检测到用户附带截图时，AI 在动笔撰写前必须在回复开头呈现以下对齐清单：
-1. **下拉建议词解析**：列出截图中所有下拉词，标注已提取的衍生版（如 `Flash`）、竞品词（如 `vs GPT`）及过滤的实体歧义词（如 `GMC`）；
-2. **PAA 4 问逐字提取**：1:1 完整打印截图中 Google PAA 的 4 个原生英文问句；
-3. **元数据吸收方案**：展示 MetaTitle（50–60 字符）、H1（$\le 80$ 字符）、Description（140–160 字符）如何 100% 融合上述意图。
+### 2. 动笔前强制开篇呈现清单（Mandatory Upfront Intent Report）
+无论触发模式 A 还是模式 B，AI 在动笔撰写博文正文前，**必须在回复的最前面完整输出结构化采掘报告**：
+1. **Google 下拉词解析（无空格 + 有空格）**：逐项列出获取到的所有下拉词，标注已提取的衍生版（如 `Flash`）、竞品词（如 `vs GPT`）及高频利益词；
+2. **跨领域实体冲突诊断**：明确标注是否命中非技术跨界实体（如 `GMC`、`Chevy`），若有，列出防御定语；
+3. **PAA 4 问 1:1 原生提取**：完整打印 Google PAA 的 4 个原生英文问句；
+4. **元数据吸收方案**：展示 MetaTitle（50–60 字符）、H1（$\le 80$ 字符）、Description（140–160 字符）如何 100% 融合上述意图。
 
-### 2. 3C 诊断清单
+### 3. 3C 诊断清单
 1. **Content Type (内容类型)**：以权威技术深度评测、价格对比与生产实操指南（Technical Deep-Dive, Pricing & Engineering Guide）为主。
 2. **Content Format (内容格式)**：结构化 AST（Technical Summary Box $\rightarrow$ 架构/发布解构 $\rightarrow$ 官方/第三方基准表 & 价格对比 $\rightarrow$ 社区真实原声卡片 $\rightarrow$ 开发者工具链接入 (OpenRouter/OpenCode/Ollama) $\rightarrow$ 两层架构方案 $\rightarrow$ 原生可交互微工具 $\rightarrow$ 15+行 Python 生产代码 $\rightarrow$ 1:1 PAA 问答与 FAQ Schema）。
 3. **Content Angle (切入视角)**：从“模型发布、官方定价与社区踩坑（如马拉松思维、海外封号）”切入，升华至“工程落地与双层降本”，自然承接 APIVALE 的高可用免 KYC 网关方案。

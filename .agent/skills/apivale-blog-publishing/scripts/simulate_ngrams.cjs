@@ -22,6 +22,12 @@ function analyzeNgrams(filePathOrHtml) {
     h2h3List.push(hm[1].replace(/<[^>]+>/g, '').toLowerCase());
   }
 
+  // Extract Title and H1 for intent & news trap check
+  const titleMatch = content.match(/^title:\s*["']?([^"'\n]+)["']?/m) || content.match(/<title>([^<]+)<\/title>/i);
+  const h1Match = content.match(/^#\s+(.+)$/m) || content.match(/<h1[^>]*>([^<]+)<\/h1>/i);
+  const titleText = (titleMatch ? titleMatch[1] : '').toLowerCase();
+  const h1Text = (h1Match ? h1Match[1] : '').toLowerCase();
+
   // Strip scripts, styles, svgs, and tags
   let text = content
     .replace(/<script[\s\S]*?<\/script>/gi, ' ')
@@ -41,11 +47,17 @@ function analyzeNgrams(filePathOrHtml) {
   console.log(`======================================================`);
 
   if (tokens.length > 2500) {
-    console.warn(`⚠️ Note: Rendered tokens (${tokens.length}) > 2500. Ensure pure markdown body text is within 1200-1800 words.`);
+    console.warn(`⚠️ Note: Rendered tokens (${tokens.length}) > 2500. Ensure pure markdown body text is strictly within 1500-1750 words.`);
+  }
+
+  // 1. Generic News / Track Misalignment Defense Check
+  if (/(?:release|release date)\b/i.test(titleText) && /:\s*release/i.test(titleText)) {
+    console.warn(`⚠️ DANGER: "Release" directly follows model entity in Title ("${titleMatch[1]}")!`);
+    console.warn(`   Risk: Google US SERP will treat page as generic release news (papers/repos) triggering "⚠ 赛道错位" and URL keyword loss.`);
   }
 
   const topNgrams = {};
-  for (let n = 2; n <= 4; n++) {
+  for (let n = 2; n <= 5; n++) {
     const map = {};
     for (let i = 0; i <= tokens.length - n; i++) {
       const gram = tokens.slice(i, i + n).join(' ');
@@ -58,9 +70,16 @@ function analyzeNgrams(filePathOrHtml) {
       const density = ((count * n / tokens.length) * 100).toFixed(2);
       console.log(`  #${rank + 1} (${count}x, ~${density}%): "${gram}"`);
       
-      // Density warning for 2-grams: if density > 2.5%, warn of potential stuffing or track misattribution
-      if (n === 2 && count > 35 && density > 2.5) {
+      // Density warning for 2-grams: if density > 2.8%, warn of stuffing or track misattribution
+      if (n === 2 && count > 35 && density > 2.8) {
         console.warn(`    ⚠️ High 2-gram density (${density}%)! Sub-entity "${gram}" may trigger "赛道错位" or keyword stuffing.`);
+      }
+
+      // Check for auxiliary model / unit dilution in 3-grams, 4-grams, 5-grams
+      if (n >= 3 && rank === 0) {
+        if (/^(?:qwen|deepseek|claude|https|1m|0 20)/i.test(gram) && !titleText.includes(gram.split(' ')[0])) {
+          console.warn(`    ⚠️ DANGER: Non-primary phrase "${gram}" ranks #1 in ${n}-grams! Will trigger "前排仍有不少与目标词无关的高频词" and lose 3 points on 密度榜.`);
+        }
       }
     });
   }

@@ -30,7 +30,10 @@ Follow this 4-step execution workflow:
 - Perform Parent Topic & Secondary LSI Audit as defined in [BLOG_WRITING_STANDARD.md](file:///e:/kaifa/APIVALE_blog/BLOG_WRITING_STANDARD.md).
 
 ### Step 2: SERP Competitor Retrieval, 3C Audit & Primary-Source Mining
-- **Zero-Omission Screenshot Ingestion Protocol (P0)**: Whenever screenshots/images are attached in the conversation, the agent **MUST inspect all attached images first**, extract all dropdown suggestions (absorbing high-intent variants like `flash` into Title/Description/H2, enforcing AI entity disambiguation against non-tech collisions like `gmc 5.4 vs 6.2`), and 1:1 verbatim copy the 4 PAA questions into FAQ & FAQPage schema. **Never start drafting before outputting the structured mapping matrix**.
+- **Dual-Track SERP Intent Ingestion Protocol (P0)**:
+  - **Track A (Pure-Keyword Autonomous Harvester)**: When the user provides **only the core keyword** (no screenshots attached, e.g. `glm 5.4 vs 5.3`), the agent **MUST autonomously run** `bun .agent/skills/apivale-blog-publishing/scripts/fetch_serp_intent.cjs "<keyword>"` (`BypassSandbox: true`) and use `search_web` to harvest Google autocomplete suggestions (without trailing space, with trailing space, related variants like `flash`), detect entity collisions (e.g. `gmc 5.4`), and extract Google PAA 4 questions.
+  - **Track B (Zero-Omission Screenshot Ingestion)**: Whenever screenshots/images are attached in the conversation, the agent **MUST inspect all attached images first**, extract all dropdown suggestions (absorbing high-intent variants like `flash` into Title/Description/H2, enforcing AI entity disambiguation against non-tech collisions like `gmc 5.4 vs 6.2`), and 1:1 verbatim copy the 4 PAA questions into FAQ & FAQPage schema.
+  - **Mandatory Upfront Intent Output**: **Never start drafting before outputting the structured SERP intent mapping matrix** at the very beginning of the response.
 - Perform a live search query for the target keyword and identify the Top 5 ranking pages.
 - Use `read_url_content` to fetch and read the Top 5 pages one by one.
 - Conduct **Search Intent 3C Diagnosis** (Content Type, Format, Angle) & extract common H2/H3 sub-topics and Content Gap.
