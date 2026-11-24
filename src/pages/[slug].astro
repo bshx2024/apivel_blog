@@ -26,11 +26,11 @@ function formatDate(date: Date) {
 const pageTitle = post.data.metaTitle || (post.data.title.includes('apivel') ? post.data.title : `${post.data.title} | apivel`);
 
 const authorAvatars: Record<string, string> = {
-	'Alex Rivera': '/blog/authors/alex-rivera.png',
-	'Kenji Tanaka': '/blog/authors/kenji-tanaka.png',
-	'Sofia Costa': '/blog/authors/sofia-costa.png',
-	'Elena Rostova': '/blog/authors/elena-rostova.png',
-	'Priya Sharma': '/blog/authors/priya-sharma.png',
+	'Alex Rivera': '/blog/authors/alex-rivera.png?v=20261124b',
+	'Kenji Tanaka': '/blog/authors/kenji-tanaka.png?v=20261124b',
+	'Sofia Costa': '/blog/authors/sofia-costa.png?v=20261124b',
+	'Elena Rostova': '/blog/authors/elena-rostova.png?v=20261124b',
+	'Priya Sharma': '/blog/authors/priya-sharma.png?v=20261124b',
 };
 const avatarUrl = authorAvatars[post.data.author];
 
