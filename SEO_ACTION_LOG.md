@@ -32,6 +32,43 @@
 
 ## 📅 apivel.com SEO 动作记录表 (2026年)
 
+### 2026-11-24 (GLM-5.4 vs 5.3 旗舰代际横评首发、Loop Transformer 架构与 SWE 基准对比、马拉松思维陷阱解构、双层降本路由与 5-Gate 原子发布)
+* **分类**：📝 [国产旗舰模型代际横评、Loop Transformer 循环架构对比、SWE-bench Verified 基准复现、马拉松思维陷阱解构、双层降本混合路由、社区真实原声、原子双向内链]
+* **动作详情**：
+  * **捕获热点与意图图谱**：针对全球开发者社区对智谱 AI 新一代旗舰 GLM-5.4 与上一代基线 GLM-5.3 的代际选型痛点，结合 Google SERP 下拉词（`glm 5.4 vs 5.3`, `differences`, `benchmarks`, `reddit`）与 PAA 提问，上线深度评测与双层混合路由落地指南：`/blog/glm-5-4-vs-5-3-differences/`。
+  * **实体消歧与赛道保护**：针对小数点去标点分词陷阱（`glm-5 4` 与 `glm-5 3`），严控 2-gram 密度在 2.48%（安全区间 2.2%~2.6%），防止堆砌与赛道错位。H2/H3 小标题 100% 完整覆盖核心实体单词。
+  * **作者轮换**：Persona 轮换署名为 `Priya Sharma`（AI Performance & Distributed Computing Engineer, APIVALE，专攻基准评测、SWE-bench 复现与吞吐优化）。
+  * **主攻关键词**：
+    * Primary: `glm 5.4 vs 5.3`, `glm-5.4 vs 5.3`, `glm 5.4 vs glm 5.3`
+    * Secondary/LSI: `GLM-5.4 Loop Transformer`, `GLM-5.3`, `SWE-bench verified`, `marathon thinking`, `two-tier hybrid router`, `APIVALE`, `PayPal`
+  * **On-Page & GEO 优化调优（严格遵循 5-Gate 原子协议）**：
+    1. Title & H1 严格遵循 ABC 公式与无歧义规范：
+       - MetaTitle: `GLM-5.4 vs 5.3: Differences, Benchmarks & Setup | APIVALE`（57 字符，完美适配 600px 阈值）；
+       - H1: `# GLM-5.4 vs 5.3: Differences, Loop Architecture & Benchmark Review`（65 字符，对称映射）；
+       - Meta Description: `Compare GLM-5.4 vs 5.3: Loop Transformer architecture differences, SWE coding benchmarks, marathon thinking latency, and two-tier API routing on APIVALE.`（153 字符，处于 140–160 最佳区间）；
+       - URL: `/blog/glm-5-4-vs-5-3-differences/`（100% 关键词回显闭环）；
+    2. 严格 AST 纯净度与交互消除跳出：嵌入 HTML 组件零 `<h1..4>`，零 `alert()` 弹窗。内嵌 In-Article Live Playground（`<input type="range">`、`<select>` 实时测算 85% 任务 offload 到 GLM-5.3 与 auxiliary models 节省 77%~88% 账单），彻底消除 4.5 分 Doorway Page 扣分；
+    3. 社区真实原声与客观对比表：采掘 Reddit `r/LocalLLaMA` 与 `r/ClaudeCode` 真实开发者关于 GLM-5.4 “马拉松思维”与“Codemaxxing”极端偏执痛点，提供带官方核验时间戳与客观正向优势列的对比矩阵；
+    4. 1:1 响应 Google PAA 4 大问答：在 FAQ 与 FAQPage JSON-LD 中逐一闭环作答，争夺 AI Overviews 零位引用；
+    5. 商业引流与闭环承接：以“双层容灾路由”为锚点将开发者无缝引流至 APIVALE 聚合网关，结尾 `.cta-card` 严格对齐钱包三权益（+50% 首充、 $29 开发者专享包、 $0.20 免卡测试金，带 `redirect=/blog/glm-5-4-vs-5-3-differences/`），支持 PayPal 即时直结与支付宝，零 KYC；
+    6. 双向内链织网（Gate 3）：同步在 `glm-5-4-architecture-benchmarks-api.md`、`gpt-6-2-astra-vs-opus-5-5-differences.md`、`claude-opus-5-5-price-limits-claude-code.md` 中注入锚文本，形成闭环拓扑。
+* **影响页面**：`https://apivel.com/blog/glm-5-4-vs-5-3-differences/`
+* **14 天因果响应假设**：
+  * 预期在 7–14 天内，随着 Google 对 `glm 5.4 vs 5.3` 代际对比词完成索引，页面进入搜索前三，并通过双层架构降本计算器降低跳出率，引导高意向开发者尝试 APIVALE 双层混合路由网关。
+
+### 2026-11-24 (GLM-5.4 哥飞军师 99+ A+ 深度调优、消除泛新闻赛道错位、压制竞品反客为主夺回密度 3 分、硅谷工程原生去翻译腔润色与 SOP 军规沉淀)
+* **分类**：📝 [哥飞军师复测调优、N-Gram 密度手术、赛道错位纠偏、竞品噪音消杀、硅谷工程师原生去翻译腔润色、SOP 技能军规级沉淀]
+* **动作详情**：
+  * **哥飞军师深度诊断与赛道错位破局**：针对初次上线后军师报告中报出的 `⚠ 赛道错位`（`glm-5 4 release` 被 Google US 泛新闻/学术论文霸屏）与 3 项扣分（正文词数丢 1 分、URL 覆盖度丢 0.7~1.3 分、密度榜位置加权丢 3 分），执行外科手术级重构：
+    1. **Title/H1 核心声明重构**：将原 Title 开头的 `Release Date` 泛词前置剔除，重构为 `GLM-5.4 Architecture: Benchmarks & API Pricing | APIVALE`（56 字符），H1 同步重构为 `# GLM-5.4 Architecture: Benchmarks, API Pricing & Reddit Review`（61 字符）。前置位坚决以商业与工程核心声明领跑，意图满足与声明彻底隔离，消除赛道错位，URL 关键词覆盖度直接跃升至 100%（全额夺回 1.3 分）；
+    2. **竞品词与量词降噪，夺回密度榜 3 分**：排查发现正文中 `Qwen 3.7 Max` 重复 9 次、`1M Tokens` 重复 5 次，反客为主霸占 3~5 词密度榜首，导致候选意图出现杂音被扣 3 分。全篇将辅助竞品严控为仅 1 次对照，其余全部替换为 `auxiliary workhorse models` 等功能代词，并在 2~5 词榜单强力注入 `[model] [sub-version] architecture / loop transformer` 矩阵，使主词全量垄断 2~5 词密度榜首，全额收回 3 分；
+    3. **正文字数黄金梯级控制**：将纯 Markdown 正文有效阅读词数精准压缩至 1,794 词（严格 $\le 1800$ 词），全额收回正文词数 1 分；
+    4. **硅谷工程原生去翻译腔深度润色**：彻底消杀 `autonomous developers`、`scaling physical weights`、`syntax emission` 等机器生硬直译与“To address Google PAA query...”等机械 SEO 报菜名句式，以硅谷资深架构师 Elena Rostova 的地道语感重写全文；
+    5. **SOP 军规与自动化脚本全量沉淀**：将上述排坑避险经验完整沉淀入 `.agent/skills/apivale-blog-publishing/SKILL.md` 与 `BLOG_WRITING_STANDARD.md`，并升级 `simulate_ngrams.cjs` 自动化检测 2~5 词榜及竞品稀释预警。
+* **影响页面**：`https://apivel.com/blog/glm-5-4-architecture-benchmarks-api/`
+* **14 天因果响应假设**：
+  * 赛道错位解除后，Google 算法将页面精准归入商业评测与 API 网关赛道，推断词锁定 `GLM-5.4 Architecture / Benchmarks`，带动该长尾词在 14 天内直冲 Google US 首屏前三，为 APIVALE 带来纯正的开发者 API 转化流量。
+
 ### 2026-11-23 (GLM-5.4 Loop Transformer 架构首发测评、马拉松思维陷阱解构、双层降本引流与原子双向内链)
 * **分类**：📝 [国产旗舰模型首发、Loop Transformer 架构创新、GEO 结构化引据、双层降本混合路由、社区真实原声、原子双向内链]
 * **动作详情**：

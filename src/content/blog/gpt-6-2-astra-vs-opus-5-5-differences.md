@@ -123,7 +123,7 @@ flowchart TD
 Rather than sending every command to an expensive frontier model in the **GPT-6.2 Astra vs Opus 5.5** bracket, the hybrid approach splits workloads by technical complexity:
 
 1. **Tier 1 Workhorse (90% of Volume)**: Routine implementation—such as generating unit tests, writing documentation, updating REST boilerplate, and triaging lint warnings—is routed to **Alibaba Qwen 3.7 Max** (`infer/qwen3.7-max`) or **DeepSeek V4** (`infer/deepseek-v4`). At $0.20 to $0.25 per million input tokens, these models cost 94% less than frontier endpoints while delivering reliable code generation.
-2. **Tier 2 Frontier Specialist (10% of Volume)**: Complex challenges—such as multi-service architecture redesigns and intricate concurrency debugging—are reserved for the frontier models.
+2. **Tier 2 Frontier Specialist (10% of Volume)**: Complex challenges—such as multi-service architecture redesigns, intricate concurrency debugging, or multimodal CAD tasks (like those detailed in our [GLM-5.4 vs 5.3 Differences Report](/blog/glm-5-4-vs-5-3-differences/))—are reserved for the frontier models.
 
 Offloading repetitive tokens to Tier 1 protects subscription quotas and reduces daily API costs from $45 to under $4.50.
 

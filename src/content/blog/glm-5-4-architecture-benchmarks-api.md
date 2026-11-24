@@ -82,6 +82,7 @@ This recurrent **GLM-5.4 loop transformer architecture** grants the 750B model r
 Beyond the flagship checkpoint, the community is watching closely for lightweight variants like `glm-5.4-flash` and `glm 5.4 air`. Evaluating **GLM-5.4 architecture benchmarks** across the model family reveals key differences:
 
 * **GLM-5.4 Flagship (~750B Recurrent)**: The full-scale model optimized for multi-step agentic coding and native multimodal reasoning.
+* **Predecessor Comparison (GLM-5.3 Baseline)**: For a detailed side-by-side architectural and benchmark breakdown against the previous generation, see our in-depth report on [GLM-5.4 vs 5.3 Differences](/blog/glm-5-4-vs-5-3-differences/).
 * **GLM-5.4-Flash (Distilled Checkpoint)**: A low-latency checkpoint tailored for continuous autocomplete and rapid terminal diffs.
 * **Open Weights Roadmap (HuggingFace)**: Zhipu AI confirmed plans to release quantized open weights on HuggingFace and Ollama once post-training safety evals conclude.
 
