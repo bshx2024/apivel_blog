@@ -72,7 +72,7 @@ The following matrix compares verified benchmark performance, context limits, pr
 
 ### SWE-bench and Real-World Agent Reliability
 
-In the **Astra vs Opus 5.5** benchmark comparison on SWE-bench Verified, the Anthropic flagship achieves 74.8% versus 71.4% for Astra. In autonomous sessions, the Anthropic flagship demonstrates fewer hallucinated completions—rarely claiming tests pass without executing the verification suite. While Astra retains an edge on pure mathematics (HLE-Diamond), the Anthropic model remains the practical engineering favorite. Notably, recurrent architectures like Zhipu AI's newly deployed [GLM-5.4 Loop Transformer](/blog/glm-5-4-architecture-benchmarks-api/) (73.8% SWE-bench) demonstrate that open and hybrid models are rapidly closing the gap with frontier closed-source benchmarks.
+In the **Astra vs Opus 5.5** benchmark comparison on SWE-bench Verified, the Anthropic flagship achieves 74.8% versus 71.4% for Astra. In autonomous sessions, the Anthropic flagship demonstrates fewer hallucinated completions—rarely claiming tests pass without executing the verification suite. While Astra retains an edge on pure mathematics (HLE-Diamond), the Anthropic model remains the practical engineering favorite. Notably, recurrent architectures like Zhipu AI's newly deployed [GLM-5.4 Loop Transformer](/blog/glm-5-4-architecture-benchmarks-api/) (evaluated in our [GLM 5.4 vs Claude Opus 5.5 Benchmarks](/blog/glm-5-4-vs-claude-opus-5-5-benchmarks/)) demonstrate that open and hybrid models are rapidly closing the gap with frontier closed-source benchmarks at 73.8% SWE-bench.
 
 ### Token Pricing and Cache Read Disparity
 

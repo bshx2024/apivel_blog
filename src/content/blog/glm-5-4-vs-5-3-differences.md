@@ -96,7 +96,7 @@ The matrix below details empirical benchmarks, specifications, context capacitie
 
 ### GLM 5.3 Flash vs GLM 5.4: Distilled Speed vs Recurrent Reasoning
 
-Developer search trends highlight intense interest in comparing **GLM 5.3 Flash vs GLM 5.4**. For rapid autocomplete, GLM 5.3-Flash delivers sub-150ms time-to-first-token streaming at $0.08 per million input tokens. On multi-file refactoring, the Loop Transformer architecture outscores Flash by 12.4 percentage points on SWE-bench Verified.
+Developer search trends highlight intense interest in comparing **GLM 5.3 Flash vs GLM 5.4**. For rapid autocomplete, GLM 5.3-Flash delivers sub-150ms time-to-first-token streaming at $0.08 per million input tokens. On multi-file refactoring and frontier agentic coding against Anthropic's flagship (as detailed in our [GLM 5.4 vs Claude Opus 5.5 Comparison](/blog/glm-5-4-vs-claude-opus-5-5-benchmarks/)), the Loop Transformer architecture outscores Flash by 12.4 percentage points on SWE-bench Verified.
 
 Additionally, while the 5.3 baseline was tuned for standard syntax generation, the 5.4 flagship incorporates native vision to synthesize WebGL shaders, Three.js animations, and FreeCAD scripts directly from visual mockups, yielding a 6.9 percentage point improvement on LiveCodeBench Hard.
 
