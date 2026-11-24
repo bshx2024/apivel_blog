@@ -230,10 +230,11 @@ description: >-
   * **FAQ 的 H3 小标题**：直接采用 Google PAA 的原生问句。
 
 ### 4. 正文字数黄金平衡与“梯级控制法则”
-* **扣分规则**：全页词数（Rendered HTML Words）超过 1800 词会丢 1 分。
+* **扣分规则**：全页词数（Rendered HTML Words）超过 1800 词会丢 1 分（提示：“全页 XXXX 个词，超过 1800，不影响收录但注意别稀释主题”）。
 * **梯级控制策略**：
-  * **纯 Markdown 正文有效阅读词数**：严格控制在 **1,500 ~ 1,750 词**！
-  * **渲染全页词数**：加上直出的交互微工具、Mermaid 脚本与 JSON-LD Schema 后，全页总词数稳定在 2400~2600 词。纯文字绝不突破 1800 词上限，既保证了 GEO 深度，又达成 0 警告。
+  * **纯 Markdown 正文有效阅读词数**：严格控制在 **1,350 ~ 1,550 词**（SWE-bench 对比、架构解析、PAA 问答务必精炼高密度，杜绝车轱辘话）；
+  * **Python 代码块长度**：控制在 25–35 行精炼高内聚代码（禁止贴 80+ 行冗长代码文件），防止代码 Token 极度膨胀；
+  * **渲染全页词数**：加上直出的交互微工具、Mermaid 脚本、代码与布局组件后，全页总 Token 数严格压制在 2,000 ~ 2,200 左右，彻底消灭超过 3,000 词的主题稀释扣分。
 
 ### 5. 辅助模型与量词反客为主铁律 (挽回密度榜丢 3 分)
 * **警报来源**：军师提示 *“前排仍有不少与目标词无关的高频词，可对照下方密度榜调整文案”*、*“其它候选意图：「1m tokens」、「qwen 3 7 max」——一页只能做透一个主词，多意图会互相稀释。”* 并扣除整整 3 分！
@@ -246,10 +247,10 @@ description: >-
      * ❌ `Input Price (Per 1M Tokens)` $\rightarrow$ 👉 `Input Price (Per Million Tokens)`；
      * ❌ 8 次手写 `https://apivel.com/v1` $\rightarrow$ 👉 `cloud gateway (apivel.com/v1)` 或 `our unified endpoint`。
   3. **主实体 2~5 词组绝对垄断矩阵**：
-     * **2-grams 榜首**：`[model] [sub-version]`（如 `glm-5 4`，密度严控在 2.2%~2.7%）；
-     * **3-grams 榜首**：`[model] [sub-version] architecture`（必须斩获 #1）；
-     * **4-grams 榜首**：`[model] [sub-version] loop transformer` / `[model] [sub-version] architecture benchmarks`（包揽 #1 和 #2）；
-     * **5-grams 榜首**：`[model] [sub-version] loop transformer architecture`（斩获 #1）。
+     * **2-grams 榜首**：`[model] [sub-version]`（如 `glm 5` 或 `glm 5 4`，密度严控在 2.2%~2.7%）；
+     * **3-grams 榜首**：`[model] [sub-version] architecture` 或 `[model] 5 4`（必须斩获 #1）；
+     * **4-grams 榜首**：`[model] 5 4 vs` / `[model] [sub-version] loop transformer`（包揽 #1 和 #2）；
+     * **5-grams 榜首**：`[model] 5 4 vs 5`（斩获 #1）。
   4. **达成结果**：密度榜位置加权打分满分（22/22 分），全额夺回 3 分！
 
 ### 6. 泛新闻词声明陷阱与“赛道错位”防爆军规 (消除 ⚠ 赛道错位，挽回 URL 丢分)
@@ -258,12 +259,12 @@ description: >-
 * **必胜对齐军规**：
   1. **Title/H1 前置位坚决锁定工程与商业主意图**：
      * 必须以 `Architecture`, `Benchmarks`, `API Pricing`, `Reddit Review` 领跑！
-     * *实战黄金标题*：`GLM-5.4 Architecture: Benchmarks & API Pricing | APIVALE`（56 字符）。
+     * *实战黄金标题*：`GLM 5.4 vs 5.3: Flash Differences & Benchmarks | APIVALE`（56 字符）。
   2. **意图满足与声明隔离**：
      * 截图中的 `release date`、`when is [model] coming out` 依然在正文前两段以倒金字塔首句事实回答（如 *"On November 23, 2026, Zhipu AI officially rolled out..."*），原地满足用户检索意图与 GEO 引用；
      * 但**绝不允许 `release` 出现在 Title/H1 的首要声明位**！
   3. **URL 覆盖度 100% 闭环**：
-     * URL 中的每一个实词（如 `architecture`、`benchmarks`、`api`）必须完整回显在 Title、H1 和 Meta Description 中，确保 URL 覆盖度从 33% 飙升至 100%！
+     * URL 中的每一个实词（如 `differences`、`benchmarks`、`flash`）必须完整回显在 Title、H1 和 Meta Description 中，确保 URL 覆盖度从 33% 飙升至 100%！
 
 ### 7. 硅谷技术博客原生“去翻译腔”规范 (Banish Translationese)
 * **严苛准则**：APIVALE 的受众是全球资深 AI 工程师、独立黑客与 CTO。文章必须展现纯正硅谷资深架构师（Senior Systems Architect）的专业语感，坚决杜绝生硬机器直译（Chinglish）与明显的 AI 提示词泄露（Prompt Leaks）。
@@ -282,6 +283,18 @@ description: >-
      * ❌ `while maintaining agile inference economics` $\rightarrow$ 👉 `while keeping serving latency and inference costs manageable`
   4. **真实社区痛点描述（Native Authenticity）**：
      * 用真实海外开发者的语调描述银行卡拒付、SMS (+86) 短信验证与风控拦截，展现切身体会的技术共鸣。
+
+### 8. 带小数点模型版本号与连字符 Title/URL 分词冲突防爆铁律 (消除 URL 覆盖率 75% 丢分，直通 100%)
+* **警报来源**：军师提示 *“△ 关键词出现在 URL（域名或路径）（丢 0.5 分）：URL 中关键词覆盖 75%”*，且“推断词”栏显示截断短语如 `glm-5 4 vs 5 (TH)`。
+* **致命根源**：
+  1. 哥飞军师的分词引擎在清洗 HTML 文本时，**保留连字符 `-`，但将标点与小数点 `.` 视为空格**。
+  2. 当 Title/H1 写作带连字符的 `GLM-5.4 vs 5.3` 时，被分词引擎拆解为 `["glm-5", "4", "vs", "5", "3"]` 5 个独立单词。军师推断词滑动窗口上限为 4 词，截取前 4 词生成推断词 `glm-5 4 vs 5`。
+  3. 而在 URL 路径 `/blog/glm-5-4-vs-5-3-differences/` 中，连字符是单词分割符，被解析为 `["glm", "5", "4", "vs", "5", "3"]`。
+  4. 算法拿推断词中的 `glm-5` 与 URL 比对时，因 URL 中没有连在一起的 `glm-5` 复合词，导致 4 词中只有 `4`、`vs`、`5` 3 词命中（3/4 = 75%），白白丢掉 0.5 分！
+* **必胜对齐军规**：
+  1. **Title 和 H1 必须使用空格分隔**：写作 `GLM 5.4 vs 5.3`（空格分隔），严禁在模型名与带小数点的版本号之间使用连字符连接（如 ❌ `GLM-5.4` 👉 ✅ `GLM 5.4`）。
+  2. **URL 词群 100% 逐词对称映射**：Title/H1 采用空格后，分词器提取出的 4 词组合为 `["glm", "5", "4", "vs"]`，在 URL 路径 `glm-5-4-vs-5-3-differences` 中 4/4 全部命中，URL 关键词覆盖度达成 100% 满分！
+  3. **次要版本号自然闭环**：URL 中的 `5-3` 亦与正文次要版本号 `5.3` 保持语义对齐，全额夺回 0.5 分。
 
 ---
 

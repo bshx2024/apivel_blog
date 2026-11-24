@@ -66,6 +66,12 @@ function auditArticle(filePath) {
     warnings.push('CRITICAL WARNING: Found "impact on senior" in Title/H1! Preposition "on" will push "engineers" out of 4-word window, causing "elderly citizens" SERP misattribution. Use "impact senior engineers" instead.');
   }
 
+  // Decimal Model Version Hyphen Trap Check (e.g. GLM-5.4 vs 5.3 in Title)
+  const decimalHyphenMatch = (metaTitle || '').match(/\b([A-Za-z]+)-(\d+\.\d+)\b/);
+  if (decimalHyphenMatch) {
+    warnings.push(`Decimal Model Version Hyphen Trap: Found "${decimalHyphenMatch[0]}" in Title! Gefei Junshi keeps hyphens but strips periods, splitting this into ["${decimalHyphenMatch[1].toLowerCase()}-${decimalHyphenMatch[2].split('.')[0]}", "${decimalHyphenMatch[2].split('.')[1]}"]. In the URL slug it is split into separate tokens, causing a 75% URL keyword coverage mismatch! Use space "${decimalHyphenMatch[1]} ${decimalHyphenMatch[2]}" instead.`);
+  }
+
   // Description checks
   if (!description) {
     errors.push('Missing description in frontmatter');
@@ -85,8 +91,8 @@ function auditArticle(filePath) {
 
   const words = bodyClean.split(/\s+/).filter(w => w.length > 0);
   console.log(`\nEstimated visible words (excluding code/schema): ${words.length}`);
-  if (words.length < 1200 || words.length > 1800) {
-    warnings.push(`Visible word count ${words.length} is outside 1200-1800 words best-practice range`);
+  if (words.length < 1200 || words.length > 1650) {
+    warnings.push(`Visible word count ${words.length} is outside 1200-1650 words optimal range (keep pure body words ~1350-1550 so rendered page tokens remain <= 2200 to prevent Gefei Junshi > 1800 word deduction)`);
   }
 
   // Check H tags inside embedded HTML widgets

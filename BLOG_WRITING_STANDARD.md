@@ -120,13 +120,14 @@
    - 严格执行**组件无 H 标签红线 (Strict AST Widget Cleanliness)**：自定义内嵌 HTML 组件（如 Definition Box、Key Takeaways、Playground、CRO 卡片）中**严禁使用原生 `<h1>`-`<h4>` 标签**，统一使用 `<div class="font-semibold text-white ...">` 或 `<span>` 加 CSS 类名，杜绝破坏纯 Markdown 的 `H1 -> H2 -> H3` 语义树而被判定“标题跳级”扣分；
    - **动态侧边栏模型话题注册 (Dynamic Floating CTA Topic Registry)**：若文章涉及新大模型（如 Xiaomi MiMo、GLM、Qwen、DeepSeek 等），必须同步在 `src/pages/[slug].astro` 的 `TOPIC_CONFIG` 中注册专属中英文转化卡片文案（包含 `badge`、`title`、`desc`、`metric`、`ctaText`）；
    - **辅助竞品模型控频铁律 (Anti-Competitor Dilution Rule)**：除对比表格（1次）与网关架构摘要（1次）外，严禁在正文重复出现竞品模型（如 Qwen 3.7 Max, DeepSeek V4）全名，其余位置全部替换为功能代词（如 `auxiliary workhorse models`, `secondary execution tier`）；主模型 2~5 词组必须垄断 N-gram 密度榜前三，彻底清除候选意图中的次级杂音词，确保密度榜位置加权满分（挽回 3 分）；
+   - **带小数点模型版本号 Title/H1 空格分隔铁律 (Decimal Model Version Space Rule - P0)**：当文章主词为带小数点的模型版本（如 `GLM 5.4 vs 5.3`）时，Title 和 H1 中模型与版本号必须使用空格分隔（`GLM 5.4`），**严禁使用连字符连接**（如 ❌ `GLM-5.4` 👉 ✅ `GLM 5.4`）。防止分词器因剥离小数点将其拆为 `glm-5 4` 而导致在 URL 路径比对时出现复合词未命中（URL 覆盖率从 100% 暴跌至 75%，丢 0.5 分）；
    - **硅谷工程原生去翻译腔规范 (Banish Translationese)**：杜绝 `autonomous developers`、`scaling physical weights`、`syntax emission` 等机器直译与 SEO 报菜名句式，以硅谷资深 LLM 架构师（Elena Rostova 等）的专业语调深度撰写；
    - 注入 **FAQ JSON-LD Schema**。
 2. **Gate 2 (前置自动化 SEO 健康度与真实性体检)**：
    - 自动运行 `audit_article_seo_health` 与 `simulate_ngrams` 工具；
    - **外部链接 HTTP 探针**：自动校验正文中所有外部链接（特别是 GitHub Issue / Reddit 引用），必须返回 `HTTP 200`，任何 404 死链直接作为 S0 Blocker 拦截！
    - **对比数据核验**：确保对比表格包含最新官方核准时间戳与来源出处说明；
-   - 强制确保：0 Blockers、0 Warnings、MetaTitle 严格 50–60 字符 (Max 600px 宽度)、H1 <= 80 字符、Meta Description 140–160 字符、纯 Markdown 正文有效阅读词数严格在 **1,500 ~ 1,750 词**（全页渲染总词数不超过 1800 词上限，挽回正文字数 1 分）、全面落实 PayPal 官方即时结账与全球免 KYC 结算标准、内嵌交互体验区消除 4.5 分落地页跳出风险。
+   - 强制确保：0 Blockers、0 Warnings、MetaTitle 严格 50–60 字符 (Max 600px 宽度)、H1 <= 80 字符、Meta Description 140–160 字符、纯 Markdown 正文有效阅读词数严格在 **1,350 ~ 1,550 词**（Python 代码控制在 25-35 行，全页总 Token 数控制在 2,000 ~ 2,200 左右，彻底消灭全页超 1800 词扣 1 分）、全面落实 PayPal 官方即时结账与全球免 KYC 结算标准、内嵌交互体验区消除 4.5 分落地页跳出风险。
 3. **Gate 3 (原子双向内链织网 - 必须同步修改老文章)**：
    - 自动在站内检索同主题/相关主题的 2~3 篇核心高权重老文章；
    - **在同一次修改中直接打开并编辑这些老文章**，将新文章作为上下文精准锚文本/Mermaid 节点织入老文章正文，实现双向权重闭环，坚决杜绝孤岛页面。

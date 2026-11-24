@@ -57,9 +57,10 @@ When executing Step 4, Reed and coding assistants **MUST execute the following 5
    - Register new model topics in `src/pages/[slug].astro` (`TOPIC_CONFIG`) with bilingual metadata.
    - Enforce **Contextual CTA Redirect**: ensure all CTA links carry `redirect=/blog/<slug>` to prevent context loss.
    - Enforce **Zero-Alert Rule**: code blocks rely on automated 1-Click Copy UI; NEVER hand-craft native `alert()` popups in markdown.
+   - Enforce **Decimal Model Version Space Rule (P0)**: Write decimal model versions with spaces in Title/H1 (e.g. `GLM 5.4 vs 5.3`, NOT `GLM-5.4`) to prevent tokenizer decimal-stripping traps and ensure 100% URL keyword coverage.
 2. **Gate 2 (Automated Pre-Flight SEO Health & Link Audit)**:
    - Run `audit_article_seo_health` against the new slug.
-   - Enforce: 0 blockers, 0 warnings, MetaTitle in 50–60 chars (max 600px), H1 <= 80 chars, Meta Description in 140–160 chars, visible word count 1200–1800 words, all external URLs probe HTTP 200, PayPal official instant checkout & global zero-FX billing strictly enforced.
+   - Enforce: 0 blockers, 0 warnings, MetaTitle in 50–60 chars (max 600px), H1 <= 80 chars, Meta Description in 140–160 chars, visible word count strictly in 1350–1550 words (pure body) to ensure total rendered page <= 2200 tokens (prevent >1800 word deduction), all external URLs probe HTTP 200, PayPal official instant checkout & global zero-FX billing strictly enforced.
 3. **Gate 3 (Atomic Bidirectional Mesh Weaving - MUST MODIFY OLD POSTS)**:
    - Search the repository for 2–3 existing high-authority pillar articles in the same or adjacent topic cluster.
    - **Immediately open and edit those existing articles** to inject contextual inbound anchor links and Mermaid failover nodes pointing to the new article.
