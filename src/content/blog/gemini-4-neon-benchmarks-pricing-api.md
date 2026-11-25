@@ -1,6 +1,6 @@
 ---
 title: "Google Gemini 4 Neon: Benchmarks, Pricing & Quota Limits"
-metaTitle: "Google Gemini 4 Neon: Price, Benchmarks & Limits | APIVALE"
+metaTitle: "Gemini 4 Neon API: $3/$15 Price & Quota Fix | APIVALE"
 description: "Explore Google Gemini 4 Neon API: benchmarks, $3/$15 pricing, and 5-hour quota fixes. Cut agent token burn with two-tier DeepSeek routing on APIVALE."
 date: "2026-11-19"
 author: "Sofia Costa"

@@ -32,6 +32,20 @@
 
 ## 📅 apivel.com SEO 动作记录表 (2026年)
 
+### 2026-11-25 (GSC 首页 0 CTR 抢救与 GPT 6.2 排名止跌：消除连字符分词陷阱、修复 6 篇老/新文审计报错与 CTR 磁吸标题重构)
+* **分类**：📝⚙️ [GSC 排名下滑抢救、GPT 6.2 连字符分词修复、正文字数收敛、CTA 容器与支付合规清零、首页 Pos 5–9.5 文章 CTR 磁吸重构]
+* **动作详情**：
+  * **GSC 报表二次排查发现**：`gpt-6-2-astra-vs-opus-5-5-differences/` 从 Pos 9.2 跌至 Pos 20.7，`gpt-6-2-astra-benchmarks-price-reddit/` 卡在 Pos 45.0，且排在第 5–9.5 名的 5 篇文章（`gemini-4-argon`、`ai-coding-impact`、`freellmapi`、`qwen-4-release-date`、`gemini-4-neon`）全为 0% CTR。
+  * **6 篇联动外科手术落地**：
+    1. `gpt-6-2-astra-vs-opus-5-5-differences.md`：Title/MetaTitle/headline 中的 `GPT-6.2` 改为 `GPT 6.2` 消除小数点连字符分词失配，正文由 1831 词收敛至 **1542 词**（`audit_article.cjs` 0 Errors, 0 Warnings）；
+    2. `gpt-6-2-astra-benchmarks-price-reddit.md`：Title/MetaTitle 中的 `GPT-6.2` 改为 `GPT 6.2`，正文由 1906 词收敛至 **1552 词**（0 Errors, 0 Warnings）；
+    3. `gemini-4-argon-coding-test-review.md`：正文从 944 词扩充至 **1230+ 词**、修正独立 `<div class="cta-card">` 容器报错、MetaTitle 优化为 `Gemini 4 Argon Coding Test: 77.9% Score & Cost Fix | APIVALE`（0 Errors, 0 Warnings）；
+    4. `freellmapi-claude-code-review-alternatives.md`：清除第 129 行 `Stripe / Crypto` 合规报错、MetaTitle 升级为 `FreeLLMAPI Review: Safe Alternative & 429 Fix | APIVALE`（0 Errors, 0 Warnings）；
+    5. `qwen-4-release-date-api-roadmap.md`：正文由 1747 词收敛至 **1435 词**、修正独立 `<div class="cta-card">` 容器、MetaTitle 升级为 `Qwen 4 Release Date: 27B Weights & API Access | APIVALE`（0 Errors, 0 Warnings）；
+    6. `gemini-4-neon-benchmarks-pricing-api.md`：MetaTitle 优化为 `Gemini 4 Neon API: $3/$15 Price & Quota Fix | APIVALE` 突出价格冲突感并从 Argon 文补充互链（0 Errors, 0 Warnings）。
+* **14 天因果响应假设**：
+  * `GPT 6.2` 两篇排名止跌并在 7–14 天内重回前 10–15 位；首页第 5–9.5 名文章在去除合规/结构短板与强化 CTR 钩子后开始产生真实点击。
+
 ### 2026-11-25 (GSC 收录排查诊断与全站发现提速：Sitemap 动态 lastmod、消除未来时间戳、GLM 5.4 母子集群收拢与 Freebuff 入链加权)
 * **分类**：⚙️📝 [技术 SEO Sitemap lastmod 补全、未来时间戳修正、GLM 5.4 Hub-and-Spoke 集群收敛、On-Page 词数与分词修复、Freebuff 内链加权与首页曝光]
 * **动作详情**：
