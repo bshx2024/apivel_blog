@@ -153,7 +153,7 @@ Community discussions reviewing the **Ponytail GitHub skill** on Reddit point ou
 
 ## 5. Resilient Production Setup: Connecting Ponytail to APIVALE Endpoints
 
-Connecting the prompt to high-reasoning models via APIVALE requires no local proxy daemons.
+Connecting the prompt to high-reasoning models via APIVALE requires no local proxy daemons—and for teams evaluating ad-supported multi-subagent CLI workflows alongside custom skills, see our [Freebuff AI coding review](/blog/freebuff-ai-coding-review/).
 
 ### Python Gateway Verification Script
 

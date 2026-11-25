@@ -32,6 +32,20 @@
 
 ## 📅 apivel.com SEO 动作记录表 (2026年)
 
+### 2026-11-25 (GSC 收录排查诊断与全站发现提速：Sitemap 动态 lastmod、消除未来时间戳、GLM 5.4 母子集群收拢与 Freebuff 入链加权)
+* **分类**：⚙️📝 [技术 SEO Sitemap lastmod 补全、未来时间戳修正、GLM 5.4 Hub-and-Spoke 集群收敛、On-Page 词数与分词修复、Freebuff 内链加权与首页曝光]
+* **动作详情**：
+  * **GSC 诊断溯源**：针对 11-23 与 11-24 上线的 5 篇博文仅 `gpt-6-2-astra-vs-opus-5-5-differences` 获得展现的排查发现四大根因：(1) `blog/sitemap-0.xml` 缺失 `<lastmod>` 时间戳拖慢发现优先级；(2) `glm-5-4-vs-claude-opus-5-5-benchmarks` 等 3 篇 `date` 字段含超前 UTC 未来时间；(3) 38 小时内连发多篇 `GLM 5.4` 引发站内语义分散与观察队列延迟；(4) `glm-5-4-architecture-benchmarks-api` 存在连字符分词与 1831 词超标、`glm-5-4-vs-claude-opus-5-5-benchmarks` 正文偏短至 1135 词、`freebuff-ai-coding-review` 站内入链仅 3 条且首页缺乏直达入口。
+  * **技术与内容修复落地**：
+    1. **Sitemap 动态 `<lastmod>`**：升级 `astro.config.mjs` 的 `@astrojs/sitemap` `serialize()` 钩子，自动读取 Markdown frontmatter `date` 为全站 34 个页面精准注入 `<lastmod>`；
+    2. **修正超前 UTC 时间戳**：将 `glm-5-4-vs-claude-opus-5-5-benchmarks.md`（`2026-11-24T07:15:00Z`）、`glm-5-4-vs-kimi-k3-benchmarks.md`（`2026-11-25T02:30:00Z`）与 `kimi-k3-1-vs-claude-opus-5-5-benchmarks.md`（`2026-11-25T02:51:00Z`）修正为真实已发布 UTC 时间；
+    3. **GLM 5.4 母文与对比文双向收敛**：
+       - `glm-5-4-architecture-benchmarks-api.md`：Title/MetaTitle 中的 `GLM-5.4` 改为 `GLM 5.4` 消除分词失配，正文从 1831 词精简至 1555 词（`audit_article.cjs` 0 Errors, 0 Warnings），并补齐指向 3 篇子对比页的导流链接；
+       - `glm-5-4-vs-claude-opus-5-5-benchmarks.md`：正文从 1135 词扩充至 1351 词（`audit_article.cjs` 0 Errors, 0 Warnings），补充自适应思考 effort 调优、75 秒超时防挂及回指架构母文的语义锚点；
+    4. **Freebuff 入链翻倍与首页曝光**：在 `9router-vs-omniroute-alternatives-guide.md`、`omniroute-claude-code-setup.md`、`ponytail-github-skill-install-review.md` 注入 3 条上下文入链（入链数由 3 条提升至 6 条），并在 `src/pages/index.astro` 顶部 `topics-filter-bar` 露出 `GLM 5.4 Architecture` 与 `Freebuff AI Review`。
+* **14 天因果响应假设**：
+  * `blog/sitemap-0.xml` 携带精准 `<lastmod>` 并配合 GSC 手动请求索引后，11-23/11-24 未收录的 4 篇博文将在 24–72 小时内完成建库并开始在 GSC 产生首轮曝光；`freebuff-ai-coding-review` 受益于 6 条站内入链与首页曝光，在 14 天内逐步向长尾词前 20 名爬升。
+
 ### 2026-11-25 (Kimi K3.1 vs Claude Opus 5.5 双旗舰对比评测首发、2.8T 开源 MoE vs 自适应思考架构解构、Terminal-Bench 与 SWE-Marathon 跑分对比、双向内链织网与 5-Gate 原子发布)
 * **分类**：📝 [开源 vs 闭源双旗舰对比评测、2.8T KDA MoE vs 自适应思考架构解构、Terminal-Bench 4.0 与 SWE-Marathon 跑分对比、双层高可用降本网关、5-Gate 原子发布与双向织网]
 * **动作详情**：

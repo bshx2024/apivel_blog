@@ -108,7 +108,7 @@ To help you select the best **9Router alternatives**, our benchmark evaluates ar
 | **Global Billing &amp; KYC** | None (user manages keys) | None | Stripe / Crypto only | **PayPal Instant Checkout, zero KYC** |
 | **Best For (Honesty Column)** | Free-tier hobbyist pooling | Local model fusion | Broad Western testing | **Production coding agents** |
 
-*Table data verified October 2026. Evaluating local proxy routing and commercial managed proxy alternatives. Also explore our guides on <a href="/blog/claude-opus-5-5-price-limits-claude-code/" class="text-indigo-400 hover:underline">Claude Opus 5.5 rate limits</a> and <a href="/blog/deepseek-v4-1-flash-1017-api-setup/" class="text-indigo-400 hover:underline">DeepSeek V4 API setup</a>.*
+*Table data verified October 2026. Evaluating local proxy routing and commercial managed proxy alternatives. Also explore our guides on <a href="/blog/claude-opus-5-5-price-limits-claude-code/" class="text-indigo-400 hover:underline">Claude Opus 5.5 rate limits</a>, <a href="/blog/deepseek-v4-1-flash-1017-api-setup/" class="text-indigo-400 hover:underline">DeepSeek V4 API setup</a>, and our <a href="/blog/freebuff-ai-coding-review/" class="text-indigo-400 hover:underline">Freebuff AI coding review</a> comparing ad-supported CLI agents against dedicated gateways.*
 
 ---
 

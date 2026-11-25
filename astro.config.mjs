@@ -1,7 +1,41 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import fs from 'node:fs';
+import path from 'node:path';
 
 import sitemap from '@astrojs/sitemap';
+
+// Build a slug -> ISO date lookup from blog markdown frontmatter for accurate <lastmod>
+function loadBlogLastmodMap() {
+  const map = new Map();
+  let latestIso = new Date().toISOString();
+  let latestMs = 0;
+  try {
+    const blogDir = path.resolve(process.cwd(), 'src/content/blog');
+    for (const file of fs.readdirSync(blogDir)) {
+      if (!file.endsWith('.md') && !file.endsWith('.mdx')) continue;
+      const slug = file.replace(/\.(md|mdx)$/, '');
+      const raw = fs.readFileSync(path.join(blogDir, file), 'utf8');
+      const m = raw.match(/^date:\s*['"]?([^'"\r\n]+)['"]?/m);
+      if (m) {
+        const parsed = new Date(m[1].trim());
+        if (!Number.isNaN(parsed.getTime())) {
+          const iso = parsed.toISOString();
+          map.set(`/blog/${slug}/`, iso);
+          if (parsed.getTime() > latestMs) {
+            latestMs = parsed.getTime();
+            latestIso = iso;
+          }
+        }
+      }
+    }
+  } catch {
+    // Fallback to build time if content directory is unavailable
+  }
+  return { map, latestIso };
+}
+
+const { map: blogLastmodMap, latestIso: latestBlogIso } = loadBlogLastmodMap();
 
 // Rehype plugin to automatically add rel="nofollow" to parameterized & redirect CTA links
 function rehypeNofollowTrackingLinks() {
@@ -46,5 +80,17 @@ export default defineConfig({
     '/blog/gpt-6-cyber-request-access-api-guide/': '/blog/openai-gpt-6-cyber-api-access-guide/',
     '/gpt-6-cyber-request-access-api-guide/': '/blog/openai-gpt-6-cyber-api-access-guide/'
   },
-  integrations: [sitemap()]
+  integrations: [
+    sitemap({
+      serialize(item) {
+        const pathname = new URL(item.url).pathname;
+        if (blogLastmodMap.has(pathname)) {
+          item.lastmod = blogLastmodMap.get(pathname);
+        } else {
+          item.lastmod = latestBlogIso;
+        }
+        return item;
+      }
+    })
+  ]
 });

@@ -2,7 +2,7 @@
 title: "Kimi K3.1 vs Claude Opus 5.5: Pro Benchmarks, Open Weights & API Pricing"
 metaTitle: "Kimi K3.1 vs Claude Opus 5.5: Benchmarks & Pricing | APIVALE"
 description: "Compare Kimi K3.1 vs Claude Opus 5.5 AI models: 2.8T MoE vs adaptive thinking, Terminal-Bench scores, open weights, API pricing, and routing on APIVALE."
-date: "2026-11-25T11:00:00Z"
+date: "2026-11-25T02:51:00Z"
 author: "Priya Sharma"
 authorTitle: "AI Performance & Distributed Computing Engineer, APIVALE"
 authorBio: "Priya Sharma specializes in foundation model benchmarks, Terminal-Bench and SWE-bench reproduction, inference throughput optimization, and multi-model gateway architectures."

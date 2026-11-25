@@ -2,7 +2,7 @@
 title: "GLM 5.4 vs Kimi K3: Loop Architecture, Benchmarks & API Pricing"
 metaTitle: "GLM 5.4 vs Kimi K3: Benchmarks & API Pricing | APIVALE"
 description: "Compare GLM 5.4 vs Kimi K3 AI models: Loop Transformer vs 2.8T MoE, King Bench coding scores, open weights, API pricing, and two-tier routing on APIVALE."
-date: "2026-11-25T10:00:00Z"
+date: "2026-11-25T02:30:00Z"
 author: "Alex Rivera"
 authorTitle: "Lead AI Systems Architect, APIVALE"
 authorBio: "Lead AI Systems Architect at APIVALE."
