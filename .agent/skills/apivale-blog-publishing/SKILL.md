@@ -406,13 +406,21 @@ bun .agent/skills/apivale-blog-publishing/scripts/simulate_ngrams.cjs src/conten
    git add -A; git commit -m "feat(blog): publish <slug> with bidirectional links & PAA alignment"; git push origin main
    ```
    *【核心红线】*：严禁在完成编辑后仅留在本地等待用户询问！每次任何博文或代码变动必须作为整体直接推送至远程仓库（必须输出 `main -> main`），确保云端构建生效与哥飞军师复测！
+3. **线上 HTTP 200 实测与哥飞军师网址交付铁律 (Live 200 Probe & Direct URL Handoff - P0 强制必执)**：
+   - 推送至 `origin main` 后，必须在当前事务中主动探测线上地址是否已返回 `HTTP 200`（若 Cloudflare Pages 仍在构建中，可间隔重试等待生效）：
+     ```powershell
+     bun -e "const r=await fetch('https://apivel.com/blog/<slug>/'); console.log('Status:', r.status, 'Final URL:', r.url);"
+     ```
+   - **回复末尾强制显式交付**：写好博文并推送后，**无需等待用户追问**，必须在最终回复中单独列出可直接复制发给**哥飞页面军师**的标准线上网址与建议目标关键词：
+     - **页面 URL**：`https://apivel.com/blog/<slug>/`
+     - **建议目标关键词**：`<核心主词>`（如 `hungerG` / `hungerg ai model`）
 
 ---
 
 ## 八、Phase 7: 远程构建与军师闭环复测
 
-1. **CDN 缓存等待**：推送完成后，等待 1~2 分钟让 Cloudflare CDN 缓存自动生效。
-2. **军师复测**：在哥飞军师（Page Coach）输入标准地址：
+1. **CDN 缓存与上线探测**：推送完成后确认 `https://apivel.com/blog/<slug>/` 返回 `HTTP 200`（通常 1~2 分钟内生效）。
+2. **军师复测**：将最终交付给用户的标准地址输入哥飞军师（Page Coach）：
    `https://apivel.com/blog/<slug>/`
 3. **合格线验收**：
    - 评级达到 **98+ A / A+**；

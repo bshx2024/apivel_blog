@@ -68,8 +68,8 @@ When executing Step 4, Reed and coding assistants **MUST execute the following 5
 4. **Gate 4 (Action Log Auto-Archive)**:
    - Append the standardized entry to [SEO_ACTION_LOG.md](file:///e:/kaifa/APIVALE_blog/SEO_ACTION_LOG.md) documenting target URL, keywords, exact technical changes, and 14-day causality hypothesis.
 5. **Gate 5 (Atomic Commit, Push & Live Status Verification)**:
-   - Stage all modified files (new article + updated old articles + action log) in a single Git commit and push to `origin main`.
-   - Verify deployment build completion and confirm live 200 response on `https://apivel.com/blog/<slug>/`.
+   - Stage all modified files (new article + updated old articles + action log) in a single Git commit and push to `origin main` (`BypassSandbox: true` on Windows).
+   - Verify deployment build completion, actively probe and confirm live `HTTP 200` response on `https://apivel.com/blog/<slug>/`, and **explicitly provide the live canonical URL (`https://apivel.com/blog/<slug>/`) + recommended Page Coach (哥飞页面军师) keyword(s)** directly in your final response without waiting for the user to ask.
 
 ---
 
