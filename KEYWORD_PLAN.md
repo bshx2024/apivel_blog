@@ -24,6 +24,7 @@ This document tracks all researched high-potential keyword clusters, proposed ar
 | **14** | *Freebuff AI Coding Review: Architecture, Ad Limits, Safety & Gateway Setup* | `freebuff ai coding review` | `freebuff ai coding`, `freebuff code review`, `freebuff review`, `freebuff vs claude code`, `freebuff vs cursor` | Evaluation / Commercial / Breakout | ✅ **Published** |
 | **15** | *GLM 5.4 vs Claude Opus 5.5: Loop Architecture, SWE Benchmarks & API Pricing* | `GLM-5.4 vs Claude Opus 5.5` | `glm 5.4 vs opus 5.5`, `glm 5.4 vs claude opus 5.5`, `glm 5.4 loop transformer`, `claude opus 5.5 price`, `glm 5.4 benchmarks` | Comparison / Technical Breakout / Commercial | ✅ **Published** |
 | **16** | *GLM 5.4 vs Kimi K3: Loop Architecture, Benchmarks & API Pricing* | `GLM-5.4 vs Kimi K3` | `glm 5.4 vs kimi k3`, `glm 5.4 benchmark`, `kimi k3 pricing`, `kimi k3 open source`, `glm 5.4 flash`, `glm 5.4 reddit` | Comparison / Technical Breakout / Commercial | ✅ **Published** |
+| **17** | *Kimi K3.1 vs Claude Opus 5.5: Pro Benchmarks, Open Weights & API Pricing* | `Kimi K3.1 vs Claude Opus 5.5` | `kimi k3.1 pro vs claude opus 5.5`, `kimi k3 1 pro price`, `kimi k3 1 pro huggingface`, `claude opus 5.5 benchmarks`, `terminal-bench 4.0` | Comparison / Technical Breakout / Commercial | ✅ **Published** |
 
 
 ---

@@ -72,7 +72,7 @@ The matrix below compares verified benchmarks, open-weight status, context capac
 
 ### King Bench 4, Terminal-Bench & Flash Cost Realities
 
-On King Bench 4, Zhipu's recurrent model hits **33.2/60 (55.3%)** at max effort, narrowly beating Moonshot's **32.2/60** and competing with closed flagships (see our [GLM 5.4 vs Claude Opus 5.5 Benchmarks](/blog/glm-5-4-vs-claude-opus-5-5-benchmarks/)). Moonshot's engine leads on **Terminal-Bench 4.0 (65.7%)** and **OfficeQA Pro v2 (64.4 SoTA)** with zero long-context surcharges.
+On King Bench 4, Zhipu's recurrent model hits **33.2/60 (55.3%)** at max effort, narrowly beating Moonshot's **32.2/60** and competing with closed flagships (see our [GLM 5.4 vs Claude Opus 5.5 Benchmarks](/blog/glm-5-4-vs-claude-opus-5-5-benchmarks/) and [Kimi K3.1 vs Claude Opus 5.5 Comparison](/blog/kimi-k3-1-vs-claude-opus-5-5-benchmarks/)). Moonshot's engine leads on **Terminal-Bench 4.0 (65.7%)** and **OfficeQA Pro v2 (64.4 SoTA)** with zero long-context surcharges.
 
 Economically, Zhipu's Coding Plans ($18 / $80 / $168 monthly) yield ~$0.80/$2.40 effective rates—60% to 75% below Moonshot's $2.00/$10.00 API. Teams needing sub-150ms autocomplete can offload trivial edits to Flash endpoints ($0.08/$0.24) before escalating complex diffs.
 

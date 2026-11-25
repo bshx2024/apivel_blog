@@ -42,12 +42,15 @@ const postMeta = `${slugLower} ${titleLower} ${tagsLower}`;
 
 const isPriceOrBenchmark = /price|cost|saving|benchmark|comparison|versus|vs|deepseek|minimax|rate/i.test(slugLower + ' ' + titleLower);
 const isCliOrSetup = /cli|cursor|windsurf|opencode|connect|setup|config|mcp|guide|access|bypass/i.test(slugLower + ' ' + titleLower);
-const hasCustomWidget = slugLower.includes('flashprove') || slugLower.includes('cyber') || slugLower.includes('qwen-4-max') || slugLower.includes('glm-5-4-vs-kimi-k3');
+const hasCustomWidget = slugLower.includes('flashprove') || slugLower.includes('cyber') || slugLower.includes('qwen-4-max') || slugLower.includes('glm-5-4-vs-kimi-k3') || slugLower.includes('kimi-k3-1-vs-claude-opus-5-5');
 
 let initialModel = 'glm-5.3-flash';
 let targetTopic = 'general';
 
-if (slugLower.includes('gpt-6-2-sol') || slugLower.includes('sol')) {
+if (slugLower.includes('kimi-k3-1-vs-claude-opus-5-5')) {
+	targetTopic = 'kimi';
+	initialModel = 'kimi-k3.1-pro';
+} else if (slugLower.includes('gpt-6-2-sol') || slugLower.includes('sol')) {
 	targetTopic = 'sol';
 	initialModel = 'gpt-6.2-sol';
 } else if (slugLower.includes('freebuff') || postMeta.includes('freebuff')) {

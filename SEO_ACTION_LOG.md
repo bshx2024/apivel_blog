@@ -32,6 +32,28 @@
 
 ## 📅 apivel.com SEO 动作记录表 (2026年)
 
+### 2026-11-25 (Kimi K3.1 vs Claude Opus 5.5 双旗舰对比评测首发、2.8T 开源 MoE vs 自适应思考架构解构、Terminal-Bench 与 SWE-Marathon 跑分对比、双向内链织网与 5-Gate 原子发布)
+* **分类**：📝 [开源 vs 闭源双旗舰对比评测、2.8T KDA MoE vs 自适应思考架构解构、Terminal-Bench 4.0 与 SWE-Marathon 跑分对比、双层高可用降本网关、5-Gate 原子发布与双向织网]
+* **动作详情**：
+  * **立项背景与搜索意图逆向**：
+    1. **核心关键词**：`Kimi K3.1 vs Claude Opus 5.5`（采掘 Google 下拉词与衍生变体 `kimi k3.1 pro vs claude opus 5.5`、`kimi k3 1 pro price`、`kimi k3 1 pro huggingface`、`claude opus 5.5 benchmarks`、`claude opus 5.5 medium vs high`）；
+    2. **跨界实体消歧**：采掘侦测到 `astra` 相关交叉比较冲突词，强制在 Meta Description、Technical Summary Box 与首段绑定 `AI models` / `foundation models` 语义防火墙；
+    3. **军规避坑落地**：标题与 H1 严格采用空格化版本号 `Kimi K3.1 vs Claude Opus 5.5`，避免连字符分词冲突实现 URL 100% 覆盖；双实体 2-gram 密度控制在 2.27%–2.60%（无超标报警），全篇严格保持 12 个标题纯净 AST 树，纯正文控制在 1,301 词确保全页渲染词数 <= 1,800。
+  * **新文章发布与技术内容落地**：
+    1. **新博文发布**：`/blog/kimi-k3-1-vs-claude-opus-5-5-benchmarks/`（作者轮换：Priya Sharma，1024x1024 真人头像双路径配置）；
+    2. **核心元数据**：
+       - Title / H1: `Kimi K3.1 vs Claude Opus 5.5: Pro Benchmarks, Open Weights & API Pricing` (72 字符)；
+       - MetaTitle: `Kimi K3.1 vs Claude Opus 5.5: Benchmarks & Pricing | APIVALE` (60 字符)；
+       - Meta Description: 152 字符，完整覆盖 2.8T MoE、自适应思考、Terminal-Bench、开源权重、定价与双层路由；
+    3. **4 项工程增益与交互微工具**：Mermaid 双层容灾拓扑图、含 Honesty Column 的客观对比表、r/ClaudeCode 与 r/LocalLLaMA 真实社区原声卡片、防超时 Python 路由客户端 + CLI 环境配置、原生无 alert 交互成本测算器、4 问 FAQPage Schema；
+    4. **双向内链织网 (Bi-directional Mesh Weaving)**：
+       - 互链旧文 1：`kimi-k3-1-pro-pricing-benchmarks-api-access.md`；
+       - 互链旧文 2：`claude-opus-5-5-price-limits-claude-code.md`；
+       - 互链旧文 3：`glm-5-4-vs-kimi-k3-benchmarks.md`；
+    5. **系统登记与知识库同步**：在 `src/pages/[slug].astro` 将 `kimi-k3-1-vs-claude-opus-5-5` 加入 `hasCustomWidget` 并路由至 `kimi` 专属中英文转化卡片，同步更新 `public/llms.txt` 与 `KEYWORD_PLAN.md`。
+* **14 天因果响应假设**：
+  * 在 `kimi k3 1 vs claude opus 5.5`、`kimi k3.1 pro vs claude opus 5.5`、`kimi k3.1 open weights vs opus 5.5` 核心对比词群中，7–14 天内进入 Google 前 3 页，28 天内依托 FAQPage Schema 争夺 AI Overviews 引用并持续转化受困于 +86 实名、外卡拒付与 5 小时配额锁死的开发团队。
+
 ### 2026-11-25 (GLM 5.4 vs Kimi K3 双旗舰对决深度评测首发、Loop Transformer vs 2.8T MoE 架构拆解、开源权重与计费摩擦治理、双向内链织网与 5-Gate 原子发布)
 * **分类**：📝 [国产双前沿旗舰对比评测、Loop Transformer vs KDA MoE 架构解构、King Bench 4 与 Terminal-Bench 4.0 跑分分析、双层高可用降本网关、5-Gate 原子发布与双向织网]
 * **动作详情**：
