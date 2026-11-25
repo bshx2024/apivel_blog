@@ -32,6 +32,28 @@
 
 ## 📅 apivel.com SEO 动作记录表 (2026年)
 
+### 2026-11-25 (GLM 5.4 vs Kimi K3 双旗舰对决深度评测首发、Loop Transformer vs 2.8T MoE 架构拆解、开源权重与计费摩擦治理、双向内链织网与 5-Gate 原子发布)
+* **分类**：📝 [国产双前沿旗舰对比评测、Loop Transformer vs KDA MoE 架构解构、King Bench 4 与 Terminal-Bench 4.0 跑分分析、双层高可用降本网关、5-Gate 原子发布与双向织网]
+* **动作详情**：
+  * **立项背景与搜索意图逆向**：
+    1. **核心关键词**：`GLM-5.4 vs Kimi K3`（采掘 Google 下拉词、衍生词 `glm 5.4 flash` / `kimi k3 pricing` / `kimi k3 huggingface` / `glm 5.4 open weights`）；
+    2. **跨界实体消歧**：Google 下拉列表命中 `kia k3 vs k5`、`kia k5 model differences` 汽车实体碰撞，强制在 Meta Description、Summary Box 与首段绑定 `AI models` / `foundation models` / `LLM` 语义防火墙；
+    3. **军规避坑落地**：标题与 H1 严格采用空格化版本号 `GLM 5.4 vs Kimi K3`，避免连字符与小数点分词冲突实现 URL 100% 覆盖；双实体 2-gram 密度控制在 ~2.4%-2.6%，全篇保持 12 个标题纯净 AST 树，纯正文控制在 ~1,380 词确保渲染总词数 <= 1,800。
+  * **新文章发布与技术内容落地**：
+    1. **新博文发布**：`/blog/glm-5-4-vs-kimi-k3-benchmarks/`（作者轮换：Alex Rivera，1024x1024 真人头像双路径配置）；
+    2. **核心元数据**：
+       - Title / H1: `GLM 5.4 vs Kimi K3: Loop Architecture, Benchmarks & API Pricing` (63 字符)；
+       - MetaTitle: `GLM 5.4 vs Kimi K3: Benchmarks & API Pricing | APIVALE` (54 字符)；
+       - Meta Description: 153 字符，完整覆盖架构、跑分、开源权重、定价与双层路由；
+    3. **4 项工程增益与交互微工具**：Mermaid 双层容灾拓扑图、含 Honesty Column 的客观对比表、r/LocalLLaMA 与 r/ClaudeCode 真实社区原声卡片、防超时 Python 路由客户端 + CLI 环境配置、原生无 alert 交互成本测算器、1:1 PAA 4 问 FAQPage Schema；
+    4. **双向内链织网 (Bi-directional Mesh Weaving)**：
+       - 互链旧文 1：`kimi-k3-1-pro-pricing-benchmarks-api-access.md`；
+       - 互链旧文 2：`glm-5-4-vs-claude-opus-5-5-benchmarks.md`；
+       - 互链旧文 3：`glm-5-4-architecture-benchmarks-api.md`；
+    5. **系统登记与知识库同步**：在 `src/pages/[slug].astro` 补全 `'glm-5.4'` 的中英文 `TOPIC_CONFIG`，同步更新 `public/llms.txt` 与 `KEYWORD_PLAN.md`。
+* **14 天因果响应假设**：
+  * 在 `glm 5.4 vs kimi k3`、`glm 5.4 vs kimi k3 pricing`、`glm 5.4 open weights vs kimi k3` 核心对比词群中，7–14 天内进入 Google 前 3 页，28 天内依托 PAA FAQPage Schema 收割 AI Overviews 引用并持续转化受困于 +86 实名与外卡拒付的开发者团队。
+
 ### 2026-11-24 (GLM 5.4 vs Claude Opus 5.5 旗舰对决深度评测首发、循环Transformer与自适应思考架构解构、马拉松思维与配额熔断治理、双层网关接入与 5-Gate 原子发布)
 * **分类**：📝 [国产前沿旗舰对比海外顶流评测、Loop Transformer 递归架构深度拆解、自适应思考与马拉松思维实测、双层高可用降本网关落地、5-Gate 原子发布与双向织网]
 * **动作详情**：

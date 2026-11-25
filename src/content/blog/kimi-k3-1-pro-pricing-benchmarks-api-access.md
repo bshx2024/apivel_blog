@@ -99,7 +99,7 @@ With a 1M window, coding tools resend file trees and AST diffs. A 15-turn task w
 
 Independent evaluations confirm competitive performance in autonomous software engineering:
 
-* **Terminal-Bench 4.0:** Achieves **65.7%**, closely trailing [Claude Opus 5.5](/blog/claude-opus-5-5-price-limits-claude-code/) (66.4%) while outperforming GPT-6 Astra (58.2%). It resolved environment errors in 84% of evaluated test cases.
+* **Terminal-Bench 4.0:** Achieves **65.7%**, closely trailing [Claude Opus 5.5](/blog/claude-opus-5-5-price-limits-claude-code/) (66.4%) while outperforming GPT-6 Astra (58.2%). It resolved environment errors in 84% of evaluated test cases (see our [GLM 5.4 vs Kimi K3 Coding & Pricing Comparison](/blog/glm-5-4-vs-kimi-k3-benchmarks/) for recurrent Loop Transformer trade-offs).
 * **OfficeQA Pro v2:** Reached **64.4 (SoTA)** on multi-sheet financial modeling and cross-document validation.
 * **3D Spatial Reasoning (3D Make):** Generates procedural Godot 4.x GDScript, Blender Python pipelines, and watertight 3D meshes from text prompts.
 
