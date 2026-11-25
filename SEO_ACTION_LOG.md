@@ -50,7 +50,7 @@
        - 互链旧文 1：`kimi-k3-1-pro-pricing-benchmarks-api-access.md`；
        - 互链旧文 2：`glm-5-4-vs-claude-opus-5-5-benchmarks.md`；
        - 互链旧文 3：`glm-5-4-architecture-benchmarks-api.md`；
-    5. **系统登记与知识库同步**：在 `src/pages/[slug].astro` 补全 `'glm-5.4'` 的中英文 `TOPIC_CONFIG`，同步更新 `public/llms.txt` 与 `KEYWORD_PLAN.md`。
+    5. **系统登记与知识库同步**：在 `src/pages/[slug].astro` 补全 `'glm-5.4'` 的中英文 `TOPIC_CONFIG`，并将 `glm-5-4-vs-kimi-k3` 加入 `hasCustomWidget` 排除全局重复计算器组件，使哥飞军师全页词数由 `1910` 降至 `1800` 黄金线以内（消除 1 分扣分冲击 100 A+），同步更新 `public/llms.txt` 与 `KEYWORD_PLAN.md`。
 * **14 天因果响应假设**：
   * 在 `glm 5.4 vs kimi k3`、`glm 5.4 vs kimi k3 pricing`、`glm 5.4 open weights vs kimi k3` 核心对比词群中，7–14 天内进入 Google 前 3 页，28 天内依托 PAA FAQPage Schema 收割 AI Overviews 引用并持续转化受困于 +86 实名与外卡拒付的开发者团队。
 
