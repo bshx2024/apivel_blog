@@ -49,8 +49,8 @@ function auditArticle(filePath) {
     if (metaTitle.length < 50 || metaTitle.length > 60) {
       errors.push(`metaTitle length ${metaTitle.length} is outside 50-60 chars (max 600px rule)`);
     }
-    if (!metaTitle.endsWith('| APIVALE') && !metaTitle.endsWith('| apivel')) {
-      warnings.push('metaTitle does not end with standard brand hook "| APIVALE"');
+    if (!metaTitle.endsWith('| APIVEL') && !metaTitle.endsWith('| APIVALE') && !metaTitle.endsWith('| apivel')) {
+      warnings.push('metaTitle does not end with standard brand hook "| APIVEL"');
     }
   }
 

@@ -1,13 +1,13 @@
 ---
 title: "HungerG AI Model: Qoder, OpenCode, Step 5 Clues & API Guide"
-metaTitle: "HungerG AI Model: Qoder, OpenCode & Step 5 Leak | APIVALE"
-description: "Explore HungerG AI model: Qoder and OpenCode Go free trial specs, Step 5 tokenizer clues, 1M context, privacy gaps, and APIVALE two-tier routing."
+metaTitle: "HungerG AI Model: Qoder, OpenCode & Step 5 Leak | APIVEL"
+description: "Explore HungerG AI model: Qoder and OpenCode Go free trial specs, Step 5 tokenizer clues, 1M context, privacy gaps, and APIVEL two-tier routing."
 date: "2026-11-25T15:00:00Z"
 author: "Kenji Tanaka"
-authorTitle: "AI Developer Relations & Infrastructure Engineer, APIVALE"
+authorTitle: "AI Developer Relations & Infrastructure Engineer, APIVEL"
 authorBio: "Kenji Tanaka focuses on terminal coding workflows, OpenCode and Claude Code CLI optimization, multi-agent debugging, and zero-downtime LLM gateway routing."
 image: "/blog/og-cover.png"
-tags: ["HungerG AI Model", "HungerG OpenCode", "HungerG Qoder", "Step 5 Preview", "APIVALE"]
+tags: ["HungerG AI Model", "HungerG OpenCode", "HungerG Qoder", "Step 5 Preview", "APIVEL"]
 keyTakeaways:
   - label: "Gateway"
     value: "https://apivel.com/v1"
@@ -28,7 +28,7 @@ keyTakeaways:
     <span>Technical Summary: HungerG AI Model &amp; Stealth Trial Reality</span>
   </div>
   <p class="text-base text-gray-200 leading-relaxed m-0">
-    <strong>HungerG AI model</strong> is an anonymous stealth coding checkpoint—unrelated to the Hunger Games franchise—launched November 23, 2026 on Qoder IDE and OpenCode Go with a 1M context window, 64K output ceiling, and text, image, and video inputs. While Qoder lists its creator as classified through November 30, OpenCode catalog diffs and rare-token probes link this model to <strong>StepFun's Step 5 Preview</strong> architecture. Because promotional access excludes Teams plans, omits retention SLAs, and expires November 30, engineers pair sandbox testing with APIVALE's gateway and PayPal Instant Checkout.
+    <strong>HungerG AI model</strong> is an anonymous stealth coding checkpoint—unrelated to the Hunger Games franchise—launched November 23, 2026 on Qoder IDE and OpenCode Go with a 1M context window, 64K output ceiling, and text, image, and video inputs. While Qoder lists its creator as classified through November 30, OpenCode catalog diffs and rare-token probes link this model to <strong>StepFun's Step 5 Preview</strong> architecture. Because promotional access excludes Teams plans, omits retention SLAs, and expires November 30, engineers pair sandbox testing with APIVEL's gateway and PayPal Instant Checkout.
   </p>
 </div>
 
@@ -39,7 +39,7 @@ Yet building production tooling directly on an unnamed preview creates operation
 ```mermaid
 flowchart TD
     IDE["Qoder IDE / OpenCode / Cursor"] -->|"Nov 23-30 Sandbox"| Stealth["HungerG AI Model ($0 Promo)<br/>1M Context · Unverified Retention"]
-    IDE -->|"Production Failover"| Gateway{"APIVALE Router"}
+    IDE -->|"Production Failover"| Gateway{"APIVEL Router"}
     Gateway -->|"Complex Refactoring"| Baseline["StepFun Baseline / Qwen 3.7 Max"]
     Gateway -->|"85% Tests & Linting"| Workhorse["DeepSeek V4 ($0.20/$0.60)"]
     Stealth -.->|"Nov 30 Expiry / Peak Queue"| Gateway
@@ -94,11 +94,11 @@ Developer threads on `r/opencode` and forensics from [OrcaRouter's stealth inves
 
 Peak-hour queuing adds another limit: free accounts yield priority to paid tiers and hit daily fair-use caps until midnight reset.
 
-## Global API Access & Post-Trial Failover on APIVALE
+## Global API Access & Post-Trial Failover on APIVEL
 
 Once the promo closes November 30, production coding loops need stable endpoints instead of +86 SMS checks or foreign card declines. Single-vendor plans also throttle burst concurrency.
 
-APIVALE unifies frontier reasoning and auxiliary workhorse tiers behind one OpenAI- and Anthropic-compatible router. Teams pay via **PayPal Instant Checkout**, international cards, or Alipay with **0% FX fees**, zero KYC, zero data retention, and a **$0.20 free trial**.
+APIVEL unifies frontier reasoning and auxiliary workhorse tiers behind one OpenAI- and Anthropic-compatible router. Teams pay via **PayPal Instant Checkout**, international cards, or Alipay with **0% FX fees**, zero KYC, zero data retention, and a **$0.20 free trial**.
 
 ## Interactive Cost Simulator: HungerG AI Model vs Production API
 
@@ -137,7 +137,7 @@ Model your monthly spend after the November 30 promotional window expires, compa
       <div id="hg-pure-cost" class="text-2xl font-bold text-red-400">$37.50</div>
     </div>
     <div class="rounded-lg bg-gray-900/60 p-4 text-center border border-gray-800">
-      <div class="text-xs text-gray-400 mb-1">APIVALE Hybrid Spend</div>
+      <div class="text-xs text-gray-400 mb-1">APIVEL Hybrid Spend</div>
       <div id="hg-hybrid-cost" class="text-2xl font-bold text-green-400">$13.86</div>
     </div>
     <div class="rounded-lg bg-primary/10 p-4 text-center border border-primary/30">
@@ -202,7 +202,7 @@ Never hardcode a temporary stealth alias into CI/CD pipelines. Use this Python w
 import os, httpx
 from openai import OpenAI
 
-client = OpenAI(api_key=os.environ.get("APIVALE_API_KEY"), base_url="https://apivel.com/v1")
+client = OpenAI(api_key=os.environ.get("APIVEL_API_KEY"), base_url="https://apivel.com/v1")
 
 def run_agent_task(prompt: str, tier: str = "workhorse") -> str:
     routes = {
@@ -249,19 +249,19 @@ Route OpenCode, Cursor, or Claude Code CLI through our unified gateway using Pay
   "@context": "https://schema.org",
   "@type": "TechArticle",
   "headline": "HungerG AI Model: Qoder, OpenCode, Step 5 Clues & API Guide",
-  "description": "Explore HungerG AI model: Qoder and OpenCode Go free trial specs, Step 5 tokenizer clues, 1M context, privacy gaps, and APIVALE two-tier routing.",
+  "description": "Explore HungerG AI model: Qoder and OpenCode Go free trial specs, Step 5 tokenizer clues, 1M context, privacy gaps, and APIVEL two-tier routing.",
   "author": {
     "@type": "Person",
     "name": "Kenji Tanaka",
     "jobTitle": "AI Developer Relations & Infrastructure Engineer",
     "worksFor": {
       "@type": "Organization",
-      "name": "APIVALE"
+      "name": "APIVEL"
     }
   },
   "publisher": {
     "@type": "Organization",
-    "name": "APIVALE",
+    "name": "APIVEL",
     "url": "https://apivel.com"
   },
   "datePublished": "2026-11-25",
@@ -303,7 +303,7 @@ Route OpenCode, Cursor, or Claude Code CLI through our unified gateway using Pay
       "name": "How Do I Run Coding Agents After the HungerG Trial Ends?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Route OpenCode, Cursor, or Claude Code CLI through APIVALE's OpenAI- and Anthropic-compatible gateway (https://apivel.com/v1) with pay-as-you-go failover, PayPal Instant Checkout, global credit cards, zero KYC, and a $0.20 free trial."
+        "text": "Route OpenCode, Cursor, or Claude Code CLI through APIVEL's OpenAI- and Anthropic-compatible gateway (https://apivel.com/v1) with pay-as-you-go failover, PayPal Instant Checkout, global credit cards, zero KYC, and a $0.20 free trial."
       }
     }
   ]

@@ -40,11 +40,11 @@
     2. **跨界实体防火墙**：在 MetaTitle、H1、Description、Technical Summary 与首段严格绑定 `AI Model` / `Coding` / `Qoder` / `OpenCode` / `Step 5`，显式剥离电影实体；
     3. **主词统治与词数校准**：压制次级词 `step 5` 频次确保 `hungerg ai` / `hungerg ai model` 稳居 2-gram 与 3-gram 榜首；注册 `hasCustomWidget` 屏蔽重复计算器，保持全页渲染词数低于 1,780 线。
   * **新文章发布与技术内容落地**：
-    1. **新博文发布**：`/blog/hungerg-ai-model-qoder-opencode-api/`（作者轮换：Kenji Tanaka，1024x1024 真人头像双路径配置）；
+    1. **新博文发布**：`/blog/hungerg-ai-model-qoder-opencode-api/`（作者轮换：Kenji Tanaka，1024x1024 真人头像双路径配置；全篇品牌名统一对齐 `apivel.com` 为 **`APIVEL`**，同步更新 `SKILL.md`、`AGENTS.md` 与 `audit_article.cjs`）；
     2. **核心元数据**：
        - Title / H1: `HungerG AI Model: Qoder, OpenCode, Step 5 Clues & API Guide` (59 字符)；
-       - MetaTitle: `HungerG AI Model: Qoder, OpenCode & Step 5 Leak | APIVALE` (57 字符)；
-       - Meta Description: 145 字符，覆盖 Qoder、OpenCode Go、Step 5 分词线索、1M 上下文、隐私缺口与双层路由；
+       - MetaTitle: `HungerG AI Model: Qoder, OpenCode & Step 5 Leak | APIVEL` (56 字符)；
+       - Meta Description: 144 字符，覆盖 Qoder、OpenCode Go、Step 5 分词线索、1M 上下文、隐私缺口与双层路由；
     3. **4 项工程增益与交互微工具**：Mermaid 双层容灾拓扑图、含 Best For 客观列的对比矩阵、r/opencode 与 OrcaRouter 归因原声卡片、防超时 Python 容灾客户端 + OpenCode 环境变量、无 alert 交互成本模拟器、4 问 PAA FAQPage Schema；
     4. **双向内链织网 (Bi-directional Mesh Weaving)**：
        - 互链旧文 1：`qwen-4-max-benchmark-api-reddit.md`；

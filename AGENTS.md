@@ -43,7 +43,7 @@ Follow this 4-step execution workflow:
 - Formulate a 3-Tier Keyword Architecture (Tier 1 Title/H1/Intro, Tier 2 H2/H3 LSI, Tier 3 Brand/Features).
 - Apply **Context-Specific Technical Hook** combined with real community voice (ban repetitive boilerplate intros).
 - Ensure strict compliance with the **"4 Real Engineering Gains" Checklist** (Verifiable Protocol Architecture Proof, Real Benchmark/Math Data with Write-Time Verification & Objective Competitor "Best for..." Column, Verifiable Community Voice & Edge-Case Troubleshooting, 15+ line Production Code/Config).
-- Formulate Title Tag using **ABC Title Formula** (`[Adjective/Primary Keyword] + [Benefit / Secondary LSI] | [APIVALE Hook]`) within **50–60 characters (max 600px)** and append `| APIVALE`.
+- Formulate Title Tag using **ABC Title Formula** (`[Adjective/Primary Keyword] + [Benefit / Secondary LSI] | [APIVEL Hook]`) within **50–60 characters (max 600px)** and append `| APIVEL` (aligned with `apivel.com` brand identity).
 
 ### Step 4: Drafting, Pre-Flight Audit & Atomic Bidirectional Publishing
 

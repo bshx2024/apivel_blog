@@ -32,7 +32,7 @@ description: >-
 ## 一、核心铁律与商业意图隔离
 
 ### 1. 商业意图纯净度防线 (P0 核心防呆)
-* **唯一使命**：APIVALE 的使命是转化 **API 开发者、AI 工程师、技术初创团队** 使用我们低延迟、高可用的聚合网关（原生兼容 OpenAI / Anthropic 端点，支持 PayPal 即时直结与 0% 跨境手续费）。
+* **唯一使命与统一品牌词**：**APIVEL**（官网域名 `apivel.com`，页头与 UI 统一使用 `apivel` / `APIVEL`；新撰写博文标题后缀与正文统一使用 **`APIVEL`**，MetaTitle 结尾统一为 `| APIVEL`）。APIVEL 的使命是转化 **API 开发者、AI 工程师、技术初创团队** 使用我们低延迟、高可用的聚合网关（原生兼容 OpenAI / Anthropic 端点，支持 PayPal 即时直结与 0% 跨境手续费）。
 * **意图强隔离**：文章核心必须锁定在 **商业/交易与高价值工程意图**（`api key`, `pricing`, `two-tier CI pipeline`, `pr review automation`, `cursor/claude code setup`），坚决防范 **信息类极客/纯硬件折腾意图**（`1-bit quantization`, `vLLM/GGUF weights`, `local VRAM self-hosting`）。若大量篇幅讨论本地跑分与量化，Google 会把页面打入跑分综合页，真正值钱的 API 词全掉至 50 名开外。
 * **国产大模型引流桥梁 (Two-Tier Hybrid Router)**：在对比海外昂贵前沿模型（如 GPT-6.2 Astra $8/$40、Claude Opus 5.5 $4/$20）或分析国产新旗舰（如 GLM-5.4、Qwen 4 Max、DeepSeek V4）时，必须将社区对“5小时配额耗尽”、“429 速率限制”、“Thinking Token / 马拉松思维账单爆炸”的痛点，引申至通过 APIVALE 两层网关方案：**85%~90% 基础任务分流至 Qwen 3.7 Max ($0.25/$0.80) 与 DeepSeek V4 ($0.20/$0.60)**，实现降本 88%~92% 并零停机容灾。
 
@@ -145,7 +145,7 @@ description: >-
 ```text
 [核心模型主词]: [截图衍生版/核心分支 (如 Flash)] + [高频利益词 (如 Differences, Benchmarks)] | [品牌钩子]
 ```
-* **MetaTitle 字符数硬指标**：**50–60 字符（max 600px）**，必须以 `| APIVALE` 结尾。
+* **MetaTitle 字符数硬指标**：**50–60 字符（max 600px）**，统一以 `| APIVEL` 结尾（与官网 `apivel.com` 品牌一致）。
   * *GLM-5.4 vs 5.3 实战范例*：`GLM-5.4 vs 5.3: Flash Differences & Benchmarks | APIVALE`（**56 字符**，100% 覆盖截图核心下拉词 `Flash` 与主词）。
   * *GLM-5.4 架构实战范例*：`GLM-5.4 Architecture: Benchmarks & API Pricing | APIVALE`（**56 字符**）。
 * **H1 标题**：$\le 80$ 字符，直击核心痛点，且主词短语与 Title 保持 100% 对称。
