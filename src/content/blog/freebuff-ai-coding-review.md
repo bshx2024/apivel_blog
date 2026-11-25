@@ -119,7 +119,7 @@ A central question in this Freebuff AI coding review is codebase security:
 * **Proprietary IP Constraints**: Regulated enterprise codebases (SOC 2, GDPR) restrict routing proprietary IP through ad-supported free tiers.
 * **CLI System Permissions**: Like any autonomous CLI agent, Freebuff requires terminal and filesystem access. Unchecked execution on third-party repositories presents prompt injection risks if malicious instructions reside in cloned code.
 
-For commercial teams, separating hobbyist vibe-coding from enterprise code review infrastructure is an operational necessity.
+For commercial teams, separating hobbyist vibe-coding and temporary stealth trials—such as the seven-day [HungerG AI model on Qoder and OpenCode](/blog/hungerg-ai-model-qoder-opencode-api/)—from enterprise code review infrastructure is an operational necessity.
 
 ## Objective Comparison Matrix: Freebuff vs Paid Agents vs API Gateways
 

@@ -116,7 +116,7 @@ To contextualize where Sol 6.2 fits within the broader ecosystem, we evaluated i
 | **DeepSeek V4** | 128,000 | **$0.14** | **$0.28** | 94.2% | 68.9% | High-volume unit testing, linting, docstrings, and algorithmic debugging at 97% lower cost. |
 | **Qwen 3.7 Max** | 128,000 | **$0.20** | **$0.60** | 93.8% | 67.4% | Repetitive sub-agent loops, boilerplate generation, and high-frequency tool invocations. |
 
-*Note: Benchmarks reflect official technical reports and verified community runs as of November 2026.*
+*Note: Benchmarks reflect official technical reports and verified community runs as of November 2026. Developers comparing Sol 6.2 against stealth drops on Qoder and OpenCode can also review our [HungerG AI model benchmarks and Step 5 clues](/blog/hungerg-ai-model-qoder-opencode-api/).*
 
 ---
 

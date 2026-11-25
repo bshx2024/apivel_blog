@@ -42,12 +42,15 @@ const postMeta = `${slugLower} ${titleLower} ${tagsLower}`;
 
 const isPriceOrBenchmark = /price|cost|saving|benchmark|comparison|versus|vs|deepseek|minimax|rate/i.test(slugLower + ' ' + titleLower);
 const isCliOrSetup = /cli|cursor|windsurf|opencode|connect|setup|config|mcp|guide|access|bypass/i.test(slugLower + ' ' + titleLower);
-const hasCustomWidget = slugLower.includes('flashprove') || slugLower.includes('cyber') || slugLower.includes('qwen-4-max') || slugLower.includes('glm-5-4-vs-kimi-k3') || slugLower.includes('kimi-k3-1-vs-claude-opus-5-5');
+const hasCustomWidget = slugLower.includes('flashprove') || slugLower.includes('cyber') || slugLower.includes('qwen-4-max') || slugLower.includes('glm-5-4-vs-kimi-k3') || slugLower.includes('kimi-k3-1-vs-claude-opus-5-5') || slugLower.includes('hungerg');
 
 let initialModel = 'glm-5.3-flash';
 let targetTopic = 'general';
 
-if (slugLower.includes('kimi-k3-1-vs-claude-opus-5-5')) {
+if (slugLower.includes('hungerg')) {
+	targetTopic = 'hungerg';
+	initialModel = 'qwen-37';
+} else if (slugLower.includes('kimi-k3-1-vs-claude-opus-5-5')) {
 	targetTopic = 'kimi';
 	initialModel = 'kimi-k3.1-pro';
 } else if (slugLower.includes('gpt-6-2-sol') || slugLower.includes('sol')) {
@@ -503,6 +506,40 @@ const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.key
 			}
 
 			const TOPIC_CONFIG = {
+				'hungerg': {
+					floating: {
+						en: {
+							badge: '⚡ Beyond Stealth Trials',
+							title: 'Run Coding Agents With Zero Retention',
+							desc: 'Avoid Nov 30 stealth expiry & queue caps. Route OpenCode, Cursor, and Claude Code via OpenAI-compatible API with PayPal checkout (+50% bonus).',
+							btnText: 'Claim $0.20 Free Trial',
+							utmCampaign: 'hungerg_stealth_failover'
+						},
+						zh: {
+							badge: '⚡ 告别限时盲测队列',
+							title: '零隐私留存的高可用编码网关',
+							desc: '11 月 30 日限时免费结束后如何无缝衔接？OpenAI/Anthropic 兼容端点直连主力模型，PayPal 即时结账免 KYC，注册送 $0.20。',
+							btnText: '一键接入高可用网关 →',
+							utmCampaign: 'hungerg_stealth_failover'
+						}
+					},
+					inline: {
+						en: {
+							badge: '⚡ Production Agent Failover',
+							title: 'Replace Expiring Stealth Endpoints With Two-Tier Routing',
+							desc: 'Pair frontier reasoning with Qwen 3.7 Max & DeepSeek V4 at 85% lower cost. Zero KYC, zero retention, and instant PayPal billing.',
+							btnText: 'Get API Key & Failover Script',
+							utmCampaign: 'hungerg_stealth_failover'
+						},
+						zh: {
+							badge: '⚡ 双层容灾智能体路由',
+							title: '用双层网关替代即将下线的限时盲测模型',
+							desc: '常规子任务分流至通义千问 3.7 Max 与 DeepSeek V4 降本 85%，支持 PayPal 全球直付，0 跨境手续费，免实名即开即用。',
+							btnText: '获取 API Key 与容灾配置 →',
+							utmCampaign: 'hungerg_stealth_failover'
+						}
+					}
+				},
 				'sol': {
 					floating: {
 						en: {

@@ -103,7 +103,7 @@ The `qwen4-max-preview` cloud launch prompted questions on r/LocalLLaMA regardin
 ### 2. Qwen 4 Flash & Unsloth Dynamic Kernels
 Following 27B, Alibaba will publish **Qwen 4 Flash** for edge servers. Unsloth has confirmed day-zero support using Dynamic v3.1 kernels for 128k context without VRAM spikes.
 
-For hardware benchmarks, review our [Qwen 4 Release Date & 27B Roadmap Guide](/blog/qwen-4-release-date-api-roadmap/).
+For hardware benchmarks, review our [Qwen 4 Release Date & 27B Roadmap Guide](/blog/qwen-4-release-date-api-roadmap/), or inspect why Qoder's newer [HungerG AI model stealth trial on OpenCode](/blog/hungerg-ai-model-qoder-opencode-api/) points to StepFun tokenizer artifacts rather than Qwen4 weights.
 
 ---
 

@@ -32,6 +32,27 @@
 
 ## 📅 apivel.com SEO 动作记录表 (2026年)
 
+### 2026-11-25 (HungerG AI Model 盲测专题首发：实体消歧防饥饿游戏撞车、Step 5 归因取证、12 标题纯净树与双向内链织网)
+* **分类**：📝 [Stealth 模型深度调查、跨领域实体防火墙消歧、OpenCode/Qoder 试用与隐私留存审计、双向内链织网与 5-Gate 原子发布]
+* **动作详情**：
+  * **立项背景与搜索意图逆向**：
+    1. **核心关键词**：`hungerG`（自主采掘 Google 下拉词 `hungerg ai model`、`hungerg opencode`，并检出与电影《饥饿游戏》(The Hunger Games) 的强跨界碰撞）；
+    2. **跨界实体防火墙**：在 MetaTitle、H1、Description、Technical Summary 与首段严格绑定 `AI Model` / `Coding` / `Qoder` / `OpenCode` / `Step 5`，显式剥离电影实体；
+    3. **主词统治与词数校准**：压制次级词 `step 5` 频次确保 `hungerg ai` / `hungerg ai model` 稳居 2-gram 与 3-gram 榜首；注册 `hasCustomWidget` 屏蔽重复计算器，保持全页渲染词数低于 1,780 线。
+  * **新文章发布与技术内容落地**：
+    1. **新博文发布**：`/blog/hungerg-ai-model-qoder-opencode-api/`（作者轮换：Kenji Tanaka，1024x1024 真人头像双路径配置）；
+    2. **核心元数据**：
+       - Title / H1: `HungerG AI Model: Qoder, OpenCode, Step 5 Clues & API Guide` (59 字符)；
+       - MetaTitle: `HungerG AI Model: Qoder, OpenCode & Step 5 Leak | APIVALE` (57 字符)；
+       - Meta Description: 145 字符，覆盖 Qoder、OpenCode Go、Step 5 分词线索、1M 上下文、隐私缺口与双层路由；
+    3. **4 项工程增益与交互微工具**：Mermaid 双层容灾拓扑图、含 Best For 客观列的对比矩阵、r/opencode 与 OrcaRouter 归因原声卡片、防超时 Python 容灾客户端 + OpenCode 环境变量、无 alert 交互成本模拟器、4 问 PAA FAQPage Schema；
+    4. **双向内链织网 (Bi-directional Mesh Weaving)**：
+       - 互链旧文 1：`qwen-4-max-benchmark-api-reddit.md`；
+       - 互链旧文 2：`gpt-6-2-sol-api-pricing-benchmarks.md`；
+       - 互链旧文 3：`freebuff-ai-coding-review.md`。
+* **14 天因果响应假设**：
+  * `hungerg ai model` 与 `hungerg opencode` 在 7–14 天内通过精准技术实体锚定避开电影词竞争，快速进入 Google 前 15–20 名并捕获 11 月 30 日盲测结束后的长尾 API 迁移流量。
+
 ### 2026-11-25 (GSC 首页 0 CTR 抢救与 GPT 6.2 排名止跌：消除连字符分词陷阱、修复 6 篇老/新文审计报错与 CTR 磁吸标题重构)
 * **分类**：📝⚙️ [GSC 排名下滑抢救、GPT 6.2 连字符分词修复、正文字数收敛、CTA 容器与支付合规清零、首页 Pos 5–9.5 文章 CTR 磁吸重构]
 * **动作详情**：
