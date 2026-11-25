@@ -242,12 +242,19 @@ description: >-
   * **所有核心 H2 小标题**：必须完整嵌入全实体名称；
   * **FAQ 的 H3 小标题**：直接采用 Google PAA 的原生问句。
 
-### 4. 正文字数黄金平衡与“梯级控制法则”
+### 4. 正文字数黄金平衡与“梯级控制法则”（实测校准版）
 * **扣分规则**：全页词数（Rendered HTML Words）超过 1800 词会丢 1 分（提示：“全页 XXXX 个词，超过 1800，不影响收录但注意别稀释主题”）。
-* **梯级控制策略**：
-  * **纯 Markdown 正文有效阅读词数**：严格控制在 **1,350 ~ 1,550 词**（SWE-bench 对比、架构解析、PAA 问答务必精炼高密度，杜绝车轱辘话）；
-  * **Python 代码块长度**：控制在 25–35 行精炼高内聚代码（禁止贴 80+ 行冗长代码文件），防止代码 Token 极度膨胀；
-  * **渲染全页词数**：加上直出的交互微工具、Mermaid 脚本、代码与布局组件后，全页总 Token 数严格压制在 2,000 ~ 2,200 左右，彻底消灭超过 3,000 词的主题稀释扣分。
+* **口径差异真相（2026-11-25 实战校准）**：
+  哥飞军师会剥离 `<script>`/`<style>` 后再按标点/小数点分词（例如 `$2.00`、`K3.1`、`5.5` 会被拆成多个独立词），导致军师线上“全页词数”通常比 `check_html_words.cjs` 多出 **115–130 词**，比 `audit_article.cjs` 纯正文可见词数多出 **600–650 词**（含页头、侧栏、`keyTakeaways`、对比表、代码块、页脚等）。若纯正文写到 1,350–1,550 词，线上全页词数往往高达 **1,860–1,910 词**而丢 1 分！
+* **梯级控制策略（确保 0 Warnings 且线上 <= 1800 词）**：
+  * **纯 Markdown 正文有效阅读词数（`audit_article.cjs`）**：含自定义计算器/双模型对比长文，精准控制在 **1,205 ~ 1,260 词**（既守住 `audit_article.cjs` ≥1,200 词 0 Warnings 底线，又为全页组件留足安全余量）；
+  * **双路径减噪（省出 150–250 词）**：
+    1. 在 `src/pages/[slug].astro` 将带有文内交互计算器的 slug 加入 `hasCustomWidget`，屏蔽上方重复渲染的全局计算器组件；
+    2. `keyTakeaways` 标签极简化（`Gateway` / `Models` / `Benchmarks` / `Billing`），表格/下拉框内优先写整数单价（如 `$2/$10`、`$4/$20` 替代 `$2.00/$10.00`），避免小数点白白拆出多余 Token；
+    3. Python 代码块压缩至 16–22 行高内聚代码。
+  * **本地编译后双口径验算红线（Gate 5 必检）**：
+    - `check_html_words.cjs` 渲染词数 `<= 1,660`；
+    - 军师同口径去标点 HTML Token 数（`match(/[a-z0-9]+(?:-[a-z0-9]+)*/g)`）**必须 `<= 1,780`**，方可确保哥飞军师线上全页词数稳定落在 `1,720 ~ 1,770`（满分通过）。
 
 ### 5. 辅助模型与量词反客为主铁律 (挽回密度榜丢 3 分)
 * **警报来源**：军师提示 *“前排仍有不少与目标词无关的高频词，可对照下方密度榜调整文案”*、*“其它候选意图：「1m tokens」、「qwen 3 7 max」——一页只能做透一个主词，多意图会互相稀释。”* 并扣除整整 3 分！
@@ -316,10 +323,10 @@ description: >-
 ### 9. 双前沿模型强强对决 (Multi-Model Frontier Duel) 军规级对齐技巧
 当主关键词属于**双前沿模型对比**（如 `GLM-5.4 vs Claude Opus 5.5`、`GPT-6.2 Astra vs Opus 5.5`）时，由于同时引入了两个自带小数点的重磅实体，极易触发“双重分词错位”、“双实体堆砌稀释”与“字数恶性膨胀”。必须执行以下 4 项对齐绝技：
 
-1. **双小数点实体分词与 URL 100% 映射**：
-   - 标题/H1 严禁写作 `GLM-5.4 vs Claude Opus 5.5`（连字符会锁死 `glm-5`），必须一律空格化：`GLM 5.4 vs Claude Opus 5.5`；
-   - URL 采用标准化全展开短横线路径：`/blog/glm-5-4-vs-claude-opus-5-5-benchmarks/`；
-   - 分词推断词提取 `["glm", "5", "4", "vs"]` 或 `["claude", "opus", "5", "5"]` 时，与 URL 的逐词命中率达成 100% 满分。
+1. **双小数点实体分词与 URL 100% 映射（及“4 词滑动推断词”判定法则）**：
+   - 标题/H1 严禁写作 `GLM-5.4 vs Claude Opus 5.5`（连字符会锁死 `glm-5`），必须一律空格化：`GLM 5.4 vs Claude Opus 5.5`、`Kimi K3.1 vs Claude Opus 5.5`；
+   - URL 采用标准化全展开短横线路径：`/blog/glm-5-4-vs-claude-opus-5-5-benchmarks/`、`/blog/kimi-k3-1-vs-claude-opus-5-5-benchmarks/`；
+   - **长主词推断词核验标准**：当双主词自带两个小数点时（如 `Kimi K3.1 vs Claude Opus 5.5` 被拆分为 8 词 `["kimi","k3","1","vs","claude","opus","5","5"]`），军师仅提取 2–4 词滑动窗口，推断词出现中段桥接切片（如 `k3 1 vs claude`、`1 vs claude opus`、`kimi k3 1`）属于**正常且精准的对齐信号**。只要满足 **聚焦度 100% + Title/H1 ✓/✓ + 0 赛道错位 + 5-gram Top 4 完整覆盖滑动窗口**，即判定主词对齐满分，切勿误判并瞎改主词。
 2. **双实体 2-Gram 密度动态平衡术 (Dual 2-Gram Density Balancing)**：
    - 单模型文章仅需防范单一模型的 2-gram 堆砌（如 `glm 5`）；但在双模型对比文章中，双方实体（如 `glm 5` 与 `opus 5`、`5 4` 与 `5 5`）极易同时冲破 3.5% 密度报警线；
    - **黄金压制军规**：两方模型全称在正文仅作为对比段落主干，正文展开中必须轮流大量交替使用**功能性代词**：
@@ -334,18 +341,18 @@ description: >-
      2. Google PAA 4 大原生问答（4 个 H3 必须 1:1 原文保留）；
      全页总标题数精准控制在 **12 ~ 13 个**，语义树纯净度满分。
 4. **正文 8 大模块分节字数硬预算表 (Section Word Budgeting)**：
-   - 为确保纯正文词数在 **1,350 ~ 1,550 词**、渲染总 Token 严格在 **2,050 ~ 2,180**（防范超过 2,200 Token 主题稀释），撰写时必须按以下预算执行：
+   - 为确保 `audit_article.cjs` 可见词数落在 **1,205 ~ 1,260 词**（0 Warnings）、且 `astro build` 后军师同口径全页 Token **<= 1,780**（线上 <= 1,800 拿满 100 A+），撰写时按以下预算执行：
      | 模块序号 | 核心模块内容 | 纯正文词数预算 | 关键功能与组件要求 |
      | :--- | :--- | :--- | :--- |
-     | **Block 0** | Summary Box + 开篇背景 Hook | ~230–250 词 | 包含 1 秒 BLUF 结论、痛点 Hook、紧随 Mermaid 拓扑图 |
-     | **Block 1** | 核心架构对比 (H2) | ~180–200 词 | Loop Transformer 递归深度 vs 自适应思考机制 |
-     | **Block 2** | 基准跑分与中立对比表 (H2 + H3) | ~220–250 词 | SWE-bench、CursorBench 对比表 + Best For 客观列 |
-     | **Block 3** | Reddit 社区原声卡片与分析 (H2) | ~160–180 词 | r/ClaudeCode 速率配额 + r/LocalLLaMA 马拉松思维卡片 |
-     | **Block 4** | 跨国支付与生态摩擦突破 (H2) | ~100–120 词 | 解决 +86 短信与外卡拒付，引入 PayPal / 免 KYC 网关 |
-     | **Block 5** | 交互微工具区 (H2) | ~90–100 词 | 内嵌 `<input>` / `<select>` 计算器，纯 DOM 状态更新 |
-     | **Block 6** | 生产代码与 CLI 配置 (H2) | ~140–160 词 | 15+ 行防超时 Python 异步客户端 + CLI 环境变量 |
-     | **Block 7** | FAQ 4 大 PAA 原生问答 (H2 + 4x H3) | ~190–210 词 | 1:1 回答 PAA 问答，精炼直出结论，嵌入 FAQPage Schema |
-     | **合计** | **全篇纯 Markdown 有效可见词** | **1,350 ~ 1,550 词** | **渲染总 Token 严格在 2,050 ~ 2,180，全 Gates 满分通关** |
+     | **Block 0** | Summary Box + 开篇背景 Hook | ~190–210 词 | 包含 1 秒 BLUF 结论、痛点 Hook、紧随 Mermaid 拓扑图 |
+     | **Block 1** | 核心架构对比 (H2) | ~150–170 词 | 双方底层架构对比（如 Loop Transformer / 2.8T KDA MoE vs 自适应思考） |
+     | **Block 2** | 基准跑分与中立对比表 (H2 + H3) | ~200–220 词 | 权威编码基准对比表（整数价格 `$2/$10`）+ Best For 客观列 |
+     | **Block 3** | Reddit 社区原声卡片与分析 (H2) | ~140–160 词 | r/ClaudeCode 速率配额 + r/LocalLLaMA 真实痛点卡片 |
+     | **Block 4** | 跨国支付与生态摩擦突破 (H2) | ~80–100 词 | 解决 +86 短信与外卡拒付，引入 PayPal / 免 KYC 网关 |
+     | **Block 5** | 交互微工具区 (H2) | ~80–90 词 | 内嵌 `<input>` / `<select>` 计算器（已在 `hasCustomWidget` 去重），0 alert |
+     | **Block 6** | 生产代码与 CLI 配置 (H2) | ~90–110 词 | 16–22 行防超时 Python 客户端 + CLI 环境变量 |
+     | **Block 7** | FAQ 4 大 PAA 原生问答 (H2 + 4x H3) | ~170–190 词 | 1:1 回答 PAA 问答，精炼直出结论，嵌入 FAQPage Schema |
+     | **合计** | **全篇纯 Markdown 有效可见词** | **1,205 ~ 1,260 词** | **渲染 HTML `<= 1,660`（军师口径 `<= 1,780`），全 Gates 满分通关** |
 
 ---
 
@@ -373,8 +380,8 @@ bun .agent/skills/apivale-blog-publishing/scripts/simulate_ngrams.cjs src/conten
 必须达成：
 * `0 Errors, 0 Warnings`；
 * Title 长度 $\le 80$ 字符；MetaTitle 50–60 字符；Meta Description 140–160 字符；
-* 正文可见词数严格在 **1,350 ~ 1,550 词**（确保渲染后全页总 Token $\le 2,200$，杜绝主题稀释扣分）；
-* 必须包含 `<input>` / `<select>` 与 `.cta-card`；
+* 正文可见词数精准控制在 **1,205 ~ 1,260 词**（既满足 ≥1,200 词 0 Warnings，又确保渲染后 `check_html_words.cjs <= 1,660`、军师去标点 HTML 口径 `<= 1,780`，彻底消灭线上 `> 1800` 词扣分）；
+* 必须包含 `<input>` / `<select>` 与 `.cta-card`，且在 `src/pages/[slug].astro` 将文章加入 `hasCustomWidget`；
 * 严禁出现 Stripe 或 Crypto。
 
 ### Gate 3: 双向内链织网 (Bi-directional Mesh Weaving)
@@ -387,12 +394,12 @@ bun .agent/skills/apivale-blog-publishing/scripts/simulate_ngrams.cjs src/conten
 3. **关键词计划同步**：在 `KEYWORD_PLAN.md` 将状态更新为 `Published`。
 
 ### Gate 5: 编译测试与强制远程推送 (Windows 环境防坑指南与自动化部署)
-1. **执行本地全量编译**：
-   在 Windows 环境下，直接 `astro build` 会因 Telemetry 尝试在 AppData 创建目录而报错 `EPERM`。必须使用以下标准免报错构建指令：
+1. **执行本地全量编译与渲染词数双校验**：
+   在 Windows 环境下，直接 `astro build` 会因 Telemetry 尝试在 AppData 创建目录而报错 `EPERM`。必须使用以下标准免报错构建与全页词数校验指令：
    ```powershell
-   $env:ASTRO_TELEMETRY_DISABLED="1"; bun node_modules\astro\bin\astro.mjs build
+   $env:ASTRO_TELEMETRY_DISABLED="1"; bun node_modules\astro\bin\astro.mjs build; bun scratch/check_html_words.cjs dist/<slug>/index.html; bun -e "const fs=require('fs'); const html=fs.readFileSync('dist/<slug>/index.html','utf8'); const clean=html.replace(/<script[\s\S]*?<\/script>/gi,' ').replace(/<style[\s\S]*?<\/style>/gi,' ').replace(/<[^>]+>/g,' '); const toks=clean.toLowerCase().match(/[a-z0-9]+(?:-[a-z0-9]+)*/g)||[]; console.log('Gefei-style tokens:', toks.length);"
    ```
-   必须确认 0 报错，静态页面全量生成成功（例如 `32 page(s) built in 1.44s`）。
+   必须确认 0 报错，静态页面全量生成成功，`check_html_words.cjs <= 1660` 且 `Gefei-style tokens <= 1780`。
 2. **原子 Git Commit 与【强制即时推送远程】**：
    暂存所有涉及修改的文件（新博文 + 旧博文 + `[slug].astro` + `llms.txt` + `SEO_ACTION_LOG.md` + 组件/Skill），执行单一规范 Git Commit，并**直接、主动推送到远程仓库**：
    ```powershell
