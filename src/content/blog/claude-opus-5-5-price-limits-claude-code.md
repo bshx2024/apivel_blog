@@ -97,6 +97,7 @@ Selecting the optimal foundation model requires balancing cognitive reasoning de
 *Note: Pricing, benchmark scores, and API specifications verified via official documentation and third-party evaluation runs as of October 24, 2026.*
 
 ### When to Deploy Opus 5.5 vs. Sonnet 5.5
+For a full benchmark, Terminal-Bench 4.0, and effort-tier cost breakdown, read our dedicated [Claude Opus 5.5 vs Claude Sonnet 5.5 Benchmarks & Pricing Guide](/blog/claude-opus-5-5-vs-claude-sonnet-5-5-benchmarks/).
 * **Deploy Opus 5.5 When:** Designing core database schemas, debugging asynchronous race conditions across distributed microservices, or executing major dependency migrations where single-token logic errors cause production outages.
 * **Deploy Sonnet 5.5 When:** Writing boilerplate React components, crafting routine CRUD endpoints, generating unit test fixtures, or maintaining high-tempo interactive pair-programming sessions.
 

@@ -32,6 +32,27 @@
 
 ## 📅 apivel.com SEO 动作记录表 (2026年)
 
+### 2026-11-26 (Claude Opus 5.5 vs Claude Sonnet 5.5 双旗舰对比评测首发、Terminal-Bench 70.6% vs 66.4% 跑分与 Medium/High 成本悖论、双向内链织网与 5-Gate 原子发布)
+* **分类**：📝 [Anthropic 同代双层旗舰对比评测、SWE-bench Pro & Terminal-Bench 4.0 & OSWorld 2.1 基准拆解、Effort 等级 Token 成本悖论、双层高可用降本网关、5-Gate 原子发布与双向织网]
+* **动作详情**：
+  * **立项背景与搜索意图逆向**：
+    1. **核心关键词**：`Claude Opus 5.5 vs Claude Sonnet 5.5`（自主采掘 Google 无空格/有空格下拉词：`claude opus 5.5 vs sonnet 5.5 for coding`、`claude opus 5.5 vs sonnet 5.5 cost`、`claude sonnet 5.5 vs opus 5.5 pricing`、`claude opus 5.5 vs sonnet 5.5 benchmark`、`claude sonnet 5.5 high vs claude opus 5.5 medium`）；
+    2. **跨界与竞品实体绑定**：在 Description、Technical Summary 与正文首段严格绑定 `AI models` / `Anthropic checkpoints` 语义防火墙，并对照空格化小数版本号规则实现 URL 100% 关键词覆盖；
+    3. **双实体 N-Gram 与全页词数控制**：严控 `5 5` 双实体共有 2-gram 密度至 ≤ 2.6%，注册 `hasCustomWidget` 屏蔽顶部重复计算器并在 `TOPIC_CONFIG` 注册 `claude` 中英文双语转化文案，收敛正文词数至 1,210–1,255 词确保全页渲染 Token <= 1,780。
+  * **新文章发布与技术内容落地**：
+    1. **新博文发布**：`/blog/claude-opus-5-5-vs-claude-sonnet-5-5-benchmarks/`（作者轮换：Elena Rostova，1024x1024 真人头像双路径配置）；
+    2. **核心元数据**：
+       - Title / H1: `Claude Opus 5.5 vs Claude Sonnet 5.5: Benchmarks, Coding & API Pricing` (70 字符)；
+       - MetaTitle: `Claude Opus 5.5 vs Claude Sonnet 5.5: Benchmarks | APIVEL` (57 字符)；
+       - Meta Description: 146 字符，覆盖 AI models、Terminal-Bench 编程跑分、$4/$20 vs $2/$10 定价、effort 等级与 APIVEL 路由；
+    3. **4 项工程增益与交互微工具**：Mermaid 三层容灾拓扑图、含 Best For 客观列的对比矩阵（Terminal-Bench 4.0、SWE-bench Pro、OSWorld 2.1、GDPval-AA）、r/ClaudeCode 与 r/ClaudeAI 真实社区原声卡片（附 HTTP 200 官方文档与 GitHub Issues 链接）、防超时 Python 路由客户端 + Claude Code CLI 环境变量、无 alert 交互成本模拟器、4 问 PAA FAQPage Schema；
+    4. **双向内链织网 (Bi-directional Mesh Weaving)**：
+       - 互链旧文 1：`claude-opus-5-5-price-limits-claude-code.md`；
+       - 互链旧文 2：`glm-5-4-vs-claude-opus-5-5-benchmarks.md`；
+       - 互链旧文 3：`kimi-k3-1-vs-claude-opus-5-5-benchmarks.md`。
+* **14 天因果响应假设**：
+  * 在 `claude opus 5.5 vs claude sonnet 5.5`、`claude opus 5.5 vs sonnet 5.5 for coding` 与 `claude sonnet 5.5 vs opus 5.5 pricing` 词群中，7–14 天内快速进入 Google 前 15 名并依托 4 问 FAQPage Schema 争夺 AI Overviews 引用，精准转化受困于 5 小时订阅限流与 Medium/High Effort Token 账单的开发团队。
+
 ### 2026-11-25 (HungerG AI Model 盲测专题首发：实体消歧防饥饿游戏撞车、Step 5 归因取证、12 标题纯净树与双向内链织网)
 * **分类**：📝 [Stealth 模型深度调查、跨领域实体防火墙消歧、OpenCode/Qoder 试用与隐私留存审计、双向内链织网与 5-Gate 原子发布]
 * **动作详情**：

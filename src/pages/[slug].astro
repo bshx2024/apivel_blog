@@ -42,7 +42,7 @@ const postMeta = `${slugLower} ${titleLower} ${tagsLower}`;
 
 const isPriceOrBenchmark = /price|cost|saving|benchmark|comparison|versus|vs|deepseek|minimax|rate/i.test(slugLower + ' ' + titleLower);
 const isCliOrSetup = /cli|cursor|windsurf|opencode|connect|setup|config|mcp|guide|access|bypass/i.test(slugLower + ' ' + titleLower);
-const hasCustomWidget = slugLower.includes('flashprove') || slugLower.includes('cyber') || slugLower.includes('qwen-4-max') || slugLower.includes('glm-5-4-vs-kimi-k3') || slugLower.includes('kimi-k3-1-vs-claude-opus-5-5') || slugLower.includes('hungerg');
+const hasCustomWidget = slugLower.includes('flashprove') || slugLower.includes('cyber') || slugLower.includes('qwen-4-max') || slugLower.includes('glm-5-4-vs-kimi-k3') || slugLower.includes('kimi-k3-1-vs-claude-opus-5-5') || slugLower.includes('hungerg') || slugLower.includes('claude-opus-5-5-vs-claude-sonnet-5-5');
 
 let initialModel = 'glm-5.3-flash';
 let targetTopic = 'general';
@@ -506,6 +506,40 @@ const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.key
 			}
 
 			const TOPIC_CONFIG = {
+				'claude': {
+					floating: {
+						en: {
+							badge: '⚡ Uncapped Claude 5.5',
+							title: 'Route Opus 5.5 & Sonnet 5.5 With Zero Limits',
+							desc: 'Bypass 5-hour quota freezes & weekly caps. Connect Claude Code & Cursor via Anthropic-compatible gateway with PayPal checkout (+50% bonus).',
+							btnText: 'Claim $0.20 Free Trial',
+							utmCampaign: 'claude_55_routing'
+						},
+						zh: {
+							badge: '⚡ 告别每周额度锁死',
+							title: '免封控路由 Opus 5.5 与 Sonnet 5.5',
+							desc: '打破 5 小时限流与海外绑卡限制！Anthropic 原生协议直连 Claude Code 与 Cursor，PayPal 即时结账免 KYC，送 $0.20。',
+							btnText: '一键接入 Claude 5.5 网关 →',
+							utmCampaign: 'claude_55_routing'
+						}
+					},
+					inline: {
+						en: {
+							badge: '⚡ Two-Tier Claude Routing',
+							title: 'Cut Opus 5.5 & Sonnet 5.5 Bills by Up to 88%',
+							desc: 'Reserve Opus 5.5 for architecture, run Sonnet 5.5 for scoped features, and offload routine diffs to workhorse endpoints with PayPal billing.',
+							btnText: 'Get API Key & Routing Script',
+							utmCampaign: 'claude_55_routing'
+						},
+						zh: {
+							badge: '⚡ 双层混合路由方案',
+							title: '将 Opus 5.5 与 Sonnet 5.5 开发成本降低 88%',
+							desc: 'Opus 负责架构、Sonnet 负责常规功能，85% 测试任务分流降本。支持 PayPal 全球直付，0 跨境手续费，免实名即开即用。',
+							btnText: '获取 API Key 与路由配置 →',
+							utmCampaign: 'claude_55_routing'
+						}
+					}
+				},
 				'hungerg': {
 					floating: {
 						en: {
