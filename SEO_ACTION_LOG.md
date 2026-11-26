@@ -32,6 +32,18 @@
 
 ## 📅 apivel.com SEO 动作记录表 (2026年)
 
+### 2026-11-26 (Gemini 4 Neon 98+ A+ 军师外科手术重构：收敛全页词数至 ≤1780、清除 5.02% 2-gram 堆砌、补齐 Carbon/Opus 5.5 下拉意图与 4 问 PAA H3)
+* **分类**：📝⚙️ [首页 Pos 5-9.5 0% CTR 抢救、全页渲染词数瘦身、N-Gram 密度重塑、PAA H3 语义树修复与双向内链补强]
+* **动作详情**：
+  * **诊断痛点**：原 `/blog/gemini-4-neon-benchmarks-pricing-api/` 因未加入 `hasCustomWidget` 导致顶部与文内双计算器叠加，渲染词数飙升至 **2,330 词 / 2,547 Token**（严重触发 >1800 词扣分）；且 `"gemini 4"` 2-gram 密度高达 **5.02%** 触发堆砌警报，FAQ 采用 `<div>` 而非 `###` H3 导致 H2/H3 覆盖受损，Title/H1 亦缺失 `vs Carbon` 与 `vs Opus 5.5` 高频下拉分支。
+  * **重构落地**：
+    1. **元数据与 SERP 下拉意图对齐**：`Title/H1` 升级为 `Gemini 4 Neon: Benchmarks, API Pricing & Carbon vs Opus 5.5` (59 字符)，`MetaTitle` 升级为 `Gemini 4 Neon: Benchmarks, API Pricing & Carbon | APIVEL` (56 字符)，`Description` 150 字符完整覆盖 `AI model`、`Carbon`、`Opus 5.5`、`$3/$15`、`Hydrogen vs Argon`、`Antigravity` 与 `APIVEL`；
+    2. **N-Gram 与词数精准治理**：在 `src/pages/[slug].astro` 将 `gemini-4-neon` 纳入 `hasCustomWidget` 并注册独立 `gemini-neon` 中英文转化文案；以 `Neon Tier`、`Hydrogen Tier`、`Carbon Flagship` 替代重复 `Gemini 4` 前缀，清除 Mermaid `<br/>` 导致的 `x3c` 词噪；
+    3. **PAA H3 与社区原声合规**：将 4 问 FAQ 升级为标准 `###` H3 + `FAQPage` Schema，外链官方 Google Gemini Pricing / DeepMind Docs / Developers Blog / GitHub（均实测 `HTTP 200`）；
+    4. **双向内链补强**：补充从新文 `claude-opus-5-5-vs-claude-sonnet-5-5-benchmarks.md` 指回 `gemini-4-neon-benchmarks-pricing-api.md` 的上下文锚文本，协同原有的 `gemini-4-argon` 与 `gemini-4-carbon` 形成三点互链。
+* **14 天因果响应假设**：
+  * 消除 >1800 词扣分与 5.02% 堆砌惩罚并吸收 `vs Carbon`/`vs Opus 5.5` 高意图词后，`/blog/gemini-4-neon-benchmarks-pricing-api/` 在 7–14 天内由 Pos 5–9.5 向首页前 3 名跃迁并打破 0% CTR 僵局。
+
 ### 2026-11-26 (Claude Opus 5.5 vs Claude Sonnet 5.5 双旗舰对比评测首发、Terminal-Bench 70.6% vs 66.4% 跑分与 Medium/High 成本悖论、双向内链织网与 5-Gate 原子发布)
 * **分类**：📝 [Anthropic 同代双层旗舰对比评测、SWE-bench Pro & Terminal-Bench 4.0 & OSWorld 2.1 基准拆解、Effort 等级 Token 成本悖论、双层高可用降本网关、5-Gate 原子发布与双向织网]
 * **动作详情**：

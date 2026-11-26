@@ -42,7 +42,7 @@ const postMeta = `${slugLower} ${titleLower} ${tagsLower}`;
 
 const isPriceOrBenchmark = /price|cost|saving|benchmark|comparison|versus|vs|deepseek|minimax|rate/i.test(slugLower + ' ' + titleLower);
 const isCliOrSetup = /cli|cursor|windsurf|opencode|connect|setup|config|mcp|guide|access|bypass/i.test(slugLower + ' ' + titleLower);
-const hasCustomWidget = slugLower.includes('flashprove') || slugLower.includes('cyber') || slugLower.includes('qwen-4-max') || slugLower.includes('glm-5-4-vs-kimi-k3') || slugLower.includes('kimi-k3-1-vs-claude-opus-5-5') || slugLower.includes('hungerg') || slugLower.includes('claude-opus-5-5-vs-claude-sonnet-5-5');
+const hasCustomWidget = slugLower.includes('flashprove') || slugLower.includes('cyber') || slugLower.includes('qwen-4-max') || slugLower.includes('glm-5-4-vs-kimi-k3') || slugLower.includes('kimi-k3-1-vs-claude-opus-5-5') || slugLower.includes('hungerg') || slugLower.includes('claude-opus-5-5-vs-claude-sonnet-5-5') || slugLower.includes('gemini-4-neon');
 
 let initialModel = 'glm-5.3-flash';
 let targetTopic = 'general';
@@ -98,6 +98,9 @@ if (slugLower.includes('hungerg')) {
 } else if (postMeta.includes('hunyuan') || postMeta.includes('hy3') || postMeta.includes('hy4') || postMeta.includes('混元')) {
 	targetTopic = 'hunyuan';
 	initialModel = 'deepseek-v4';
+} else if (slugLower.includes('gemini-4-neon')) {
+	targetTopic = 'gemini-neon';
+	initialModel = 'gemini-37';
 } else if (postMeta.includes('gemini-4') || postMeta.includes('gemini 4')) {
 	targetTopic = 'gemini';
 	initialModel = 'gemini-37';
@@ -1047,6 +1050,40 @@ const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.key
 							desc: '免去复杂的云端企业实名流程。通过 APIVALE 一键登录即可获得 $0.20 体验金，直接在网页控制台在线调用与测试。',
 							btnText: '立即体验混元 →',
 							utmCampaign: 'hunyuan_bypass'
+						}
+					}
+				},
+				'gemini-neon': {
+					floating: {
+						en: {
+							badge: '⚡ ~110 tok/s / 1M Window',
+							title: 'Route Gemini 4 Neon With Zero 429 Caps',
+							desc: 'Bypass GCP billing hurdles and 5-hour Antigravity quota limits. Pay-as-you-go OpenAI & Anthropic gateway with PayPal checkout (+50% bonus).',
+							btnText: 'Claim $0.20 Free Trial',
+							utmCampaign: 'gemini_neon_routing'
+						},
+						zh: {
+							badge: '⚡ 110 tok/s / 1M 上下文',
+							title: '免海外绑卡直连 Gemini 4 Neon',
+							desc: '告别 GCP 账单风控与 5 小时限流！标准 OpenAI/Anthropic 兼容端点双层路由降本 88%，PayPal 即时结账免 KYC，送 $0.20。',
+							btnText: '一键接入 Neon 网关 →',
+							utmCampaign: 'gemini_neon_routing'
+						}
+					},
+					inline: {
+						en: {
+							badge: '⚡ Two-Tier Neon Router',
+							title: 'Cut Gemini 4 Neon Token Burn by Up to 88%',
+							desc: 'Reserve Neon for complex refactoring while offloading 85% of routine diffs to workhorse endpoints. Instant PayPal checkout and zero KYC.',
+							btnText: 'Get API Key & Failover Script',
+							utmCampaign: 'gemini_neon_routing'
+						},
+						zh: {
+							badge: '⚡ 双层高可用路由',
+							title: '将 Gemini 4 Neon 智能体成本降低 88%',
+							desc: '复杂重构交由 Neon，85% 常规测试分流至主力网关。支持 PayPal 全球直付，0 跨境手续费，免实名即开即用。',
+							btnText: '获取 API Key 与路由配置 →',
+							utmCampaign: 'gemini_neon_routing'
 						}
 					}
 				},

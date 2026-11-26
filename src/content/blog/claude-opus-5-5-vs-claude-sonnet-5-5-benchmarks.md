@@ -78,7 +78,7 @@ The matrix below compares verified coding benchmarks, knowledge-work Elo ratings
 Halving token rates ($2/$10 versus $4/$20) makes the mid-tier model look universally cheaper, yet two terminal dynamics complicate the math:
 
 1. **Sonnet High vs Opus Medium**: Pushing the cheaper tier to `high` or `max` effort triggers verbose verification chains. On vague tasks, extra completion tokens can push per-task cost above running the flagship at `medium` effort, which resolves ambiguity in fewer turns.
-2. **Prompt Cache Multiplier**: Both tiers discount cached input reads by 95% (ten cents and twenty cents per million cached tokens). Keeping repository context stable matters more than trimming prompt prose, whether deploying Anthropic endpoints or alternatives analyzed in our [GLM 5.4 Benchmark Comparison](/blog/glm-5-4-vs-claude-opus-5-5-benchmarks/) and [Kimi K3.1 Pro Showdown](/blog/kimi-k3-1-vs-claude-opus-5-5-benchmarks/).
+2. **Prompt Cache Multiplier**: Both tiers discount cached input reads by 95% (ten cents and twenty cents per million cached tokens). Keeping repository context stable matters more than trimming prompt prose, whether deploying Anthropic endpoints, [Gemini 4 Neon](/blog/gemini-4-neon-benchmarks-pricing-api/), or models analyzed in our [GLM 5.4 Benchmark Comparison](/blog/glm-5-4-vs-claude-opus-5-5-benchmarks/) and [Kimi K3.1 Pro Showdown](/blog/kimi-k3-1-vs-claude-opus-5-5-benchmarks/).
 
 ## Reddit Consensus: Medium vs High Effort & Quota Lockouts
 
