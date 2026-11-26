@@ -32,6 +32,18 @@
 
 ## 📅 apivel.com SEO 动作记录表 (2026年)
 
+### 2026-11-26 (GSC 首页 Pos 5–9.5 其余 4 篇 100 A 全量体检重构：消除 >1800 词超标、修复 broken `<pre>` 计算器与 `x3c div` 污染、清零 N-Gram 辅助词反客为主)
+* **分类**：📝⚙️ [Pos 5-9.5 既有高潜文章 100 A 外科手术、HTML 计算器渲染修复、N-Gram 密度重塑与全站 `hasCustomWidget` 统一去重]
+* **动作详情**：
+  * **诊断发现的致命暗扣**：对 GSC 排在第 5–9.5 名且 0% CTR 的 4 篇老文用 `simulate_ngrams.cjs` 渲染态体检发现：(1) 4 篇均未纳入 `hasCustomWidget`，导致全页渲染词数飙升至 `1,922–2,378` 词（严重触发 >1800 词扣分）；(2) `ai-coding-impact-senior-engineers.md` 计算器 HTML 块因空行后 4 空格缩进被 CommonMark 解析为 `<pre><code>` 导致交互失效且产生 `32x x3c div` 词噪；(3) `gemini-4-argon`、`qwen-4-release-date` 与 `freellmapi` 均触发“辅助词 `qwen 3 7 max` / `https apivel com v1` / `0 20 free signup trial` 占领 4/5-gram 榜首”丢 3 分。
+  * **4 篇联动重构落地**（全部在 `src/pages/[slug].astro` 注册 `hasCustomWidget` 去重并同步更新 `<lastmod>`）：
+    1. `gemini-4-argon-coding-test-review.md`：正文精准收敛至 **1,203 词**（`0 Errors, 0 Warnings`），渲染 Token 降至 **1,597**，`"gemini 4"` (2.26%) 与 `"gemini 4 argon coding test"` 夺回 2/3/4/5-gram 榜首，修复文中 `"impact on senior"` 锚文本；
+    2. `qwen-4-release-date-api-roadmap.md`：正文收敛至 **1,201 词**（`0 Errors, 0 Warnings`），渲染 Token 降至 **1,507**，`"qwen 4"` (2.67%) 与 `"qwen 4 release date"` 夺回榜首，清除过多 `https://apivel.com/v1` 稀释；
+    3. `freellmapi-claude-code-review-alternatives.md`：正文收敛至 **1,201 词**（`0 Errors, 0 Warnings`），渲染 Token 降至 **1,599**，消除 `qwen 3 7 max` / `0 20 free signup trial` 霸榜，由 `"freellmapi review"` / `"freellmapi alternative"` 领跑；
+    4. `ai-coding-impact-senior-engineers.md`：修复损坏的 `<pre>` 计算器并清除 `32x x3c div` 污染，Description 消除 `"impact on senior"` 介词截断，FAQ 改为标准 `###` H3，正文 **1,203 词**（`0 Errors, 0 Warnings`），渲染 Token **1,598**，`"ai coding impact senior engineers"` 全榜第一。
+* **14 天因果响应假设**：
+  * 解除渲染超标、计算器损坏与密度榜扣分并在 GSC 重新请求编入索引后，这 4 篇 Pos 5–9.5 页面在 7–14 天内向首页前 3 名突破并开始转化真实点击。
+
 ### 2026-11-26 (Gemini 4 Neon 98+ A+ 军师外科手术重构：收敛全页词数至 ≤1780、清除 5.02% 2-gram 堆砌、补齐 Carbon/Opus 5.5 下拉意图与 4 问 PAA H3)
 * **分类**：📝⚙️ [首页 Pos 5-9.5 0% CTR 抢救、全页渲染词数瘦身、N-Gram 密度重塑、PAA H3 语义树修复与双向内链补强]
 * **动作详情**：
