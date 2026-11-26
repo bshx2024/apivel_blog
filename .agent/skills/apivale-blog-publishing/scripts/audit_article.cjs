@@ -133,6 +133,17 @@ function auditArticle(filePath) {
     errors.push('CRO Compliance: Missing ending <div class="cta-card"> conversion container!');
   }
 
+  // Zero-Circular-Redirect check
+  if (/redirect=(?:\/|%2F)blog\b/i.test(content)) {
+    errors.push('Zero-Circular-Redirect Violation: Found circular "redirect=/blog/..." link! Route to "https://apivel.com/sign-up?preset=<model>&redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=<slug>" or "https://apivel.com/pricing?from_blog=<slug>" instead.');
+  }
+
+  // Require at least 3 clear ## H2 headings (AST & in-content bridge anchor readiness)
+  const h2Headings = bodyWithoutFm.match(/^##\s+.+/gm) || [];
+  if (h2Headings.length < 3) {
+    errors.push(`Structure Error: Found only ${h2Headings.length} "## H2" headings; require at least 3 clear "## " H2 headings.`);
+  }
+
   // Check JSON-LD
   if (!content.includes('"@type": "FAQPage"') && !content.includes('"@type": "TechArticle"')) {
     errors.push('GEO Compliance: Missing FAQPage or TechArticle JSON-LD Schema!');
@@ -149,6 +160,7 @@ function report(errors, warnings, wordCount) {
   if (errors.length > 0) {
     console.error('\n❌ ERRORS (Must fix before publishing):');
     errors.forEach((e, i) => console.error(`  ${i + 1}. ${e}`));
+    process.exitCode = 1;
   }
 
   if (warnings.length > 0) {

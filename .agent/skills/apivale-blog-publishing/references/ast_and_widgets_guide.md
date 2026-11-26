@@ -125,10 +125,10 @@ document.addEventListener('DOMContentLoaded', updateCalc);
     </div>
 
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a href="https://apivel.com/sign-up?redirect=/blog/<slug>" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm transition shadow-lg shadow-cyan-500/20">
+      <a href="https://apivel.com/sign-up?preset=<model>&redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=<slug>" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm transition shadow-lg shadow-cyan-500/20" rel="nofollow">
         Claim $0.20 Free Trial &rarr;
       </a>
-      <a href="https://apivel.com/pricing?redirect=/blog/<slug>" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 text-white font-semibold text-sm border border-slate-700 transition">
+      <a href="https://apivel.com/pricing?from_blog=<slug>" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 text-white font-semibold text-sm border border-slate-700 transition" rel="nofollow">
         Explore Model Pricing
       </a>
     </div>
@@ -138,3 +138,7 @@ document.addEventListener('DOMContentLoaded', updateCalc);
   </div>
 </div>
 ```
+
+> **Zero-Circular-Redirect & H2 Anchor 规范**：
+> - **严禁使用 `redirect=/blog/<slug>` 或 `redirect=%2Fblog...`**，避免新用户注册/登录后被回跳到文章页陷入死循环；来源追踪统一使用 `from_blog=<slug>`，注册后 `redirect` 统一指向 `%2Fdashboard%3Fquickstart%3Dtrue`。
+> - 文章 Markdown 正文必须包含 **至少 3 个清晰的 `## ` 二级 H2 标题**，以便大纲语义分块及未来 In-Content 代码桥接组件锚定。

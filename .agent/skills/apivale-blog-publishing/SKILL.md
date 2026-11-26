@@ -209,16 +209,24 @@ description: >-
 * **零 Alert 规则**：严禁在 Markdown 中手写 `onclick="alert(...)"`，所有表单交互必须通过轻量内联 JS 实现纯前端 DOM 状态更新。
 * **落地实践**：内嵌专属交互计算器（如 `Cost & Hybrid Savings Calculator`），用户滑动滑块或切换下拉框即可原地测算 API 成本节省，原地满足意图，锁死停留时间（Dwell Time）。
 
-### 2. 结尾转化卡片 (`.cta-card`) 规范
-结尾卡片必须严格包含以下要素：
+### 2. 结尾转化卡片 (`.cta-card`) 与防死循环直达规范 (Zero-Circular-Redirect Rule)
+结尾卡片必须严格包含以下要素，并**严禁使用 `redirect=/blog/<slug>/` 或 `redirect=/blog/<slug>`**（防止用户注册/登录后被回跳到已读完的博文页，陷入转化死循环）：
 ```html
 <div class="cta-card">
   <!-- 标题与副标题直击痛点 -->
   <!-- 钱包三权益：+50% 首充、 $29 开发者包、 $0.20 免费额度 -->
-  <!-- 双按钮：/pricing 与 /sign-up，必须动态携带 redirect=/blog/<slug>/ -->
+  <!-- 主按钮（直达注册并引导进入控制台 Quickstart）：
+       https://apivel.com/sign-up?preset=<model>&redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=<slug> -->
+  <!-- 次按钮（定价页，仅带来源归因）：
+       https://apivel.com/pricing?from_blog=<slug> -->
   <!-- 支付背书：PayPal 官方即时结账、全球信用卡、0% 外汇手续费 -->
 </div>
 ```
+* **P0 防死循环铁律**：全站 CTA（包括正文链接、`.cta-card`、`BlogCtaCard.astro`、`[slug].astro` 悬浮/行内横幅）一律禁止出现 `redirect=/blog/...` 或 `redirect=%2Fblog...`；来源追踪统一改用 `from_blog=<slug>`，注册后 `redirect` 统一指向 `%2Fdashboard%3Fquickstart%3Dtrue`。
+
+### 3. In-Content 交互承接与 H2 锚点规范
+* **当前仓库组件架构 (`apivel_blog`)**：`src/pages/[slug].astro` 会在正文上方根据文章意图自动挂载 `CliConfigGenerator.astro` 或 `ApiPriceCalculator.astro`（若文章已内嵌专属微工具且列入 `hasCustomWidget` 白名单则自动去重）；注：`apivel_blog` 目前尚未引入兄弟站点 `apivale.com` 的 `ContextualInContentBridge.astro` 文中自动插卡组件。
+* **H2 结构锚点铁律**：为同时保证 AST 清晰度与后续平滑兼容文内代码桥接（在第 2 或第 3 个 `<h2>` 前自动注入配置桥接卡），每篇博文正文**必须包含至少 3 个清晰的 `## ` 二级 H2 标题**。
 
 ---
 
@@ -376,12 +384,14 @@ flowchart TD
 ```bash
 bun .agent/skills/apivale-blog-publishing/scripts/audit_article.cjs src/content/blog/<article-slug>.md
 bun .agent/skills/apivale-blog-publishing/scripts/simulate_ngrams.cjs src/content/blog/<article-slug>.md
+bun scripts/check-no-circular.cjs
 ```
 必须达成：
 * `0 Errors, 0 Warnings`；
 * Title 长度 $\le 80$ 字符；MetaTitle 50–60 字符；Meta Description 140–160 字符；
 * 正文可见词数精准控制在 **1,205 ~ 1,260 词**（既满足 ≥1,200 词 0 Warnings，又确保渲染后 `check_html_words.cjs <= 1,660`、军师去标点 HTML 口径 `<= 1,780`，彻底消灭线上 `> 1800` 词扣分）；
-* 必须包含 `<input>` / `<select>` 与 `.cta-card`，且在 `src/pages/[slug].astro` 将文章加入 `hasCustomWidget`；
+* 必须包含 `<input>` / `<select>` 与 `.cta-card`，正文包含至少 3 个 `## ` H2 标题，且在 `src/pages/[slug].astro` 将文章加入 `hasCustomWidget`；
+* **零死循环门禁**：0 处 `redirect=/blog/` 或 `redirect=%2Fblog`（统一使用 `redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=<slug>`）；
 * 严禁出现 Stripe 或 Crypto。
 
 ### Gate 3: 双向内链织网 (Bi-directional Mesh Weaving)

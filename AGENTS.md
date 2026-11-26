@@ -53,9 +53,10 @@ When executing Step 4, Reed and coding assistants **MUST execute the following 5
    - Write article in `src/content/blog/<article-slug>.md` with strict AST symmetry (1 H1 <= 80 chars, symmetrical H2 $\rightarrow$ H3, no H4 jumping, **widgets must use `<div>` instead of `<h1>`-`<h4>`**).
    - Configure frontmatter `keyTakeaways` array with 4 explicit technical parameters matching user search intent (protocol, target model ID, baseURL, `PayPal & Global Cards ($0.20 Trial)`).
    - Inject the **4 Real Engineering Gains** + embedded **Community Voice Box** + **Objective Comparison Table** + embedded **In-Article Live Playground / Interactive Micro-Tool** (with interactive `<input>`/`<select>`/`<button>` to fulfill on-page intent and eliminate 4.5 pt doorway page deduction) + **FAQ JSON-LD Schema**.
-   - Inject **Ending CTA Card (`.cta-card`) aligned with wallet**: +50% first deposit bonus ($5 $\rightarrow$ $7.50, $29 $\rightarrow$ $43.50), $29 developer pack (56% OFF, 40M tokens, never expires), $0.20 free signup trial, dual `/pricing` & `/sign-up` action buttons with `redirect=/blog/<slug>`.
+   - Inject **Ending CTA Card (`.cta-card`) aligned with wallet**: +50% first deposit bonus ($5 $\rightarrow$ $7.50, $29 $\rightarrow$ $43.50), $29 developer pack (56% OFF, 40M tokens, never expires), $0.20 free signup trial, dual action buttons: primary `https://apivel.com/sign-up?preset=<model>&redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=<slug>` and secondary `https://apivel.com/pricing?from_blog=<slug>`.
    - Register new model topics in `src/pages/[slug].astro` (`TOPIC_CONFIG`) with bilingual metadata.
-   - Enforce **Contextual CTA Redirect**: ensure all CTA links carry `redirect=/blog/<slug>` to prevent context loss.
+   - Enforce **Zero-Circular-Redirect Rule**: NEVER use `redirect=/blog/<slug>` or `redirect=%2Fblog...` in CTA links (prevents post-auth loop back to the blog post). Always track attribution with `from_blog=<slug>` and route sign-up to `%2Fdashboard%3Fquickstart%3Dtrue`.
+   - Enforce **H2 Anchor Structure Rule**: Every article must include at least 3 clear `## ` H2 headings for AST clarity and in-content bridge compatibility.
    - Enforce **Zero-Alert Rule**: code blocks rely on automated 1-Click Copy UI; NEVER hand-craft native `alert()` popups in markdown.
    - Enforce **Decimal Model Version Space Rule (P0)**: Write decimal model versions with spaces in Title/H1 (e.g. `GLM 5.4 vs 5.3`, NOT `GLM-5.4`) to prevent tokenizer decimal-stripping traps and ensure 100% URL keyword coverage.
 2. **Gate 2 (Automated Pre-Flight SEO Health & Link Audit)**:
@@ -80,13 +81,13 @@ When executing Step 4, Reed and coding assistants **MUST execute the following 5
 - **Answer-First & Zero Pogo-Sticking**: Provide structured `keyTakeaways` in frontmatter for instant 1-second answers. NEVER trigger invasive modal popups before 25s or 35% scroll depth.
 - **Supported Payment Method**: APIVALE officially supports **PayPal** (PayPal Instant Checkout / Pay with PayPal) as mainstream, plus international credit cards (Visa, MasterCard, Amex), Apple Pay, and Alipay via global billing gateway (0 extra FX fees, zero KYC). NEVER reference Stripe or Crypto.
 - **In-Article Live Playground**: Always embed an interactive playground/tester with `<input>`/`<select>`/`<button>` to fulfill search intent and prevent P0 4.5 pt doorway bounce penalty.
-- **Wallet Benefits Alignment**: Ending `.cta-card` must 100% match wallet offers: +50% first deposit bonus ($5 $\rightarrow$ $7.50), $29 developer pack (56% OFF, 40M tokens), $0.20 free signup trial, dual `/pricing` and `/sign-up` links with `redirect=/blog/<slug>`.
+- **Wallet Benefits Alignment**: Ending `.cta-card` must 100% match wallet offers: +50% first deposit bonus ($5 $\rightarrow$ $7.50), $29 developer pack (56% OFF, 40M tokens), $0.20 free signup trial, dual `/sign-up` (with `redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=<slug>`) and `/pricing` (with `from_blog=<slug>`) links.
 - **HTML Widget AST Cleanliness**: NEVER use `<h1>`-`<h4>` inside embedded HTML widgets (Definition Box, Key Takeaways, CTA, Playground). Always use `<div>` or `<span>` with CSS classes to maintain a single H1 $\rightarrow$ H2 $\rightarrow$ H3 tree.
-- **Word Count & Metrics**: Keep visible words between 1200–1800 words (prevent theme dilution); MetaTitle 50–60 chars (max 600px); H1 <= 80 chars; Meta Description 140–160 chars.
+- **Word Count & Metrics**: Keep visible words between 1200–1800 words (prevent theme dilution); MetaTitle 50–60 chars (max 600px); H1 <= 80 chars; Meta Description 140–160 chars; at least 3 clear `## ` H2 headings.
 - **Model Recency**: Reference flagship LLM versions (**Claude Sonnet 5**, **Qwen 3.7 Max**, **DeepSeek V4**, **Xiaomi MiMo-V2.6 Pro**). Invocation model name for Qwen 3.7 Max is `infer/qwen3.7-max`, MiMo-V2.6 Pro is `infer/xiaomi-mimo-v2.6-pro`.
 - **Evergreen Short Slugs**: Slugs must be concise without years/dates (e.g., `/blog/qwen-3-7-max-claude-code-setup`).
 - **Protocol Compatibility**: Emphasize native OpenAI and Anthropic endpoint support for Claude Code CLI, Cursor, Windsurf.
-- **Seamless Context Redirect**: CTA links must specify `redirect=/blog/<slug>` so readers return to their active session.
+- **Zero-Circular-Redirect Rule**: NEVER use `redirect=/blog/<slug>` in CTA links (causes post-login redirect loops); use `redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=<slug>` on `/sign-up` and `from_blog=<slug>` on `/pricing`. Run `bun scripts/check-no-circular.cjs` before commit.
 - **Zero-Alert UX**: Never write `onclick="...alert(...)"`. Code copy buttons must use smooth in-place state transitions.
 
 ---

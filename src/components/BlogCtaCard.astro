@@ -13,9 +13,9 @@ const {
   currentPath = ""
 } = Astro.props;
 
-const redirectTarget = currentPath || (currentSlug ? `/blog/${currentSlug}` : '/pricing');
-const pricingRedirectUrl = `https://apivel.com/pricing?redirect=${encodeURIComponent(redirectTarget)}&utm_source=apivel_blog&utm_medium=blog_cta_card`;
-const signUpRedirectUrl = `https://apivel.com/sign-up?redirect=${encodeURIComponent(redirectTarget)}&utm_source=apivel_blog&utm_medium=blog_cta_card`;
+const fromBlog = currentSlug || currentPath.replace(/^\/blog\//, '').replace(/\/$/, '') || 'blog';
+const pricingRedirectUrl = `https://apivel.com/pricing?from_blog=${encodeURIComponent(fromBlog)}&utm_source=apivel_blog&utm_medium=blog_cta_card`;
+const signUpRedirectUrl = `https://apivel.com/sign-up?preset=quickstart&redirect=${encodeURIComponent('/dashboard?quickstart=true')}&from_blog=${encodeURIComponent(fromBlog)}&utm_source=apivel_blog&utm_medium=blog_cta_card`;
 ---
 
 <div class="blog-cta-card">

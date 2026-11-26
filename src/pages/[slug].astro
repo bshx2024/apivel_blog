@@ -389,7 +389,7 @@ const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.key
 				<p class="inline-desc" id="inlineDesc">Sign up via GitHub for instant $0.20 free credit (+ 50% 1st top-up bonus). Access DeepSeek, GLM, and Claude APIs with zero KYC.</p>
 			</div>
 			<div class="banner-action">
-				<a href={`https://apivel.com/sign-in?redirect=/blog/${post.id}&utm_source=apivale_blog&utm_medium=blog_inline_banner`} class="inline-action-btn" id="inlineActionBtn" rel="nofollow">
+				<a href={`https://apivel.com/sign-up?preset=${encodeURIComponent(targetTopic)}&redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=${encodeURIComponent(post.id)}&utm_source=apivel_blog&utm_medium=blog_inline_banner`} class="inline-action-btn" id="inlineActionBtn" rel="nofollow">
 					Claim API Credentials
 				</a>
 			</div>
@@ -425,7 +425,7 @@ const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.key
 		</div>
 		<div class="cta-title" id="ctaTitle">Get Free API Key</div>
 		<p class="cta-desc" id="ctaDesc">Sign up via GitHub for instant $0.20 credit (+ 50% bonus). No KYC required.</p>
-		<a href="https://apivel.com/sign-up?redirect=%2Fpricing&utm_source=apivale_blog&utm_medium=blog_floating_card" class="cta-action-btn" id="ctaActionBtn" rel="nofollow">
+		<a href={`https://apivel.com/sign-up?preset=${encodeURIComponent(targetTopic)}&redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=${encodeURIComponent(post.id)}&utm_source=apivel_blog&utm_medium=blog_floating_card`} class="cta-action-btn" id="ctaActionBtn" rel="nofollow">
 			Claim $0.20 Free Credit →
 		</a>
 	</div>
@@ -1310,7 +1310,8 @@ const keyTakeaways: KeyTakeawayItem[] = (post.data.keyTakeaways && post.data.key
 				if (descEl) descEl.innerText = floatingData.desc;
 				if (actionBtn) {
 					actionBtn.innerText = floatingData.btnText;
-					actionBtn.href = `https://apivel.com/sign-up?redirect=${encodeURIComponent(window.location.pathname)}&utm_source=apivale_blog&utm_medium=blog_floating_card&utm_campaign=${floatingData.utmCampaign}`;
+					const fromSlug = window.location.pathname.replace(/^\/blog\//, '').replace(/\/$/, '') || 'blog';
+					actionBtn.href = `https://apivel.com/sign-up?preset=${encodeURIComponent(topic)}&redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=${encodeURIComponent(fromSlug)}&utm_source=apivel_blog&utm_medium=blog_floating_card&utm_campaign=${floatingData.utmCampaign}`;
 					actionBtn.rel = 'nofollow';
 				}
 

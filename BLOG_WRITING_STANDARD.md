@@ -116,7 +116,7 @@
    - 严格落实“4 项真实工程增益” + 植入可点击验证的**真实社区原声卡片（或官方 RFC/脱敏日志降级引用）**；
    - 对比表格中必须包含客观“竞品正向优势列 (Best for...)”与当日抓取核验的时间戳；
    - 注入**页面侧即时承接微工具 (In-Article Live Playground / Config Tester)**：凡在正文、标题或 CTA 提及“试用/测试/体验”等字样，必须内嵌轻量原生交互体验区（包含实际可交互的 `<input>`/`<select>`/`<button>` 原生表单元素），让用户免注册原地实操，彻底消除纯跳转落地页（Doorway Page）被 SEO 体检引擎扣 4.5 分（P0 致命扣分项）的风险；
-   - 注入**结尾钱包对齐转化卡片 (`.cta-card`)**：严格对齐 APIVALE 钱包实际方案：首充特权额外送 +50%（充 $5 得 $7.50，充 $29 得 $43.50，充 $99 得 $148.50）、$29 开发者专享礼包（直降 56%、4000万 Token、永久有效）、新用户 $0.20 免卡免实名起步金；提供双行动按钮（直达定价页 `/pricing` 与直达快速注册页 `/sign-up`），且必须动态携带 `redirect=/blog/<slug>`；
+   - 注入**结尾钱包对齐转化卡片 (`.cta-card`)**：严格对齐 APIVALE 钱包实际方案：首充特权额外送 +50%（充 $5 得 $7.50，充 $29 得 $43.50，充 $99 得 $148.50）、$29 开发者专享礼包（直降 56%、4000万 Token、永久有效）、新用户 $0.20 免卡免实名起步金；提供双行动按钮（主按钮 `https://apivel.com/sign-up?preset=<model>&redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=<slug>` 与次按钮 `https://apivel.com/pricing?from_blog=<slug>`），**严禁使用 `redirect=/blog/<slug>`**（防止登录后回跳死循环）；
    - 严格执行**组件无 H 标签红线 (Strict AST Widget Cleanliness)**：自定义内嵌 HTML 组件（如 Definition Box、Key Takeaways、Playground、CRO 卡片）中**严禁使用原生 `<h1>`-`<h4>` 标签**，统一使用 `<div class="font-semibold text-white ...">` 或 `<span>` 加 CSS 类名，杜绝破坏纯 Markdown 的 `H1 -> H2 -> H3` 语义树而被判定“标题跳级”扣分；
    - **动态侧边栏模型话题注册 (Dynamic Floating CTA Topic Registry)**：若文章涉及新大模型（如 Xiaomi MiMo、GLM、Qwen、DeepSeek 等），必须同步在 `src/pages/[slug].astro` 的 `TOPIC_CONFIG` 中注册专属中英文转化卡片文案（包含 `badge`、`title`、`desc`、`metric`、`ctaText`）；
    - **辅助竞品模型控频铁律 (Anti-Competitor Dilution Rule)**：除对比表格（1次）与网关架构摘要（1次）外，严禁在正文重复出现竞品模型（如 Qwen 3.7 Max, DeepSeek V4）全名，其余位置全部替换为功能代词（如 `auxiliary workhorse models`, `secondary execution tier`）；主模型 2~5 词组必须垄断 N-gram 密度榜前三，彻底清除候选意图中的次级杂音词，确保密度榜位置加权满分（挽回 3 分）；
@@ -307,14 +307,14 @@ keyTakeaways:
 *   **首充专享特权**：首次充值额外赠送 **+50%** 额度（充 $5 到账 $7.50，充 $29 到账 $43.50，充 $99 到账 $148.50）；
 *   **开发者超值礼包**：**$29 开发者专享大礼包**（直降 56%，一次性获得 4000万 Token，永久有效不设过期时间）；
 *   **新用户起步礼**：注册即送 **$0.20** 免卡免实名体验金（无需绑定信用卡，零门槛验证）；
-*   **双行动按钮架构 (Dual-Track Buttons)**：
-    *   主转化按钮直达定价页（`href="/pricing?redirect=/blog/<slug>"`，如 `Claim +50% Bonus ($5 -> $7.50)`）；
-    *   次转化按钮直达注册页（`href="/sign-up?redirect=/blog/<slug>"`，如 `Get $0.20 Free Trial (Zero Card)`）；
-    *   两个按钮必须动态附加 `redirect=/blog/<slug>` 参数，保证用户操作后原地无缝回跳。
+*   **双行动按钮架构 (Dual-Track Buttons & Zero-Circular-Redirect Rule)**：
+    *   主转化按钮直达注册并引导进入控制台 Quickstart（`href="https://apivel.com/sign-up?preset=<model>&redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=<slug>"`，如 `Get $0.20 Free Trial (Zero Card)`）；
+    *   次转化按钮直达定价页（`href="https://apivel.com/pricing?from_blog=<slug>"`，如 `Claim +50% Bonus ($5 -> $7.50)`）；
+    *   **严禁使用 `redirect=/blog/<slug>` 或 `redirect=/blog/<slug>/`**：避免用户在注册或登录后被回跳到已读完的博文页陷入死循环；来源归因统一使用 `from_blog=<slug>`。
 
 ```html
 <div class="cta-card">
-  <div class="cta-card-title">Connect [Model Name] via APIVALE & Cut Token Costs by 80%</div>
+  <div class="cta-card-title">Connect [Model Name] via APIVEL & Cut Token Costs by 80%</div>
   <p class="cta-card-text">
     Access OpenAI and Anthropic compatible endpoints with zero KYC, zero regional card declines, and instant PayPal global checkout. Claim your +50% first-deposit bonus or start with $0.20 free quota.
   </p>
@@ -325,8 +325,8 @@ keyTakeaways:
     <div class="cta-badge">💳 PayPal & Global Cards (0 Extra FX)</div>
   </div>
   <div class="cta-actions">
-    <a href="/pricing?redirect=/blog/[slug]" class="cta-btn primary">Claim +50% Bonus ($5 → $7.50)</a>
-    <a href="/sign-up?redirect=/blog/[slug]" class="cta-btn secondary">Get $0.20 Free Trial (Zero Card)</a>
+    <a href="https://apivel.com/sign-up?preset=[preset]&redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=[slug]" class="cta-btn primary" rel="nofollow">Get $0.20 Free Trial (Zero Card)</a>
+    <a href="https://apivel.com/pricing?from_blog=[slug]" class="cta-btn secondary" rel="nofollow">Claim +50% Bonus ($5 → $7.50)</a>
   </div>
 </div>
 ```
@@ -392,7 +392,7 @@ keyTakeaways:
 13. **严禁侵入式开屏遮挡与强制注册墙 (Zero Experience Shock / BLUF 原则)**：黄金首屏必须在无滚轮状态下直呈核心答案（通过 Frontmatter `keyTakeaways` 呈现参数/端点/SDK）。严禁在开屏前 25 秒或正文滚动不足 35% 时触发任何形式的模态遮罩或弹窗，彻底杜绝 Google 判定 2 秒跳出（Pogo-sticking）降权风险。
 14. **严禁在内嵌自定义 HTML 组件中使用 `<h1>`~`<h4>` 标签**：Definition Box、Key Takeaways、Playground、CRO 卡片等必须使用 `<div>`/`<span>` 加 CSS 类名，严禁破坏纯 Markdown 的 `H1 -> H2 -> H3` 语义树而被判定“标题跳级”扣分。
 15. **严禁无原地交互的纯跳转落地页**：凡正文、标题或 CTA 提及“试用/测试/体验”，必须内嵌 In-Article Live Playground 或 CLI 配置生成器（包含实际可交互的 `<input>`/`<select>`/`<button>`），彻底消除被判定为 Doorway 欺骗性落地页扣 4.5 分的 P0 风险。
-16. **严禁结尾 CTA 与钱包真实权益脱节**：必须严格对齐首充送 +50%（$5->$7.50 / $29->$43.50）、$29 开发者专享包（直降 56%、4000万 Token、永久有效）、新用户 $0.20 免卡体验金，且提供双行动按钮（`/pricing` 与 `/sign-up`），携带 `redirect=/blog/<slug>` 参数。
+16. **严禁结尾 CTA 与钱包真实权益脱节，严禁使用 `redirect=/blog/<slug>` 死循环**：必须严格对齐首充送 +50%（$5->$7.50 / $29->$43.50）、$29 开发者专享包（直降 56%、4000万 Token、永久有效）、新用户 $0.20 免卡体验金，提供直达控制台的注册按钮（`https://apivel.com/sign-up?preset=<model>&redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=<slug>`）与定价按钮（`https://apivel.com/pricing?from_blog=<slug>`），同时正文至少包含 3 个清晰的 `## ` H2 标题。
 17. **严禁正文严重超长导致核心主题稀释**：正文建议保持在 1200 ~ 1800 词最佳区间；H1 严格控制在 80 字符内，Description 严格在 140~160 字符内。
 18. **严禁上线新模型文章未注册侧边栏浮动话题**：发布新大模型博文必须在 `src/pages/[slug].astro` 的 `TOPIC_CONFIG` 中注册专属双语转化元数据。
 19. **严禁混淆开源跑分/量化自建与商业 API 服务意图 (P0 商业意图纯净铁律)**：
