@@ -408,13 +408,13 @@ While Freebuff provides a capable zero-cost agent with automated code reviews, c
     </div>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
       <a rel="nofollow" 
-        href="/sign-up?redirect=/blog/freebuff-ai-coding-review/" 
+        href="/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=freebuff-ai-coding-review" 
         class="w-full sm:w-auto rounded-xl bg-primary px-8 py-3.5 text-sm font-bold text-white transition-all hover:bg-primary/90 shadow-lg shadow-primary/25"
       >
         Claim $0.20 Free Sandbox Credits
       </a>
       <a rel="nofollow" 
-        href="/pricing?redirect=/blog/freebuff-ai-coding-review/" 
+        href="/pricing?from_blog=freebuff-ai-coding-review" 
         class="w-full sm:w-auto rounded-xl border border-gray-700 bg-gray-800/80 px-8 py-3.5 text-sm font-semibold text-gray-200 transition-all hover:bg-gray-700"
       >
         View Token Pricing Matrix

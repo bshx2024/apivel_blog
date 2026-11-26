@@ -25,7 +25,7 @@ keyTakeaways:
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
     <li><strong>428B MoE / 23B Active:</strong> MiniMax M3.1 Flash uses a sparse Mixture-of-Experts architecture — 428B total parameters with ~23B active per forward pass, delivering frontier coding quality at flash-tier pricing ($0.15/M input, $0.60/M output).</li>
     <li><strong>Benchmark Verdict:</strong> Scores <strong>73.7% on DeepSWE v1.1</strong>, outperforming DeepSeek V4 Flash (~68.0%) on agentic software development, alongside a top-tier <strong>76.2 on BankerToolBench</strong> for multi-step tool calls.</li>
-    <li><strong>Ex-"Space Bunny":</strong> Processed 200T+ tokens freely during its stealth OpenRouter phase. The official production checkpoint is now token-billed; <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/minimax-m3-flash-api-setup-benchmark" class="text-violet-400 hover:underline font-semibold">apivel</a> provides a $0.20 free signup trial with zero KYC.</li>
+    <li><strong>Ex-"Space Bunny":</strong> Processed 200T+ tokens freely during its stealth OpenRouter phase. The official production checkpoint is now token-billed; <a rel="nofollow" href="https://apivel.com/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=minimax-m3-flash-api-setup-benchmark" class="text-violet-400 hover:underline font-semibold">apivel</a> provides a $0.20 free signup trial with zero KYC.</li>
     <li><strong>Universal Compatibility:</strong> Connects directly to Claude Code CLI (<code>https://apivel.com/anthropic</code>) and Cursor / Windsurf (<code>https://apivel.com/v1</code>) in under 5 minutes.</li>
   </ul>
 </div>
@@ -38,7 +38,7 @@ keyTakeaways:
 
 Before its public release, developers routed over 200 trillion tokens through an anonymous model dubbed **"Space Bunny"** on OpenRouter. When revealed in October as **MiniMax M3.1 Flash**, it immediately ignited debate across engineering communities: *What does 428B MoE mean for real-world inference? Is it still free? Does it truly beat DeepSeek on SWE tasks? And how does censorship affect developer workloads?* 
 
-Below is an engineering breakdown addressing these questions, followed by a 5-minute setup guide for Claude Code CLI and Cursor via [apivel](https://apivel.com/sign-up?redirect=/blog/minimax-m3-flash-api-setup-benchmark).
+Below is an engineering breakdown addressing these questions, followed by a 5-minute setup guide for Claude Code CLI and Cursor via [apivel](https://apivel.com/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=minimax-m3-flash-api-setup-benchmark).
 
 ```mermaid
 graph TD
@@ -76,7 +76,7 @@ Because inference bills scale with active compute rather than total weights, thi
 * **October Production Launch:** Switched to commercial billing: **$0.15/M input**, **$0.60/M output**, and **$0.015/M cached input** (90% cache discount).
 
 **Cost-effective evaluation routes:**
-1. **apivel $0.20 Free Trial:** Zero KYC, no credit card required. Register at [apivel.com/sign-up](https://apivel.com/sign-up?redirect=/blog/minimax-m3-flash-api-setup-benchmark) for immediate credits (~1.3M input tokens).
+1. **apivel $0.20 Free Trial:** Zero KYC, no credit card required. Register at [apivel.com/sign-up](https://apivel.com/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=minimax-m3-flash-api-setup-benchmark) for immediate credits (~1.3M input tokens).
 2. **$29 Developer Bundle:** 40M tokens (56% discount, non-expiring) settled via PayPal Instant Checkout or global credit cards.
 
 ---
@@ -229,10 +229,10 @@ print("Solution:", response.choices[0].message.content)
     <div class="cta-badge">💳 PayPal Instant Checkout • Zero KYC • Global Cards</div>
   </div>
   <div class="cta-button-group">
-    <a rel="nofollow" href="https://apivel.com/pricing?redirect=/blog/minimax-m3-flash-api-setup-benchmark" class="cta-btn cta-btn-primary">
+    <a rel="nofollow" href="https://apivel.com/pricing?from_blog=minimax-m3-flash-api-setup-benchmark" class="cta-btn cta-btn-primary">
       Claim +50% Deposit Bonus ($5 → $7.50) →
     </a>
-    <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/minimax-m3-flash-api-setup-benchmark" class="cta-btn cta-btn-secondary">
+    <a rel="nofollow" href="https://apivel.com/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=minimax-m3-flash-api-setup-benchmark" class="cta-btn cta-btn-secondary">
       Claim $0.20 Free Trial (No Card Needed) →
     </a>
   </div>

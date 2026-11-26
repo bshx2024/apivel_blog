@@ -206,7 +206,7 @@ Use the live simulator below to model your team's monthly token burn and calcula
     <div class="text-slate-300 text-center sm:text-left">
       Estimated Monthly Dollar Savings: <strong id="dollarSavings" class="text-cyan-300 font-mono text-sm">$54.38/mo</strong>.
     </div>
-    <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/gpt-6-2-sol-api-pricing-benchmarks" class="px-4 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold transition whitespace-nowrap">
+    <a rel="nofollow" href="https://apivel.com/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=gpt-6-2-sol-api-pricing-benchmarks" class="px-4 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold transition whitespace-nowrap">
       Deploy Smart Two-Tier Gateway &rarr;
     </a>
   </div>
@@ -399,10 +399,10 @@ This setup guarantees zero interruption for automated scripts, CLI tools, and co
     </div>
 
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/gpt-6-2-sol-api-pricing-benchmarks" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm transition shadow-lg shadow-cyan-500/20">
+      <a rel="nofollow" href="https://apivel.com/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=gpt-6-2-sol-api-pricing-benchmarks" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm transition shadow-lg shadow-cyan-500/20">
         Claim $0.20 Free Trial &rarr;
       </a>
-      <a rel="nofollow" href="https://apivel.com/pricing?redirect=/blog/gpt-6-2-sol-api-pricing-benchmarks" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 text-white font-semibold text-sm border border-slate-700 transition">
+      <a rel="nofollow" href="https://apivel.com/pricing?from_blog=gpt-6-2-sol-api-pricing-benchmarks" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 text-white font-semibold text-sm border border-slate-700 transition">
         Explore Model Pricing
       </a>
     </div>

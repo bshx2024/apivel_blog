@@ -23,11 +23,11 @@ keyTakeaways:
 <div class="my-6 border-l-4 border-indigo-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Definition & Key Takeaways</span>
   <div class="mt-1 text-md font-semibold text-white">Qwen 4 Max (Qwen4-Max) Frontier MoE & API Access</div>
-  <p class="mt-2 text-sm text-gray-300"><strong>Qwen 4 Max</strong> (stylized as <strong>Qwen4-Max</strong>) is Alibaba's flagship multimodal MoE model featuring 2.4-trillion parameters (71B active), 1M context, and 393k output quotas. Connect Cursor and Claude Code to Qwen 4 Max via <a rel="nofollow" href="https://apivel.com/?redirect=/blog/qwen-4-max-benchmark-api-reddit" class="text-indigo-400 hover:underline font-semibold">APIVALE</a> with zero-KYC pay-as-you-go access.</p>
+  <p class="mt-2 text-sm text-gray-300"><strong>Qwen 4 Max</strong> (stylized as <strong>Qwen4-Max</strong>) is Alibaba's flagship multimodal MoE model featuring 2.4-trillion parameters (71B active), 1M context, and 393k output quotas. Connect Cursor and Claude Code to Qwen 4 Max via <a rel="nofollow" href="https://apivel.com/?from_blog=qwen-4-max-benchmark-api-reddit" class="text-indigo-400 hover:underline font-semibold">APIVALE</a> with zero-KYC pay-as-you-go access.</p>
   <ul class="mt-3 space-y-1 list-disc list-inside text-xs text-gray-300">
     <li><strong>Terminal-Bench 4.0:</strong> 48.5% score with 48.2% lower token consumption versus Qwen 3.8 Max.</li>
     <li><strong>Open-Weights Roadmap:</strong> <code>Qwen 4 27B</code> & <code>Qwen 4 Flash</code> launch post-preview.</li>
-    <li><strong>Zero-KYC Trial:</strong> <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/qwen-4-max-benchmark-api-reddit" class="text-indigo-400 hover:underline font-semibold">PayPal instant checkout & $0.20 free signup trial</a>.</li>
+    <li><strong>Zero-KYC Trial:</strong> <a rel="nofollow" href="https://apivel.com/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=qwen-4-max-benchmark-api-reddit" class="text-indigo-400 hover:underline font-semibold">PayPal instant checkout & $0.20 free signup trial</a>.</li>
   </ul>
 </div>
 
@@ -318,10 +318,10 @@ Yes. Developers can bypass mainland KYC and Token Plan locks via APIVALE (`https
     </div>
   </div>
   <div class="cta-actions">
-    <a rel="nofollow" href="https://apivel.com/pricing?redirect=/blog/qwen-4-max-benchmark-api-reddit" class="cta-btn cta-btn-primary">
+    <a rel="nofollow" href="https://apivel.com/pricing?from_blog=qwen-4-max-benchmark-api-reddit" class="cta-btn cta-btn-primary">
       Claim +50% Deposit Bonus ($5 → $7.50) →
     </a>
-    <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/qwen-4-max-benchmark-api-reddit" class="cta-btn cta-btn-secondary">
+    <a rel="nofollow" href="https://apivel.com/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=qwen-4-max-benchmark-api-reddit" class="cta-btn cta-btn-secondary">
       Claim $0.20 Free Trial (No Card Needed) →
     </a>
   </div>

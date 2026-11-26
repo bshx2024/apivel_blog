@@ -155,7 +155,7 @@ Simulate monthly PR review spend and reclaimed engineering hours below:
     <div class="text-slate-300 text-center sm:text-left">
       Estimated Hours Reclaimed: <strong id="hoursReclaimed" class="text-cyan-300 font-mono text-sm">28.8 hrs/mo</strong>
     </div>
-    <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/ai-coding-impact-senior-engineers" class="px-4 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold transition whitespace-nowrap">Deploy Two-Tier Gate &rarr;</a>
+    <a rel="nofollow" href="https://apivel.com/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=ai-coding-impact-senior-engineers" class="px-4 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold transition whitespace-nowrap">Deploy Two-Tier Gate &rarr;</a>
   </div>
 </div>
 
@@ -250,8 +250,8 @@ Pair fast syntax triage with deep workhorse auditing through APIVEL using **PayP
       </div>
     </div>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/ai-coding-impact-senior-engineers" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm transition shadow-lg shadow-cyan-500/20">Claim $0.20 Free Trial &rarr;</a>
-      <a rel="nofollow" href="https://apivel.com/pricing?redirect=/blog/ai-coding-impact-senior-engineers" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 text-white font-semibold text-sm border border-slate-700 transition">Explore Model Pricing</a>
+      <a rel="nofollow" href="https://apivel.com/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=ai-coding-impact-senior-engineers" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm transition shadow-lg shadow-cyan-500/20">Claim $0.20 Free Trial &rarr;</a>
+      <a rel="nofollow" href="https://apivel.com/pricing?from_blog=ai-coding-impact-senior-engineers" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 text-white font-semibold text-sm border border-slate-700 transition">Explore Model Pricing</a>
     </div>
     <div class="text-slate-400 text-xs mt-4">Official PayPal Instant Checkout &bull; Global Credit Cards (Visa / MasterCard) &bull; 0% Foreign FX Fees</div>
   </div>

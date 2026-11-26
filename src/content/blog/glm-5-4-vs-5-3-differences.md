@@ -370,13 +370,13 @@ The GLM family encompasses several foundation models for code and agent workflow
 
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
       <a rel="nofollow" 
-        href="/sign-up?redirect=/blog/glm-5-4-vs-5-3-differences/" 
+        href="/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=glm-5-4-vs-5-3-differences" 
         class="w-full sm:w-auto rounded-xl bg-primary px-8 py-3.5 text-sm font-bold text-white transition-all hover:bg-primary/90 shadow-lg shadow-primary/25"
       >
         Claim $0.20 Free Sandbox Credits
       </a>
       <a rel="nofollow" 
-        href="/pricing?redirect=/blog/glm-5-4-vs-5-3-differences/" 
+        href="/pricing?from_blog=glm-5-4-vs-5-3-differences" 
         class="w-full sm:w-auto rounded-xl border border-gray-700 bg-gray-800/80 px-8 py-3.5 text-sm font-semibold text-gray-200 transition-all hover:bg-gray-700"
       >
         View Token Pricing Matrix

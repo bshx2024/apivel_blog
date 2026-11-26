@@ -325,10 +325,10 @@ Route OpenCode, Cursor, or Claude Code CLI through our unified gateway using Pay
       <span><strong class="text-white">$0.20 Free Trial:</strong> Zero KYC</span>
     </div>
     <div class="flex flex-col sm:flex-row justify-center gap-4 mb-6">
-      <a rel="nofollow" href="/pricing?redirect=/blog/hungerg-ai-model-qoder-opencode-api" class="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all text-center">
+      <a rel="nofollow" href="/pricing?from_blog=hungerg-ai-model-qoder-opencode-api" class="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all text-center">
         View Gateway Pricing
       </a>
-      <a rel="nofollow" href="/sign-up?redirect=/blog/hungerg-ai-model-qoder-opencode-api" class="inline-flex items-center justify-center rounded-xl border border-border bg-gray-800/80 px-6 py-3 text-sm font-semibold text-gray-200 hover:bg-gray-700/80 transition-all text-center">
+      <a rel="nofollow" href="/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=hungerg-ai-model-qoder-opencode-api" class="inline-flex items-center justify-center rounded-xl border border-border bg-gray-800/80 px-6 py-3 text-sm font-semibold text-gray-200 hover:bg-gray-700/80 transition-all text-center">
         Claim $0.20 Free Credit
       </a>
     </div>

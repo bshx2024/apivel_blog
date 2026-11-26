@@ -391,7 +391,7 @@ bun scripts/check-no-circular.cjs
 * Title 长度 $\le 80$ 字符；MetaTitle 50–60 字符；Meta Description 140–160 字符；
 * 正文可见词数精准控制在 **1,205 ~ 1,260 词**（既满足 ≥1,200 词 0 Warnings，又确保渲染后 `check_html_words.cjs <= 1,660`、军师去标点 HTML 口径 `<= 1,780`，彻底消灭线上 `> 1800` 词扣分）；
 * 必须包含 `<input>` / `<select>` 与 `.cta-card`，正文包含至少 3 个 `## ` H2 标题，且在 `src/pages/[slug].astro` 将文章加入 `hasCustomWidget`；
-* **零死循环门禁**：0 处 `redirect=/blog/` 或 `redirect=%2Fblog`（统一使用 `redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=<slug>`）；
+* **零死循环门禁**：0 处 `redirect=/blog/` 或 `redirect=%2Fblog`（统一使用 `redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=<slug>`）；`package.json` 的 `prebuild` 钩子会在每次构建前自动运行 `scripts/check-no-circular.cjs` 执行全仓阻断扫描；
 * 严禁出现 Stripe 或 Crypto。
 
 ### Gate 3: 双向内链织网 (Bi-directional Mesh Weaving)

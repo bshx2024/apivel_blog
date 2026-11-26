@@ -26,7 +26,7 @@ keyTakeaways:
     <li><strong>YAGNI Enforcer:</strong> The open-source <a href="https://github.com/DietrichGebert/ponytail" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline font-semibold">Ponytail GitHub skill</a> forces coding agents to think like the "laziest senior developer", eliminating code bloat and unneeded dependencies.</li>
     <li><strong>Multi-IDE Support:</strong> Packaged for Claude Code via <code>/plugin</code>, this framework easily ports to Cursor, Windsurf, and Copilot through <code>.cursorrules</code>.</li>
     <li><strong>Verified Efficiency:</strong> Independent SWE-bench tests show Ponytail cuts token consumption by <strong>10% to 26%</strong> and reduces code volume by 15% to 54%.</li>
-    <li><strong>Compounded Savings:</strong> Pair the prompt with <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/ponytail-github-skill-install-review" class="text-emerald-400 hover:underline font-semibold">APIVALE's high-reasoning models (Qwen 3.7 Max & DeepSeek V4)</a> to slash coding expenses by over 85% via PayPal checkout.</li>
+    <li><strong>Compounded Savings:</strong> Pair the prompt with <a rel="nofollow" href="https://apivel.com/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=ponytail-github-skill-install-review" class="text-emerald-400 hover:underline font-semibold">APIVALE's high-reasoning models (Qwen 3.7 Max & DeepSeek V4)</a> to slash coding expenses by over 85% via PayPal checkout.</li>
   </ul>
 </div>
 
@@ -315,10 +315,10 @@ While the prompt eliminates ~21% of unnecessary token waste, combining it with l
     Supercharge your coding agent with YAGNI minimalism while cutting token costs by over 85%. Sign up now to claim your <strong>$0.20 instant free test credit</strong> (no credit card required), unlock our <strong>+50% first deposit bonus</strong> ($5 → $7.50, $29 → $43.50, $99 → $148.50), or secure our <strong>$29 Developer Pack</strong> (56% OFF, 40M tokens, never expires) via instant PayPal checkout.
   </p>
   <div class="flex flex-wrap gap-3">
-    <a href="https://apivel.com/sign-up?redirect=/blog/ponytail-github-skill-install-review" class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 transition-colors shadow-lg shadow-indigo-600/30" rel="nofollow">
+    <a href="https://apivel.com/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=ponytail-github-skill-install-review" class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 transition-colors shadow-lg shadow-indigo-600/30" rel="nofollow">
       Claim $0.20 Free Credit →
     </a>
-    <a href="https://apivel.com/pricing?redirect=/blog/ponytail-github-skill-install-review" class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-semibold text-gray-300 hover:text-white bg-gray-800/80 hover:bg-gray-700/80 border border-gray-700 transition-colors" rel="nofollow">
+    <a href="https://apivel.com/pricing?from_blog=ponytail-github-skill-install-review" class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-semibold text-gray-300 hover:text-white bg-gray-800/80 hover:bg-gray-700/80 border border-gray-700 transition-colors" rel="nofollow">
       View Pricing & Token Packs
     </a>
   </div>

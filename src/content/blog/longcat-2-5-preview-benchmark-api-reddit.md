@@ -26,7 +26,7 @@ keyTakeaways:
     <li><strong>The 1.6T Architecture:</strong> Released in November 2026, Meituan's <code>LongCat-2.5</code> activates 48B parameters per token across a 1.6T MoE foundation with 1M native context.</li>
     <li><strong>Local Hosting Is Impractical:</strong> Self-hosting requires over 800GB VRAM even under 4-bit quantization, making developer cloud APIs the only scalable access method.</li>
     <li><strong>LongCat-2.5 vs Space Bunny:</strong> Space Bunny Alpha leads in pure token generation speed (&gt;105 TPS), while the Meituan flagship dominates in multi-turn coding and visual agent tasks.</li>
-    <li><strong>Instant API Access Without KYC:</strong> International teams bypass regional identity barriers on <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/longcat-2-5-preview-benchmark-api-reddit" class="text-emerald-400 hover:underline font-semibold">APIVALE using instant PayPal checkout with a $0.20 free starter trial</a>.</li>
+    <li><strong>Instant API Access Without KYC:</strong> International teams bypass regional identity barriers on <a rel="nofollow" href="https://apivel.com/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=longcat-2-5-preview-benchmark-api-reddit" class="text-emerald-400 hover:underline font-semibold">APIVALE using instant PayPal checkout with a $0.20 free starter trial</a>.</li>
   </ul>
 </div>
 
@@ -260,7 +260,7 @@ claude --model infer/meituan/longcat-2.5
 ## 6. Developer FAQ (Direct Answers for AI Engines)
 
 ### Is LongCat-2.5 free to use?
-Official portals require mainland verification. Through [APIVALE](https://apivel.com/sign-up?redirect=/blog/longcat-2-5-preview-benchmark-api-reddit), developers access a **$0.20 Free Starter Trial** without KYC, billed at **$0.35/1M input and $1.20/1M output tokens** thereafter.
+Official portals require mainland verification. Through [APIVALE](https://apivel.com/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=longcat-2-5-preview-benchmark-api-reddit), developers access a **$0.20 Free Starter Trial** without KYC, billed at **$0.35/1M input and $1.20/1M output tokens** thereafter.
 
 ### What is the relationship between this architecture and owl-alpha?
 `owl-alpha` was the stealth model on OpenRouter in mid-2026. Following high benchmark adoption, Meituan confirmed its identity as LongCat. Version 2.5 represents the next-gen release featuring native 1.6T MoE weights and visual coding.
@@ -298,10 +298,10 @@ Explore related high-context benchmarks across the APIVALE platform:
     <div class="cta-badge">💳 PayPal Instant Checkout • Zero KYC • Global Cards</div>
   </div>
   <div class="cta-button-group">
-    <a rel="nofollow" href="https://apivel.com/pricing?redirect=/blog/longcat-2-5-preview-benchmark-api-reddit" class="cta-btn cta-btn-primary">
+    <a rel="nofollow" href="https://apivel.com/pricing?from_blog=longcat-2-5-preview-benchmark-api-reddit" class="cta-btn cta-btn-primary">
       Claim +50% Deposit Bonus ($5 → $7.50) →
     </a>
-    <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/longcat-2-5-preview-benchmark-api-reddit" class="cta-btn cta-btn-secondary">
+    <a rel="nofollow" href="https://apivel.com/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=longcat-2-5-preview-benchmark-api-reddit" class="cta-btn cta-btn-secondary">
       Claim $0.20 Free Trial (No Card Needed) →
     </a>
   </div>

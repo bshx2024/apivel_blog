@@ -1,14 +1,12 @@
 #!/usr/bin/env node
 /**
  * Static scanner blocking circular blog redirects (`redirect=/blog/...` or `redirect=%2Fblog...`).
- * Enforces Zero-Circular-Redirect across skills, SOP docs, Astro templates, and components.
- * Pass `--strict-all` to also fail on legacy `src/content/blog/*.md` posts once cleaned up.
+ * Enforces Zero-Circular-Redirect across skills, SOP docs, Astro templates, components, and all blog posts.
  */
 const fs = require('fs');
 const path = require('path');
 
 const ROOT = process.cwd();
-const STRICT_ALL = process.argv.includes('--strict-all');
 const PATTERN = /redirect=(?:\/|%2F)blog\b/i;
 
 const ENFORCED_TARGETS = [
@@ -17,9 +15,8 @@ const ENFORCED_TARGETS = [
   'BLOG_WRITING_STANDARD.md',
   'src/components',
   'src/pages',
+  'src/content/blog',
 ];
-
-const LEGACY_CONTENT_DIR = 'src/content/blog';
 
 function walk(relPath, out = []) {
   const full = path.join(ROOT, relPath);
@@ -60,9 +57,6 @@ function scanFiles(files) {
 const enforcedFiles = ENFORCED_TARGETS.flatMap((t) => walk(t));
 const enforcedHits = scanFiles(enforcedFiles);
 
-const legacyFiles = walk(LEGACY_CONTENT_DIR);
-const legacyHits = scanFiles(legacyFiles);
-
 console.log('=== Zero-Circular-Redirect Static Scan ===');
 if (enforcedHits.length > 0) {
   console.error(`\n❌ BLOCKED: Found ${enforcedHits.length} circular redirect(s) in enforced files:`);
@@ -70,13 +64,4 @@ if (enforcedHits.length > 0) {
   process.exit(1);
 }
 
-if (legacyHits.length > 0) {
-  if (STRICT_ALL) {
-    console.error(`\n❌ BLOCKED (--strict-all): Found ${legacyHits.length} circular redirect(s) in legacy blog posts.`);
-    process.exit(1);
-  } else {
-    console.warn(`⚠️ Legacy warning: ${legacyHits.length} occurrence(s) remain in ${LEGACY_CONTENT_DIR} (pass --strict-all after batch cleanup).`);
-  }
-}
-
-console.log('✅ Enforced templates, components, skills, and SOPs passed (0 circular redirect templates).');
+console.log(`✅ Passed across ${enforcedFiles.length} file(s) (0 circular redirects).`);

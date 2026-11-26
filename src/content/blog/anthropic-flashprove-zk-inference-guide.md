@@ -26,7 +26,7 @@ keyTakeaways:
     <li><strong>Core Architecture:</strong> The open-source <strong>Anthropic FlashProve library</strong> implements zero-knowledge provable inference for Mixture-of-Experts (MoE) architectures, verifying outputs without leaking proprietary weights.</li>
     <li><strong>The 70x Compute Bottleneck:</strong> Deploying <strong>Anthropic FlashProve for provable inference</strong> introduces a <strong>70x to 95x GPU compute overhead</strong> over vLLM, making real-time chat economically unviable.</li>
     <li><strong>Model Swapping Prevention:</strong> Applying <strong>Anthropic FlashProve provable inference</strong> prevents router proxy substitution by verifying weight identity, but cannot validate runtime system prompts or temperature sampling.</li>
-    <li><strong>Open-Weight Solution:</strong> Production teams bypass the 70x proving tax by using auditable open-weight models like <strong>Qwen 3.7 Max</strong> and <strong>DeepSeek V4</strong> via <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/anthropic-flashprove-zk-inference-guide" class="text-emerald-400 hover:underline font-semibold">APIVALE using zero-KYC PayPal checkout with a $0.20 free trial</a>.</li>
+    <li><strong>Open-Weight Solution:</strong> Production teams bypass the 70x proving tax by using auditable open-weight models like <strong>Qwen 3.7 Max</strong> and <strong>DeepSeek V4</strong> via <a rel="nofollow" href="https://apivel.com/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=anthropic-flashprove-zk-inference-guide" class="text-emerald-400 hover:underline font-semibold">APIVALE using zero-KYC PayPal checkout with a $0.20 free trial</a>.</li>
   </ul>
 </div>
 
@@ -174,7 +174,7 @@ The need for zero-knowledge provable inference exists because closed-source prov
 3. **Wholesale Pricing:** Open MoE models operate at under $1.50 per million tokens without sacrificing reasoning depth.
 4. **Uncensored Security Inspections:** While closed security models like the **[OpenAI GPT-6 Cyber API](/blog/openai-gpt-6-cyber-api-access-guide/)** lock vulnerability remediation behind Daybreak Red gating and $100/M fees, open weights enable private code auditing with zero policy refusals.
 
-Teams connect via [APIVALE's unified gateway](https://apivel.com/sign-up?redirect=/blog/anthropic-flashprove-zk-inference-guide) to access transparent upstream routing with zero foreign exchange fees via official PayPal checkout.
+Teams connect via [APIVALE's unified gateway](https://apivel.com/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=anthropic-flashprove-zk-inference-guide) to access transparent upstream routing with zero foreign exchange fees via official PayPal checkout.
 
 ### Production-Ready Python Integrity Check with APIVALE
 
@@ -409,10 +409,10 @@ Explore related engineering toolkits, model telemetry investigations, and pricin
     </div>
   </div>
   <div class="cta-actions">
-    <a rel="nofollow" href="https://apivel.com/pricing?redirect=/blog/anthropic-flashprove-zk-inference-guide" class="cta-btn cta-btn-primary">
+    <a rel="nofollow" href="https://apivel.com/pricing?from_blog=anthropic-flashprove-zk-inference-guide" class="cta-btn cta-btn-primary">
       Claim +50% Deposit Bonus ($5 → $7.50) →
     </a>
-    <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/anthropic-flashprove-zk-inference-guide" class="cta-btn cta-btn-secondary">
+    <a rel="nofollow" href="https://apivel.com/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=anthropic-flashprove-zk-inference-guide" class="cta-btn cta-btn-secondary">
       Claim $0.20 Free Trial (No Card Needed) →
     </a>
   </div>

@@ -24,7 +24,7 @@ keyTakeaways:
   <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Key Takeaways</span>
   <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-300">
     <li><strong>Fix Agent Halt Failures:</strong> In <strong>Claude Code REA</strong> workflows, the dreaded <code>claude reached its tool-use limit for this turn</code> error triggers when Ghidra decompilation queries exhaust Anthropic's 15-iteration per-turn budget during recursive pointer traces.</li>
-    <li><strong>Bypass Response Truncation:</strong> The <code>claude reached its max length for this message</code> error occurs when disassembled symbol dumps exceed standard 200k context windows; routing through <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/claude-code-rea-setup-limits-cost" class="text-emerald-400 hover:underline font-semibold">apivel</a> unlocks unthrottled 1M context with Qwen 3.8.</li>
+    <li><strong>Bypass Response Truncation:</strong> The <code>claude reached its max length for this message</code> error occurs when disassembled symbol dumps exceed standard 200k context windows; routing through <a rel="nofollow" href="https://apivel.com/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=claude-code-rea-setup-limits-cost" class="text-emerald-400 hover:underline font-semibold">apivel</a> unlocks unthrottled 1M context with Qwen 3.8.</li>
     <li><strong>85% to 95% Token Cost Arbitrage:</strong> Reverse-engineering a 15MB binary with REA consumes 15M–25M tokens ($45–$75+ on Claude Sonnet 5). Routing via apivel to DeepSeek V4 ($0.14/1M) or Qwen 3.8 Max ($0.48/1M) slashes project expenses to under $3.50 with instant PayPal checkout.</li>
   </ul>
 </div>
@@ -39,7 +39,7 @@ Running **Claude Code REA** (`morluto/rea`) allows developers to point an autono
 
 Because reverse engineering demands dense exploration loops—querying disassemblers, evaluating assembly blocks, and cross-referencing memory offsets—a single decompilation run frequently triggers 40+ subagent queries. Developers face abrupt execution halts: `claude reached its tool-use limit for this turn` or `claude reached its max length for this message`. Simultaneously, a single overnight session on official API endpoints easily burns $80+ to $150+ in credits.
 
-By proxying through [apivel](https://apivel.com/sign-up?redirect=/blog/claude-code-rea-setup-limits-cost) using its native Anthropic and OpenAI compatible proxy (`https://apivel.com/v1`), developers can switch seamlessly to **DeepSeek V4** and **Qwen 3.8 Max**, eliminating rate limit ceilings, unlocking massive 1M context windows, and cutting token expenses by over 85%. For engineers comparing CLI agent costs against ad-supported free alternatives, see our [Freebuff AI coding review](/blog/freebuff-ai-coding-review/) to understand trade-offs in session hour limits and automated code reviews.
+By proxying through [apivel](https://apivel.com/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=claude-code-rea-setup-limits-cost) using its native Anthropic and OpenAI compatible proxy (`https://apivel.com/v1`), developers can switch seamlessly to **DeepSeek V4** and **Qwen 3.8 Max**, eliminating rate limit ceilings, unlocking massive 1M context windows, and cutting token expenses by over 85%. For engineers comparing CLI agent costs against ad-supported free alternatives, see our [Freebuff AI coding review](/blog/freebuff-ai-coding-review/) to understand trade-offs in session hour limits and automated code reviews.
 
 ```mermaid
 graph TD
@@ -129,7 +129,7 @@ npx rea-agents setup
 The script registers the REA MCP server inside `~/.claude/claude_desktop_config.json` or `~/.config/claude-code/mcp.json`.
 
 ### Step 2: Set apivel Base URL Environment Variables
-Obtain an API key from the [apivel Console](https://apivel.com/sign-up?redirect=/blog/claude-code-rea-setup-limits-cost) (new signups automatically receive a **$0.20 free quota** without card verification). Export the gateway overrides:
+Obtain an API key from the [apivel Console](https://apivel.com/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=claude-code-rea-setup-limits-cost) (new signups automatically receive a **$0.20 free quota** without card verification). Export the gateway overrides:
 
 ```bash
 # Direct reverse engineering decompilation through apivel
@@ -237,10 +237,10 @@ apivel officially supports instant **PayPal Checkout**, international credit car
     <div class="cta-badge">💳 Instant PayPal Checkout • Zero KYC • Global Cards</div>
   </div>
   <div class="cta-button-group">
-    <a rel="nofollow" href="https://apivel.com/pricing?redirect=/blog/claude-code-rea-setup-limits-cost" class="cta-btn cta-btn-primary">
+    <a rel="nofollow" href="https://apivel.com/pricing?from_blog=claude-code-rea-setup-limits-cost" class="cta-btn cta-btn-primary">
       Claim +50% Deposit Bonus ($5 → $7.50) →
     </a>
-    <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/claude-code-rea-setup-limits-cost" class="cta-btn cta-btn-secondary">
+    <a rel="nofollow" href="https://apivel.com/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=claude-code-rea-setup-limits-cost" class="cta-btn cta-btn-secondary">
       Get $0.20 Free Quota (No Card Needed) →
     </a>
   </div>

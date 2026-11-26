@@ -27,7 +27,7 @@ keyTakeaways:
 <div class="my-6 border-l-4 border-indigo-500 bg-gray-900 rounded-r-lg p-5">
   <div class="text-xs font-bold uppercase tracking-wider text-indigo-400">Definition</div>
   <div class="mt-1 text-md font-semibold text-white">Qwen 4 Frontier Generation &amp; Gateway Access</div>
-  <p class="mt-2 text-sm text-gray-300"><strong>Qwen 4</strong> is Alibaba's next-generation AI model family spanning proprietary cloud tiers (Max, Plus, Flash) and open-weights releases (27B). Through <a rel="nofollow" href="https://apivel.com/?redirect=/blog/qwen-4-release-date-api-roadmap" class="text-indigo-400 hover:underline font-semibold">APIVEL</a>, developers access active Alibaba checkpoints and upcoming endpoints via OpenAI/Anthropic protocols with zero KYC and instant PayPal checkout.</p>
+  <p class="mt-2 text-sm text-gray-300"><strong>Qwen 4</strong> is Alibaba's next-generation AI model family spanning proprietary cloud tiers (Max, Plus, Flash) and open-weights releases (27B). Through <a rel="nofollow" href="https://apivel.com/?from_blog=qwen-4-release-date-api-roadmap" class="text-indigo-400 hover:underline font-semibold">APIVEL</a>, developers access active Alibaba checkpoints and upcoming endpoints via OpenAI/Anthropic protocols with zero KYC and instant PayPal checkout.</p>
 </div>
 
 Developer tracking around the **Qwen 4 release date**, its **27B open-weights** Hugging Face drop, and performance against [DeepSeek V4.1 Flash](/blog/deepseek-v4-1-flash-1017-api-setup/) has surged across `r/LocalLLaMA` and engineering forums. With Alibaba officially confirming full-cluster training, this roadmap breaks down verified launch timelines, kernel leaks, Polymarket prediction probabilities, and global API access without DashScope payment walls.
@@ -242,8 +242,8 @@ Connect via APIVEL's unified endpoint using **PayPal Instant Checkout**, interna
       <div class="cta-badge">💳 PayPal Instant Checkout • Zero KYC • $0.20 Free Trial</div>
     </div>
     <div class="cta-button-group">
-      <a rel="nofollow" href="https://apivel.com/pricing?redirect=/blog/qwen-4-release-date-api-roadmap" class="cta-btn cta-btn-primary">Claim +50% Deposit Bonus ($5 → $7.50) →</a>
-      <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/qwen-4-release-date-api-roadmap" class="cta-btn cta-btn-secondary">Claim Starter Credit (No Card Needed) →</a>
+      <a rel="nofollow" href="https://apivel.com/pricing?from_blog=qwen-4-release-date-api-roadmap" class="cta-btn cta-btn-primary">Claim +50% Deposit Bonus ($5 → $7.50) →</a>
+      <a rel="nofollow" href="https://apivel.com/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=qwen-4-release-date-api-roadmap" class="cta-btn cta-btn-secondary">Claim Starter Credit (No Card Needed) →</a>
     </div>
   </div>
 </div>

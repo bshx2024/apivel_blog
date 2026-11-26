@@ -23,11 +23,11 @@ keyTakeaways:
 <div class="my-6 border-l-4 border-indigo-500 bg-gray-900 rounded-r-lg p-5">
   <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Definition & Key Takeaways</span>
   <div class="mt-1 text-md font-semibold text-white">ERNIE 5.5 Flash Preview Architecture & Unified Gateway Access</div>
-  <p class="mt-2 text-sm text-gray-300"><strong>ERNIE 5.5 Flash Preview</strong> is Baidu's high-throughput Mixture-of-Experts (MoE) model featuring 280-billion total parameters (14B active per token) and a 1-million-token context window. Through <a rel="nofollow" href="https://apivel.com/?redirect=/blog/ernie-5-5-flash-preview-api-reddit" class="text-indigo-400 hover:underline font-semibold">APIVALE</a>, developers can invoke ERNIE 5.5 Flash Preview with automated failover to Qwen 3.7 Max and DeepSeek V4 via standard OpenAI-compatible endpoints with zero KYC and PayPal billing.</p>
+  <p class="mt-2 text-sm text-gray-300"><strong>ERNIE 5.5 Flash Preview</strong> is Baidu's high-throughput Mixture-of-Experts (MoE) model featuring 280-billion total parameters (14B active per token) and a 1-million-token context window. Through <a rel="nofollow" href="https://apivel.com/?from_blog=ernie-5-5-flash-preview-api-reddit" class="text-indigo-400 hover:underline font-semibold">APIVALE</a>, developers can invoke ERNIE 5.5 Flash Preview with automated failover to Qwen 3.7 Max and DeepSeek V4 via standard OpenAI-compatible endpoints with zero KYC and PayPal billing.</p>
   <ul class="mt-3 space-y-1 list-disc list-inside text-xs text-gray-300">
     <li><strong>Throughput:</strong> 200+ tokens/second decoding for document extraction.</li>
     <li><strong>Dual Tiers:</strong> Base weights for research versus Preview API for agents.</li>
-    <li><strong>Trial:</strong> <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/ernie-5-5-flash-preview-api-reddit" class="text-indigo-400 hover:underline font-semibold">PayPal checkout & $0.20 free developer signup trial</a>.</li>
+    <li><strong>Trial:</strong> <a rel="nofollow" href="https://apivel.com/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=ernie-5-5-flash-preview-api-reddit" class="text-indigo-400 hover:underline font-semibold">PayPal checkout & $0.20 free developer signup trial</a>.</li>
   </ul>
 </div>
 
@@ -272,8 +272,8 @@ To connect Cursor or Claude Code CLI directly:
     <div>✅ <b>Global Instant Billing:</b> Pay with PayPal, Visa, MasterCard, Amex, Apple Pay, or Alipay with 0% FX fees.</div>
   </div>
   <div class="cta-actions">
-    <a rel="nofollow" href="/sign-up?redirect=/blog/ernie-5-5-flash-preview-api-reddit" class="btn-primary">Claim $0.20 Free Trial & Test API →</a>
-    <a rel="nofollow" href="/pricing?redirect=/blog/ernie-5-5-flash-preview-api-reddit" class="btn-secondary">View Complete Model Pricing</a>
+    <a rel="nofollow" href="/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=ernie-5-5-flash-preview-api-reddit" class="btn-primary">Claim $0.20 Free Trial & Test API →</a>
+    <a rel="nofollow" href="/pricing?from_blog=ernie-5-5-flash-preview-api-reddit" class="btn-secondary">View Complete Model Pricing</a>
   </div>
 </div>
 

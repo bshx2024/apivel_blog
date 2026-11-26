@@ -26,7 +26,7 @@ keyTakeaways:
     <li><strong>2.8T MoE Backbone:</strong> Kimi K3.1 Pro deploys a 2.8T MoE architecture (~104B active) with a native 1,000,000-token window.</li>
     <li><strong>Near-Opus Precision:</strong> Scores <strong>65.7% on Terminal-Bench 4.0</strong>, challenging closed frontier models and beating GPT-6 Astra (58.2%).</li>
     <li><strong>Commercial Token Rates:</strong> Priced at <strong>$2.00/1M input</strong> and <strong>$10.00/1M output</strong>, with a low-latency Highspeed variant ($20.00/1M output).</li>
-    <li><strong>Global Zero-KYC Access:</strong> Bypass mainland +86 phone and card checks via <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/kimi-k3-1-pro-pricing-benchmarks-api-access" class="text-emerald-400 hover:underline font-semibold">APIVALE with instant PayPal billing and a $0.20 free trial</a>.</li>
+    <li><strong>Global Zero-KYC Access:</strong> Bypass mainland +86 phone and card checks via <a rel="nofollow" href="https://apivel.com/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=kimi-k3-1-pro-pricing-benchmarks-api-access" class="text-emerald-400 hover:underline font-semibold">APIVALE with instant PayPal billing and a $0.20 free trial</a>.</li>
   </ul>
 </div>
 
@@ -195,10 +195,10 @@ Global developers access endpoints via **APIVALE's unified gateway** (`https://a
     Experience 2.8T MoE reasoning with 65.7% Terminal-Bench precision. Sign up now to receive <strong>$0.20 instant free test credit</strong> (no credit card required), unlock our <strong>+50% first deposit bonus</strong> ($5 → $7.50, $29 → $43.50, $99 → $148.50), or secure our <strong>$29 Developer Pack</strong> (56% OFF, 40M tokens, never expires).
   </p>
   <div class="flex flex-wrap gap-3">
-    <a href="https://apivel.com/sign-up?redirect=/blog/kimi-k3-1-pro-pricing-benchmarks-api-access" class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 transition-colors shadow-lg shadow-indigo-600/30" rel="nofollow">
+    <a href="https://apivel.com/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=kimi-k3-1-pro-pricing-benchmarks-api-access" class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 transition-colors shadow-lg shadow-indigo-600/30" rel="nofollow">
       Claim $0.20 Free Credit →
     </a>
-    <a href="https://apivel.com/pricing?redirect=/blog/kimi-k3-1-pro-pricing-benchmarks-api-access" class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-semibold text-gray-300 hover:text-white bg-gray-800/80 hover:bg-gray-700/80 border border-gray-700 transition-colors" rel="nofollow">
+    <a href="https://apivel.com/pricing?from_blog=kimi-k3-1-pro-pricing-benchmarks-api-access" class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-semibold text-gray-300 hover:text-white bg-gray-800/80 hover:bg-gray-700/80 border border-gray-700 transition-colors" rel="nofollow">
       View Pricing & Token Packs
     </a>
   </div>

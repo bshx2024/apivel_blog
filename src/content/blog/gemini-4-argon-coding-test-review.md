@@ -28,7 +28,7 @@ keyTakeaways:
   <div class="text-xs font-bold uppercase tracking-wider text-indigo-400">Definition</div>
   <div class="mt-1 text-md font-semibold text-white">Gemini 4 Argon (gemini-4-argon)</div>
   <p class="mt-2 text-sm text-gray-300">
-    <strong>Gemini 4 Argon</strong> is Google's frontier reasoning model engineered for long-horizon software engineering in Google Antigravity. While leading DeepSWE benchmarks (77.9%), aggressive thinking-token burn and a scheduled price doubling drive engineering teams toward two-tier routing gateways like <a rel="nofollow" href="https://apivel.com/?redirect=/blog/gemini-4-argon-coding-test-review" class="text-indigo-400 hover:underline font-semibold">APIVALE</a>.
+    <strong>Gemini 4 Argon</strong> is Google's frontier reasoning model engineered for long-horizon software engineering in Google Antigravity. While leading DeepSWE benchmarks (77.9%), aggressive thinking-token burn and a scheduled price doubling drive engineering teams toward two-tier routing gateways like <a rel="nofollow" href="https://apivel.com/?from_blog=gemini-4-argon-coding-test-review" class="text-indigo-400 hover:underline font-semibold">APIVALE</a>.
   </p>
 </div>
 
@@ -258,8 +258,8 @@ Deploy a two-tier routing strategy via APIVALE: keep architectural planning on G
       </div>
     </div>
     <div class="flex items-center justify-center gap-4 flex-wrap">
-      <a rel="nofollow" href="https://apivel.com/sign-up?redirect=/blog/gemini-4-argon-coding-test-review" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm px-6 py-3 rounded-xl shadow-lg transition-all">Claim $0.20 Free Starter Credit &rarr;</a>
-      <a rel="nofollow" href="https://apivel.com/pricing?redirect=/blog/gemini-4-argon-coding-test-review" class="bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 font-semibold text-sm px-6 py-3 rounded-xl transition-all">Explore Transparent Pricing</a>
+      <a rel="nofollow" href="https://apivel.com/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=gemini-4-argon-coding-test-review" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm px-6 py-3 rounded-xl shadow-lg transition-all">Claim $0.20 Free Starter Credit &rarr;</a>
+      <a rel="nofollow" href="https://apivel.com/pricing?from_blog=gemini-4-argon-coding-test-review" class="bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 font-semibold text-sm px-6 py-3 rounded-xl transition-all">Explore Transparent Pricing</a>
     </div>
   </div>
 </div>
