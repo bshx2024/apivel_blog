@@ -234,6 +234,7 @@ This keeps your local workflow unchanged while shielding your team from 2x peak-
 - [DeepSeek V4.1 Flash 1017: API Setup & Limits](/blog/deepseek-v4-1-flash-1017-api-setup/)
 - [DeepSeek V5: Architecture Leaks & API Roadmap](/blog/deepseek-v5-release-date-api-leaks-roadmap/)
 - [FreeLLMAPI.co Review: Models, Codex & 429 Fix](/blog/freellmapi-claude-code-review-alternatives/)
+- [DeepSeek 调整 API 定价：美区时段与新规中文指南](/blog/deepseek-api-pricing-adjustment-zh/)
 
 ## DeepSeek API Pricing Change FAQ
 

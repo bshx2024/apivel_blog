@@ -32,6 +32,17 @@
 
 ## 📅 apivel.com SEO 动作记录表 (2026年)
 
+### 2026-11-27 (Fifth Action: 美区华人搜索词 `deepseek 调整 api 定价` 中文伴生页上线 — 中英文双轨分吃)
+* **分类**：📝🔗 [美区中文长尾拦截、时区换算痛点转化与双语双向织网]
+* **动作详情**：
+  * **Google Trends 触发**：确认 `deepseek 调整 api 定价` 搜索 100% 集中在美国地区，属在美华人开发者/工程师高频检索；为避免污染英文主站页面（`99 A`），单独上线纯中文伴生页 `/blog/deepseek-api-pricing-adjustment-zh/`（`lang: "zh"`，作者 `Sofia Costa`）。
+  * **核心内容**：完整换算 UTC 2x 高峰时段至美西（PST `17:00–20:00` / `22:00–02:00`）与美东（EST），拆解 11 月 18 日搜索/抓取并入 Token 计费新规，内嵌交互式成本计算器与 PayPal 免 +86 实名接入方案，并与英文版双向互链。
+* **影响页面**：
+  * `https://apivel.com/blog/deepseek-api-pricing-adjustment-zh/`
+  * `https://apivel.com/blog/deepseek-api-pricing-change-peak-off-peak-guide/`
+* **14 天因果响应假设**：
+  * 零竞争承接 Google 美区中文搜索 `deepseek 调整 api 定价`，精准转化受困于美西傍晚 2x 高峰与国内 KYC 门槛的在美华人开发者。
+
 ### 2026-11-27 (Fourth Action: DeepSeek API 定价调整热点首发 — 峰谷分时 2x 计费、11月工具计费与平价路由指南)
 * **分类**：📝🔗 [热点内容首发、SERP 意图对齐、原生交互计算器与双向织网动作]
 * **动作详情**：
