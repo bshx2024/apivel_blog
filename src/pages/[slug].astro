@@ -42,7 +42,7 @@ const postMeta = `${slugLower} ${titleLower} ${tagsLower}`;
 
 const isPriceOrBenchmark = /price|cost|saving|benchmark|comparison|versus|vs|deepseek|minimax|rate/i.test(slugLower + ' ' + titleLower);
 const isCliOrSetup = /cli|cursor|windsurf|opencode|connect|setup|config|mcp|guide|access|bypass/i.test(slugLower + ' ' + titleLower);
-const hasCustomWidget = slugLower.includes('inkling-2-mini') || slugLower.includes('flashprove') || slugLower.includes('cyber') || slugLower.includes('qwen-4-max') || slugLower.includes('glm-5-4-vs-kimi-k3') || slugLower.includes('kimi-k3-1-vs-claude-opus-5-5') || slugLower.includes('hungerg') || slugLower.includes('claude-opus-5-5-vs-claude-sonnet-5-5') || slugLower.includes('gemini-4-neon') || slugLower.includes('gemini-4-argon') || slugLower.includes('qwen-4-release-date') || slugLower.includes('freellmapi') || slugLower.includes('ai-coding-impact');
+const hasCustomWidget = slugLower.includes('deepseek-v5') || slugLower.includes('gpt-6-2-astra-vs-opus-5-5') || slugLower.includes('inkling-2-mini') || slugLower.includes('flashprove') || slugLower.includes('cyber') || slugLower.includes('qwen-4-max') || slugLower.includes('glm-5-4-vs-kimi-k3') || slugLower.includes('kimi-k3-1-vs-claude-opus-5-5') || slugLower.includes('hungerg') || slugLower.includes('claude-opus-5-5-vs-claude-sonnet-5-5') || slugLower.includes('gemini-4-neon') || slugLower.includes('gemini-4-argon') || slugLower.includes('qwen-4-release-date') || slugLower.includes('freellmapi') || slugLower.includes('ai-coding-impact');
 
 let initialModel = 'glm-5.3-flash';
 let targetTopic = 'general';

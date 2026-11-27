@@ -32,6 +32,18 @@
 
 ## 📅 apivel.com SEO 动作记录表 (2026年)
 
+### 2026-11-27 (Second Action: GSC 曝光词专项外科手术 — `deepseek 5` Pos 16 冲首页 & `gpt 6 astra vs opus 5.5` Pos 77 减脂重构)
+* **分类**：📝⚙️ [GSC 查询词诊断重构、N-Gram 密度重塑、全页 <1800 词压降与 `APIVEL` 品牌统一]
+* **动作详情**：
+  * **GSC 数据触发**：针对 GSC 中已经跑出曝光的 `deepseek 5`（Pos 16.0）与 `gpt 6 astra vs opus 5.5`（Pos 77.0）及品牌词 `apivale`（Pos 4.0）执行专项诊断与修复，并将两篇纳入 `src/pages/[slug].astro` 的 `hasCustomWidget` 去重。
+  * **`deepseek-v5-release-date-api-leaks-roadmap.md`**：清除 3-gram #1 `https apivel com` 与 4-gram #1 `deepseek v4 1 flash` 反客为主干扰，由 `deepseek v5` / `deepseek v5 architecture` 夺回榜首；自然补入 `DeepSeek 5` 检索变体；正文 **1,220 词**（`0 Errors, 0 Warnings`），渲染词数降至 **1,606**，品牌后缀统一为 `| APIVEL`。
+  * **`gpt-6-2-astra-vs-opus-5-5-differences.md`**：将纯正文从 1,512 词（Total Tokens 2,190）大幅精简至 ~1,210 词（`0 Errors, 0 Warnings`），渲染词数从 1,865+ 压降至 ~1,640（彻底解除 >1800 词超标扣分）；削减 12 次 `Qwen 3.7 Max` 堆砌，补充 `GPT 6 Astra vs Opus 5.5` 检索变体，统一品牌词为 `APIVEL`。
+* **影响页面**：
+  * `https://apivel.com/blog/deepseek-v5-release-date-api-leaks-roadmap/`
+  * `https://apivel.com/blog/gpt-6-2-astra-vs-opus-5-5-differences/`
+* **14 天因果响应假设**：
+  * 解除密度榜反客为主与全页超词扣分后，`deepseek 5` 有望在 7–14 天内由第 16 名突破进入首页前 10，`gpt 6 astra vs opus 5.5` 从第 77 名显著前移。
+
 ### 2026-11-27 (新词首发：Inkling 2 Mini 深度评测、Qwen 3.8 对比与 API 网关落地)
 * **分类**：🚀 [新词内容首发与 GEO 知识图谱占坑]
 * **动作详情**：
