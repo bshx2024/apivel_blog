@@ -315,6 +315,11 @@ description: >-
      * ❌ `before syntax emission starts` $\rightarrow$ 👉 `before code emission begins` / `before the first token streams`
      * ❌ `triggers a marathon thinking cooldown` $\rightarrow$ 👉 `triggers an unexpected thinking latency delay` / `reasoning timeout`
      * ❌ `while maintaining agile inference economics` $\rightarrow$ 👉 `while keeping serving latency and inference costs manageable`
+  6. **母语级流畅度与“去书面僵硬感”门禁 (Native English Flow Gate — 发布前 P0 必检)**：
+     * **杜绝无主语残缺句**：列表项与正文禁止使用机器摘要式残缺句（❌ `"Accepts text and image inputs natively..."` $\rightarrow$ 👉 `"It handles text and image inputs natively..."`；❌ `"without bloating memory footprint"` $\rightarrow$ 👉 `"without bloating its memory footprint"`）。
+     * **消灭中式书面腔套话**：禁止堆砌 `"In production, however, teams quickly discover..."`、`"highlight clear operational friction"`、`"diverging sharply"` 等教科书式转折；改用硅谷工程博客自然的节奏与短语动词（如 `"In day-to-day engineering, though, two bottlenecks show up fast:"`、`"running neck-and-neck overall while splitting sharply on..."`、`"Hands-on reports from Reddit point to two real friction points:"`）。
+     * **句式长短交错与适度缩略**：允许并鼓励在导语、过渡段和问答中使用自然口语连接与缩略（如 `isn't`, `won't`, `though`, `on paper... in practice...`），避免全篇清一色“主语+however+长定语从句”。
+     * **发布前强制自检**：每篇新文在跑完 `audit_article.cjs` 后、推送 `origin main` 前，**必须独立通读一遍英文正文**，主动清洗所有“像 AI/中文直译”的表达，确保无需用户提醒即达到英文母语技术博客的丝滑阅读体验。
 
 ### 8. 带小数点模型版本号与连字符 Title/URL 分词冲突防爆铁律 (消除 URL 覆盖率 75% 丢分，直通 100%)
 * **警报来源**：军师提示 *“△ 关键词出现在 URL（域名或路径）（丢 0.5 分）：URL 中关键词覆盖 75%”*，且“推断词”栏显示截断短语如 `glm-5 4 vs 5 (TH)`。
