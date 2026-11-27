@@ -230,6 +230,9 @@ Connect via APIVEL's unified endpoint using **PayPal Instant Checkout**, interna
 }
 </script>
 
+**Related Open-Weight & Gateway Guides:**
+- [Inkling 2 Mini: Benchmarks, Pricing & API Setup Guide](/blog/inkling-2-mini-benchmarks-pricing-api/)
+
 <div class="cta-card">
   <div class="my-8 rounded-2xl p-6 bg-gradient-to-br from-indigo-950 to-gray-900 border border-indigo-700">
     <div class="cta-title text-xl font-bold text-white mb-2">Deploy Alibaba Endpoints in Cursor &amp; Claude Code Today</div>

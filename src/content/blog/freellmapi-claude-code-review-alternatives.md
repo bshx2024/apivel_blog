@@ -228,6 +228,7 @@ Because self-hosted proxies require local containers, developers seeking instant
 Multi-step agents fire 15 to 25 tool requests per turn, immediately exceeding free-tier 3–5 RPM ceilings until switched to dedicated enterprise compute pools.
 
 **Related Model & Gateway Guides:**
+- [Inkling 2 Mini: Benchmarks, Pricing & API Setup Guide](/blog/inkling-2-mini-benchmarks-pricing-api/)
 - [GPT 6.2 Astra vs Opus 5.5: Key Differences, Reddit Traps & Cost Fix](/blog/gpt-6-2-astra-vs-opus-5-5-differences/)
 - [DeepSeek V5: Architecture Leaks, Models & Free API Setup Guide](/blog/deepseek-v5-release-date-api-leaks-roadmap/)
 

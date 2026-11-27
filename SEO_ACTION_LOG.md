@@ -32,6 +32,20 @@
 
 ## 📅 apivel.com SEO 动作记录表 (2026年)
 
+### 2026-11-27 (新词首发：Inkling 2 Mini 深度评测、Qwen 3.8 对比与 API 网关落地)
+* **分类**：🚀 [新词内容首发与 GEO 知识图谱占坑]
+* **动作详情**：
+  * **意图采掘与零竞争切入**：通过 `fetch_serp_intent.cjs` 探测 `inkling 2 mini` Google 下拉词（`vs qwen 3.8`、`benchmarks`、`openrouter`、`ollama`、`gguf`、`context window`、`size`），确认 0 跨界实体污染后首发 `/blog/inkling-2-mini-benchmarks-pricing-api/`。
+  * **核心指标**：MetaTitle `Inkling 2 Mini: Benchmarks, API Pricing & Setup | APIVEL`（56 字符）；H1 `Inkling 2 Mini: Benchmarks, Pricing & API Setup Guide`（53 字符）；Description 146 字符；作者轮换至 `Kenji Tanaka`；注册 `hasCustomWidget` 去重并内嵌交互式成本/部署计算器、Mermaid 拓扑图、`r/LocalLLaMA` 真实社区反馈与 Python 故障切换代码。
+  * **双向织网与归档**：在 `freellmapi-claude-code-review-alternatives.md` 与 `qwen-4-release-date-api-roadmap.md` 注入反向内链，同步更新 `public/llms.txt`。
+* **影响页面**：
+  * `https://apivel.com/blog/inkling-2-mini-benchmarks-pricing-api/`
+  * `https://apivel.com/blog/freellmapi-claude-code-review-alternatives/`
+  * `https://apivel.com/blog/qwen-4-release-date-api-roadmap/`
+  * `https://apivel.com/public/llms.txt`
+* **14 天因果响应假设**：
+  * 精准承接 Thinking Machines Lab 新发布的 Inkling 2 Mini 搜索需求，将折腾 Ollama 本地显存/Tinker 64K 免费限流的开发者转化为 APIVEL PayPal 免 KYC 付费用户。
+
 ### 2026-11-26 (GSC 首页 Pos 5–9.5 其余 4 篇 100 A 全量体检重构：消除 >1800 词超标、修复 broken `<pre>` 计算器与 `x3c div` 污染、清零 N-Gram 辅助词反客为主)
 * **分类**：📝⚙️ [Pos 5-9.5 既有高潜文章 100 A 外科手术、HTML 计算器渲染修复、N-Gram 密度重塑与全站 `hasCustomWidget` 统一去重]
 * **动作详情**：
