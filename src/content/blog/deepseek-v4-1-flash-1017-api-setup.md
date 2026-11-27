@@ -179,7 +179,7 @@ It leverages CED MoE routing, 8B asymmetric input activation, and CSA2 KV cache 
 The web chat offers free tiers with peak queues, while the raw API is token-billed. Developers can claim an instant $0.20 free trial via apivel.
 
 ### How to resolve official DeepSeek 503 Server Busy errors?
-Route requests through apivel's multi-cluster gateway, featuring active health checks and instant failover to GLM-5.3 Flash.
+Route requests through apivel's multi-cluster gateway, featuring active health checks and instant failover to GLM-5.3 Flash. For a full breakdown of UTC peak-hour multipliers and November 2026 tool billing, see our [DeepSeek API pricing change guide](/blog/deepseek-api-pricing-change-peak-off-peak-guide/).
 
 ---
 

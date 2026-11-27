@@ -239,7 +239,7 @@ No. **DeepSeek V5** (also searched as **DeepSeek 5**) has not been officially re
 The Flash tier optimizes for sub-40ms TTFT in IDE coding assistants like Cursor and Claude Code, while V5 Pro focuses on complex mathematical reasoning competing with frontier closed models like [Claude Sonnet 5](/blog/claude-opus-5-5-price-limits-claude-code/).
 
 ### How can global developers access DeepSeek APIs without Chinese KYC?
-Official platforms require domestic phone verification. Through APIVEL, developers access OpenAI and Anthropic compatible endpoints with instant PayPal checkout, global card support, and zero KYC. New accounts receive a [free $0.20 trial](https://apivel.com/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=deepseek-v5-release-date-api-leaks-roadmap).
+Official platforms require domestic phone verification. Through APIVEL, developers access OpenAI and Anthropic compatible endpoints with instant PayPal checkout, global card support, and zero KYC. New accounts receive a [free $0.20 trial](https://apivel.com/sign-up?redirect=%2Fdashboard%3Fquickstart%3Dtrue&from_blog=deepseek-v5-release-date-api-leaks-roadmap). To compare flat-rate gateway billing against DeepSeek's 2x UTC peak-hour rates, read our [DeepSeek API pricing change breakdown](/blog/deepseek-api-pricing-change-peak-off-peak-guide/).
 
 ---
 

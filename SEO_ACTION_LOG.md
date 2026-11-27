@@ -32,6 +32,18 @@
 
 ## 📅 apivel.com SEO 动作记录表 (2026年)
 
+### 2026-11-27 (Fourth Action: DeepSeek API 定价调整热点首发 — 峰谷分时 2x 计费、11月工具计费与平价路由指南)
+* **分类**：📝🔗 [热点内容首发、SERP 意图对齐、原生交互计算器与双向织网动作]
+* **动作详情**：
+  * **捕获热点与意图图谱**：针对 `deepseek 调整 api 定价` / `deepseek api pricing change` / `deepseek api pricing increase` / `deepseek api pricing calculator` 搜索需求，结合 2026 年 8 月峰谷分时（`01:00–04:00` & `06:00–10:00 UTC` 2x 费率）及 11 月 18 日服务端搜索/抓取并入 Token 计费新规，首发深度解析博文：`/blog/deepseek-api-pricing-change-peak-off-peak-guide/`。
+  * **作者轮换**：轮换为 `Elena Rostova`（Distributed Systems & LLM Performance Architect, APIVEL）。
+  * **工程增益与架构**：拆解 UTC 峰谷时段与海外白天开发时段重叠痛点、V4.1 Flash vs V4 Pro vs OpenRouter vs APIVEL 对比表、内嵌可交互 Peak vs Flat-Rate Cost Calculator，以及带 Qwen 3.7 Max / Xiaomi MiMo-V2.6 Pro 自动故障转移的 TypeScript SDK 代码。
+  * **双向织网与配置**：同步将 `deepseek-api-pricing-change` 注册至 `src/pages/[slug].astro` 的 `hasCustomWidget`；在 `deepseek-v4-1-flash-1017-api-setup.md` 与 `deepseek-v5-release-date-api-leaks-roadmap.md` 注入反向锚文本；更新 `public/llms.txt`。
+* **影响页面**：
+  * `https://apivel.com/blog/deepseek-api-pricing-change-peak-off-peak-guide/`
+* **14 天因果响应假设**：
+  * 精准拦截搜索 DeepSeek 调价、峰谷费率与工具计费变化的全球开发者，将受困于 2x 高峰加价与海外风控的流量引导至 APIVEL 固定费率与 PayPal 免 KYC 通道。
+
 ### 2026-11-27 (Third Action: 现有页面升级覆盖 `freellmapi.co` 全网意图 + 母语表达重构)
 * **分类**：📝⚙️ [防关键词蚕食重构、SERP 下拉词补全、N-Gram 密度重塑与 Native English 润色]
 * **动作详情**：
