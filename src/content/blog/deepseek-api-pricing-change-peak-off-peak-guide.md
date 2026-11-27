@@ -67,7 +67,7 @@ Alongside hourly multipliers, DeepSeek's mid-November 2026 platform update restr
 
 ### Batch Scheduling vs. Real-Time Developer Routing
 
-Nightly documentation indexing, dataset labeling, and static regression suites can easily shift to off-peak UTC hours or weekends via cron jobs to capture the 50% discount. Interactive IDE coding sessions, PR review bots, and live user-facing endpoints cannot wait six hours for a cheaper billing window, making flat-rate routing essential.
+Nightly documentation indexing, dataset labeling, and static regression suites can easily shift to off-peak UTC hours or weekends via cron jobs to capture the 50% discount. Interactive IDE coding sessions, PR review bots, and live user-facing endpoints cannot wait six hours for a cheaper billing window, making flat-rate routing essential. To model your exact cache-hit ratio and peak-hour spend before switching gateways, run your numbers through our [DeepSeek API pricing & cache calculator](/blog/tools/deepseek-pricing-calculator/).
 
 ```mermaid
 graph TD

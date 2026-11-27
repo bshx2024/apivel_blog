@@ -1,7 +1,7 @@
 ---
 title: "OpenAI GPT-6 Cyber API: Access Gating, Pricing & Uncensored Security Auditing"
-metaTitle: "OpenAI GPT-6 Cyber API: Access Gating & Model Card | APIVALE"
-description: "OpenAI GPT-6 Cyber offers 48.5% on ExploitGym but locks API access behind Daybreak Red. Compare Model Card limits with zero-refusal Qwen 3.7 Max code auditing."
+metaTitle: "OpenAI GPT-6 Cyber API: Access, $100/M Cost & Fix | APIVEL"
+description: "OpenAI GPT-6 Cyber scores 48.5% on ExploitGym but gates API access behind Daybreak Red at $100/M output. Compare uncensored Qwen 3.7 Max auditing on APIVEL."
 date: "2026-11-06"
 author: "Priya Sharma"
 authorTitle: "AI Infrastructure & Security Evaluation Specialist, APIVALE"

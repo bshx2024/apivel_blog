@@ -1,7 +1,7 @@
 ---
 title: "GPT 6.2 Astra in Codex: Access, Benchmarks, Price & Fixes"
-metaTitle: "GPT 6.2 Astra: Access, Release Truth & Price | APIVALE"
-description: "Investigating GPT 6.2 Astra in Codex & v0. Compare release truth, SWE benchmarks, token burn price, and low-cost two-tier fallback routing on APIVALE."
+metaTitle: "GPT 6.2 Astra Benchmarks, Codex Leak & $10 Price | APIVEL"
+description: "GPT 6.2 Astra benchmarks, Codex canary leaks, $2.50/$10 token pricing, and the 30s cache-polling bug. Cut agent token burn with APIVEL two-tier routing."
 date: "2026-11-04"
 author: "Elena Rostova"
 authorTitle: "Distributed Systems & LLM Performance Architect, APIVALE"

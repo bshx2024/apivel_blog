@@ -1,7 +1,7 @@
 ---
 title: "Anthropic FlashProve: Provable Inference Guide & 70x Cost"
-metaTitle: "Anthropic FlashProve: Provable Inference Guide | APIVALE"
-description: "Anthropic FlashProve brings provable inference to MoE models via zkSNARKs. Learn how it verifies model identity, the 70x GPU cost, and open-weight alternatives."
+metaTitle: "Anthropic FlashProve: 70x GPU Cost & Alternatives | APIVEL"
+description: "Anthropic FlashProve verifies MoE inference via zkSNARKs at 70x–95x GPU cost. See 110 tok/s benchmarks, Lean 4 limits, and faster API alternatives on APIVEL."
 date: "2026-11-05"
 author: "Sofia Costa"
 authorTitle: "API Security Architect & Cryptographic Systems Specialist, APIVALE"

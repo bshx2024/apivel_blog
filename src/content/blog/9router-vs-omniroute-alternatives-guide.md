@@ -1,7 +1,7 @@
 ---
 title: "9Router vs OmniRoute: Best 9Router Alternatives Guide"
-metaTitle: "9Router vs OmniRoute: Best 9Router Alternatives | apivel"
-description: "In-depth 9Router vs OmniRoute comparison: evaluate 9Router alternatives, token compression, and safe Claude Code setup with PayPal billing on apivel."
+metaTitle: "9Router vs OmniRoute: Best 9Router Alternatives | APIVEL"
+description: "In-depth 9Router vs OmniRoute comparison: evaluate 9Router alternatives, token compression, and safe Claude Code setup with PayPal billing on APIVEL."
 date: "2026-10-23"
 author: "Kenji Tanaka"
 authorTitle: "Senior AI Tooling & Systems Engineer, apivel"
