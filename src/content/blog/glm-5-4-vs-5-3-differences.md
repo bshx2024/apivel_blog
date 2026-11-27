@@ -341,6 +341,10 @@ While all GLM variants are LLMs (Large Language Models), GLM refers to a bidirec
 
 The GLM family encompasses several foundation models for code and agent workflows: flagship GLM 5.4 (28-layer recurrent Loop Transformer with native vision for 3D/CAD), version 5.3 (dense 743B baseline for predictable terminal coding), 5.3-Flash (distilled 120B MoE for autocomplete at $0.08/1M tokens), and earlier open-weight releases on HuggingFace.
 
+**Further Reading & Frontier Model Comparisons:**
+- [GPT 6.2 Astra vs Opus 5.5: Key Differences, Benchmarks & Cost Fix](/blog/gpt-6-2-astra-vs-opus-5-5-differences/)
+- [DeepSeek V5: Architecture Leaks, Flash vs Pro Specs & API Setup Guide](/blog/deepseek-v5-release-date-api-leaks-roadmap/)
+
 <div class="cta-card">
   <div class="my-10 p-8 rounded-2xl bg-gradient-to-br from-slate-900 via-primary/10 to-slate-900 border border-primary/30 text-center shadow-2xl backdrop-blur-md">
     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-primary text-xs font-mono mb-4">

@@ -1,7 +1,7 @@
 ---
 title: "AI Coding Impact Senior Engineers: Salary, Jobs & the $500K Architect"
-metaTitle: "AI Coding Impact Senior Engineers: Salary & Jobs | APIVEL"
-description: "Explore the AI coding impact senior engineers face: why companies only hire seniors, 2026 salary shifts, and automated PR reviews on APIVEL."
+metaTitle: "AI Coding Impact on Senior Engineers: 2026 Salary | APIVEL"
+description: "2026 data on AI coding impact on senior engineers: why teams freeze junior hiring, $500K architect pay shifts, and automated PR reviews on APIVEL."
 date: "2026-11-26T01:38:00Z"
 author: "Elena Rostova"
 authorTitle: "Senior LLM Systems Architect & Agent Infrastructure Specialist, APIVEL"
