@@ -32,6 +32,16 @@
 
 ## 📅 apivel.com SEO 动作记录表 (2026年)
 
+### 2026-11-27 (Third Action: 现有页面升级覆盖 `freellmapi.co` 全网意图 + 母语表达重构)
+* **分类**：📝⚙️ [防关键词蚕食重构、SERP 下拉词补全、N-Gram 密度重塑与 Native English 润色]
+* **动作详情**：
+  * **决策依据**：调研 `freellmapi.co` 下拉词（`freellmapi.co/models.html`、`codex free llm api`、`freellmapi claude code`、`github com freellmapi`）后，确认其与站内既有页面 `/blog/freellmapi-claude-code-review-alternatives/` 属同一产品实体；为避免 DR 0 新站内部关键词蚕食，采用“升级旧文集中权重”方案而非新开评测页。
+  * **On-Page & 意图补全**：将 Title / MetaTitle / Description / H2 / FAQ 全面升级覆盖 `freellmapi.co`、`freellmapi.co/models.html` 及 `Codex CLI` / `Claude Code` 429 场景；按最新 **Native English Flow Gate** 清洗旧版生硬模板重复词（移除 ~10 处机械 `in this FreeLLMAPI review` 堆砌），并清理正文冗余 `https://apivel.com/v1` 避免抢占 3-gram/4-gram 榜首；修复 Mermaid 节点 `APIVALE` 拼写为 `APIVEL`。
+* **影响页面**：
+  * `https://apivel.com/blog/freellmapi-claude-code-review-alternatives/`
+* **14 天因果响应假设**：
+  * 集中单一权威 URL 权重后，页面将同时承接 `freellmapi.co`、`freellmapi.co/models.html`、`codex free llm api` 与 `freellmapi claude code` 搜索需求，提升整体索引排名与点击转化。
+
 ### 2026-11-27 (Second Action: GSC 曝光词专项外科手术 — `deepseek 5` Pos 16 冲首页 & `gpt 6 astra vs opus 5.5` Pos 77 减脂重构)
 * **分类**：📝⚙️ [GSC 查询词诊断重构、N-Gram 密度重塑、全页 <1800 词压降与 `APIVEL` 品牌统一]
 * **动作详情**：
